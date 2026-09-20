@@ -4,6 +4,7 @@ import {
   LanguageDetectionResult,
   TranslationDomain,
   Language,
+  StreamChunk,
 } from '../types';
 import { BaseProvider } from '../providers/base-provider';
 import { PromptManager } from '../prompts/prompt-manager';
@@ -65,6 +66,30 @@ export class Translator {
 
     this.cache.set(cacheKey, result, 60 * 60 * 1000);
     return result;
+  }
+
+  /** Stream translated tokens (Phase 5C). */
+  async *translateStream(request: TranslationRequest): AsyncGenerator<StreamChunk> {
+    this.validateRequest(request);
+
+    const promptResult = this.promptManager.execute({
+      templateId: 'translation-educational',
+      variables: {
+        content: request.text,
+        sourceLanguage: request.sourceLanguage,
+        targetLanguage: request.targetLanguage,
+        domain: request.domain ?? TranslationDomain.EDUCATION,
+      },
+    });
+
+    yield* this.provider.chatCompletionStream({
+      messages: [
+        { role: 'system', content: 'You are an educational translator. Translate accurately while preserving meaning.' },
+        { role: 'user', content: promptResult.content },
+      ],
+      temperature: 0.3,
+      maxTokens: 2048,
+    });
   }
 
   async detectLanguage(text: string): Promise<LanguageDetectionResult> {

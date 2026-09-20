@@ -15,6 +15,8 @@ from sqlalchemy.orm import sessionmaker
 
 from backend.config.database import Base
 import backend.models.payment_plan  # noqa: F401  (register table with Base.metadata)
+import backend.models.tutor_review  # noqa: F401
+import backend.models.tutor_thread  # noqa: F401
 
 
 @pytest.fixture(autouse=True)

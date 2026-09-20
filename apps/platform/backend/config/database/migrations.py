@@ -33,6 +33,8 @@ def init_db() -> None:
         syllabus,
         teacher,
         teacher_plan,
+        tutor_review,
+        tutor_thread,
         user,
     )
 

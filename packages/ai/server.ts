@@ -28,6 +28,7 @@ import {
   handleContentAnalyze,
   handleContentModerate,
   handleContentTranslate,
+  handleContentTranslateStream,
   handleExamGenerate,
 } from './routes/content';
 
@@ -186,10 +187,14 @@ async function start() {
       ? requestIdHeader[0]
       : requestIdHeader || 'unknown';
 
-    if (url === '/api/tutoring/stream') {
+    if (url === '/api/tutoring/stream' || url === '/api/content/translate/stream') {
       const started = Date.now();
       try {
-        await handleTutoringStream(ai, body, res);
+        if (url === '/api/content/translate/stream') {
+          await handleContentTranslateStream(ai, body, res);
+        } else {
+          await handleTutoringStream(ai, body, res);
+        }
         console.log(
           `[casuya-ai] ok path=${url} request_id=${requestId} latency_ms=${Date.now() - started}`,
         );

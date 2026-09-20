@@ -656,7 +656,7 @@ body.casuya-ai-chat-open {
 }
 .casuya-ai-chip {
   flex: 0 0 auto;
-  min-height: 36px;
+  min-height: 44px;
   padding: 0.35rem 0.75rem;
   border-radius: 9999px;
   border: 1px solid var(--color-border);

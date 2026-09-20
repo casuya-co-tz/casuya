@@ -184,24 +184,67 @@ async function loadAIAssistant(dashboard) {
     const footerDiv = document.getElementById("ai-translate-footer");
     resultDiv.style.display = "block";
     if (footerDiv) footerDiv.innerHTML = "";
-    runAiGenerateTask({
-      container: textDiv,
-      loadingLabel: "Translating...",
-      skipAutoFooter: true,
-      path: "/ai/content/translate",
-      body: { text: fd.get("text"), target_language: fd.get("target_language") },
-      render: function (result) {
-        const raw = result?.translated || result?.translatedText || result?.text || JSON.stringify(result);
-        if (footerDiv) {
-          footerDiv.innerHTML = typeof renderAiResultFooter === "function"
-            ? renderAiResultFooter(result, raw)
-            : renderAiSourceBadge(result?.source);
+    var accumulated = "";
+    textDiv.innerHTML = renderTutorStreamingSkeleton() + renderTutorThinking("Translating...");
+    if (typeof streamTranslateResponse === "function") {
+      streamTranslateResponse(
+        { text: fd.get("text"), target_language: fd.get("target_language") },
+        function (chunk) {
+          accumulated += chunk;
+          textDiv.innerHTML = renderTutorMarkdown(accumulated);
+          scheduleTutorMath(textDiv);
+        },
+        function (meta) {
+          var raw = accumulated || (meta && meta.translatedText) || "";
+          if (footerDiv) {
+            footerDiv.innerHTML = typeof renderAiResultFooter === "function"
+              ? renderAiResultFooter({ source: (meta && meta.source) || "casuya-ai" }, raw)
+              : renderAiSourceBadge((meta && meta.source) || "casuya-ai");
+          }
+          scheduleTutorMath(textDiv);
+        },
+        function () {
+          runAiGenerateTask({
+            container: textDiv,
+            loadingLabel: "Translating...",
+            skipAutoFooter: true,
+            path: "/ai/content/translate",
+            body: { text: fd.get("text"), target_language: fd.get("target_language") },
+            render: function (result) {
+              const raw = result?.translated || result?.translatedText || result?.text || JSON.stringify(result);
+              if (footerDiv) {
+                footerDiv.innerHTML = typeof renderAiResultFooter === "function"
+                  ? renderAiResultFooter(result, raw)
+                  : renderAiSourceBadge(result?.source);
+              }
+              return renderTutorMarkdown(raw);
+            },
+            listenTitle: "Listen to translation",
+          }).catch(function () {
+            if (footerDiv) footerDiv.innerHTML = "";
+          });
         }
-        return renderTutorMarkdown(raw);
-      },
-      listenTitle: "Listen to translation",
-    }).catch(function () {
-      if (footerDiv) footerDiv.innerHTML = "";
-    });
+      );
+    } else {
+      runAiGenerateTask({
+        container: textDiv,
+        loadingLabel: "Translating...",
+        skipAutoFooter: true,
+        path: "/ai/content/translate",
+        body: { text: fd.get("text"), target_language: fd.get("target_language") },
+        render: function (result) {
+          const raw = result?.translated || result?.translatedText || result?.text || JSON.stringify(result);
+          if (footerDiv) {
+            footerDiv.innerHTML = typeof renderAiResultFooter === "function"
+              ? renderAiResultFooter(result, raw)
+              : renderAiSourceBadge(result?.source);
+          }
+          return renderTutorMarkdown(raw);
+        },
+        listenTitle: "Listen to translation",
+      }).catch(function () {
+        if (footerDiv) footerDiv.innerHTML = "";
+      });
+    }
   });
 }

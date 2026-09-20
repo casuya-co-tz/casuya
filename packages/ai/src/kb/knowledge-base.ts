@@ -112,6 +112,7 @@ export class KnowledgeBase {
     return hybridSearch(bm25Hits, expanded, this.index, {
       ...opts,
       kbRoot: this.root,
+      queryEmbedding: opts.queryEmbedding,
     });
   }
 

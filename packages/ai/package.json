@@ -21,6 +21,7 @@
     "typecheck": "tsc --noEmit && tsc --noEmit server.ts --module commonjs --target ES2022 --moduleResolution node --esModuleInterop --skipLibCheck --strict",
     "test:watch": "jest --config jest.config.js --watch",
     "test:coverage": "jest --config jest.config.js --coverage",
+    "build-kb-embed": "node scripts/build-kb-embed.mjs",
     "prepublishOnly": "npm run clean && npm run build && npm run test"
   },
   "engines": {

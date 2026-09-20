@@ -2,6 +2,7 @@ import type { ServerResponse } from 'node:http';
 import { CasuyaAI } from '../src/casuya-ai';
 import { getKnowledgeBase } from '../src/kb';
 import { selectLessonChunk } from '../src/kb/lesson-chunk';
+import { embedQuery } from '../src/kb/query-embed';
 import {
   QuestionType,
   QuestionCategory,
@@ -57,7 +58,7 @@ function resolveTutorEngine(ai: CasuyaAI, mode: TutoringMode): TutoringEngine {
   return ai.tutoring;
 }
 
-function buildTutoringRag(body: any) {
+async function buildTutoringRag(body: any) {
   const { question, context, subject_slug, form_level, curriculum_context, language, lesson_id } = body;
   const langPref = language === 'sw' ? 'sw' : language === 'en' ? 'en' : 'both';
   const subject = resolveSubject(subject_slug);
@@ -73,15 +74,22 @@ function buildTutoringRag(body: any) {
   let ragText = syllabusBlock(typeof curriculum_context === 'string' ? curriculum_context : '');
   let ragDocs: { title: string; kind: string; subject: string; snippet?: string }[] = [];
   if (kb.ready) {
+    const queryEmbedding = await embedQuery(query);
+    const searchOpts = {
+      subject: subject_slug || undefined,
+      form: kbForm,
+      limit: 3,
+      queryEmbedding: queryEmbedding || undefined,
+    };
     let rag = kb.buildRagContext(
       query,
-      { subject: subject_slug || undefined, form: kbForm, limit: 3 },
+      searchOpts,
       Number(process.env.KB_RAG_MAX_CHARS) || 6000,
     );
     if (!rag.docs.length && kbForm) {
       rag = kb.buildRagContext(
         query,
-        { subject: subject_slug || undefined, limit: 3 },
+        { subject: subject_slug || undefined, limit: 3, queryEmbedding: queryEmbedding || undefined },
         Number(process.env.KB_RAG_MAX_CHARS) || 6000,
       );
     }
@@ -136,7 +144,7 @@ export async function handleTutoringStream(ai: CasuyaAI, body: any, res: ServerR
   const tutorMode = resolveTutorMode(body);
   const engine = resolveTutorEngine(ai, tutorMode);
   const { langPref, subject, grounded, ragDocs, ragText, lessonContext, curriculumContext } =
-    buildTutoringRag(body);
+    await buildTutoringRag(body);
 
   res.writeHead(200, {
     'Content-Type': 'text/event-stream',
@@ -185,11 +193,13 @@ export async function handleTutoringStream(ai: CasuyaAI, body: any, res: ServerR
     chunk: '',
     done: true,
     source: response.trim() ? 'casuya-ai' : 'offline',
+    response,
     kbHits: ragDocs,
     formatComplete: formatLevel === 'complete',
     formatLevel,
     sourced: !!ragText,
     needsReview: finalized.needsReview,
+    flaggedTerms: finalized.flaggedTerms,
     providerTier: tutorMode === TutoringMode.DEEP ? 'quality' : 'fast',
   });
   res.end();
@@ -203,7 +213,7 @@ export async function handleTutoringExplain(
   const tutorMode = resolveTutorMode(body);
   const engine = resolveTutorEngine(ai, tutorMode);
   const { langPref, subject, grounded, ragText, ragDocs, lessonContext, curriculumContext } =
-    buildTutoringRag(body);
+    await buildTutoringRag(body);
 
   const nQuestions = Math.min(Math.max(Number(max_questions) || 10, 1), 20);
 
@@ -291,6 +301,7 @@ export async function handleTutoringExplain(
     formatComplete,
     formatLevel: scoreNectaFormatCompliance(response),
     needsReview: validation.needsReview,
+    flaggedTerms: validation.flaggedTerms,
     providerTier: tutorMode === TutoringMode.DEEP ? 'quality' : 'fast',
   };
 }

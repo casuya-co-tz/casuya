@@ -69,9 +69,9 @@
     return (
       '<div id="' + SHEET_ID + '" class="casuya-ai-chat-sheet" hidden>'
       + '<div class="casuya-ai-chat-backdrop" data-ai-chat-close></div>'
-      + '<div class="casuya-ai-chat-panel" role="dialog" aria-label="Ask AI tutor">'
+      + '<div class="casuya-ai-chat-panel" role="dialog" aria-modal="true" aria-labelledby="casuya-ai-chat-title">'
       + '<div class="casuya-ai-chat-header">'
-      + '<div><strong>Uliza AI</strong>'
+      + '<div><strong id="casuya-ai-chat-title">Uliza AI</strong>'
       + '<div class="casuya-ai-chat-sub">Msaada wa somo — muundo wa NECTA</div></div>'
       + '<div class="casuya-ai-chat-header-actions">'
       + '<select id="casuya-ai-lang" class="input casuya-ai-lang-select" aria-label="Answer language">'
@@ -239,17 +239,31 @@
     saveTutorThread(tutorThreadStorageKey(_ctx), _messages);
   }
 
-  function mountLessonAiChat(ctx) {
-    _ctx = ctx || {};
-    _messages = typeof loadTutorThread === "function" && typeof tutorThreadStorageKey === "function"
-      ? loadTutorThread(tutorThreadStorageKey(_ctx))
-      : [];
+  function finishMount() {
     ensureSheet();
     ensureFab();
     renderMessages();
     renderSuggestions();
     var langSel = document.getElementById("casuya-ai-lang");
     if (langSel) langSel.value = langPref();
+  }
+
+  function mountLessonAiChat(ctx) {
+    _ctx = ctx || {};
+    var key = typeof tutorThreadStorageKey === "function" ? tutorThreadStorageKey(_ctx) : "";
+    var lesson = (_ctx && _ctx.lesson) || {};
+    var lessonId = (_ctx && _ctx.lessonId) || lesson.id || lesson.slug || "";
+
+    if (typeof loadTutorThreadFromServer === "function" && lessonId) {
+      loadTutorThreadFromServer(lessonId, key, function (msgs) {
+        _messages = msgs || [];
+        finishMount();
+      });
+      return;
+    }
+
+    _messages = typeof loadTutorThread === "function" && key ? loadTutorThread(key) : [];
+    finishMount();
   }
 
   function unmountLessonAiChat() {

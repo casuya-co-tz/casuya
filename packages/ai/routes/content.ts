@@ -1,3 +1,4 @@
+import type { ServerResponse } from 'node:http';
 import { CasuyaAI } from '../src/casuya-ai';
 import {
   Language,
@@ -50,6 +51,52 @@ export async function handleContentTranslate(ai: CasuyaAI, body: any): Promise<u
     sourceLanguage: Language.ENGLISH,
     targetLanguage: (target_language as Language) || Language.SWAHILI,
   });
+}
+
+function translateSseWrite(res: ServerResponse, data: Record<string, unknown>) {
+  res.write(`data: ${JSON.stringify(data)}\n\n`);
+}
+
+export async function handleContentTranslateStream(
+  ai: CasuyaAI,
+  body: any,
+  res: ServerResponse,
+): Promise<void> {
+  const { text: translateText, content: translateContent, target_language } = body;
+  const inputText = translateText || translateContent || '';
+
+  res.writeHead(200, {
+    'Content-Type': 'text/event-stream',
+    'Cache-Control': 'no-cache',
+    Connection: 'keep-alive',
+  });
+
+  let raw = '';
+  try {
+    for await (const chunk of ai.translator.translateStream({
+      text: inputText,
+      sourceLanguage: Language.ENGLISH,
+      targetLanguage: (target_language as Language) || Language.SWAHILI,
+    })) {
+      if (chunk.content) {
+        raw += chunk.content;
+        translateSseWrite(res, { chunk: chunk.content, done: false });
+      }
+      if (chunk.done) break;
+    }
+  } catch (err) {
+    console.error('[translate stream] failed:', err);
+    translateSseWrite(res, { chunk: inputText, done: false });
+    raw = inputText;
+  }
+
+  translateSseWrite(res, {
+    chunk: '',
+    done: true,
+    source: raw.trim() ? 'casuya-ai' : 'offline',
+    translatedText: raw.trim() || inputText,
+  });
+  res.end();
 }
 
 export function handleMathSolve(body: any): unknown {

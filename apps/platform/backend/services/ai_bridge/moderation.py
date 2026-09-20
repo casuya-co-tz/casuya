@@ -47,3 +47,18 @@ async def translate_content(text: str, target_language: str) -> tuple[str, str]:
         logger.warning("AI translation failed: %s", exc)
 
     return text, "offline"
+
+
+async def iter_translate_stream_events(text: str, target_language: str):
+    """Yield SSE events for streaming translation."""
+    import json
+
+    from .client import AiServiceError, _stream_ai_service
+
+    payload = {"text": text, "target_language": target_language}
+    try:
+        async for event in _stream_ai_service("/api/content/translate/stream", payload):
+            yield event
+    except AiServiceError as exc:
+        logger.warning("AI translation stream failed: %s", exc)
+        yield f'data: {json.dumps({"chunk": text, "done": True, "source": "offline", "translatedText": text})}\n\n'

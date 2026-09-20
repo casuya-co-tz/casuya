@@ -299,9 +299,35 @@ function loadTutorThread(key) {
 }
 
 function saveTutorThread(key, messages) {
+  var trimmed = (messages || []).slice(-8);
   try {
-    sessionStorage.setItem(key, JSON.stringify((messages || []).slice(-8)));
+    sessionStorage.setItem(key, JSON.stringify(trimmed));
   } catch (e) {}
+  var lessonId = String(key || "").replace("casuya_ai_thread_", "");
+  if (lessonId && typeof request === "function") {
+    request("/ai/tutor/thread/" + encodeURIComponent(lessonId), {
+      method: "PUT",
+      body: JSON.stringify({ messages: trimmed }),
+    }).catch(function () {});
+  }
+}
+
+function loadTutorThreadFromServer(lessonId, key, onLoaded) {
+  if (!lessonId || typeof request !== "function") {
+    if (typeof onLoaded === "function") onLoaded(loadTutorThread(key));
+    return;
+  }
+  request("/ai/tutor/thread/" + encodeURIComponent(lessonId)).then(function (data) {
+    var server = (data && data.messages) || [];
+    var local = loadTutorThread(key);
+    var merged = server.length >= local.length ? server : local;
+    try {
+      sessionStorage.setItem(key, JSON.stringify(merged.slice(-8)));
+    } catch (e) {}
+    if (typeof onLoaded === "function") onLoaded(merged);
+  }).catch(function () {
+    if (typeof onLoaded === "function") onLoaded(loadTutorThread(key));
+  });
 }
 
 function buildQuizLessonContent(questions) {
@@ -617,6 +643,7 @@ window.attachTutorHelpful = attachTutorHelpful;
 window.renderTutorStreamingSkeleton = renderTutorStreamingSkeleton;
 window.tutorThreadStorageKey = tutorThreadStorageKey;
 window.loadTutorThread = loadTutorThread;
+window.loadTutorThreadFromServer = loadTutorThreadFromServer;
 window.saveTutorThread = saveTutorThread;
 window.buildLessonQuizTutorQuestion = buildLessonQuizTutorQuestion;
 window.mountLessonQuizTutor = mountLessonQuizTutor;

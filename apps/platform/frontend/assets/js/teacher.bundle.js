@@ -1,1 +1,7329 @@
-!function(){var e=window.location.hostname||"";"localhost"===e||"127.0.0.1"===e||"[::1]"===e||"::1"===e||(window.CASUYA_API_URL="https://casuya-platform-production.up.railway.app")}(),function(){function e(){if(window.CASUYA_API_URL)return String(window.CASUYA_API_URL).replace(/\/+$/,"");var e=window.location.hostname||"localhost",t="http:"===window.location.protocol||"https:"===window.location.protocol?window.location.protocol:"http:",n=window.location.port;return"8765"===n||""===n||"443"===n||"80"===n?window.location.origin:t+"//"+e+":8765"}window.casuyaApiBase=function(){return e()},window.casuyaOAuthUrl=function(t){return e()+"/auth/oauth/"+encodeURIComponent(t)},"serviceWorker"in navigator&&window.addEventListener("load",function(){var e=window.location.pathname,t=/\/(?:login|register|forgot-password|reset-password|index)\.html?$/.test(e)||"/"===e,n=!!localStorage.getItem("casuya_token");t&&!n||navigator.serviceWorker.register("/sw.js").catch(function(){})})}();const requestCache=new Map,inFlight=new Map,CACHE_TTL=3e4;function clearRequestCaches(){requestCache.clear(),inFlight.clear()}function requestCacheKey(e,t){return String(t||"GET").toUpperCase()+" "+e}function isCacheableRequest(e,t){t||(t={});return"GET"===String(t.method||"GET").toUpperCase()&&(!t.skipCache&&!t._retry&&!/^\/(?:auth|progress|notifications|ai)\b/i.test(e))}function getCachedRequest(e,t){if(!isCacheableRequest(e,t))return null;const n=requestCacheKey(e,t&&t.method),a=requestCache.get(n);return a?Date.now()-a.at>3e4?(requestCache.delete(n),null):a.value:null}function setCachedRequest(e,t,n){isCacheableRequest(e,t)&&requestCache.set(requestCacheKey(e,t&&t.method),{at:Date.now(),value:n})}function getInFlightRequest(e,t){return isCacheableRequest(e,t)&&inFlight.get(requestCacheKey(e,t&&t.method))||null}function setInFlightRequest(e,t,n){isCacheableRequest(e,t)&&inFlight.set(requestCacheKey(e,t&&t.method),n)}function clearInFlightRequest(e,t){inFlight.delete(requestCacheKey(e,t&&t.method))}function decodeToken(e){try{return JSON.parse(atob(e.split(".")[1]))}catch{return{}}}window.clearRequestCaches=clearRequestCaches;let _refreshPromise=null;function tokenNeedsRefresh(e,t=60){if(!e)return!1;try{const n=JSON.parse(atob(e.split(".")[1]));return"number"==typeof n.exp&&Date.now()>=1e3*n.exp-1e3*t}catch{return!1}}async function refreshAuthToken(){return _refreshPromise||(_refreshPromise=_doRefresh().finally(()=>{_refreshPromise=null}),_refreshPromise)}async function _doRefresh(){const e=localStorage.getItem("casuya_refresh_token");if(!e)throw new Error("No refresh token");const t=await fetch(`${API_BASE}/auth/refresh`,{method:"POST",headers:{"Content-Type":"application/json"},body:JSON.stringify({refresh_token:e})});if(!t.ok)throw new Error("Refresh failed");const n=await t.text();let a;try{a=JSON.parse(n)}catch{throw new Error("Invalid response from refresh endpoint")}return a.access_token&&localStorage.setItem("casuya_token",a.access_token),a.refresh_token&&localStorage.setItem("casuya_refresh_token",a.refresh_token),a.access_token}const API_HOST=window.location.hostname||"localhost",API_PROTOCOL="http:"===window.location.protocol||"https:"===window.location.protocol?window.location.protocol:"http:",API_BASE=window.casuyaApiBase?window.casuyaApiBase():"8765"===window.location.port||""===window.location.port||"443"===window.location.port||"80"===window.location.port?window.location.origin:`${API_PROTOCOL}//${API_HOST}:8765`;window.API_HOST=API_HOST,window.API_PROTOCOL=API_PROTOCOL,window.API_BASE=API_BASE;let _globalAbort=null;function render(e,t){const n="string"==typeof e?document.querySelector(e):e;if(n){if(_globalAbort){const e=_globalAbort;Promise.resolve().then(()=>e.abort())}_globalAbort=new AbortController,n.innerHTML=t}}function escapeHtml(e){if(null==e)return"";const t=document.createElement("div");return t.textContent=String(e),t.innerHTML}function injectNodeBase(e){if(!e)return e;const t=API_BASE+"/",n=/<head[^>]*>/i.exec(e);if(n)return e.slice(0,n.index+n[0].length)+`<base href="${t}">`+e.slice(n.index+n[0].length);const a=/<html[^>]*>/i.exec(e);if(a)return e.slice(0,a.index+a[0].length)+`<head><base href="${t}"></head>`+e.slice(a.index+a[0].length);const s=/^\s*<!DOCTYPE html[^>]*>/i.exec(e);return s?e.slice(0,s[0].length)+`<head><base href="${t}"></head>`+e.slice(s[0].length):`<head><base href="${t}"></head>`+e}function timeAgo(e){const t=Math.floor((Date.now()-e)/1e3);if(t<60)return"Just now";const n=Math.floor(t/60);if(n<60)return n+"m ago";const a=Math.floor(n/60);if(a<24)return a+"h ago";const s=Math.floor(a/24);return s<7?s+"d ago":new Date(e).toLocaleDateString()}function showToast(e){let t=document.getElementById("global-toast");t||(t=document.createElement("div"),t.id="global-toast",t.style.cssText="position:fixed;bottom:1.5rem;right:1.5rem;padding:0.6rem 1.2rem;background:var(--color-success);color:#fff;border-radius:var(--radius);font-size:0.85rem;z-index:9999;opacity:0;transition:opacity 0.3s;pointer-events:none",document.body.appendChild(t)),t.textContent=e,t.style.opacity="1",clearTimeout(t._hide),t._hide=setTimeout(()=>{t.style.opacity="0"},2500)}function confirmDelete(e){return confirm(`Delete "${e}"? This cannot be undone.`)}function deleteBtn(e,t,n,a){return`<button class="btn btn-danger btn-sm" data-delete="${e}" data-label="${escapeHtml(t)}" data-endpoint="${n}">Delete</button>`}function initDeleteButtons(){document.querySelectorAll("[data-delete]").forEach(e=>{e.addEventListener("click",async t=>{t.stopPropagation();const n=e.dataset.delete,a=e.dataset.label,s=e.dataset.endpoint;if(confirmDelete(a))try{await request(`${s}/${n}`,{method:"DELETE"}),showToast("Deleted!"),e.closest(".card")?.remove()}catch(e){showToast(e.message||"Delete failed")}})})}function renderTutorMarkdown(e){if(!e)return"";let t=e;t=t.replace(/ thinking[\s\S]*?<\/think>/gi,"").trim(),t=t.replace(/```(\w*)\n([\s\S]*?)```/g,(e,t,n)=>`<div class="tutor-code-block"><pre><code>${escapeHtml(n.trimEnd())}</code></pre></div>`),t=t.replace(/^(\|.+\|)\n(\|[\s:|-]+\|)\n((?:\|.+\|\n?)*)/gm,(e,t,n,a)=>{const s=t.split("|").filter(e=>e.trim()),o=a.trim().split("\n").map(e=>e.split("|").filter(e=>e.trim()));let i="<table>";return i+="<thead><tr>"+s.map(e=>`<th>${escapeHtml(e.trim())}</th>`).join("")+"</tr></thead>",i+="<tbody>"+o.map(e=>"<tr>"+e.map((e,t)=>`<td data-label="${escapeHtml(s[t]||"")}">${escapeHtml(e.trim())}</td>`).join("")+"</tr>").join("")+"</tbody></table>",i}),t=t.replace(/^(.*💡\s*(?:NECTA\s+(?:Examination\s+)?Tip|Mtihani).*)\n((?:(?!\*\*\*).+\n?)*)/gim,(e,t,n)=>`<div class="tutor-necta-tip"><div class="tutor-necta-tip-label">💡 NECTA Examination Tip</div><p>${escapeHtml(n.trim()).replace(/\n/g,"<br>")}</p></div>`),t=t.replace(/^>\s*(.+)$/gm,(e,t)=>`<div class="tutor-context-blockquote"><div class="tutor-context-badge">${/tanzan|serengeti|kilimanjaro|lake victoria|dodoma|dar|kenya|uganda|east africa|africa|mwanza|arusha|mbeya|ruaha|rufiji/i.test(t)?"🌍 Tanzania Context":"📖 Context"}</div><p>${escapeHtml(t)}</p></div>`),t=t.replace(/(<div class="tutor-context-blockquote">[\s\S]*?<\/div>\n?)+/g,e=>e),t=t.replace(/(\*\*Review Question[^*]*\*\*[^\n]*)\n([\s\S]*?)(?=\n\n(?!\*)|$)/gi,(e,t,n)=>{const a=n.trim().split(/\n(?=\*?\*?(?:Model Answer|Marking Scheme|Jibu)/i),s=a[0]||"",o=a.slice(1).join("\n").trim();let i=`<div class="tutor-review-card"><div class="tutor-review-title">${escapeHtml(t.trim())}</div>`;return s&&(i+=`<div class="tutor-review-body">${escapeHtml(s).replace(/\n/g,"<br>")}</div>`),o&&(i+='<button type="button" class="tutor-marking-toggle">Show Marking Scheme</button>',i+=`<div class="tutor-marking-scheme" hidden>${escapeHtml(o).replace(/\n/g,"<br>")}</div>`),i+="</div>",i}),t=t.replace(/^\*\*\*\s*$/gm,"<hr>"),t=t.replace(/^#### (.+)$/gm,(e,t)=>`<h4>${escapeHtml(t)}</h4>`),t=t.replace(/^### (.+)$/gm,(e,t)=>`<h3>${escapeHtml(t)}</h3>`),t=t.replace(/^## (.+)$/gm,(e,t)=>`<h2>${escapeHtml(t)}</h2>`),t=t.replace(/^# (.+)$/gm,(e,t)=>`<h1>${escapeHtml(t)}</h1>`),t=t.replace(/\*\*\*(.+?)\*\*\*/g,(e,t)=>`<strong><em>${escapeHtml(t)}</em></strong>`),t=t.replace(/\*\*(.+?)\*\*/g,(e,t)=>`<strong>${escapeHtml(t)}</strong>`),t=t.replace(/\*(.+?)\*/g,(e,t)=>`<em>${escapeHtml(t)}</em>`),t=t.replace(/`([^`]+)`/g,(e,t)=>`<code>${escapeHtml(t)}</code>`),t=t.replace(/^(?:- (.+)\n?)+/gm,e=>`<ul>${e.trim().split("\n").map(e=>`<li>${escapeHtml(e.replace(/^- /,""))}</li>`).join("")}</ul>`),t=t.replace(/^(?:\d+\. (.+)\n?)+/gm,e=>`<ol>${e.trim().split("\n").map(e=>`<li>${escapeHtml(e.replace(/^\d+\. /,""))}</li>`).join("")}</ol>`),t=t.replace(/\n{2,}/g,"\n\n");const n=t.split("\n\n");return t=n.map(e=>(e=e.trim())?/^<(div|table|ul|ol|h[1-6]|hr|pre)/.test(e)?e:`<p>${escapeHtml(e).replace(/\n/g,"<br>")}</p>`:"").join("\n"),t}function renderQuizQuestions(e,t={}){if(!Array.isArray(e)||!e.length)return'<p style="color:var(--color-text-muted)">No questions generated.</p>';const n=t.subject||"General",a=t.formLevel||"",s=t.topic||"",o=[{mathematics:"Mathematics",chemistry:"Chemistry",physics:"Physics"}[n]||n,a?`Form ${["I","II","III","IV","V","VI"][Number(a)-1]||a}`:""].filter(Boolean).join(" • "),i="quiz-"+Date.now(),r=t.lessonId?` data-lesson-id="${escapeHtml(t.lessonId)}"`:"";let l=`<div class="quiz-container" id="${i}"${r}>`;return l+=`<div class="quiz-header">\n    <span class="quiz-badge">${escapeHtml(o)}</span>\n    <span class="quiz-counter">Question 1 of ${e.length}</span>\n    ${s?`<div class="quiz-topic">Topic: ${escapeHtml(s)}</div>`:""}\n  </div>`,l+='<div class="quiz-card">',e.forEach((e,t)=>{const n=["A","B","C","D"],a=e.options||[],s=(e.correctAnswer||"").trim().toUpperCase(),o=e.explanation||"";l+=`<div class="quiz-question" data-index="${t}" data-correct="${escapeHtml(s)}">`,l+=`<div class="quiz-question-num">Question ${t+1}</div>`,l+=`<div class="quiz-question-text">${escapeHtml(e.text||"")}</div>`,l+=`<button type="button" class="casuya-listen" data-lang="auto" data-speak="${escapeHtml(String(e.text||"").slice(0,600))}" title="Listen to question" aria-label="Listen to question">🔊 Listen</button>`,l+='<div class="quiz-options">',a.forEach((e,a)=>{const s=n[a]||String.fromCharCode(65+a),o="string"==typeof e?e:e.text||String(e);l+=`<label class="quiz-option" data-letter="${s}">\n        <input type="radio" name="${i}-q${t}" value="${s}">\n        <span class="quiz-option-label">${s}.</span>\n        <span>${escapeHtml(o)}</span>\n      </label>`}),l+="</div>",o&&(l+=`<div class="quiz-explanation" id="${i}-exp-${t}">\n        <strong>Explanation:</strong> ${escapeHtml(o)}\n      </div>`),l+="</div>"}),l+=`<div class="quiz-btn-row">\n    <button class="btn btn-primary quiz-submit-all" onclick="window._quizSubmit('${i}', ${e.length})">Submit Answers</button>\n    <button class="btn quiz-download-btn" onclick="window._quizDownloadWord('${i}')">📄 Word</button>\n    <button class="btn quiz-download-btn" onclick="window._quizDownloadPdf('${i}')">📋 PDF</button>\n  </div>`,l+=`<div class="quiz-score" id="${i}-score">\n    <div class="quiz-score-num" id="${i}-score-num"></div>\n    <div class="quiz-score-label" id="${i}-score-label"></div>\n  </div>`,l+="</div></div>",l}function asProgressItems(e){return Array.isArray(e)?e:e&&Array.isArray(e.items)?e.items:[]}async function request(e,t={}){const n="function"==typeof getCachedRequest?getCachedRequest(e,t):null;if(null!=n)return n;const a="function"==typeof getInFlightRequest?getInFlightRequest(e,t):null;if(a)return a;let s=localStorage.getItem("casuya_token");if(s&&!t._retry&&"function"==typeof tokenNeedsRefresh&&tokenNeedsRefresh(s)&&localStorage.getItem("casuya_refresh_token"))try{s=await refreshAuthToken()}catch(e){throw localStorage.removeItem("casuya_token"),localStorage.removeItem("casuya_refresh_token"),window.location.replace("/login.html"),e}const o=(t.method||"GET").toUpperCase(),i={"Content-Type":"application/json",...t.headers||{}};s&&(i.Authorization="Bearer "+s);const r=API_BASE+e,l={method:o,headers:i};t.body&&(l.body=t.body);const c=(async()=>{let n=await fetch(r,l);if(!n.ok){if(401===n.status&&!t._retry)if("function"==typeof refreshAuthToken&&localStorage.getItem("casuya_refresh_token"))try{return await refreshAuthToken(),t._retry=!0,await request(e,t)}catch(e){throw localStorage.removeItem("casuya_token"),window.location.replace("/login.html"),e}else localStorage.removeItem("casuya_token"),window.location.replace("/login.html");const a=new Error(n.statusText||"Request failed");a.status=n.status;try{const e=await n.json();e&&"string"==typeof e.detail&&e.detail&&(a.message=e.detail)}catch(e){}throw a}const a=await n.text();let s;try{s=JSON.parse(a)}catch{s=a}return"function"==typeof setCachedRequest&&setCachedRequest(e,t,s),s})();"function"==typeof setInFlightRequest&&setInFlightRequest(e,t,c);try{return await c}finally{"function"==typeof clearInFlightRequest&&clearInFlightRequest(e,t)}}function streamTutorResponse(e,t,n,a){var s=localStorage.getItem("casuya_token"),o={"Content-Type":"application/json"};s&&(o.Authorization="Bearer "+s);var i=new AbortController;return fetch(API_BASE+"/ai/tutoring/stream",{method:"POST",headers:o,body:JSON.stringify(e),signal:i.signal}).then(function(e){if(!e.ok)throw new Error("Stream failed");var s=e.body.getReader(),o=new TextDecoder,i="";!function e(){s.read().then(function(a){if(a.done)n&&n();else{var s=(i+=o.decode(a.value,{stream:!0})).split("\n");i=s.pop();for(var r=0;r<s.length;r++){var l=s[r].trim();if(l.startsWith("data: "))try{var c=JSON.parse(l.substring(6));if(c.chunk&&t(c.chunk),c.done)return void(n&&n(c))}catch(e){}}e()}}).catch(function(e){"AbortError"!==e.name&&a&&a(e)})}()}).catch(function(e){"AbortError"!==e.name&&a&&a(e)}),i}function renderAiSourceBadge(e){if(!e)return"";var t="casuya-ai"===e?"Powered by AI":"local-cache"===e?"Saved on device":"cached"===e?"Cached answer":"kb-fallback"===e?"Syllabus notes (offline)":"Offline mode";return'<span class="ai-source-badge" style="display:inline-block;margin-top:0.5rem;font-size:0.75rem;color:'+("casuya-ai"===e?"var(--color-primary, #2563eb)":"var(--color-text-muted, #64748b)")+';font-weight:600;" title="Response source: '+escapeHtml(String(e))+'">'+escapeHtml(t)+"</span>"}window.injectNodeBase=injectNodeBase,window.ensureKaTeX=function(){return window.ensureKaTeX.__promise||(window.ensureKaTeX.__promise=new Promise(function(e){function t(e,t){return new Promise(function(n){var a=document.createElement("script");a.src=e,a.async=!0,a.onload=n,a.onerror=n,t&&setTimeout(n,t),document.head.appendChild(a)})}if(!document.querySelector('link[href$="katex.min.css"]')){var n=document.createElement("link");n.rel="stylesheet",n.href="/static/lib/katex/katex.min.css",document.head.appendChild(n)}window.katex&&"function"==typeof window.renderMathInElement?e(!0):t("/static/lib/katex/katex.min.js",8e3).then(function(){if("function"!=typeof window.renderMathInElement)return t("/static/lib/katex/contrib/auto-render.min.js",8e3);e(!0)}).then(function(){e(!(!window.katex||"function"!=typeof window.renderMathInElement))})})),window.ensureKaTeX.__promise};var _tutorQaIdb=null,TUTOR_QA_IDB_NAME="casuya-tutor-qa",TUTOR_QA_STORE="answers",TUTOR_QUEUE_STORE="queue",TUTOR_QA_MAX=20,TUTOR_QA_IDB_VERSION=2;function tutorQaCacheKey(e){return[String(e&&e.question||"").trim().toLowerCase(),String(e&&e.lesson_id||""),String(e&&e.subject_slug||""),String(e&&e.form_level||"")].join("|")}function openTutorQaIdb(){return _tutorQaIdb||("undefined"==typeof indexedDB?Promise.resolve(null):_tutorQaIdb=new Promise(function(e){try{var t=indexedDB.open(TUTOR_QA_IDB_NAME,TUTOR_QA_IDB_VERSION);t.onupgradeneeded=function(){var e=t.result;e.objectStoreNames.contains(TUTOR_QA_STORE)||e.createObjectStore(TUTOR_QA_STORE,{keyPath:"id"}),e.objectStoreNames.contains(TUTOR_QUEUE_STORE)||e.createObjectStore(TUTOR_QUEUE_STORE,{keyPath:"id"})},t.onsuccess=function(){e(t.result)},t.onerror=function(){e(null)}}catch(t){e(null)}}))}function getTutorQaCache(e){return e?openTutorQaIdb().then(function(t){return t?new Promise(function(n){try{var a=t.transaction(TUTOR_QA_STORE,"readonly").objectStore(TUTOR_QA_STORE).get(e);a.onsuccess=function(){n(a.result||null)},a.onerror=function(){n(null)}}catch(e){n(null)}}):null}):Promise.resolve(null)}function putTutorQaCache(e,t){return e&&t&&t.response?openTutorQaIdb().then(function(n){if(n)return new Promise(function(a){try{var s=n.transaction(TUTOR_QA_STORE,"readwrite"),o=s.objectStore(TUTOR_QA_STORE);o.put({id:e,response:t.response,kbHits:t.kbHits||[],formatComplete:!!t.formatComplete,formatLevel:t.formatLevel||"none",source:t.source||"casuya-ai",ts:Date.now()}),o.getAll().onsuccess=function(e){var t=e.target.result||[];if(!(t.length<=TUTOR_QA_MAX)){t.sort(function(e,t){return(e.ts||0)-(t.ts||0)});for(var n=t.length-TUTOR_QA_MAX,a=0;a<n;a++)o.delete(t[a].id)}},s.oncomplete=function(){a()},s.onerror=function(){a()}}catch(e){a()}})}):Promise.resolve()}window.tutorQaCacheKey=tutorQaCacheKey,window.getTutorQaCache=getTutorQaCache,window.putTutorQaCache=putTutorQaCache;TUTOR_QUEUE_STORE="queue";var _tutorQueueSyncing=!1;function openTutorQueueDb(){return"function"==typeof openTutorQaIdb?openTutorQaIdb():Promise.resolve(null)}function enqueueTutorQuestion(e,t){return t=t||{},openTutorQueueDb().then(function(n){return!!n&&new Promise(function(a){try{var s=n.transaction([TUTOR_QUEUE_STORE,"answers"],"readwrite"),o=s.objectStore(TUTOR_QUEUE_STORE);if(!n.objectStoreNames.contains(TUTOR_QUEUE_STORE))return void a(!1);var i={id:"q_"+Date.now()+"_"+Math.random().toString(36).slice(2,8),payload:e,callbacksMeta:{loadingLabel:t.loadingLabel||""},ts:Date.now(),attempts:0};o.put(i),s.oncomplete=function(){a(!0)},s.onerror=function(){a(!1)}}catch(e){a(!1)}})})}function listTutorQueue(){return openTutorQueueDb().then(function(e){return e&&e.objectStoreNames.contains(TUTOR_QUEUE_STORE)?new Promise(function(t){try{var n=e.transaction(TUTOR_QUEUE_STORE,"readonly").objectStore(TUTOR_QUEUE_STORE).getAll();n.onsuccess=function(){var e=n.result||[];e.sort(function(e,t){return(e.ts||0)-(t.ts||0)}),t(e)},n.onerror=function(){t([])}}catch(e){t([])}}):[]})}function removeTutorQueueItem(e){return openTutorQueueDb().then(function(t){if(t&&t.objectStoreNames.contains(TUTOR_QUEUE_STORE))return new Promise(function(n){try{var a=t.transaction(TUTOR_QUEUE_STORE,"readwrite");a.objectStore(TUTOR_QUEUE_STORE).delete(e),a.oncomplete=function(){n()},a.onerror=function(){n()}}catch(e){n()}})})}function syncTutorQueue(){return _tutorQueueSyncing||"undefined"!=typeof navigator&&!navigator.onLine||"function"!=typeof runTutorQuery?Promise.resolve(0):(_tutorQueueSyncing=!0,listTutorQueue().then(function(e){if(!e.length)return _tutorQueueSyncing=!1,0;var t=Promise.resolve(0);return e.forEach(function(e){t=t.then(function(t){return new Promise(function(n){var a=document.createElement("div");a.hidden=!0,document.body.appendChild(a),runTutorQuery(e.payload,{container:a,loadingLabel:e.callbacksMeta&&e.callbacksMeta.loadingLabel||"Syncing…",onComplete:function(){removeTutorQueueItem(e.id).finally(function(){a.remove(),n(t+1)})},onError:function(){a.remove(),n(t)}})})})}),t.finally(function(){_tutorQueueSyncing=!1})}).catch(function(){return _tutorQueueSyncing=!1,0}))}function renderTutorThinking(e){return'<div class="tutor-thinking"><div class="tutor-thinking-dots"><span></span><span></span><span></span></div>'+escapeHtml(e||"Thinking...")+"</div>"}function renderTutorStreamingSkeleton(){return'<div class="tutor-streaming-skeleton" aria-hidden="true"><div class="tutor-skeleton-line tutor-skeleton-line-lg"></div><div class="tutor-skeleton-line"></div><div class="tutor-skeleton-line tutor-skeleton-line-sm"></div><div class="tutor-skeleton-block"></div></div>'}function renderTutorFollowUpChips(){return'<div class="tutor-followup-chips">'+[{label:"Eleza kwa urahisi",prompt:"Eleza kwa Kiswahili rahisi zaidi."},{label:"NECTA huuliza vipi?",prompt:"NECTA huuliza vipi kuhusu hili?"},{label:"Toa mfano",prompt:"Toa mfano wa Tanzania."},{label:"Explain simpler",prompt:"Explain this in simpler English."}].map(function(e){return'<button type="button" class="tutor-followup-chip" data-followup="'+escapeHtml(e.prompt)+'">'+escapeHtml(e.label)+"</button>"}).join("")+"</div>"}function attachTutorFollowUp(e,t){if(e&&"function"==typeof t){var n=document.createElement("div");n.className="tutor-followup-wrap",n.innerHTML=renderTutorFollowUpChips(),n.addEventListener("click",function(e){var n=e.target&&e.target.closest&&e.target.closest("[data-followup]");n&&t(n.getAttribute("data-followup")||"")}),e.appendChild(n)}}function renderTutorHelpfulRating(){return'<div class="tutor-helpful" data-tutor-helpful><span class="tutor-helpful-label">Was this helpful?</span><button type="button" class="tutor-helpful-btn" data-helpful="yes" aria-label="Helpful">👍</button><button type="button" class="tutor-helpful-btn" data-helpful="no" aria-label="Not helpful">👎</button><span class="tutor-helpful-thanks" hidden>Asante — feedback saved.</span></div>'}function attachTutorHelpful(e,t){if(e){var n=document.createElement("div");n.innerHTML=renderTutorHelpfulRating();var a=n.firstElementChild;a&&(a.addEventListener("click",function(e){var n=e.target&&e.target.closest&&e.target.closest("[data-helpful]");if(n&&!a.dataset.answered){a.dataset.answered="1";try{var s="casuya_ai_feedback",o=JSON.parse(sessionStorage.getItem(s)||"[]");o.push({helpful:"yes"===n.getAttribute("data-helpful"),source:t&&t.source||"unknown",at:Date.now()}),sessionStorage.setItem(s,JSON.stringify(o.slice(-50)))}catch(e){}a.querySelectorAll(".tutor-helpful-btn").forEach(function(e){e.disabled=!0});var i=a.querySelector(".tutor-helpful-thanks");i&&(i.hidden=!1)}}),e.appendChild(a))}}function buildTutorMessagesArray(e){return(e||[]).slice(-8).map(function(e){return{role:"user"===e.role?"user":"tutor",text:String(e.text||"").trim()}}).filter(function(e){return e.text})}function tutorHitLabel(e){return e?e.title?String(e.title):e.code?String(e.code):e.kind?String(e.kind):"Reference":"Reference"}function renderTutorSourceChips(e){return e&&e.length?'<div class="tutor-source-chips">'+e.slice(0,4).map(function(e){var t=tutorHitLabel(e),n=String(e.kind||e.doc_type||""),a=/exam|necta|marking/i.test(n+t)?"📄":"📘";return'<span class="tutor-source-chip" title="'+escapeHtml(t)+'">'+a+" "+escapeHtml(t.slice(0,56))+"</span>"}).join("")+"</div>":""}function scoreNectaFormat(e){e=String(e||"");var t=(/🌍|Context|Muktadha/i.test(e)?1:0)+(/NECTA|Exam(?:ination)? Tip|Kidokezo cha NECTA|uchaguzi/i.test(e)?1:0)+(/^#{1,3}\s|^\*\*|^>\s/m.test(e)?1:0);return t>=2?"complete":t>=1?"partial":"none"}function renderFormatQualityChip(e){var t=scoreNectaFormat(e);return"complete"===t?'<span class="tutor-format-chip tutor-format-complete" title="Answer follows NECTA tutor format">✓ Exam-ready format</span>':"partial"===t?'<span class="tutor-format-chip tutor-format-partial" title="Partial NECTA structure">~ Partial format</span>':""}function renderTutorFooter(e,t){e=e||{};var n=t?renderFormatQualityChip(t):"";return renderTutorSourceChips(e.kbHits)+n+renderAiSourceBadge(e.source)}function buildTutorThreadQuestion(e,t){t=String(t||"").trim();var n=[];return(e||[]).forEach(function(e){"user"===e.role&&e.text?n.push({q:e.text,a:""}):"tutor"===e.role&&e.text&&n.length&&(n[n.length-1].a=String(e.text).slice(0,600))}),(n=n.slice(-4)).length?n.map(function(e,t){return"PREVIOUS Q"+(t+1)+": "+e.q+(e.a?"\nPREVIOUS A"+(t+1)+": "+e.a:"")}).join("\n\n")+"\n\nFOLLOW-UP QUESTION:\n"+t+"\n\n[Continue the tutoring conversation. Reference prior answers when helpful.]":t}function attachTutorListen(e,t){function n(){if("function"==typeof casuyaAttachListen){var n="string"==typeof e?document.querySelector(e):e;n&&casuyaAttachListen(n,{title:t.title||"Listen",textProvider:t.textProvider||function(){return""}})}}t=t||{},e&&("function"==typeof ensureSpeechBundle?ensureSpeechBundle().then(n).catch(function(){}):n())}function runAiGenerateTask(e){var t=(e=e||{}).container;return t?(t.innerHTML=renderTutorThinking(e.loadingLabel||"Working..."),request(e.path,{method:"POST",body:JSON.stringify(e.body||{})}).then(function(n){var a="function"==typeof e.render?e.render(n):"",s="";if(e.skipAutoFooter||"function"!=typeof renderAiResultFooter||(s=renderAiResultFooter(n)),t.innerHTML=a+(s?'<div class="tutor-response-footer">'+s+"</div>":""),scheduleTutorMath(t),e.listenTitle){var o=document.createElement("span");o.className="casuya-ai-listen-slot",t.appendChild(o),attachTutorListen(o,{title:e.listenTitle,textProvider:function(){return t.innerText}})}return"function"==typeof e.onComplete&&e.onComplete(n),n}).catch(function(n){throw t.innerHTML='<p style="color:var(--color-danger)">Error: '+escapeHtml(n.message||"Failed")+"</p>","function"==typeof e.onError&&e.onError(n),n})):Promise.reject(new Error("no container"))}function stripHtmlForContext(e,t){if(t=t||2e3,!e)return"";var n=String(e).replace(/<script[\s\S]*?<\/script>/gi," ").replace(/<style[\s\S]*?<\/style>/gi," ").replace(/<[^>]+>/g," ").replace(/\s+/g," ").trim();return n.length>t&&(n=n.slice(0,t)+"…"),n}function inferSubjectSlug(e){var t=String(e||"").toLowerCase();return/chem|acid|molecule|element|compound|reaction|atom/.test(t)?"chemistry":/phys|force|energy|velocity|electric|wave|motion|newton/.test(t)?"physics":/math|equation|algebra|geometry|number|fraction|graph|calculus/.test(t)?"mathematics":""}function inferFormLevel(e){var t=String(e||"").match(/form\s*([ivx]+|\d+)/i);if(!t)return null;var n=t[1].toUpperCase(),a={I:1,II:2,III:3,IV:4,V:5,VI:6};if(a[n])return a[n];var s=parseInt(n,10);return s>=1&&s<=6?s:null}function studentFormLevelNumber(){try{var e=localStorage.getItem("casuya_form_filter")||"";if(!e||"all"===e){var t=window.__casuyaStudentPayload;t&&t.form_level&&(e=t.form_level)}return inferFormLevel(e)||2}catch(e){return 2}}function tutorThreadStorageKey(e){var t=(e=e||{}).lesson||{},n=t.id||t.slug||e.lessonId||"lesson";return"casuya_ai_thread_"+String(n)}function loadTutorThread(e){try{var t=sessionStorage.getItem(e);return t?JSON.parse(t):[]}catch(e){return[]}}function saveTutorThread(e,t){try{sessionStorage.setItem(e,JSON.stringify((t||[]).slice(-8)))}catch(e){}}function buildQuizLessonContent(e){return(e||[]).map(function(e,t){var n=e.text||e.prompt||"",a=(e.options||[]).map(function(e){return(e.letter||"")+") "+(e.text||"")}).join("; ");return"Q"+(t+1)+": "+n+(a?" Options: "+a:"")}).join("\n")}function finishTutorSurface(e,t,n,a){if("function"==typeof(a=a||{}).onComplete&&a.onComplete(t||{},n||""),a.listenTitle||a.listenSlot){var s=a.listenSlot;s&&s.parentNode||((s=document.createElement("span")).className="casuya-ai-listen-slot",e&&e.appendChild(s)),attachTutorListen(s,{title:a.listenTitle||"Listen",textProvider:function(){return e?e.innerText:""}})}}function buildLessonTutorPayload(e){e=e||{};var t=String(e.question||"").trim(),n=e.lesson||{},a=e.lessonContent||"",s=e.iframeText||"",o=stripHtmlForContext(a||s,2e3),i=n.title||"Lesson",r=["Lesson: "+i];e.subtopic&&r.push("Subtopic: "+e.subtopic),e.topic&&r.push("Topic: "+e.topic),o&&r.push("Content excerpt: "+o);var l=e.language||localStorage.getItem("casuya_tutor_lang")||"both";"sw"===l?t="[Respond in Kiswahili using TIE syllabus terminology.]\n\n"+t:"en"===l&&(t="[Respond in English using TIE syllabus terminology.]\n\n"+t);var c=e.subject_slug||inferSubjectSlug(i+" "+o)||void 0,d=e.form_level||inferFormLevel(i+" "+(e.subtopic||""))||studentFormLevelNumber();e.lessonId&&r.unshift("Lesson ID: "+e.lessonId);var u=r.join("\n");return u.length>4e3&&(u=u.slice(0,4e3)+"…"),{question:t,lesson_context:u,lesson_id:e.lessonId||n.id||void 0,subject_slug:c,form_level:d,messages:e.messages||void 0,language:l,mode:e.mode||void 0}}function bindTutorMarkdownInteractions(e){e&&e.querySelectorAll(".tutor-marking-toggle").forEach(function(e){e._tutorBound||(e._tutorBound=!0,e.addEventListener("click",function(){var t=e.nextElementSibling;t&&(t.hidden=!t.hidden,e.textContent=t.hidden?"Show Marking Scheme":"Hide Marking Scheme")}))})}function scheduleTutorMath(e){e&&"function"==typeof window.renderMath&&(e._tutorMathTimer&&clearTimeout(e._tutorMathTimer),e._tutorMathTimer=setTimeout(function(){window.renderMath(e)},180))}function runTutorQuery(e,t){var n=(t=t||{}).container;if(!n)return null;var a="";function s(e,a){n.innerHTML='<div class="tutor-response">'+renderTutorMarkdown(a||"")+'</div><div class="tutor-response-footer">'+renderTutorFooter(e||{},a||"")+"</div>",bindTutorMarkdownInteractions(n),scheduleTutorMath(n),finishTutorSurface(n,e,a,t)}function o(t,n){if("function"==typeof putTutorQaCache&&"function"==typeof tutorQaCacheKey){var a=t&&t.source;"casuya-ai"!==a&&"cached"!==a||n&&String(n).trim()&&putTutorQaCache(tutorQaCacheKey(e),{response:n,kbHits:t&&t.kbHits||[],formatComplete:t&&t.formatComplete,formatLevel:t&&t.formatLevel,source:a})}}function i(){return"function"!=typeof streamTutorResponse?request("/ai/tutoring/explain",{method:"POST",body:JSON.stringify(e)}).then(function(e){var t=e&&e.response?e.response:"";if(!t)throw new Error("empty");o(e,t),s(e,t)}).catch(function(){"function"!=typeof enqueueTutorQuestion||"undefined"==typeof navigator||navigator.onLine?n.innerHTML='<div class="tutor-fallback">'+escapeHtml(t.errorMessage||"The AI tutor is temporarily unavailable.")+"</div>":enqueueTutorQuestion(e,t).then(function(e){n.innerHTML=e?'<div class="tutor-fallback">Saved offline — will sync when you are back online.</div>':'<div class="tutor-fallback">'+escapeHtml(t.errorMessage||"The AI tutor is temporarily unavailable.")+"</div>"}),"function"==typeof t.onError&&t.onError()}):streamTutorResponse(e,function(e){a+=e,n.innerHTML='<div class="tutor-response">'+renderTutorMarkdown(a)+"</div>",bindTutorMarkdownInteractions(n),scheduleTutorMath(n)},function(e){var s=document.createElement("div");s.className="tutor-response-footer",s.innerHTML=renderTutorFooter(e||{},a),n.appendChild(s),scheduleTutorMath(n),o(e,a),finishTutorSurface(n,e,a,t)},function(){request("/ai/tutoring/explain",{method:"POST",body:JSON.stringify(e)}).then(function(e){var t=e&&e.response?e.response:"";if(!t)throw new Error("empty");o(e,t),s(e,t)}).catch(function(){"function"!=typeof enqueueTutorQuestion||"undefined"==typeof navigator||navigator.onLine?n.innerHTML='<div class="tutor-fallback">'+escapeHtml(t.errorMessage||"The AI tutor could not be reached.")+"</div>":enqueueTutorQuestion(e,t).then(function(e){n.innerHTML=e?'<div class="tutor-fallback">Saved offline — will sync when you are back online.</div>':'<div class="tutor-fallback">'+escapeHtml(t.errorMessage||"The AI tutor could not be reached.")+"</div>"}),"function"==typeof t.onError&&t.onError()})})}return"function"==typeof window.ensureKaTeX&&window.ensureKaTeX().catch(function(){}),n.innerHTML=renderTutorStreamingSkeleton()+renderTutorThinking(t.loadingLabel||"Thinking..."),"function"==typeof getTutorQaCache&&"function"==typeof tutorQaCacheKey?(getTutorQaCache(tutorQaCacheKey(e)).then(function(e){e&&e.response?s({source:"local-cache",kbHits:e.kbHits||[],formatComplete:e.formatComplete,formatLevel:e.formatLevel||"none"},e.response):i()}).catch(function(){i()}),null):"function"!=typeof streamTutorResponse?(request("/ai/tutoring/explain",{method:"POST",body:JSON.stringify(e)}).then(function(e){var t=e&&e.response?e.response:"";if(!t)throw new Error("empty");s(e,t)}).catch(function(){n.innerHTML='<div class="tutor-fallback">'+escapeHtml(t.errorMessage||"The AI tutor is temporarily unavailable.")+"</div>","function"==typeof t.onError&&t.onError()}),null):i()}function buildLessonQuizTutorQuestion(e){var t=[];return(e||[]).forEach(function(e,n){t.push("QUESTION "+(n+1)+": "+(e.prompt||"")+"\n- Student answered: "+(e.chosen_text||"(unanswered)")+"\n- Correct answer: "+(e.correct_text||""))}),"A student answered the following lesson quiz questions incorrectly. Explain in simple step-by-step language how to reach the correct answer for each one. Do not just repeat the correct option — show the method and encourage the student.\n\n"+t.join("\n\n")}function mountLessonQuizTutor(e,t,n){if(e&&t&&t.length){var a=e.parentNode&&e.parentNode.querySelector(".quiz-tutor");a&&a.remove();var s="lesson-quiz-tutor-"+Date.now(),o='<div class="quiz-tutor" id="'+s+'"><div class="quiz-tutor-header"><span class="quiz-tutor-icon">🎓</span><div><div class="quiz-tutor-title">Let’s Learn: Step-by-Step</div><div class="quiz-tutor-sub">The AI tutor will explain the '+(t.length+" question"+(t.length>1?"s":""))+' you got wrong.</div></div></div><div class="quiz-tutor-body"></div></div>';if(e.insertAdjacentHTML)e.insertAdjacentHTML("afterend",o);else if(e.parentNode){var i=document.createElement("div");for(i.innerHTML=o;i.firstChild;)e.parentNode.insertBefore(i.firstChild,e.nextSibling)}var r=document.getElementById(s)?.querySelector(".quiz-tutor-body");if(r){var l=n&&n.lesson||{title:n&&n.lessonTitle||"Lesson quiz"};n&&n.lessonId&&!l.id&&(l.id=n.lessonId),runTutorQuery(buildLessonTutorPayload({question:buildLessonQuizTutorQuestion(t),lesson:l,lessonId:n&&n.lessonId||l.id,lessonContent:n&&n.lessonContent,iframeText:n&&n.iframeText,subject_slug:n&&n.subject_slug||l.subject_slug,form_level:n&&n.form_level||l.form_level}),{container:r,loadingLabel:"Explaining the correct method…",errorMessage:"The AI tutor is temporarily unavailable. Review the lesson or ask your teacher.",listenTitle:"Listen to explanation"})}}}function renderAiResultFooter(e,t){return renderTutorFooter(e||{},t)}function _tutorWrongQuestions(e,t,n){var a=_quizExtractData(e);if(a&&a.questions&&n.length){var s="",o="",i=(a.meta||"").match(/^([A-Za-z ]+)\s*(\u2022)?\s*Form\s*([IVX]+)/i);if(i){var r={mathematics:"mathematics",math:"mathematics",chemistry:"chemistry",physics:"physics"}[i[1].trim().toLowerCase()];r&&(s=r);var l=i[3];o="I"===l?"1":"II"===l?"2":"III"===l?"3":"4"}var c=[];n.forEach(function(e){var t=a.questions[e];if(t){var n=null;t.options&&t.options.forEach(function(e){e.letter===t.correct&&(n=e.text)});var s=n||"(question left unanswered)";c.push("QUESTION "+(e+1)+": "+(t.text||"")+"\n- Options: "+(t.options||[]).map(function(e){return e.letter+") "+e.text}).join("; ")+"\n- The student answered: "+s+"\n- The correct answer is: "+t.correct)}});var d="A student answered the following questions incorrectly. Please explain, in simple step-by-step language a secondary school student will understand, EXACTLY how to arrive at the correct answer for each one. Do not just repeat the correct letter — show the working/method step by step, call out any common mistake the student likely made, and keep the tone encouraging.\n\n"+c.join("\n\n"),u=document.getElementById(e+"-score");if(u){var m='<div class="quiz-tutor" id="'+e+'-tutor"><div class="quiz-tutor-header"><span class="quiz-tutor-icon">🎓</span><div><div class="quiz-tutor-title">Let’s Learn: Step-by-Step</div><div class="quiz-tutor-sub">The AI tutor will show you exactly how to solve the '+n.length+" question"+(n.length>1?"s":"")+' you got wrong.</div></div></div><div class="quiz-tutor-body"><div class="tutor-loading"><span class="spinner"></span> Explaining the correct method…</div></div></div>';if(u.insertAdjacentHTML)u.insertAdjacentHTML("afterend",m);else if(u.parentNode){var p=document.createElement("div");for(p.innerHTML=m;p.firstChild;)u.parentNode.insertBefore(p.firstChild,u.nextSibling)}var y=document.getElementById(e+"-tutor").querySelector(".quiz-tutor-body"),g=document.getElementById(e),v=g&&g.getAttribute("data-lesson-id"),f=window.__casuyaQuizLessonMeta||{};runTutorQuery(buildLessonTutorPayload({question:d,lesson:{title:a.topic||a.meta||f.title||"Quiz",id:v||f.lessonId},lessonId:v||f.lessonId,lessonContent:"function"==typeof buildQuizLessonContent?buildQuizLessonContent(a.questions):"",subject_slug:s||f.subject_slug||void 0,form_level:o?Number(o):f.form_level||void 0,topic:a.topic||f.topic||"",subtopic:f.subtopic||""}),{container:y,loadingLabel:"Explaining the correct method…",errorMessage:"The AI tutor is temporarily unavailable. Please review the explanations above or ask your teacher for help.",listenTitle:"Listen to explanation"})}}}function _quizExtractData(e){var t=document.getElementById(e);if(!t)return null;var n,a,s,o,i,r,l,c,d=t.querySelector(".quiz-badge"),u=t.querySelector(".quiz-topic"),m=d?d.textContent.trim():"",p=u?u.textContent.replace("Topic:","").trim():"",y=[],g=t.querySelectorAll(".quiz-question");for(n=0;n<g.length;n++){s=(a=g[n]).querySelector(".quiz-question-text"),o=a.querySelectorAll(".quiz-option");var v=[];for(i=0;i<o.length;i++)l=(r=o[i]).getAttribute("data-letter"),c=r.querySelector("span:last-child"),v.push({letter:l,text:c?c.textContent.trim():""});var f=a.querySelector(".quiz-explanation"),h=f?f.textContent.replace("Explanation:","").trim():"";y.push({num:n+1,text:s?s.textContent.trim():"",options:v,correct:a.getAttribute("data-correct")||"",explanation:h})}return{meta:m,topic:p,questions:y}}function _quizTriggerDownload(e,t){var n=URL.createObjectURL(e),a=document.createElement("a");a.href=n,a.download=t,document.body.appendChild(a),a.click(),document.body.removeChild(a),setTimeout(function(){URL.revokeObjectURL(n)},1e3)}function renderLogin(){render("#app",'\n    <div class="page login-page">\n      <div class="login-card">\n        <h1>Casuya Platform</h1>\n        <p>Sign in to continue</p>\n        <form id="login-form">\n          <input type="text" id="email" placeholder="Email" required />\n          <input type="password" id="password" placeholder="Password" required />\n          <button type="submit">Sign In</button>\n          <p class="error" id="login-error" style="display:none"></p>\n        </form>\n      </div>\n    </div>\n  '),document.getElementById("login-form").addEventListener("submit",handleLogin)}async function handleLogin(e){e.preventDefault();const t=document.getElementById("login-error");t.style.display="none";const n=document.getElementById("email").value,a=document.getElementById("password").value;try{const e=await request("/auth/login",{method:"POST",body:JSON.stringify({email:n,password:a})});e&&e.access_token?(localStorage.setItem("casuya_token",e.access_token),e.refresh_token&&localStorage.setItem("casuya_refresh_token",e.refresh_token),e.role&&localStorage.setItem("casuya_role",e.role),renderApp()):(t.textContent=e?.detail||"Login failed",t.style.display="block")}catch(e){t.textContent=e.message,t.style.display="block"}}function handleLogout(){"function"==typeof clearRequestCaches&&clearRequestCaches(),localStorage.removeItem("casuya_token"),window.location.href="/index.html#features"}"undefined"!=typeof window&&(window.enqueueTutorQuestion=enqueueTutorQuestion,window.syncTutorQueue=syncTutorQueue,window.addEventListener("online",function(){syncTutorQueue()})),window.renderTutorThinking=renderTutorThinking,window.renderTutorSourceChips=renderTutorSourceChips,window.renderTutorFooter=renderTutorFooter,window.renderFormatQualityChip=renderFormatQualityChip,window.renderAiResultFooter=renderAiResultFooter,window.buildLessonTutorPayload=buildLessonTutorPayload,window.buildQuizLessonContent=buildQuizLessonContent,window.buildTutorThreadQuestion=buildTutorThreadQuestion,window.buildTutorMessagesArray=buildTutorMessagesArray,window.attachTutorFollowUp=attachTutorFollowUp,window.attachTutorHelpful=attachTutorHelpful,window.renderTutorStreamingSkeleton=renderTutorStreamingSkeleton,window.tutorThreadStorageKey=tutorThreadStorageKey,window.loadTutorThread=loadTutorThread,window.saveTutorThread=saveTutorThread,window.buildLessonQuizTutorQuestion=buildLessonQuizTutorQuestion,window.mountLessonQuizTutor=mountLessonQuizTutor,window.runTutorQuery=runTutorQuery,window.runAiGenerateTask=runAiGenerateTask,window.attachTutorListen=attachTutorListen,window.renderMath=function(e){e&&window.ensureKaTeX().then(function(){if("function"==typeof window.renderMathInElement)try{window.renderMathInElement(e,{delimiters:[{left:"\\[",right:"\\]",display:!0},{left:"\\(",right:"\\)",display:!1},{left:"$$",right:"$$",display:!0},{left:"$",right:"$",display:!1}],throwOnError:!1})}catch(e){}})},window._quizSubmit=function(e,t){var n,a,s,o,i,r,l,c,d,u,m,p,y=0,g=[];for(n=0;n<t;n++)if(a=document.querySelector("#"+e+' .quiz-question[data-index="'+n+'"]')){s=a.getAttribute("data-correct"),i=(o=document.querySelector('input[name="'+e+"-q"+n+'"]:checked'))?o.value:null;var v,f,h,b=a.querySelectorAll(".quiz-option");for(v=0;v<b.length;v++)h=(f=b[v]).getAttribute("data-letter"),f.style.pointerEvents="none",h===s?f.classList.add("correct"):h===i&&h!==s&&f.classList.add("incorrect");i===s&&y++,i!==s&&g.push(n),(r=document.getElementById(e+"-exp-"+n))&&r.classList.add("visible")}l=document.getElementById(e+"-score"),c=document.getElementById(e+"-score-num"),d=document.getElementById(e+"-score-label"),l&&c&&d&&(c.textContent=y+" / "+t,m=(u=Math.round(y/t*100))>=80?"Excellent! Keep it up!":u>=50?"Good effort! Review the explanations.":"Keep practicing. Review the explanations below.",d.textContent=u+"% — "+m,l.classList.add("visible")),(p=document.querySelector("#"+e+" .quiz-submit-all"))&&(p.style.display="none"),g.length&&_tutorWrongQuestions(e,t,g)},window._quizDownloadWord=function(e){var t=_quizExtractData(e);if(t&&t.questions.length){var n,a,s,o,i="<html xmlns:o='urn:schemas-microsoft-com:office:office' xmlns:w='urn:schemas-microsoft-com:office:word' xmlns='http://www.w3.org/TR/REC-html40'>";for(i+="<head><meta charset='utf-8'><title>Quiz</title>",i+="<style>body{font-family:Arial,sans-serif;margin:40px;line-height:1.6}h1{color:#1e3a8a;font-size:20px}h2{color:#333;font-size:15px;margin-top:24px}.q{margin-bottom:16px}.q-text{font-weight:bold;font-size:13px}.opt{margin:4px 0 4px 20px;font-size:12px}.correct{color:#16a34a;font-weight:bold}.exp{color:#555;font-size:11px;margin-left:20px;border-left:3px solid #16a34a;padding-left:8px;margin-top:4px}.meta{color:#666;font-size:12px;margin-bottom:16px}</style></head><body>",i+="<h1>Quiz Questions</h1>",i+="<div class='meta'>"+t.meta,t.topic&&(i+=" &bull; Topic: "+t.topic),i+="</div>",n=0;n<t.questions.length;n++){for(i+="<div class='q'>",i+="<div class='q-text'>"+(a=t.questions[n]).num+". "+a.text+"</div>",s=0;s<a.options.length;s++)i+="<div class='opt'>"+(o=a.options[s]).letter+". "+o.text+"</div>";i+="<div class='exp'><strong>Answer:</strong> "+a.correct+"</div>",a.explanation&&(i+="<div class='exp'>"+a.explanation+"</div>"),i+="</div>"}i+="</body></html>",_quizTriggerDownload(new Blob(["\ufeff"+i],{type:"application/msword"}),"quiz-questions.doc")}},window._quizDownloadPdf=function(e){var t=_quizExtractData(e);if(t&&t.questions.length){var n,a,s,o,i="<!DOCTYPE html><html><head><meta charset='utf-8'><title>Quiz</title>";for(i+="<style>body{font-family:Arial,sans-serif;margin:40px;line-height:1.5;color:#111}h1{color:#1e3a8a;font-size:22px;border-bottom:2px solid #1e3a8a;padding-bottom:8px}h2{color:#333;font-size:14px;margin-top:20px}.meta{color:#555;font-size:12px;margin-bottom:16px;padding:8px;background:#f3f4f6;border-radius:6px}.q{margin-bottom:20px;page-break-inside:avoid}.q-text{font-weight:bold;font-size:13px;margin-bottom:4px}.opt{margin:3px 0 3px 24px;font-size:12px}.correct{color:#16a34a;font-weight:bold}.exp{color:#444;font-size:11px;margin-left:24px;border-left:3px solid #16a34a;padding-left:8px;margin-top:4px}@media print{body{margin:20px}.q{page-break-inside:avoid}}</style></head><body>",i+="<h1>Quiz Questions</h1>",i+="<div class='meta'>"+t.meta,t.topic&&(i+=" &bull; Topic: "+t.topic),i+="</div>",n=0;n<t.questions.length;n++){for(i+="<div class='q'>",i+="<div class='q-text'>"+(a=t.questions[n]).num+". "+a.text+"</div>",s=0;s<a.options.length;s++)i+="<div class='opt'>"+(o=a.options[s]).letter+". "+o.text+"</div>";i+="<div class='exp'><strong>Answer:</strong> "+a.correct+"</div>",a.explanation&&(i+="<div class='exp'>"+a.explanation+"</div>"),i+="</div>"}i+="</body></html>";var r=window.open("","_blank");r&&(r.document.write(i),r.document.close(),setTimeout(function(){r.print()},400))}};const THEME_KEY="casuya_theme",FONT_KEY="casuya_font_scale";function applyAppearance(){const e=localStorage.getItem(THEME_KEY)||"light",t=parseFloat(localStorage.getItem(FONT_KEY)||"100")/100||1;document.documentElement.setAttribute("data-theme",e),document.documentElement.style.setProperty("--app-font-scale",String(t))}function appearancePanelHTML(){const e=localStorage.getItem(THEME_KEY)||"light",t=parseInt(localStorage.getItem(FONT_KEY)||"100",10),n=(t,n)=>`<button type="button" class="btn appearance-theme-btn" data-theme-val="${t}" style="flex:1${e===t?";background:var(--color-primary);color:#fff":""}">${n}</button>`;return`\n    <div class="card" style="padding:1.5rem">\n      <h3 style="margin-bottom:0.75rem">Appearance</h3>\n      <div style="display:flex;flex-direction:column;gap:1.25rem">\n        <div>\n          <label style="font-size:0.85rem;font-weight:500;display:block;margin-bottom:0.5rem">Theme</label>\n          <div style="display:flex;gap:0.5rem">\n            ${n("light","☀️ Light")}\n            ${n("dark","🌙 Dark")}\n            ${n("black","⚫ Black")}\n          </div>\n        </div>\n        <div>\n          <label style="font-size:0.85rem;font-weight:500;display:block;margin-bottom:0.5rem">Font Size: <span id="font-scale-val">${t}%</span></label>\n          <input id="font-scale-slider" type="range" min="80" max="150" step="5" value="${t}" style="width:100%">\n          <p style="font-size:0.75rem;color:var(--color-text-muted);margin-top:0.4rem">Drag to make text larger or smaller across the app.</p>\n        </div>\n      </div>\n      <p id="appearance-msg" style="font-size:0.85rem;margin-top:1rem;display:none"></p>\n    </div>\n  `}function setupAppearanceControls(){const e=document.getElementById("appearance-msg");document.querySelectorAll(".appearance-theme-btn").forEach(t=>{t.addEventListener("click",()=>{const n=t.dataset.themeVal;localStorage.setItem(THEME_KEY,n),applyAppearance(),document.querySelectorAll(".appearance-theme-btn").forEach(e=>{e.style.background="",e.style.color=""}),t.style.background="var(--color-primary)",t.style.color="#fff",e&&(e.textContent="✅ Theme updated",e.style.color="var(--color-success)",e.style.display="block",setTimeout(()=>e.style.display="none",2e3))})});const t=document.getElementById("font-scale-slider"),n=document.getElementById("font-scale-val");t&&(t.addEventListener("input",()=>{const e=t.value;localStorage.setItem(FONT_KEY,e),applyAppearance(),n&&(n.textContent=e+"%")}),t.addEventListener("change",()=>{e&&(e.textContent="✅ Font size saved",e.style.color="var(--color-success)",e.style.display="block",setTimeout(()=>e.style.display="none",2e3))}))}const LESSON_BRIDGE_SCRIPT="\n<script>\n(function(){\n  var scoreReported = false;\n  window.casuya = window.casuya || {};\n  window.casuya.reportScore = function(score, total) {\n    parent.postMessage({type:'casuya-quiz', score:score, total:total}, '*');\n    scoreReported = true;\n  };\n  window.casuya.reportProgress = function(pct) {\n    parent.postMessage({type:'casuya-progress', percent:pct}, '*');\n  };\n  function detectScore() {\n    if (scoreReported) return;\n    var candidates = document.querySelectorAll('.score-big, .quiz-score, .final-score, .result-score, [class*=score]');\n    for (var i = 0; i < candidates.length; i++) {\n      var text = (candidates[i].textContent || '').trim();\n      var m = text.match(/(d+)s*/s*(d+)/);\n      if (m) {\n        var s = parseInt(m[1]), t = parseInt(m[2]);\n        if (t > 0 && s <= t) {\n          parent.postMessage({type:'casuya-quiz', score:s, total:t}, '*');\n          scoreReported = true;\n          return;\n        }\n      }\n    }\n  }\n  function upgradeAdaptiveVideos(root) {\n    var videos = root.querySelectorAll('video');\n    for (var i = 0; i < videos.length; i++) {\n      (function (v) {\n        var src = v.getAttribute('src') || '';\n        // Only act on HLS manifests; plain mp4/webm stay as-is (P1-5).\n        if (!/.m3u8(?|$)/.test(src)) return;\n        if (v.dataset.casuyaHls) return;\n        v.dataset.casuyaHls = '1';\n        v.setAttribute('preload', v.getAttribute('preload') || 'none');\n        // Native HLS (Safari / iOS) needs no library.\n        if (v.canPlayType('application/vnd.apple.mpegurl')) return;\n        function attach(Hls) {\n          if (!Hls || !Hls.isSupported()) return;\n          var hls = new Hls({ maxBufferLength: 10, capLevelToPlayerSize: true, startLevel: -1 });\n          hls.loadSource(src);\n          hls.attachMedia(v);\n        }\n        if (window.Hls) { attach(window.Hls); return; }\n        // Lazy-load the vendored hls.js only when actually needed (no-op if absent).\n        var s = document.createElement('script');\n        s.src = '/static/lib/hls.min.js';\n        s.onload = function () { attach(window.Hls); };\n        document.head.appendChild(s);\n      })(videos[i]);\n    }\n  }\n  function trackVideos(root) {\n    var videos = root.querySelectorAll('video');\n    for (var i = 0; i < videos.length; i++) {\n      (function(v) {\n        if (v.dataset.casuyaTracked) return;\n        v.dataset.casuyaTracked = '1';\n        var maxPct = 0;\n        v.addEventListener('timeupdate', function() {\n          if (v.duration) { var pct = Math.round((v.currentTime / v.duration) * 100); if (pct > maxPct) maxPct = pct; }\n        });\n        v.addEventListener('ended', function() { parent.postMessage({type:'casuya-video', percent:100}, '*'); });\n        var _iv = setInterval(function() { if (maxPct > 0) parent.postMessage({type:'casuya-progress', percent:Math.min(maxPct + 10, 100)}, '*'); }, 5000);\n        window.casuya._intervals = window.casuya._intervals || [];\n        window.casuya._intervals.push(_iv);\n      })(videos[i]);\n    }\n  }\n  function postSelectionExplain() {\n    var sel = window.getSelection();\n    var text = sel ? String(sel.toString() || '').trim() : '';\n    if (text.length < 8 || text.length > 500) return;\n    var anchor = sel && sel.anchorNode;\n    var el = anchor && anchor.nodeType === 3 ? anchor.parentElement : anchor;\n    var block = el && el.closest ? el.closest('p, li, h1, h2, h3, h4, td, blockquote, section, article') : null;\n    var surrounding = block ? String(block.textContent || '').trim().slice(0, 800) : '';\n    parent.postMessage({\n      type: 'casuya-selection',\n      selected: text,\n      context: surrounding\n    }, '*');\n  }\n  function initBridge() {\n    if (!document.body) { setTimeout(initBridge, 100); return; }\n    upgradeAdaptiveVideos(document.body);\n    trackVideos(document.body);\n    detectScore();\n    document.addEventListener('mouseup', function() { setTimeout(postSelectionExplain, 120); });\n    document.addEventListener('keyup', function(e) {\n      if (e.key === 'Shift' || e.key === 'Control' || e.key === 'Meta' || e.key === 'Alt') {\n        setTimeout(postSelectionExplain, 120);\n      }\n    });\n    var obs = new MutationObserver(function() { detectScore(); upgradeAdaptiveVideos(document.body); trackVideos(document.body); });\n    obs.observe(document.body, {childList:true, subtree:true});\n  }\n  if (document.readyState === 'loading') document.addEventListener('DOMContentLoaded', initBridge);\n  else initBridge();\n})();\n<\/script>";function renderLessonQuiz(e,t,n){if(!e||!e.questions||0===e.questions.length)return"";const a=n||"sw";return`\n    <div class="card question-block" data-lesson-lang="${escapeHtml(a)}" style="margin-top:1rem;padding:1rem">\n      <h3 style="margin:0 0 0.75rem">${escapeHtml(e.title||"Quiz")}</h3>\n      <form id="quiz-form">\n        ${e.questions.map((e,n)=>`\n          <div class="quiz-item" data-question style="margin-bottom:1rem">\n            <p style="font-weight:600;margin:0 0 0.5rem">${n+1}. ${escapeHtml(e.prompt)} <button type="button" class="casuya-listen" data-lang="${escapeHtml(a)}" data-speak="${escapeHtml(String(e.prompt||"").slice(0,600))}" title="Listen to question" aria-label="Listen to question" style="vertical-align:middle">🔊 Listen</button></p>\n            ${e.options.map(t=>`\n              <label style="display:block;padding:0.3rem 0.5rem;cursor:pointer;border:1px solid var(--color-border);border-radius:var(--radius);margin-bottom:0.25rem">\n                <input type="radio" name="q_${escapeHtml(e.id)}" value="${escapeHtml(t.id)}" required> ${escapeHtml(t.text)}\n              </label>\n            `).join("")}\n            <details style="margin-top:0.5rem">\n              <summary style="cursor:pointer;font-size:0.85rem;color:var(--color-text-muted)">Show your work</summary>\n              <div data-blackboard data-lesson-id="${escapeHtml(t)}-${escapeHtml(e.id)}" data-quiz-question="${escapeHtml(e.id)}" style="width:100%;height:250px;border:1px solid var(--color-border);border-radius:var(--radius);overflow:hidden;margin-top:0.5rem"></div>\n            </details>\n          </div>\n        `).join("")}\n        <button type="submit" class="btn btn-primary" id="quiz-submit-btn">Submit Quiz</button>\n      </form>\n      <div id="quiz-result" style="display:none;margin-top:0.75rem"></div>\n    </div>\n  `}function renderLessonGames(e){return Array.isArray(e)&&0!==e.length?`\n    <div class="card" style="margin-top:1rem;padding:1rem">\n      <h3 style="margin:0 0 0.5rem">Games & Activities</h3>\n      ${e.map(e=>`\n        <div class="game-item" data-game-id="${escapeHtml(e.id)}" style="padding:0.5rem 0;border-bottom:1px solid var(--color-border);cursor:pointer">\n          <span style="color:var(--color-primary)">${escapeHtml(e.title||"Game")}</span>\n          <span style="color:var(--color-text-muted);font-size:0.8rem;margin-left:0.5rem">${escapeHtml(e.status||"draft")}</span>\n        </div>\n      `).join("")}\n      <div id="game-content-area" style="margin-top:1rem"></div>\n    </div>\n  `:""}var _casuyaLessonIdb=null,LESSON_IDB_NAME="casuya-lessons",LESSON_IDB_STORE="html",LESSON_IDB_MAX=30,LESSON_IDB_MAX_BYTES=15e5;function openLessonIdb(){return _casuyaLessonIdb||("undefined"==typeof indexedDB?Promise.resolve(null):_casuyaLessonIdb=new Promise(function(e){try{var t=indexedDB.open(LESSON_IDB_NAME,1);t.onupgradeneeded=function(){var e=t.result;e.objectStoreNames.contains(LESSON_IDB_STORE)||e.createObjectStore(LESSON_IDB_STORE,{keyPath:"id"})},t.onsuccess=function(){e(t.result)},t.onerror=function(){e(null)}}catch(t){e(null)}}))}function getIdbLessonContent(e){return e?openLessonIdb().then(function(t){return t?new Promise(function(n){try{var a=t.transaction(LESSON_IDB_STORE,"readonly").objectStore(LESSON_IDB_STORE).get(e);a.onsuccess=function(){var e=a.result;n(e&&e.html?e.html:null)},a.onerror=function(){n(null)}}catch(e){n(null)}}):null}):Promise.resolve(null)}function putIdbLessonContent(e,t,n){return!e||!t||t.length>LESSON_IDB_MAX_BYTES?Promise.resolve():openLessonIdb().then(function(a){if(a)return new Promise(function(s){try{var o=a.transaction(LESSON_IDB_STORE,"readwrite"),i=o.objectStore(LESSON_IDB_STORE),r=i.get(e);r.onsuccess=function(){var a=r.result,s=!!(n||a&&a.pinned);i.put({id:e,html:t,ts:Date.now(),pinned:s}),i.getAll().onsuccess=function(e){var t=e.target.result||[];if(!(t.length<=LESSON_IDB_MAX))for(var n=t.filter(function(e){return!e.pinned}).sort(function(e,t){return(e.ts||0)-(t.ts||0)}),a=t.length-LESSON_IDB_MAX,s=0;s<a&&s<n.length;s++)i.delete(n[s].id)}},o.oncomplete=function(){s()},o.onerror=function(){s()}}catch(e){s()}})})}function deleteIdbLessonContent(e){return e?openLessonIdb().then(function(t){if(t)return new Promise(function(n){try{var a=t.transaction(LESSON_IDB_STORE,"readwrite");a.objectStore(LESSON_IDB_STORE).delete(e),a.oncomplete=function(){n()},a.onerror=function(){n()}}catch(e){n()}})}):Promise.resolve()}function listIdbLessonIds(e){return openLessonIdb().then(function(t){return t?new Promise(function(n){try{var a=t.transaction(LESSON_IDB_STORE,"readonly").objectStore(LESSON_IDB_STORE).getAll();a.onsuccess=function(){var t=a.result||[];e&&(t=t.filter(function(e){return e&&e.pinned})),n(t.map(function(e){return e.id}).filter(Boolean))},a.onerror=function(){n([])}}catch(e){n([])}}):[]})}const lessonContentCache=new Map;function getCachedLessonContent(e){return lessonContentCache.get(e)||null}function lessonContentQuery(e){if(e)return"";try{var t=navigator.connection&&navigator.connection.effectiveType;if("slow-2g"===t||"2g"===t)return"?essential=1"}catch(e){}return""}function cacheLessonContent(e,t){if(lessonContentCache.set(e,t),lessonContentCache.size>50){const e=lessonContentCache.keys().next().value;lessonContentCache.delete(e)}t&&"function"==typeof putIdbLessonContent&&putIdbLessonContent(e,t)}function dropCachedLessonContent(e){lessonContentCache.delete(e)}function loadGameHtml(e){if(!e)return Promise.resolve("");var t="g:"+e,n=getCachedLessonContent(t);return n?Promise.resolve(n):("function"==typeof getIdbLessonContent?getIdbLessonContent(t):Promise.resolve(null)).then(function(n){return n?(lessonContentCache.set(t,n),n):fetch(`${API_BASE}/games/${e}/content`,{headers:{Authorization:`Bearer ${localStorage.getItem("casuya_token")}`}}).then(function(e){return e.ok?e.text():""}).then(function(e){return e&&cacheLessonContent(t,e),e}).catch(function(){return""})})}function loadLessonHtml(e,t){const n=getCachedLessonContent(e);if(n&&!t)return Promise.resolve(n);return(t||"function"!=typeof getIdbLessonContent?Promise.resolve(null):getIdbLessonContent(e)).then(function(n){return n?(lessonContentCache.set(e,n),n):fetch(`${API_BASE}/lessons/${e}/content${"function"==typeof lessonContentQuery?lessonContentQuery(t):""}`,{headers:{Authorization:`Bearer ${localStorage.getItem("casuya_token")}`}}).then(function(e){return e.ok?e.text():""}).then(function(t){return t&&cacheLessonContent(e,t),t}).catch(function(){return""})})}function injectBridgeScript(e){const t=LESSON_BRIDGE_SCRIPT,n=e.lastIndexOf("</body>");return-1!==n?e.slice(0,n)+t+e.slice(n):e.replace("</html>",t+"</html>")}!function(){if(document.getElementById("exam-paper-styles"))return;const e=document.createElement("style");e.id="exam-paper-styles",e.textContent=[".exam-paper{background:#fff;color:#1f2937;border:1px solid #d1d5db;border-radius:8px;padding:1.25rem 1.25rem 0.75rem;font-size:0.9rem;line-height:1.5}",".exam-cover{text-align:center;padding:0.75rem 0 0.9rem;border-bottom:2px solid #e5e7eb;margin-bottom:0.75rem}",".exam-country{letter-spacing:0.18em;font-weight:700;font-size:0.7rem;color:#374151}",".exam-label{font-size:1.05rem;font-weight:800;margin:0.25rem 0 0.15rem;text-decoration:underline}",".exam-subject{font-size:1.15rem;font-weight:800;text-transform:uppercase;letter-spacing:0.05em;margin-top:0.15rem}",".exam-meta{display:flex;flex-wrap:wrap;gap:0.5rem 1.5rem;justify-content:center;margin-top:0.45rem;font-size:0.85rem;color:#374151}",".exam-topic{margin-top:0.3rem;font-style:italic;font-size:0.85rem;color:#4b5563}",".exam-instr{background:#f3f4f6;border:1px solid #e5e7eb;border-radius:6px;padding:0.6rem 1rem 0.6rem 0.6rem;margin-bottom:1rem}",".exam-instr-title{font-weight:800;font-size:0.78rem;letter-spacing:0.12em;margin-bottom:0.25rem}",".exam-instr ol{margin:0 0 0 1.1rem;padding:0;font-size:0.85rem}",".exam-section{margin-bottom:1.1rem}",".exam-sec-head{display:flex;align-items:center;gap:0.65rem;border-bottom:2px solid #e5e7eb;padding-bottom:0.3rem;margin-bottom:0.4rem}",".exam-sec-id{color:#fff;font-weight:800;font-size:0.7rem;letter-spacing:0.08em;padding:0.15rem 0.6rem;border-radius:4px;white-space:nowrap}",".exam-sec-title{font-weight:800;font-size:0.85rem;letter-spacing:0.05em;flex:1}",".exam-sec-marks{font-size:0.78rem;color:#4b5563;white-space:nowrap}",".exam-sec-instr{font-size:0.82rem;color:#4b5563;margin-bottom:0.45rem;font-style:italic}",".exam-q{margin-bottom:0.7rem}",".exam-q-head{display:flex;gap:0.4rem;align-items:baseline}",".exam-q-no{font-weight:700;min-width:1.4rem}",".exam-q-text{flex:1;font-weight:500}",".exam-q-marks{color:#6b7280;font-size:0.8rem;white-space:nowrap}",".exam-opts{margin:0.3rem 0 0 1.8rem;display:flex;flex-direction:column;gap:0.15rem}",".exam-opts-static .exam-opt::before{content:'\\25CB';color:#6b7280;margin-right:0.45rem}",".exam-opt{display:flex;gap:0.45rem;align-items:flex-start;cursor:pointer;font-size:0.85rem;font-variant-numeric:tabular-nums}",".exam-opt input{margin-top:0.18rem}",".exam-answer-line{border-bottom:1px dotted #9ca3af;height:2.2rem;margin:0.25rem 0 0 1.8rem}",".exam-check{margin-top:0.6rem;border-top:1px dashed #d1d5db;padding-top:0.6rem;display:flex;gap:0.75rem;align-items:center;flex-wrap:wrap}",".exam-score{font-size:0.85rem}",".exam-score-good{color:#15803d;font-weight:600}"].join(""),document.head.appendChild(e)}();const EXAM_PAPER_COLORS={necta:"#0b3d91",internal:"#14532d",exercise:"#7c2d12"};function examKindLabel(e){const t=e&&e.kind;return e&&e.format_label?e.format_label:"necta"===t?"NECTA-STYLE EXAMINATION":"exercise"===t?"CLASS EXERCISE":"INTERNAL EXAMINATION"}function examPaperMetaLine(e){if(!e)return"";const t=[];e.subject&&t.push(escapeHtml(e.subject)),e.form_label&&t.push(escapeHtml(e.form_label));const n=(Array.isArray(e.sections)?e.sections:[]).reduce((e,t)=>e+(parseInt(t.count,10)||0),0);return n&&t.push(n+" questions"),null!=e.total_marks&&t.push(e.total_marks+" marks"),t.join(" • ")}function renderExamSection(e,t){const n=Array.isArray(e.questions)?e.questions:[],a=n.reduce((e,t)=>e+(parseInt(t.marks,10)||0),0);let s='<div class="exam-section"><div class="exam-sec-head"><span class="exam-sec-id" style="background:'+escapeHtml(t.color)+'">SECTION '+escapeHtml((e.id||"").trim())+'</span><span class="exam-sec-title">'+escapeHtml(e.title||"QUESTIONS")+'</span><span class="exam-sec-marks">'+a+" marks</span></div>";return e.instruction&&(s+='<div class="exam-sec-instr">'+escapeHtml(e.instruction)+"</div>"),s+=n.map(n=>renderExamQuestion(n,e.question_type,t)).join(""),s+="</div>",s}function renderExamQuestion(e,t,n){const a=parseInt(e.marks,10)||0,s="mcq"===t;let o='<div class="exam-q" data-q="'+escapeHtml(e.number)+'"><div class="exam-q-head"><span class="exam-q-no">'+escapeHtml(e.number)+'.</span><span class="exam-q-text">'+escapeHtml(e.text)+"</span>"+(a?'<span class="exam-q-marks">('+a+")</span>":"")+"</div>";if(s){const t=Array.isArray(e.options)?e.options:[];"student"===n.mode?o+='<div class="exam-opts">'+t.map((t,a)=>'<label class="exam-opt"><input type="radio" name="'+escapeHtml(n.ns+"-"+e.number)+'" value="'+a+'"><span>'+escapeHtml(t)+"</span></label>").join("")+"</div>":o+='<div class="exam-opts exam-opts-static">'+t.map(e=>'<div class="exam-opt">'+escapeHtml(e)+"</div>").join("")+"</div>"}else"student"===n.mode?o+='<div style="display:flex;gap:0.35rem;align-items:flex-start"><textarea class="exam-structured-answer" data-question="'+escapeHtml(e.number)+'" placeholder="Write your answer here..." style="flex:1;min-width:0;min-height:80px;padding:0.5rem;border:1px solid #d1d5db;border-radius:6px;font-family:inherit;font-size:0.9rem;resize:vertical;margin-top:0"></textarea><button type="button" class="casuya-record" data-human-speech-only="true" data-lang="auto" data-label="Speak your answer" title="Speak your answer" aria-label="Speak your answer" style="margin-top:0">🎤 Voice</button></div>':o+='<div class="exam-answer-line"></div>';return o+="</div>",o}function renderExamPaper(e,t){t=t||{};const n=e.header||{},a=Array.isArray(e.sections)?e.sections:[],s=t.mode||"preview",o=t.ns||"exam",i=EXAM_PAPER_COLORS[e.kind]||"#0b3d91",r=examKindLabel(e);let l='<div class="exam-paper">';l+='<div class="exam-cover" style="border-top:5px solid '+escapeHtml(i)+'"><div class="exam-country">UNITED REPUBLIC OF TANZANIA</div><div class="exam-label">'+escapeHtml(r)+"</div>"+(n.subject?'<div class="exam-subject">'+escapeHtml(n.subject)+"</div>":"")+'<div class="exam-meta">'+(n.form_label?"<span>Class: <b>"+escapeHtml(n.form_label)+"</b></span>":"")+(n.duration?"<span>Time Allowed: <b>"+escapeHtml(n.duration)+"</b></span>":"")+"<span>Total: <b>"+(null!=n.total_marks?parseInt(n.total_marks,10):0)+" marks</b></span></div>"+(n.topic?'<div class="exam-topic">Topic: '+escapeHtml(n.topic)+"</div>":"")+"</div>";const c=Array.isArray(n.instructions)?n.instructions:[];return c.length&&(l+='<div class="exam-instr"><div class="exam-instr-title">INSTRUCTIONS</div><ol>'+c.map(e=>"<li>"+escapeHtml(e)+"</li>").join("")+"</ol></div>"),l+=a.map(e=>renderExamSection(e,{mode:s,ns:o,color:i})).join(""),"student"===s&&(l+='<div class="exam-check"><button type="button" class="btn btn-sm btn-primary" data-exam-check data-exam-ns="'+escapeHtml(o)+'">Check Objective Answers</button><div data-exam-score class="exam-score"></div></div>'),l+="</div>",l}function bindExamScore(e,t){const n=e.querySelector("[data-exam-check]");if(!n)return;const a=e.querySelector("[data-exam-score]"),s=n.dataset.examNs||"exam";n.addEventListener("click",()=>{let n=0,o=0,i=0,r=0;(t.sections||[]).forEach(t=>{"mcq"===t.question_type&&(t.questions||[]).forEach(t=>{r+=1,o+=parseInt(t.marks,10)||1;const a=e.querySelector('input[name="'+s+"-"+t.number+'"]:checked');a&&parseInt(a.value,10)===t.answer&&(i+=1,n+=parseInt(t.marks,10)||1)})});const l=r?Math.round(i/r*100):0;a&&(a.innerHTML='<span class="exam-score-good">Objective answers: <b>'+i+"/"+r+" correct ("+n+"/"+o+" marks)</b> — "+l+"%</span>")})}var _casuyaScriptLoads=Object.create(null);function casuyaAssetUrl(e){if(!e)return e;var t=String(e).split("?")[0],n=window.CASUYA_ASSETS,a=n&&n[t];return a?t+"?v="+a:e}function loadCasuyaScript(e){return e=casuyaAssetUrl(e),_casuyaScriptLoads[e]||(_casuyaScriptLoads[e]=new Promise(function(t,n){var a=document.querySelector('script[src="'+e+'"]');if(a&&"1"===a.getAttribute("data-casuya-loaded"))t();else{var s=a||document.createElement("script");s.src=e,s.async=!0,s.onload=function(){s.setAttribute("data-casuya-loaded","1"),t()},s.onerror=function(){delete _casuyaScriptLoads[e],n(new Error("Failed to load "+e))},a||document.head.appendChild(s)}})),_casuyaScriptLoads[e]}function ensureSpeechBundle(){return"function"==typeof casuyaSpeakText?Promise.resolve():loadCasuyaScript("/assets/js/speech.bundle.js")}function resolveApiBase(){return"undefined"!=typeof window&&window.API_BASE?window.API_BASE:"undefined"!=typeof window&&window.casuyaApiBase?window.casuyaApiBase():window.location.origin}document.addEventListener("click",function(e){var t=e.target&&e.target.closest&&e.target.closest(".casuya-listen, .casuya-record");t&&"function"!=typeof casuyaSpeakText&&(e.preventDefault(),e.stopImmediatePropagation(),ensureSpeechBundle().then(function(){t.click()}).catch(function(){}))},!0),window.loadCasuyaScript=loadCasuyaScript,window.ensureSpeechBundle=ensureSpeechBundle,window.casuyaAssetUrl=casuyaAssetUrl;const STORAGE_KEYS={accessToken:"casuya_token",refreshToken:"casuya_refresh_token",userId:"casuya_user_id",role:"casuya_role"};function safeJsonParse(e){if(!e)return null;try{return JSON.parse(e)}catch{return null}}function buildApiUrl(e,t="GET"){const n=e.startsWith("/")?e:`/${e}`,[a,s=""]=n.split("?");return`${resolveApiBase()}${a}${s?`?${s}`:""}`}function getAuthHeaders(e={},t=!0){const n={...e},a=getAccessToken();return t&&!n["Content-Type"]&&(n["Content-Type"]="application/json"),a&&!n.Authorization&&(n.Authorization=`Bearer ${a}`),n}function getApiBase(){return resolveApiBase()}function getPortalPath(e){return"admin"===e?"/admin/":"teacher"===e?"/teacher/":"pending"===e?"/select-role.html":"/student/"}function getStoredAuth(){return{accessToken:localStorage.getItem(STORAGE_KEYS.accessToken),refreshToken:localStorage.getItem(STORAGE_KEYS.refreshToken),userId:localStorage.getItem(STORAGE_KEYS.userId),role:localStorage.getItem(STORAGE_KEYS.role)}}function getAccessToken(){return localStorage.getItem(STORAGE_KEYS.accessToken)}function getRefreshToken(){return localStorage.getItem(STORAGE_KEYS.refreshToken)}function persistAuth(e){e.access_token&&localStorage.setItem(STORAGE_KEYS.accessToken,e.access_token),e.refresh_token&&localStorage.setItem(STORAGE_KEYS.refreshToken,e.refresh_token),e.user_id&&localStorage.setItem(STORAGE_KEYS.userId,e.user_id),e.role&&localStorage.setItem(STORAGE_KEYS.role,e.role),e.accessibility_prefs&&localStorage.setItem("casuya_accessibility_prefs",JSON.stringify(e.accessibility_prefs))}function clearAuth(){Object.values(STORAGE_KEYS).forEach(e=>localStorage.removeItem(e)),"function"==typeof clearRequestCaches&&clearRequestCaches()}function redirectToPortal(e){window.location.replace(getPortalPath(e))}function redirectToLogin(){window.location.replace("/login.html")}async function refreshAccessToken(){const e=getRefreshToken();if(!e)throw new Error("No refresh token available");let t;try{t=await fetch(buildApiUrl("/auth/refresh","POST"),{method:"POST",headers:{"Content-Type":"application/json"},body:JSON.stringify({refresh_token:e})})}catch(e){throw clearAuth(),new Error("Network error during token refresh. Please check your connection.")}const n=safeJsonParse(await t.text())||{};if(!t.ok||!n.access_token)throw clearAuth(),new Error(n.detail||"Session expired. Please sign in again.");return persistAuth(n),n.access_token}async function apiRequest(e,t={}){const n=(t.method||"GET").toUpperCase(),a="undefined"!=typeof FormData&&t.body instanceof FormData,s=getAuthHeaders(t.headers,!a),o=await fetch(buildApiUrl(e,n),{...t,method:n,headers:s});if(401===o.status&&!1!==t.retryOnAuthFailure&&getRefreshToken())try{return await refreshAccessToken(),apiRequest(e,{...t,retryOnAuthFailure:!1})}catch(e){throw clearAuth(),e}const i=await o.text(),r=safeJsonParse(i);if(!o.ok){if(401===o.status)throw clearAuth(),new Error(r?.detail||"Session expired. Please sign in again.");throw new Error(r?.detail||o.statusText||"Request failed")}return r??i}async function login({email:e,password:t,keep_logged_in:n=!1}){const a=await apiRequest("/auth/login",{method:"POST",body:JSON.stringify({email:e,password:t,keep_logged_in:n}),retryOnAuthFailure:!1});return persistAuth(a),a}function requireRole(e){const t=getStoredAuth();return t.accessToken&&t.role?e&&t.role!==e?(redirectToPortal(t.role),null):t:(clearAuth(),redirectToLogin(),null)}const ROLE_PORTALS={admin:"/admin/",teacher:"/teacher/",student:"/student/",pending:"/select-role.html"},AUTH_STORAGE_KEYS=["casuya_token","casuya_refresh_token","casuya_user_id","casuya_role"];function decodeTokenRole(e){try{return JSON.parse(atob(e.split(".")[1])).role||null}catch{return null}}function clearAuthData(){AUTH_STORAGE_KEYS.forEach(e=>localStorage.removeItem(e))}function guardPortal(e){const t=localStorage.getItem("casuya_token");if(!t)return clearAuthData(),window.location.replace("/login.html"),!1;const n=decodeTokenRole(t);if(!n)return clearAuthData(),window.location.replace("/login.html"),!1;if(n!==e){clearAuthData();const e=ROLE_PORTALS[n]||"/login.html";return window.location.replace(e),!1}return!0}!function(){var e={dyslexia:!1,highContrast:!1,largeText:!1,wideSpacing:!1,tts:!1,speechRate:.9,fontSize:100};try{var t=JSON.parse(localStorage.getItem("casuya_a11y"));t&&Object.assign(e,t)}catch(e){}function n(){try{localStorage.setItem("casuya_a11y",JSON.stringify(e))}catch(e){}}function a(){document.body.classList.toggle("dyslexia-mode",e.dyslexia),document.body.classList.toggle("high-contrast",e.highContrast),document.body.classList.toggle("large-text",e.largeText),document.body.classList.toggle("extra-large-text",e.fontSize>=150&&e.fontSize<200),document.body.classList.toggle("max-text",e.fontSize>=200),document.body.classList.toggle("wide-spacing",e.wideSpacing),document.querySelectorAll(".a11y-toggle-btn").forEach(function(t,n){var a=[e.dyslexia,e.highContrast,e.largeText,e.wideSpacing,e.tts];t.classList.toggle("active",a[n])});var t=["dyslexia","highContrast","largeText","wideSpacing","tts"];["a11y-dyslexia","a11y-contrast","a11y-large-text","a11y-wide-spacing","a11y-tts"].forEach(function(n,a){var s=document.getElementById(n);s&&s.setAttribute("aria-pressed",e[t[a]])});var a=document.getElementById("a11y-speed-row"),s=document.getElementById("speech-controls");a&&(a.style.display=e.tts?"flex":"none"),s&&(s.style.display=e.tts?"flex":"none");var o=document.getElementById("a11y-fontsize"),i=document.getElementById("a11y-fontsize-label");o&&i&&(o.value=e.fontSize,i.textContent=e.fontSize+"%"),n()}a();var s=document.getElementById("a11y-toggle-btn"),o=document.getElementById("a11y-panel");s&&o&&(s.addEventListener("click",function(e){e.stopPropagation();var t=o.classList.toggle("open");s.setAttribute("aria-expanded",t)}),document.addEventListener("click",function(e){o.contains(e.target)||s.contains(e.target)||(o.classList.remove("open"),s.setAttribute("aria-expanded","false"))}),document.addEventListener("keydown",function(e){"Escape"===e.key&&o.classList.contains("open")&&(o.classList.remove("open"),s.setAttribute("aria-expanded","false"),s.focus())}));var i={"a11y-dyslexia":"dyslexia","a11y-contrast":"highContrast","a11y-large-text":"largeText","a11y-wide-spacing":"wideSpacing"};Object.keys(i).forEach(function(t){var n=document.getElementById(t);n&&n.addEventListener("click",function(){e[i[t]]=!e[i[t]],a()})});var r=document.getElementById("a11y-tts");r&&r.addEventListener("click",function(){e.tts=!e.tts,a(),e.tts||m()});var l=document.getElementById("a11y-fontsize");l&&l.addEventListener("input",function(){e.fontSize=parseInt(this.value),a()}),document.querySelectorAll(".a11y-option").forEach(function(e){e.addEventListener("keydown",function(t){"Enter"!==t.key&&" "!==t.key||(t.preventDefault(),e.click())})});var c=document.getElementById("a11y-speed"),d=document.getElementById("a11y-speed-label");function u(e){if(window.__casuyaSpeech&&"function"==typeof window.__casuyaSpeech.findVoice)return window.__casuyaSpeech.findVoice(e);if(!window.speechSynthesis)return null;for(var t=window.speechSynthesis.getVoices(),n="sw"===e?["sw-TZ","sw-KE","sw-UG","sw","en-TZ","en-KE"]:["en-TZ","en-KE","en-UG","en-GH","en-ZA","en-GB","en-US"],a=0;a<n.length;a++){var s=t.filter(function(e){return e.lang===n[a]});if(s.length)return s[0]}return null}function m(){var t=document.getElementById("speech-status");"function"==typeof casuyaStopAll?casuyaStopAll():window.speechSynthesis&&window.speechSynthesis.cancel(),e.controller=null,t&&(t.textContent="Done")}function p(t){m();var n=null;try{n=localStorage.getItem("casuya_lang")}catch(e){}var a="function"==typeof casuyaDetectLang?casuyaDetectLang(t,"sw"===n||"en"===n?n:"auto"):"sw"===n?"sw":"en";if("function"==typeof casuyaSpeakText&&casuyaIsAuthed()){var s=document.getElementById("speech-status");return e.controller=casuyaSpeakText(t,{lang:a,rate:e.speechRate||.9,onLoading:function(){s&&(s.textContent="Loading audio...")},onStart:function(){s&&(s.textContent="Speaking...")},onEnd:function(){s&&(s.textContent="Done"),e.controller=null},onError:function(){s&&(s.textContent="Error"),e.controller=null}}),e.controller}window.speechSynthesis.cancel();var o=new SpeechSynthesisUtterance(t),i=u(a);i?(o.voice=i,o.lang=i.lang):o.lang="sw"===a?"sw-TZ":"en-TZ",o.rate=e.speechRate||.9,o.pitch=1,o.volume=1;s=document.getElementById("speech-status");o.onstart=function(){s&&(s.textContent="Speaking...")},o.onend=function(){s&&(s.textContent="Done")},o.onerror=function(){s&&(s.textContent="Error")},window.speechSynthesis.speak(o)}c&&c.addEventListener("input",function(){e.speechRate=parseFloat(this.value),d&&(d.textContent=e.speechRate.toFixed(1)+"x"),n()});var y=document.getElementById("speech-play"),g=document.getElementById("speech-pause"),v=document.getElementById("speech-stop");y&&y.addEventListener("click",function(){var t,n=e.controller;n&&"function"==typeof n.resume&&n.resume()||(window.speechSynthesis.paused?window.speechSynthesis.resume():p((t=window.getSelection())&&t.toString().trim()?t.toString().trim():document.body.textContent.substring(0,2e3)))}),g&&g.addEventListener("click",function(){var t=e.controller;t&&"function"==typeof t.pause&&t.pause()||window.speechSynthesis&&window.speechSynthesis.pause()}),v&&v.addEventListener("click",function(){m()}),document.addEventListener("keydown",function(e){e.ctrlKey&&"u"===e.key&&s&&(e.preventDefault(),s.click())}),window.speechSynthesis&&(window.speechSynthesis.onvoiceschanged=function(){},window.speechSynthesis.getVoices()),window.__casuyaA11y={state:e,speak:p,findVoice:u}}();var CASUYA_RUNTIME_SRC="/static/pkg/runtime/casuya-runtime.min.js",_casuyaRuntimeByEl="function"==typeof WeakMap?new WeakMap:null;function loadCasuyaRuntime(){if(window.CasuyaRuntime&&window.CasuyaRuntime.Runtime)return Promise.resolve(!0);var e="function"==typeof loadCasuyaScript?loadCasuyaScript:null;return e?e("function"==typeof casuyaAssetUrl?casuyaAssetUrl(CASUYA_RUNTIME_SRC):CASUYA_RUNTIME_SRC).then(function(){return!(!window.CasuyaRuntime||!window.CasuyaRuntime.Runtime)}).catch(function(){return!1}):Promise.resolve(!1)}function htmlToRuntimePackage(e,t,n,a,s){var o=String(t||a||"content").replace(/[^a-zA-Z0-9._-]/g,"-").slice(0,120)||"content",i=(new TextEncoder).encode(e);return{manifest:{id:o,version:"1.0.0",title:String(n||a||"Content").slice(0,200),type:a||"game",permissions:s||["game","storage","canvas"],entry:"index.html"},resources:{"index.html":i}}}function prepareContentHtml(e,t){var n=e||"";return t&&"function"==typeof injectBridgeScript&&(n=injectBridgeScript(n)),"function"==typeof injectNodeBase&&(n=injectNodeBase(n)),n}function runtimeIframe(e,t){try{if(t&&t.renderer&&"function"==typeof t.renderer.getIframe){var n=t.renderer.getIframe();if(n)return n}}catch(e){}return e?e.querySelector("iframe"):null}function fitRuntimeIframe(e,t){if(t){var n=!1,a=function(){if(!n)try{var a=t.contentWindow&&t.contentWindow.document;if(a){var s=Math.max(a.documentElement&&a.documentElement.scrollHeight||0,a.body&&a.body.scrollHeight||0,300);t.style.height=s+"px",e&&(e.style.height=s+"px",e.style.overflow="visible"),n=!0}}catch(e){}};t.addEventListener("load",a);var s=setInterval(function(){a(),n&&clearInterval(s)},300);setTimeout(function(){clearInterval(s),n||(t.style.height="600px")},8e3)}}function mountGameSrcdoc(e,t){if(!e)return{cleanup:function(){},getIframe:function(){return null}};var n=document.createElement("iframe");return n.className="lesson-iframe-inner",n.style.cssText="width:100%;border:none;display:block;min-height:300px",n.setAttribute("sandbox","allow-scripts allow-forms"),e.innerHTML="",e.appendChild(n),n.srcdoc=t,fitRuntimeIframe(e,n),{cleanup:function(){try{e.innerHTML=""}catch(e){}},getIframe:function(){return n}}}async function destroyRuntimeOn(e){if(_casuyaRuntimeByEl&&e){var t=_casuyaRuntimeByEl.get(e);if(t&&"function"==typeof t.destroy){try{await t.destroy()}catch(e){}_casuyaRuntimeByEl.delete(e)}}}async function mountContentRuntime(e,t,n){var a=n&&n.type||"game",s=n&&n.permissions||("lesson"===a?["storage","media","quiz","timer","video","audio"]:["game","storage","canvas","media"]),o=prepareContentHtml(t,!(!n||!n.injectBridge));await destroyRuntimeOn(e);var i={cleanup:function(){},getIframe:function(){return e?e.querySelector("iframe"):null}};if(!e||!o)return i;if(!await loadCasuyaRuntime())return mountGameSrcdoc(e,o);e.style.minHeight="300px",e.style.width="100%",e.style.height||(e.style.height="lesson"===a?"auto":"600px");var r=new(0,window.CasuyaRuntime.Runtime)({container:e,permissions:s,renderer:{iframeAttributes:{sandbox:"lesson"===a?"allow-scripts allow-forms":"allow-scripts allow-same-origin",loading:"eager"}}});_casuyaRuntimeByEl&&_casuyaRuntimeByEl.set(e,r);try{await r.load(htmlToRuntimePackage(o,n&&n.id,n&&n.title,a,s)),await r.start();var l=runtimeIframe(e,r);return fitRuntimeIframe(e,l),{cleanup:function(){r.destroy(),_casuyaRuntimeByEl&&_casuyaRuntimeByEl.get(e)===r&&_casuyaRuntimeByEl.delete(e)},getIframe:function(){return runtimeIframe(e,r)}}}catch(t){try{await r.destroy()}catch(e){}return _casuyaRuntimeByEl&&_casuyaRuntimeByEl.get(e)===r&&_casuyaRuntimeByEl.delete(e),mountGameSrcdoc(e,o)}}async function mountGameRuntime(e,t,n){var a=await mountContentRuntime(e,t,{id:n&&n.id,title:n&&n.title,type:"game",permissions:["game","storage","canvas","media"],injectBridge:!1});return a&&a.cleanup?a.cleanup:function(){}}async function mountLessonRuntime(e,t,n){return mountContentRuntime(e,t,{id:n&&n.id,title:n&&n.title,type:"lesson",permissions:["storage","media","quiz","timer","video","audio"],injectBridge:!0})}let _currentLessonIframe=null,_currentLessonCleanup=null;function teardownCurrentIframe(){if("function"==typeof _currentLessonCleanup){try{_currentLessonCleanup()}catch(e){}_currentLessonCleanup=null}if(_currentLessonIframe){try{(_currentLessonIframe.contentWindow?.casuya?._intervals||[]).forEach(e=>_currentLessonIframe.contentWindow.clearInterval(e))}catch(e){}_currentLessonIframe=null}}async function mountLessonIframe(e,t){teardownCurrentIframe();const n=e.querySelector(".lesson-iframe")||e;if("function"==typeof mountLessonRuntime){const e=await mountLessonRuntime(n,t,{id:"lesson",title:"Lesson"});return _currentLessonIframe=e.getIframe?e.getIframe():n.querySelector("iframe"),_currentLessonCleanup=e.cleanup,_currentLessonIframe}if("IFRAME"===n.tagName)_currentLessonIframe=n,n.srcdoc=injectNodeBase(t);else if("function"==typeof mountGameSrcdoc){const e=mountGameSrcdoc(n,"function"==typeof injectNodeBase?injectNodeBase(t):t);return _currentLessonIframe=e.getIframe?e.getIframe():n.querySelector("iframe"),_currentLessonCleanup=e.cleanup,_currentLessonIframe}return _currentLessonIframe}function renderLessonSections({lessonTitle:e,canBookmark:t,bookmarked:n,isStudent:a,quizData:s,gamesData:o,noteData:i,lessonId:r,lessonLang:l}){return`\n    <div class="content" style="max-width:100%;padding:0">\n      <div style="padding:0.75rem 1rem;display:flex;align-items:center;gap:0.5rem;background:var(--color-surface);border-bottom:1px solid var(--color-border);flex-wrap:wrap">\n        <button class="btn btn-primary lesson-back-btn" style="margin-bottom:0">&larr; Back</button>\n        <span style="flex:1;font-weight:600;font-size:0.95rem">${escapeHtml(e)}</span>\n        <span id="lesson-listen-slot"></span>\n        ${t?`\n          <button class="btn btn-sm lesson-bookmark-btn" style="${n?"background:var(--color-warning);color:#fff":""};margin-bottom:0">${n?"★":"☆"}</button>\n        `:""}\n        ${a?'\n          <button class="btn btn-success btn-sm lesson-complete-btn" style="margin-bottom:0">Mark Complete</button>\n        ':""}\n      </div>\n      <div style="width:100%">\n        <div id="lesson-runtime-mount" class="lesson-iframe" style="width:100%;min-height:300px"></div>\n      </div>\n      ${a?`\n        <div style="padding:0 1rem">\n          <details style="margin-top:0.75rem">\n            <summary style="cursor:pointer;font-weight:600;font-size:0.9rem;color:var(--color-text-muted)">📝 My Notes</summary>\n            <div style="margin-top:0.5rem">\n              <textarea id="lesson-notes" rows="4" style="width:100%;padding:0.5rem;border:1px solid var(--color-border);border-radius:var(--radius);font-size:0.85rem">${escapeHtml(i?.content||"")}</textarea>\n              <div style="display:flex;gap:0.35rem;align-items:center;margin-top:0.35rem">\n                <button class="btn btn-sm btn-primary" id="notes-save-btn">Save Notes</button>\n                <button type="button" class="casuya-record" data-target="#lesson-notes" title="Speak instead of typing" aria-label="Speak instead of typing">🎤 Voice</button>\n                <span id="notes-status" style="font-size:0.8rem;color:var(--color-text-muted);margin-left:0.5rem"></span>\n              </div>\n            </div>\n          </details>\n          ${renderLessonQuiz(s,r,l)}\n          ${renderLessonGames(o)}\n          <div class="card" style="margin-top:0.75rem;padding:1rem">\n            <h3 style="margin:0 0 0.5rem">✏️ Practice Blackboard</h3>\n            <p style="font-size:0.85rem;color:var(--color-text-muted);margin:0 0 0.5rem">Work out the steps below. Your progress is saved automatically.</p>\n            <div data-blackboard data-lesson-id="${escapeHtml(r)}" style="width:100%;height:420px;border:1px solid var(--color-border);border-radius:var(--radius);overflow:hidden"></div>\n          </div>\n        </div>\n      `:""}\n    </div>\n  `}function bindLessonInteractions({container:e,iframe:t,lessonId:n,isStudent:a,canBookmark:s,quizData:o,state:i,showToast:r,sendProgress:l,onMessage:c,backFn:d,lesson:u,lessonContent:m}){if(window.__casuyaQuizLessonMeta={lessonId:n,title:u&&u.title,subject_slug:u&&u.subject_slug,form_level:u&&u.form_level,topic:u&&u.topic_title,subtopic:u&&u.subtopic_title},a){const t=e.querySelector(".lesson-complete-btn");t&&t.addEventListener("click",()=>{l(100,null),t.textContent="✓ Complete!",t.disabled=!0,t.style.opacity="0.6"});const a=e.querySelector(".lesson-bookmark-btn");a&&a.addEventListener("click",async()=>{try{i.bookmarked?(await request(`/bookmarks/${n}`,{method:"DELETE"}),i.bookmarked=!1,a.textContent="☆",a.style.background="",r("Bookmark removed")):(await request(`/bookmarks/${n}`,{method:"POST"}),i.bookmarked=!0,a.textContent="★",a.style.background="var(--color-warning)",a.style.color="#fff",r("Bookmarked!"))}catch(e){r("Failed to update bookmark")}}),document.getElementById("notes-save-btn")?.addEventListener("click",async()=>{const e=document.getElementById("lesson-notes")?.value||"",t=document.getElementById("notes-status");try{await request(`/notes/${n}`,{method:"PUT",body:JSON.stringify({content:e})}),t.textContent="Saved ✓",setTimeout(()=>t.textContent="",2e3)}catch(e){t.textContent="Failed to save"}}),document.getElementById("quiz-form")?.addEventListener("submit",async e=>{e.preventDefault();const t=document.getElementById("quiz-submit-btn");t.disabled=!0,t.textContent="Submitting...";const a={};o&&o.questions&&o.questions.forEach(e=>{const t=document.querySelector(`input[name="q_${e.id}"]:checked`);t&&(a[e.id]=t.value)});let s=null;try{window.CasuyaBlackboardEmbed&&window.CasuyaBlackboardEmbed.collectWorkMap?s=window.CasuyaBlackboardEmbed.collectWorkMap("[data-quiz-question]"):(s={},document.querySelectorAll("[data-quiz-question]").forEach(e=>{const t=e.dataset.quizQuestion,n=e._casuyaBlackboard;if(n&&n.getWorkSnapshot)s[t]=n.getWorkSnapshot();else if(n&&n.getElements){const e=n.getElements();s[t]={elements:e,hasWork:e.length>0,recognizedLatex:e.length>0?"__drawing__":""}}})),s&&0===Object.keys(s).length&&(s=null)}catch{}try{const e=s?{answers:a,work:s}:{answers:a},t=await request(`/quizzes/${o.id}/submit`,{method:"POST",body:JSON.stringify(e)}),r=document.getElementById("quiz-result");r.style.display="block";const c=null!=t.combined_percentage?t.combined_percentage:t.percentage,d=null!=t.work_score;r.innerHTML=`\n          <p style="font-weight:600">Score: ${t.score} / ${t.total} (${Math.round(t.percentage)}%)</p>\n          ${d?`<p style="font-size:0.85rem;color:var(--color-text-muted)">Work: ${t.work_score}/${t.work_total} (${Math.round(t.work_percentage)}%) · Combined (70% answer + 30% work): <strong>${Math.round(c)}%</strong></p>`:""}\n          ${c>=50?'<p style="color:var(--color-success)">✅ Passed!</p>':'<p style="color:red">❌ Try again</p>'}\n          ${d&&t.work_score<t.work_total?'<p style="font-size:0.8rem;color:var(--color-text-muted)">Tip: open "Show your work" on each question to earn work credit.</p>':""}\n        `,c<50&&Array.isArray(t.wrong_questions)&&t.wrong_questions.length&&"function"==typeof mountLessonQuizTutor&&mountLessonQuizTutor(r,t.wrong_questions,{lessonId:n,lesson:u,lessonTitle:u&&u.title,lessonContent:m,subject_slug:u&&u.subject_slug,form_level:u&&u.form_level,topic:u&&u.topic_title,subtopic:u&&u.subtopic_title}),l(100,c),i.quizScoreSent=!0}catch(e){document.getElementById("quiz-result").style.display="block",document.getElementById("quiz-result").innerHTML=`<p style="color:red">Error: ${escapeHtml(e.message)}</p>`}t.disabled=!1,t.textContent="Submit Quiz"})}window.CasuyaBlackboardEmbed&&window.CasuyaBlackboardEmbed.autoMount(),document.querySelectorAll(".game-item").forEach(e=>{e.addEventListener("click",async()=>{const t=e.dataset.gameId,n=document.getElementById("game-content-area");if(n){n.innerHTML='<div class="loading-state"><div class="spinner"></div><p>Loading game...</p></div>';try{const e="function"==typeof loadGameHtml?await loadGameHtml(t):"";if(!e)throw new Error("Failed to load game content");n.innerHTML=`<iframe style="width:100%;min-height:400px;border:none;border-radius:var(--radius)" srcdoc="${escapeHtml(injectNodeBase(e))}"></iframe>`}catch(e){n.innerHTML=`<p style="color:var(--color-danger)">Error loading game: ${escapeHtml(e.message)}</p>`}}})});e.querySelector(".lesson-back-btn").addEventListener("click",()=>{a&&!i.quizScoreSent&&l(80,null),window.removeEventListener("message",c),i.progressTimer&&clearTimeout(i.progressTimer),teardownCurrentIframe(),d()})}async function viewLessonContent(e,t,n){const a=document.querySelector(e);if(a){teardownCurrentIframe(),a.innerHTML='<div class="loading-state"><div class="spinner"></div><p>Loading lesson...</p></div>';try{const i=decodeToken(localStorage.getItem("casuya_token")),r="student"===i?.role,l=r||"teacher"===i?.role;let c="function"==typeof loadLessonHtml?loadLessonHtml(t):null,d={},u=null;try{l?(u=await request(`/lessons/${t}/package`),d=u.lesson||{}):d=await request(`/lessons/${t}`)}catch(_){}const m=d.title||"Lesson";let p=[];try{p=JSON.parse(localStorage.getItem("casuya_recently_viewed")||"[]");const k=p.findIndex(e=>e.id===t);k>=0&&(p[k].title=m,localStorage.setItem("casuya_recently_viewed",JSON.stringify(p)))}catch(L){}let y=c?await c:"";if(!y){const I=await fetch(`${API_BASE}/lessons/${t}/content${"function"==typeof lessonContentQuery?lessonContentQuery():""}`,{headers:{Authorization:`Bearer ${localStorage.getItem("casuya_token")}`}});if(404===I.status){const A=p.filter(e=>e.id!==t);return localStorage.setItem("casuya_recently_viewed",JSON.stringify(A)),void(a.innerHTML='<div class="empty-state"><p>This lesson is no longer available.</p></div>')}if(!I.ok)throw new Error("Failed to load lesson");y=await I.text(),"function"==typeof cacheLessonContent&&cacheLessonContent(t,y)}if(!y){const $=p.filter(e=>e.id!==t);return localStorage.setItem("casuya_recently_viewed",JSON.stringify($)),void(a.innerHTML='<div class="empty-state"><p>This lesson is no longer available.</p></div>')}const g=Date.now();let v=null;const f=Date.now().toString(36)+"-"+Math.random().toString(36).slice(2,10),h={quizScoreSent:!1,bookmarked:!1,progressTimer:null};if(r)try{const q=await request("/students/me");q&&q.id&&(v=q.id)}catch(C){}function s(e){let t=a.querySelector(".lesson-toast");t||(t=document.createElement("div"),t.className="lesson-toast",t.style.cssText="position:sticky;bottom:0;padding:0.5rem 1rem;background:var(--color-success);color:#fff;text-align:center;font-size:0.85rem;transition:opacity 0.3s;z-index:10",a.appendChild(t)),t.textContent=e,t.style.opacity="1",clearTimeout(t._hide),t._hide=setTimeout(()=>{t.style.opacity="0"},2500)}function o(e,n){r&&v&&(e<=h.lastSentCompletion&&(null==n||n<=h.lastSentScore)||(h.lastSentCompletion=Math.max(h.lastSentCompletion||0,e),null!=n&&(h.lastSentScore=Math.max(h.lastSentScore||-1,n)),h.progressTimer&&clearTimeout(h.progressTimer),h.progressTimer=setTimeout(()=>{const e=Date.now()-g;request("/progress/sync",{method:"POST",body:JSON.stringify({student_id:v,lesson_id:t,session_id:f,elapsed_ms:e,completion_percentage:h.lastSentCompletion,score_percentage:h.lastSentScore>=0?h.lastSentScore:null})}).then(()=>s("Progress saved")).catch(()=>{})},2e3)))}let b=null,w=[],x={content:""};u&&(h.bookmarked=u.bookmark_status?.bookmarked||!1,b=r?u.quiz:null,w=r&&u.games||[],x=r&&u.note||{content:""});const S="function"==typeof casuyaResolveLessonLang?casuyaResolveLessonLang(m,"",b?.questions?.[0]?.prompt):"function"==typeof casuyaDetectLang?casuyaDetectLang(String(m||"")+" "+String(b?.questions?.[0]?.prompt||"")):"sw";a.innerHTML=renderLessonSections({lessonTitle:m,canBookmark:l,bookmarked:h.bookmarked,isStudent:r,quizData:b,gamesData:w,noteData:x,lessonId:t,lessonLang:S});const E=await mountLessonIframe(a,y);if("function"==typeof casuyaAttachListen){const H=a.querySelector("#lesson-listen-slot");if(H){const z="function"==typeof casuyaIframeText?casuyaIframeText(E):"",B="function"==typeof casuyaResolveLessonLang?casuyaResolveLessonLang(m,z,b?.questions?.[0]?.prompt):S;a.querySelectorAll(".question-block[data-lesson-lang], .quiz-item .casuya-listen[data-lang]").forEach(function(e){e.setAttribute("data-lang",B),e.classList.contains("question-block")&&e.setAttribute("data-lesson-lang",B)}),casuyaAttachListen(H,{title:"Listen to this lesson",lang:B,textProvider:function(){const e="function"==typeof casuyaIframeText?casuyaIframeText(E):"";return(m+". "+e).trim()}})}}const T=e=>{if("casuya-quiz"===e.data?.type&&null!=e.data.score&&e.data.total>0){h.quizScoreSent=!0;o(100,Math.round(e.data.score/e.data.total*100))}else"casuya-progress"===e.data?.type&&null!=e.data.percent&&o(e.data.percent,null)};window.addEventListener("message",T),bindLessonInteractions({container:a,iframe:E,lessonId:t,isStudent:r,canBookmark:l,quizData:b,state:h,showToast:s,sendProgress:o,onMessage:T,backFn:n,lesson:d,lessonContent:y})}catch(P){a.innerHTML=`<div class="empty-state"><h2>Error</h2><p>${escapeHtml(P.message)}</p></div>`}}}const TEST_TYPE_OPTIONS=[{value:"topical",label:"📌 Topical Test",desc:"Topical questions grouped by topic."},{value:"monthly",label:"📆 Monthly Test",desc:"Monthly-style test for your class."},{value:"midterm",label:"🕘 Midterm Test",desc:"Midterm examination style."},{value:"terminal",label:"🏁 Terminal Test",desc:"Terminal examination style."},{value:"annual",label:"📅 Annual Test",desc:"Annual examination style."},{value:"necta_ii",label:"🎓 NECTA Form II",desc:"Form II / FTNA style questions."},{value:"necta_iv",label:"🎓 NECTA Form IV",desc:"CSEE Section A style questions."},{value:"necta_vi",label:"🎓 NECTA Form VI",desc:"ACSEE style questions."}];let _testGenStylesInjected=!1;function _injectTestGenStyles(){if(_testGenStylesInjected||document.getElementById("test-gen-styles"))return;_testGenStylesInjected=!0;const e=document.createElement("style");e.id="test-gen-styles",e.textContent="\n    .test-type-grid{display:grid;grid-template-columns:repeat(auto-fill,minmax(200px,1fr));gap:0.6rem}\n    .test-type-card{text-align:left;padding:0.7rem 0.85rem;border:1px solid var(--color-border);border-radius:var(--radius);background:transparent;cursor:pointer;transition:border-color .15s ease,background .15s ease}\n    .test-type-card:hover{border-color:var(--color-primary)}\n    .test-type-card.selected{border-color:var(--color-primary);background:color-mix(in srgb,var(--color-primary) 8%,transparent);box-shadow:inset 0 0 0 1px var(--color-primary)}\n  ",document.head.appendChild(e)}function renderTestGeneratorView(e={}){_injectTestGenStyles();const t=e.title||"Test Generator",n=e.intro||"Pick an exam type, then choose a subject and form. Tick the topics (and sub-topics) the exam must cover — the more you tick, the wider the paper. The system reads the NECTA/TIE knowledge base (past papers, syllabuses) to generate fresh practice questions without copying any past question.",a=TEST_TYPE_OPTIONS.map((e,t)=>`\n    <button type="button" class="test-type-card${0===t?" selected":""}" data-test-type="${e.value}">\n      <div style="font-weight:600;font-size:0.95rem">${e.label}</div>\n      <div style="font-size:0.75rem;color:var(--color-text-muted);margin-top:0.15rem">${e.desc}</div>\n    </button>`).join("");return`\n    <div class="content">\n      <h2 style="margin:0 0 0.4rem">📝 ${escapeHtml(t)}</h2>\n      <p style="color:var(--color-text-muted);font-size:0.85rem;margin-bottom:1.25rem">${escapeHtml(n)}</p>\n\n      <div class="card" style="padding:1.25rem;margin-bottom:1rem">\n        <h3 style="margin:0 0 0.75rem">1. Choose the exam type</h3>\n        <div class="test-type-grid">${a}</div>\n      </div>\n\n      <div class="card" style="padding:1.25rem;margin-bottom:1rem">\n        <h3 style="margin:0 0 1rem">2. Scope the test</h3>\n        <div style="display:grid;grid-template-columns:repeat(auto-fit,minmax(180px,1fr));gap:0.75rem">\n          <div>\n            <label style="font-size:0.8rem;color:var(--color-text-muted)">Subject</label>\n            <select class="input" id="test-gen-subject">\n              <option value="mathematics">Mathematics</option>\n              <option value="chemistry">Chemistry</option>\n              <option value="physics">Physics</option>\n            </select>\n          </div>\n          <div>\n            <label style="font-size:0.8rem;color:var(--color-text-muted)">Form Level</label>\n            <select class="input" id="test-gen-form">\n              ${["I","II","III","IV","V","VI"].map((e,t)=>`<option value="${t+1}">Form ${e}</option>`).join("")}\n            </select>\n          </div>\n          <div>\n            <label style="font-size:0.8rem;color:var(--color-text-muted)">Questions</label>\n            <select class="input" id="test-gen-count">\n              ${[5,10,15,20].map(e=>`<option value="${e}"${10===e?" selected":""}>${e}</option>`).join("")}\n            </select>\n          </div>\n        </div>\n        <div style="margin-top:1.1rem">\n          <label style="font-size:0.8rem;color:var(--color-text-muted)">Topics &amp; sub-topics to cover\n            <span style="color:var(--color-text-muted);font-weight:400">(tick topics and sub-topics — the more you tick, the wider the exam)</span>\n          </label>\n          <div id="test-gen-scope" style="margin-top:0.6rem"></div>\n          <div id="test-gen-scope-summary" style="font-size:0.8rem;color:var(--color-text-muted);font-weight:600;margin-top:0.5rem"></div>\n          <div id="test-gen-fallback" style="display:none;margin-top:0.6rem;font-size:0.85rem">\n            <label style="color:var(--color-text-muted)">Topic</label>\n            <input class="input" id="test-gen-topic-fallback" placeholder="e.g. Acids, Bases and Salts">\n            <label style="color:var(--color-text-muted);display:block;margin-top:0.4rem">Subtopic</label>\n            <input class="input" id="test-gen-subtopic-fallback" placeholder="e.g. Preparation of Salts">\n          </div>\n        </div>\n      </div>\n\n      <div style="display:flex;gap:0.5rem;align-items:center;margin-bottom:1rem">\n        <button class="btn btn-primary" id="test-gen-run">⚡ Generate Test</button>\n        <span id="test-gen-status" style="font-size:0.8rem;color:var(--color-text-muted)"></span>\n      </div>\n\n      <div id="test-gen-sources"></div>\n      <div id="test-gen-results"></div>\n    </div>`}let _testGenScopeCache={};function _testGenUpdateSummary(e){const t=e.querySelector("#test-gen-scope-summary");if(!t)return;const n=Array.from(e.querySelectorAll(".test-gen-topic-cb:checked")).length,a=Array.from(e.querySelectorAll(".test-gen-subtopic-cb:checked")).length;t.textContent=n||a?`Scope: ${n} topic${1===n?"":"s"} · ${a} sub-topic${1===a?"":"s"} selected`:""}async function _testGenLoadScope(e,t){const n=document,a=n.querySelector("#test-gen-scope"),s=n.querySelector("#test-gen-fallback");if(!a)return;a.innerHTML='<p style="font-size:0.85rem;color:var(--color-text-muted)">Loading topics from the syllabus…</p>',s.style.display="none",_testGenUpdateSummary(n);let o=[];const i=e+":"+t;if(_testGenScopeCache[i])o=_testGenScopeCache[i];else try{const n=await request(`/syllabus/subjects/${encodeURIComponent(e)}/topics?form_level=${t}`);o=Array.isArray(n)?n:[],_testGenScopeCache[i]=o}catch(e){o=[]}if(!o.length)return a.innerHTML='<p style="font-size:0.85rem;color:var(--color-text-muted)">No syllabus topics found for this subject and form. Type the topic below instead.</p>',s.style.display="block",void _testGenUpdateSummary(n);const r=o.map(e=>{const t=Array.isArray(e.subtopics)?e.subtopics:[],n=t.map(t=>`\n        <label style="display:flex;align-items:center;gap:0.4rem;font-size:0.84rem;margin-top:0.2rem">\n          <input type="checkbox" class="test-gen-subtopic-cb" data-topic="${escapeHtml(e.title)}" value="${escapeHtml(t.title)}">\n          <span>${escapeHtml(t.title)}</span>\n        </label>`).join(""),a=t.length?`<button type="button" class="test-gen-sub-toggle" style="margin-left:auto;background:none;border:none;color:var(--color-primary);font-size:0.75rem;cursor:pointer">${t.length} sub-topic${1===t.length?"":"s"} ▾</button>`:"";return`\n      <div class="scope-topic-item" style="border:1px solid var(--color-border);border-radius:var(--radius);padding:0.5rem 0.75rem;margin-bottom:0.4rem">\n        <label style="display:flex;align-items:center;gap:0.4rem;font-size:0.88rem;cursor:pointer">\n          <input type="checkbox" class="test-gen-topic-cb" value="${escapeHtml(e.title)}">\n          <span>${escapeHtml(e.title)}</span>\n          ${a}\n        </label>\n        ${t.length?`<div class="test-gen-sub-wrap" style="display:none;margin-top:0.35rem;border-top:1px dashed var(--color-border);padding-top:0.3rem">${n}</div>`:""}\n      </div>`}).join("");a.innerHTML=`\n    <div style="font-size:0.8rem;margin-bottom:0.5rem">\n      <button type="button" class="test-gen-select-all" style="background:none;border:none;color:var(--color-primary);cursor:pointer">Select all topics</button>\n      <button type="button" class="test-gen-clear-all" style="background:none;border:none;color:var(--color-text-muted);cursor:pointer;margin-left:0.75rem">Clear all</button>\n    </div>\n    ${r}`,_testGenUpdateSummary(n)}function initTestGeneratorView(e=document){const t=Array.from(e.querySelectorAll(".test-type-card"));let n=e.querySelector(".test-type-card.selected")?.dataset.testType||"topical";t.forEach(e=>{e.addEventListener("click",()=>{t.forEach(e=>e.classList.remove("selected")),e.classList.add("selected"),n=e.dataset.testType})});const a=e.querySelector("#test-gen-status"),s=e.querySelector("#test-gen-sources"),o=e.querySelector("#test-gen-results"),i=e.querySelector("#test-gen-run");if(!i)return;const r=e.querySelector("#test-gen-subject"),l=e.querySelector("#test-gen-form"),c=()=>{_testGenLoadScope(r.value,l.value||"1")};r.addEventListener("change",c),l.addEventListener("change",c);const d=e.querySelector("#test-gen-scope");d&&(d.addEventListener("change",t=>{t.target.matches(".test-gen-topic-cb")&&_testGenUpdateSummary(e),t.target.matches(".test-gen-subtopic-cb")&&_testGenUpdateSummary(e)}),d.addEventListener("click",t=>{const n=t.target.closest(".test-gen-sub-toggle");if(n){t.preventDefault();const e=n.closest(".scope-topic-item")?.querySelector(".test-gen-sub-wrap");return void(e&&(e.style.display="none"===e.style.display?"block":"none",n.textContent="none"===e.style.display?n.textContent.replace("▴","▾"):n.textContent.replace("▾","▴")))}if(t.target.closest(".test-gen-select-all")){const t=e.querySelector("#test-gen-scope");return Array.from(t.querySelectorAll(".test-gen-topic-cb")).forEach(e=>{e.checked=!0;const t=e.closest(".scope-topic-item")?.querySelector(".test-gen-sub-wrap");t&&(t.style.display="block")}),void _testGenUpdateSummary(e)}if(t.target.closest(".test-gen-clear-all")){const t=e.querySelector("#test-gen-scope");Array.from(t.querySelectorAll(".test-gen-topic-cb, .test-gen-subtopic-cb")).forEach(e=>{e.checked=!1}),_testGenUpdateSummary(e)}})),i.addEventListener("click",async()=>{const t=r.value,c=l.value||"1",d=Number(e.querySelector("#test-gen-count").value),u=Array.from(e.querySelectorAll(".test-gen-topic-cb:checked")).map(e=>e.value.trim()),m=Array.from(e.querySelectorAll(".test-gen-subtopic-cb:checked")).map(e=>e.value.trim()),p=e.querySelector("#test-gen-topic-fallback")?.value.trim()||"",y=e.querySelector("#test-gen-subtopic-fallback")?.value.trim()||"";if(!u.length&&!m.length&&!p)return void(a.textContent="Tick at least one topic (or sub-topic), then press Generate.");const g=u[0]||p,v=m[0]||y;i.disabled=!0,a.textContent="Reading knowledge base and generating questions...",s.innerHTML="",o.innerHTML="";try{const e=await request("/ai/tests/generate",{method:"POST",body:JSON.stringify({test_type:n,subject_slug:t,form_level:Number(c),topic:g,subtopic:v,topics:u,subtopics:m,count:d})});if(!Array.isArray(e.questions)||!e.questions.length)return o.innerHTML='<div class="card" style="padding:1rem"><p style="color:var(--color-text-muted)">No questions were generated. Try a different topic, subject, or exam type.</p></div>',void(a.textContent="");const i=e.testTypeLabel||n,r=Array.isArray(e.kbHits)?e.kbHits:[],l={source:e.source||"casuya-ai",kbHits:r,sourced:!1!==e.grounded};s.innerHTML=`\n        <div class="card" style="padding:0.75rem 1rem;margin-bottom:1rem">\n          <p style="font-size:0.8rem;margin:0 0 0.35rem;color:var(--color-text-muted)">\n            📚 <strong>${escapeHtml(i)}</strong> — grounded in ${r.length||"syllabus"} knowledge-base source(s)\n            ${e.grounded?"":" (syllabus/topic fallback)"}\n          </p>\n          <div class="tutor-response-footer">\n            ${"function"==typeof renderAiResultFooter?renderAiResultFooter(l):("function"==typeof renderTutorSourceChips?renderTutorSourceChips(r):"")+("function"==typeof renderAiSourceBadge?renderAiSourceBadge(l.source):"")}\n          </div>\n        </div>`,o.innerHTML=renderQuizQuestions(e.questions,{subject:t,formLevel:e.formLevel,topic:`${g}${u.length+m.length?` (+${Math.max(0,u.length+m.length-1)} more)`:""}`}),a.textContent=`Done — ${e.count||e.questions.length} question(s).`}catch(e){o.innerHTML=`<div class="card" style="padding:1rem"><p style="color:var(--color-danger)">${escapeHtml(e.message||"Generation failed. Please try again.")}</p></div>`,a.textContent=""}finally{i.disabled=!1}}),c()}class TeacherDashboard{constructor(){const e=localStorage.getItem("casuya_token");this.payload=decodeToken(e),this._abort=new AbortController,this._navItems=[],this.notifData=[],this._viewLoaders={}}showView(e){const t=document.getElementById("teacher-content");t&&(t.innerHTML=e)}setActiveNav(e){this._navItems.forEach(t=>{t.classList.toggle("active",t.dataset.view===e)})}showViewByName(e){this._viewLoaders[e]&&(location.hash=e,this._viewLoaders[e]())}destroy(){this._abort.abort()}}function renderBlackboardReplay(e){window.ensureKaTeX&&!window.katex&&window.ensureKaTeX();const t=document.getElementById("bb-replay-canvas");if(!t||!e.length)return;const n=t.getContext("2d");let a=1/0,s=1/0,o=-1/0,i=-1/0;e.forEach(e=>{if("pen"!==e.tool&&"highlighter"!==e.tool&&"eraser"!==e.tool||!e.points)if("text"===e.tool||"katex"===e.tool){const t=e.position?.x||0,n=e.position?.y||0;a=Math.min(a,t),s=Math.min(s,n),o=Math.max(o,t+(e.width||300)),i=Math.max(i,n+2*(e.fontSize||16))}else e.start&&e.end&&(a=Math.min(a,e.start.x,e.end.x),s=Math.min(s,e.start.y,e.end.y),o=Math.max(o,e.start.x,e.end.x),i=Math.max(i,e.start.y,e.end.y));else e.points.forEach(e=>{a=Math.min(a,e.x),s=Math.min(s,e.y),o=Math.max(o,e.x),i=Math.max(i,e.y)})}),isFinite(a)||(a=0,s=0,o=800,i=600);const r=o-a+80,l=i-s+80,c=window.devicePixelRatio||1;t.width=r*c,t.height=l*c,t.style.width=r+"px",t.style.height=l+"px",n.setTransform(c,0,0,c,0,0),n.fillStyle="#fff",n.fillRect(0,0,r,l),n.translate(40-a,40-s),e.forEach(e=>{if(n.save(),n.globalAlpha=e.opacity??1,"pen"===e.tool||"highlighter"===e.tool||"eraser"===e.tool){"eraser"===e.tool?(n.globalCompositeOperation="destination-out",n.strokeStyle="rgba(0,0,0,1)"):"highlighter"===e.tool?(n.globalCompositeOperation="multiply",n.strokeStyle=e.color):(n.globalCompositeOperation="source-over",n.strokeStyle=e.color),n.lineCap="round",n.lineJoin="round";const t=e.points||[];if(t.length<2)return void n.restore();if(t.some(e=>void 0!==e.pressure&&.5!==e.pressure)&&"pen"===e.tool)for(let a=1;a<t.length;a++){const s=t[a-1],o=t[a];n.lineWidth=(e.width||2)*(.3+1.4*(o.pressure??.5)),n.beginPath(),n.moveTo(s.x,s.y),n.lineTo(o.x,o.y),n.stroke()}else{n.lineWidth=e.width||2,n.beginPath(),n.moveTo(t[0].x,t[0].y);for(let e=1;e<t.length;e++){const a=t[e-1],s=t[e];n.quadraticCurveTo(a.x,a.y,(a.x+s.x)/2,(a.y+s.y)/2)}n.lineTo(t[t.length-1].x,t[t.length-1].y),n.stroke()}n.globalCompositeOperation="source-over"}else if("text"===e.tool){n.fillStyle=e.color||"#000",n.font=`${e.fontSize||16}px ${e.fontFamily||"sans-serif"}`,n.textAlign="left",n.textBaseline="top";const t=e.width>1?e.width:300,a=(e.content||"").split("\n"),s=1.4*(e.fontSize||16);let o=0;a.forEach(a=>{if(!a)return;const i=a.split(" ");let r="";i.forEach(a=>{const i=r?r+" "+a:a;n.measureText(i).width>t&&r?(n.fillText(r,e.position.x,e.position.y+o*s),r=a,o++):r=i}),r&&n.fillText(r,e.position.x,e.position.y+o*s),o++})}else if("katex"===e.tool)if(window.katex)try{const t=window.katex.renderToString(e.latex||"",{throwOnError:!1,displayMode:!0}),a=`<svg xmlns="http://www.w3.org/2000/svg" width="${(e.fontSize||16)*(e.latex||"").length*.6}" height="${1.8*(e.fontSize||16)}"><foreignObject width="100%" height="100%"><div xmlns="http://www.w3.org/1999/xhtml" style="font-size:${e.fontSize||16}px;color:${e.color||"#000"};white-space:nowrap;">${t}</div></foreignObject></svg>`,s=new Blob([a],{type:"image/svg+xml;charset=utf-8"}),o=URL.createObjectURL(s),i=new Image;i.onload=()=>{n.drawImage(i,e.position.x,e.position.y,e.width||i.naturalWidth,e.height||i.naturalHeight),URL.revokeObjectURL(o)},i.src=o}catch{n.fillStyle=e.color||"#000",n.font=`${e.fontSize||16}px "Courier New", monospace`,n.fillText(e.latex||"",e.position.x,e.position.y)}else n.fillStyle=e.color||"#000",n.font=`${e.fontSize||16}px "Courier New", monospace`,n.fillText(e.latex||"",e.position.x,e.position.y);else if(e.start&&e.end){switch(n.strokeStyle=e.color||"#000",n.lineWidth=e.width||2,n.lineCap="round",e.dashPattern&&n.setLineDash(e.dashPattern),e.tool){case"line":n.beginPath(),n.moveTo(e.start.x,e.start.y),n.lineTo(e.end.x,e.end.y),n.stroke();break;case"rect":{const t=Math.min(e.start.x,e.end.x),a=Math.min(e.start.y,e.end.y),s=Math.abs(e.end.x-e.start.x),o=Math.abs(e.end.y-e.start.y);e.filled&&(n.fillStyle=e.color,n.globalAlpha=.25*(e.opacity??1),n.fillRect(t,a,s,o),n.globalAlpha=e.opacity??1),n.strokeRect(t,a,s,o);break}case"circle":{const t=(e.start.x+e.end.x)/2,a=(e.start.y+e.end.y)/2,s=Math.abs(e.end.x-e.start.x)/2,o=Math.abs(e.end.y-e.start.y)/2;n.beginPath(),n.ellipse(t,a,s,o,0,0,2*Math.PI),e.filled&&(n.fillStyle=e.color,n.globalAlpha=.25*(e.opacity??1),n.fill(),n.globalAlpha=e.opacity??1),n.stroke();break}case"arrow":{const t=e.end.x-e.start.x,a=e.end.y-e.start.y,s=Math.hypot(t,a);if(s>1){n.beginPath(),n.moveTo(e.start.x,e.start.y),n.lineTo(e.end.x,e.end.y),n.stroke();const o=Math.min(15,.3*s),i=Math.atan2(a,t);n.beginPath(),n.moveTo(e.end.x,e.end.y),n.lineTo(e.end.x-o*Math.cos(i-Math.PI/6),e.end.y-o*Math.sin(i-Math.PI/6)),n.moveTo(e.end.x,e.end.y),n.lineTo(e.end.x-o*Math.cos(i+Math.PI/6),e.end.y-o*Math.sin(i+Math.PI/6)),n.stroke()}break}}e.dashPattern&&n.setLineDash([])}n.restore()})}async function loadOverview(e){e.showView('<div class="loading-state"><div class="spinner"></div><p>Loading...</p></div>');try{const t=await request("/teachers/me/dashboard"),n=t.overview||{},a=t.classroom||{},s=t.bookmark_count||0,o=t.lesson_count||0,i=e.payload.full_name||e.payload.email||"Teacher",r=a?.classroom?.code||"",l=a?.total??0,c=(new Date).getHours();let d="Good morning";c>=12&&c<17?d="Good afternoon":c>=17&&(d="Good evening");let u=[];try{u=JSON.parse(localStorage.getItem("casuya_recently_viewed")||"[]")}catch(e){}e.showView(`\n      <div class="content" style="max-width:960px">\n        <div class="welcome-banner">\n          <small>${d}</small>\n          <h2>Welcome, ${escapeHtml(i)}</h2>\n          <p>Here's what's happening in your classes today.</p>\n        </div>\n\n        <div class="card" style="margin-bottom:1.25rem;padding:1.25rem;background:linear-gradient(135deg,#eff6ff,#ede9fe);border:1px solid #dbeafe;display:flex;align-items:center;justify-content:space-between;flex-wrap:wrap;gap:1rem">\n          <div>\n            <div style="font-size:0.8rem;font-weight:700;color:#2563eb;text-transform:uppercase;letter-spacing:0.04em">Connect your students</div>\n            <p style="margin:0.35rem 0 0;font-size:0.9rem;color:var(--color-text-muted);max-width:420px">\n              Students join your class by pasting your code below into <b>Connect to Teacher</b>. Then you can see their progress and assign lessons.\n            </p>\n          </div>\n          <div style="text-align:center">\n            <div style="font-size:0.75rem;color:var(--color-text-muted);margin-bottom:0.25rem">Class Code</div>\n            <div id="teacher-class-code" style="font-size:1.8rem;font-weight:800;letter-spacing:0.3em;color:#1e40af;font-family:monospace;cursor:pointer" title="Click to copy">${escapeHtml(r||"—")}</div>\n            <div style="display:flex;gap:0.5rem;margin-top:0.5rem;justify-content:center">\n              <button class="btn btn-sm" id="copy-class-code" ${r?"":"disabled"}>Copy Code</button>\n              <button class="btn btn-sm" id="manage-class">Manage Class</button>\n            </div>\n          </div>\n        </div>\n\n        <div class="stat-grid">\n          <div class="stat-card">\n            <div class="stat-icon" style="background:#eff6ff;color:#2563eb">👥</div>\n            <div class="stat-value">${l}</div>\n            <div class="stat-label">Connected Students</div>\n          </div>\n          <div class="stat-card">\n            <div class="stat-icon" style="background:#f0fdf4;color:#16a34a">📝</div>\n            <div class="stat-value">${o}</div>\n            <div class="stat-label">Lessons</div>\n          </div>\n          <div class="stat-card">\n            <div class="stat-icon" style="background:#fef3c7;color:#d97706">📈</div>\n            <div class="stat-value">${n?.avg_completion_rate?Math.round(n.avg_completion_rate)+"%":"0%"}</div>\n            <div class="stat-label">Completion Rate</div>\n          </div>\n          <div class="stat-card">\n            <div class="stat-icon" style="background:#fce7f3;color:#db2777">🔖</div>\n            <div class="stat-value">${s}</div>\n            <div class="stat-label">Bookmarked</div>\n          </div>\n        </div>\n\n        ${u.length>0?`\n          <div class="section-header">\n            <h3>Continue Editing</h3>\n          </div>\n          <div style="display:grid;grid-template-columns:repeat(auto-fill,minmax(220px,1fr));gap:0.75rem;margin-bottom:1.25rem">\n            ${u.slice(0,3).map(e=>`\n              <div class="recent-lesson-card" data-id="${escapeHtml(e.id)}">\n                <h4>${escapeHtml(e.title)}</h4>\n                <span class="recent-meta">${e.time?new Date(e.time).toLocaleDateString():""}</span>\n              </div>\n            `).join("")}\n          </div>\n        `:""}\n\n        <div class="section-header">\n          <h3>${bookmarks.length>0?"Bookmarked Lessons":"Published Lessons"}</h3>\n        </div>\n        <div class="card-grid">\n          ${Array.isArray(lessons)&&0!==lessons.length?(bookmarks.length>0?bookmarks:lessons).map(e=>`\n              <div class="card lesson-card clickable" data-id="${escapeHtml(e.lesson_id||e.id)}" style="position:relative">\n                <h3>${escapeHtml(e.lesson_title||e.title)}</h3>\n                ${e.lesson_id?'<span style="position:absolute;top:0.5rem;right:0.5rem;font-size:0.75rem">🔖</span>':""}\n                <p style="color:var(--color-text-muted);font-size:0.8rem">${escapeHtml(e.status||"bookmarked")}</p>\n              </div>\n            `).join(""):'<div class="empty-state" style="padding:2rem"><p>No lessons available yet</p></div>'}\n        </div>\n      </div>\n    `),document.querySelectorAll("#teacher-content .lesson-card.clickable").forEach(t=>{t.addEventListener("click",()=>viewLessonContent("#teacher-content",t.dataset.id,()=>loadLessons(e)))}),document.querySelectorAll("#teacher-content .recent-lesson-card").forEach(t=>{t.addEventListener("click",()=>viewLessonContent("#teacher-content",t.dataset.id,()=>loadOverview(e)))}),document.getElementById("copy-class-code")?.addEventListener("click",e=>{e.stopPropagation();const t=document.getElementById("teacher-class-code");if(!t||"—"===t.textContent)return;const n=t.textContent,a=()=>{const e=document.getElementById("copy-class-code");if(e){const t=e.textContent;e.textContent="Copied ✓",setTimeout(()=>e.textContent=t,1500)}};navigator.clipboard?.writeText?navigator.clipboard.writeText(n).then(a).catch(a):a()}),document.getElementById("manage-class")?.addEventListener("click",()=>loadClass(e))}catch(t){e.showView(`<div class="empty-state"><h2>Error</h2><p>${escapeHtml(t.message)}</p></div>`)}}async function loadClass(e){e.showView('<div class="loading-state"><div class="spinner"></div><p>Loading your class...</p></div>');try{const[t,n]=await Promise.all([request("/classrooms/me/students?_t="+Date.now()).catch(()=>null),request("/lessons").catch(()=>[])]),a=t?.classroom||await request("/classrooms/me?_t="+Date.now()),s=Array.isArray(t?.students)?t.students:[],o=a?.code||"",i=a?.name||"",r=a?.lesson_limit??2,l=Array.isArray(n)?n.filter(e=>"published"===e.status).length:0;e.showView(`\n      <div class="content" style="max-width:960px">\n        <div style="display:flex;align-items:center;gap:0.5rem;margin-bottom:1rem">\n          <button class="btn" id="back-btn">← Back</button>\n          <h2>My Class</h2>\n        </div>\n\n        <div class="card" style="margin-bottom:1.25rem;padding:1.5rem;background:linear-gradient(135deg,#eff6ff,#ede9fe);border:1px solid #dbeafe;text-align:center">\n          <div style="display:flex;align-items:center;justify-content:center;gap:0.5rem;flex-wrap:wrap;margin-bottom:0.5rem">\n            <span style="font-size:1.05rem;font-weight:700;color:#1e3a8a" id="manage-class-name-display">${escapeHtml(i||"My Class")}</span>\n            <button class="btn btn-sm" id="edit-class-name" title="Edit class name">✏️ Edit</button>\n          </div>\n          <div id="manage-class-name-edit" style="display:none;max-width:320px;margin:0 auto 0.5rem;gap:0.5rem;align-items:center">\n            <input class="input" id="manage-class-name-input" value="${escapeHtml(i)}" maxlength="80" placeholder="Class name (e.g. Form Two East)" style="text-align:center">\n            <div style="display:flex;gap:0.4rem;justify-content:center;margin-top:0.4rem">\n              <button class="btn btn-sm btn-success" id="save-class-name">Save</button>\n              <button class="btn btn-sm" id="cancel-class-name">Cancel</button>\n            </div>\n            <p id="class-name-status" style="display:none;font-size:0.8rem;margin:0.25rem 0 0"></p>\n          </div>\n          <div style="font-size:0.8rem;font-weight:700;color:#2563eb;text-transform:uppercase;letter-spacing:0.04em">Share this code with your students</div>\n          <p style="margin:0.4rem auto 0;font-size:0.9rem;color:var(--color-text-muted);max-width:460px">\n            Tell students to open <b>Connect to Teacher</b> on their dashboard, paste this code, and save it.\n          </p>\n          <div id="manage-class-code" style="font-size:3rem;font-weight:800;letter-spacing:0.35em;color:#1e40af;font-family:monospace;margin:0.75rem 0">${escapeHtml(o)}</div>\n          <div style="display:flex;gap:0.5rem;justify-content:center;flex-wrap:wrap">\n            <button class="btn" id="copy-manage-code">Copy Code</button>\n            <button class="btn" id="regenerate-code">↻ Regenerate Code</button>\n          </div>\n          <p style="font-size:0.75rem;color:var(--color-text-muted);margin-top:0.5rem">Lesson allowance: <b>${l}/${r}</b> published</p>\n        </div>\n\n        <div class="section-header">\n          <h3>Connected Students (${s.length})</h3>\n          <button class="btn btn-sm" id="refresh-students">↻ Refresh</button>\n        </div>\n        ${0===s.length?'\n          <div class="empty-state" style="padding:2rem">\n            <p>No students connected yet.</p>\n            <p style="font-size:0.85rem;color:var(--color-text-muted)">Share your class code with students — once they paste and save it, they will appear here and you can see their progress.</p>\n            <div style="display:flex;gap:0.5rem;justify-content:center;margin-top:1rem">\n              <button class="btn" id="copy-manage-code-empty">Copy Code</button>\n              <button class="btn btn-primary" id="view-lessons-empty">View Your Lessons</button>\n            </div>\n          </div>':`<div class="card-grid">\n            ${s.map(e=>{const t=e.stats||{lessons_completed:0,avg_score:0,assignments_submitted:0};return`\n              <div class="card student-card" data-id="${escapeHtml(e.id)}" data-name="${escapeHtml(e.full_name||e.email||"Student")}" style="cursor:pointer">\n                <div style="display:flex;align-items:center;gap:0.75rem">\n                  <div style="width:40px;height:40px;border-radius:50%;background:var(--color-primary);color:#fff;display:flex;align-items:center;justify-content:center;font-weight:700;font-size:0.9rem;flex-shrink:0">${escapeHtml((e.full_name||"S").charAt(0).toUpperCase())}</div>\n                  <div style="flex:1;min-width:0">\n                    <h3 style="margin:0;font-size:0.95rem">${escapeHtml(e.full_name||e.email||"Student")}</h3>\n                    <p style="margin:0.15rem 0 0;color:var(--color-text-muted);font-size:0.8rem">${escapeHtml(e.email||"")} ${e.form_level?"— "+escapeHtml(e.form_level):""}</p>\n                    ${e.joined_at?`<p style="margin:0.15rem 0 0;color:var(--color-text-muted);font-size:0.7rem">Joined ${new Date(e.joined_at).toLocaleDateString()}</p>`:""}\n                  </div>\n                  <span style="color:var(--color-text-muted);font-size:0.8rem">→</span>\n                </div>\n                <div style="display:flex;gap:0.4rem;margin-top:0.75rem;flex-wrap:wrap">\n                  <span class="student-stat-chip" title="Lessons completed">✅ ${t.lessons_completed}</span>\n                  <span class="student-stat-chip" title="Average score">📈 ${t.avg_score}%</span>\n                  <span class="student-stat-chip" title="Assignments submitted">📝 ${t.assignments_submitted}</span>\n                </div>\n              </div>`}).join("")}\n          </div>`}\n      </div>\n    `),document.getElementById("back-btn").addEventListener("click",()=>loadOverview(e)),document.getElementById("copy-manage-code")?.addEventListener("click",()=>{const e=document.getElementById("manage-class-code").textContent,t=()=>{const e=document.getElementById("copy-manage-code");if(e){const t=e.textContent;e.textContent="Copied ✓",setTimeout(()=>e.textContent=t,1500)}};navigator.clipboard?.writeText?navigator.clipboard.writeText(e).then(t).catch(t):t()}),document.getElementById("copy-manage-code-empty")?.addEventListener("click",()=>{const e=()=>{const e=document.getElementById("copy-manage-code-empty");if(e){const t=e.textContent;e.textContent="Copied ✓",setTimeout(()=>e.textContent=t,1500)}};navigator.clipboard?.writeText?navigator.clipboard.writeText(o).then(e).catch(e):e()}),document.getElementById("view-lessons-empty")?.addEventListener("click",()=>loadLessons(e)),document.getElementById("regenerate-code").addEventListener("click",async()=>{if(confirm("Regenerate your class code? Students using the old code will need the new one."))try{const e=await request("/classrooms/me/code/regenerate",{method:"POST",body:"{}"}),t=document.getElementById("manage-class-code");t&&e?.code&&(t.textContent=e.code)}catch(e){alert("Failed to regenerate code: "+e.message)}}),document.getElementById("refresh-students")?.addEventListener("click",()=>loadClass(e)),document.getElementById("edit-class-name")?.addEventListener("click",()=>{document.getElementById("manage-class-name-display").style.display="none";document.getElementById("manage-class-name-edit").style.display="block";document.getElementById("manage-class-name-input").focus()}),document.getElementById("cancel-class-name")?.addEventListener("click",()=>{document.getElementById("manage-class-name-edit").style.display="none",document.getElementById("manage-class-name-display").style.display=""}),document.getElementById("save-class-name")?.addEventListener("click",async()=>{const e=document.getElementById("manage-class-name-input"),t=document.getElementById("class-name-status"),n=(e.value||"").trim();if(!n)return t.style.display="block",t.style.color="red",void(t.textContent="Enter a class name first.");t.style.display="block",t.style.color="var(--color-text-muted)",t.style.marginTop="0.4rem",t.style.fontSize="0.8rem",t.textContent="Saving...";try{await request("/classrooms/me",{method:"POST",body:JSON.stringify({name:n})}),document.getElementById("manage-class-name-edit").style.display="none";const e=document.getElementById("manage-class-name-display");e.textContent=n,e.style.display="",t.style.display="none",showToast("Class name saved")}catch(e){t.style.color="red",t.textContent=e.message||"Could not save class name."}}),document.querySelectorAll("#teacher-content .student-card").forEach(t=>{t.addEventListener("click",()=>viewStudent(e,t.dataset.id,t.dataset.name))})}catch(t){e.showView(`<div class="empty-state"><h2>Error</h2><p>${escapeHtml(t.message)}</p></div>`)}}async function loadStudents(e){e.showView('<div class="loading-state"><div class="spinner"></div><p>Loading...</p></div>');try{const[t,n]=await Promise.all([request("/students"),request("/classrooms/me").catch(()=>null)]),a=t?.items,s=Array.isArray(a)?a:[],o=n?.code||"";e.showView(`\n      <div class="content" style="max-width:960px">\n        <h2>Students</h2>\n        ${o?`\n          <div class="card" style="margin:1rem 0;padding:1rem;display:flex;align-items:center;justify-content:space-between;flex-wrap:wrap;gap:0.75rem;background:#eff6ff;border:1px solid #dbeafe">\n            <div>\n              <strong style="color:#1e40af">Class Code:</strong>\n              <span style="font-family:monospace;font-weight:800;letter-spacing:0.2em;font-size:1.1rem">${escapeHtml(o)}</span>\n            </div>\n            <button class="btn btn-sm" id="students-copy-code">Copy Code</button>\n          </div>`:""}\n        <div class="card-grid" style="margin-top:1rem">\n          ${0===s.length?'<div class="empty-state"><p>No students connected yet. Share your class code so students can join.</p></div>':s.map(e=>`\n              <div class="card student-card" data-id="${escapeHtml(e.id||e.user_id)}" data-name="${escapeHtml(e.full_name||e.user_id)}" style="cursor:pointer">\n                <div style="display:flex;align-items:center;gap:0.75rem">\n                  <div style="width:40px;height:40px;border-radius:50%;background:var(--color-primary);color:#fff;display:flex;align-items:center;justify-content:center;font-weight:700;font-size:0.9rem;flex-shrink:0">${escapeHtml((e.full_name||"S").charAt(0).toUpperCase())}</div>\n                  <div style="flex:1;min-width:0">\n                    <h3 style="margin:0;font-size:0.95rem">${escapeHtml(e.full_name||e.user_id)}</h3>\n                    <p style="margin:0.15rem 0 0;color:var(--color-text-muted);font-size:0.8rem;overflow:hidden;text-overflow:ellipsis;white-space:nowrap">${escapeHtml(e.email||"")} ${e.form_level?"— Form "+escapeHtml(e.form_level):""}</p>\n                  </div>\n                  <span style="color:var(--color-text-muted);font-size:0.8rem">→</span>\n                </div>\n              </div>\n            `).join("")}\n        </div>\n      </div>\n    `),document.getElementById("students-copy-code")?.addEventListener("click",()=>{const e=()=>{const e=document.getElementById("students-copy-code");if(e){const t=e.textContent;e.textContent="Copied ✓",setTimeout(()=>e.textContent=t,1500)}};navigator.clipboard?.writeText?navigator.clipboard.writeText(o).then(e).catch(e):e()}),document.querySelectorAll("#teacher-content .student-card").forEach(t=>{t.addEventListener("click",()=>viewStudent(e,t.dataset.id,t.dataset.name))})}catch(t){e.showView(`<div class="empty-state"><h2>Error</h2><p>${escapeHtml(t.message)}</p></div>`)}}async function viewStudent(e,t,n){e.showView('<div class="loading-state"><div class="spinner"></div><p>Loading student progress...</p></div>');try{const[a,s]=await Promise.all([request(`/progress/${t}`).catch(()=>[]),request(`/students/${t}`).catch(()=>null)]),o="function"==typeof asProgressItems?asProgressItems(a):Array.isArray(a)?a:a&&a.items||[],i=Array.isArray(a)?a.length:a&&a.total||o.length,r={};let l=0,c=0;const d=[];o.forEach(e=>{const t=e.subject_name||"General";r[t]||(r[t]={total:0,completed:0,scores:[]}),r[t].total++,e.completion_percentage>=100&&(r[t].completed++,l++),null!=e.score_percentage&&e.score_percentage>0&&(r[t].scores.push(e.score_percentage),d.push(e.score_percentage))}),d.length>0&&(c=Math.round(d.reduce((e,t)=>e+t,0)/d.length)),e.showView(`\n      <div class="content" style="max-width:960px">\n        <div style="display:flex;align-items:center;gap:0.5rem;margin-bottom:1rem">\n          <button class="btn" id="back-btn">← Back</button>\n          <h2>${escapeHtml(n)}</h2>\n        </div>\n\n        ${s?`\n          <div style="display:flex;gap:2rem;flex-wrap:wrap;margin-bottom:1.5rem;font-size:0.85rem;color:var(--color-text-muted)">\n            ${s.email?`<span>📧 ${escapeHtml(s.email)}</span>`:""}\n            ${s.form_level?`<span>📋 ${escapeHtml(s.form_level)}</span>`:""}\n            ${s.phone?`<span>📱 ${escapeHtml(s.phone)}</span>`:""}\n          </div>\n        `:""}\n\n        <div class="stat-grid">\n          <div class="stat-card">\n            <div class="stat-icon" style="background:#eff6ff;color:#2563eb">📚</div>\n            <div class="stat-value">${i}</div>\n            <div class="stat-label">Lessons Attempted</div>\n          </div>\n          <div class="stat-card">\n            <div class="stat-icon" style="background:#f0fdf4;color:#16a34a">✅</div>\n            <div class="stat-value">${l}</div>\n            <div class="stat-label">Completed</div>\n          </div>\n          <div class="stat-card">\n            <div class="stat-icon" style="background:#fef3c7;color:#d97706">📈</div>\n            <div class="stat-value">${null!=c?c+"%":"0%"}</div>\n            <div class="stat-label">Avg Score</div>\n          </div>\n        </div>\n\n        <div class="section-header">\n          <h3>Progress by Subject</h3>\n        </div>\n        ${0===Object.keys(r).length?'<div class="empty-state" style="padding:2rem"><p>No progress data yet</p></div>':Object.entries(r).map(([e,t])=>{const n=t.total>0?Math.round(t.completed/t.total*100):0,a=t.scores.length>0?Math.round(t.scores.reduce((e,t)=>e+t,0)/t.scores.length):0;return`\n                <div class="card" style="margin-bottom:0.75rem">\n                  <div style="display:flex;justify-content:space-between;align-items:center;margin-bottom:0.5rem">\n                    <strong>${escapeHtml(e)}</strong>\n                    <span style="font-size:0.85rem;color:var(--color-text-muted)">${t.completed}/${t.total} lessons${a>0?" · "+a+"% avg":""}</span>\n                  </div>\n                  <div class="progress-bar">\n                    <div class="progress-bar-fill" style="width:${n}%"></div>\n                  </div>\n                </div>\n              `}).join("")}\n      </div>\n    `),document.getElementById("back-btn")?.addEventListener("click",()=>loadStudents(e))}catch(t){e.showView('<div class="empty-state"><p>Error loading student data</p><button class="btn" id="back-btn">← Back</button></div>'),document.getElementById("back-btn")?.addEventListener("click",()=>loadStudents(e))}}async function loadLessons(e){e.showView('<div class="loading-state"><div class="spinner"></div><p>Loading...</p></div>');try{const[t,n]=await Promise.all([request("/lessons"),request("/classrooms/me").catch(()=>null)]);let a=[];try{a=JSON.parse(localStorage.getItem("casuya_teacher_drafts")||"[]")}catch(e){}const s=(Array.isArray(t)?t:[]).filter(e=>"published"===e.status),o=n?.lesson_limit??2,i=`Published lessons: <b>${s.length}/${o}</b>${s.length>=o?" — limit reached. Ask an administrator to raise your allocation.":""}`;e.showView(`\n      <div class="content">\n        <div style="display:flex;justify-content:space-between;align-items:center;flex-wrap:wrap;gap:0.5rem">\n          <h2>Lessons</h2>\n          <div style="display:flex;gap:0.5rem">\n            <button class="btn btn-primary" id="publish-lesson-btn">＋ Publish Lesson</button>\n            <button class="btn btn-sm" id="create-draft-btn">Create Draft</button>\n          </div>\n        </div>\n        <div id="lesson-form-area"></div>\n        <div id="draft-form-area"></div>\n        ${i?`<p style="font-size:0.8rem;color:var(--color-text-muted);margin:0.5rem 0 0">${i}</p>`:""}\n        ${a.length>0?`\n          <h3 style="margin:1.5rem 0 0.75rem">Your Drafts (${a.length})</h3>\n          <div class="card-grid">\n            ${a.map((e,t)=>`\n              <div class="card" style="padding:1rem">\n                <div style="display:flex;justify-content:space-between;align-items:start">\n                  <div>\n                    <h4 style="margin:0">${escapeHtml(e.title)}</h4>\n                    <p style="color:var(--color-text-muted);font-size:0.85rem;margin-top:0.25rem">Created: ${new Date(e.createdAt).toLocaleDateString()}</p>\n                    <p style="color:var(--color-text-muted);font-size:0.75rem;margin-top:0.15rem">Content: ${e.html_content.length} chars</p>\n                  </div>\n                  <div style="display:flex;gap:0.25rem">\n                    <button class="btn btn-sm" data-view-draft="${t}">View</button>\n                    <button class="btn btn-sm btn-danger" data-delete-draft="${t}">Delete</button>\n                  </div>\n                </div>\n              </div>\n            `).join("")}\n          </div>\n        `:""}\n        <h3 style="margin:1.5rem 0 0.75rem">Published Lessons</h3>\n        <div class="card-grid">\n          ${Array.isArray(t)&&0!==t.length?t.map(e=>`\n              <div class="card lesson-card clickable" data-id="${escapeHtml(e.id)}">\n                <h3>${escapeHtml(e.title)}</h3>\n                <p style="color:var(--color-text-muted)">${escapeHtml(e.status)}</p>\n              </div>\n            `).join(""):'<div class="empty-state"><p>No lessons yet</p></div>'}\n        </div>\n      </div>\n    `),document.querySelectorAll("#teacher-content .lesson-card.clickable").forEach(t=>{t.addEventListener("click",()=>viewLessonContent("#teacher-content",t.dataset.id,()=>loadLessons(e)))}),document.getElementById("create-draft-btn")?.addEventListener("click",()=>{document.getElementById("draft-form-area").innerHTML='\n        <div class="card" style="margin-top:1rem;padding:1.5rem">\n          <h3 style="margin-bottom:0.75rem">Create Lesson Draft</h3>\n          <form id="draft-form" style="display:flex;flex-direction:column;gap:0.75rem">\n            <div>\n              <label style="font-size:0.8rem;color:var(--color-text-muted);display:block;margin-bottom:0.25rem">Title</label>\n              <input class="input" name="title" placeholder="Lesson title" required>\n            </div>\n            <div>\n              <label style="font-size:0.8rem;color:var(--color-text-muted);display:block;margin-bottom:0.25rem">HTML Content</label>\n              <textarea class="input" name="html_content" rows="12" placeholder="Write lesson content in HTML..." required style="font-family:monospace;font-size:0.85rem"></textarea>\n            </div>\n            <div style="display:flex;gap:0.5rem">\n              <button class="btn btn-success" type="submit">Save Draft</button>\n              <button class="btn" type="button" id="cancel-draft">Cancel</button>\n            </div>\n          </form>\n        </div>\n      ',document.getElementById("cancel-draft").addEventListener("click",()=>document.getElementById("draft-form-area").innerHTML=""),document.getElementById("draft-form").addEventListener("submit",t=>{t.preventDefault();const n=new FormData(t.target);a.unshift({title:n.get("title"),html_content:n.get("html_content"),createdAt:Date.now()}),localStorage.setItem("casuya_teacher_drafts",JSON.stringify(a)),loadLessons(e)})}),document.getElementById("publish-lesson-btn")?.addEventListener("click",async()=>{if(s.length>=o)alert("You have reached your limit of "+o+" published lessons. Ask an administrator to increase your allocation.");else try{const t=await request("/subjects"),n=Array.isArray(t)?t:[];document.getElementById("lesson-form-area").innerHTML=`\n          <div class="card" style="margin-top:1rem;padding:1.5rem">\n            <h3 style="margin-bottom:0.5rem">Publish a Lesson</h3>\n            <p style="font-size:0.8rem;color:var(--color-text-muted);margin:0 0 1rem">\n              This lesson is published instantly to your connected students. Remaining allowance: <b>${o-s.length}</b>.\n            </p>\n            <form id="publish-form" style="display:flex;flex-direction:column;gap:0.75rem">\n              <div>\n                <label style="font-size:0.8rem;color:var(--color-text-muted);display:block;margin-bottom:0.25rem">Title</label>\n                <input class="input" name="title" placeholder="e.g. Introduction to Algebra" required>\n              </div>\n              <div>\n                <label style="font-size:0.8rem;color:var(--color-text-muted);display:block;margin-bottom:0.25rem">Subject</label>\n                <select class="input" id="pub-subject" required>\n                  <option value="">Select subject...</option>\n                  ${n.map(e=>`<option value="${escapeHtml(e.id)}">${escapeHtml(e.name)}</option>`).join("")}\n                </select>\n              </div>\n              <div>\n                <label style="font-size:0.8rem;color:var(--color-text-muted);display:block;margin-bottom:0.25rem">Topic</label>\n                <select class="input" id="pub-topic" required><option value="">Select subject first...</option></select>\n              </div>\n              <div>\n                <label style="font-size:0.8rem;color:var(--color-text-muted);display:block;margin-bottom:0.25rem">Subtopic</label>\n                <select class="input" id="pub-subtopic" required><option value="">Select topic first...</option></select>\n              </div>\n              <div>\n                <label style="font-size:0.8rem;color:var(--color-text-muted);display:block;margin-bottom:0.25rem">Lesson Content (HTML)</label>\n                <textarea class="input" name="html_content" rows="12" placeholder="Write lesson content in HTML..." required style="font-family:monospace;font-size:0.85rem"></textarea>\n              </div>\n              <div style="display:flex;gap:0.5rem">\n                <button class="btn btn-success" type="submit" id="publish-submit">Publish Lesson</button>\n                <button class="btn" type="button" id="cancel-publish">Cancel</button>\n              </div>\n              <p id="publish-status" style="display:none;font-size:0.85rem;margin:0"></p>\n            </form>\n          </div>\n        `,document.getElementById("cancel-publish").addEventListener("click",()=>document.getElementById("lesson-form-area").innerHTML="");const a=document.getElementById("pub-subject"),i=document.getElementById("pub-topic"),r=document.getElementById("pub-subtopic");a.addEventListener("change",async()=>{if(i.innerHTML='<option value="">Loading...</option>',r.innerHTML='<option value="">Select topic first...</option>',a.value)try{const e=await request(`/topics/?subject_id=${encodeURIComponent(a.value)}`),t=Array.isArray(e)?e:[];i.innerHTML='<option value="">Select topic...</option>'+t.map(e=>`<option value="${escapeHtml(e.id)}">${escapeHtml(e.title)}</option>`).join("")}catch(e){i.innerHTML='<option value="">No topics found</option>'}else i.innerHTML='<option value="">Select subject first...</option>'}),i.addEventListener("change",async()=>{if(r.innerHTML='<option value="">Loading...</option>',i.value)try{const e=await request(`/subtopics/?topic_id=${encodeURIComponent(i.value)}`),t=Array.isArray(e)?e:[];r.innerHTML='<option value="">Select subtopic...</option>'+t.map(e=>`<option value="${escapeHtml(e.id)}">${escapeHtml(e.title)}</option>`).join("")}catch(e){r.innerHTML='<option value="">No subtopics found</option>'}else r.innerHTML='<option value="">Select topic first...</option>'}),document.getElementById("publish-form").addEventListener("submit",async t=>{t.preventDefault();const n=new FormData(t.target),a=document.getElementById("publish-status");a.style.display="block",a.style.color="var(--color-text-muted)",a.textContent="Publishing lesson...",document.getElementById("publish-submit").disabled=!0;try{await request("/lessons",{method:"POST",body:JSON.stringify({subtopic_id:r.value,title:n.get("title"),html_content:n.get("html_content")})}),a.style.color="var(--color-success)",a.textContent="Lesson published successfully!",setTimeout(()=>loadLessons(e),1200)}catch(e){a.style.color="red",a.textContent="Failed: "+e.message,document.getElementById("publish-submit").disabled=!1}})}catch(e){alert("Could not load subjects: "+e.message)}}),document.querySelectorAll("[data-view-draft]").forEach(t=>{t.addEventListener("click",()=>{const n=parseInt(t.dataset.viewDraft),s=a[n];e.showView(`\n          <div class="content">\n            <div style="display:flex;align-items:center;gap:0.5rem;margin-bottom:1rem">\n              <button class="btn" id="back-btn">← Back</button>\n              <h2>${escapeHtml(s.title)}</h2>\n              <span style="font-size:0.75rem;padding:0.2rem 0.6rem;background:#fef3c7;color:#d97706;border-radius:var(--radius);font-weight:600">Draft</span>\n            </div>\n            <div class="lesson-viewer" id="draft-viewer"></div>\n          </div>\n        `);const o=document.getElementById("draft-viewer");if(o){const e=document.createElement("iframe");e.style.cssText="width:100%;min-height:600px;border:1px solid var(--color-border);border-radius:var(--radius);background:#fff",e.sandbox="allow-same-origin",e.srcdoc=s.html_content||"<p>No content</p>",o.appendChild(e)}document.getElementById("back-btn").addEventListener("click",()=>loadLessons(e))})}),document.querySelectorAll("[data-delete-draft]").forEach(t=>{t.addEventListener("click",()=>{const n=parseInt(t.dataset.deleteDraft);a.splice(n,1),localStorage.setItem("casuya_teacher_drafts",JSON.stringify(a)),loadLessons(e)})})}catch(t){e.showView(`<div class="empty-state"><h2>Error</h2><p>${escapeHtml(t.message)}</p></div>`)}}async function loadBookmarks(e){e.showView('<div class="loading-state"><div class="spinner"></div><p>Loading bookmarks...</p></div>');try{const t=await request("/bookmarks/"),n=Array.isArray(t)?t:[];if(0===n.length)return void e.showView('<div class="content"><h2>Bookmarks</h2><div class="empty-state"><p>No bookmarks yet. Open a lesson and click ☆ to bookmark it.</p></div></div>');e.showView(`\n      <div class="content">\n        <h2>Bookmarks</h2>\n        <div class="card-grid" style="margin-top:1rem">\n          ${n.map(e=>`\n            <div class="card lesson-card clickable" data-id="${escapeHtml(e.lesson_id||e.id)}" style="position:relative">\n              <h3>${escapeHtml(e.lesson_title||e.title||"Untitled")}</h3>\n              <span style="position:absolute;top:0.5rem;right:0.5rem;font-size:0.75rem">🔖</span>\n            </div>\n          `).join("")}\n        </div>\n      </div>\n    `),document.querySelectorAll("#teacher-content .lesson-card.clickable").forEach(t=>{t.addEventListener("click",()=>viewLessonContent("#teacher-content",t.dataset.id,()=>loadBookmarks(e)))})}catch(t){e.showView('<div class="content"><h2>Bookmarks</h2><div class="empty-state"><p>Error loading bookmarks</p></div></div>')}}async function loadAssignments(e){e.showView('<div class="loading-state"><div class="spinner"></div><p>Loading assignments...</p></div>');try{const[t,n,a]=await Promise.all([request("/lessons"),request("/students"),request("/assignments").catch(()=>[])]),s=Array.isArray(t)?t:[],o=(Array.isArray(n?.items)&&n.items,Array.isArray(a)?a:[]);e.showView(`\n      <div class="content">\n        <div style="display:flex;justify-content:space-between;align-items:center">\n          <h2>Assignments</h2>\n          <button class="btn btn-primary" id="new-assignment-btn">+ New Assignment</button>\n        </div>\n        <div id="assignment-form-area"></div>\n        <div style="margin-top:1rem">\n          ${0===o.length?'<div class="empty-state"><p>No assignments yet. Create one to assign lessons to students.</p></div>':o.map((e,t)=>`\n              <div class="card" style="padding:1rem;margin-bottom:0.5rem">\n                <div style="display:flex;justify-content:space-between;align-items:start">\n                  <div style="flex:1;min-width:0">\n                    <h4 style="margin:0">${escapeHtml(e.title)}</h4>\n                    <p style="color:var(--color-text-muted);font-size:0.85rem;margin-top:0.25rem">${escapeHtml(e.lesson_title||e.lesson_id||"Unknown lesson")}</p>\n                    <p style="color:var(--color-text-muted);font-size:0.75rem;margin-top:0.15rem">Due: ${e.due_date?new Date(e.due_date).toLocaleDateString():"No due date"} | ${e.status}</p>\n                    ${e.paper_summary?`<p style="color:var(--color-accent);font-size:0.78rem;margin-top:0.15rem">📄 ${examPaperMetaLine(e.paper_summary)}</p>`:""}\n                  </div>\n                  <div style="display:flex;gap:0.35rem;flex-shrink:0;margin-left:0.5rem">\n                    <button class="btn btn-sm" data-open-assignment="${e.id}" title="View exam paper">Open</button>\n                    <button class="btn btn-sm" data-edit-assignment="${e.id}" title="Edit assignment">Edit</button>\n                    <button class="btn btn-sm" data-subs-assignment="${e.id}" title="View submissions">Submissions</button>\n                    <button class="btn btn-sm btn-danger" data-delete-assignment="${e.id}" title="Delete assignment">Remove</button>\n                  </div>\n                </div>\n              </div>\n            `).join("")}\n        </div>\n      </div>\n    `),document.getElementById("new-assignment-btn")?.addEventListener("click",()=>{showAssignmentCreateForm(e,s)}),document.querySelectorAll("[data-delete-assignment]").forEach(t=>{t.addEventListener("click",async()=>{const n=t.dataset.deleteAssignment;try{await request(`/assignments/${n}`,{method:"DELETE"}),loadAssignments(e)}catch(e){alert("Failed to delete assignment")}})}),document.querySelectorAll("[data-open-assignment]").forEach(t=>{t.addEventListener("click",async()=>{const n=t.dataset.openAssignment;try{const t=await request(`/assignments/${n}`);if(!t||!t.paper)return void alert("This assignment has no exam paper attached.");e.showView(`\n            <div class="content">\n              <div style="display:flex;align-items:center;gap:0.5rem;margin-bottom:1rem;flex-wrap:wrap">\n                <button class="btn" id="back-to-list">← Back to Assignments</button>\n                <h2 style="flex:1">${escapeHtml(t.title)}</h2>\n              </div>\n              <p style="color:var(--color-text-muted);font-size:0.85rem;margin-bottom:0.5rem">\n                ${escapeHtml(t.lesson_title||"")} | Due: ${t.due_date?new Date(t.due_date).toLocaleDateString():"No due date"} | ${t.status}\n              </p>\n              ${renderExamPaper(t.paper,{mode:"preview",ns:"open-"+(t.paper.header?.form_level||0)})}\n            </div>\n          `),document.getElementById("back-to-list").addEventListener("click",()=>loadAssignments(e))}catch(e){alert("Failed to load assignment: "+e.message)}})}),document.querySelectorAll("[data-edit-assignment]").forEach(t=>{t.addEventListener("click",async()=>{const n=t.dataset.editAssignment;try{const t=await request(`/assignments/${n}`);if(!t)return void alert("Assignment not found.");document.getElementById("assignment-form-area").innerHTML=`\n            <div class="card" style="margin-top:1rem;padding:1.5rem">\n              <h3 style="margin-bottom:0.5rem">Edit Assignment</h3>\n              <form id="edit-assignment-form" style="display:grid;grid-template-columns:1fr 1fr;gap:0.75rem">\n                <div style="grid-column:1/-1">\n                  <label style="font-size:0.8rem;color:var(--color-text-muted);display:block;margin-bottom:0.25rem">Title</label>\n                  <input class="input" name="title" id="edit-title" value="${escapeHtml(t.title)}" required>\n                </div>\n                <div>\n                  <label style="font-size:0.8rem;color:var(--color-text-muted);display:block;margin-bottom:0.25rem">Lesson</label>\n                  <select class="input" name="lesson_id" id="edit-lesson">\n                    ${s.map(e=>`<option value="${e.id}" ${e.id===t.lesson_id?"selected":""}>${escapeHtml(e.title)}</option>`).join("")}\n                  </select>\n                </div>\n                <div>\n                  <label style="font-size:0.8rem;color:var(--color-text-muted);display:block;margin-bottom:0.25rem">Due Date</label>\n                  <input class="input" type="date" name="due_date" value="${t.due_date?t.due_date.split("T")[0]:""}">\n                </div>\n                <div style="grid-column:1/-1">\n                  <label style="font-size:0.8rem;color:var(--color-text-muted);display:block;margin-bottom:0.25rem">Notes</label>\n                  <input class="input" name="notes" value="${escapeHtml(t.notes||"")}">\n                </div>\n                <div style="grid-column:1/-1;display:flex;gap:0.5rem;align-items:center">\n                  <button class="btn btn-success" type="submit">Save Changes</button>\n                  <button class="btn" type="button" id="cancel-edit">Cancel</button>\n                  <span id="edit-status" style="font-size:0.8rem;color:var(--color-text-muted)"></span>\n                </div>\n              </form>\n            </div>\n          `,document.getElementById("cancel-edit").addEventListener("click",()=>document.getElementById("assignment-form-area").innerHTML=""),document.getElementById("edit-assignment-form").addEventListener("submit",async t=>{t.preventDefault();const a=new FormData(t.target),s=document.getElementById("edit-status");s.textContent="Saving...";try{await request(`/assignments/${n}?`+new URLSearchParams({title:a.get("title"),lesson_id:a.get("lesson_id"),due_date:a.get("due_date")||"",notes:a.get("notes")||""}),{method:"PUT"}),document.getElementById("assignment-form-area").innerHTML="",loadAssignments(e)}catch(e){s.textContent="Failed: "+e.message}})}catch(e){alert("Failed to load assignment: "+e.message)}})}),document.querySelectorAll("[data-subs-assignment]").forEach(t=>{t.addEventListener("click",()=>openAssignmentSubmissions(e,t.dataset.subsAssignment))})}catch(t){e.showView('<div class="content"><h2>Assignments</h2><div class="empty-state"><p>Error loading assignments</p></div></div>')}}function showAssignmentCreateForm(e,t){document.getElementById("assignment-form-area").innerHTML=`\n    <div class="card" style="margin-top:1rem;padding:1.5rem">\n      <h3 style="margin-bottom:0.5rem">Create a New Assignment</h3>\n      <p style="font-size:0.85rem;color:var(--color-text-muted);margin:0 0 0.9rem">\n        Use the <b>AI exam generator</b> to create a NECTA / internal-format paper for a lesson, preview it, then assign it to students.\n      </p>\n      <form id="assignment-form" style="display:grid;grid-template-columns:1fr 1fr;gap:0.75rem">\n        <div style="grid-column:1/-1">\n          <label style="font-size:0.8rem;color:var(--color-text-muted);display:block;margin-bottom:0.25rem">Title</label>\n          <input class="input" name="title" id="exam-title" placeholder="e.g. Form Two Chemistry - Mid-Term Examination">\n        </div>\n        <div>\n          <label style="font-size:0.8rem;color:var(--color-text-muted);display:block;margin-bottom:0.25rem">Lesson</label>\n          <select class="input" name="lesson_id" id="exam-lesson" required>\n            <option value="">Select lesson...</option>\n            ${t.map(e=>`<option value="${e.id}">${escapeHtml(e.title)}</option>`).join("")}\n          </select>\n        </div>\n        <div>\n          <label style="font-size:0.8rem;color:var(--color-text-muted);display:block;margin-bottom:0.25rem">Exam Type</label>\n          <select class="input" name="kind" id="exam-kind">\n            <option value="necta">NECTA Style (FTNA/CSEE)</option>\n            <option value="internal">Internal Examination</option>\n            <option value="exercise">Class Exercise</option>\n          </select>\n        </div>\n        <div>\n          <label style="font-size:0.8rem;color:var(--color-text-muted);display:block;margin-bottom:0.25rem">Due Date</label>\n          <input class="input" type="date" name="due_date">\n        </div>\n        <div>\n          <label style="font-size:0.8rem;color:var(--color-text-muted);display:block;margin-bottom:0.25rem">Time Allowed</label>\n          <input class="input" name="duration" id="exam-duration" placeholder="2 Hours">\n        </div>\n        <div style="grid-column:1/-1">\n          <label style="font-size:0.8rem;color:var(--color-text-muted);display:block;margin-bottom:0.25rem">Notes (optional)</label>\n          <input class="input" name="notes" placeholder="Optional instructions for students">\n        </div>\n        <div style="grid-column:1/-1">\n          <label style="font-size:0.8rem;color:var(--color-text-muted);display:block;margin-bottom:0.25rem">Exam Structure — adjust question counts & marks per section</label>\n          <div id="exam-sections"></div>\n        </div>\n        <div style="grid-column:1/-1;display:flex;gap:0.5rem;align-items:center;flex-wrap:wrap">\n          <button class="btn btn-primary" type="button" id="exam-generate">✨ Generate Exam with AI</button>\n          <span id="exam-generate-status" style="font-size:0.8rem;color:var(--color-text-muted)"></span>\n          <button class="btn" type="button" id="cancel-assignment" style="margin-left:auto">Cancel</button>\n        </div>\n      </form>\n      <div id="exam-preview-area" style="margin-top:1rem"></div>\n    </div>\n  `,document.getElementById("cancel-assignment").addEventListener("click",()=>document.getElementById("assignment-form-area").innerHTML="");const n=()=>{const e=[];return document.querySelectorAll("#exam-sections [data-sec-row]").forEach(t=>{e.push({id:t.dataset.secRow,count:parseInt(t.querySelector('[data-field="count"]').value,10)||1,marks_per_question:parseInt(t.querySelector('[data-field="marks_per_question"]').value,10)||1})}),e},a=()=>{const e=document.getElementById("exam-total-line");if(!e)return;const t=n(),a=t.reduce((e,t)=>e+t.count*t.marks_per_question,0);e.innerHTML=`Total: <b>${a} marks</b> (${t.length} sections)`},s=async()=>{const e=document.getElementById("exam-kind").value;try{const t=await request("/assignments/exam-presets"),n=t&&t[e];if(!n)return;const s=document.getElementById("exam-duration");s.value||(s.value=n.duration||"");const o=n.sections.reduce((e,t)=>e+t.count*t.marks_per_question,0);document.getElementById("exam-sections").innerHTML=n.sections.map(e=>`\n          <div data-sec-row="${escapeHtml(e.id)}" style="display:flex;align-items:center;gap:0.5rem;padding:0.35rem 0;border-bottom:1px dashed var(--color-border)">\n            <span style="width:1.7rem;font-weight:700">${escapeHtml(e.id)}</span>\n            <span style="flex:1;font-size:0.85rem">${escapeHtml(e.title)}</span>\n            <label style="font-size:0.75rem;color:var(--color-text-muted)">Questions <input class="input" style="width:4.5rem" type="number" min="1" max="40" data-field="count" value="${e.count}"></label>\n            <label style="font-size:0.75rem;color:var(--color-text-muted)">Marks each <input class="input" style="width:4.5rem" type="number" min="1" max="50" data-field="marks_per_question" value="${e.marks_per_question}"></label>\n          </div>\n        `).join("")+`<div style="margin-top:0.4rem;font-size:0.8rem;color:var(--color-text-muted)" id="exam-total-line">Total: <b>${o} marks</b> (${n.sections.length} sections)</div>`,document.querySelectorAll("#exam-sections input").forEach(e=>e.addEventListener("input",a))}catch(e){}};document.getElementById("exam-kind").addEventListener("change",s),s(),document.getElementById("exam-generate").addEventListener("click",async()=>{const t=document.getElementById("exam-lesson").value;if(!t)return void alert("Select a lesson first");const a=document.getElementById("exam-generate"),s=document.getElementById("exam-generate-status"),o=document.getElementById("exam-title"),i=document.getElementById("exam-kind").value;a.disabled=!0,s.textContent="Generating exam paper...";try{const a=await request("/assignments/generate-paper",{method:"POST",body:JSON.stringify({lesson_id:t,kind:i,duration:document.getElementById("exam-duration").value||"",sections:n()})}),r=a&&a.paper;if(!r)throw new Error("No paper returned");if(!o.value.trim()){const e=r.header||{},t="necta"===r.kind?"NECTA-Style Exam":"exercise"===r.kind?"Class Exercise":"Internal Exam";o.value=[e.subject,e.form_label,t].filter(Boolean).join(" — ")}document.getElementById("exam-preview-area").innerHTML=`\n        <div class="card" style="padding:1rem">\n          <div style="display:flex;justify-content:space-between;align-items:center;flex-wrap:wrap;gap:0.5rem;margin-bottom:0.75rem">\n            <h4 style="margin:0">Exam Preview</h4>\n            <div style="display:flex;gap:0.5rem">\n              <button class="btn btn-sm" id="exam-regenerate">↻ Regenerate</button>\n              <button class="btn btn-sm btn-success" id="exam-assign">Assign Exam to Students</button>\n            </div>\n          </div>\n          ${"local"===a.generator?'<p style="font-size:0.8rem;color:var(--color-warning);margin:0 0 0.5rem">⚠ AI service unavailable — a valid paper was generated offline from the lesson content.</p>':""}\n          ${renderExamPaper(r,{mode:"preview",ns:"preview-"+(r.header?.form_level||0)})}\n        </div>\n      `,document.getElementById("exam-regenerate").addEventListener("click",()=>{document.getElementById("exam-generate").click()}),document.getElementById("exam-assign").addEventListener("click",async()=>{const n=new FormData(document.getElementById("assignment-form"));try{await request("/assignments?"+new URLSearchParams({lesson_id:t,title:o.value.trim()||n.get("title")||"Assignment",due_date:n.get("due_date")||"",notes:n.get("notes")||"",paper:JSON.stringify(r)}),{method:"POST"}),loadAssignments(e)}catch(e){alert("Failed to create assignment: "+e.message)}}),s.textContent="casuya-ai"===a.generator?"Generated by AI ✓ — review and assign.":"Generated offline ✓ — review and assign."}catch(e){s.textContent="",alert("Failed to generate exam: "+e.message)}finally{a.disabled=!1}})}async function openAssignmentSubmissions(e,t){try{const[n,a]=await Promise.all([request(`/assignments/${t}`),request(`/assignments/${t}/submissions`)]),s=Array.isArray(a)?a:[];e.showView(`\n      <div class="content">\n        <div style="display:flex;align-items:center;gap:0.5rem;margin-bottom:1rem;flex-wrap:wrap">\n          <button class="btn" id="back-to-list">← Back to Assignments</button>\n          <h2 style="flex:1">Submissions: ${escapeHtml(n.title)}</h2>\n        </div>\n        ${0===s.length?'<div class="empty-state"><p>No submissions yet. Students haven\'t submitted their work for this assignment.</p></div>':`<div style="margin-bottom:1rem"><p style="color:var(--color-text-muted);font-size:0.85rem">${s.length} submission(s) received — click to view</p></div>\n           <div style="display:grid;gap:0.5rem">\n             ${s.map(e=>`\n               <div class="card" style="padding:0.75rem 1rem;cursor:pointer;transition:box-shadow 0.15s" data-view-submission="${e.id}" data-sub-assignment="${t}">\n                 <div style="display:flex;justify-content:space-between;align-items:center">\n                   <div>\n                     <span style="font-weight:600">${escapeHtml(e.student_id)}</span>\n                     <span style="color:var(--color-text-muted);font-size:0.8rem;margin-left:0.5rem">${e.status}</span>\n                   </div>\n                   <span style="font-size:0.8rem;color:var(--color-text-muted)">${e.submitted_at?new Date(e.submitted_at).toLocaleString():""}</span>\n                 </div>\n               </div>\n             `).join("")}\n           </div>`}\n        <div id="submission-detail" style="margin-top:1rem"></div>\n      </div>\n    `),document.getElementById("back-to-list").addEventListener("click",()=>loadAssignments(e)),document.querySelectorAll("[data-view-submission]").forEach(e=>{e.addEventListener("mouseenter",()=>e.style.boxShadow="0 2px 8px rgba(0,0,0,0.1)"),e.addEventListener("mouseleave",()=>e.style.boxShadow="none"),e.addEventListener("click",async()=>{const t=e.dataset.viewSubmission,n=e.dataset.subAssignment,a=document.getElementById("submission-detail");a.innerHTML='<div style="padding:1rem;color:var(--color-text-muted)">Loading submission...</div>';try{const[s,o]=await Promise.all([request(`/assignments/${n}/submissions`),request(`/assignments/${n}`)]),i=(Array.isArray(s)?s:[]).find(e=>e.id===t);if(!i)return void(a.innerHTML='<div style="padding:1rem;color:var(--color-error)">Submission not found</div>');let r=[],l={},c={};try{const e=JSON.parse(i.elements_json||"{}");Array.isArray(e)?r=e:(r=e.elements||[],l=e.mcq_answers||{},c=e.structured_answers||{})}catch{}const d=o&&o.paper;let u=`\n            <div class="card" style="padding:1.25rem">\n              <div style="display:flex;justify-content:space-between;align-items:center;margin-bottom:0.75rem;flex-wrap:wrap;gap:0.5rem">\n                <h3 style="margin:0">Student: ${escapeHtml(i.student_id)}</h3>\n                <span style="font-size:0.8rem;color:var(--color-text-muted)">Submitted: ${i.submitted_at?new Date(i.submitted_at).toLocaleString():"N/A"} | ${i.status}</span>\n              </div>\n          `;if(d&&d.sections){u+='<div style="margin-bottom:1rem"><h4 style="margin:0 0 0.5rem">Multiple Choice Answers</h4>',d.sections.forEach(e=>{"mcq"===e.question_type&&(e.questions||[]).forEach(e=>{const t=null!=l[e.number]?l[e.number]:-1,n=e.answer,a=t===n,s=(e.options||[]).map((e,a)=>{const s=a===n;let o="padding:0.15rem 0.4rem;border-radius:3px;margin:0.1rem 0;display:block;font-size:0.85rem;";return s?o+="background:#dcfce7;font-weight:600;":a===t&&!s&&(o+="background:#fee2e2;text-decoration:line-through;"),`<span style="${o}">${a+1}. ${escapeHtml(e)}</span>`}).join("");u+=`<div style="margin-bottom:0.5rem;padding:0.4rem;border-left:3px solid ${a?"#16a34a":"#dc2626"};padding-left:0.6rem">\n                  <span style="font-weight:600;font-size:0.85rem">Q${e.number}.</span> <span style="font-size:0.85rem">${escapeHtml(e.text).slice(0,80)}</span>\n                  <div style="margin-top:0.2rem">${s}</div>\n                  <span style="font-size:0.75rem;color:${a?"#16a34a":"#dc2626"};font-weight:600">${t>=0?a?"Correct":"Wrong":"No answer"} (${e.marks} mark${e.marks>1?"s":""})</span>\n                </div>`})});Object.keys(c).length>0&&(u+='<h4 style="margin:1rem 0 0.5rem">Structured / Essay Answers</h4>',d.sections.forEach(e=>{"mcq"!==e.question_type&&(e.questions||[]).forEach(e=>{const t=c[e.number]||"";u+=`<div style="margin-bottom:0.75rem;padding:0.5rem;border-left:3px solid #2563eb;padding-left:0.6rem;background:#f8fafc;border-radius:0 6px 6px 0">\n                    <div style="font-weight:600;font-size:0.85rem;margin-bottom:0.25rem">Q${e.number}. ${escapeHtml(e.text).slice(0,100)}</div>\n                    <div style="font-size:0.75rem;color:var(--color-text-muted);margin-bottom:0.25rem">(${e.marks} mark${e.marks>1?"s":""})</div>\n                    ${t?`<div style="background:#fff;padding:0.5rem;border:1px solid #e5e7eb;border-radius:4px;font-size:0.9rem;white-space:pre-wrap">${escapeHtml(t)}</div>`:'<div style="color:#dc2626;font-size:0.85rem;font-style:italic">No answer submitted</div>'}\n                  </div>`})})),u+="</div>"}if(r.length>0?(u+='<div style="margin-bottom:0.5rem"><h4 style="margin:0 0 0.5rem">Blackboard Work</h4>',u+='<div style="background:#f9fafb;border:1px solid #e5e7eb;border-radius:6px;padding:0.75rem;position:relative">',u+='<canvas id="bb-replay-canvas" style="width:100%;border-radius:4px;background:#fff;cursor:default"></canvas>',u+="</div></div>"):d||(u+='<div style="color:var(--color-text-muted);font-size:0.85rem;padding:1rem">No work submitted yet.</div>'),u+="</div>",a.innerHTML=u,e.scrollIntoView({behavior:"smooth",block:"start"}),r.length>0){const e=()=>requestAnimationFrame(()=>renderBlackboardReplay(r));window.ensureKaTeX?window.ensureKaTeX().then(e):e()}}catch(e){a.innerHTML='<div style="padding:1rem;color:var(--color-error)">Failed to load submission: '+escapeHtml(e.message)+"</div>"}})})}catch(e){alert("Failed to load submissions: "+e.message)}}async function loadReports(e){e.showView('<div class="loading-state"><div class="spinner"></div><p>Loading reports...</p></div>');try{const[t,n]=await Promise.all([request("/students"),request("/lessons")]),a=Array.isArray(t?.items)?t.items:[],s=Array.isArray(n)?n:[],o=[],i=await Promise.all(a.slice(0,20).map(async e=>{try{const t=await request(`/progress/${e.id||e.user_id}`),n="function"==typeof asProgressItems?asProgressItems(t):Array.isArray(t)?t:t&&t.items||[];if(n.length||t&&t.total){const a=n.filter(e=>e.completion_percentage>=100).length,s=n.filter(e=>null!=e.score_percentage&&e.score_percentage>0),o=s.length>0?Math.round(s.reduce((e,t)=>e+t.score_percentage,0)/s.length):0;return{name:e.full_name||"Unknown",id:e.id||e.user_id,total:Array.isArray(t)?t.length:t&&t.total||n.length,completed:a,avgScore:o}}}catch(e){}return null}));for(const e of i)e&&o.push(e);const r=[...o].sort((e,t)=>t.avgScore-e.avgScore).slice(0,5),l=[...o].sort((e,t)=>t.completed-e.completed).slice(0,5);e.showView(`\n      <div class="content">\n        <h2>Class Reports</h2>\n        <div class="stat-grid" style="margin:1rem 0">\n          <div class="stat-card"><div class="stat-value">${a.length}</div><div class="stat-label">Total Students</div></div>\n          <div class="stat-card"><div class="stat-value">${s.length}</div><div class="stat-label">Total Lessons</div></div>\n          <div class="stat-card"><div class="stat-value">${o.reduce((e,t)=>e+t.completed,0)}</div><div class="stat-label">Lessons Completed</div></div>\n          <div class="stat-card"><div class="stat-value">${o.length>0?Math.round(o.reduce((e,t)=>e+t.avgScore,0)/o.length):0}%</div><div class="stat-label">Class Average</div></div>\n        </div>\n        ${r.length>0?`\n          <h3 style="margin:1.5rem 0 0.75rem">Top Performers</h3>\n          <div class="card-grid">\n            ${r.map((e,t)=>`\n              <div class="card" style="padding:1rem">\n                <div style="display:flex;align-items:center;gap:0.5rem">\n                  <span style="font-size:1.2rem;font-weight:700;color:var(--color-primary)">#${t+1}</span>\n                  <div>\n                    <h4 style="margin:0">${escapeHtml(e.name)}</h4>\n                    <p style="color:var(--color-text-muted);font-size:0.85rem;margin:0.15rem 0 0">Avg: ${e.avgScore}% | ${e.completed} completed</p>\n                  </div>\n                </div>\n              </div>\n            `).join("")}\n          </div>\n        `:""}\n        ${l.length>0?`\n          <h3 style="margin:1.5rem 0 0.75rem">Most Active Students</h3>\n          <div class="card-grid">\n            ${l.map(e=>`\n              <div class="card" style="padding:1rem">\n                <h4 style="margin:0">${escapeHtml(e.name)}</h4>\n                <p style="color:var(--color-text-muted);font-size:0.85rem;margin:0.25rem 0 0">${e.completed}/${e.total} lessons completed | Avg: ${e.avgScore}%</p>\n              </div>\n            `).join("")}\n          </div>\n        `:""}\n        ${0===o.length?'<div class="empty-state"><p>No student progress data available yet.</p></div>':""}\n      </div>\n    `)}catch(t){e.showView('<div class="content"><h2>Reports</h2><div class="empty-state"><p>Error loading reports</p></div></div>')}}const plansSubjects=[{slug:"mathematics",name:"Mathematics",sw:!1},{slug:"chemistry",name:"Chemistry",sw:!1},{slug:"physics",name:"Physics",sw:!1}],plansRoman={1:"I",2:"II",3:"III",4:"IV",5:"V",6:"VI"},plansTermNames={"Term 1":"Term I","Term 2":"Term II"},plansTermNamesSw={"Term 1":"Muhtasari wa Kwanza","Term 2":"Muhtasari wa Pili"};function plansSubjectOptions(){return plansSubjects.map(e=>`<option value="${e.slug}">${escapeHtml(e.name)}${e.sw?" (Kiswahili)":""}</option>`).join("")}function plansIsSwSubject(e){return plansSubjects.find(t=>t.slug===e)?.sw||!1}function plansPlanLabel(e){if("scheme_of_work"===e.plan_type){"sw"===e.language?plansTermNamesSw[e.term]||e.term:plansTermNames[e.term]||e.term;return`${e.title}`}return e.title}async function plansLoadSyllabusTopics(){const e=document.getElementById("tdoc-ss")?.value,t=document.querySelector("#tdoc-lesson-form [name=form_level]")?.value,n=document.getElementById("tdoc-topic"),a=document.getElementById("tdoc-subtopic");if(!n)return;if(n.innerHTML='<option value="">Loading topics…</option>',a.innerHTML='<option value="">— choose a topic first —</option>',!e||!t)return void(n.innerHTML='<option value="">— choose subject & form to load topics —</option>');let s=[];try{const n=await request(`/syllabus/subjects/${encodeURIComponent(e)}/forms/${t}?_t=${Date.now()}`);s=n&&Array.isArray(n.topics)?n.topics:[]}catch(e){s=[]}s.length?n.innerHTML='<option value="">— select a topic —</option>'+s.map(e=>{const t=e.code?`${e.code} `:"",n=(e.subtopics||[]).map(e=>({title:e.title,code:e.code||""})),a=escapeHtml(JSON.stringify(n)).replace(/"/g,"&quot;");return`<option value="${escapeHtml(e.title)}" data-subtopics="${a}">${escapeHtml(t+e.title)}</option>`}).join(""):n.innerHTML='<option value="">No syllabus topics found</option>'}function plansLoadSubtopicOptions(){const e=document.getElementById("tdoc-topic"),t=document.getElementById("tdoc-subtopic");if(!t||!e)return;t.innerHTML='<option value="">— select a topic first —</option>';const n=e.value;if(!n)return;const a=Array.from(e.options).find(e=>e.value===n),s=a&&a.dataset.subtopics?JSON.parse(a.dataset.subtopics):[];t.innerHTML='<option value="">— select a subtopic —</option>'+s.map(e=>{const t=e.code?`${e.code} `:"";return`<option value="${escapeHtml(e.title)}">${escapeHtml(t+e.title)}</option>`}).join("")}let plansLastGenHtml="";function plansSetLastGenHtml(e){plansLastGenHtml=e||""}function plansGetLastGenHtml(){return plansLastGenHtml}async function plansViewDocument(e){const t=await request(`/teacher-plans/${e}?_t=${Date.now()}`).catch(()=>null);if(!t)return void alert("Could not load document");const n=window.open("","_blank","width=1100,height=750");n?(n.document.write(t.html_render||"<p>No preview</p>"),n.document.close()):alert("Popup blocked. Please allow popups to preview.")}async function plansPrintDocument(e){const t=await request(`/teacher-plans/${e}?_t=${Date.now()}`).catch(()=>null);if(!t)return void alert("Could not load document");const n=window.open("","_blank","width=1100,height=750");n?(n.document.write(t.html_render||"<p>No preview</p>"),n.document.close(),n.focus(),setTimeout(()=>n.print(),400)):alert("Popup blocked. Please allow popups.")}function plansBuildWordHtml(e){let t=null;try{t=(new DOMParser).parseFromString(e||"","text/html")}catch(e){t=null}if(!t||!t.body||t.querySelector("parsererror"))return e||"";const n=t.body.cloneNode(!0);n.querySelectorAll("script,iframe,.actions,.no-print").forEach(e=>{e.parentNode&&e.parentNode.removeChild(e)});let a="";t.querySelectorAll("head style").forEach(e=>{e.textContent&&(a+=e.textContent+"\n")}),a=a.replace(/@import[^;]+;\s*/g,"");const s=(a||"")+'body{margin:14pt 16pt;font-family:"Calibri","Segoe UI",Arial,sans-serif;font-size:9pt;color:#1e293b;line-height:1.4}table{border-collapse:collapse;width:100%}th,td{border:1px solid #e2e8f0;padding:4px 5px;vertical-align:top}th{background:#f1f5f9;font-weight:700}thead{display:table-header-group}tr{page-break-inside:avoid}.actions,.no-print{display:none}@page{size:A4 portrait;margin:12mm 10mm 12mm 10mm}';return`<!DOCTYPE html>\n<html xmlns:o="urn:schemas-microsoft-com:office:office" xmlns:w="urn:schemas-microsoft-com:office:word" xmlns="http://www.w3.org/TR/REC-html40">\n<head><meta charset="UTF-8">\x3c!--[if gte mso 9]><xml><w:WordDocument><w:View>Print</w:View><w:Zoom>100</w:Zoom><w:DoNotExpandShiftReturn/></w:WordDocument></xml><![endif]--\x3e\n<title>${t.title||"Casuya Document"}</title>\n<style>${s}</style>\n</head>\n<body>\n${n.innerHTML}\n</body>\n</html>`}function plansSaveWordFile(e,t){const n=new Blob(["\ufeff"+e],{type:"application/msword"}),a=URL.createObjectURL(n),s=document.createElement("a");s.href=a,s.download=t,document.body.appendChild(s),s.click(),setTimeout(()=>{URL.revokeObjectURL(a),s.remove()},400)}function plansSanitizeName(e){return String(e||"document").replace(/[^a-z0-9]+/gi,"_").replace(/^_+|_+$/g,"").slice(0,80)}async function plansDownloadWord(e){const t=await request(`/teacher-plans/${e}?_t=${Date.now()}`).catch(()=>null);t?plansSaveWordFile(plansBuildWordHtml(t.html_render||""),plansSanitizeName("casuya_"+(t.title||"document"))+".doc"):alert("Could not load document")}function plansDownloadLastGeneratedWord(e){plansGetLastGenHtml()&&plansSaveWordFile(plansBuildWordHtml(plansGetLastGenHtml()),plansSanitizeName(e||"casuya_document")+".doc")}async function plansSaveGenerated(e,t,n){const a=new FormData(e),s=a.get("subject_slug"),o=plansIsSwSubject(s),i=plansSubjects.find(e=>e.slug===s)?.name||s;return request("/teacher-plans/save",{method:"POST",body:JSON.stringify({plan_type:n,title:t.title,subject_slug:s,subject_name:i,form_level:parseInt(a.get("form_level"))||2,topic:a.get("topic")||t.title,subtopic:a.get("subtopic")||null,term:a.get("term")||null,plan_data:JSON.stringify(t.plan_data),html_render:t.html_render,language:o?"sw":"en"})})}function plansRenderGenerated(e,t){plansSetLastGenHtml(e.html_render||"");const n="scheme_of_work"===t?"tdoc-scheme-preview-actions":"tdoc-lesson-preview-actions";setTimeout(()=>{const e=document.getElementById(n);e&&(e.style.display="flex")},50);return`${"function"==typeof renderAiResultFooter?`<div class="tutor-response-footer tdocs-plan-source">${renderAiResultFooter(e)}</div>`:e.source?`<div class="tutor-response-footer tdocs-plan-source">${renderAiSourceBadge(e.source)}</div>`:""}<iframe class="tdocs-preview-frame" id="gen-frame" style="width:100%;min-height:520px;border:none;background:#fff"></iframe>`}function plansOpenPreview(){if(!plansGetLastGenHtml())return;const e=window.open("","_blank","width=1100,height=750");e?(e.document.write(plansGetLastGenHtml()),e.document.close()):alert("Popup blocked. Allow popups to preview/export.")}function plansPrintPreview(){if(!plansGetLastGenHtml())return;const e=window.open("","_blank","width=1100,height=750");e?(e.document.write(plansGetLastGenHtml()),e.document.close(),e.focus(),setTimeout(()=>e.print(),500)):alert("Popup blocked. Allow popups to print.")}function plansFillGenFrame(){const e=document.getElementById("gen-frame");e&&plansGetLastGenHtml()&&(e.srcdoc=plansGetLastGenHtml())}function createPlansState(e){return{dashboard:e,savedPlans:[],activeSubTab:"lesson"}}function renderPlansLayout(){return`\n    <div class="content">\n      <h2 class="tdocs-page-title">Teaching Documents</h2>\n      <p class="tdocs-page-desc">\n        Generate official TIE Competence-Based Lesson Plans and Schemes of Work, then save, print, or as PDF/Word.\n        Generated in Kiswahili for Kiswahili-medium subjects and English for all others.\n      </p>\n      <div class="tdocs-tabs" id="tdocs-tabs"></div>\n\n      <div id="tdocs-lesson-panel" style="margin-top:1.25rem">\n        <div class="tdocs-layout">\n          <div class="tdocs-form-col">\n            <div class="card" style="padding:1.5rem">\n              <h3 style="margin-bottom:0.6rem;font-size:1rem;font-weight:700">Lesson Plan Generator</h3>\n              <form id="tdoc-lesson-form" style="display:grid;gap:0.6rem">\n                <div class="tdocs-section">\n                  <div class="tdocs-section-title">Curriculum</div>\n                  <div class="tdocs-field-grid">\n                    <label class="tdocs-field"><span>Subject</span><select class="input" name="subject_slug" id="tdoc-ss">${plansSubjectOptions()}</select></label>\n                    <label class="tdocs-field"><span>Form Level</span><select class="input" name="form_level"><option value="1">Form I</option><option value="2" selected>Form II</option><option value="3">Form III</option><option value="4">Form IV</option></select></label>\n                  </div>\n                  <div class="tdocs-field-grid" style="margin-top:0.5rem">\n                    <label class="tdocs-field" style="grid-column:1/-1"><span>Topic / Mada</span><select class="input" name="topic" id="tdoc-topic" required><option value="">— choose subject & form to load topics —</option></select></label>\n                  </div>\n                  <div class="tdocs-field-grid" style="margin-top:0.5rem">\n                    <label class="tdocs-field" style="grid-column:1/-1"><span>Subtopic / Sehemu ya Mada</span><select class="input" name="subtopic" id="tdoc-subtopic"><option value="">— choose a topic first —</option></select></label>\n                  </div>\n                </div>\n                <div class="tdocs-section">\n                  <div class="tdocs-section-title">School & Teacher</div>\n                  <div class="tdocs-field-grid">\n                    <label class="tdocs-field"><span>School / Shule</span><input class="input" name="school_name" placeholder="School name"></label>\n                    <label class="tdocs-field"><span>Teacher / Mwalimu</span><input class="input" name="teacher_name" placeholder="Teacher name"></label>\n                  </div>\n                </div>\n                <div class="tdocs-section">\n                  <div class="tdocs-section-title">Class Details</div>\n                  <div class="tdocs-field-grid-4">\n                    <label class="tdocs-field"><span>Total Students</span><input class="input" type="number" name="number_of_students" value="40" min="1"></label>\n                    <label class="tdocs-field"><span>Boys</span><input class="input" type="number" name="students_boys" min="0" placeholder="auto"></label>\n                    <label class="tdocs-field"><span>Girls</span><input class="input" type="number" name="students_girls" min="0" placeholder="auto"></label>\n                    <label class="tdocs-field"><span>Duration (min)</span><input class="input" type="number" name="duration_minutes" value="40" min="10" max="120"></label>\n                  </div>\n                  <div class="tdocs-field-grid" style="margin-top:0.5rem">\n                    <label class="tdocs-field"><span>Period / Kipindi</span><input class="input" name="period" placeholder="Period 1"></label>\n                  </div>\n                </div>\n                <div class="tdocs-form-actions">\n                  <button class="btn tdocs-generate-btn" type="submit" style="flex:1">✨ Generate Lesson Plan</button>\n                  <button class="btn btn-outline" type="button" id="tdoc-lesson-seed" style="font-size:0.8rem">Autofill</button>\n                </div>\n              </form>\n            </div>\n          </div>\n          <div class="tdocs-preview-col">\n            <div class="tdocs-preview-panel" id="tdoc-lesson-preview">\n              <div class="tdocs-preview-header">\n                <h4>📄 Preview</h4>\n                <div class="tdocs-preview-actions" id="tdoc-lesson-preview-actions" style="display:none">\n                  <button class="btn btn-sm btn-outline" id="gen-view">👁 View</button>\n                  <button class="btn btn-sm btn-outline" id="gen-print">🖨 Print / PDF</button>\n                  <button class="btn btn-sm btn-outline" id="gen-doc">📥 Word</button>\n                </div>\n              </div>\n              <div id="tdoc-lesson-result">\n                <div class="tdocs-empty"><div class="tdocs-empty-icon">📋</div><p>Fill in the form and click <strong>Generate</strong> to create a lesson plan.</p></div>\n              </div>\n            </div>\n          </div>\n        </div>\n      </div>\n\n      <div id="tdocs-scheme-panel" style="display:none;margin-top:1.25rem">\n        <div class="tdocs-layout">\n          <div class="tdocs-form-col">\n            <div class="card" style="padding:1.5rem">\n              <h3 style="margin-bottom:0.6rem;font-size:1rem;font-weight:700">Scheme of Work Generator</h3>\n              <form id="tdoc-scheme-form" style="display:grid;gap:0.6rem">\n                <div class="tdocs-section">\n                  <div class="tdocs-section-title">Curriculum</div>\n                  <div class="tdocs-field-grid">\n                    <label class="tdocs-field"><span>Subject</span><select class="input" name="subject_slug">${plansSubjectOptions()}</select></label>\n                    <label class="tdocs-field"><span>Form Level</span><select class="input" name="form_level"><option value="1">Form I</option><option value="2" selected>Form II</option><option value="3">Form III</option><option value="4">Form IV</option></select></label>\n                  </div>\n                </div>\n                <div class="tdocs-section">\n                  <div class="tdocs-section-title">Term & Year</div>\n                  <div class="tdocs-field-grid">\n                    <label class="tdocs-field"><span>Term</span><select class="input" name="term"><option value="Term 1" selected>Term I</option><option value="Term 2">Term II</option></select></label>\n                    <label class="tdocs-field"><span>Academic Year</span><input class="input" name="academic_year" placeholder="2026"></label>\n                  </div>\n                </div>\n                <div class="tdocs-section">\n                  <div class="tdocs-section-title">Topics (Optional)</div>\n                  <label class="tdocs-field"><span>Topics to cover — comma-separated, or leave blank to use full curriculum</span><input class="input" name="topics" placeholder="e.g. Indices and Logarithms, Algebraic Expressions, Equations"></label>\n                </div>\n                <div class="tdocs-section">\n                  <div class="tdocs-section-title">School & Teacher</div>\n                  <div class="tdocs-field-grid">\n                    <label class="tdocs-field"><span>School / Shule</span><input class="input" name="school_name" placeholder="School name"></label>\n                    <label class="tdocs-field"><span>Teacher / Mwalimu</span><input class="input" name="teacher_name" placeholder="Teacher name"></label>\n                  </div>\n                </div>\n                <div class="tdocs-form-actions">\n                  <button class="btn tdocs-generate-btn" type="submit" style="flex:1">✨ Generate Scheme of Work</button>\n                </div>\n              </form>\n            </div>\n          </div>\n          <div class="tdocs-preview-col">\n            <div class="tdocs-preview-panel" id="tdoc-scheme-preview">\n              <div class="tdocs-preview-header">\n                <h4>📄 Preview</h4>\n                <div class="tdocs-preview-actions" id="tdoc-scheme-preview-actions" style="display:none">\n                  <button class="btn btn-sm btn-outline" id="scheme-view">👁 View</button>\n                  <button class="btn btn-sm btn-outline" id="scheme-print">🖨 Print / PDF</button>\n                  <button class="btn btn-sm btn-outline" id="scheme-doc">📥 Word</button>\n                </div>\n              </div>\n              <div id="tdoc-scheme-result">\n                <div class="tdocs-empty"><div class="tdocs-empty-icon">📋</div><p>Fill in the form and click <strong>Generate</strong> to create a scheme of work.</p></div>\n              </div>\n            </div>\n          </div>\n        </div>\n      </div>\n\n      <div id="tdocs-saved-panel" style="display:none;margin-top:1.25rem">\n        <div class="tdocs-saved-header">\n          <h3 style="margin:0">Saved Documents</h3>\n          <button class="btn btn-sm btn-outline" id="tdoc-refresh">↻ Refresh</button>\n        </div>\n        <div id="tdocs-saved-list"></div>\n      </div>\n    </div>\n  `}async function loadSaved(e){try{e.savedPlans=await request("/teacher-plans/list?_t="+Date.now()).catch(()=>[])}catch(t){e.savedPlans=[]}}function renderSavedList(e){const t=document.getElementById("tdocs-saved-list");t&&(e.savedPlans.length?t.innerHTML=e.savedPlans.map(e=>{const t="sw"===e.language,n="scheme_of_work"===e.plan_type?t?"Mpango wa Kazi":"Scheme of Work":t?"Mpango wa Somo":"Lesson Plan",a=e.form_level?"Form "+(plansRoman[e.form_level]||e.form_level):"";return`\n      <div class="card tdocs-doc-card" style="padding:1rem 1.15rem;margin-bottom:0.6rem">\n        <div class="tdocs-doc-row">\n          <div style="flex:1;min-width:0">\n            <div style="display:flex;align-items:center;gap:0.4rem;flex-wrap:wrap;margin-bottom:0.2rem">\n              <span class="tdocs-status ${"scheme_of_work"===e.plan_type?"tdocs-status-info":"tdocs-status-success"}">${escapeHtml(n)}</span>\n              ${a?`<span class="tdocs-status" style="background:var(--color-bg);color:var(--color-text-muted)">${escapeHtml(a)}</span>`:""}\n            </div>\n            <h4 style="margin:0;font-size:0.9rem">${escapeHtml(plansPlanLabel(e))}</h4>\n            <p style="margin:0.15rem 0 0;font-size:0.72rem;color:var(--color-text-muted)">\n              ${escapeHtml(e.subject_name||e.subject_slug||"")} &middot; ${escapeHtml(e.created_at?new Date(e.created_at).toLocaleDateString():"")}\n            </p>\n          </div>\n          <div class="tdocs-actions">\n            <button class="btn btn-sm btn-outline" data-view="${e.id}">👁</button>\n            <button class="btn btn-sm btn-outline" data-print="${e.id}">🖨</button>\n            <button class="btn btn-sm btn-outline" data-doc="${e.id}">📥</button>\n            <button class="btn btn-sm btn-danger" data-del="${e.id}">✕</button>\n          </div>\n        </div>\n      </div>`}).join(""):t.innerHTML='<div class="tdocs-empty"><div class="tdocs-empty-icon">📂</div><p>No saved documents yet. Generate one above.</p></div>')}function renderSubTabs(e){const t=plansIsSwSubject(document.querySelector("#tdoc-ss")?.value||"mathematics"),n={lesson:t?"Mpango wa Somo":"Lesson Plan",scheme:"Scheme of Work",saved:e.savedPlans.length?`Saved (${e.savedPlans.length})`:t?"Hati Zilizohifadhiwa":"Saved Documents"},a=["lesson","scheme","saved"].map(t=>`<button class="btn btn-sm tdocs-tab ${e.activeSubTab===t?"btn-primary":"btn-outline"}" data-panel="${t}" style="flex:1 1 auto;min-width:0">${escapeHtml(n[t])}</button>`).join(""),s=document.getElementById("tdocs-tabs");s&&(s.innerHTML=a)}function showPanel(e){const t=document.getElementById("tdocs-lesson-panel"),n=document.getElementById("tdocs-scheme-panel"),a=document.getElementById("tdocs-saved-panel");t&&(t.style.display="lesson"===e?"":"none"),n&&(n.style.display="scheme"===e?"":"none"),a&&(a.style.display="saved"===e?"":"none")}function setupLessonForm(e){const t=document.getElementById("tdoc-ss");t?.addEventListener("change",plansLoadSyllabusTopics);const n=document.querySelector("#tdoc-lesson-form [name=form_level]");n?.addEventListener("change",plansLoadSyllabusTopics),document.getElementById("tdoc-topic")?.addEventListener("change",plansLoadSubtopicOptions),plansLoadSyllabusTopics(),document.getElementById("tdoc-lesson-seed")?.addEventListener("click",async()=>{const e=document.getElementById("tdoc-topic"),t=document.getElementById("tdoc-subtopic"),n=document.querySelector("#tdoc-lesson-form");e&&e.options.length>1&&(e.selectedIndex=1,e.dispatchEvent(new Event("change")),await new Promise(e=>setTimeout(e,0)),t&&t.options.length>1&&(t.selectedIndex=1)),n&&(n.period&&(n.period.value="Period 1"),n.number_of_students&&(n.number_of_students.value="40"),n.students_boys&&(n.students_boys.value="20"),n.students_girls&&(n.students_girls.value="20"),n.duration_minutes&&(n.duration_minutes.value="40"))}),document.getElementById("tdoc-lesson-form")?.addEventListener("submit",async e=>{e.preventDefault();const t=e.target,n=new FormData(t),a=document.getElementById("tdoc-lesson-result");a.style.display="block",a.innerHTML='<div class="tutor-thinking"><div class="tutor-thinking-dots"><span></span><span></span><span></span></div>Generating lesson plan...</div>';try{const e=await request("/teacher-plans/generate/lesson-plan",{method:"POST",body:JSON.stringify({subject_slug:n.get("subject_slug"),form_level:parseInt(n.get("form_level"))||2,topic:n.get("topic"),subtopic:n.get("subtopic")||null,school_name:n.get("school_name")||null,teacher_name:n.get("teacher_name")||null,number_of_students:parseInt(n.get("number_of_students"))||40,students_boys:n.get("students_boys")?parseInt(n.get("students_boys")):null,students_girls:n.get("students_girls")?parseInt(n.get("students_girls")):null,duration_minutes:parseInt(n.get("duration_minutes"))||40,period:n.get("period")||null})});await plansSaveGenerated(t,e,"lesson_plan"),a.innerHTML=plansRenderGenerated(e,"lesson_plan"),plansFillGenFrame(),window.renderMath?.(a)}catch(e){a.innerHTML=`<p style="color:var(--color-danger)">Error: ${escapeHtml(e.message)}</p>`}})}function setupSchemeForm(e){document.getElementById("tdoc-scheme-form")?.addEventListener("submit",async e=>{e.preventDefault();const t=e.target,n=new FormData(t),a=document.getElementById("tdoc-scheme-result");a.style.display="block",a.innerHTML='<div class="tutor-thinking"><div class="tutor-thinking-dots"><span></span><span></span><span></span></div>Generating scheme of work...</div>';try{const e=(n.get("topics")||"").split(",").map(e=>e.trim()).filter(Boolean),s=await request("/teacher-plans/generate/scheme-of-work",{method:"POST",body:JSON.stringify({subject_slug:n.get("subject_slug"),form_level:parseInt(n.get("form_level"))||2,term:n.get("term"),academic_year:n.get("academic_year")||null,school_name:n.get("school_name")||null,teacher_name:n.get("teacher_name")||null,topics:e.length?e:null})});await plansSaveGenerated(t,s,"scheme_of_work"),a.innerHTML=plansRenderGenerated(s,"scheme_of_work"),plansFillGenFrame(),window.renderMath?.(a)}catch(e){a.innerHTML=`<p style="color:var(--color-danger)">Error: ${escapeHtml(e.message)}</p>`}})}function setupActions(e){document.getElementById("gen-view")?.addEventListener("click",e=>{e.preventDefault(),plansOpenPreview()}),document.getElementById("gen-print")?.addEventListener("click",e=>{e.preventDefault(),plansPrintPreview()}),document.getElementById("gen-doc")?.addEventListener("click",e=>{e.preventDefault(),plansDownloadLastGeneratedWord("lesson_plan")}),document.getElementById("scheme-view")?.addEventListener("click",e=>{e.preventDefault(),plansOpenPreview()}),document.getElementById("scheme-print")?.addEventListener("click",e=>{e.preventDefault(),plansPrintPreview()}),document.getElementById("scheme-doc")?.addEventListener("click",e=>{e.preventDefault(),plansDownloadLastGeneratedWord("scheme_of_work")}),document.getElementById("tdocs-saved-list")?.addEventListener("click",async t=>{const n=t.target.closest("[data-view]"),a=t.target.closest("[data-print]"),s=t.target.closest("[data-doc]"),o=t.target.closest("[data-del]");n?(t.preventDefault(),await plansViewDocument(n.dataset.view)):a?(t.preventDefault(),await plansPrintDocument(a.dataset.print)):s?(t.preventDefault(),await plansDownloadWord(s.dataset.doc)):o&&(t.preventDefault(),confirm("Delete this document?")&&(await request(`/teacher-plans/${o.dataset.del}`,{method:"DELETE"}).catch(()=>{}),await loadSaved(e),renderSubTabs(e),renderSavedList(e)))})}async function loadPlans(e){const t=createPlansState(e);e.showView(renderPlansLayout()),async function(){await loadSaved(t),renderSubTabs(t),showPanel(t.activeSubTab),renderSavedList(t),document.getElementById("tdocs-tabs")?.addEventListener("click",e=>{const n=e.target.closest("[data-panel]");n&&(t.activeSubTab=n.dataset.panel,renderSubTabs(t),showPanel(t.activeSubTab),"saved"===t.activeSubTab&&renderSavedList(t))}),document.getElementById("tdoc-refresh")?.addEventListener("click",async()=>{await loadSaved(t),renderSubTabs(t),renderSavedList(t)}),setupLessonForm(t),setupSchemeForm(t),setupActions(t)}()}async function loadLibrary(e){const t=[{slug:"mathematics",name:"Mathematics"},{slug:"chemistry",name:"Chemistry"},{slug:"physics",name:"Physics"}];let n=[],a={},s={doc_type:"",subject_slug:"",form_level:"",query:""},o=0;async function i(){const e=new URLSearchParams;s.doc_type&&e.set("doc_type",s.doc_type),s.subject_slug&&e.set("subject_slug",s.subject_slug),s.form_level&&e.set("form_level",s.form_level),s.query&&e.set("query",s.query),e.set("limit",20),e.set("offset",20*o);try{const t=await request("/reference-docs?"+e.toString());n=t.items||[],a={total:t.total||0}}catch(e){n=[],a={total:0}}}function r(){const e=document.getElementById("lib-results");if(!e)return;if(!n.length)return void(e.innerHTML='<div class="tdocs-empty"><div class="tdocs-empty-icon">📖</div><p>No reference documents found.</p></div>');const t={1:"I",2:"II",3:"III",4:"IV",5:"V",6:"VI"};e.innerHTML=n.map(e=>{const n="scheme_of_work"===e.doc_type?"Scheme of Work":"Lesson Plan",a="scheme_of_work"===e.doc_type?"tdocs-status-info":"tdocs-status-success",s=e.form_level?"Form "+(t[e.form_level]||e.form_level):"";return`\n        <div class="lib-card" data-lib-view="${e.id}">\n          <div style="display:flex;align-items:center;gap:0.5rem;flex-wrap:wrap;margin-bottom:0.25rem">\n            <span class="tdocs-status ${a}">${n}</span>\n            ${s?`<span class="tdocs-status" style="background:var(--color-bg);color:var(--color-text-muted)">${s}</span>`:""}\n          </div>\n          <h4 style="margin:0;font-size:0.88rem;font-weight:600">${escapeHtml(e.title)}</h4>\n          <p style="margin:0.2rem 0 0;font-size:0.72rem;color:var(--color-text-muted)">${escapeHtml(e.subject_name||"")}</p>\n        </div>`}).join("");const s=Math.ceil(a.total/20),i=document.getElementById("lib-pagination");i&&(i.innerHTML=s>1?`\n        <div style="display:flex;gap:0.5rem;align-items:center;justify-content:center;margin-top:1rem">\n          <button class="btn btn-sm btn-outline" id="lib-prev" ${0===o?"disabled":""}>← Prev</button>\n          <span style="font-size:0.8rem;color:var(--color-text-muted)">Page ${o+1} of ${s} (${a.total} total)</span>\n          <button class="btn btn-sm btn-outline" id="lib-next" ${o>=s-1?"disabled":""}>Next →</button>\n        </div>`:"")}e.showView(`\n    <div class="content">\n      <h2 class="tdocs-page-title">Reference Library</h2>\n      <p class="tdocs-page-desc">Browse official TIE lesson plans and schemes of work. Use these as reference when generating your own documents.</p>\n      <div style="display:grid;gap:0.6rem;margin-top:1.25rem">\n        <div style="display:flex;gap:0.5rem;flex-wrap:wrap">\n          <select class="input" id="lib-type" style="max-width:180px;padding:0.45rem 0.6rem;font-size:0.85rem">\n            <option value="">All Types</option>\n            <option value="lesson_plan">Lesson Plans</option>\n            <option value="scheme_of_work">Schemes of Work</option>\n          </select>\n          <select class="input" id="lib-subject" style="max-width:180px;padding:0.45rem 0.6rem;font-size:0.85rem">${'<option value="">All Subjects</option>'+t.map(e=>`<option value="${e.slug}">${escapeHtml(e.name)}</option>`).join("")}</select>\n          <select class="input" id="lib-form" style="max-width:140px;padding:0.45rem 0.6rem;font-size:0.85rem">\n            <option value="">All Forms</option>\n            <option value="1">Form I</option>\n            <option value="2">Form II</option>\n            <option value="3">Form III</option>\n            <option value="4">Form IV</option>\n          </select>\n          <input class="input" id="lib-search" type="search" placeholder="Search titles..." style="max-width:220px;padding:0.45rem 0.6rem;font-size:0.85rem">\n        </div>\n        <div id="lib-results"></div>\n        <div id="lib-pagination"></div>\n      </div>\n      <div id="lib-viewer" style="display:none;margin-top:1.5rem"></div>\n    </div>\n  `);const l=document.getElementById("lib-type"),c=document.getElementById("lib-subject"),d=document.getElementById("lib-form"),u=document.getElementById("lib-search");let m;function p(){s.doc_type=l.value,s.subject_slug=c.value,s.form_level=d.value,o=0,i().then(r)}l?.addEventListener("change",p),c?.addEventListener("change",p),d?.addEventListener("change",p),u?.addEventListener("input",()=>{clearTimeout(m),m=setTimeout(()=>{s.query=u.value.trim(),o=0,i().then(r)},300)}),document.getElementById("lib-results")?.addEventListener("click",e=>{const t=e.target.closest("[data-lib-view]");t&&async function(e){const t=document.getElementById("lib-viewer");if(t){t.innerHTML='<div class="tdocs-loading"><div class="spinner"></div>Loading document...</div>',t.style.display="block";try{const n=await fetch(`${API_BASE}/reference-docs/${e}/render`),a=await n.text();t.innerHTML=`\n        <div style="display:flex;align-items:center;justify-content:space-between;margin-bottom:0.75rem;flex-wrap:wrap;gap:0.5rem">\n          <h4 style="margin:0;font-size:0.9rem;font-weight:700">Reference Document</h4>\n          <button class="btn btn-sm btn-outline" id="lib-close-viewer">✕ Close</button>\n        </div>\n        <iframe srcdoc="${escapeHtml(a).replace(/"/g,"&quot;")}" style="width:100%;min-height:500px;border:1px solid var(--color-border);border-radius:8px;background:#fff"></iframe>`,document.getElementById("lib-close-viewer")?.addEventListener("click",()=>{t.style.display="none"})}catch(e){t.innerHTML='<p style="color:var(--color-danger)">Error loading document.</p>'}}}(t.dataset.libView)}),document.getElementById("lib-pagination")?.addEventListener("click",e=>{"lib-prev"===e.target.id&&(o--,i().then(r)),"lib-next"===e.target.id&&(o++,i().then(r))}),await i(),r()}function teacherAiPrefs(){return{subject:localStorage.getItem("casuya_teacher_ai_subject")||"chemistry",form:localStorage.getItem("casuya_teacher_ai_form")||"2"}}function saveTeacherAiPrefs(e,t){e&&localStorage.setItem("casuya_teacher_ai_subject",e),t&&localStorage.setItem("casuya_teacher_ai_form",t)}async function loadAIAssistant(e){const t=teacherAiPrefs();e.showView(`\n    <div class="content">\n      <h2>AI Assistant</h2>\n      <p style="color:var(--color-text-muted);font-size:0.85rem;margin-top:0.25rem">Use AI to help with teaching tasks.</p>\n      <div style="display:grid;gap:1rem;margin-top:1.5rem">\n        <div class="card" style="padding:1.5rem">\n          <h3 style="margin-bottom:0.75rem">Tutoring Explanation</h3>\n          <p style="color:var(--color-text-muted);font-size:0.85rem;margin-bottom:0.75rem">Get an AI explanation for a student question.</p>\n          <form id="ai-tutor-form" style="display:flex;flex-direction:column;gap:0.5rem">\n            <div style="display:flex;gap:0.5rem">\n              <select class="input" name="subject_slug" style="flex:1">\n                <option value="mathematics"${"mathematics"===t.subject?" selected":""}>Mathematics</option>\n                <option value="chemistry"${"chemistry"===t.subject?" selected":""}>Chemistry</option>\n                <option value="physics"${"physics"===t.subject?" selected":""}>Physics</option>\n              </select>\n              <select class="input" name="form_level" style="flex:0.5">\n                <option value="1"${"1"===t.form?" selected":""}>Form I</option>\n                <option value="2"${"2"===t.form?" selected":""}>Form II</option>\n                <option value="3"${"3"===t.form?" selected":""}>Form III</option>\n                <option value="4"${"4"===t.form?" selected":""}>Form IV</option>\n              </select>\n            </div>\n            <div style="display:flex;gap:0.5rem;align-items:flex-start">\n              <textarea class="input" name="question" rows="3" placeholder="Enter the student's question..." required style="flex:1"></textarea>\n              <button type="button" class="casuya-record" title="Speak the question" aria-label="Speak the question">🎤 Voice</button>\n            </div>\n            <input class="input" name="context" placeholder="Optional lesson context...">\n            <button class="btn btn-primary" type="submit">Get Explanation</button>\n          </form>\n          <div id="ai-tutor-result" style="margin-top:1rem;display:none">\n            <div class="card" style="background:var(--color-bg);padding:1.25rem;border-radius:12px;border:1px solid var(--color-border)">\n              <div id="ai-tutor-text" class="tutor-response"></div>\n              <span id="ai-tutor-listen-slot"></span>\n            </div>\n          </div>\n        </div>\n        <div class="card" style="padding:1.5rem">\n          <h3 style="margin-bottom:0.75rem">Generate Quiz Questions</h3>\n          <p style="color:var(--color-text-muted);font-size:0.85rem;margin-bottom:0.75rem">Auto-generate quiz questions from lesson content.</p>\n          <form id="ai-questions-form" style="display:flex;flex-direction:column;gap:0.5rem">\n            <div style="display:flex;gap:0.5rem">\n              <select class="input" name="subject_slug" style="flex:1">\n                <option value="mathematics"${"mathematics"===t.subject?" selected":""}>Mathematics</option>\n                <option value="chemistry"${"chemistry"===t.subject?" selected":""}>Chemistry</option>\n                <option value="physics"${"physics"===t.subject?" selected":""}>Physics</option>\n              </select>\n              <select class="input" name="form_level" style="flex:0.5">\n                <option value="1"${"1"===t.form?" selected":""}>Form I</option>\n                <option value="2"${"2"===t.form?" selected":""}>Form II</option>\n                <option value="3"${"3"===t.form?" selected":""}>Form III</option>\n                <option value="4"${"4"===t.form?" selected":""}>Form IV</option>\n              </select>\n            </div>\n            <textarea class="input" name="lesson_html" rows="5" placeholder="Paste lesson content..." required></textarea>\n            <div style="display:flex;gap:0.5rem;align-items:center">\n              <label style="font-size:0.85rem;color:var(--color-text-muted)">Number of questions:</label>\n              <input class="input" type="number" name="count" value="5" min="1" max="20" style="width:80px">\n            </div>\n            <button class="btn btn-primary" type="submit">Generate Questions</button>\n          </form>\n          <div id="ai-questions-result" style="margin-top:1rem;display:none">\n              <div id="ai-questions-text"></div>\n          </div>\n        </div>\n        <div class="card" style="padding:1.5rem">\n          <h3 style="margin-bottom:0.75rem">Translate Text</h3>\n          <p style="color:var(--color-text-muted);font-size:0.85rem;margin-bottom:0.75rem">Translate text to another language.</p>\n          <form id="ai-translate-form" style="display:flex;flex-direction:column;gap:0.5rem">\n            <textarea class="input" name="text" rows="3" placeholder="Text to translate..." required></textarea>\n            <select class="input" name="target_language">\n              <option value="Swahili">Swahili</option>\n              <option value="English">English</option>\n              <option value="French">French</option>\n              <option value="Arabic">Arabic</option>\n              <option value="Spanish">Spanish</option>\n            </select>\n            <button class="btn btn-primary" type="submit">Translate</button>\n          </form>\n          <div id="ai-translate-result" style="margin-top:1rem;display:none">\n            <div class="card" style="background:var(--color-bg);padding:1.25rem;border-radius:12px;border:1px solid var(--color-border)">\n              <div id="ai-translate-text" class="tutor-response"></div>\n              <span id="ai-translate-listen-slot"></span>\n              <div id="ai-translate-footer" class="tutor-response-footer"></div>\n            </div>\n          </div>\n        </div>\n      </div>\n    </div>\n  `),document.querySelectorAll("#ai-tutor-form select, #ai-questions-form select").forEach(function(e){e.addEventListener("change",function(){saveTeacherAiPrefs(document.querySelector("#ai-tutor-form [name=subject_slug]")?.value||document.querySelector("#ai-questions-form [name=subject_slug]")?.value,document.querySelector("#ai-tutor-form [name=form_level]")?.value||document.querySelector("#ai-questions-form [name=form_level]")?.value)})}),document.getElementById("ai-tutor-form")?.addEventListener("submit",async e=>{e.preventDefault();const t=new FormData(e.target),n=document.getElementById("ai-tutor-result"),a=document.getElementById("ai-tutor-text");n.style.display="block";runTutorQuery(buildLessonTutorPayload({question:String(t.get("question")||""),subject_slug:t.get("subject_slug"),form_level:parseInt(t.get("form_level"))||2,lessonContent:t.get("context")||"",mode:"deep"}),{container:a,loadingLabel:"Thinking...",errorMessage:"The AI tutor could not be reached. Please try again.",listenSlot:document.getElementById("ai-tutor-listen-slot"),listenTitle:"Listen to this explanation"})}),document.getElementById("ai-questions-form")?.addEventListener("submit",async e=>{e.preventDefault();const t=new FormData(e.target),n=document.getElementById("ai-questions-result"),a=document.getElementById("ai-questions-text");n.style.display="block",runAiGenerateTask({container:a,loadingLabel:"Generating...",path:"/ai/questions/generate",body:{lesson_html:t.get("lesson_html"),count:parseInt(t.get("count"))||5,subject_slug:t.get("subject_slug"),form_level:parseInt(t.get("form_level"))||2},render:function(e){const n=e?.questions||e;return Array.isArray(n)&&n.length?renderQuizQuestions(n,{subject:t.get("subject_slug"),formLevel:t.get("form_level"),topic:n[0]?.topic||""}):'<p style="color:var(--color-text-muted)">No questions generated. Try different content.</p>'}}).catch(function(){})});try{const e=await request("/teachers/me"),n=String(e?.subjects||"").toLowerCase();let a=t.subject;n.includes("math")?a="mathematics":n.includes("chem")?a="chemistry":n.includes("phys")&&(a="physics"),saveTeacherAiPrefs(a,t.form),document.querySelectorAll("#ai-tutor-form [name=subject_slug], #ai-questions-form [name=subject_slug]").forEach(function(e){e.value=a})}catch(e){}document.getElementById("ai-translate-form")?.addEventListener("submit",async e=>{e.preventDefault();const t=new FormData(e.target),n=document.getElementById("ai-translate-result"),a=document.getElementById("ai-translate-text"),s=document.getElementById("ai-translate-footer");n.style.display="block",s&&(s.innerHTML=""),runAiGenerateTask({container:a,loadingLabel:"Translating...",skipAutoFooter:!0,path:"/ai/content/translate",body:{text:t.get("text"),target_language:t.get("target_language")},render:function(e){const t=e?.translated||e?.translatedText||e?.text||JSON.stringify(e);return s&&(s.innerHTML="function"==typeof renderAiResultFooter?renderAiResultFooter(e,t):renderAiSourceBadge(e?.source)),renderTutorMarkdown(t)},listenTitle:"Listen to translation"}).catch(function(){s&&(s.innerHTML="")})})}function loadTeacherTestGenerator(e){e.showView(renderTestGeneratorView({title:"Test Generator",intro:"Build practice tests for your class grounded in the NECTA/TIE knowledge base. Pick an exam type (Topical, Monthly, Midterm, Terminal, Annual, or NECTA Form II/IV/VI), then choose the subject, form, and topic."})),initTestGeneratorView(document.getElementById("teacher-content"))}async function loadFiles(e){e.showView('<div class="loading-state"><div class="spinner"></div><p>Loading files...</p></div>');try{const n=await request("/uploads/public").catch(()=>[]),a=Array.isArray(n)?n:[];let s="all";function t(){let e=a;"all"!==s&&("images"===s?e=a.filter(e=>/\.(png|jpg|jpeg|gif|svg|webp)$/i.test(e.filename||e.path||"")):"documents"===s?e=a.filter(e=>/\.(pdf|doc|docx|txt)$/i.test(e.filename||e.path||"")):"media"===s&&(e=a.filter(e=>/\.(mp4|webm|mp3|wav|ogg)$/i.test(e.filename||e.path||""))));const t=document.getElementById("teacher-files-grid");t&&(0!==e.length?t.innerHTML=e.map(e=>{const t=e.filename||e.path||"unknown",n=e.display_name||t,a=/\.(png|jpg|jpeg|gif|svg|webp)$/i.test(t),s=/\.(mp4|webm)$/i.test(t),o=/\.(mp3|wav|ogg)$/i.test(t),i=a?"🖼️":s?"🎬":o?"🎵":"📄";return`\n          <div class="card" style="padding:0.75rem;cursor:pointer" onclick="window.open('${API_BASE}/uploads/${encodeURIComponent(t)}', '_blank')">\n            <div style="display:flex;align-items:center;gap:0.75rem">\n              <div style="font-size:1.5rem;flex-shrink:0">${i}</div>\n              <div style="flex:1;min-width:0">\n                <p style="margin:0;font-size:0.85rem;font-weight:500;overflow:hidden;text-overflow:ellipsis;white-space:nowrap">${escapeHtml(n)}</p>\n                <p style="margin:0.15rem 0 0;font-size:0.7rem;color:var(--color-text-muted)">${e.size?(e.size/1024).toFixed(1)+" KB":""}</p>\n              </div>\n            </div>\n          </div>\n        `}).join(""):t.innerHTML='<div class="empty-state" style="padding:2rem"><p>No files available</p></div>')}e.showView('\n      <div class="content">\n        <h2>📂 Files & Resources</h2>\n        <p style="color:var(--color-text-muted);font-size:0.85rem;margin-top:0.25rem">Browse uploaded teaching materials and resources.</p>\n        <div style="margin-top:1rem;display:flex;gap:0.5rem;flex-wrap:wrap">\n          <button class="btn-filter teacher-files-filter active" data-filter="all">All</button>\n          <button class="btn-filter teacher-files-filter" data-filter="images">🖼️ Images</button>\n          <button class="btn-filter teacher-files-filter" data-filter="documents">📄 Documents</button>\n          <button class="btn-filter teacher-files-filter" data-filter="media">🎬 Media</button>\n        </div>\n        <div id="teacher-files-grid" style="margin-top:0.75rem;display:grid;grid-template-columns:repeat(auto-fill,minmax(250px,1fr));gap:0.5rem"></div>\n      </div>\n    '),document.querySelectorAll(".teacher-files-filter").forEach(e=>{e.addEventListener("click",()=>{s=e.dataset.filter,document.querySelectorAll(".teacher-files-filter").forEach(e=>e.classList.toggle("active",e.dataset.filter===s)),t()})}),t()}catch(o){e.showView('<div class="empty-state"><p>Error loading files</p></div>')}}async function loadPayments(e){e.showView('<div class="loading-state"><div class="spinner"></div><p>Loading payments...</p></div>');try{const[s,o,i]=await Promise.all([request("/payments/my-history").catch(()=>({transactions:[],total_paid:0,pending_amount:0,total_transactions:0})),request("/payments/subscriptions").catch(()=>[]),request("/payments/invoices").catch(()=>[])]),r=Array.isArray(s.transactions)?s.transactions:[],l=Array.isArray(o)?o:[],c=Array.isArray(i)?i:[],d=s.total_paid||0,u=s.pending_amount||0,m=s.total_transactions||0;function t(e){return"payments"===e?`\n          <div class="card" style="padding:1.5rem;margin-top:1rem">\n            <h3>Available Plans</h3>\n            <p style="color:var(--color-text-muted);font-size:0.85rem;margin-top:0.25rem">Pay a plan fee to Casuya (Admin) via mobile money.</p>\n            <div id="teacher-plans-list"><div class="loading-state"><div class="spinner"></div></div></div>\n          </div>\n          <div class="card" style="padding:0;max-width:560px;margin-top:1rem;overflow:hidden">\n            <div class="checkout-header">\n              <svg width="20" height="20" fill="none" stroke="currentColor" stroke-width="2" viewBox="0 0 24 24"><path d="M3 10h18M7 15h1m4 0h1m-7 4h12a3 3 0 003-3V8a3 3 0 00-3-3H6a3 3 0 00-3 3v8a3 3 0 003 3z"/></svg>\n              <h3>Make a Payment</h3>\n            </div>\n            <form id="teacher-payment-form" class="checkout-body">\n              <div>\n                <label class="field-label">Mobile Number</label>\n                <div class="input-icon-wrap">\n                  <svg width="16" height="16" fill="none" stroke="currentColor" stroke-width="2" viewBox="0 0 24 24"><path d="M3 5a2 2 0 012-2h3.28a1 1 0 01.948.684l1.498 4.493a1 1 0 01-.502 1.21l-2.257 1.13a11.042 11.042 0 005.516 5.516l1.13-2.257a1 1 0 011.21-.502l4.493 1.498a1 1 0 01.684.949V19a2 2 0 01-2 2h-1C9.716 21 3 14.284 3 6V5z"/></svg>\n                  <input class="input" name="mobile_number" placeholder="0712345678" required>\n                </div>\n              </div>\n              <div>\n                <label class="field-label">Amount (TZS)</label>\n                <div class="input-icon-wrap">\n                  <span class="input-currency-prefix">TZS</span>\n                  <input class="input" name="amount_tzs" type="number" placeholder="5,000" required min="100">\n                </div>\n              </div>\n              <div>\n                <label class="field-label">Provider</label>\n                <div class="provider-grid">\n                  <label class="provider-card"><input type="radio" name="provider" value="m-pesa" required><span class="provider-dot" style="background:#16a34a"></span><span>M-Pesa</span></label>\n                  <label class="provider-card"><input type="radio" name="provider" value="tigo-pesa"><span class="provider-dot" style="background:#2563eb"></span><span>Tigo Pesa</span></label>\n                  <label class="provider-card"><input type="radio" name="provider" value="halopesa"><span class="provider-dot" style="background:#d97706"></span><span>HaloPesa</span></label>\n                  <label class="provider-card"><input type="radio" name="provider" value="azampay"><span class="provider-dot" style="background:#8b5cf6"></span><span>AzamPay</span></label>\n                </div>\n              </div>\n              <button class="btn btn-success btn-block" type="submit" id="teacher-payment-submit-btn">Pay Now</button>\n            </form>\n            <div id="teacher-payment-result" style="padding:0 1.5rem 1.5rem"></div>\n          </div>\n          <div class="card" style="padding:1.5rem;margin-top:1rem">\n            <div style="display:flex;justify-content:space-between;align-items:center;margin-bottom:0.75rem">\n              <h3>Payment History</h3>\n              <button class="btn btn-sm" id="teacher-refresh-tx-btn">Refresh</button>\n            </div>\n            ${0===r.length?'<div class="empty-state" style="padding:2rem"><p>No payments yet</p></div>':`<div style="overflow-x:auto"><table class="tx-table" style="width:100%;border-collapse:collapse;font-size:0.85rem"><thead><tr style="border-bottom:2px solid var(--color-border)"><th style="padding:0.6rem;text-align:left;font-weight:600">Date</th><th style="padding:0.6rem;text-align:left;font-weight:600">Provider</th><th style="padding:0.6rem;text-align:right;font-weight:600">Amount</th><th style="padding:0.6rem;text-align:center;font-weight:600">Status</th></tr></thead><tbody>${r.map(e=>`<tr style="border-bottom:1px solid var(--color-border)"><td style="padding:0.6rem;color:var(--color-text-muted)">${e.created_at?new Date(e.created_at).toLocaleDateString():"—"}</td><td style="padding:0.6rem">${escapeHtml(e.provider||"—")}</td><td style="padding:0.6rem;text-align:right;font-weight:600">${(e.amount_tzs||0).toLocaleString()} TZS</td><td style="padding:0.6rem;text-align:center"><span class="badge badge-${e.status||"pending"}">${escapeHtml(e.status||"unknown")}</span></td></tr>`).join("")}</tbody></table></div>`}\n          </div>`:"subscriptions"===e?0===l.length?'<div class="empty-state" style="padding:3rem"><p>No active subscriptions</p></div>':`<div style="display:grid;gap:0.75rem;margin-top:1rem">${l.map(e=>`\n            <div class="card" style="padding:1rem;display:flex;justify-content:space-between;align-items:center">\n              <div><div style="font-weight:600">${escapeHtml(e.plan_id)}</div><div style="font-size:0.8rem;color:var(--color-text-muted)">Since ${new Date(e.created_at).toLocaleDateString()}</div></div>\n              <div style="text-align:right"><div style="font-weight:600">${(e.amount||0).toLocaleString()} TZS</div><span class="badge badge-${"active"===e.status?"completed":"pending"}">${escapeHtml(e.status)}</span></div>\n            </div>`).join("")}</div>`:"invoices"===e?0===c.length?'<div class="empty-state" style="padding:3rem"><p>No invoices yet</p></div>':`<div style="overflow-x:auto;margin-top:1rem"><table class="tx-table" style="width:100%;border-collapse:collapse;font-size:0.85rem"><thead><tr style="border-bottom:2px solid var(--color-border)"><th style="padding:0.6rem;text-align:left;font-weight:600">Invoice #</th><th style="padding:0.6rem;text-align:right;font-weight:600">Amount</th><th style="padding:0.6rem;text-align:left;font-weight:600">Due Date</th><th style="padding:0.6rem;text-align:center;font-weight:600">Status</th></tr></thead><tbody>${c.map(e=>`<tr style="border-bottom:1px solid var(--color-border)"><td style="padding:0.6rem;font-weight:500">${escapeHtml(e.invoice_number||"—")}</td><td style="padding:0.6rem;text-align:right;font-weight:600">${(e.total_amount||0).toLocaleString()} TZS</td><td style="padding:0.6rem;color:var(--color-text-muted)">${e.due_date?new Date(e.due_date).toLocaleDateString():"—"}</td><td style="padding:0.6rem;text-align:center"><span class="badge badge-${"paid"===e.status?"completed":"pending"===e.status?"pending":"failed"}">${escapeHtml(e.status)}</span></td></tr>`).join("")}</tbody></table></div>`:""}async function n(){const t=document.getElementById("teacher-plans-list");if(t)try{const n=await request("/payments/plans").catch(()=>[]);if(!Array.isArray(n)||0===n.length)return void(t.innerHTML='<div class="empty-state" style="padding:1.5rem"><p>No payment plans available right now.</p></div>');t.innerHTML=n.map(e=>`\n          <div class="plan-card" style="border:1px solid var(--color-border);border-radius:var(--radius);padding:1rem;margin-top:0.75rem">\n            <div style="display:flex;justify-content:space-between;align-items:flex-start;gap:0.5rem">\n              <div>\n                <div style="font-weight:600;font-size:1rem">${escapeHtml(e.name)}</div>\n                <div style="font-size:0.8rem;color:var(--color-text-muted);margin-top:0.25rem">${escapeHtml(e.description||"")}</div>\n                <div style="font-weight:700;font-size:1.1rem;margin-top:0.5rem">${Number(e.amount_tzs).toLocaleString()} ${escapeHtml(e.currency||"TZS")}</div>\n              </div>\n              <span class="badge badge-completed" style="text-transform:capitalize">${escapeHtml(e.audience)}</span>\n            </div>\n            <form class="teacher-plan-form" data-plan-id="${e.id}" style="margin-top:0.75rem;display:flex;gap:0.5rem;flex-wrap:wrap;align-items:end">\n              <div style="flex:1;min-width:140px">\n                <label class="field-label">Mobile Number</label>\n                <input class="input" name="mobile_number" placeholder="0712345678" required>\n              </div>\n              <div style="min-width:130px">\n                <label class="field-label">Provider</label>\n                <select class="input" name="provider" required>\n                  <option value="m-pesa">M-Pesa</option>\n                  <option value="tigo-pesa">Tigo Pesa</option>\n                  <option value="halopesa">HaloPesa</option>\n                  <option value="azampay">AzamPay</option>\n                </select>\n              </div>\n              <button class="btn btn-success" type="submit">Pay ${Number(e.amount_tzs).toLocaleString()} ${escapeHtml(e.currency||"TZS")}</button>\n            </form>\n            <div class="teacher-plan-result" data-plan-id="${e.id}" style="margin-top:0.5rem"></div>\n          </div>\n        `).join(""),document.querySelectorAll(".teacher-plan-form").forEach(t=>{t.addEventListener("submit",async n=>{n.preventDefault();const a=t.getAttribute("data-plan-id"),s=t.querySelector("button[type=submit]"),o=document.querySelector(`.teacher-plan-result[data-plan-id="${a}"]`),i=new FormData(n.target);s.disabled=!0,s.innerHTML='<span class="btn-spinner">Processing...</span>';try{const t=await request(`/payments/plans/${a}/checkout`,{method:"POST",body:JSON.stringify({mobile_number:i.get("mobile_number"),provider:i.get("provider"),idempotency_key:crypto.randomUUID?crypto.randomUUID():Date.now().toString()})});if(null===t)return;o.innerHTML=`<div class="payment-result success"><svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M9 12l2 2 4-4m6 2a9 9 0 11-18 0 9 9 0 0118 0z"/></svg><div><strong>Payment initiated!</strong><br><span style="opacity:0.8;font-size:0.8rem">${escapeHtml(t.id||"")}</span></div></div>`,loadPayments(e)}catch(e){o.innerHTML=`<div class="payment-result error"><svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M12 8v4m0 4h.01M21 12a9 9 0 11-18 0 9 9 0 0118 0z"/></svg><div>${escapeHtml(e.message)}</div></div>`}finally{s.disabled=!1,s.textContent="Pay"}})})}catch(e){t.innerHTML='<div class="empty-state" style="padding:1.5rem"><p>Could not load plans.</p></div>'}}function a(){let t=!1;document.getElementById("teacher-payment-form")?.addEventListener("submit",async n=>{n.preventDefault();const a=document.getElementById("teacher-payment-submit-btn");if(t)return;t=!0,a.innerHTML='<span class="btn-spinner"><svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="3"><circle cx="12" cy="12" r="10" stroke-dasharray="31.4 31.4" stroke-linecap="round"/></svg> Processing...</span>',a.disabled=!0;const s=new FormData(n.target);try{const t=await request("/payments/checkout",{method:"POST",body:JSON.stringify({mobile_number:s.get("mobile_number"),amount_tzs:parseInt(s.get("amount_tzs"),10),provider:s.get("provider"),idempotency_key:crypto.randomUUID?crypto.randomUUID():Date.now().toString()})});if(null===t)return;document.getElementById("teacher-payment-result").innerHTML=`<div class="payment-result success"><svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M9 12l2 2 4-4m6 2a9 9 0 11-18 0 9 9 0 0118 0z"/></svg><div><strong>Payment initiated!</strong><br><span style="opacity:0.8;font-size:0.8rem">${escapeHtml(t.id||"")}</span></div></div>`,loadPayments(e)}catch(e){document.getElementById("teacher-payment-result").innerHTML=`<div class="payment-result error"><svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M12 8v4m0 4h.01M21 12a9 9 0 11-18 0 9 9 0 0118 0z"/></svg><div>${escapeHtml(e.message)}</div></div>`}t=!1,a.innerHTML="Pay Now",a.disabled=!1})}e.showView(`\n      <div class="content">\n        <h2>Payments</h2>\n        <p style="color:var(--color-text-muted);font-size:0.85rem;margin-top:0.25rem">Manage your payments, subscriptions and invoices</p>\n        <div class="stat-grid" style="margin-top:1rem">\n          <div class="stat-card"><div class="stat-icon" style="background:#f0fdf4;color:#16a34a">💰</div><div class="stat-value">${d.toLocaleString()}</div><div class="stat-label">Total Paid (TZS)</div></div>\n          <div class="stat-card"><div class="stat-icon" style="background:#fef3c7;color:#d97706">⏳</div><div class="stat-value">${u.toLocaleString()}</div><div class="stat-label">Pending (TZS)</div></div>\n          <div class="stat-card"><div class="stat-icon" style="background:#eff6ff;color:#2563eb">📊</div><div class="stat-value">${m}</div><div class="stat-label">Transactions</div></div>\n          <div class="stat-card"><div class="stat-icon" style="background:#ede9fe;color:#7c3aed">🔄</div><div class="stat-value">${l.filter(e=>"active"===e.status).length}</div><div class="stat-label">Active Subs</div></div>\n        </div>\n        <div class="tab-bar" style="margin-top:1rem">\n          <button class="tab-btn active" data-ttab="payments">💳 Payments</button>\n          <button class="tab-btn" data-ttab="subscriptions">🔄 Subscriptions</button>\n          <button class="tab-btn" data-ttab="invoices">📄 Invoices</button>\n        </div>\n        <div id="teacher-payment-tab-content">${t("payments")}</div>\n      </div>\n    `),document.querySelectorAll("[data-ttab]").forEach(e=>{e.addEventListener("click",()=>{document.querySelectorAll("[data-ttab]").forEach(e=>e.classList.remove("active")),e.classList.add("active"),document.getElementById("teacher-payment-tab-content").innerHTML=t(e.dataset.ttab),a(),n()})}),a(),n(),document.getElementById("teacher-refresh-tx-btn")?.addEventListener("click",()=>loadPayments(e))}catch(p){e.showView('<div class="empty-state"><p>Error loading payments: '+escapeHtml(p.message)+"</p></div>")}}async function loadNotifications(e){e.showView('<div class="loading-state"><div class="spinner"></div><p>Loading notifications...</p></div>');try{const n=await request("/notifications"),a=Array.isArray(n?.items)?n.items:[],s=a.filter(e=>!e.is_read),o=a.filter(e=>e.is_read);let i="all";function t(){let e=a;"unread"===i?e=s:"read"===i&&(e=o);const n=document.getElementById("teacher-notif-list");n&&(0!==e.length?(n.innerHTML=e.map(e=>`\n        <div class="card" style="padding:0.75rem 1rem;margin-bottom:0.5rem;${e.is_read?"opacity:0.7":"border-left:3px solid var(--color-primary)"}">\n          <div style="display:flex;justify-content:space-between;align-items:start;gap:0.5rem">\n            <div style="flex:1">\n              <p style="margin:0;font-size:0.875rem;${e.is_read?"":"font-weight:600"}">${escapeHtml(e.message)}</p>\n              <p style="margin:0.25rem 0 0;font-size:0.75rem;color:var(--color-text-muted)">${e.created_at?new Date(e.created_at).toLocaleString():""}</p>\n            </div>\n            ${e.is_read?"":`<button class="btn btn-primary btn-xs teacher-notif-read" data-id="${e.id}">✓ Read</button>`}\n          </div>\n        </div>\n      `).join(""),document.querySelectorAll(".teacher-notif-read").forEach(e=>{e.addEventListener("click",async()=>{await request(`/notifications/${e.dataset.id}/read`,{method:"POST"});const n=a.find(t=>t.id===e.dataset.id);n&&(n.is_read=!0),s.length=0,s.push(...a.filter(e=>!e.is_read)),o.length=0,o.push(...a.filter(e=>e.is_read));const i=document.getElementById("notif-badge");if(i){const e=s.length;i.textContent=e,i.style.display=e>0?"inline":"none"}t()})})):n.innerHTML='<div class="empty-state" style="padding:2rem"><p>No notifications</p></div>')}e.showView(`\n      <div class="content">\n        <div style="display:flex;justify-content:space-between;align-items:center">\n          <h2>🔔 Notifications</h2>\n          <button class="btn btn-ghost btn-sm" id="teacher-mark-all-read">✓ Mark All Read</button>\n        </div>\n        <div style="margin-top:1rem;display:flex;gap:0.5rem;flex-wrap:wrap;align-items:center">\n          <button class="btn-filter teacher-notif-filter active" data-filter="all">All <span class="filter-count">${a.length}</span></button>\n          <button class="btn-filter teacher-notif-filter" data-filter="unread">🔴 Unread <span class="filter-count">${s.length}</span></button>\n          <button class="btn-filter teacher-notif-filter" data-filter="read">✅ Read <span class="filter-count">${o.length}</span></button>\n        </div>\n        <div id="teacher-notif-list" style="margin-top:0.75rem"></div>\n      </div>\n    `),document.querySelectorAll(".teacher-notif-filter").forEach(e=>{e.addEventListener("click",()=>{i=e.dataset.filter,document.querySelectorAll(".teacher-notif-filter").forEach(e=>e.classList.toggle("active",e.dataset.filter===i)),t()})}),document.getElementById("teacher-mark-all-read")?.addEventListener("click",async()=>{await Promise.all(s.map(e=>request(`/notifications/${e.id}/read`,{method:"POST"}).catch(()=>{}))),s.forEach(e=>e.is_read=!0),s.length=0,o.length=0,o.push(...a);const e=document.getElementById("notif-badge");e&&(e.style.display="none"),t()}),t()}catch(r){e.showView('<div class="empty-state"><p>Error loading notifications</p></div>')}}async function loadSettings(e){e.showView('<div class="loading-state"><div class="spinner"></div><p>Loading settings...</p></div>');try{const[n,a]=await Promise.all([request("/users/me").catch(()=>({})),request("/teachers/me").catch(()=>({}))]),s=localStorage.getItem("teacher_settings_tab")||"profile";function t(e){localStorage.setItem("teacher_settings_tab",e),document.querySelectorAll(".teacher-settings-tab").forEach(t=>t.classList.toggle("active",t.dataset.tab===e));const t=document.getElementById("teacher-settings-panel");t&&("profile"===e?(t.innerHTML=`\n          <div class="card" style="padding:1.5rem">\n            <h3 style="margin-bottom:0.75rem">My Profile</h3>\n            <form id="teacher-profile-form" style="display:flex;flex-direction:column;gap:0.75rem">\n              <div>\n                <label style="font-size:0.85rem;font-weight:500;display:block;margin-bottom:0.25rem">Full Name</label>\n                <input class="input" name="full_name" value="${escapeHtml(a.full_name||"")}" placeholder="Your name">\n              </div>\n              <div>\n                <label style="font-size:0.85rem;font-weight:500;display:block;margin-bottom:0.25rem">Email</label>\n                <input class="input" value="${escapeHtml(n.email||"")}" disabled style="opacity:0.6">\n              </div>\n              <div>\n                <label style="font-size:0.85rem;font-weight:500;display:block;margin-bottom:0.25rem">Phone</label>\n                <input class="input" name="phone" value="${escapeHtml(n.phone||"")}" placeholder="Phone number">\n              </div>\n              <div>\n                <label style="font-size:0.85rem;font-weight:500;display:block;margin-bottom:0.25rem">Subjects</label>\n                <input class="input" name="subjects" value="${escapeHtml(a.subjects||"")}" placeholder="e.g. Mathematics, Physics">\n              </div>\n              <button class="btn btn-primary btn-pattern" type="submit" style="align-self:flex-start">💾 Save Changes</button>\n            </form>\n            <p id="teacher-profile-msg" style="font-size:0.85rem;margin-top:0.5rem;display:none"></p>\n          </div>\n        `,document.getElementById("teacher-profile-form")?.addEventListener("submit",async e=>{e.preventDefault();const t=new FormData(e.target),n=document.getElementById("teacher-profile-msg");try{await request("/users/me",{method:"PATCH",body:JSON.stringify({phone:t.get("phone")})}),await request("/teachers/me",{method:"PATCH",body:JSON.stringify({full_name:t.get("full_name"),subjects:t.get("subjects")})}),n.textContent="✅ Profile updated!",n.style.color="var(--color-success)",n.style.display="block",setTimeout(()=>n.style.display="none",3e3)}catch(e){n.textContent="❌ "+e.message,n.style.color="var(--color-danger)",n.style.display="block"}})):"password"===e?(t.innerHTML='\n          <div class="card" style="padding:1.5rem">\n            <h3 style="margin-bottom:0.75rem">Change Password</h3>\n            <form id="teacher-pw-form" style="display:flex;flex-direction:column;gap:0.75rem;max-width:400px">\n              <div>\n                <label style="font-size:0.85rem;font-weight:500;display:block;margin-bottom:0.25rem">Current Password</label>\n                <input class="input" name="current_password" type="password" required>\n              </div>\n              <div>\n                <label style="font-size:0.85rem;font-weight:500;display:block;margin-bottom:0.25rem">New Password</label>\n                <input class="input" name="new_password" type="password" required minlength="6">\n              </div>\n              <div>\n                <label style="font-size:0.85rem;font-weight:500;display:block;margin-bottom:0.25rem">Confirm New Password</label>\n                <input class="input" name="confirm_password" type="password" required>\n              </div>\n              <button class="btn btn-primary btn-pattern" type="submit" style="align-self:flex-start">🔐 Update Password</button>\n            </form>\n            <p id="teacher-pw-msg" style="font-size:0.85rem;margin-top:0.5rem;display:none"></p>\n          </div>\n        ',document.getElementById("teacher-pw-form")?.addEventListener("submit",async e=>{e.preventDefault();const t=new FormData(e.target),n=document.getElementById("teacher-pw-msg");if(t.get("new_password")!==t.get("confirm_password"))return n.textContent="❌ Passwords do not match",n.style.color="var(--color-danger)",void(n.style.display="block");try{await request("/auth/change-password",{method:"POST",body:JSON.stringify({current_password:t.get("current_password"),new_password:t.get("new_password")})}),n.textContent="✅ Password updated!",n.style.color="var(--color-success)",n.style.display="block",e.target.reset()}catch(e){n.textContent="❌ "+e.message,n.style.color="var(--color-danger)",n.style.display="block"}})):"appearance"===e&&(t.innerHTML=appearancePanelHTML(),setupAppearanceControls()))}e.showView(`\n      <div class="content">\n        <h2>⚙️ Settings</h2>\n        <div class="tab-bar">\n          <button class="tab-btn teacher-settings-tab${"profile"===s?" active":""}" data-tab="profile">👤 Profile</button>\n          <button class="tab-btn teacher-settings-tab${"password"===s?" active":""}" data-tab="password">🔒 Password</button>\n          <button class="tab-btn teacher-settings-tab${"appearance"===s?" active":""}" data-tab="appearance">🎨 Appearance</button>\n        </div>\n        <div id="teacher-settings-panel"></div>\n      </div>\n    `),document.querySelectorAll(".teacher-settings-tab").forEach(e=>{e.addEventListener("click",()=>t(e.dataset.tab))}),t(s)}catch(o){e.showView('<div class="empty-state"><p>Error loading settings</p></div>')}}async function showProfileEditor(e){e.showView('<div class="loading-state"><div class="spinner"></div><p>Loading...</p></div>');try{const[t,n]=await Promise.all([request("/users/me"),request("/teachers/me").catch(()=>null)]);e.showView(`\n      <div class="content" style="max-width:500px;margin:0 auto">\n        <h2>Edit Profile</h2>\n        <form id="profile-form">\n          <label>Email</label>\n          <input type="email" value="${escapeHtml(t.email||"")}" disabled style="width:100%;padding:0.5rem;margin-bottom:0.75rem;border:1px solid var(--color-border);border-radius:var(--radius)">\n          <label>Phone</label>\n          <input type="tel" id="pf-phone" value="${escapeHtml(t.phone||"")}" style="width:100%;padding:0.5rem;margin-bottom:0.75rem;border:1px solid var(--color-border);border-radius:var(--radius)">\n          ${n?`\n            <label>Full Name</label>\n            <input type="text" id="pf-name" value="${escapeHtml(n.full_name||"")}" style="width:100%;padding:0.5rem;margin-bottom:0.75rem;border:1px solid var(--color-border);border-radius:var(--radius)">\n            <label>Subjects</label>\n            <input type="text" id="pf-subjects" value="${escapeHtml(n.subjects||"")}" style="width:100%;padding:0.5rem;margin-bottom:0.75rem;border:1px solid var(--color-border);border-radius:var(--radius)">\n          `:""}\n          <button type="submit" class="btn btn-primary" style="width:100%">Save Changes</button>\n        </form>\n        <p id="profile-msg" style="display:none;margin-top:0.75rem"></p>\n        <button class="btn lesson-back-btn" style="margin-top:1rem">&larr; Back</button>\n      </div>\n    `),document.querySelector("#teacher-content .lesson-back-btn")?.addEventListener("click",()=>loadOverview(e)),document.getElementById("profile-form").addEventListener("submit",async e=>{e.preventDefault();const t=document.getElementById("profile-msg");try{await request("/users/me",{method:"PATCH",body:JSON.stringify({phone:document.getElementById("pf-phone").value||null})}),n&&await request("/teachers/me",{method:"PATCH",body:JSON.stringify({full_name:document.getElementById("pf-name").value||null,subjects:document.getElementById("pf-subjects").value||null})}),t.style.display="block",t.style.color="var(--color-success)",t.textContent="Profile updated!",setTimeout(()=>t.style.display="none",3e3)}catch(e){t.style.display="block",t.style.color="red",t.textContent=e.message}})}catch(t){e.showView(`<div class="empty-state"><h2>Error</h2><p>${escapeHtml(t.message)}</p></div>`)}}function setupSidebar(e){const{signal:t}=e._abort;document.getElementById("sidebar-toggle")?.addEventListener("click",()=>{document.getElementById("teacher-sidebar").classList.toggle("open")},{signal:t}),document.addEventListener("click",e=>{e.target.closest("#teacher-sidebar")||e.target.closest("#sidebar-toggle")||document.getElementById("teacher-sidebar")?.classList.remove("open")},{signal:t});const n=document.getElementById("teacher-search"),a=document.getElementById("teacher-search-results");let s;n.addEventListener("input",()=>{clearTimeout(s);const t=n.value.trim();t.length<2?a.style.display="none":s=setTimeout(async()=>{try{const s=await request(`/search/?q=${encodeURIComponent(t)}`);Array.isArray(s)&&0!==s.length?(a.innerHTML=s.map(e=>`\n            <div class="teacher-search-item" data-id="${escapeHtml(e.id)}" data-type="${escapeHtml(e.type)}" style="padding:0.5rem;cursor:pointer;border-bottom:1px solid var(--color-border);display:flex;justify-content:space-between">\n              <span>${escapeHtml(e.title)}</span>\n              <span style="color:var(--color-text-muted);font-size:0.8rem">${escapeHtml(e.type)}</span>\n            </div>\n          `).join(""),a.querySelectorAll(".teacher-search-item").forEach(t=>{t.addEventListener("click",()=>{a.style.display="none",n.value="";const s=t.dataset.type,o=t.dataset.id;"lesson"===s?viewLessonContent("#teacher-content",o,()=>loadLessons(e)):"student"===s?viewStudent(e,o,t.querySelector("span")?.textContent||"Student"):e.showViewByName("overview")})})):a.innerHTML='<div style="padding:0.5rem;color:var(--color-text-muted)">No results</div>',a.style.display="block"}catch(e){a.style.display="none"}},300)}),document.addEventListener("click",e=>{e.target.closest("#teacher-search")||e.target.closest("#teacher-search-results")||(a.style.display="none")},{signal:t});const o=document.getElementById("notif-bell"),i=document.getElementById("notif-dropdown"),r=document.getElementById("notif-badge");async function l(){try{const t=await request("/notifications");e.notifData=Array.isArray(t?.items)?t.items:[];const n=e.notifData.filter(e=>!e.is_read).length;n>0?(r.textContent=n,r.style.display="inline"):r.style.display="none"}catch(e){}}o.addEventListener("click",async t=>{t.stopPropagation(),"block"!==i.style.display?(await l(),0===e.notifData.length?i.innerHTML='<div style="padding:0.75rem;color:var(--color-text-muted)">No notifications</div>':(i.innerHTML=e.notifData.map(e=>`\n        <div class="notif-item ${e.is_read?"":"unread"}" data-id="${escapeHtml(e.id)}" style="padding:0.5rem 0.75rem;border-bottom:1px solid var(--color-border);${e.is_read?"opacity:0.6":"font-weight:600"}">\n          <p style="margin:0;font-size:0.85rem">${escapeHtml(e.message)}</p>\n        </div>\n      `).join(""),i.querySelectorAll(".notif-item.unread").forEach(e=>{e.addEventListener("click",async()=>{await request(`/notifications/${e.dataset.id}/read`,{method:"POST"}),await l()})})),i.style.display="block"):i.style.display="none"}),document.addEventListener("click",e=>{e.target.closest("#notif-bell")||e.target.closest("#notif-dropdown")||(i.style.display="none")},{signal:t}),document.getElementById("profile-btn").addEventListener("click",e=>{e.stopPropagation();const t=document.getElementById("profile-dropdown");t.style.display="block"===t.style.display?"none":"block"}),document.addEventListener("click",e=>{const t=document.getElementById("profile-dropdown");!t||e.target.closest("#profile-btn")||e.target.closest("#profile-dropdown")||(t.style.display="none")},{signal:t}),document.getElementById("prof-logout").addEventListener("click",handleLogout),document.getElementById("prof-edit").addEventListener("click",()=>{document.getElementById("profile-dropdown").style.display="none",showProfileEditor(e)}),document.querySelectorAll("#teacher-nav .sidebar-nav-item").forEach(t=>{t.addEventListener("click",n=>{n.preventDefault(),document.getElementById("teacher-sidebar")?.classList.remove("open"),e.showViewByName(t.dataset.view)})}),window.addEventListener("hashchange",()=>{const t=location.hash.slice(1)||"overview";e._viewLoaders[t]&&e._viewLoaders[t]()}),async function(){try{var t=await request("/settings/modules/my");if(!t||"object"!=typeof t)return;var n=document.querySelectorAll("#teacher-nav .sidebar-nav-item"),a=null;n.forEach(function(e){var n=e.getAttribute("data-view");!1===t[n]?e.style.display="none":a||(a=n)});var s=location.hash.slice(1)||"overview";!1===t[s]&&a&&e.showViewByName(a)}catch(e){}}(),l()}async function renderTeacherDashboard(){const e=new TeacherDashboard;render("#app",`\n    <div class="sidebar-layout">\n      <aside id="teacher-sidebar" class="sidebar">\n        <div class="sidebar-header">\n          <h2>Casuya</h2>\n          <p>${escapeHtml(e.payload.full_name||e.payload.email||"Teacher")}</p>\n        </div>\n        <nav class="sidebar-nav" id="teacher-nav">\n          <div class="sidebar-nav-item active" data-view="overview">📊 Overview</div>\n          <div class="sidebar-nav-item" data-view="class">🏫 My Class</div>\n          <div class="sidebar-nav-item" data-view="students">👥 Students</div>\n          <div class="sidebar-nav-item" data-view="lessons">📝 Lessons</div>\n          <div class="sidebar-nav-item" data-view="test-generator">📝 Test Generator</div>\n          <div class="sidebar-nav-item" data-view="assignments">📋 Assignments</div>\n          <div class="sidebar-nav-item" data-view="reports">📈 Reports</div>\n          <div class="sidebar-nav-item" data-view="ai-assistant">🤖 AI Assistant</div>\n          <div class="sidebar-nav-item" data-view="teaching-docs">📚 Teaching Docs</div>\n          <div class="sidebar-nav-item" data-view="library">📖 Reference Library</div>\n          <div class="sidebar-nav-item" data-view="bookmarks">🔖 Bookmarks</div>\n          <div class="sidebar-nav-item" data-view="files">📁 Files</div>\n          <div class="sidebar-nav-item" data-view="payments">💳 Payments</div>\n          <div class="sidebar-nav-item" data-view="notifications">🔔 Notifications</div>\n          <div class="sidebar-nav-item" data-view="settings">⚙️ Settings</div>\n        </nav>\n        <div class="sidebar-footer">\n          <div class="sidebar-footer-row">\n            <div style="position:relative;flex:1">\n              <button id="notif-bell" class="icon-btn" style="width:100%;font-size:1.1rem" title="Notifications">🔔<span id="notif-badge" style="display:none;position:absolute;top:-4px;right:-6px;background:red;color:#fff;font-size:0.6rem;padding:1px 4px;border-radius:8px;min-width:14px;text-align:center">0</span></button>\n              <div id="notif-dropdown" class="notif-dropdown"></div>\n            </div>\n            <div style="position:relative">\n              <button id="profile-btn" class="icon-btn" title="Profile">👤</button>\n              <div id="profile-dropdown" class="profile-dropdown">\n                <button class="dropdown-item" id="prof-edit">Edit Profile</button>\n                <button class="dropdown-item" id="prof-logout" style="color:var(--color-danger)">Sign Out</button>\n              </div>\n            </div>\n          </div>\n        </div>\n      </aside>\n      <main class="main-content">\n        <header class="main-header">\n          <button id="sidebar-toggle" class="sidebar-toggle-btn">&#9776;</button>\n          <div style="position:relative;flex:1;max-width:360px">\n            <input id="teacher-search" type="search" class="input" placeholder="Search lessons, students..." style="padding:0.4rem 0.75rem;font-size:0.85rem">\n            <div id="teacher-search-results" style="display:none;position:absolute;top:100%;left:0;right:0;background:var(--color-surface);border:1px solid var(--color-border);border-radius:var(--radius);z-index:100;max-height:300px;overflow-y:auto"></div>\n          </div>\n        </header>\n        <div id="teacher-content" class="main-body"></div>\n      </main>\n    </div>\n  `),e._navItems=document.querySelectorAll("#teacher-nav .sidebar-nav-item"),e._viewLoaders={overview:()=>{e.setActiveNav("overview"),loadOverview(e)},dashboard:()=>{e.setActiveNav("overview"),loadOverview(e)},class:()=>{e.setActiveNav("class"),loadClass(e)},students:()=>{e.setActiveNav("students"),loadStudents(e)},lessons:()=>{e.setActiveNav("lessons"),loadLessons(e)},"test-generator":()=>{e.setActiveNav("test-generator"),loadTeacherTestGenerator(e)},assignments:()=>{e.setActiveNav("assignments"),loadAssignments(e)},reports:()=>{e.setActiveNav("reports"),loadReports(e)},"ai-assistant":()=>{e.setActiveNav("ai-assistant"),loadAIAssistant(e)},"teaching-docs":()=>{e.setActiveNav("teaching-docs"),loadPlans(e)},library:()=>{e.setActiveNav("library"),loadLibrary(e)},bookmarks:()=>{e.setActiveNav("bookmarks"),loadBookmarks(e)},files:()=>{e.setActiveNav("files"),loadFiles(e)},payments:()=>{e.setActiveNav("payments"),loadPayments(e)},notifications:()=>{e.setActiveNav("notifications"),loadNotifications(e)},settings:()=>{e.setActiveNav("settings"),loadSettings(e)}},setupSidebar(e);const t=location.hash.slice(1)||"overview";e._viewLoaders[t]?e._viewLoaders[t]():loadOverview(e)}function renderApp(){const e=decodeToken(localStorage.getItem("casuya_token")).role||"student";"admin"===e?renderAdminDashboard():"student"===e?renderStudentDashboard():"teacher"===e?renderTeacherDashboard():render("#app",`\n      <div style="display:flex;flex-direction:column;align-items:center;justify-content:center;min-height:100vh;padding:2rem;text-align:center">\n        <h2 style="margin-bottom:0.5rem">Access Not Available</h2>\n        <p style="color:var(--color-text-muted);margin-bottom:1.5rem">Your account role ("<strong>${escapeHtml(e||"unknown")}</strong>") does not have a dashboard yet.</p>\n        <button class="btn btn-primary" onclick="localStorage.removeItem('casuya_token');window.location.href='/login.html'">Log Out</button>\n      </div>\n    `)}function renderMaintenanceScreen(e){var t=document.getElementById("app");if(t&&(t.style.visibility="hidden"),!document.getElementById("casuya-maintenance")){var n=e.until?new Date(e.until):null,a="";if(n&&!isNaN(n.getTime())){a="<p style=\"margin:1.25rem 0 0;font-size:1rem;color:rgba(255,255,255,0.92);font-weight:600\">We should be back by <span style='border-bottom:2px solid rgba(255,255,255,0.55)'>&nbsp;"+(["Sunday","Monday","Tuesday","Wednesday","Thursday","Friday","Saturday"][n.getDay()]+", "+["January","February","March","April","May","June","July","August","September","October","November","December"][n.getMonth()]+" "+n.getDate()+(n.getHours()||n.getMinutes()?" at "+(n.getHours()%12||12)+":"+(n.getMinutes()<10?"0":"")+n.getMinutes()+(n.getHours()>=12?" PM":" AM")+" EAT":""))+"&nbsp;</span></p>"}var s=document.createElement("div");s.id="casuya-maintenance",s.style.cssText="position:fixed;inset:0;z-index:99999;display:flex;align-items:center;justify-content:center;padding:1.5rem;background:linear-gradient(140deg,#1e3a8a 0%,#2563eb 55%,#3b82f6 100%);color:#fff;font-family:-apple-system,BlinkMacSystemFont,'Segoe UI',Roboto,sans-serif;text-align:center;overflow:auto",s.innerHTML='<div style="max-width:560px;width:100%"><div style="width:56px;height:56px;margin:0 auto 1.25rem;display:flex;align-items:center;justify-content:center;background:rgba(255,255,255,0.15);border-radius:16px;font-size:1.7rem">🔧</div><h1 style="margin:0 0 0.75rem;font-size:1.85rem;line-height:1.2;font-weight:800">'+(e.title||"We'll Be Back Soon")+'</h1><p style="margin:0 auto;font-size:1.05rem;line-height:1.7;color:rgba(255,255,255,0.92);max-width:460px">'+(e.message||"We're fixing bugs and making improvements to Casuya to serve you even better. Your learning progress is safe with us — hang tight, we're almost ready to welcome you back.")+"</p>"+a+'<p style="margin:1.5rem 0 0;font-size:0.9rem;color:rgba(255,255,255,0.85)">Need urgent assistance? Contact us at <a href="mailto:admin@casuya.co.tz" style="color:#fff;font-weight:600;text-decoration:underline">admin@casuya.co.tz</a></p><p style="margin:1.25rem 0 0;font-size:0.85rem;color:rgba(255,255,255,0.7)">Thank you for your patience — see you very soon. 💙</p></div>',document.body.appendChild(s)}}document.addEventListener("DOMContentLoaded",async()=>{applyAppearance();if(localStorage.getItem("casuya_token")){renderApp(),"function"==typeof requestIdleCallback&&requestIdleCallback(function(){"function"==typeof ensureSpeechBundle&&ensureSpeechBundle()},{timeout:8e3});try{const e=await request("/settings/maintenance");e&&!0===e.enabled&&"admin"!==localStorage.getItem("casuya_role")&&renderMaintenanceScreen(e)}catch(e){}}else renderLogin()});
+// casuya-env.js — environment-aware API URL resolution.
+//
+// In production (Vercel / custom domain) we point the frontend at the Render
+// backend. On localhost we intentionally leave CASUYA_API_URL UNSET so that
+// config.js falls back to the local API (http://localhost:8765), keeping
+// local development fully local and free of production coupling.
+(function () {
+  var host = window.location.hostname || "";
+  var isLocal =
+    host === "localhost" ||
+    host === "127.0.0.1" ||
+    host === "[::1]" ||
+    host === "::1";
+  if (!isLocal) {
+    window.CASUYA_API_URL = "https://casuya-platform-production.up.railway.app";
+  }
+})();
+
+;
+(function () {
+  // casuya-config.js — central API base resolution for the static frontend.
+  //
+  // In production, point the frontend at your Render backend by setting the
+  // global CASUYA_API_URL (e.g. https://casuya-platform-production.up.railway.app) in a small
+  // inline <script> that runs BEFORE this file, or via Vercel env substitution.
+  //
+  // In development it targets the local API on port 8765 (same-origin when the
+  // frontend is served from the API host).
+
+  function resolveBase() {
+    if (window.CASUYA_API_URL) {
+      return String(window.CASUYA_API_URL).replace(/\/+$/, "");
+    }
+    var hostname = window.location.hostname || "localhost";
+    var protocol = (window.location.protocol === "http:" || window.location.protocol === "https:")
+      ? window.location.protocol
+      : "http:";
+    var port = window.location.port;
+    var isSameOrigin = port === "8765" || port === "" || port === "443" || port === "80";
+    return isSameOrigin ? window.location.origin : protocol + "//" + hostname + ":8765";
+  }
+
+  window.casuyaApiBase = function () {
+    return resolveBase();
+  };
+
+  window.casuyaOAuthUrl = function (provider) {
+    return resolveBase() + "/auth/oauth/" + encodeURIComponent(provider);
+  };
+
+  // Register the offline/performance service worker ONLY after auth is established.
+  // On the login/register pages (no token), skip SW registration to avoid caching
+  // auth-critical requests before the session is established.
+  if ("serviceWorker" in navigator) {
+    window.addEventListener("load", function () {
+      var path = window.location.pathname;
+      var isAuthPage = /\/(?:login|register|forgot-password|reset-password|index)\.html?$/.test(path) || path === "/";
+      var hasToken = !!localStorage.getItem("casuya_token");
+
+      // Register SW only on authenticated portal pages (student/teacher/admin)
+      // OR on public pages where the user already has a token
+      if (!isAuthPage || hasToken) {
+        navigator.serviceWorker.register("/sw.js").catch(function () {});
+      }
+    });
+  }
+})();
+
+;
+// modules/api-cache.js — GET cache + in-flight dedupe for the static frontend.
+// Wired from modules/api-client/core/fetch.js. Classic script (globals).
+
+const requestCache = new Map();
+const inFlight = new Map();
+const CACHE_TTL = 30000;
+
+function clearRequestCaches() {
+  requestCache.clear();
+  inFlight.clear();
+}
+window.clearRequestCaches = clearRequestCaches;
+
+function requestCacheKey(path, method) {
+  return String(method || "GET").toUpperCase() + " " + path;
+}
+
+function isCacheableRequest(path, options) {
+  if (!options) options = {};
+  const method = String(options.method || "GET").toUpperCase();
+  if (method !== "GET") return false;
+  if (options.skipCache || options._retry) return false;
+  // Auth, live progress, notifications, and AI must always hit the network.
+  if (/^\/(?:auth|progress|notifications|ai)\b/i.test(path)) return false;
+  return true;
+}
+
+function getCachedRequest(path, options) {
+  if (!isCacheableRequest(path, options)) return null;
+  const key = requestCacheKey(path, options && options.method);
+  const hit = requestCache.get(key);
+  if (!hit) return null;
+  if (Date.now() - hit.at > CACHE_TTL) {
+    requestCache.delete(key);
+    return null;
+  }
+  return hit.value;
+}
+
+function setCachedRequest(path, options, value) {
+  if (!isCacheableRequest(path, options)) return;
+  requestCache.set(requestCacheKey(path, options && options.method), {
+    at: Date.now(),
+    value: value,
+  });
+}
+
+function getInFlightRequest(path, options) {
+  if (!isCacheableRequest(path, options)) return null;
+  return inFlight.get(requestCacheKey(path, options && options.method)) || null;
+}
+
+function setInFlightRequest(path, options, promise) {
+  if (!isCacheableRequest(path, options)) return;
+  inFlight.set(requestCacheKey(path, options && options.method), promise);
+}
+
+function clearInFlightRequest(path, options) {
+  inFlight.delete(requestCacheKey(path, options && options.method));
+}
+
+;
+// modules/api-auth.js — Token management, auth headers, decode JWT
+
+function decodeToken(token) {
+  try {
+    return JSON.parse(atob(token.split(".")[1]));
+  } catch {
+    return {};
+  }
+}
+
+let _refreshPromise = null;
+
+function tokenNeedsRefresh(token, skewSeconds = 60) {
+  if (!token) return false;
+  try {
+    const payload = JSON.parse(atob(token.split(".")[1]));
+    if (typeof payload.exp !== "number") return false;
+    return Date.now() >= payload.exp * 1000 - skewSeconds * 1000;
+  } catch {
+    return false;
+  }
+}
+
+async function refreshAuthToken() {
+  if (_refreshPromise) return _refreshPromise;
+  _refreshPromise = _doRefresh().finally(() => { _refreshPromise = null; });
+  return _refreshPromise;
+}
+
+async function _doRefresh() {
+  const refreshToken = localStorage.getItem("casuya_refresh_token");
+  if (!refreshToken) throw new Error("No refresh token");
+  const resp = await fetch(`${API_BASE}/auth/refresh`, {
+    method: "POST",
+    headers: { "Content-Type": "application/json" },
+    body: JSON.stringify({ refresh_token: refreshToken }),
+  });
+  if (!resp.ok) throw new Error("Refresh failed");
+  const text = await resp.text();
+  let data;
+  try {
+    data = JSON.parse(text);
+  } catch {
+    throw new Error("Invalid response from refresh endpoint");
+  }
+  if (data.access_token) localStorage.setItem("casuya_token", data.access_token);
+  if (data.refresh_token) localStorage.setItem("casuya_refresh_token", data.refresh_token);
+  return data.access_token;
+}
+
+;
+// modules/api-client/core/host.js — API host/protocol/base constants
+
+const API_HOST = window.location.hostname || "localhost";
+
+const API_PROTOCOL = (window.location.protocol === "http:" || window.location.protocol === "https:")
+  ? window.location.protocol
+  : "http:";
+
+const API_BASE = window.casuyaApiBase ? window.casuyaApiBase()
+  : (window.location.port === "8765" || window.location.port === "" || window.location.port === "443" || window.location.port === "80")
+    ? window.location.origin
+    : `${API_PROTOCOL}//${API_HOST}:8765`;
+
+// Expose on window so ES modules (auth-guard.js loaded via <script type="module">)
+// can also reach these when they import functions from auth-client.js.
+window.API_HOST = API_HOST;
+window.API_PROTOCOL = API_PROTOCOL;
+window.API_BASE = API_BASE;
+;
+// modules/api-client/core/dom.js — DOM render/escape helpers (shared global scope)
+
+let _globalAbort = null;
+
+function render(container, html) {
+  const el = typeof container === "string" ? document.querySelector(container) : container;
+  if (!el) return;
+  if (_globalAbort) {
+    const old = _globalAbort;
+    Promise.resolve().then(() => old.abort());
+  }
+  _globalAbort = new AbortController();
+  el.innerHTML = html;
+}
+
+function escapeHtml(str) {
+  if (str == null) return "";
+  const div = document.createElement("div");
+  div.textContent = String(str);
+  return div.innerHTML;
+}
+
+// Inject <base href> into pasted/uploaded HTML before it is shown through
+// iframe.srcdoc so absolute asset paths (/static/lib/...) and relative links
+// resolve against the backend origin regardless of where the frontend is
+// served from or how the document is written (head present or not).
+function injectNodeBase(html) {
+  if (!html) return html;
+  const base = API_BASE + "/";
+  const headMatch = /<head[^>]*>/i.exec(html);
+  if (headMatch) {
+    return html.slice(0, headMatch.index + headMatch[0].length)
+      + `<base href="${base}">`
+      + html.slice(headMatch.index + headMatch[0].length);
+  }
+  const htmlMatch = /<html[^>]*>/i.exec(html);
+  if (htmlMatch) {
+    return html.slice(0, htmlMatch.index + htmlMatch[0].length)
+      + `<head><base href="${base}"></head>`
+      + html.slice(htmlMatch.index + htmlMatch[0].length);
+  }
+  const doctypeMatch = /^\s*<!DOCTYPE html[^>]*>/i.exec(html);
+  if (doctypeMatch) {
+    return html.slice(0, doctypeMatch[0].length)
+      + `<head><base href="${base}"></head>`
+      + html.slice(doctypeMatch[0].length);
+  }
+  return `<head><base href="${base}"></head>` + html;
+}
+window.injectNodeBase = injectNodeBase;
+
+function timeAgo(timestamp) {
+  const seconds = Math.floor((Date.now() - timestamp) / 1000);
+  if (seconds < 60) return "Just now";
+  const minutes = Math.floor(seconds / 60);
+  if (minutes < 60) return minutes + "m ago";
+  const hours = Math.floor(minutes / 60);
+  if (hours < 24) return hours + "h ago";
+  const days = Math.floor(hours / 24);
+  if (days < 7) return days + "d ago";
+  return new Date(timestamp).toLocaleDateString();
+}
+;
+// modules/api-client/core/errors.js — toast/confirm/delete helpers (shared global scope)
+
+function showToast(msg) {
+  let t = document.getElementById("global-toast");
+  if (!t) {
+    t = document.createElement("div");
+    t.id = "global-toast";
+    t.style.cssText = "position:fixed;bottom:1.5rem;right:1.5rem;padding:0.6rem 1.2rem;background:var(--color-success);color:#fff;border-radius:var(--radius);font-size:0.85rem;z-index:9999;opacity:0;transition:opacity 0.3s;pointer-events:none";
+    document.body.appendChild(t);
+  }
+  t.textContent = msg;
+  t.style.opacity = "1";
+  clearTimeout(t._hide);
+  t._hide = setTimeout(() => { t.style.opacity = "0"; }, 2500);
+}
+
+function confirmDelete(label) {
+  return confirm(`Delete "${label}"? This cannot be undone.`);
+}
+
+function deleteBtn(id, label, endpoint, onDone) {
+  return `<button class="btn btn-danger btn-sm" data-delete="${id}" data-label="${escapeHtml(label)}" data-endpoint="${endpoint}">Delete</button>`;
+}
+
+function initDeleteButtons() {
+  document.querySelectorAll("[data-delete]").forEach(btn => {
+    btn.addEventListener("click", async (e) => {
+      e.stopPropagation();
+      const id = btn.dataset.delete;
+      const label = btn.dataset.label;
+      const endpoint = btn.dataset.endpoint;
+      if (!confirmDelete(label)) return;
+      try {
+        await request(`${endpoint}/${id}`, { method: "DELETE" });
+        showToast("Deleted!");
+        btn.closest(".card")?.remove();
+      } catch(err) { showToast(err.message || "Delete failed"); }
+    });
+  });
+}
+;
+// modules/api-client/core/markdown.js — tutoring markdown renderer (shared global scope)
+
+function renderTutorMarkdown(raw) {
+  if (!raw) return "";
+  let text = raw;
+
+  text = text.replace(/ thinking[\s\S]*?<\/think>/gi, "").trim();
+
+  text = text.replace(/```(\w*)\n([\s\S]*?)```/g, (_, lang, code) => {
+    return `<div class="tutor-code-block"><pre><code>${escapeHtml(code.trimEnd())}</code></pre></div>`;
+  });
+
+  text = text.replace(/^(\|.+\|)\n(\|[\s:|-]+\|)\n((?:\|.+\|\n?)*)/gm, (_, headerRow, _sep, bodyRows) => {
+    const headers = headerRow.split("|").filter(c => c.trim());
+    const rows = bodyRows.trim().split("\n").map(r => r.split("|").filter(c => c.trim()));
+    let html = "<table>";
+    html += "<thead><tr>" + headers.map(h => `<th>${escapeHtml(h.trim())}</th>`).join("") + "</tr></thead>";
+    html += "<tbody>" + rows.map(r =>
+      "<tr>" + r.map((c, i) => `<td data-label="${escapeHtml(headers[i] || "")}">${escapeHtml(c.trim())}</td>`).join("") + "</tr>"
+    ).join("") + "</tbody></table>";
+    return html;
+  });
+
+  text = text.replace(/^(.*💡\s*(?:NECTA\s+(?:Examination\s+)?Tip|Mtihani).*)\n((?:(?!\*\*\*).+\n?)*)/gim, (_, tipLine, body) => {
+    const cleanBody = escapeHtml(body.trim()).replace(/\n/g, "<br>");
+    return `<div class="tutor-necta-tip"><div class="tutor-necta-tip-label">💡 NECTA Examination Tip</div><p>${cleanBody}</p></div>`;
+  });
+
+  text = text.replace(/^>\s*(.+)$/gm, (_, content) => {
+    const isLocal = /tanzan|serengeti|kilimanjaro|lake victoria|dodoma|dar|kenya|uganda|east africa|africa|mwanza|arusha|mbeya|ruaha|rufiji/i.test(content);
+    const badge = isLocal ? "🌍 Tanzania Context" : "📖 Context";
+    return `<div class="tutor-context-blockquote"><div class="tutor-context-badge">${badge}</div><p>${escapeHtml(content)}</p></div>`;
+  });
+  text = text.replace(/(<div class="tutor-context-blockquote">[\s\S]*?<\/div>\n?)+/g, (match) => {
+    return match;
+  });
+
+  text = text.replace(
+    /(\*\*Review Question[^*]*\*\*[^\n]*)\n([\s\S]*?)(?=\n\n(?!\*)|$)/gi,
+    (_, titleLine, body) => {
+      const rawBody = body.trim();
+      const markingSplit = rawBody.split(/\n(?=\*?\*?(?:Model Answer|Marking Scheme|Jibu)/i);
+      const preview = markingSplit[0] || "";
+      const marking = markingSplit.slice(1).join("\n").trim();
+      let html = `<div class="tutor-review-card"><div class="tutor-review-title">${escapeHtml(titleLine.trim())}</div>`;
+      if (preview) {
+        html += `<div class="tutor-review-body">${escapeHtml(preview).replace(/\n/g, "<br>")}</div>`;
+      }
+      if (marking) {
+        html += `<button type="button" class="tutor-marking-toggle">Show Marking Scheme</button>`;
+        html += `<div class="tutor-marking-scheme" hidden>${escapeHtml(marking).replace(/\n/g, "<br>")}</div>`;
+      }
+      html += "</div>";
+      return html;
+    }
+  );
+
+  text = text.replace(/^\*\*\*\s*$/gm, "<hr>");
+
+  text = text.replace(/^#### (.+)$/gm, (_, t) => `<h4>${escapeHtml(t)}</h4>`);
+  text = text.replace(/^### (.+)$/gm, (_, t) => `<h3>${escapeHtml(t)}</h3>`);
+  text = text.replace(/^## (.+)$/gm, (_, t) => `<h2>${escapeHtml(t)}</h2>`);
+  text = text.replace(/^# (.+)$/gm, (_, t) => `<h1>${escapeHtml(t)}</h1>`);
+
+  text = text.replace(/\*\*\*(.+?)\*\*\*/g, (_, t) => `<strong><em>${escapeHtml(t)}</em></strong>`);
+  text = text.replace(/\*\*(.+?)\*\*/g, (_, t) => `<strong>${escapeHtml(t)}</strong>`);
+  text = text.replace(/\*(.+?)\*/g, (_, t) => `<em>${escapeHtml(t)}</em>`);
+
+  text = text.replace(/`([^`]+)`/g, (_, c) => `<code>${escapeHtml(c)}</code>`);
+
+  text = text.replace(/^(?:- (.+)\n?)+/gm, (match) => {
+    const items = match.trim().split("\n").map(l => `<li>${escapeHtml(l.replace(/^- /, ""))}</li>`).join("");
+    return `<ul>${items}</ul>`;
+  });
+
+  text = text.replace(/^(?:\d+\. (.+)\n?)+/gm, (match) => {
+    const items = match.trim().split("\n").map(l => `<li>${escapeHtml(l.replace(/^\d+\. /, ""))}</li>`).join("");
+    return `<ol>${items}</ol>`;
+  });
+
+  text = text.replace(/\n{2,}/g, "\n\n");
+  const paragraphs = text.split("\n\n");
+  text = paragraphs.map(p => {
+    p = p.trim();
+    if (!p) return "";
+    if (/^<(div|table|ul|ol|h[1-6]|hr|pre)/.test(p)) return p;
+    return `<p>${escapeHtml(p).replace(/\n/g, "<br>")}</p>`;
+  }).join("\n");
+
+  return text;
+}
+;
+// modules/api-client/core/quiz.js — quiz questions renderer (shared global scope)
+
+function renderQuizQuestions(questions, meta = {}) {
+  if (!Array.isArray(questions) || !questions.length) {
+    return '<p style="color:var(--color-text-muted)">No questions generated.</p>';
+  }
+  const subject = meta.subject || "General";
+  const formLevel = meta.formLevel || "";
+  const topic = meta.topic || "";
+  const subjectLabels = { mathematics:"Mathematics", chemistry:"Chemistry", physics:"Physics" };
+  const subjectLabel = subjectLabels[subject] || subject;
+  const formLabel = formLevel ? `Form ${["I","II","III","IV","V","VI"][Number(formLevel)-1] || formLevel}` : "";
+  const badgeParts = [subjectLabel, formLabel].filter(Boolean).join(" \u2022 ");
+  const quizId = "quiz-" + Date.now();
+
+  const lessonAttr = meta.lessonId ? ` data-lesson-id="${escapeHtml(meta.lessonId)}"` : "";
+  let html = `<div class="quiz-container" id="${quizId}"${lessonAttr}>`;
+
+  html += `<div class="quiz-header">
+    <span class="quiz-badge">${escapeHtml(badgeParts)}</span>
+    <span class="quiz-counter">Question 1 of ${questions.length}</span>
+    ${topic ? `<div class="quiz-topic">Topic: ${escapeHtml(topic)}</div>` : ""}
+  </div>`;
+
+  html += '<div class="quiz-card">';
+  questions.forEach((q, i) => {
+    const letters = ["A","B","C","D"];
+    const options = q.options || [];
+    const correctAnswer = (q.correctAnswer || "").trim().toUpperCase();
+    const explanation = q.explanation || "";
+
+    html += `<div class="quiz-question" data-index="${i}" data-correct="${escapeHtml(correctAnswer)}">`;
+    html += `<div class="quiz-question-num">Question ${i+1}</div>`;
+    html += `<div class="quiz-question-text">${escapeHtml(q.text || "")}</div>`;
+    html += `<button type="button" class="casuya-listen" data-lang="auto" data-speak="${escapeHtml(String(q.text || "").slice(0, 600))}" title="Listen to question" aria-label="Listen to question">🔊 Listen</button>`;
+    html += '<div class="quiz-options">';
+    options.forEach((opt, j) => {
+      const letter = letters[j] || String.fromCharCode(65+j);
+      const optText = typeof opt === "string" ? opt : (opt.text || String(opt));
+      html += `<label class="quiz-option" data-letter="${letter}">
+        <input type="radio" name="${quizId}-q${i}" value="${letter}">
+        <span class="quiz-option-label">${letter}.</span>
+        <span>${escapeHtml(optText)}</span>
+      </label>`;
+    });
+    html += '</div>';
+
+    if (explanation) {
+      html += `<div class="quiz-explanation" id="${quizId}-exp-${i}">
+        <strong>Explanation:</strong> ${escapeHtml(explanation)}
+      </div>`;
+    }
+    html += '</div>';
+  });
+
+  html += `<div class="quiz-btn-row">
+    <button class="btn btn-primary quiz-submit-all" onclick="window._quizSubmit('${quizId}', ${questions.length})">Submit Answers</button>
+    <button class="btn quiz-download-btn" onclick="window._quizDownloadWord('${quizId}')">📄 Word</button>
+    <button class="btn quiz-download-btn" onclick="window._quizDownloadPdf('${quizId}')">📋 PDF</button>
+  </div>`;
+
+  html += `<div class="quiz-score" id="${quizId}-score">
+    <div class="quiz-score-num" id="${quizId}-score-num"></div>
+    <div class="quiz-score-label" id="${quizId}-score-label"></div>
+  </div>`;
+
+  html += '</div></div>';
+  return html;
+}
+;
+// modules/api-client/core/katex-loader.js — on-demand KaTeX loader.
+//
+// katex.min.js (~265KB) + auto-render + katex.min.css no longer ship in the
+// portal <head> for every user. They are injected lazily, only when something
+// actually renders math (quiz/lesson math, admin previews, AI tutor answers,
+// blackboard replays). The service worker caches them once fetched, so repeat
+// usage is instant and offline-safe.
+//
+// Always resolves (never rejects) so callers can fire-and-forget safely:
+// non-tech users on slow links get gracefully unrendered math instead of breakage.
+
+window.ensureKaTeX = function () {
+  if (window.ensureKaTeX.__promise) return window.ensureKaTeX.__promise;
+
+  window.ensureKaTeX.__promise = new Promise(function (resolve) {
+    function loadScript(src, timeout) {
+      return new Promise(function (res) {
+        var s = document.createElement("script");
+        s.src = src;
+        s.async = true;
+        s.onload = res;
+        s.onerror = res;
+        if (timeout) setTimeout(res, timeout);
+        document.head.appendChild(s);
+      });
+    }
+
+    // katex.min.css is required for proper math layout, inject it first.
+    if (!document.querySelector('link[href$="katex.min.css"]')) {
+      var css = document.createElement("link");
+      css.rel = "stylesheet";
+      css.href = "/static/lib/katex/katex.min.css";
+      document.head.appendChild(css);
+    }
+
+    if (window.katex && typeof window.renderMathInElement === "function") {
+      resolve(true);
+      return;
+    }
+
+    loadScript("/static/lib/katex/katex.min.js", 8000).then(function () {
+      if (typeof window.renderMathInElement === "function") {
+        resolve(true);
+        return;
+      }
+      return loadScript("/static/lib/katex/contrib/auto-render.min.js", 8000);
+    }).then(function () {
+      resolve(!!(window.katex && typeof window.renderMathInElement === "function"));
+    });
+  });
+
+  return window.ensureKaTeX.__promise;
+};
+;
+// modules/api-client/core/fetch.js — request + SSE streaming helpers (shared global scope)
+
+function asProgressItems(data) {
+  if (Array.isArray(data)) return data;
+  if (data && Array.isArray(data.items)) return data.items;
+  return [];
+}
+
+/* ── Request Function ──────────────────────────────────────────────────── */
+async function request(path, options = {}) {
+  const cached = typeof getCachedRequest === "function" ? getCachedRequest(path, options) : null;
+  if (cached !== null && cached !== undefined) return cached;
+
+  const pending = typeof getInFlightRequest === "function" ? getInFlightRequest(path, options) : null;
+  if (pending) return pending;
+
+  let token = localStorage.getItem("casuya_token");
+
+  if (token && !options._retry && typeof tokenNeedsRefresh === "function" && tokenNeedsRefresh(token) && localStorage.getItem("casuya_refresh_token")) {
+    try {
+      token = await refreshAuthToken();
+    } catch (err) {
+      localStorage.removeItem("casuya_token");
+      localStorage.removeItem("casuya_refresh_token");
+      window.location.replace("/login.html");
+      throw err;
+    }
+  }
+
+  const method = (options.method || "GET").toUpperCase();
+  const headers = { "Content-Type": "application/json", ...(options.headers || {}) };
+  if (token) headers["Authorization"] = "Bearer " + token;
+
+  const url = API_BASE + path;
+  const fetchOptions = { method, headers };
+  if (options.body) fetchOptions.body = options.body;
+
+  const run = (async () => {
+    let response = await fetch(url, fetchOptions);
+
+    if (!response.ok) {
+      if (response.status === 401 && !options._retry) {
+        if (typeof refreshAuthToken === "function" && localStorage.getItem("casuya_refresh_token")) {
+          try {
+            await refreshAuthToken();
+            options._retry = true;
+            return await request(path, options);
+          } catch (err) {
+            localStorage.removeItem("casuya_token");
+            window.location.replace("/login.html");
+            throw err;
+          }
+        } else {
+          localStorage.removeItem("casuya_token");
+          window.location.replace("/login.html");
+        }
+      }
+
+      const error = new Error(response.statusText || "Request failed");
+      error.status = response.status;
+      try {
+        const body = await response.json();
+        if (body && typeof body.detail === "string" && body.detail) {
+          error.message = body.detail;
+        }
+      } catch (e) {}
+      throw error;
+    }
+
+    const text = await response.text();
+    let parsed;
+    try {
+      parsed = JSON.parse(text);
+    } catch {
+      parsed = text;
+    }
+    if (typeof setCachedRequest === "function") setCachedRequest(path, options, parsed);
+    return parsed;
+  })();
+
+  if (typeof setInFlightRequest === "function") setInFlightRequest(path, options, run);
+  try {
+    return await run;
+  } finally {
+    if (typeof clearInFlightRequest === "function") clearInFlightRequest(path, options);
+  }
+}
+
+/* ── SSE Streaming Helper (P3-4) ─────────────────────────────────────── */
+function streamTutorResponse(payload, onChunk, onDone, onError) {
+  var token = localStorage.getItem("casuya_token");
+  var headers = { "Content-Type": "application/json" };
+  if (token) headers["Authorization"] = "Bearer " + token;
+
+  var controller = new AbortController();
+
+  fetch(API_BASE + "/ai/tutoring/stream", {
+    method: "POST",
+    headers: headers,
+    body: JSON.stringify(payload),
+    signal: controller.signal,
+  }).then(function(resp) {
+    if (!resp.ok) throw new Error("Stream failed");
+    var reader = resp.body.getReader();
+    var decoder = new TextDecoder();
+    var buffer = "";
+
+    function read() {
+      reader.read().then(function(result) {
+        if (result.done) {
+          if (onDone) onDone();
+          return;
+        }
+        buffer += decoder.decode(result.value, { stream: true });
+        var lines = buffer.split("\n");
+        buffer = lines.pop();
+        for (var i = 0; i < lines.length; i++) {
+          var line = lines[i].trim();
+          if (!line.startsWith("data: ")) continue;
+          try {
+            var data = JSON.parse(line.substring(6));
+            if (data.chunk) onChunk(data.chunk);
+            if (data.done) { if (onDone) onDone(data); return; }
+          } catch (e) {}
+        }
+        read();
+      }).catch(function(err) {
+        if (err.name !== "AbortError" && onError) onError(err);
+      });
+    }
+    read();
+  }).catch(function(err) {
+    if (err.name !== "AbortError" && onError) onError(err);
+  });
+
+  return controller;
+}
+
+function streamTranslateResponse(payload, onChunk, onDone, onError) {
+  var token = localStorage.getItem("casuya_token");
+  var headers = { "Content-Type": "application/json" };
+  if (token) headers["Authorization"] = "Bearer " + token;
+
+  fetch(API_BASE + "/ai/content/translate/stream", {
+    method: "POST",
+    headers: headers,
+    body: JSON.stringify(payload),
+  }).then(function(resp) {
+    if (!resp.ok) throw new Error("Stream failed");
+    var reader = resp.body.getReader();
+    var decoder = new TextDecoder();
+    var buffer = "";
+
+    function read() {
+      reader.read().then(function(result) {
+        if (result.done) {
+          if (onDone) onDone();
+          return;
+        }
+        buffer += decoder.decode(result.value, { stream: true });
+        var lines = buffer.split("\n");
+        buffer = lines.pop();
+        for (var i = 0; i < lines.length; i++) {
+          var line = lines[i].trim();
+          if (!line.startsWith("data: ")) continue;
+          try {
+            var data = JSON.parse(line.substring(6));
+            if (data.chunk) onChunk(data.chunk);
+            if (data.done) { if (onDone) onDone(data); return; }
+          } catch (e) {}
+        }
+        read();
+      }).catch(function(err) {
+        if (onError) onError(err);
+      });
+    }
+    read();
+  }).catch(function(err) {
+    if (onError) onError(err);
+  });
+}
+;
+// ai-source-badge.js — show whether a response came from casuya-ai or offline fallback.
+
+function renderAiSourceBadge(source) {
+  if (!source) return "";
+  var label = source === "casuya-ai"
+    ? "Powered by AI"
+    : (source === "local-cache"
+      ? "Saved on device"
+      : (source === "cached"
+        ? "Cached answer"
+        : (source === "kb-fallback" ? "Syllabus notes (offline)" : "Offline mode")));
+  var tone = source === "casuya-ai" ? "var(--color-primary, #2563eb)" : "var(--color-text-muted, #64748b)";
+  return (
+    '<span class="ai-source-badge" style="display:inline-block;margin-top:0.5rem;font-size:0.75rem;' +
+    "color:" + tone + ';font-weight:600;" title="Response source: ' + escapeHtml(String(source)) + '">' +
+    escapeHtml(label) +
+    "</span>"
+  );
+}
+
+;
+// modules/ai/tutor-qa-idb.js — client-side tutor Q&A cache (Phase 3C, last 20).
+
+var _tutorQaIdb = null;
+var TUTOR_QA_IDB_NAME = "casuya-tutor-qa";
+var TUTOR_QA_STORE = "answers";
+var TUTOR_QUEUE_STORE = "queue";
+var TUTOR_QA_MAX = 20;
+var TUTOR_QA_IDB_VERSION = 2;
+
+function tutorQaCacheKey(payload) {
+  var parts = [
+    String((payload && payload.question) || "").trim().toLowerCase(),
+    String((payload && payload.lesson_id) || ""),
+    String((payload && payload.subject_slug) || ""),
+    String((payload && payload.form_level) || ""),
+  ];
+  return parts.join("|");
+}
+
+function openTutorQaIdb() {
+  if (_tutorQaIdb) return _tutorQaIdb;
+  if (typeof indexedDB === "undefined") return Promise.resolve(null);
+  _tutorQaIdb = new Promise(function (resolve) {
+    try {
+      var req = indexedDB.open(TUTOR_QA_IDB_NAME, TUTOR_QA_IDB_VERSION);
+      req.onupgradeneeded = function () {
+        var db = req.result;
+        if (!db.objectStoreNames.contains(TUTOR_QA_STORE)) {
+          db.createObjectStore(TUTOR_QA_STORE, { keyPath: "id" });
+        }
+        if (!db.objectStoreNames.contains(TUTOR_QUEUE_STORE)) {
+          db.createObjectStore(TUTOR_QUEUE_STORE, { keyPath: "id" });
+        }
+      };
+      req.onsuccess = function () { resolve(req.result); };
+      req.onerror = function () { resolve(null); };
+    } catch (e) {
+      resolve(null);
+    }
+  });
+  return _tutorQaIdb;
+}
+
+function getTutorQaCache(key) {
+  if (!key) return Promise.resolve(null);
+  return openTutorQaIdb().then(function (db) {
+    if (!db) return null;
+    return new Promise(function (resolve) {
+      try {
+        var tx = db.transaction(TUTOR_QA_STORE, "readonly");
+        var req = tx.objectStore(TUTOR_QA_STORE).get(key);
+        req.onsuccess = function () { resolve(req.result || null); };
+        req.onerror = function () { resolve(null); };
+      } catch (e) {
+        resolve(null);
+      }
+    });
+  });
+}
+
+function putTutorQaCache(key, row) {
+  if (!key || !row || !row.response) return Promise.resolve();
+  return openTutorQaIdb().then(function (db) {
+    if (!db) return;
+    return new Promise(function (resolve) {
+      try {
+        var tx = db.transaction(TUTOR_QA_STORE, "readwrite");
+        var store = tx.objectStore(TUTOR_QA_STORE);
+        store.put({
+          id: key,
+          response: row.response,
+          kbHits: row.kbHits || [],
+          formatComplete: !!row.formatComplete,
+          formatLevel: row.formatLevel || "none",
+          source: row.source || "casuya-ai",
+          ts: Date.now(),
+        });
+        store.getAll().onsuccess = function (ev) {
+          var rows = ev.target.result || [];
+          if (rows.length <= TUTOR_QA_MAX) return;
+          rows.sort(function (a, b) { return (a.ts || 0) - (b.ts || 0); });
+          var extra = rows.length - TUTOR_QA_MAX;
+          for (var i = 0; i < extra; i++) {
+            store.delete(rows[i].id);
+          }
+        };
+        tx.oncomplete = function () { resolve(); };
+        tx.onerror = function () { resolve(); };
+      } catch (e) {
+        resolve();
+      }
+    });
+  });
+}
+
+window.tutorQaCacheKey = tutorQaCacheKey;
+window.getTutorQaCache = getTutorQaCache;
+window.putTutorQaCache = putTutorQaCache;
+
+;
+// modules/ai/tutor-qa-queue.js — offline tutor question queue (Phase 4).
+
+var TUTOR_QUEUE_STORE = "queue";
+var _tutorQueueSyncing = false;
+
+function openTutorQueueDb() {
+  return typeof openTutorQaIdb === "function" ? openTutorQaIdb() : Promise.resolve(null);
+}
+
+function enqueueTutorQuestion(payload, callbacks) {
+  callbacks = callbacks || {};
+  return openTutorQueueDb().then(function (db) {
+    if (!db) return false;
+    return new Promise(function (resolve) {
+      try {
+        var tx = db.transaction([TUTOR_QUEUE_STORE, "answers"], "readwrite");
+        var store = tx.objectStore(TUTOR_QUEUE_STORE);
+        if (!db.objectStoreNames.contains(TUTOR_QUEUE_STORE)) {
+          resolve(false);
+          return;
+        }
+        var row = {
+          id: "q_" + Date.now() + "_" + Math.random().toString(36).slice(2, 8),
+          payload: payload,
+          callbacksMeta: {
+            loadingLabel: callbacks.loadingLabel || "",
+          },
+          ts: Date.now(),
+          attempts: 0,
+        };
+        store.put(row);
+        tx.oncomplete = function () { resolve(true); };
+        tx.onerror = function () { resolve(false); };
+      } catch (e) {
+        resolve(false);
+      }
+    });
+  });
+}
+
+function listTutorQueue() {
+  return openTutorQueueDb().then(function (db) {
+    if (!db || !db.objectStoreNames.contains(TUTOR_QUEUE_STORE)) return [];
+    return new Promise(function (resolve) {
+      try {
+        var tx = db.transaction(TUTOR_QUEUE_STORE, "readonly");
+        var req = tx.objectStore(TUTOR_QUEUE_STORE).getAll();
+        req.onsuccess = function () {
+          var rows = req.result || [];
+          rows.sort(function (a, b) { return (a.ts || 0) - (b.ts || 0); });
+          resolve(rows);
+        };
+        req.onerror = function () { resolve([]); };
+      } catch (e) {
+        resolve([]);
+      }
+    });
+  });
+}
+
+function removeTutorQueueItem(id) {
+  return openTutorQueueDb().then(function (db) {
+    if (!db || !db.objectStoreNames.contains(TUTOR_QUEUE_STORE)) return;
+    return new Promise(function (resolve) {
+      try {
+        var tx = db.transaction(TUTOR_QUEUE_STORE, "readwrite");
+        tx.objectStore(TUTOR_QUEUE_STORE).delete(id);
+        tx.oncomplete = function () { resolve(); };
+        tx.onerror = function () { resolve(); };
+      } catch (e) {
+        resolve();
+      }
+    });
+  });
+}
+
+function syncTutorQueue() {
+  if (_tutorQueueSyncing || typeof navigator !== "undefined" && !navigator.onLine) {
+    return Promise.resolve(0);
+  }
+  if (typeof runTutorQuery !== "function") return Promise.resolve(0);
+  _tutorQueueSyncing = true;
+  return listTutorQueue().then(function (rows) {
+    if (!rows.length) {
+      _tutorQueueSyncing = false;
+      return 0;
+    }
+    var chain = Promise.resolve(0);
+    rows.forEach(function (row) {
+      chain = chain.then(function (count) {
+        return new Promise(function (resolve) {
+          var container = document.createElement("div");
+          container.hidden = true;
+          document.body.appendChild(container);
+          runTutorQuery(row.payload, {
+            container: container,
+            loadingLabel: (row.callbacksMeta && row.callbacksMeta.loadingLabel) || "Syncing…",
+            onComplete: function () {
+              removeTutorQueueItem(row.id).finally(function () {
+                container.remove();
+                resolve(count + 1);
+              });
+            },
+            onError: function () {
+              container.remove();
+              resolve(count);
+            },
+          });
+        });
+      });
+    });
+    return chain.finally(function () {
+      _tutorQueueSyncing = false;
+    });
+  }).catch(function () {
+    _tutorQueueSyncing = false;
+    return 0;
+  });
+}
+
+if (typeof window !== "undefined") {
+  window.enqueueTutorQuestion = enqueueTutorQuestion;
+  window.syncTutorQueue = syncTutorQueue;
+  window.addEventListener("online", function () {
+    syncTutorQueue();
+  });
+}
+
+;
+// modules/ai/tutor-panel.js — shared AI tutor streaming, markdown render, source chips.
+
+function renderTutorThinking(label) {
+  var text = label || "Thinking...";
+  return (
+    '<div class="tutor-thinking"><div class="tutor-thinking-dots"><span></span><span></span><span></span></div>'
+    + escapeHtml(text) + "</div>"
+  );
+}
+
+function renderTutorStreamingSkeleton() {
+  return (
+    '<div class="tutor-streaming-skeleton" aria-hidden="true">'
+    + '<div class="tutor-skeleton-line tutor-skeleton-line-lg"></div>'
+    + '<div class="tutor-skeleton-line"></div>'
+    + '<div class="tutor-skeleton-line tutor-skeleton-line-sm"></div>'
+    + '<div class="tutor-skeleton-block"></div>'
+    + "</div>"
+  );
+}
+
+function renderTutorFollowUpChips() {
+  var chips = [
+    { label: "Eleza kwa urahisi", prompt: "Eleza kwa Kiswahili rahisi zaidi." },
+    { label: "NECTA huuliza vipi?", prompt: "NECTA huuliza vipi kuhusu hili?" },
+    { label: "Toa mfano", prompt: "Toa mfano wa Tanzania." },
+    { label: "Explain simpler", prompt: "Explain this in simpler English." },
+  ];
+  return (
+    '<div class="tutor-followup-chips">'
+    + chips.map(function (c) {
+      return (
+        '<button type="button" class="tutor-followup-chip" data-followup="'
+        + escapeHtml(c.prompt) + '">' + escapeHtml(c.label) + "</button>"
+      );
+    }).join("")
+    + "</div>"
+  );
+}
+
+function attachTutorFollowUp(container, askFn) {
+  if (!container || typeof askFn !== "function") return;
+  var wrap = document.createElement("div");
+  wrap.className = "tutor-followup-wrap";
+  wrap.innerHTML = renderTutorFollowUpChips();
+  wrap.addEventListener("click", function (e) {
+    var chip = e.target && e.target.closest && e.target.closest("[data-followup]");
+    if (!chip) return;
+    askFn(chip.getAttribute("data-followup") || "");
+  });
+  container.appendChild(wrap);
+}
+
+function renderTutorHelpfulRating() {
+  return (
+    '<div class="tutor-helpful" data-tutor-helpful>'
+    + '<span class="tutor-helpful-label">Was this helpful?</span>'
+    + '<button type="button" class="tutor-helpful-btn" data-helpful="yes" aria-label="Helpful">👍</button>'
+    + '<button type="button" class="tutor-helpful-btn" data-helpful="no" aria-label="Not helpful">👎</button>'
+    + '<span class="tutor-helpful-thanks" hidden>Asante — feedback saved.</span>'
+    + "</div>"
+  );
+}
+
+function attachTutorHelpful(container, meta) {
+  if (!container) return;
+  var wrap = document.createElement("div");
+  wrap.innerHTML = renderTutorHelpfulRating();
+  var root = wrap.firstElementChild;
+  if (!root) return;
+  root.addEventListener("click", function (e) {
+    var btn = e.target && e.target.closest && e.target.closest("[data-helpful]");
+    if (!btn || root.dataset.answered) return;
+    root.dataset.answered = "1";
+    try {
+      var key = "casuya_ai_feedback";
+      var log = JSON.parse(sessionStorage.getItem(key) || "[]");
+      log.push({
+        helpful: btn.getAttribute("data-helpful") === "yes",
+        source: (meta && meta.source) || "unknown",
+        at: Date.now(),
+      });
+      sessionStorage.setItem(key, JSON.stringify(log.slice(-50)));
+    } catch (err) {}
+    root.querySelectorAll(".tutor-helpful-btn").forEach(function (b) { b.disabled = true; });
+    var thanks = root.querySelector(".tutor-helpful-thanks");
+    if (thanks) thanks.hidden = false;
+  });
+  container.appendChild(root);
+}
+
+function buildTutorMessagesArray(priorMessages) {
+  return (priorMessages || []).slice(-8).map(function (m) {
+    return {
+      role: m.role === "user" ? "user" : "tutor",
+      text: String(m.text || "").trim(),
+    };
+  }).filter(function (m) { return m.text; });
+}
+
+function tutorHitLabel(hit) {
+  if (!hit) return "Reference";
+  if (hit.title) return String(hit.title);
+  if (hit.code) return String(hit.code);
+  if (hit.kind) return String(hit.kind);
+  return "Reference";
+}
+
+function renderTutorSourceChips(kbHits) {
+  if (!kbHits || !kbHits.length) return "";
+  var chips = kbHits.slice(0, 4).map(function (hit) {
+    var title = tutorHitLabel(hit);
+    var kind = String(hit.kind || hit.doc_type || "");
+    var icon = /exam|necta|marking/i.test(kind + title) ? "📄" : "📘";
+    return (
+      '<span class="tutor-source-chip" title="' + escapeHtml(title) + '">'
+      + icon + " " + escapeHtml(title.slice(0, 56)) + "</span>"
+    );
+  }).join("");
+  return '<div class="tutor-source-chips">' + chips + "</div>";
+}
+
+function scoreNectaFormat(text) {
+  text = String(text || "");
+  var hasContext = /🌍|Context|Muktadha/i.test(text);
+  var hasNecta = /NECTA|Exam(?:ination)? Tip|Kidokezo cha NECTA|uchaguzi/i.test(text);
+  var hasStructure = /^#{1,3}\s|^\*\*|^>\s/m.test(text);
+  var score = (hasContext ? 1 : 0) + (hasNecta ? 1 : 0) + (hasStructure ? 1 : 0);
+  if (score >= 2) return "complete";
+  if (score >= 1) return "partial";
+  return "none";
+}
+
+function renderFormatQualityChip(text) {
+  var level = scoreNectaFormat(text);
+  if (level === "complete") {
+    return (
+      '<span class="tutor-format-chip tutor-format-complete" title="Answer follows NECTA tutor format">'
+      + "✓ Exam-ready format</span>"
+    );
+  }
+  if (level === "partial") {
+    return (
+      '<span class="tutor-format-chip tutor-format-partial" title="Partial NECTA structure">'
+      + "~ Partial format</span>"
+    );
+  }
+  return "";
+}
+
+function renderTutorFooter(result, responseText) {
+  result = result || {};
+  var formatChip = responseText ? renderFormatQualityChip(responseText) : "";
+  return renderTutorSourceChips(result.kbHits)
+    + formatChip
+    + renderAiSourceBadge(result.source);
+}
+
+function buildTutorThreadQuestion(priorMessages, latestQuestion) {
+  latestQuestion = String(latestQuestion || "").trim();
+  var turns = [];
+  (priorMessages || []).forEach(function (m) {
+    if (m.role === "user" && m.text) {
+      turns.push({ q: m.text, a: "" });
+    } else if (m.role === "tutor" && m.text && turns.length) {
+      turns[turns.length - 1].a = String(m.text).slice(0, 600);
+    }
+  });
+  turns = turns.slice(-4);
+  if (!turns.length) return latestQuestion;
+  var block = turns.map(function (t, idx) {
+    return (
+      "PREVIOUS Q" + (idx + 1) + ": " + t.q
+      + (t.a ? "\nPREVIOUS A" + (idx + 1) + ": " + t.a : "")
+    );
+  }).join("\n\n");
+  return (
+    block
+    + "\n\nFOLLOW-UP QUESTION:\n"
+    + latestQuestion
+    + "\n\n[Continue the tutoring conversation. Reference prior answers when helpful.]"
+  );
+}
+
+function attachTutorListen(slotOrContainer, opts) {
+  opts = opts || {};
+  if (!slotOrContainer) return;
+  function attach() {
+    if (typeof casuyaAttachListen !== "function") return;
+    var slot = typeof slotOrContainer === "string"
+      ? document.querySelector(slotOrContainer)
+      : slotOrContainer;
+    if (!slot) return;
+    casuyaAttachListen(slot, {
+      title: opts.title || "Listen",
+      textProvider: opts.textProvider || function () { return ""; },
+    });
+  }
+  if (typeof ensureSpeechBundle === "function") {
+    ensureSpeechBundle().then(attach).catch(function () {});
+  } else {
+    attach();
+  }
+}
+
+function runAiGenerateTask(opts) {
+  opts = opts || {};
+  var container = opts.container;
+  if (!container) return Promise.reject(new Error("no container"));
+  container.innerHTML = renderTutorThinking(opts.loadingLabel || "Working...");
+  return request(opts.path, {
+    method: "POST",
+    body: JSON.stringify(opts.body || {}),
+  }).then(function (result) {
+    var html = typeof opts.render === "function" ? opts.render(result) : "";
+    var footer = "";
+    if (!opts.skipAutoFooter && typeof renderAiResultFooter === "function") {
+      footer = renderAiResultFooter(result);
+    }
+    container.innerHTML = html + (footer ? '<div class="tutor-response-footer">' + footer + "</div>" : "");
+    scheduleTutorMath(container);
+    if (opts.listenTitle) {
+      var listenSlot = document.createElement("span");
+      listenSlot.className = "casuya-ai-listen-slot";
+      container.appendChild(listenSlot);
+      attachTutorListen(listenSlot, {
+        title: opts.listenTitle,
+        textProvider: function () { return container.innerText; },
+      });
+    }
+    if (typeof opts.onComplete === "function") opts.onComplete(result);
+    return result;
+  }).catch(function (err) {
+    container.innerHTML = '<p style="color:var(--color-danger)">Error: '
+      + escapeHtml(err.message || "Failed") + "</p>";
+    if (typeof opts.onError === "function") opts.onError(err);
+    throw err;
+  });
+}
+
+function stripHtmlForContext(html, maxLen) {
+  maxLen = maxLen || 2000;
+  if (!html) return "";
+  var text = String(html)
+    .replace(/<script[\s\S]*?<\/script>/gi, " ")
+    .replace(/<style[\s\S]*?<\/style>/gi, " ")
+    .replace(/<[^>]+>/g, " ")
+    .replace(/\s+/g, " ")
+    .trim();
+  if (text.length > maxLen) text = text.slice(0, maxLen) + "…";
+  return text;
+}
+
+function inferSubjectSlug(text) {
+  var lower = String(text || "").toLowerCase();
+  if (/chem|acid|molecule|element|compound|reaction|atom/.test(lower)) return "chemistry";
+  if (/phys|force|energy|velocity|electric|wave|motion|newton/.test(lower)) return "physics";
+  if (/math|equation|algebra|geometry|number|fraction|graph|calculus/.test(lower)) return "mathematics";
+  return "";
+}
+
+function inferFormLevel(text) {
+  var m = String(text || "").match(/form\s*([ivx]+|\d+)/i);
+  if (!m) return null;
+  var token = m[1].toUpperCase();
+  var roman = { I: 1, II: 2, III: 3, IV: 4, V: 5, VI: 6 };
+  if (roman[token]) return roman[token];
+  var n = parseInt(token, 10);
+  return n >= 1 && n <= 6 ? n : null;
+}
+
+function studentFormLevelNumber() {
+  try {
+    var raw = localStorage.getItem("casuya_form_filter") || "";
+    if (!raw || raw === "all") {
+      var dash = window.__casuyaStudentPayload;
+      if (dash && dash.form_level) raw = dash.form_level;
+    }
+    return inferFormLevel(raw) || 2;
+  } catch (e) {
+    return 2;
+  }
+}
+
+function tutorThreadStorageKey(ctx) {
+  ctx = ctx || {};
+  var lesson = ctx.lesson || {};
+  var id = lesson.id || lesson.slug || ctx.lessonId || "lesson";
+  return "casuya_ai_thread_" + String(id);
+}
+
+function loadTutorThread(key) {
+  try {
+    var raw = sessionStorage.getItem(key);
+    return raw ? JSON.parse(raw) : [];
+  } catch (e) {
+    return [];
+  }
+}
+
+function saveTutorThread(key, messages) {
+  var trimmed = (messages || []).slice(-8);
+  try {
+    sessionStorage.setItem(key, JSON.stringify(trimmed));
+  } catch (e) {}
+  var lessonId = String(key || "").replace("casuya_ai_thread_", "");
+  if (lessonId && typeof request === "function") {
+    request("/ai/tutor/thread/" + encodeURIComponent(lessonId), {
+      method: "PUT",
+      body: JSON.stringify({ messages: trimmed }),
+    }).catch(function () {});
+  }
+}
+
+function loadTutorThreadFromServer(lessonId, key, onLoaded) {
+  if (!lessonId || typeof request !== "function") {
+    if (typeof onLoaded === "function") onLoaded(loadTutorThread(key));
+    return;
+  }
+  request("/ai/tutor/thread/" + encodeURIComponent(lessonId)).then(function (data) {
+    var server = (data && data.messages) || [];
+    var local = loadTutorThread(key);
+    var merged = server.length >= local.length ? server : local;
+    try {
+      sessionStorage.setItem(key, JSON.stringify(merged.slice(-8)));
+    } catch (e) {}
+    if (typeof onLoaded === "function") onLoaded(merged);
+  }).catch(function () {
+    if (typeof onLoaded === "function") onLoaded(loadTutorThread(key));
+  });
+}
+
+function buildQuizLessonContent(questions) {
+  return (questions || []).map(function (q, idx) {
+    var text = q.text || q.prompt || "";
+    var opts = (q.options || []).map(function (o) {
+      return (o.letter || "") + ") " + (o.text || "");
+    }).join("; ");
+    return "Q" + (idx + 1) + ": " + text + (opts ? " Options: " + opts : "");
+  }).join("\n");
+}
+
+function finishTutorSurface(container, result, responseText, callbacks) {
+  callbacks = callbacks || {};
+  if (typeof callbacks.onComplete === "function") {
+    callbacks.onComplete(result || {}, responseText || "");
+  }
+  if (callbacks.listenTitle || callbacks.listenSlot) {
+    var slot = callbacks.listenSlot;
+    if (!slot || !slot.parentNode) {
+      slot = document.createElement("span");
+      slot.className = "casuya-ai-listen-slot";
+      if (container) container.appendChild(slot);
+    }
+    attachTutorListen(slot, {
+      title: callbacks.listenTitle || "Listen",
+      textProvider: function () { return container ? container.innerText : ""; },
+    });
+  }
+}
+
+function buildLessonTutorPayload(opts) {
+  opts = opts || {};
+  var question = String(opts.question || "").trim();
+  var lesson = opts.lesson || {};
+  var html = opts.lessonContent || "";
+  var iframeText = opts.iframeText || "";
+  var plain = stripHtmlForContext(html || iframeText, 2000);
+  var title = lesson.title || "Lesson";
+  var parts = ["Lesson: " + title];
+  if (opts.subtopic) parts.push("Subtopic: " + opts.subtopic);
+  if (opts.topic) parts.push("Topic: " + opts.topic);
+  if (plain) parts.push("Content excerpt: " + plain);
+  var lang = opts.language || localStorage.getItem("casuya_tutor_lang") || "both";
+  if (lang === "sw") {
+    question = "[Respond in Kiswahili using TIE syllabus terminology.]\n\n" + question;
+  } else if (lang === "en") {
+    question = "[Respond in English using TIE syllabus terminology.]\n\n" + question;
+  }
+  var subject = opts.subject_slug
+    || inferSubjectSlug(title + " " + plain)
+    || undefined;
+  var form = opts.form_level
+    || inferFormLevel(title + " " + (opts.subtopic || ""))
+    || studentFormLevelNumber();
+  if (opts.lessonId) parts.unshift("Lesson ID: " + opts.lessonId);
+  var ctx = parts.join("\n");
+  if (ctx.length > 4000) ctx = ctx.slice(0, 4000) + "…";
+  return {
+    question: question,
+    lesson_context: ctx,
+    lesson_id: opts.lessonId || lesson.id || undefined,
+    subject_slug: subject,
+    form_level: form,
+    messages: opts.messages || undefined,
+    language: lang,
+    mode: opts.mode || undefined,
+  };
+}
+
+function bindTutorMarkdownInteractions(container) {
+  if (!container) return;
+  container.querySelectorAll(".tutor-marking-toggle").forEach(function (btn) {
+    if (btn._tutorBound) return;
+    btn._tutorBound = true;
+    btn.addEventListener("click", function () {
+      var panel = btn.nextElementSibling;
+      if (!panel) return;
+      panel.hidden = !panel.hidden;
+      btn.textContent = panel.hidden ? "Show Marking Scheme" : "Hide Marking Scheme";
+    });
+  });
+}
+
+function scheduleTutorMath(el) {
+  if (!el || typeof window.renderMath !== "function") return;
+  if (el._tutorMathTimer) clearTimeout(el._tutorMathTimer);
+  el._tutorMathTimer = setTimeout(function () {
+    window.renderMath(el);
+  }, 180);
+}
+
+function runTutorQuery(payload, callbacks) {
+  callbacks = callbacks || {};
+  var container = callbacks.container;
+  if (!container) return null;
+
+  var accumulated = "";
+
+  function renderPartial() {
+    container.innerHTML = '<div class="tutor-response">' + renderTutorMarkdown(accumulated) + "</div>";
+    bindTutorMarkdownInteractions(container);
+    scheduleTutorMath(container);
+  }
+
+  function showResult(result, responseText) {
+    container.innerHTML =
+      '<div class="tutor-response">' + renderTutorMarkdown(responseText || "") + "</div>"
+      + '<div class="tutor-response-footer">' + renderTutorFooter(result || {}, responseText || "") + "</div>";
+    bindTutorMarkdownInteractions(container);
+    scheduleTutorMath(container);
+    finishTutorSurface(container, result, responseText, callbacks);
+  }
+
+  if (typeof window.ensureKaTeX === "function") {
+    window.ensureKaTeX().catch(function () {});
+  }
+
+  container.innerHTML = renderTutorStreamingSkeleton()
+    + renderTutorThinking(callbacks.loadingLabel || "Thinking...");
+
+  function maybeCacheResult(meta, text) {
+    if (typeof putTutorQaCache !== "function" || typeof tutorQaCacheKey !== "function") return;
+    var src = meta && meta.source;
+    if (src !== "casuya-ai" && src !== "cached") return;
+    if (!text || !String(text).trim()) return;
+    putTutorQaCache(tutorQaCacheKey(payload), {
+      response: text,
+      kbHits: (meta && meta.kbHits) || [],
+      formatComplete: meta && meta.formatComplete,
+      formatLevel: meta && meta.formatLevel,
+      source: src,
+    });
+  }
+
+  function startNetwork() {
+    if (typeof streamTutorResponse !== "function") {
+      return request("/ai/tutoring/explain", {
+        method: "POST",
+        body: JSON.stringify(payload),
+      }).then(function (result) {
+        var response = (result && result.response) ? result.response : "";
+        if (!response) throw new Error("empty");
+        maybeCacheResult(result, response);
+        showResult(result, response);
+      }).catch(function () {
+        if (typeof enqueueTutorQuestion === "function" && typeof navigator !== "undefined" && !navigator.onLine) {
+          enqueueTutorQuestion(payload, callbacks).then(function (queued) {
+            container.innerHTML = queued
+              ? '<div class="tutor-fallback">Saved offline — will sync when you are back online.</div>'
+              : '<div class="tutor-fallback">' + escapeHtml(callbacks.errorMessage || "The AI tutor is temporarily unavailable.") + "</div>";
+          });
+        } else {
+          container.innerHTML = '<div class="tutor-fallback">' + escapeHtml(
+            callbacks.errorMessage || "The AI tutor is temporarily unavailable."
+          ) + "</div>";
+        }
+        if (typeof callbacks.onError === "function") callbacks.onError();
+      });
+    }
+
+    return streamTutorResponse(
+      payload,
+      function (chunk) {
+        accumulated += chunk;
+        renderPartial();
+      },
+      function (meta) {
+        var footer = document.createElement("div");
+        footer.className = "tutor-response-footer";
+        footer.innerHTML = renderTutorFooter(meta || {}, accumulated);
+        container.appendChild(footer);
+        scheduleTutorMath(container);
+        maybeCacheResult(meta, accumulated);
+        finishTutorSurface(container, meta, accumulated, callbacks);
+      },
+      function () {
+        request("/ai/tutoring/explain", {
+          method: "POST",
+          body: JSON.stringify(payload),
+        }).then(function (result) {
+          var response = (result && result.response) ? result.response : "";
+          if (!response) throw new Error("empty");
+          maybeCacheResult(result, response);
+          showResult(result, response);
+        }).catch(function () {
+          if (typeof enqueueTutorQuestion === "function" && typeof navigator !== "undefined" && !navigator.onLine) {
+            enqueueTutorQuestion(payload, callbacks).then(function (queued) {
+              container.innerHTML = queued
+                ? '<div class="tutor-fallback">Saved offline — will sync when you are back online.</div>'
+                : '<div class="tutor-fallback">' + escapeHtml(callbacks.errorMessage || "The AI tutor could not be reached.") + "</div>";
+            });
+          } else {
+            container.innerHTML = '<div class="tutor-fallback">' + escapeHtml(
+              callbacks.errorMessage || "The AI tutor could not be reached."
+            ) + "</div>";
+          }
+          if (typeof callbacks.onError === "function") callbacks.onError();
+        });
+      }
+    );
+  }
+
+  if (typeof getTutorQaCache === "function" && typeof tutorQaCacheKey === "function") {
+    getTutorQaCache(tutorQaCacheKey(payload)).then(function (row) {
+      if (row && row.response) {
+        showResult({
+          source: "local-cache",
+          kbHits: row.kbHits || [],
+          formatComplete: row.formatComplete,
+          formatLevel: row.formatLevel || "none",
+        }, row.response);
+        return;
+      }
+      startNetwork();
+    }).catch(function () { startNetwork(); });
+    return null;
+  }
+
+  if (typeof streamTutorResponse !== "function") {
+    request("/ai/tutoring/explain", {
+      method: "POST",
+      body: JSON.stringify(payload),
+    }).then(function (result) {
+      var response = (result && result.response) ? result.response : "";
+      if (!response) throw new Error("empty");
+      showResult(result, response);
+    }).catch(function () {
+      container.innerHTML = '<div class="tutor-fallback">' + escapeHtml(
+        callbacks.errorMessage || "The AI tutor is temporarily unavailable."
+      ) + "</div>";
+      if (typeof callbacks.onError === "function") callbacks.onError();
+    });
+    return null;
+  }
+
+  return startNetwork();
+}
+
+function buildLessonQuizTutorQuestion(wrongQuestions) {
+  var parts = [];
+  (wrongQuestions || []).forEach(function (wq, idx) {
+    parts.push(
+      "QUESTION " + (idx + 1) + ": " + (wq.prompt || "")
+      + "\n- Student answered: " + (wq.chosen_text || "(unanswered)")
+      + "\n- Correct answer: " + (wq.correct_text || "")
+    );
+  });
+  return (
+    "A student answered the following lesson quiz questions incorrectly. "
+    + "Explain in simple step-by-step language how to reach the correct answer for each one. "
+    + "Do not just repeat the correct option — show the method and encourage the student.\n\n"
+    + parts.join("\n\n")
+  );
+}
+
+function mountLessonQuizTutor(mountAfterEl, wrongQuestions, ctx) {
+  if (!mountAfterEl || !wrongQuestions || !wrongQuestions.length) return;
+  var existing = mountAfterEl.parentNode && mountAfterEl.parentNode.querySelector(".quiz-tutor");
+  if (existing) existing.remove();
+  var tutorId = "lesson-quiz-tutor-" + Date.now();
+  var countLabel = wrongQuestions.length + " question" + (wrongQuestions.length > 1 ? "s" : "");
+  var tutorHtml = (
+    '<div class="quiz-tutor" id="' + tutorId + '">'
+    + '<div class="quiz-tutor-header"><span class="quiz-tutor-icon">🎓</span>'
+    + '<div><div class="quiz-tutor-title">Let\u2019s Learn: Step-by-Step</div>'
+    + '<div class="quiz-tutor-sub">The AI tutor will explain the ' + countLabel + ' you got wrong.</div></div></div>'
+    + '<div class="quiz-tutor-body"></div></div>'
+  );
+  if (mountAfterEl.insertAdjacentHTML) {
+    mountAfterEl.insertAdjacentHTML("afterend", tutorHtml);
+  } else if (mountAfterEl.parentNode) {
+    var tmp = document.createElement("div");
+    tmp.innerHTML = tutorHtml;
+    while (tmp.firstChild) mountAfterEl.parentNode.insertBefore(tmp.firstChild, mountAfterEl.nextSibling);
+  }
+  var body = document.getElementById(tutorId)?.querySelector(".quiz-tutor-body");
+  if (!body) return;
+  var lesson = (ctx && ctx.lesson) || { title: (ctx && ctx.lessonTitle) || "Lesson quiz" };
+  if (ctx && ctx.lessonId && !lesson.id) lesson.id = ctx.lessonId;
+  var payload = buildLessonTutorPayload({
+    question: buildLessonQuizTutorQuestion(wrongQuestions),
+    lesson: lesson,
+    lessonId: (ctx && ctx.lessonId) || lesson.id,
+    lessonContent: ctx && ctx.lessonContent,
+    iframeText: ctx && ctx.iframeText,
+    subject_slug: (ctx && ctx.subject_slug) || lesson.subject_slug,
+    form_level: (ctx && ctx.form_level) || lesson.form_level,
+  });
+  runTutorQuery(payload, {
+    container: body,
+    loadingLabel: "Explaining the correct method\u2026",
+    errorMessage: "The AI tutor is temporarily unavailable. Review the lesson or ask your teacher.",
+    listenTitle: "Listen to explanation",
+  });
+}
+
+function renderAiResultFooter(result, responseText) {
+  return renderTutorFooter(result || {}, responseText);
+}
+
+window.renderTutorThinking = renderTutorThinking;
+window.renderTutorSourceChips = renderTutorSourceChips;
+window.renderTutorFooter = renderTutorFooter;
+window.renderFormatQualityChip = renderFormatQualityChip;
+window.renderAiResultFooter = renderAiResultFooter;
+window.buildLessonTutorPayload = buildLessonTutorPayload;
+window.buildQuizLessonContent = buildQuizLessonContent;
+window.buildTutorThreadQuestion = buildTutorThreadQuestion;
+window.buildTutorMessagesArray = buildTutorMessagesArray;
+window.attachTutorFollowUp = attachTutorFollowUp;
+window.attachTutorHelpful = attachTutorHelpful;
+window.renderTutorStreamingSkeleton = renderTutorStreamingSkeleton;
+window.tutorThreadStorageKey = tutorThreadStorageKey;
+window.loadTutorThread = loadTutorThread;
+window.loadTutorThreadFromServer = loadTutorThreadFromServer;
+window.saveTutorThread = saveTutorThread;
+window.buildLessonQuizTutorQuestion = buildLessonQuizTutorQuestion;
+window.mountLessonQuizTutor = mountLessonQuizTutor;
+window.runTutorQuery = runTutorQuery;
+window.runAiGenerateTask = runAiGenerateTask;
+window.attachTutorListen = attachTutorListen;
+
+;
+// modules/api-quiz.js — Quiz rendering, tutor, downloads
+
+/* ── Math (KaTeX) Rendering ───────────────────────────────────────── */
+window.renderMath = function (el) {
+  if (!el) return;
+  // KaTeX is lazy-loaded on demand (see api-client/core/katex-loader.js).
+  window.ensureKaTeX().then(function () {
+    if (typeof window.renderMathInElement !== "function") return;
+    try {
+      window.renderMathInElement(el, {
+        delimiters: [
+          { left: "\\[", right: "\\]", display: true },
+          { left: "\\(", right: "\\)", display: false },
+          { left: "$$", right: "$$", display: true },
+          { left: "$", right: "$", display: false },
+        ],
+        throwOnError: false,
+      });
+    } catch (e) {
+      // Never let a math failure break the page.
+    }
+  });
+};
+
+window._quizSubmit = function(quizId, total) {
+  var correct = 0;
+  var i, container, correctAnswer, selected, selectedVal, exp;
+  var scoreEl, scoreNum, scoreLabel, pct, msg, btn;
+  var wrong = [];
+
+  for (i = 0; i < total; i++) {
+    container = document.querySelector("#" + quizId + " .quiz-question[data-index=\"" + i + "\"]");
+    if (!container) continue;
+    correctAnswer = container.getAttribute("data-correct");
+    selected = document.querySelector("input[name=\"" + quizId + "-q" + i + "\"]:checked");
+    selectedVal = selected ? selected.value : null;
+
+    var options = container.querySelectorAll(".quiz-option");
+    var j, opt, letter;
+    for (j = 0; j < options.length; j++) {
+      opt = options[j];
+      letter = opt.getAttribute("data-letter");
+      opt.style.pointerEvents = "none";
+      if (letter === correctAnswer) {
+        opt.classList.add("correct");
+      } else if (letter === selectedVal && letter !== correctAnswer) {
+        opt.classList.add("incorrect");
+      }
+    }
+
+    if (selectedVal === correctAnswer) correct++;
+    if (selectedVal !== correctAnswer) wrong.push(i);
+
+    exp = document.getElementById(quizId + "-exp-" + i);
+    if (exp) exp.classList.add("visible");
+  }
+
+  scoreEl = document.getElementById(quizId + "-score");
+  scoreNum = document.getElementById(quizId + "-score-num");
+  scoreLabel = document.getElementById(quizId + "-score-label");
+  if (scoreEl && scoreNum && scoreLabel) {
+    scoreNum.textContent = correct + " / " + total;
+    pct = Math.round((correct / total) * 100);
+    msg = pct >= 80 ? "Excellent! Keep it up!" : pct >= 50 ? "Good effort! Review the explanations." : "Keep practicing. Review the explanations below.";
+    scoreLabel.textContent = pct + "% \u2014 " + msg;
+    scoreEl.classList.add("visible");
+  }
+
+  btn = document.querySelector("#" + quizId + " .quiz-submit-all");
+  if (btn) btn.style.display = "none";
+
+  if (wrong.length) {
+    _tutorWrongQuestions(quizId, total, wrong);
+  }
+};
+
+function _tutorWrongQuestions(quizId, total, wrongIndexes) {
+  var data = _quizExtractData(quizId);
+  if (!data || !data.questions || !wrongIndexes.length) return;
+
+  var subjectSlug = "";
+  var formLevel = "";
+  var slugMap = { mathematics:"mathematics", math:"mathematics", chemistry:"chemistry", physics:"physics" };
+  var m = (data.meta || "").match(/^([A-Za-z ]+)\s*(\u2022)?\s*Form\s*([IVX]+)/i);
+  if (m) {
+    var label = slugMap[m[1].trim().toLowerCase()];
+    if (label) subjectSlug = label;
+    var roman = m[3];
+    formLevel = (roman === "I") ? "1" : (roman === "II") ? "2" : (roman === "III") ? "3" : "4";
+  }
+
+  var parts = [];
+  wrongIndexes.forEach(function(idx) {
+    var q = data.questions[idx];
+    if (!q) return;
+    var chosen = null;
+    if (q.options) {
+      q.options.forEach(function(o) { if (o.letter === q.correct) chosen = o.text; });
+    }
+    var chosenText = chosen ? chosen : "(question left unanswered)";
+    parts.push(
+      "QUESTION " + (idx + 1) + ": " + (q.text || "")
+      + "\n- Options: " + (q.options || []).map(function(o){ return o.letter + ") " + o.text; }).join("; ")
+      + "\n- The student answered: " + chosenText
+      + "\n- The correct answer is: " + q.correct
+    );
+  });
+
+  var question = "A student answered the following questions incorrectly. Please explain, "
+    + "in simple step-by-step language a secondary school student will understand, EXACTLY how to arrive at the correct answer for each one. "
+    + "Do not just repeat the correct letter \u2014 show the working/method step by step, call out any common mistake the student likely made, and keep the tone encouraging.\n\n"
+    + parts.join("\n\n");
+
+  var wrap = document.getElementById(quizId + "-score");
+  if (!wrap) return;
+  var tutorHtml = '<div class="quiz-tutor" id="' + quizId + '-tutor">'
+    + '<div class="quiz-tutor-header"><span class="quiz-tutor-icon">\uD83C\uDF93</span>'
+    + '<div><div class="quiz-tutor-title">Let\u2019s Learn: Step-by-Step</div>'
+    + '<div class="quiz-tutor-sub">The AI tutor will show you exactly how to solve the ' + wrongIndexes.length + ' question'
+    + (wrongIndexes.length > 1 ? "s" : "") + ' you got wrong.</div></div></div>'
+    + '<div class="quiz-tutor-body"><div class="tutor-loading"><span class="spinner"></span> Explaining the correct method\u2026</div></div>'
+    + '</div>';
+  if (wrap.insertAdjacentHTML) {
+    wrap.insertAdjacentHTML("afterend", tutorHtml);
+  } else if (wrap.parentNode) {
+    var tmp = document.createElement("div");
+    tmp.innerHTML = tutorHtml;
+    while (tmp.firstChild) wrap.parentNode.insertBefore(tmp.firstChild, wrap.nextSibling);
+  }
+
+  var body = document.getElementById(quizId + "-tutor").querySelector(".quiz-tutor-body");
+
+  var quizEl = document.getElementById(quizId);
+  var lessonId = quizEl && quizEl.getAttribute("data-lesson-id");
+  var meta = window.__casuyaQuizLessonMeta || {};
+  var payload = buildLessonTutorPayload({
+    question: question,
+    lesson: { title: data.topic || data.meta || meta.title || "Quiz", id: lessonId || meta.lessonId },
+    lessonId: lessonId || meta.lessonId,
+    lessonContent: typeof buildQuizLessonContent === "function"
+      ? buildQuizLessonContent(data.questions)
+      : "",
+    subject_slug: subjectSlug || meta.subject_slug || undefined,
+    form_level: formLevel ? Number(formLevel) : (meta.form_level || undefined),
+    topic: data.topic || meta.topic || "",
+    subtopic: meta.subtopic || "",
+  });
+
+  runTutorQuery(payload, {
+    container: body,
+    loadingLabel: "Explaining the correct method…",
+    errorMessage: "The AI tutor is temporarily unavailable. Please review the explanations above or ask your teacher for help.",
+    listenTitle: "Listen to explanation",
+  });
+}
+
+function _quizExtractData(quizId) {
+  var container = document.getElementById(quizId);
+  if (!container) return null;
+  var badge = container.querySelector(".quiz-badge");
+  var topic = container.querySelector(".quiz-topic");
+  var meta = badge ? badge.textContent.trim() : "";
+  var topicText = topic ? topic.textContent.replace("Topic:", "").trim() : "";
+  var questions = [];
+  var qEls = container.querySelectorAll(".quiz-question");
+  var i, qEl, qText, opts, j, optEl, letter, optText;
+  for (i = 0; i < qEls.length; i++) {
+    qEl = qEls[i];
+    qText = qEl.querySelector(".quiz-question-text");
+    opts = qEl.querySelectorAll(".quiz-option");
+    var options = [];
+    for (j = 0; j < opts.length; j++) {
+      optEl = opts[j];
+      letter = optEl.getAttribute("data-letter");
+      optText = optEl.querySelector("span:last-child");
+      options.push({ letter: letter, text: optText ? optText.textContent.trim() : "" });
+    }
+    var expEl = qEl.querySelector(".quiz-explanation");
+    var expText = expEl ? expEl.textContent.replace("Explanation:", "").trim() : "";
+    questions.push({
+      num: i + 1,
+      text: qText ? qText.textContent.trim() : "",
+      options: options,
+      correct: qEl.getAttribute("data-correct") || "",
+      explanation: expText
+    });
+  }
+  return { meta: meta, topic: topicText, questions: questions };
+}
+
+window._quizDownloadWord = function(quizId) {
+  var data = _quizExtractData(quizId);
+  if (!data || !data.questions.length) return;
+  var html = "<html xmlns:o='urn:schemas-microsoft-com:office:office' xmlns:w='urn:schemas-microsoft-com:office:word' xmlns='http://www.w3.org/TR/REC-html40'>";
+  html += "<head><meta charset='utf-8'><title>Quiz</title>";
+  html += "<style>body{font-family:Arial,sans-serif;margin:40px;line-height:1.6}h1{color:#1e3a8a;font-size:20px}h2{color:#333;font-size:15px;margin-top:24px}.q{margin-bottom:16px}.q-text{font-weight:bold;font-size:13px}.opt{margin:4px 0 4px 20px;font-size:12px}.correct{color:#16a34a;font-weight:bold}.exp{color:#555;font-size:11px;margin-left:20px;border-left:3px solid #16a34a;padding-left:8px;margin-top:4px}.meta{color:#666;font-size:12px;margin-bottom:16px}</style></head><body>";
+  html += "<h1>Quiz Questions</h1>";
+  html += "<div class='meta'>" + data.meta;
+  if (data.topic) html += " &bull; Topic: " + data.topic;
+  html += "</div>";
+  var i, q, j, opt;
+  for (i = 0; i < data.questions.length; i++) {
+    q = data.questions[i];
+    html += "<div class='q'>";
+    html += "<div class='q-text'>" + q.num + ". " + q.text + "</div>";
+    for (j = 0; j < q.options.length; j++) {
+      opt = q.options[j];
+      html += "<div class='opt'>" + opt.letter + ". " + opt.text + "</div>";
+    }
+    html += "<div class='exp'><strong>Answer:</strong> " + q.correct + "</div>";
+    if (q.explanation) html += "<div class='exp'>" + q.explanation + "</div>";
+    html += "</div>";
+  }
+  html += "</body></html>";
+  var blob = new Blob(["\ufeff" + html], { type: "application/msword" });
+  _quizTriggerDownload(blob, "quiz-questions.doc");
+};
+
+window._quizDownloadPdf = function(quizId) {
+  var data = _quizExtractData(quizId);
+  if (!data || !data.questions.length) return;
+  var html = "<!DOCTYPE html><html><head><meta charset='utf-8'><title>Quiz</title>";
+  html += "<style>body{font-family:Arial,sans-serif;margin:40px;line-height:1.5;color:#111}h1{color:#1e3a8a;font-size:22px;border-bottom:2px solid #1e3a8a;padding-bottom:8px}h2{color:#333;font-size:14px;margin-top:20px}.meta{color:#555;font-size:12px;margin-bottom:16px;padding:8px;background:#f3f4f6;border-radius:6px}.q{margin-bottom:20px;page-break-inside:avoid}.q-text{font-weight:bold;font-size:13px;margin-bottom:4px}.opt{margin:3px 0 3px 24px;font-size:12px}.correct{color:#16a34a;font-weight:bold}.exp{color:#444;font-size:11px;margin-left:24px;border-left:3px solid #16a34a;padding-left:8px;margin-top:4px}@media print{body{margin:20px}.q{page-break-inside:avoid}}</style></head><body>";
+  html += "<h1>Quiz Questions</h1>";
+  html += "<div class='meta'>" + data.meta;
+  if (data.topic) html += " &bull; Topic: " + data.topic;
+  html += "</div>";
+  var i, q, j, opt;
+  for (i = 0; i < data.questions.length; i++) {
+    q = data.questions[i];
+    html += "<div class='q'>";
+    html += "<div class='q-text'>" + q.num + ". " + q.text + "</div>";
+    for (j = 0; j < q.options.length; j++) {
+      opt = q.options[j];
+      html += "<div class='opt'>" + opt.letter + ". " + opt.text + "</div>";
+    }
+    html += "<div class='exp'><strong>Answer:</strong> " + q.correct + "</div>";
+    if (q.explanation) html += "<div class='exp'>" + q.explanation + "</div>";
+    html += "</div>";
+  }
+  html += "</body></html>";
+  var win = window.open("", "_blank");
+  if (win) {
+    win.document.write(html);
+    win.document.close();
+    setTimeout(function() { win.print(); }, 400);
+  }
+};
+
+function _quizTriggerDownload(blob, filename) {
+  var url = URL.createObjectURL(blob);
+  var a = document.createElement("a");
+  a.href = url;
+  a.download = filename;
+  document.body.appendChild(a);
+  a.click();
+  document.body.removeChild(a);
+  setTimeout(function() { URL.revokeObjectURL(url); }, 1000);
+}
+
+;
+// modules/api.js — Facade that re-exports everything from the split modules.
+// All symbols are globals after build-js.mjs strips ESM keywords.
+
+// Re-api-cache globals (already on window from api-cache.js)
+// clearRequestCaches, requestCache, inFlight, CACHE_TTL
+
+// Re-api-auth globals (already on window from api-auth.js)
+// decodeToken, tokenNeedsRefresh, refreshAuthToken
+
+// Re-api-client globals (already on window from api-client.js)
+// API_HOST, API_PROTOCOL, API_BASE, render, escapeHtml, injectNodeBase,
+// timeAgo, showToast, confirmDelete, deleteBtn, initDeleteButtons,
+// renderTutorMarkdown, renderQuizQuestions, renderMath,
+// _quizSubmit, _tutorWrongQuestions, _quizExtractData,
+// _quizDownloadWord, _quizDownloadPdf, _quizTriggerDownload,
+// streamTutorResponse, request
+
+;
+// modules/auth.js — extracted from main.js (classic script, shared global scope)
+function renderLogin() {
+  render("#app", `
+    <div class="page login-page">
+      <div class="login-card">
+        <h1>Casuya Platform</h1>
+        <p>Sign in to continue</p>
+        <form id="login-form">
+          <input type="text" id="email" placeholder="Email" required />
+          <input type="password" id="password" placeholder="Password" required />
+          <button type="submit">Sign In</button>
+          <p class="error" id="login-error" style="display:none"></p>
+        </form>
+      </div>
+    </div>
+  `);
+  document.getElementById("login-form").addEventListener("submit", handleLogin);
+}
+
+async function handleLogin(e) {
+  e.preventDefault();
+  const errorEl = document.getElementById("login-error");
+  errorEl.style.display = "none";
+  const email = document.getElementById("email").value;
+  const password = document.getElementById("password").value;
+  try {
+    const data = await request("/auth/login", {
+      method: "POST",
+      body: JSON.stringify({ email, password }),
+    });
+    if (data && data.access_token) {
+      localStorage.setItem("casuya_token", data.access_token);
+      if (data.refresh_token) localStorage.setItem("casuya_refresh_token", data.refresh_token);
+      if (data.role) localStorage.setItem("casuya_role", data.role);
+      renderApp();
+    } else {
+      errorEl.textContent = data?.detail || "Login failed";
+      errorEl.style.display = "block";
+    }
+  } catch (err) {
+    errorEl.textContent = err.message;
+    errorEl.style.display = "block";
+  }
+}
+
+function handleLogout() {
+  if (typeof clearRequestCaches === "function") clearRequestCaches();
+  localStorage.removeItem("casuya_token");
+  window.location.href = "/index.html#features";
+}
+
+;
+// modules/appearance.js — extracted from main.js (classic script, shared global scope)
+const THEME_KEY = "casuya_theme";
+
+const FONT_KEY = "casuya_font_scale";
+
+function applyAppearance() {
+  const theme = localStorage.getItem(THEME_KEY) || "light";
+  const scale = (parseFloat(localStorage.getItem(FONT_KEY) || "100") / 100) || 1;
+  document.documentElement.setAttribute("data-theme", theme);
+  document.documentElement.style.setProperty("--app-font-scale", String(scale));
+}
+
+function appearancePanelHTML() {
+  const theme = localStorage.getItem(THEME_KEY) || "light";
+  const scale = parseInt(localStorage.getItem(FONT_KEY) || "100", 10);
+  const themeBtn = (val, label) =>
+    `<button type="button" class="btn appearance-theme-btn" data-theme-val="${val}" style="flex:1${theme === val ? ";background:var(--color-primary);color:#fff" : ""}">${label}</button>`;
+  return `
+    <div class="card" style="padding:1.5rem">
+      <h3 style="margin-bottom:0.75rem">Appearance</h3>
+      <div style="display:flex;flex-direction:column;gap:1.25rem">
+        <div>
+          <label style="font-size:0.85rem;font-weight:500;display:block;margin-bottom:0.5rem">Theme</label>
+          <div style="display:flex;gap:0.5rem">
+            ${themeBtn("light", "☀️ Light")}
+            ${themeBtn("dark", "🌙 Dark")}
+            ${themeBtn("black", "⚫ Black")}
+          </div>
+        </div>
+        <div>
+          <label style="font-size:0.85rem;font-weight:500;display:block;margin-bottom:0.5rem">Font Size: <span id="font-scale-val">${scale}%</span></label>
+          <input id="font-scale-slider" type="range" min="80" max="150" step="5" value="${scale}" style="width:100%">
+          <p style="font-size:0.75rem;color:var(--color-text-muted);margin-top:0.4rem">Drag to make text larger or smaller across the app.</p>
+        </div>
+      </div>
+      <p id="appearance-msg" style="font-size:0.85rem;margin-top:1rem;display:none"></p>
+    </div>
+  `;
+}
+
+function setupAppearanceControls() {
+  const msg = document.getElementById("appearance-msg");
+  document.querySelectorAll(".appearance-theme-btn").forEach(btn => {
+    btn.addEventListener("click", () => {
+      const val = btn.dataset.themeVal;
+      localStorage.setItem(THEME_KEY, val);
+      applyAppearance();
+      document.querySelectorAll(".appearance-theme-btn").forEach(b => { b.style.background = ""; b.style.color = ""; });
+      btn.style.background = "var(--color-primary)";
+      btn.style.color = "#fff";
+      if (msg) { msg.textContent = "✅ Theme updated"; msg.style.color = "var(--color-success)"; msg.style.display = "block"; setTimeout(() => msg.style.display = "none", 2000); }
+    });
+  });
+  const slider = document.getElementById("font-scale-slider");
+  const valLabel = document.getElementById("font-scale-val");
+  if (slider) {
+    slider.addEventListener("input", () => {
+      const v = slider.value;
+      localStorage.setItem(FONT_KEY, v);
+      applyAppearance();
+      if (valLabel) valLabel.textContent = v + "%";
+    });
+    slider.addEventListener("change", () => {
+      if (msg) { msg.textContent = "✅ Font size saved"; msg.style.color = "var(--color-success)"; msg.style.display = "block"; setTimeout(() => msg.style.display = "none", 2000); }
+    });
+  }
+}
+
+;
+// modules/lesson/lesson-content.js — lesson content builders (classic script, shared global scope).
+// Extracted from modules/lesson.js: the bridge script injected into each lesson iframe
+// and the quiz / games section renderers used by lesson-viewer.js.
+
+// Injected just before </body> of every lesson so the sandboxed lesson iframe can report
+// quiz scores, progress and video milestones back to the parent page.
+const LESSON_BRIDGE_SCRIPT = `
+<script>
+(function(){
+  var scoreReported = false;
+  window.casuya = window.casuya || {};
+  window.casuya.reportScore = function(score, total) {
+    parent.postMessage({type:'casuya-quiz', score:score, total:total}, '*');
+    scoreReported = true;
+  };
+  window.casuya.reportProgress = function(pct) {
+    parent.postMessage({type:'casuya-progress', percent:pct}, '*');
+  };
+  function detectScore() {
+    if (scoreReported) return;
+    var candidates = document.querySelectorAll('.score-big, .quiz-score, .final-score, .result-score, [class*=score]');
+    for (var i = 0; i < candidates.length; i++) {
+      var text = (candidates[i].textContent || '').trim();
+      var m = text.match(/(\d+)\s*\/\s*(\d+)/);
+      if (m) {
+        var s = parseInt(m[1]), t = parseInt(m[2]);
+        if (t > 0 && s <= t) {
+          parent.postMessage({type:'casuya-quiz', score:s, total:t}, '*');
+          scoreReported = true;
+          return;
+        }
+      }
+    }
+  }
+  function upgradeAdaptiveVideos(root) {
+    var videos = root.querySelectorAll('video');
+    for (var i = 0; i < videos.length; i++) {
+      (function (v) {
+        var src = v.getAttribute('src') || '';
+        // Only act on HLS manifests; plain mp4/webm stay as-is (P1-5).
+        if (!/\.m3u8(\?|$)/.test(src)) return;
+        if (v.dataset.casuyaHls) return;
+        v.dataset.casuyaHls = '1';
+        v.setAttribute('preload', v.getAttribute('preload') || 'none');
+        // Native HLS (Safari / iOS) needs no library.
+        if (v.canPlayType('application/vnd.apple.mpegurl')) return;
+        function attach(Hls) {
+          if (!Hls || !Hls.isSupported()) return;
+          var hls = new Hls({ maxBufferLength: 10, capLevelToPlayerSize: true, startLevel: -1 });
+          hls.loadSource(src);
+          hls.attachMedia(v);
+        }
+        if (window.Hls) { attach(window.Hls); return; }
+        // Lazy-load the vendored hls.js only when actually needed (no-op if absent).
+        var s = document.createElement('script');
+        s.src = '/static/lib/hls.min.js';
+        s.onload = function () { attach(window.Hls); };
+        document.head.appendChild(s);
+      })(videos[i]);
+    }
+  }
+  function trackVideos(root) {
+    var videos = root.querySelectorAll('video');
+    for (var i = 0; i < videos.length; i++) {
+      (function(v) {
+        if (v.dataset.casuyaTracked) return;
+        v.dataset.casuyaTracked = '1';
+        var maxPct = 0;
+        v.addEventListener('timeupdate', function() {
+          if (v.duration) { var pct = Math.round((v.currentTime / v.duration) * 100); if (pct > maxPct) maxPct = pct; }
+        });
+        v.addEventListener('ended', function() { parent.postMessage({type:'casuya-video', percent:100}, '*'); });
+        var _iv = setInterval(function() { if (maxPct > 0) parent.postMessage({type:'casuya-progress', percent:Math.min(maxPct + 10, 100)}, '*'); }, 5000);
+        window.casuya._intervals = window.casuya._intervals || [];
+        window.casuya._intervals.push(_iv);
+      })(videos[i]);
+    }
+  }
+  function postSelectionExplain() {
+    var sel = window.getSelection();
+    var text = sel ? String(sel.toString() || '').trim() : '';
+    if (text.length < 8 || text.length > 500) return;
+    var anchor = sel && sel.anchorNode;
+    var el = anchor && anchor.nodeType === 3 ? anchor.parentElement : anchor;
+    var block = el && el.closest ? el.closest('p, li, h1, h2, h3, h4, td, blockquote, section, article') : null;
+    var surrounding = block ? String(block.textContent || '').trim().slice(0, 800) : '';
+    parent.postMessage({
+      type: 'casuya-selection',
+      selected: text,
+      context: surrounding
+    }, '*');
+  }
+  function initBridge() {
+    if (!document.body) { setTimeout(initBridge, 100); return; }
+    upgradeAdaptiveVideos(document.body);
+    trackVideos(document.body);
+    detectScore();
+    document.addEventListener('mouseup', function() { setTimeout(postSelectionExplain, 120); });
+    document.addEventListener('keyup', function(e) {
+      if (e.key === 'Shift' || e.key === 'Control' || e.key === 'Meta' || e.key === 'Alt') {
+        setTimeout(postSelectionExplain, 120);
+      }
+    });
+    var obs = new MutationObserver(function() { detectScore(); upgradeAdaptiveVideos(document.body); trackVideos(document.body); });
+    obs.observe(document.body, {childList:true, subtree:true});
+  }
+  if (document.readyState === 'loading') document.addEventListener('DOMContentLoaded', initBridge);
+  else initBridge();
+})();
+<\/script>`;
+
+// Quiz section rendered below the lesson iframe for students. Returns "" when there
+// is no quiz to show. `lessonId` is embedded so each question's "Show your work"
+// blackboard gets a unique board id.
+function renderLessonQuiz(quizData, lessonId, lessonLang) {
+  if (!quizData || !quizData.questions || quizData.questions.length === 0) return "";
+  const lang = lessonLang || "sw";
+  return `
+    <div class="card question-block" data-lesson-lang="${escapeHtml(lang)}" style="margin-top:1rem;padding:1rem">
+      <h3 style="margin:0 0 0.75rem">${escapeHtml(quizData.title || "Quiz")}</h3>
+      <form id="quiz-form">
+        ${quizData.questions.map((q, qi) => `
+          <div class="quiz-item" data-question style="margin-bottom:1rem">
+            <p style="font-weight:600;margin:0 0 0.5rem">${qi + 1}. ${escapeHtml(q.prompt)} <button type="button" class="casuya-listen" data-lang="${escapeHtml(lang)}" data-speak="${escapeHtml(String(q.prompt || "").slice(0, 600))}" title="Listen to question" aria-label="Listen to question" style="vertical-align:middle">🔊 Listen</button></p>
+            ${q.options.map(o => `
+              <label style="display:block;padding:0.3rem 0.5rem;cursor:pointer;border:1px solid var(--color-border);border-radius:var(--radius);margin-bottom:0.25rem">
+                <input type="radio" name="q_${escapeHtml(q.id)}" value="${escapeHtml(o.id)}" required> ${escapeHtml(o.text)}
+              </label>
+            `).join("")}
+            <details style="margin-top:0.5rem">
+              <summary style="cursor:pointer;font-size:0.85rem;color:var(--color-text-muted)">Show your work</summary>
+              <div data-blackboard data-lesson-id="${escapeHtml(lessonId)}-${escapeHtml(q.id)}" data-quiz-question="${escapeHtml(q.id)}" style="width:100%;height:250px;border:1px solid var(--color-border);border-radius:var(--radius);overflow:hidden;margin-top:0.5rem"></div>
+            </details>
+          </div>
+        `).join("")}
+        <button type="submit" class="btn btn-primary" id="quiz-submit-btn">Submit Quiz</button>
+      </form>
+      <div id="quiz-result" style="display:none;margin-top:0.75rem"></div>
+    </div>
+  `;
+}
+
+// Games & Activities section rendered below the quiz for students. Returns "" when
+// there are no games to show.
+function renderLessonGames(gamesData) {
+  if (!Array.isArray(gamesData) || gamesData.length === 0) return "";
+  return `
+    <div class="card" style="margin-top:1rem;padding:1rem">
+      <h3 style="margin:0 0 0.5rem">Games & Activities</h3>
+      ${gamesData.map(g => `
+        <div class="game-item" data-game-id="${escapeHtml(g.id)}" style="padding:0.5rem 0;border-bottom:1px solid var(--color-border);cursor:pointer">
+          <span style="color:var(--color-primary)">${escapeHtml(g.title || "Game")}</span>
+          <span style="color:var(--color-text-muted);font-size:0.8rem;margin-left:0.5rem">${escapeHtml(g.status || "draft")}</span>
+        </div>
+      `).join("")}
+      <div id="game-content-area" style="margin-top:1rem"></div>
+    </div>
+  `;
+}
+;
+// modules/lesson/lesson-idb.js — durable lesson HTML cache for cross-origin APIs.
+// Service workers cannot intercept Vercel → Railway fetches; IndexedDB can.
+// Explicit Downloads pin rows so LRU eviction cannot drop them.
+
+var _casuyaLessonIdb = null;
+var LESSON_IDB_NAME = "casuya-lessons";
+var LESSON_IDB_STORE = "html";
+var LESSON_IDB_MAX = 30;
+var LESSON_IDB_MAX_BYTES = 1500000;
+
+function openLessonIdb() {
+  if (_casuyaLessonIdb) return _casuyaLessonIdb;
+  if (typeof indexedDB === "undefined") return Promise.resolve(null);
+  _casuyaLessonIdb = new Promise(function (resolve) {
+    try {
+      var req = indexedDB.open(LESSON_IDB_NAME, 1);
+      req.onupgradeneeded = function () {
+        var db = req.result;
+        if (!db.objectStoreNames.contains(LESSON_IDB_STORE)) {
+          db.createObjectStore(LESSON_IDB_STORE, { keyPath: "id" });
+        }
+      };
+      req.onsuccess = function () { resolve(req.result); };
+      req.onerror = function () { resolve(null); };
+    } catch (e) {
+      resolve(null);
+    }
+  });
+  return _casuyaLessonIdb;
+}
+
+function getIdbLessonContent(lessonId) {
+  if (!lessonId) return Promise.resolve(null);
+  return openLessonIdb().then(function (db) {
+    if (!db) return null;
+    return new Promise(function (resolve) {
+      try {
+        var tx = db.transaction(LESSON_IDB_STORE, "readonly");
+        var req = tx.objectStore(LESSON_IDB_STORE).get(lessonId);
+        req.onsuccess = function () {
+          var row = req.result;
+          resolve(row && row.html ? row.html : null);
+        };
+        req.onerror = function () { resolve(null); };
+      } catch (e) {
+        resolve(null);
+      }
+    });
+  });
+}
+
+function putIdbLessonContent(lessonId, html, pinned) {
+  if (!lessonId || !html || html.length > LESSON_IDB_MAX_BYTES) return Promise.resolve();
+  return openLessonIdb().then(function (db) {
+    if (!db) return;
+    return new Promise(function (resolve) {
+      try {
+        var tx = db.transaction(LESSON_IDB_STORE, "readwrite");
+        var store = tx.objectStore(LESSON_IDB_STORE);
+        var getReq = store.get(lessonId);
+        getReq.onsuccess = function () {
+          var prev = getReq.result;
+          var isPinned = !!(pinned || (prev && prev.pinned));
+          store.put({ id: lessonId, html: html, ts: Date.now(), pinned: isPinned });
+          store.getAll().onsuccess = function (ev) {
+            var rows = ev.target.result || [];
+            if (rows.length <= LESSON_IDB_MAX) return;
+            var unpinned = rows.filter(function (r) { return !r.pinned; })
+              .sort(function (a, b) { return (a.ts || 0) - (b.ts || 0); });
+            var extra = rows.length - LESSON_IDB_MAX;
+            for (var i = 0; i < extra && i < unpinned.length; i++) {
+              store.delete(unpinned[i].id);
+            }
+          };
+        };
+        tx.oncomplete = function () { resolve(); };
+        tx.onerror = function () { resolve(); };
+      } catch (e) {
+        resolve();
+      }
+    });
+  });
+}
+
+function deleteIdbLessonContent(lessonId) {
+  if (!lessonId) return Promise.resolve();
+  return openLessonIdb().then(function (db) {
+    if (!db) return;
+    return new Promise(function (resolve) {
+      try {
+        var tx = db.transaction(LESSON_IDB_STORE, "readwrite");
+        tx.objectStore(LESSON_IDB_STORE).delete(lessonId);
+        tx.oncomplete = function () { resolve(); };
+        tx.onerror = function () { resolve(); };
+      } catch (e) {
+        resolve();
+      }
+    });
+  });
+}
+
+function listIdbLessonIds(pinnedOnly) {
+  return openLessonIdb().then(function (db) {
+    if (!db) return [];
+    return new Promise(function (resolve) {
+      try {
+        var tx = db.transaction(LESSON_IDB_STORE, "readonly");
+        var req = tx.objectStore(LESSON_IDB_STORE).getAll();
+        req.onsuccess = function () {
+          var rows = req.result || [];
+          if (pinnedOnly) rows = rows.filter(function (r) { return r && r.pinned; });
+          resolve(rows.map(function (r) { return r.id; }).filter(Boolean));
+        };
+        req.onerror = function () { resolve([]); };
+      } catch (e) {
+        resolve([]);
+      }
+    });
+  });
+}
+
+;
+// modules/lesson/lesson-viewer/cache.js — in-memory lesson content cache (LRU-ish).
+
+const lessonContentCache = new Map();
+
+function getCachedLessonContent(lessonId) {
+  return lessonContentCache.get(lessonId) || null;
+}
+
+function lessonContentQuery(forceFull) {
+  if (forceFull) return "";
+  try {
+    var t = navigator.connection && navigator.connection.effectiveType;
+    if (t === "slow-2g" || t === "2g") return "?essential=1";
+  } catch (e) {}
+  return "";
+}
+
+function cacheLessonContent(lessonId, html) {
+  lessonContentCache.set(lessonId, html);
+  if (lessonContentCache.size > 50) {
+    const key = lessonContentCache.keys().next().value;
+    lessonContentCache.delete(key);
+  }
+  if (html && typeof putIdbLessonContent === "function") {
+    putIdbLessonContent(lessonId, html);
+  }
+}
+
+function dropCachedLessonContent(lessonId) {
+  lessonContentCache.delete(lessonId);
+}
+
+function loadGameHtml(gameId) {
+  if (!gameId) return Promise.resolve("");
+  var key = "g:" + gameId;
+  var mem = getCachedLessonContent(key);
+  if (mem) return Promise.resolve(mem);
+  var fromIdb = typeof getIdbLessonContent === "function"
+    ? getIdbLessonContent(key)
+    : Promise.resolve(null);
+  return fromIdb.then(function (html) {
+    if (html) {
+      lessonContentCache.set(key, html);
+      return html;
+    }
+    return fetch(`${API_BASE}/games/${gameId}/content`, {
+      headers: { Authorization: `Bearer ${localStorage.getItem("casuya_token")}` },
+    }).then(function (r) {
+      return r.ok ? r.text() : "";
+    }).then(function (fetched) {
+      if (fetched) cacheLessonContent(key, fetched);
+      return fetched;
+    }).catch(function () { return ""; });
+  });
+}
+
+function loadLessonHtml(lessonId, forceFull) {
+  const mem = getCachedLessonContent(lessonId);
+  if (mem && !forceFull) return Promise.resolve(mem);
+  const fromIdb = (!forceFull && typeof getIdbLessonContent === "function")
+    ? getIdbLessonContent(lessonId)
+    : Promise.resolve(null);
+  return fromIdb.then(function (html) {
+    if (html) {
+      lessonContentCache.set(lessonId, html);
+      return html;
+    }
+    return fetch(`${API_BASE}/lessons/${lessonId}/content${typeof lessonContentQuery === "function" ? lessonContentQuery(forceFull) : ""}`, {
+      headers: { Authorization: `Bearer ${localStorage.getItem("casuya_token")}` },
+    }).then(function (r) {
+      return r.ok ? r.text() : "";
+    }).then(function (fetched) {
+      if (fetched) cacheLessonContent(lessonId, fetched);
+      return fetched;
+    }).catch(function () { return ""; });
+  });
+}
+;
+// modules/lesson/lesson-viewer/bridge.js — inject the lesson bridge script into lesson HTML.
+
+function injectBridgeScript(html) {
+  const bridgeScript = LESSON_BRIDGE_SCRIPT;
+  const bodyIdx = html.lastIndexOf("</body>");
+  if (bodyIdx !== -1) {
+    return html.slice(0, bodyIdx) + bridgeScript + html.slice(bodyIdx);
+  }
+  return html.replace("</html>", bridgeScript + "</html>");
+}
+;
+// modules/exams.js — shared NECTA / internal-exam format paper renderer.
+//
+// Renders the canonical assignment "paper_json" (see
+// backend/services/exam_paper_service.py) exactly like a printed NECTA /
+// internal examination: cover, instructions, sections, numbered questions
+// with marks and options. Used by the teacher dashboard for the
+// "Generate with AI -> preview -> assign" flow and by the student dashboard
+// for an answerable paper (multiple-choice auto-check).
+//
+// Both role bundles load this from the shared core, so these helpers are
+// intentionally plain global functions (no imports/exports).
+
+"use strict";
+
+(function injectExamStyles() {
+  if (document.getElementById("exam-paper-styles")) return;
+  const style = document.createElement("style");
+  style.id = "exam-paper-styles";
+  style.textContent = [
+    ".exam-paper{background:#fff;color:#1f2937;border:1px solid #d1d5db;border-radius:8px;padding:1.25rem 1.25rem 0.75rem;font-size:0.9rem;line-height:1.5}",
+    ".exam-cover{text-align:center;padding:0.75rem 0 0.9rem;border-bottom:2px solid #e5e7eb;margin-bottom:0.75rem}",
+    ".exam-country{letter-spacing:0.18em;font-weight:700;font-size:0.7rem;color:#374151}",
+    ".exam-label{font-size:1.05rem;font-weight:800;margin:0.25rem 0 0.15rem;text-decoration:underline}",
+    ".exam-subject{font-size:1.15rem;font-weight:800;text-transform:uppercase;letter-spacing:0.05em;margin-top:0.15rem}",
+    ".exam-meta{display:flex;flex-wrap:wrap;gap:0.5rem 1.5rem;justify-content:center;margin-top:0.45rem;font-size:0.85rem;color:#374151}",
+    ".exam-topic{margin-top:0.3rem;font-style:italic;font-size:0.85rem;color:#4b5563}",
+    ".exam-instr{background:#f3f4f6;border:1px solid #e5e7eb;border-radius:6px;padding:0.6rem 1rem 0.6rem 0.6rem;margin-bottom:1rem}",
+    ".exam-instr-title{font-weight:800;font-size:0.78rem;letter-spacing:0.12em;margin-bottom:0.25rem}",
+    ".exam-instr ol{margin:0 0 0 1.1rem;padding:0;font-size:0.85rem}",
+    ".exam-section{margin-bottom:1.1rem}",
+    ".exam-sec-head{display:flex;align-items:center;gap:0.65rem;border-bottom:2px solid #e5e7eb;padding-bottom:0.3rem;margin-bottom:0.4rem}",
+    ".exam-sec-id{color:#fff;font-weight:800;font-size:0.7rem;letter-spacing:0.08em;padding:0.15rem 0.6rem;border-radius:4px;white-space:nowrap}",
+    ".exam-sec-title{font-weight:800;font-size:0.85rem;letter-spacing:0.05em;flex:1}",
+    ".exam-sec-marks{font-size:0.78rem;color:#4b5563;white-space:nowrap}",
+    ".exam-sec-instr{font-size:0.82rem;color:#4b5563;margin-bottom:0.45rem;font-style:italic}",
+    ".exam-q{margin-bottom:0.7rem}",
+    ".exam-q-head{display:flex;gap:0.4rem;align-items:baseline}",
+    ".exam-q-no{font-weight:700;min-width:1.4rem}",
+    ".exam-q-text{flex:1;font-weight:500}",
+    ".exam-q-marks{color:#6b7280;font-size:0.8rem;white-space:nowrap}",
+    ".exam-opts{margin:0.3rem 0 0 1.8rem;display:flex;flex-direction:column;gap:0.15rem}",
+    ".exam-opts-static .exam-opt::before{content:'\\25CB';color:#6b7280;margin-right:0.45rem}",
+    ".exam-opt{display:flex;gap:0.45rem;align-items:flex-start;cursor:pointer;font-size:0.85rem;font-variant-numeric:tabular-nums}",
+    ".exam-opt input{margin-top:0.18rem}",
+    ".exam-answer-line{border-bottom:1px dotted #9ca3af;height:2.2rem;margin:0.25rem 0 0 1.8rem}",
+    ".exam-check{margin-top:0.6rem;border-top:1px dashed #d1d5db;padding-top:0.6rem;display:flex;gap:0.75rem;align-items:center;flex-wrap:wrap}",
+    ".exam-score{font-size:0.85rem}",
+    ".exam-score-good{color:#15803d;font-weight:600}",
+  ].join("");
+  document.head.appendChild(style);
+})();
+
+const EXAM_PAPER_COLORS = { necta: "#0b3d91", internal: "#14532d", exercise: "#7c2d12" };
+
+function examKindLabel(paper) {
+  const k = paper && paper.kind;
+  if (paper && paper.format_label) return paper.format_label;
+  if (k === "necta") return "NECTA-STYLE EXAMINATION";
+  if (k === "exercise") return "CLASS EXERCISE";
+  return "INTERNAL EXAMINATION";
+}
+
+function examPaperMetaLine(psummary) {
+  if (!psummary) return "";
+  const parts = [];
+  if (psummary.subject) parts.push(escapeHtml(psummary.subject));
+  if (psummary.form_label) parts.push(escapeHtml(psummary.form_label));
+  const secs = Array.isArray(psummary.sections) ? psummary.sections : [];
+  const qs = secs.reduce((n, s) => n + (parseInt(s.count, 10) || 0), 0);
+  if (qs) parts.push(qs + " questions");
+  if (psummary.total_marks != null) parts.push(psummary.total_marks + " marks");
+  return parts.join(" \u2022 ");
+}
+
+function renderExamSection(sec, ctx) {
+  const qs = Array.isArray(sec.questions) ? sec.questions : [];
+  const marks = qs.reduce((n, q) => n + (parseInt(q.marks, 10) || 0), 0);
+  let html =
+    '<div class="exam-section">' +
+    '<div class="exam-sec-head">' +
+    '<span class="exam-sec-id" style="background:' + escapeHtml(ctx.color) + '">SECTION ' + escapeHtml((sec.id || "").trim()) + "</span>" +
+    '<span class="exam-sec-title">' + escapeHtml(sec.title || "QUESTIONS") + "</span>" +
+    '<span class="exam-sec-marks">' + marks + " marks</span>" +
+    "</div>";
+  if (sec.instruction) html += '<div class="exam-sec-instr">' + escapeHtml(sec.instruction) + "</div>";
+  html += qs.map((q) => renderExamQuestion(q, sec.question_type, ctx)).join("");
+  html += "</div>";
+  return html;
+}
+
+function renderExamQuestion(q, type, ctx) {
+  const marks = parseInt(q.marks, 10) || 0;
+  const isMcq = type === "mcq";
+  let html =
+    '<div class="exam-q" data-q="' + escapeHtml(q.number) + '">' +
+    '<div class="exam-q-head">' +
+    '<span class="exam-q-no">' + escapeHtml(q.number) + ".</span>" +
+    '<span class="exam-q-text">' + escapeHtml(q.text) + "</span>" +
+    (marks ? '<span class="exam-q-marks">(' + marks + ")</span>" : "") +
+    "</div>";
+  if (isMcq) {
+    const opts = Array.isArray(q.options) ? q.options : [];
+    if (ctx.mode === "student") {
+      html +=
+        '<div class="exam-opts">' +
+        opts
+          .map(
+            (o, i) =>
+              '<label class="exam-opt"><input type="radio" name="' +
+              escapeHtml(ctx.ns + "-" + q.number) +
+              '" value="' +
+              i +
+              '"><span>' +
+              escapeHtml(o) +
+              "</span></label>"
+          )
+          .join("") +
+        "</div>";
+    } else {
+      html +=
+        '<div class="exam-opts exam-opts-static">' +
+        opts.map((o) => '<div class="exam-opt">' + escapeHtml(o) + "</div>").join("") +
+        "</div>";
+    }
+  } else {
+    if (ctx.mode === "student") {
+      html +=
+        '<div style="display:flex;gap:0.35rem;align-items:flex-start">' +
+        '<textarea class="exam-structured-answer" data-question="' + escapeHtml(q.number) + '" placeholder="Write your answer here..." style="flex:1;min-width:0;min-height:80px;padding:0.5rem;border:1px solid #d1d5db;border-radius:6px;font-family:inherit;font-size:0.9rem;resize:vertical;margin-top:0"></textarea>' +
+        '<button type="button" class="casuya-record" data-human-speech-only="true" data-lang="auto" data-label="Speak your answer" title="Speak your answer" aria-label="Speak your answer" style="margin-top:0">🎤 Voice</button>' +
+        "</div>";
+    } else {
+      html += '<div class="exam-answer-line"></div>';
+    }
+  }
+  html += "</div>";
+  return html;
+}
+
+// Render the exam paper as HTML. opts.mode: "preview" (teacher) | "student".
+// opts.ns: a unique namespace for radio name attributes (per assignment).
+function renderExamPaper(paper, opts) {
+  opts = opts || {};
+  const h = paper.header || {};
+  const sections = Array.isArray(paper.sections) ? paper.sections : [];
+  const mode = opts.mode || "preview";
+  const ns = opts.ns || "exam";
+  const color = EXAM_PAPER_COLORS[paper.kind] || "#0b3d91";
+  const label = examKindLabel(paper);
+
+  let html = '<div class="exam-paper">';
+
+  // Cover block (mirrors the top of a NECTA paper).
+  html +=
+    '<div class="exam-cover" style="border-top:5px solid ' +
+    escapeHtml(color) +
+    '">' +
+    '<div class="exam-country">UNITED REPUBLIC OF TANZANIA</div>' +
+    '<div class="exam-label">' +
+    escapeHtml(label) +
+    "</div>" +
+    (h.subject ? '<div class="exam-subject">' + escapeHtml(h.subject) + "</div>" : "") +
+    '<div class="exam-meta">' +
+    (h.form_label
+      ? '<span>Class: <b>' + escapeHtml(h.form_label) + "</b></span>"
+      : "") +
+    (h.duration ? '<span>Time Allowed: <b>' + escapeHtml(h.duration) + "</b></span>" : "") +
+    '<span>Total: <b>' + (h.total_marks != null ? parseInt(h.total_marks, 10) : 0) + " marks</b></span>" +
+    "</div>" +
+    (h.topic ? '<div class="exam-topic">Topic: ' + escapeHtml(h.topic) + "</div>" : "") +
+    "</div>";
+
+  // Instructions.
+  const instr = Array.isArray(h.instructions) ? h.instructions : [];
+  if (instr.length) {
+    html +=
+      '<div class="exam-instr">' +
+      '<div class="exam-instr-title">INSTRUCTIONS</div>' +
+      "<ol>" +
+      instr.map((i) => "<li>" + escapeHtml(i) + "</li>").join("") +
+      "</ol>" +
+      "</div>";
+  }
+
+  // Sections.
+  html += sections.map((sec) => renderExamSection(sec, { mode, ns, color })).join("");
+
+  // Auto-check control for the student view.
+  if (mode === "student") {
+    html +=
+      '<div class="exam-check">' +
+      '<button type="button" class="btn btn-sm btn-primary" data-exam-check data-exam-ns="' +
+      escapeHtml(ns) +
+      '">Check Objective Answers</button>' +
+      '<div data-exam-score class="exam-score"></div>' +
+      "</div>";
+  }
+
+  html += "</div>";
+  return html;
+}
+
+// Bind the "Check Objective Answers" auto-score using the answers carried by
+// the paper object already available to the caller (kept out of the DOM).
+// root: the container that holds the rendered paper.
+function bindExamScore(root, paper) {
+  const btn = root.querySelector("[data-exam-check]");
+  if (!btn) return;
+  const out = root.querySelector("[data-exam-score]");
+  const ns = btn.dataset.examNs || "exam";
+  btn.addEventListener("click", () => {
+    let correctMarks = 0;
+    let objectiveMarks = 0;
+    let correctQs = 0;
+    let objectiveQs = 0;
+    (paper.sections || []).forEach((sec) => {
+      if (sec.question_type !== "mcq") return;
+      (sec.questions || []).forEach((q) => {
+        objectiveQs += 1;
+        objectiveMarks += parseInt(q.marks, 10) || 1;
+        const sel = root.querySelector('input[name="' + ns + "-" + q.number + '"]:checked');
+        if (sel && parseInt(sel.value, 10) === q.answer) {
+          correctQs += 1;
+          correctMarks += parseInt(q.marks, 10) || 1;
+        }
+      });
+    });
+    const pct = objectiveQs ? Math.round((correctQs / objectiveQs) * 100) : 0;
+    if (out) {
+      out.innerHTML =
+        '<span class="exam-score-good">Objective answers: <b>' +
+        correctQs +
+        "/" +
+        objectiveQs +
+        " correct (" +
+        correctMarks +
+        "/" +
+        objectiveMarks +
+        " marks)</b> \u2014 " +
+        pct +
+        "%</span>";
+    }
+  });
+}
+;
+// modules/lazy-script.js — one-shot classic-script loader (shared global scope).
+// Used to fetch route chunks and the speech bundle after first paint.
+
+var _casuyaScriptLoads = Object.create(null);
+
+function casuyaAssetUrl(src) {
+  if (!src) return src;
+  var path = String(src).split("?")[0];
+  var map = window.CASUYA_ASSETS;
+  var v = map && map[path];
+  return v ? path + "?v=" + v : src;
+}
+
+function loadCasuyaScript(src) {
+  src = casuyaAssetUrl(src);
+  if (_casuyaScriptLoads[src]) return _casuyaScriptLoads[src];
+  _casuyaScriptLoads[src] = new Promise(function (resolve, reject) {
+    var existing = document.querySelector('script[src="' + src + '"]');
+    if (existing && existing.getAttribute("data-casuya-loaded") === "1") {
+      resolve();
+      return;
+    }
+    var s = existing || document.createElement("script");
+    s.src = src;
+    s.async = true;
+    s.onload = function () {
+      s.setAttribute("data-casuya-loaded", "1");
+      resolve();
+    };
+    s.onerror = function () {
+      delete _casuyaScriptLoads[src];
+      reject(new Error("Failed to load " + src));
+    };
+    if (!existing) document.head.appendChild(s);
+  });
+  return _casuyaScriptLoads[src];
+}
+
+function ensureSpeechBundle() {
+  if (typeof casuyaSpeakText === "function") return Promise.resolve();
+  return loadCasuyaScript("/assets/js/speech.bundle.js");
+}
+
+document.addEventListener("click", function (e) {
+  var el = e.target && e.target.closest && e.target.closest(".casuya-listen, .casuya-record");
+  if (!el) return;
+  if (typeof casuyaSpeakText === "function") return;
+  e.preventDefault();
+  e.stopImmediatePropagation();
+  ensureSpeechBundle().then(function () {
+    el.click();
+  }).catch(function () {});
+}, true);
+
+window.loadCasuyaScript = loadCasuyaScript;
+window.ensureSpeechBundle = ensureSpeechBundle;
+window.casuyaAssetUrl = casuyaAssetUrl;
+
+;
+// API_HOST / API_PROTOCOL / API_BASE are declared once in modules/api.js and
+// shared as globals when this file is concatenated into a classic-script bundle.
+// When loaded directly as an ES module (login.html, register.html, …) those
+// globals are not present, so resolve the base from the central config resolver.
+
+function resolveApiBase() {
+  if (typeof window !== "undefined" && window.API_BASE) return window.API_BASE;
+  if (typeof window !== "undefined" && window.casuyaApiBase) return window.casuyaApiBase();
+  return window.location.origin;
+}
+
+const STORAGE_KEYS = {
+  accessToken: "casuya_token",
+  refreshToken: "casuya_refresh_token",
+  userId: "casuya_user_id",
+  role: "casuya_role",
+};
+
+function safeJsonParse(text) {
+  if (!text) return null;
+  try {
+    return JSON.parse(text);
+  } catch {
+    return null;
+  }
+}
+
+function buildApiUrl(path, method = "GET") {
+  const normalizedPath = path.startsWith("/") ? path : `/${path}`;
+  const [pathname, search = ""] = normalizedPath.split("?");
+  return `${resolveApiBase()}${pathname}${search ? `?${search}` : ""}`;
+}
+
+function getAuthHeaders(headers = {}, includeJson = true) {
+  const nextHeaders = { ...headers };
+  const accessToken = getAccessToken();
+
+  if (includeJson && !nextHeaders["Content-Type"]) {
+    nextHeaders["Content-Type"] = "application/json";
+  }
+
+  if (accessToken && !nextHeaders.Authorization) {
+    nextHeaders.Authorization = `Bearer ${accessToken}`;
+  }
+
+  return nextHeaders;
+}
+
+function getApiBase() {
+  return resolveApiBase();
+}
+
+function getPortalPath(role) {
+  if (role === "admin") return "/admin/";
+  if (role === "teacher") return "/teacher/";
+  if (role === "pending") return "/select-role.html";
+  return "/student/";
+}
+
+function getStoredAuth() {
+  return {
+    accessToken: localStorage.getItem(STORAGE_KEYS.accessToken),
+    refreshToken: localStorage.getItem(STORAGE_KEYS.refreshToken),
+    userId: localStorage.getItem(STORAGE_KEYS.userId),
+    role: localStorage.getItem(STORAGE_KEYS.role),
+  };
+}
+
+function getAccessToken() {
+  return localStorage.getItem(STORAGE_KEYS.accessToken);
+}
+
+function getRefreshToken() {
+  return localStorage.getItem(STORAGE_KEYS.refreshToken);
+}
+
+function persistAuth(data) {
+  if (data.access_token) {
+    localStorage.setItem(STORAGE_KEYS.accessToken, data.access_token);
+  }
+  if (data.refresh_token) {
+    localStorage.setItem(STORAGE_KEYS.refreshToken, data.refresh_token);
+  }
+  if (data.user_id) {
+    localStorage.setItem(STORAGE_KEYS.userId, data.user_id);
+  }
+  if (data.role) {
+    localStorage.setItem(STORAGE_KEYS.role, data.role);
+  }
+  if (data.accessibility_prefs) {
+    localStorage.setItem("casuya_accessibility_prefs", JSON.stringify(data.accessibility_prefs));
+  }
+}
+
+function clearAuth() {
+  Object.values(STORAGE_KEYS).forEach((key) => localStorage.removeItem(key));
+  if (typeof clearRequestCaches === "function") clearRequestCaches();
+}
+
+function redirectToPortal(role) {
+  window.location.replace(getPortalPath(role));
+}
+
+function redirectToLogin() {
+  window.location.replace("/login.html");
+}
+
+async function refreshAccessToken() {
+  const refreshToken = getRefreshToken();
+  if (!refreshToken) {
+    throw new Error("No refresh token available");
+  }
+
+  let response;
+  try {
+    response = await fetch(buildApiUrl("/auth/refresh", "POST"), {
+      method: "POST",
+      headers: { "Content-Type": "application/json" },
+      body: JSON.stringify({ refresh_token: refreshToken }),
+    });
+  } catch (networkError) {
+    clearAuth();
+    throw new Error("Network error during token refresh. Please check your connection.");
+  }
+
+  const data = safeJsonParse(await response.text()) || {};
+
+  if (!response.ok || !data.access_token) {
+    clearAuth();
+    throw new Error(data.detail || "Session expired. Please sign in again.");
+  }
+
+  persistAuth(data);
+  return data.access_token;
+}
+
+async function apiRequest(path, options = {}) {
+  const method = (options.method || "GET").toUpperCase();
+  const isFormData = typeof FormData !== "undefined" && options.body instanceof FormData;
+  const headers = getAuthHeaders(options.headers, !isFormData);
+
+  const response = await fetch(buildApiUrl(path, method), {
+    ...options,
+    method,
+    headers,
+  });
+
+  if (response.status === 401 && options.retryOnAuthFailure !== false && getRefreshToken()) {
+    try {
+      await refreshAccessToken();
+      return apiRequest(path, { ...options, retryOnAuthFailure: false });
+    } catch (error) {
+      clearAuth();
+      throw error;
+    }
+  }
+
+  const text = await response.text();
+  const data = safeJsonParse(text);
+
+  if (!response.ok) {
+    if (response.status === 401) {
+      clearAuth();
+      throw new Error(data?.detail || "Session expired. Please sign in again.");
+    }
+    throw new Error(data?.detail || response.statusText || "Request failed");
+  }
+
+  return data ?? text;
+}
+
+async function login({ email, password, keep_logged_in = false }) {
+  const data = await apiRequest("/auth/login", {
+    method: "POST",
+    body: JSON.stringify({ email, password, keep_logged_in }),
+    retryOnAuthFailure: false,
+  });
+
+  persistAuth(data);
+  return data;
+}
+
+function requireRole(expectedRole) {
+  const auth = getStoredAuth();
+
+  if (!auth.accessToken || !auth.role) {
+    clearAuth();
+    redirectToLogin();
+    return null;
+  }
+
+  if (expectedRole && auth.role !== expectedRole) {
+    redirectToPortal(auth.role);
+    return null;
+  }
+
+  return auth;
+}
+
+;
+// Shared client-side role guard for the role-specific portals.
+// Redirects unauthenticated users to login and users with the wrong role
+// to their own portal, then signals the host page that the guard passed.
+
+const ROLE_PORTALS = {
+  admin: "/admin/",
+  teacher: "/teacher/",
+  student: "/student/",
+  pending: "/select-role.html",
+};
+
+const AUTH_STORAGE_KEYS = [
+  "casuya_token",
+  "casuya_refresh_token",
+  "casuya_user_id",
+  "casuya_role",
+];
+
+function decodeTokenRole(token) {
+  try {
+    const payload = JSON.parse(atob(token.split(".")[1]));
+    return payload.role || null;
+  } catch {
+    return null;
+  }
+}
+
+function clearAuthData() {
+  AUTH_STORAGE_KEYS.forEach((key) => localStorage.removeItem(key));
+}
+
+function guardPortal(expectedRole) {
+  const token = localStorage.getItem("casuya_token");
+  if (!token) {
+    clearAuthData();
+    window.location.replace("/login.html");
+    return false;
+  }
+  const role = decodeTokenRole(token);
+  if (!role) {
+    clearAuthData();
+    window.location.replace("/login.html");
+    return false;
+  }
+  if (role !== expectedRole) {
+    clearAuthData();
+    const target = ROLE_PORTALS[role] || "/login.html";
+    window.location.replace(target);
+    return false;
+  }
+  return true;
+}
+
+;
+// Shared accessibility toolbar — load after DOM ready
+// Provides: dyslexia font, high contrast, large text, wide spacing, TTS, font size
+(function () {
+  var state = {
+    dyslexia: false,
+    highContrast: false,
+    largeText: false,
+    wideSpacing: false,
+    tts: false,
+    speechRate: 0.9,
+    fontSize: 100
+  };
+
+  try {
+    var saved = JSON.parse(localStorage.getItem('casuya_a11y'));
+    if (saved) Object.assign(state, saved);
+  } catch (e) {}
+
+  function saveState() {
+    try { localStorage.setItem('casuya_a11y', JSON.stringify(state)); } catch (e) {}
+  }
+
+  function applyState() {
+    document.body.classList.toggle('dyslexia-mode', state.dyslexia);
+    document.body.classList.toggle('high-contrast', state.highContrast);
+    document.body.classList.toggle('large-text', state.largeText);
+    document.body.classList.toggle('extra-large-text', state.fontSize >= 150 && state.fontSize < 200);
+    document.body.classList.toggle('max-text', state.fontSize >= 200);
+    document.body.classList.toggle('wide-spacing', state.wideSpacing);
+
+    document.querySelectorAll('.a11y-toggle-btn').forEach(function (btn, i) {
+      var vals = [state.dyslexia, state.highContrast, state.largeText, state.wideSpacing, state.tts];
+      btn.classList.toggle('active', vals[i]);
+    });
+
+    var ids = ['a11y-dyslexia', 'a11y-contrast', 'a11y-large-text', 'a11y-wide-spacing', 'a11y-tts'];
+    var keys = ['dyslexia', 'highContrast', 'largeText', 'wideSpacing', 'tts'];
+    ids.forEach(function (id, i) {
+      var el = document.getElementById(id);
+      if (el) el.setAttribute('aria-pressed', state[keys[i]]);
+    });
+
+    var speedRow = document.getElementById('a11y-speed-row');
+    var speechCtrl = document.getElementById('speech-controls');
+    if (speedRow) speedRow.style.display = state.tts ? 'flex' : 'none';
+    if (speechCtrl) speechCtrl.style.display = state.tts ? 'flex' : 'none';
+
+    var fontSlider = document.getElementById('a11y-fontsize');
+    var fontLabel = document.getElementById('a11y-fontsize-label');
+    if (fontSlider && fontLabel) {
+      fontSlider.value = state.fontSize;
+      fontLabel.textContent = state.fontSize + '%';
+    }
+
+    saveState();
+  }
+
+  applyState();
+
+  var toggleBtn = document.getElementById('a11y-toggle-btn');
+  var panel = document.getElementById('a11y-panel');
+
+  if (toggleBtn && panel) {
+    toggleBtn.addEventListener('click', function (e) {
+      e.stopPropagation();
+      var isOpen = panel.classList.toggle('open');
+      toggleBtn.setAttribute('aria-expanded', isOpen);
+    });
+
+    document.addEventListener('click', function (e) {
+      if (!panel.contains(e.target) && !toggleBtn.contains(e.target)) {
+        panel.classList.remove('open');
+        toggleBtn.setAttribute('aria-expanded', 'false');
+      }
+    });
+
+    document.addEventListener('keydown', function (e) {
+      if (e.key === 'Escape' && panel.classList.contains('open')) {
+        panel.classList.remove('open');
+        toggleBtn.setAttribute('aria-expanded', 'false');
+        toggleBtn.focus();
+      }
+    });
+  }
+
+  // Toggle handlers
+  var toggleMap = {
+    'a11y-dyslexia': 'dyslexia',
+    'a11y-contrast': 'highContrast',
+    'a11y-large-text': 'largeText',
+    'a11y-wide-spacing': 'wideSpacing'
+  };
+  Object.keys(toggleMap).forEach(function (id) {
+    var el = document.getElementById(id);
+    if (el) el.addEventListener('click', function () {
+      state[toggleMap[id]] = !state[toggleMap[id]];
+      applyState();
+    });
+  });
+
+  var ttsBtn = document.getElementById('a11y-tts');
+  if (ttsBtn) {
+    ttsBtn.addEventListener('click', function () {
+      state.tts = !state.tts;
+      applyState();
+      if (!state.tts) stopSpeech();
+    });
+  }
+
+  // Font size slider
+  var fontSlider = document.getElementById('a11y-fontsize');
+  if (fontSlider) {
+    fontSlider.addEventListener('input', function () {
+      state.fontSize = parseInt(this.value);
+      applyState();
+    });
+  }
+
+  // Keyboard support
+  document.querySelectorAll('.a11y-option').forEach(function (el) {
+    el.addEventListener('keydown', function (e) {
+      if (e.key === 'Enter' || e.key === ' ') { e.preventDefault(); el.click(); }
+    });
+  });
+
+  // Speech rate slider
+  var speedSlider = document.getElementById('a11y-speed');
+  var speedLabel = document.getElementById('a11y-speed-label');
+  if (speedSlider) {
+    speedSlider.addEventListener('input', function () {
+      state.speechRate = parseFloat(this.value);
+      if (speedLabel) speedLabel.textContent = state.speechRate.toFixed(1) + 'x';
+      saveState();
+    });
+  }
+
+  function findVoice(lang) {
+    if (window.__casuyaSpeech && typeof window.__casuyaSpeech.findVoice === 'function') {
+      return window.__casuyaSpeech.findVoice(lang);
+    }
+    if (!window.speechSynthesis) return null;
+    var voices = window.speechSynthesis.getVoices();
+    var preferred = lang === 'sw'
+      ? ['sw-TZ', 'sw-KE', 'sw-UG', 'sw', 'en-TZ', 'en-KE']
+      : ['en-TZ', 'en-KE', 'en-UG', 'en-GH', 'en-ZA', 'en-GB', 'en-US'];
+    for (var i = 0; i < preferred.length; i++) {
+      var match = voices.filter(function (v) { return v.lang === preferred[i]; });
+      if (match.length) return match[0];
+    }
+    return null;
+  }
+
+  function getSelectedText() {
+    var sel = window.getSelection();
+    if (sel && sel.toString().trim()) return sel.toString().trim();
+    return document.body.textContent.substring(0, 2000);
+  }
+
+  function stopSpeech() {
+    var speechStatus = document.getElementById('speech-status');
+    if (typeof casuyaStopAll === 'function') casuyaStopAll();
+    else if (window.speechSynthesis) window.speechSynthesis.cancel();
+    state.controller = null;
+    if (speechStatus) speechStatus.textContent = 'Done';
+  }
+
+  function speak(text) {
+    stopSpeech();
+    // Prefer the Casuya Sherpa-ONNX voice through the platform proxy when the
+    // user is logged in; the browser voice is the fallback on public pages.
+    var uiLang = null;
+    try { uiLang = localStorage.getItem('casuya_lang'); } catch (e) {}
+    var lang = typeof casuyaDetectLang === 'function'
+      ? casuyaDetectLang(text, (uiLang === 'sw' || uiLang === 'en') ? uiLang : 'auto')
+      : (uiLang === 'sw' ? 'sw' : 'en');
+    if (typeof casuyaSpeakText === 'function' && casuyaIsAuthed()) {
+      var speechStatus = document.getElementById('speech-status');
+      state.controller = casuyaSpeakText(text, {
+        lang: lang,
+        rate: state.speechRate || 0.9,
+        onLoading: function () { if (speechStatus) speechStatus.textContent = 'Loading audio...'; },
+        onStart: function () { if (speechStatus) speechStatus.textContent = 'Speaking...'; },
+        onEnd: function () { if (speechStatus) speechStatus.textContent = 'Done'; state.controller = null; },
+        onError: function () { if (speechStatus) speechStatus.textContent = 'Error'; state.controller = null; }
+      });
+      return state.controller;
+    }
+    window.speechSynthesis.cancel();
+    var u = new SpeechSynthesisUtterance(text);
+    var voice = findVoice(lang);
+    if (voice) { u.voice = voice; u.lang = voice.lang; } else { u.lang = lang === 'sw' ? 'sw-TZ' : 'en-TZ'; }
+    u.rate = state.speechRate || 0.9;
+    u.pitch = 1.0;
+    u.volume = 1.0;
+    var speechStatus = document.getElementById('speech-status');
+    u.onstart = function () { if (speechStatus) speechStatus.textContent = 'Speaking...'; };
+    u.onend = function () { if (speechStatus) speechStatus.textContent = 'Done'; };
+    u.onerror = function () { if (speechStatus) speechStatus.textContent = 'Error'; };
+    window.speechSynthesis.speak(u);
+  }
+
+  // Speech controls
+  var speechPlay = document.getElementById('speech-play');
+  var speechPause = document.getElementById('speech-pause');
+  var speechStop = document.getElementById('speech-stop');
+  if (speechPlay) {
+    speechPlay.addEventListener('click', function () {
+      var ctrl = state.controller;
+      // API mode: resume the <audio> element; if that succeeds we're done.
+      if (ctrl && typeof ctrl.resume === 'function' && ctrl.resume()) return;
+      // Browser mode (or fallback): resume if paused, otherwise read fresh.
+      if (window.speechSynthesis.paused) {
+        window.speechSynthesis.resume();
+      } else {
+        speak(getSelectedText());
+      }
+    });
+  }
+  if (speechPause) {
+    speechPause.addEventListener('click', function () {
+      // API mode: pause the <audio> element; if that succeeds we're done.
+      var ctrl = state.controller;
+      if (ctrl && typeof ctrl.pause === 'function' && ctrl.pause()) return;
+      if (window.speechSynthesis) window.speechSynthesis.pause();
+    });
+  }
+  if (speechStop) {
+    speechStop.addEventListener('click', function () {
+      stopSpeech();
+    });
+  }
+
+  // Ctrl+U shortcut
+  document.addEventListener('keydown', function (e) {
+    if (e.ctrlKey && e.key === 'u' && toggleBtn) {
+      e.preventDefault();
+      toggleBtn.click();
+    }
+  });
+
+  // Preload voices
+  if (window.speechSynthesis) {
+    window.speechSynthesis.onvoiceschanged = function () {};
+    window.speechSynthesis.getVoices();
+  }
+
+  // Expose for other scripts
+  window.__casuyaA11y = { state: state, speak: speak, findVoice: findVoice };
+})();
+
+;
+// modules/student/game-runtime.js — mount games and lessons in packages/runtime.
+// Falls back to srcdoc if the runtime IIFE is missing or rejects the package.
+
+"use strict";
+
+var CASUYA_RUNTIME_SRC = "/static/pkg/runtime/casuya-runtime.min.js";
+var _casuyaRuntimeByEl = typeof WeakMap === "function" ? new WeakMap() : null;
+
+function loadCasuyaRuntime() {
+  if (window.CasuyaRuntime && window.CasuyaRuntime.Runtime) return Promise.resolve(true);
+  var loader = typeof loadCasuyaScript === "function" ? loadCasuyaScript : null;
+  if (!loader) return Promise.resolve(false);
+  var src = typeof casuyaAssetUrl === "function" ? casuyaAssetUrl(CASUYA_RUNTIME_SRC) : CASUYA_RUNTIME_SRC;
+  return loader(src).then(function () {
+    return !!(window.CasuyaRuntime && window.CasuyaRuntime.Runtime);
+  }).catch(function () { return false; });
+}
+
+function htmlToRuntimePackage(html, id, title, type, permissions) {
+  var safeId = String(id || type || "content").replace(/[^a-zA-Z0-9._-]/g, "-").slice(0, 120) || "content";
+  var bytes = new TextEncoder().encode(html);
+  return {
+    manifest: {
+      id: safeId,
+      version: "1.0.0",
+      title: String(title || type || "Content").slice(0, 200),
+      type: type || "game",
+      permissions: permissions || ["game", "storage", "canvas"],
+      entry: "index.html",
+    },
+    resources: { "index.html": bytes },
+  };
+}
+
+function prepareContentHtml(html, injectBridge) {
+  var out = html || "";
+  if (injectBridge && typeof injectBridgeScript === "function") out = injectBridgeScript(out);
+  if (typeof injectNodeBase === "function") out = injectNodeBase(out);
+  return out;
+}
+
+function runtimeIframe(container, rt) {
+  try {
+    if (rt && rt.renderer && typeof rt.renderer.getIframe === "function") {
+      var inner = rt.renderer.getIframe();
+      if (inner) return inner;
+    }
+  } catch (e) {}
+  return container ? container.querySelector("iframe") : null;
+}
+
+function fitRuntimeIframe(container, iframe) {
+  if (!iframe) return;
+  var heightSet = false;
+  var setHeight = function () {
+    if (heightSet) return;
+    try {
+      var doc = iframe.contentWindow && iframe.contentWindow.document;
+      if (doc) {
+        var h = Math.max(
+          (doc.documentElement && doc.documentElement.scrollHeight) || 0,
+          (doc.body && doc.body.scrollHeight) || 0,
+          300
+        );
+        iframe.style.height = h + "px";
+        if (container) {
+          container.style.height = h + "px";
+          container.style.overflow = "visible";
+        }
+        heightSet = true;
+      }
+    } catch (e) {}
+  };
+  iframe.addEventListener("load", setHeight);
+  var poll = setInterval(function () { setHeight(); if (heightSet) clearInterval(poll); }, 300);
+  setTimeout(function () { clearInterval(poll); if (!heightSet) iframe.style.height = "600px"; }, 8000);
+}
+
+function mountGameSrcdoc(container, html) {
+  if (!container) return { cleanup: function () {}, getIframe: function () { return null; } };
+  var iframe = document.createElement("iframe");
+  iframe.className = "lesson-iframe-inner";
+  iframe.style.cssText = "width:100%;border:none;display:block;min-height:300px";
+  iframe.setAttribute("sandbox", "allow-scripts allow-forms");
+  container.innerHTML = "";
+  container.appendChild(iframe);
+  iframe.srcdoc = html;
+  fitRuntimeIframe(container, iframe);
+  return {
+    cleanup: function () { try { container.innerHTML = ""; } catch (e) {} },
+    getIframe: function () { return iframe; },
+  };
+}
+
+async function destroyRuntimeOn(container) {
+  if (!_casuyaRuntimeByEl || !container) return;
+  var prev = _casuyaRuntimeByEl.get(container);
+  if (prev && typeof prev.destroy === "function") {
+    try { await prev.destroy(); } catch (e) {}
+    _casuyaRuntimeByEl.delete(container);
+  }
+}
+
+async function mountContentRuntime(container, html, meta) {
+  var type = (meta && meta.type) || "game";
+  var permissions = (meta && meta.permissions) || (
+    type === "lesson"
+      ? ["storage", "media", "quiz", "timer", "video", "audio"]
+      : ["game", "storage", "canvas", "media"]
+  );
+  var injectBridge = !!(meta && meta.injectBridge);
+  var prepared = prepareContentHtml(html, injectBridge);
+  await destroyRuntimeOn(container);
+  var empty = { cleanup: function () {}, getIframe: function () { return container ? container.querySelector("iframe") : null; } };
+  if (!container || !prepared) {
+    return empty;
+  }
+  var ok = await loadCasuyaRuntime();
+  if (!ok) {
+    return mountGameSrcdoc(container, prepared);
+  }
+  container.style.minHeight = "300px";
+  container.style.width = "100%";
+  if (!container.style.height) container.style.height = type === "lesson" ? "auto" : "600px";
+  var Runtime = window.CasuyaRuntime.Runtime;
+  // Lessons omit allow-same-origin so srcdoc stays isolated from the parent
+  // CSP; the bridge uses postMessage only.
+  var sandbox = type === "lesson"
+    ? "allow-scripts allow-forms"
+    : "allow-scripts allow-same-origin";
+  var rt = new Runtime({
+    container: container,
+    permissions: permissions,
+    renderer: {
+      iframeAttributes: { sandbox: sandbox, loading: "eager" },
+    },
+  });
+  if (_casuyaRuntimeByEl) _casuyaRuntimeByEl.set(container, rt);
+  try {
+    await rt.load(htmlToRuntimePackage(prepared, meta && meta.id, meta && meta.title, type, permissions));
+    await rt.start();
+    var iframe = runtimeIframe(container, rt);
+    fitRuntimeIframe(container, iframe);
+    return {
+      cleanup: function () {
+        rt.destroy();
+        if (_casuyaRuntimeByEl && _casuyaRuntimeByEl.get(container) === rt) {
+          _casuyaRuntimeByEl.delete(container);
+        }
+      },
+      getIframe: function () { return runtimeIframe(container, rt); },
+    };
+  } catch (e) {
+    try { await rt.destroy(); } catch (e2) {}
+    if (_casuyaRuntimeByEl && _casuyaRuntimeByEl.get(container) === rt) {
+      _casuyaRuntimeByEl.delete(container);
+    }
+    return mountGameSrcdoc(container, prepared);
+  }
+}
+
+async function mountGameRuntime(container, html, meta) {
+  var handle = await mountContentRuntime(container, html, {
+    id: meta && meta.id,
+    title: meta && meta.title,
+    type: "game",
+    permissions: ["game", "storage", "canvas", "media"],
+    injectBridge: false,
+  });
+  return handle && handle.cleanup ? handle.cleanup : function () {};
+}
+
+async function mountLessonRuntime(container, html, meta) {
+  return mountContentRuntime(container, html, {
+    id: meta && meta.id,
+    title: meta && meta.title,
+    type: "lesson",
+    permissions: ["storage", "media", "quiz", "timer", "video", "audio"],
+    injectBridge: true,
+  });
+}
+
+;
+// modules/lesson/lesson-viewer/iframe.js — lesson iframe mount + teardown.
+
+let _currentLessonIframe = null;
+let _currentLessonCleanup = null;
+
+function teardownCurrentIframe() {
+  if (typeof _currentLessonCleanup === "function") {
+    try { _currentLessonCleanup(); } catch (e) {}
+    _currentLessonCleanup = null;
+  }
+  if (_currentLessonIframe) {
+    try {
+      const ivs = _currentLessonIframe.contentWindow?.casuya?._intervals || [];
+      ivs.forEach(id => _currentLessonIframe.contentWindow.clearInterval(id));
+    } catch(e) {}
+    _currentLessonIframe = null;
+  }
+}
+
+async function mountLessonIframe(container, html) {
+  teardownCurrentIframe();
+  const mount = container.querySelector(".lesson-iframe") || container;
+  if (typeof mountLessonRuntime === "function") {
+    const handle = await mountLessonRuntime(mount, html, { id: "lesson", title: "Lesson" });
+    _currentLessonIframe = handle.getIframe ? handle.getIframe() : mount.querySelector("iframe");
+    _currentLessonCleanup = handle.cleanup;
+    return _currentLessonIframe;
+  }
+  if (mount.tagName === "IFRAME") {
+    _currentLessonIframe = mount;
+    mount.srcdoc = injectNodeBase(html);
+  } else if (typeof mountGameSrcdoc === "function") {
+    const handle = mountGameSrcdoc(mount, typeof injectNodeBase === "function" ? injectNodeBase(html) : html);
+    _currentLessonIframe = handle.getIframe ? handle.getIframe() : mount.querySelector("iframe");
+    _currentLessonCleanup = handle.cleanup;
+    return _currentLessonIframe;
+  }
+  return _currentLessonIframe;
+}
+
+;
+// modules/lesson/lesson-viewer/sections.js — lesson viewer page template.
+
+function renderLessonSections({ lessonTitle, canBookmark, bookmarked, isStudent, quizData, gamesData, noteData, lessonId, lessonLang }) {
+  return `
+    <div class="content" style="max-width:100%;padding:0">
+      <div style="padding:0.75rem 1rem;display:flex;align-items:center;gap:0.5rem;background:var(--color-surface);border-bottom:1px solid var(--color-border);flex-wrap:wrap">
+        <button class="btn btn-primary lesson-back-btn" style="margin-bottom:0">&larr; Back</button>
+        <span style="flex:1;font-weight:600;font-size:0.95rem">${escapeHtml(lessonTitle)}</span>
+        <span id="lesson-listen-slot"></span>
+        ${canBookmark ? `
+          <button class="btn btn-sm lesson-bookmark-btn" style="${bookmarked ? 'background:var(--color-warning);color:#fff' : ''};margin-bottom:0">${bookmarked ? "★" : "☆"}</button>
+        ` : ""}
+        ${isStudent ? `
+          <button class="btn btn-success btn-sm lesson-complete-btn" style="margin-bottom:0">Mark Complete</button>
+        ` : ""}
+      </div>
+      <div style="width:100%">
+        <div id="lesson-runtime-mount" class="lesson-iframe" style="width:100%;min-height:300px"></div>
+      </div>
+      ${isStudent ? `
+        <div style="padding:0 1rem">
+          <details style="margin-top:0.75rem">
+            <summary style="cursor:pointer;font-weight:600;font-size:0.9rem;color:var(--color-text-muted)">📝 My Notes</summary>
+            <div style="margin-top:0.5rem">
+              <textarea id="lesson-notes" rows="4" style="width:100%;padding:0.5rem;border:1px solid var(--color-border);border-radius:var(--radius);font-size:0.85rem">${escapeHtml(noteData?.content || "")}</textarea>
+              <div style="display:flex;gap:0.35rem;align-items:center;margin-top:0.35rem">
+                <button class="btn btn-sm btn-primary" id="notes-save-btn">Save Notes</button>
+                <button type="button" class="casuya-record" data-target="#lesson-notes" title="Speak instead of typing" aria-label="Speak instead of typing">🎤 Voice</button>
+                <span id="notes-status" style="font-size:0.8rem;color:var(--color-text-muted);margin-left:0.5rem"></span>
+              </div>
+            </div>
+          </details>
+          ${renderLessonQuiz(quizData, lessonId, lessonLang)}
+          ${renderLessonGames(gamesData)}
+          <div class="card" style="margin-top:0.75rem;padding:1rem">
+            <h3 style="margin:0 0 0.5rem">✏️ Practice Blackboard</h3>
+            <p style="font-size:0.85rem;color:var(--color-text-muted);margin:0 0 0.5rem">Work out the steps below. Your progress is saved automatically.</p>
+            <div data-blackboard data-lesson-id="${escapeHtml(lessonId)}" style="width:100%;height:420px;border:1px solid var(--color-border);border-radius:var(--radius);overflow:hidden"></div>
+          </div>
+        </div>
+      ` : ""}
+    </div>
+  `;
+}
+;
+// modules/lesson/lesson-viewer/interactions.js — wires up all lesson-viewer buttons & listeners.
+
+function bindLessonInteractions({ container, iframe, lessonId, isStudent, canBookmark, quizData, state, showToast, sendProgress, onMessage, backFn, lesson, lessonContent }) {
+  window.__casuyaQuizLessonMeta = {
+    lessonId: lessonId,
+    title: lesson && lesson.title,
+    subject_slug: lesson && lesson.subject_slug,
+    form_level: lesson && lesson.form_level,
+    topic: lesson && lesson.topic_title,
+    subtopic: lesson && lesson.subtopic_title,
+  };
+  if (isStudent) {
+    const completeBtn = container.querySelector(".lesson-complete-btn");
+    if (completeBtn) {
+      completeBtn.addEventListener("click", () => {
+        sendProgress(100, null);
+        completeBtn.textContent = "✓ Complete!";
+        completeBtn.disabled = true;
+        completeBtn.style.opacity = "0.6";
+      });
+    }
+
+    // Bookmark toggle
+    const bmBtn = container.querySelector(".lesson-bookmark-btn");
+    if (bmBtn) {
+      bmBtn.addEventListener("click", async () => {
+        try {
+          if (state.bookmarked) {
+            await request(`/bookmarks/${lessonId}`, { method: "DELETE" });
+            state.bookmarked = false; bmBtn.textContent = "☆"; bmBtn.style.background = "";
+            showToast("Bookmark removed");
+          } else {
+            await request(`/bookmarks/${lessonId}`, { method: "POST" });
+            state.bookmarked = true; bmBtn.textContent = "★"; bmBtn.style.background = "var(--color-warning)"; bmBtn.style.color = "#fff";
+            showToast("Bookmarked!");
+          }
+        } catch(e) { showToast("Failed to update bookmark"); }
+      });
+    }
+
+    // Notes save
+    document.getElementById("notes-save-btn")?.addEventListener("click", async () => {
+      const content = document.getElementById("lesson-notes")?.value || "";
+      const status = document.getElementById("notes-status");
+      try {
+        await request(`/notes/${lessonId}`, { method: "PUT", body: JSON.stringify({ content }) });
+        status.textContent = "Saved ✓";
+        setTimeout(() => status.textContent = "", 2000);
+      } catch(e) { status.textContent = "Failed to save"; }
+    });
+
+    // Quiz submission — now wired to Show your work blackboards
+    document.getElementById("quiz-form")?.addEventListener("submit", async (e) => {
+      e.preventDefault();
+      const btn = document.getElementById("quiz-submit-btn");
+      btn.disabled = true; btn.textContent = "Submitting...";
+      const answers = {};
+      if (quizData && quizData.questions) {
+        quizData.questions.forEach(q => {
+          const sel = document.querySelector(`input[name="q_${q.id}"]:checked`);
+          if (sel) answers[q.id] = sel.value;
+        });
+      }
+      // Collect Show your work snapshots per question
+      let work = null;
+      try {
+        if (window.CasuyaBlackboardEmbed && window.CasuyaBlackboardEmbed.collectWorkMap) {
+          work = window.CasuyaBlackboardEmbed.collectWorkMap("[data-quiz-question]");
+        } else {
+          work = {};
+          document.querySelectorAll("[data-quiz-question]").forEach(el => {
+            const qid = el.dataset.quizQuestion;
+            const bb = el._casuyaBlackboard;
+            if (bb && bb.getWorkSnapshot) work[qid] = bb.getWorkSnapshot();
+            else if (bb && bb.getElements) { const els = bb.getElements(); work[qid] = { elements: els, hasWork: els.length>0, recognizedLatex: els.length>0?"__drawing__":"" }; }
+          });
+        }
+        if (work && Object.keys(work).length === 0) work = null;
+      } catch {}
+      try {
+        const body = work ? { answers, work } : { answers };
+        const result = await request(`/quizzes/${quizData.id}/submit`, {
+          method: "POST", body: JSON.stringify(body),
+        });
+        const el = document.getElementById("quiz-result");
+        el.style.display = "block";
+        const pct = result.combined_percentage != null ? result.combined_percentage : result.percentage;
+        const hasWork = result.work_score != null;
+        el.innerHTML = `
+          <p style="font-weight:600">Score: ${result.score} / ${result.total} (${Math.round(result.percentage)}%)</p>
+          ${hasWork ? `<p style="font-size:0.85rem;color:var(--color-text-muted)">Work: ${result.work_score}/${result.work_total} (${Math.round(result.work_percentage)}%) · Combined (70% answer + 30% work): <strong>${Math.round(pct)}%</strong></p>` : ``}
+          ${pct >= 50 ? '<p style="color:var(--color-success)">✅ Passed!</p>' : '<p style="color:red">❌ Try again</p>'}
+          ${hasWork && result.work_score < result.work_total ? '<p style="font-size:0.8rem;color:var(--color-text-muted)">Tip: open "Show your work" on each question to earn work credit.</p>' : ''}
+        `;
+        if (pct < 50 && Array.isArray(result.wrong_questions) && result.wrong_questions.length && typeof mountLessonQuizTutor === "function") {
+          mountLessonQuizTutor(el, result.wrong_questions, {
+            lessonId: lessonId,
+            lesson: lesson,
+            lessonTitle: lesson && lesson.title,
+            lessonContent: lessonContent,
+            subject_slug: lesson && lesson.subject_slug,
+            form_level: lesson && lesson.form_level,
+            topic: lesson && lesson.topic_title,
+            subtopic: lesson && lesson.subtopic_title,
+          });
+        }
+        sendProgress(100, pct);
+        state.quizScoreSent = true;
+      } catch(err) {
+        document.getElementById("quiz-result").style.display = "block";
+        document.getElementById("quiz-result").innerHTML = `<p style="color:red">Error: ${escapeHtml(err.message)}</p>`;
+      }
+      btn.disabled = false; btn.textContent = "Submit Quiz";
+    });
+  }
+
+  // Mount blackboard (if embed script is present)
+  if (window.CasuyaBlackboardEmbed) {
+    window.CasuyaBlackboardEmbed.autoMount();
+  }
+
+  document.querySelectorAll(".game-item").forEach(item => {
+    item.addEventListener("click", async () => {
+      const gameId = item.dataset.gameId;
+      const area = document.getElementById("game-content-area");
+      if (!area) return;
+      area.innerHTML = '<div class="loading-state"><div class="spinner"></div><p>Loading game...</p></div>';
+      try {
+        const html = typeof loadGameHtml === "function" ? await loadGameHtml(gameId) : "";
+        if (!html) throw new Error("Failed to load game content");
+        area.innerHTML = `<iframe style="width:100%;min-height:400px;border:none;border-radius:var(--radius)" srcdoc="${escapeHtml(injectNodeBase(html))}"></iframe>`;
+      } catch(err) {
+        area.innerHTML = `<p style="color:var(--color-danger)">Error loading game: ${escapeHtml(err.message)}</p>`;
+      }
+    });
+  });
+
+  const backBtn = container.querySelector(".lesson-back-btn");
+  backBtn.addEventListener("click", () => {
+    if (isStudent && !state.quizScoreSent) sendProgress(80, null);
+    window.removeEventListener("message", onMessage);
+    if (state.progressTimer) clearTimeout(state.progressTimer);
+    teardownCurrentIframe();
+    backFn();
+  });
+}
+;
+// modules/lesson/lesson-viewer/viewer.js — lesson viewer orchestrator.
+// Extracted from modules/lesson-viewer.js; viewers for quiz/games, the bridge
+// script and blackboard helpers live in modules/lesson/lesson-content.js.
+
+async function viewLessonContent(containerId, lessonId, backFn) {
+  const container = document.querySelector(containerId);
+  if (!container) return;
+
+  teardownCurrentIframe();
+
+  container.innerHTML = `<div class="loading-state"><div class="spinner"></div><p>Loading lesson...</p></div>`;
+
+  try {
+
+    const token = localStorage.getItem("casuya_token");
+    const payload = decodeToken(token);
+    const isStudent = payload?.role === "student";
+    const canBookmark = isStudent || payload?.role === "teacher";
+
+    let htmlPromise = typeof loadLessonHtml === "function" ? loadLessonHtml(lessonId) : null;
+
+    // Fetch lesson metadata + bookmark/quiz/games in ONE call (P2-3 aggregated endpoint)
+    let lessonMeta = {};
+    let pkgData = null;
+    try {
+      if (canBookmark) {
+        pkgData = await request(`/lessons/${lessonId}/package`);
+        lessonMeta = pkgData.lesson || {};
+      } else {
+        lessonMeta = await request(`/lessons/${lessonId}`);
+      }
+    } catch(e) {}
+    const lessonTitle = lessonMeta.title || "Lesson";
+
+    // Update recently viewed title
+    let _recent = [];
+    try {
+      _recent = JSON.parse(localStorage.getItem("casuya_recently_viewed") || "[]");
+      const idx = _recent.findIndex(r => r.id === lessonId);
+      if (idx >= 0) { _recent[idx].title = lessonTitle; localStorage.setItem("casuya_recently_viewed", JSON.stringify(_recent)); }
+    } catch(e) {}
+
+    let html = htmlPromise ? await htmlPromise : "";
+    if (!html) {
+      const resp = await fetch(`${API_BASE}/lessons/${lessonId}/content${typeof lessonContentQuery === "function" ? lessonContentQuery() : ""}`, {
+        headers: { "Authorization": `Bearer ${localStorage.getItem("casuya_token")}` },
+      });
+      if (resp.status === 404) {
+        const filtered = _recent.filter(r => r.id !== lessonId);
+        localStorage.setItem("casuya_recently_viewed", JSON.stringify(filtered));
+        container.innerHTML = '<div class="empty-state"><p>This lesson is no longer available.</p></div>';
+        return;
+      }
+      if (!resp.ok) throw new Error("Failed to load lesson");
+      html = await resp.text();
+      if (typeof cacheLessonContent === "function") cacheLessonContent(lessonId, html);
+    }
+    if (!html) {
+      const filtered = _recent.filter(r => r.id !== lessonId);
+      localStorage.setItem("casuya_recently_viewed", JSON.stringify(filtered));
+      container.innerHTML = '<div class="empty-state"><p>This lesson is no longer available.</p></div>';
+      return;
+    }
+
+    const lessonStart = Date.now();
+    let studentId = null;
+    const sessionId = Date.now().toString(36) + "-" + Math.random().toString(36).slice(2, 10);
+    const state = { quizScoreSent: false, bookmarked: false, progressTimer: null };
+
+    if (isStudent) {
+      try {
+        const me = await request("/students/me");
+        if (me && me.id) studentId = me.id;
+      } catch(e) {}
+    }
+
+    function showToast(msg) {
+      let t = container.querySelector(".lesson-toast");
+      if (!t) { t = document.createElement("div"); t.className = "lesson-toast"; t.style.cssText = "position:sticky;bottom:0;padding:0.5rem 1rem;background:var(--color-success);color:#fff;text-align:center;font-size:0.85rem;transition:opacity 0.3s;z-index:10"; container.appendChild(t); }
+      t.textContent = msg; t.style.opacity = "1";
+      clearTimeout(t._hide); t._hide = setTimeout(() => { t.style.opacity = "0"; }, 2500);
+    }
+
+    function sendProgress(completionPct, scorePct) {
+      if (!isStudent || !studentId) return;
+      if (completionPct <= state.lastSentCompletion && (scorePct == null || scorePct <= state.lastSentScore)) return;
+      state.lastSentCompletion = Math.max(state.lastSentCompletion || 0, completionPct);
+      if (scorePct != null) state.lastSentScore = Math.max(state.lastSentScore || -1, scorePct);
+      if (state.progressTimer) clearTimeout(state.progressTimer);
+      state.progressTimer = setTimeout(() => {
+        const elapsed = Date.now() - lessonStart;
+        request("/progress/sync", {
+          method: "POST",
+          body: JSON.stringify({
+            student_id: studentId,
+            lesson_id: lessonId,
+            session_id: sessionId,
+            elapsed_ms: elapsed,
+            completion_percentage: state.lastSentCompletion,
+            score_percentage: state.lastSentScore >= 0 ? state.lastSentScore : null,
+          }),
+        }).then(() => showToast("Progress saved")).catch(() => {});
+      }, 2000);
+    }
+
+    // Use pkgData from the earlier aggregated call (P2-3) — no second request needed.
+    let quizData = null;
+    let gamesData = [];
+    let noteData = { content: "" };
+    if (pkgData) {
+      state.bookmarked = pkgData.bookmark_status?.bookmarked || false;
+      quizData = isStudent ? pkgData.quiz : null;
+      gamesData = isStudent ? (pkgData.games || []) : [];
+      noteData = isStudent ? (pkgData.note || { content: "" }) : { content: "" };
+    }
+
+    const initialLessonLang = typeof casuyaResolveLessonLang === "function"
+      ? casuyaResolveLessonLang(lessonTitle, "", quizData?.questions?.[0]?.prompt)
+      : (typeof casuyaDetectLang === "function"
+        ? casuyaDetectLang(String(lessonTitle || "") + " " + String(quizData?.questions?.[0]?.prompt || ""))
+        : "sw");
+
+    container.innerHTML = renderLessonSections({
+      lessonTitle, canBookmark, bookmarked: state.bookmarked, isStudent, quizData, gamesData, noteData, lessonId,
+      lessonLang: initialLessonLang,
+    });
+
+    const iframe = await mountLessonIframe(container, html);
+
+    // Listen button: reads the lesson title + spoken content using the Casuya
+    // TTS voice (browser voice fallback on failure / logged-out use).
+    if (typeof casuyaAttachListen === "function") {
+      const listenSlot = container.querySelector("#lesson-listen-slot");
+      if (listenSlot) {
+        const bodySample = typeof casuyaIframeText === "function" ? casuyaIframeText(iframe) : "";
+        const lessonLang = typeof casuyaResolveLessonLang === "function"
+          ? casuyaResolveLessonLang(lessonTitle, bodySample, quizData?.questions?.[0]?.prompt)
+          : initialLessonLang;
+        container.querySelectorAll(".question-block[data-lesson-lang], .quiz-item .casuya-listen[data-lang]").forEach(function (el) {
+          el.setAttribute("data-lang", lessonLang);
+          if (el.classList.contains("question-block")) el.setAttribute("data-lesson-lang", lessonLang);
+        });
+        casuyaAttachListen(listenSlot, {
+          title: "Listen to this lesson",
+          lang: lessonLang,
+          textProvider: function () {
+            const body = typeof casuyaIframeText === "function" ? casuyaIframeText(iframe) : "";
+            return (lessonTitle + ". " + body).trim();
+          }
+        });
+      }
+    }
+
+    const onMessage = (e) => {
+      if (e.data?.type === "casuya-quiz" && e.data.score != null && e.data.total > 0) {
+        state.quizScoreSent = true;
+        const pct = Math.round((e.data.score / e.data.total) * 100);
+        sendProgress(100, pct);
+      } else if (e.data?.type === "casuya-progress" && e.data.percent != null) {
+        sendProgress(e.data.percent, null);
+      }
+    };
+    window.addEventListener("message", onMessage);
+
+    bindLessonInteractions({
+      container,
+      iframe,
+      lessonId,
+      isStudent,
+      canBookmark,
+      quizData,
+      state,
+      showToast,
+      sendProgress,
+      onMessage,
+      backFn,
+      lesson: lessonMeta,
+      lessonContent: html,
+    });
+  } catch (err) {
+    container.innerHTML = `<div class="empty-state"><h2>Error</h2><p>${escapeHtml(err.message)}</p></div>`;
+  }
+}
+;
+// modules/lesson.js — backward-compatible facade (classic script, shared global scope).
+// The lesson viewer was split into focused modules:
+//   - modules/lesson/lesson-content.js  (bridge script + quiz/games section builders)
+//   - modules/lesson/lesson-viewer/     (viewLessonContent implementation + helpers)
+// This file is kept so existing bundle lists / script tags continue to resolve the
+// same module id. The sub-modules must be loaded before this file.
+;
+// modules/api-client/core/test-generator.js — Test Generator UI (shared global scope).
+// Shared by admin, teacher, and student dashboards. Renders the picker of exam
+// types (Topical/Monthly/Midterm/Terminal/Annual/NECTA Form II/IV/VI) plus a
+// subject/form/topic form, then calls POST /ai/tests/generate (grounded in the
+// NECTA/TIE knowledge base at low temperature) and renders the result with the
+// shared quiz renderer.
+
+const TEST_TYPE_OPTIONS = [
+  { value: "topical", label: "📌 Topical Test", desc: "Topical questions grouped by topic." },
+  { value: "monthly", label: "📆 Monthly Test", desc: "Monthly-style test for your class." },
+  { value: "midterm", label: "🕘 Midterm Test", desc: "Midterm examination style." },
+  { value: "terminal", label: "🏁 Terminal Test", desc: "Terminal examination style." },
+  { value: "annual", label: "📅 Annual Test", desc: "Annual examination style." },
+  { value: "necta_ii", label: "🎓 NECTA Form II", desc: "Form II / FTNA style questions." },
+  { value: "necta_iv", label: "🎓 NECTA Form IV", desc: "CSEE Section A style questions." },
+  { value: "necta_vi", label: "🎓 NECTA Form VI", desc: "ACSEE style questions." },
+];
+
+let _testGenStylesInjected = false;
+
+function _injectTestGenStyles() {
+  if (_testGenStylesInjected || document.getElementById("test-gen-styles")) return;
+  _testGenStylesInjected = true;
+  const style = document.createElement("style");
+  style.id = "test-gen-styles";
+  style.textContent = `
+    .test-type-grid{display:grid;grid-template-columns:repeat(auto-fill,minmax(200px,1fr));gap:0.6rem}
+    .test-type-card{text-align:left;padding:0.7rem 0.85rem;border:1px solid var(--color-border);border-radius:var(--radius);background:transparent;cursor:pointer;transition:border-color .15s ease,background .15s ease}
+    .test-type-card:hover{border-color:var(--color-primary)}
+    .test-type-card.selected{border-color:var(--color-primary);background:color-mix(in srgb,var(--color-primary) 8%,transparent);box-shadow:inset 0 0 0 1px var(--color-primary)}
+  `;
+  document.head.appendChild(style);
+}
+
+function renderTestGeneratorView(meta = {}) {
+  _injectTestGenStyles();
+  const title = meta.title || "Test Generator";
+  const intro = meta.intro || "Pick an exam type, then choose a subject and form. Tick the topics (and sub-topics) the exam must cover — the more you tick, the wider the paper. The system reads the NECTA/TIE knowledge base (past papers, syllabuses) to generate fresh practice questions without copying any past question.";
+  const typeCards = TEST_TYPE_OPTIONS.map((t, i) => `
+    <button type="button" class="test-type-card${i === 0 ? " selected" : ""}" data-test-type="${t.value}">
+      <div style="font-weight:600;font-size:0.95rem">${t.label}</div>
+      <div style="font-size:0.75rem;color:var(--color-text-muted);margin-top:0.15rem">${t.desc}</div>
+    </button>`).join("");
+
+  return `
+    <div class="content">
+      <h2 style="margin:0 0 0.4rem">📝 ${escapeHtml(title)}</h2>
+      <p style="color:var(--color-text-muted);font-size:0.85rem;margin-bottom:1.25rem">${escapeHtml(intro)}</p>
+
+      <div class="card" style="padding:1.25rem;margin-bottom:1rem">
+        <h3 style="margin:0 0 0.75rem">1. Choose the exam type</h3>
+        <div class="test-type-grid">${typeCards}</div>
+      </div>
+
+      <div class="card" style="padding:1.25rem;margin-bottom:1rem">
+        <h3 style="margin:0 0 1rem">2. Scope the test</h3>
+        <div style="display:grid;grid-template-columns:repeat(auto-fit,minmax(180px,1fr));gap:0.75rem">
+          <div>
+            <label style="font-size:0.8rem;color:var(--color-text-muted)">Subject</label>
+            <select class="input" id="test-gen-subject">
+              <option value="mathematics">Mathematics</option>
+              <option value="chemistry">Chemistry</option>
+              <option value="physics">Physics</option>
+            </select>
+          </div>
+          <div>
+            <label style="font-size:0.8rem;color:var(--color-text-muted)">Form Level</label>
+            <select class="input" id="test-gen-form">
+              ${["I","II","III","IV","V","VI"].map((f, i) => `<option value="${i+1}">Form ${f}</option>`).join("")}
+            </select>
+          </div>
+          <div>
+            <label style="font-size:0.8rem;color:var(--color-text-muted)">Questions</label>
+            <select class="input" id="test-gen-count">
+              ${[5,10,15,20].map(n => `<option value="${n}"${n === 10 ? " selected" : ""}>${n}</option>`).join("")}
+            </select>
+          </div>
+        </div>
+        <div style="margin-top:1.1rem">
+          <label style="font-size:0.8rem;color:var(--color-text-muted)">Topics &amp; sub-topics to cover
+            <span style="color:var(--color-text-muted);font-weight:400">(tick topics and sub-topics — the more you tick, the wider the exam)</span>
+          </label>
+          <div id="test-gen-scope" style="margin-top:0.6rem"></div>
+          <div id="test-gen-scope-summary" style="font-size:0.8rem;color:var(--color-text-muted);font-weight:600;margin-top:0.5rem"></div>
+          <div id="test-gen-fallback" style="display:none;margin-top:0.6rem;font-size:0.85rem">
+            <label style="color:var(--color-text-muted)">Topic</label>
+            <input class="input" id="test-gen-topic-fallback" placeholder="e.g. Acids, Bases and Salts">
+            <label style="color:var(--color-text-muted);display:block;margin-top:0.4rem">Subtopic</label>
+            <input class="input" id="test-gen-subtopic-fallback" placeholder="e.g. Preparation of Salts">
+          </div>
+        </div>
+      </div>
+
+      <div style="display:flex;gap:0.5rem;align-items:center;margin-bottom:1rem">
+        <button class="btn btn-primary" id="test-gen-run">⚡ Generate Test</button>
+        <span id="test-gen-status" style="font-size:0.8rem;color:var(--color-text-muted)"></span>
+      </div>
+
+      <div id="test-gen-sources"></div>
+      <div id="test-gen-results"></div>
+    </div>`;
+}
+
+let _testGenScopeCache = {};
+
+function _testGenUpdateSummary(root) {
+  const summary = root.querySelector("#test-gen-scope-summary");
+  if (!summary) return;
+  const topics = Array.from(root.querySelectorAll(".test-gen-topic-cb:checked")).length;
+  const subs = Array.from(root.querySelectorAll(".test-gen-subtopic-cb:checked")).length;
+  if (!topics && !subs) {
+    summary.textContent = "";
+    return;
+  }
+  summary.textContent = `Scope: ${topics} topic${topics === 1 ? "" : "s"} · ${subs} sub-topic${subs === 1 ? "" : "s"} selected`;
+}
+
+async function _testGenLoadScope(subject, form) {
+  const root = document;
+  const scopeEl = root.querySelector("#test-gen-scope");
+  const fallbackEl = root.querySelector("#test-gen-fallback");
+  if (!scopeEl) return;
+  scopeEl.innerHTML = '<p style="font-size:0.85rem;color:var(--color-text-muted)">Loading topics from the syllabus…</p>';
+  fallbackEl.style.display = "none";
+  _testGenUpdateSummary(root);
+
+  let topics = [];
+  const cacheKey = subject + ":" + form;
+  if (_testGenScopeCache[cacheKey]) {
+    topics = _testGenScopeCache[cacheKey];
+  } else {
+    try {
+      const res = await request(`/syllabus/subjects/${encodeURIComponent(subject)}/topics?form_level=${form}`);
+      topics = Array.isArray(res) ? res : [];
+      _testGenScopeCache[cacheKey] = topics;
+    } catch (e) {
+      topics = [];
+    }
+  }
+
+  if (!topics.length) {
+    scopeEl.innerHTML = '<p style="font-size:0.85rem;color:var(--color-text-muted)">No syllabus topics found for this subject and form. Type the topic below instead.</p>';
+    fallbackEl.style.display = "block";
+    _testGenUpdateSummary(root);
+    return;
+  }
+
+  const items = topics.map((t) => {
+    const subs = Array.isArray(t.subtopics) ? t.subtopics : [];
+    const subLabels = subs
+      .map((s) => `
+        <label style="display:flex;align-items:center;gap:0.4rem;font-size:0.84rem;margin-top:0.2rem">
+          <input type="checkbox" class="test-gen-subtopic-cb" data-topic="${escapeHtml(t.title)}" value="${escapeHtml(s.title)}">
+          <span>${escapeHtml(s.title)}</span>
+        </label>`)
+      .join("");
+    const toggle = subs.length
+      ? `<button type="button" class="test-gen-sub-toggle" style="margin-left:auto;background:none;border:none;color:var(--color-primary);font-size:0.75rem;cursor:pointer">${subs.length} sub-topic${subs.length === 1 ? "" : "s"} ▾</button>`
+      : "";
+    return `
+      <div class="scope-topic-item" style="border:1px solid var(--color-border);border-radius:var(--radius);padding:0.5rem 0.75rem;margin-bottom:0.4rem">
+        <label style="display:flex;align-items:center;gap:0.4rem;font-size:0.88rem;cursor:pointer">
+          <input type="checkbox" class="test-gen-topic-cb" value="${escapeHtml(t.title)}">
+          <span>${escapeHtml(t.title)}</span>
+          ${toggle}
+        </label>
+        ${subs.length ? `<div class="test-gen-sub-wrap" style="display:none;margin-top:0.35rem;border-top:1px dashed var(--color-border);padding-top:0.3rem">${subLabels}</div>` : ""}
+      </div>`;
+  }).join("");
+
+  scopeEl.innerHTML = `
+    <div style="font-size:0.8rem;margin-bottom:0.5rem">
+      <button type="button" class="test-gen-select-all" style="background:none;border:none;color:var(--color-primary);cursor:pointer">Select all topics</button>
+      <button type="button" class="test-gen-clear-all" style="background:none;border:none;color:var(--color-text-muted);cursor:pointer;margin-left:0.75rem">Clear all</button>
+    </div>
+    ${items}`;
+  _testGenUpdateSummary(root);
+}
+
+function initTestGeneratorView(root = document) {
+  const cards = Array.from(root.querySelectorAll(".test-type-card"));
+  let selected = (root.querySelector(".test-type-card.selected")?.dataset.testType) || "topical";
+  cards.forEach((c) => {
+    c.addEventListener("click", () => {
+      cards.forEach((x) => x.classList.remove("selected"));
+      c.classList.add("selected");
+      selected = c.dataset.testType;
+    });
+  });
+
+  const statusEl = root.querySelector("#test-gen-status");
+  const sourcesEl = root.querySelector("#test-gen-sources");
+  const resultsEl = root.querySelector("#test-gen-results");
+  const runBtn = root.querySelector("#test-gen-run");
+  if (!runBtn) return;
+
+  const subjectEl = root.querySelector("#test-gen-subject");
+  const formEl = root.querySelector("#test-gen-form");
+
+  const reloadScope = () => {
+    const subject = subjectEl.value;
+    const form = formEl.value || "1";
+    _testGenLoadScope(subject, form);
+  };
+  subjectEl.addEventListener("change", reloadScope);
+  formEl.addEventListener("change", reloadScope);
+
+  const scopeEl = root.querySelector("#test-gen-scope");
+  if (scopeEl) {
+    scopeEl.addEventListener("change", (e) => {
+      if (e.target.matches(".test-gen-topic-cb")) _testGenUpdateSummary(root);
+      if (e.target.matches(".test-gen-subtopic-cb")) _testGenUpdateSummary(root);
+    });
+    scopeEl.addEventListener("click", (e) => {
+      const toggle = e.target.closest(".test-gen-sub-toggle");
+      if (toggle) {
+        e.preventDefault();
+        const wrap = toggle.closest(".scope-topic-item")?.querySelector(".test-gen-sub-wrap");
+        if (wrap) {
+          wrap.style.display = wrap.style.display === "none" ? "block" : "none";
+          toggle.textContent = wrap.style.display === "none"
+            ? toggle.textContent.replace("▴", "▾")
+            : toggle.textContent.replace("▾", "▴");
+        }
+        return;
+      }
+      const selectAll = e.target.closest(".test-gen-select-all");
+      if (selectAll) {
+        const scope = root.querySelector("#test-gen-scope");
+        Array.from(scope.querySelectorAll(".test-gen-topic-cb")).forEach((t) => {
+          t.checked = true;
+          const wrap = t.closest(".scope-topic-item")?.querySelector(".test-gen-sub-wrap");
+          if (wrap) wrap.style.display = "block";
+        });
+        _testGenUpdateSummary(root);
+        return;
+      }
+      const clearAll = e.target.closest(".test-gen-clear-all");
+      if (clearAll) {
+        const scope = root.querySelector("#test-gen-scope");
+        Array.from(scope.querySelectorAll(".test-gen-topic-cb, .test-gen-subtopic-cb")).forEach((t) => { t.checked = false; });
+        _testGenUpdateSummary(root);
+      }
+    });
+  }
+
+  runBtn.addEventListener("click", async () => {
+    const subject = subjectEl.value;
+    const form = formEl.value || "1";
+    const count = Number(root.querySelector("#test-gen-count").value);
+
+    const topics = Array.from(root.querySelectorAll(".test-gen-topic-cb:checked")).map((t) => t.value.trim());
+    const subtopics = Array.from(root.querySelectorAll(".test-gen-subtopic-cb:checked")).map((s) => s.value.trim());
+    const fallbackTopic = root.querySelector("#test-gen-topic-fallback")?.value.trim() || "";
+    const fallbackSubtopic = root.querySelector("#test-gen-subtopic-fallback")?.value.trim() || "";
+
+    if (!topics.length && !subtopics.length && !fallbackTopic) {
+      statusEl.textContent = "Tick at least one topic (or sub-topic), then press Generate.";
+      return;
+    }
+    const topic = topics[0] || fallbackTopic;
+    const subtopic = subtopics[0] || fallbackSubtopic;
+
+    runBtn.disabled = true;
+    statusEl.textContent = "Reading knowledge base and generating questions...";
+    sourcesEl.innerHTML = "";
+    resultsEl.innerHTML = "";
+    try {
+      const data = await request("/ai/tests/generate", {
+        method: "POST",
+        body: JSON.stringify({
+          test_type: selected,
+          subject_slug: subject,
+          form_level: Number(form),
+          topic,
+          subtopic,
+          topics,
+          subtopics,
+          count,
+        }),
+      });
+      if (!Array.isArray(data.questions) || !data.questions.length) {
+        resultsEl.innerHTML = '<div class="card" style="padding:1rem"><p style="color:var(--color-text-muted)">No questions were generated. Try a different topic, subject, or exam type.</p></div>';
+        statusEl.textContent = "";
+        return;
+      }
+      const label = data.testTypeLabel || selected;
+      const hits = Array.isArray(data.kbHits) ? data.kbHits : [];
+      const footerPayload = {
+        source: data.source || "casuya-ai",
+        kbHits: hits,
+        sourced: data.grounded !== false,
+      };
+      sourcesEl.innerHTML = `
+        <div class="card" style="padding:0.75rem 1rem;margin-bottom:1rem">
+          <p style="font-size:0.8rem;margin:0 0 0.35rem;color:var(--color-text-muted)">
+            📚 <strong>${escapeHtml(label)}</strong> — grounded in ${hits.length || "syllabus"} knowledge-base source(s)
+            ${data.grounded ? "" : " (syllabus/topic fallback)"}
+          </p>
+          <div class="tutor-response-footer">
+            ${typeof renderAiResultFooter === "function"
+              ? renderAiResultFooter(footerPayload)
+              : (typeof renderTutorSourceChips === "function" ? renderTutorSourceChips(hits) : "")
+                + (typeof renderAiSourceBadge === "function" ? renderAiSourceBadge(footerPayload.source) : "")}
+          </div>
+        </div>`;
+      resultsEl.innerHTML = renderQuizQuestions(data.questions, {
+        subject,
+        formLevel: data.formLevel,
+        topic: `${topic}${topics.length + subtopics.length ? ` (+${Math.max(0, topics.length + subtopics.length - 1)} more)` : ""}`,
+      });
+      statusEl.textContent = `Done — ${data.count || data.questions.length} question(s).`;
+    } catch (e) {
+      resultsEl.innerHTML = `<div class="card" style="padding:1rem"><p style="color:var(--color-danger)">${escapeHtml(e.message || "Generation failed. Please try again.")}</p></div>`;
+      statusEl.textContent = "";
+    } finally {
+      runBtn.disabled = false;
+    }
+  });
+
+  reloadScope();
+}
+;
+// modules/teacher/dashboard.js — TeacherDashboard class
+
+class TeacherDashboard {
+  constructor() {
+    const token = localStorage.getItem("casuya_token");
+    this.payload = decodeToken(token);
+    this._abort = new AbortController();
+    this._navItems = [];
+    this.notifData = [];
+    this._viewLoaders = {};
+  }
+
+  showView(content) {
+    const el = document.getElementById("teacher-content");
+    if (el) el.innerHTML = content;
+  }
+
+  setActiveNav(viewId) {
+    this._navItems.forEach(el => {
+      el.classList.toggle("active", el.dataset.view === viewId);
+    });
+  }
+
+  showViewByName(viewName) {
+    if (this._viewLoaders[viewName]) {
+      location.hash = viewName;
+      this._viewLoaders[viewName]();
+    }
+  }
+
+  destroy() {
+    this._abort.abort();
+  }
+}
+
+;
+// modules/teacher/utils.js — shared utilities for teacher dashboard views
+
+function renderBlackboardReplay(elements) {
+  if (window.ensureKaTeX && !window.katex) window.ensureKaTeX();
+  const canvas = document.getElementById("bb-replay-canvas");
+  if (!canvas || !elements.length) return;
+  const ctx = canvas.getContext("2d");
+  let minX = Infinity, minY = Infinity, maxX = -Infinity, maxY = -Infinity;
+  elements.forEach(el => {
+    if ((el.tool === "pen" || el.tool === "highlighter" || el.tool === "eraser") && el.points) {
+      el.points.forEach(p => { minX = Math.min(minX, p.x); minY = Math.min(minY, p.y); maxX = Math.max(maxX, p.x); maxY = Math.max(maxY, p.y); });
+    } else if (el.tool === "text" || el.tool === "katex") {
+      const px = el.position?.x || 0, py = el.position?.y || 0;
+      minX = Math.min(minX, px); minY = Math.min(minY, py);
+      maxX = Math.max(maxX, px + (el.width || 300)); maxY = Math.max(maxY, py + (el.fontSize || 16) * 2);
+    } else if (el.start && el.end) {
+      minX = Math.min(minX, el.start.x, el.end.x); minY = Math.min(minY, el.start.y, el.end.y);
+      maxX = Math.max(maxX, el.start.x, el.end.x); maxY = Math.max(maxY, el.start.y, el.end.y);
+    }
+  });
+  if (!isFinite(minX)) { minX = 0; minY = 0; maxX = 800; maxY = 600; }
+  const pad = 40;
+  const w = maxX - minX + pad * 2;
+  const h = maxY - minY + pad * 2;
+  const dpr = window.devicePixelRatio || 1;
+  canvas.width = w * dpr;
+  canvas.height = h * dpr;
+  canvas.style.width = w + "px";
+  canvas.style.height = h + "px";
+  ctx.setTransform(dpr, 0, 0, dpr, 0, 0);
+  ctx.fillStyle = "#fff";
+  ctx.fillRect(0, 0, w, h);
+  ctx.translate(-minX + pad, -minY + pad);
+  elements.forEach(el => {
+    ctx.save();
+    ctx.globalAlpha = el.opacity ?? 1;
+    if (el.tool === "pen" || el.tool === "highlighter" || el.tool === "eraser") {
+      if (el.tool === "eraser") { ctx.globalCompositeOperation = "destination-out"; ctx.strokeStyle = "rgba(0,0,0,1)"; }
+      else if (el.tool === "highlighter") { ctx.globalCompositeOperation = "multiply"; ctx.strokeStyle = el.color; }
+      else { ctx.globalCompositeOperation = "source-over"; ctx.strokeStyle = el.color; }
+      ctx.lineCap = "round"; ctx.lineJoin = "round";
+      const pts = el.points || [];
+      if (pts.length < 2) { ctx.restore(); return; }
+      const hasPressure = pts.some(p => p.pressure !== undefined && p.pressure !== 0.5);
+      if (hasPressure && el.tool === "pen") {
+        for (let i = 1; i < pts.length; i++) {
+          const prev = pts[i - 1], curr = pts[i];
+          ctx.lineWidth = (el.width || 2) * (0.3 + (curr.pressure ?? 0.5) * 1.4);
+          ctx.beginPath(); ctx.moveTo(prev.x, prev.y); ctx.lineTo(curr.x, curr.y); ctx.stroke();
+        }
+      } else {
+        ctx.lineWidth = el.width || 2;
+        ctx.beginPath(); ctx.moveTo(pts[0].x, pts[0].y);
+        for (let i = 1; i < pts.length; i++) {
+          const prev = pts[i - 1], curr = pts[i];
+          ctx.quadraticCurveTo(prev.x, prev.y, (prev.x + curr.x) / 2, (prev.y + curr.y) / 2);
+        }
+        ctx.lineTo(pts[pts.length - 1].x, pts[pts.length - 1].y); ctx.stroke();
+      }
+      ctx.globalCompositeOperation = "source-over";
+    } else if (el.tool === "text") {
+      ctx.fillStyle = el.color || "#000";
+      ctx.font = `${el.fontSize || 16}px ${el.fontFamily || "sans-serif"}`;
+      ctx.textAlign = "left"; ctx.textBaseline = "top";
+      const maxW = el.width > 1 ? el.width : 300;
+      const lines = (el.content || "").split("\n");
+      const lineH = (el.fontSize || 16) * 1.4;
+      let lineIdx = 0;
+      lines.forEach((line) => {
+        if (!line) return;
+        const words = line.split(" ");
+        let cur = "";
+        words.forEach(word => {
+          const test = cur ? cur + " " + word : word;
+          if (ctx.measureText(test).width > maxW && cur) { ctx.fillText(cur, el.position.x, el.position.y + lineIdx * lineH); cur = word; lineIdx++; }
+          else cur = test;
+        });
+        if (cur) ctx.fillText(cur, el.position.x, el.position.y + lineIdx * lineH);
+        lineIdx++;
+      });
+    } else if (el.tool === "katex") {
+      if (window.katex) {
+        try {
+          const html = window.katex.renderToString(el.latex || "", { throwOnError: false, displayMode: true });
+          const svgStr = `<svg xmlns="http://www.w3.org/2000/svg" width="${(el.fontSize || 16) * (el.latex || "").length * 0.6}" height="${(el.fontSize || 16) * 1.8}"><foreignObject width="100%" height="100%"><div xmlns="http://www.w3.org/1999/xhtml" style="font-size:${el.fontSize || 16}px;color:${el.color || "#000"};white-space:nowrap;">${html}</div></foreignObject></svg>`;
+          const blob = new Blob([svgStr], { type: "image/svg+xml;charset=utf-8" });
+          const url = URL.createObjectURL(blob);
+          const img = new Image();
+          img.onload = () => { ctx.drawImage(img, el.position.x, el.position.y, el.width || img.naturalWidth, el.height || img.naturalHeight); URL.revokeObjectURL(url); };
+          img.src = url;
+        } catch { ctx.fillStyle = el.color || "#000"; ctx.font = `${el.fontSize || 16}px "Courier New", monospace`; ctx.fillText(el.latex || "", el.position.x, el.position.y); }
+      } else {
+        ctx.fillStyle = el.color || "#000"; ctx.font = `${el.fontSize || 16}px "Courier New", monospace`;
+        ctx.fillText(el.latex || "", el.position.x, el.position.y);
+      }
+    } else if (el.start && el.end) {
+      ctx.strokeStyle = el.color || "#000"; ctx.lineWidth = el.width || 2; ctx.lineCap = "round";
+      if (el.dashPattern) ctx.setLineDash(el.dashPattern);
+      switch (el.tool) {
+        case "line": ctx.beginPath(); ctx.moveTo(el.start.x, el.start.y); ctx.lineTo(el.end.x, el.end.y); ctx.stroke(); break;
+        case "rect": {
+          const rx = Math.min(el.start.x, el.end.x), ry = Math.min(el.start.y, el.end.y);
+          const rw = Math.abs(el.end.x - el.start.x), rh = Math.abs(el.end.y - el.start.y);
+          if (el.filled) { ctx.fillStyle = el.color; ctx.globalAlpha = 0.25 * (el.opacity ?? 1); ctx.fillRect(rx, ry, rw, rh); ctx.globalAlpha = el.opacity ?? 1; }
+          ctx.strokeRect(rx, ry, rw, rh); break;
+        }
+        case "circle": {
+          const cx = (el.start.x + el.end.x) / 2, cy = (el.start.y + el.end.y) / 2;
+          const rrx = Math.abs(el.end.x - el.start.x) / 2, rry = Math.abs(el.end.y - el.start.y) / 2;
+          ctx.beginPath(); ctx.ellipse(cx, cy, rrx, rry, 0, 0, Math.PI * 2);
+          if (el.filled) { ctx.fillStyle = el.color; ctx.globalAlpha = 0.25 * (el.opacity ?? 1); ctx.fill(); ctx.globalAlpha = el.opacity ?? 1; }
+          ctx.stroke(); break;
+        }
+        case "arrow": {
+          const dx = el.end.x - el.start.x, dy = el.end.y - el.start.y, len = Math.hypot(dx, dy);
+          if (len > 1) {
+            ctx.beginPath(); ctx.moveTo(el.start.x, el.start.y); ctx.lineTo(el.end.x, el.end.y); ctx.stroke();
+            const headLen = Math.min(15, len * 0.3), angle = Math.atan2(dy, dx);
+            ctx.beginPath(); ctx.moveTo(el.end.x, el.end.y);
+            ctx.lineTo(el.end.x - headLen * Math.cos(angle - Math.PI / 6), el.end.y - headLen * Math.sin(angle - Math.PI / 6));
+            ctx.moveTo(el.end.x, el.end.y);
+            ctx.lineTo(el.end.x - headLen * Math.cos(angle + Math.PI / 6), el.end.y - headLen * Math.sin(angle + Math.PI / 6));
+            ctx.stroke();
+          }
+          break;
+        }
+      }
+      if (el.dashPattern) ctx.setLineDash([]);
+    }
+    ctx.restore();
+  });
+}
+
+;
+// modules/teacher/overview.js — overview/dashboard view
+
+async function loadOverview(dashboard) {
+  dashboard.showView('<div class="loading-state"><div class="spinner"></div><p>Loading...</p></div>');
+  try {
+    const data = await request("/teachers/me/dashboard");
+    const overview = data.overview || {};
+    const classroomRes = data.classroom || {};
+    const bookmarkCount = data.bookmark_count || 0;
+    const lessonCount = data.lesson_count || 0;
+    const name = dashboard.payload.full_name || dashboard.payload.email || "Teacher";
+    const classCode = classroomRes?.classroom?.code || "";
+    const connectedCount = classroomRes?.total ?? 0;
+
+    const hour = new Date().getHours();
+    let greeting = "Good morning";
+    if (hour >= 12 && hour < 17) greeting = "Good afternoon";
+    else if (hour >= 17) greeting = "Good evening";
+
+    let recent = [];
+    try { recent = JSON.parse(localStorage.getItem("casuya_recently_viewed") || "[]"); } catch(e) {}
+
+    dashboard.showView(`
+      <div class="content" style="max-width:960px">
+        <div class="welcome-banner">
+          <small>${greeting}</small>
+          <h2>Welcome, ${escapeHtml(name)}</h2>
+          <p>Here's what's happening in your classes today.</p>
+        </div>
+
+        <div class="card" style="margin-bottom:1.25rem;padding:1.25rem;background:linear-gradient(135deg,#eff6ff,#ede9fe);border:1px solid #dbeafe;display:flex;align-items:center;justify-content:space-between;flex-wrap:wrap;gap:1rem">
+          <div>
+            <div style="font-size:0.8rem;font-weight:700;color:#2563eb;text-transform:uppercase;letter-spacing:0.04em">Connect your students</div>
+            <p style="margin:0.35rem 0 0;font-size:0.9rem;color:var(--color-text-muted);max-width:420px">
+              Students join your class by pasting your code below into <b>Connect to Teacher</b>. Then you can see their progress and assign lessons.
+            </p>
+          </div>
+          <div style="text-align:center">
+            <div style="font-size:0.75rem;color:var(--color-text-muted);margin-bottom:0.25rem">Class Code</div>
+            <div id="teacher-class-code" style="font-size:1.8rem;font-weight:800;letter-spacing:0.3em;color:#1e40af;font-family:monospace;cursor:pointer" title="Click to copy">${escapeHtml(classCode || "—")}</div>
+            <div style="display:flex;gap:0.5rem;margin-top:0.5rem;justify-content:center">
+              <button class="btn btn-sm" id="copy-class-code" ${classCode ? "" : "disabled"}>Copy Code</button>
+              <button class="btn btn-sm" id="manage-class">Manage Class</button>
+            </div>
+          </div>
+        </div>
+
+        <div class="stat-grid">
+          <div class="stat-card">
+            <div class="stat-icon" style="background:#eff6ff;color:#2563eb">👥</div>
+            <div class="stat-value">${connectedCount}</div>
+            <div class="stat-label">Connected Students</div>
+          </div>
+          <div class="stat-card">
+            <div class="stat-icon" style="background:#f0fdf4;color:#16a34a">📝</div>
+            <div class="stat-value">${lessonCount}</div>
+            <div class="stat-label">Lessons</div>
+          </div>
+          <div class="stat-card">
+            <div class="stat-icon" style="background:#fef3c7;color:#d97706">📈</div>
+            <div class="stat-value">${overview?.avg_completion_rate ? Math.round(overview.avg_completion_rate) + "%" : "0%"}</div>
+            <div class="stat-label">Completion Rate</div>
+          </div>
+          <div class="stat-card">
+            <div class="stat-icon" style="background:#fce7f3;color:#db2777">🔖</div>
+            <div class="stat-value">${bookmarkCount}</div>
+            <div class="stat-label">Bookmarked</div>
+          </div>
+        </div>
+
+        ${recent.length > 0 ? `
+          <div class="section-header">
+            <h3>Continue Editing</h3>
+          </div>
+          <div style="display:grid;grid-template-columns:repeat(auto-fill,minmax(220px,1fr));gap:0.75rem;margin-bottom:1.25rem">
+            ${recent.slice(0, 3).map(r => `
+              <div class="recent-lesson-card" data-id="${escapeHtml(r.id)}">
+                <h4>${escapeHtml(r.title)}</h4>
+                <span class="recent-meta">${r.time ? new Date(r.time).toLocaleDateString() : ""}</span>
+              </div>
+            `).join("")}
+          </div>
+        ` : ""}
+
+        <div class="section-header">
+          <h3>${bookmarks.length > 0 ? "Bookmarked Lessons" : "Published Lessons"}</h3>
+        </div>
+        <div class="card-grid">
+          ${!Array.isArray(lessons) || lessons.length === 0 ? '<div class="empty-state" style="padding:2rem"><p>No lessons available yet</p></div>' :
+            (bookmarks.length > 0 ? bookmarks : lessons).map(l => `
+              <div class="card lesson-card clickable" data-id="${escapeHtml(l.lesson_id || l.id)}" style="position:relative">
+                <h3>${escapeHtml(l.lesson_title || l.title)}</h3>
+                ${l.lesson_id ? '<span style="position:absolute;top:0.5rem;right:0.5rem;font-size:0.75rem">🔖</span>' : ""}
+                <p style="color:var(--color-text-muted);font-size:0.8rem">${escapeHtml(l.status || "bookmarked")}</p>
+              </div>
+            `).join("")}
+        </div>
+      </div>
+    `);
+    document.querySelectorAll("#teacher-content .lesson-card.clickable").forEach(el => {
+      el.addEventListener("click", () => viewLessonContent("#teacher-content", el.dataset.id, () => loadLessons(dashboard)));
+    });
+    document.querySelectorAll("#teacher-content .recent-lesson-card").forEach(el => {
+      el.addEventListener("click", () => viewLessonContent("#teacher-content", el.dataset.id, () => loadOverview(dashboard)));
+    });
+    document.getElementById("copy-class-code")?.addEventListener("click", (ev) => {
+      ev.stopPropagation();
+      const codeEl = document.getElementById("teacher-class-code");
+      if (!codeEl || codeEl.textContent === "—") return;
+      const code = codeEl.textContent;
+      const done = () => {
+        const btn = document.getElementById("copy-class-code");
+        if (btn) { const t = btn.textContent; btn.textContent = "Copied ✓"; setTimeout(() => btn.textContent = t, 1500); }
+      };
+      if (navigator.clipboard?.writeText) { navigator.clipboard.writeText(code).then(done).catch(done); }
+      else { done(); }
+    });
+    document.getElementById("manage-class")?.addEventListener("click", () => loadClass(dashboard));
+  } catch (err) {
+    dashboard.showView(`<div class="empty-state"><h2>Error</h2><p>${escapeHtml(err.message)}</p></div>`);
+  }
+}
+
+;
+// modules/teacher/class.js — class management view
+
+async function loadClass(dashboard) {
+  dashboard.showView('<div class="loading-state"><div class="spinner"></div><p>Loading your class...</p></div>');
+  try {
+    const [res, teacherLessons] = await Promise.all([
+      request("/classrooms/me/students?_t=" + Date.now()).catch(() => null),
+      request("/lessons").catch(() => []),
+    ]);
+    const classroom = res?.classroom || await request("/classrooms/me?_t=" + Date.now());
+    const students = Array.isArray(res?.students) ? res.students : [];
+    const code = classroom?.code || "";
+    const className = classroom?.name || "";
+    const limit = classroom?.lesson_limit ?? 2;
+    const pubCount = Array.isArray(teacherLessons) ? teacherLessons.filter(l => l.status === "published").length : 0;
+
+    dashboard.showView(`
+      <div class="content" style="max-width:960px">
+        <div style="display:flex;align-items:center;gap:0.5rem;margin-bottom:1rem">
+          <button class="btn" id="back-btn">← Back</button>
+          <h2>My Class</h2>
+        </div>
+
+        <div class="card" style="margin-bottom:1.25rem;padding:1.5rem;background:linear-gradient(135deg,#eff6ff,#ede9fe);border:1px solid #dbeafe;text-align:center">
+          <div style="display:flex;align-items:center;justify-content:center;gap:0.5rem;flex-wrap:wrap;margin-bottom:0.5rem">
+            <span style="font-size:1.05rem;font-weight:700;color:#1e3a8a" id="manage-class-name-display">${escapeHtml(className || "My Class")}</span>
+            <button class="btn btn-sm" id="edit-class-name" title="Edit class name">✏️ Edit</button>
+          </div>
+          <div id="manage-class-name-edit" style="display:none;max-width:320px;margin:0 auto 0.5rem;gap:0.5rem;align-items:center">
+            <input class="input" id="manage-class-name-input" value="${escapeHtml(className)}" maxlength="80" placeholder="Class name (e.g. Form Two East)" style="text-align:center">
+            <div style="display:flex;gap:0.4rem;justify-content:center;margin-top:0.4rem">
+              <button class="btn btn-sm btn-success" id="save-class-name">Save</button>
+              <button class="btn btn-sm" id="cancel-class-name">Cancel</button>
+            </div>
+            <p id="class-name-status" style="display:none;font-size:0.8rem;margin:0.25rem 0 0"></p>
+          </div>
+          <div style="font-size:0.8rem;font-weight:700;color:#2563eb;text-transform:uppercase;letter-spacing:0.04em">Share this code with your students</div>
+          <p style="margin:0.4rem auto 0;font-size:0.9rem;color:var(--color-text-muted);max-width:460px">
+            Tell students to open <b>Connect to Teacher</b> on their dashboard, paste this code, and save it.
+          </p>
+          <div id="manage-class-code" style="font-size:3rem;font-weight:800;letter-spacing:0.35em;color:#1e40af;font-family:monospace;margin:0.75rem 0">${escapeHtml(code)}</div>
+          <div style="display:flex;gap:0.5rem;justify-content:center;flex-wrap:wrap">
+            <button class="btn" id="copy-manage-code">Copy Code</button>
+            <button class="btn" id="regenerate-code">↻ Regenerate Code</button>
+          </div>
+          <p style="font-size:0.75rem;color:var(--color-text-muted);margin-top:0.5rem">Lesson allowance: <b>${pubCount}/${limit}</b> published</p>
+        </div>
+
+        <div class="section-header">
+          <h3>Connected Students (${students.length})</h3>
+          <button class="btn btn-sm" id="refresh-students">↻ Refresh</button>
+        </div>
+        ${students.length === 0 ? `
+          <div class="empty-state" style="padding:2rem">
+            <p>No students connected yet.</p>
+            <p style="font-size:0.85rem;color:var(--color-text-muted)">Share your class code with students — once they paste and save it, they will appear here and you can see their progress.</p>
+            <div style="display:flex;gap:0.5rem;justify-content:center;margin-top:1rem">
+              <button class="btn" id="copy-manage-code-empty">Copy Code</button>
+              <button class="btn btn-primary" id="view-lessons-empty">View Your Lessons</button>
+            </div>
+          </div>` :
+          `<div class="card-grid">
+            ${students.map(s => {
+              const stats = s.stats || { lessons_completed: 0, avg_score: 0, assignments_submitted: 0 };
+              return `
+              <div class="card student-card" data-id="${escapeHtml(s.id)}" data-name="${escapeHtml(s.full_name || s.email || "Student")}" style="cursor:pointer">
+                <div style="display:flex;align-items:center;gap:0.75rem">
+                  <div style="width:40px;height:40px;border-radius:50%;background:var(--color-primary);color:#fff;display:flex;align-items:center;justify-content:center;font-weight:700;font-size:0.9rem;flex-shrink:0">${escapeHtml((s.full_name || "S").charAt(0).toUpperCase())}</div>
+                  <div style="flex:1;min-width:0">
+                    <h3 style="margin:0;font-size:0.95rem">${escapeHtml(s.full_name || s.email || "Student")}</h3>
+                    <p style="margin:0.15rem 0 0;color:var(--color-text-muted);font-size:0.8rem">${escapeHtml(s.email || "")} ${s.form_level ? "— " + escapeHtml(s.form_level) : ""}</p>
+                    ${s.joined_at ? `<p style="margin:0.15rem 0 0;color:var(--color-text-muted);font-size:0.7rem">Joined ${new Date(s.joined_at).toLocaleDateString()}</p>` : ""}
+                  </div>
+                  <span style="color:var(--color-text-muted);font-size:0.8rem">→</span>
+                </div>
+                <div style="display:flex;gap:0.4rem;margin-top:0.75rem;flex-wrap:wrap">
+                  <span class="student-stat-chip" title="Lessons completed">✅ ${stats.lessons_completed}</span>
+                  <span class="student-stat-chip" title="Average score">📈 ${stats.avg_score}%</span>
+                  <span class="student-stat-chip" title="Assignments submitted">📝 ${stats.assignments_submitted}</span>
+                </div>
+              </div>`;
+            }).join("")}
+          </div>`}
+      </div>
+    `);
+    document.getElementById("back-btn").addEventListener("click", () => loadOverview(dashboard));
+    document.getElementById("copy-manage-code")?.addEventListener("click", () => {
+      const code = document.getElementById("manage-class-code").textContent;
+      const done = () => { const b = document.getElementById("copy-manage-code"); if (b) { const t=b.textContent; b.textContent="Copied ✓"; setTimeout(()=>b.textContent=t,1500);} };
+      if (navigator.clipboard?.writeText) { navigator.clipboard.writeText(code).then(done).catch(done); } else done();
+    });
+    document.getElementById("copy-manage-code-empty")?.addEventListener("click", () => {
+      const done = () => { const b = document.getElementById("copy-manage-code-empty"); if (b) { const t=b.textContent; b.textContent="Copied ✓"; setTimeout(()=>b.textContent=t,1500);} };
+      if (navigator.clipboard?.writeText) navigator.clipboard.writeText(code).then(done).catch(done); else done();
+    });
+    document.getElementById("view-lessons-empty")?.addEventListener("click", () => loadLessons(dashboard));
+    document.getElementById("regenerate-code").addEventListener("click", async () => {
+      if (!confirm("Regenerate your class code? Students using the old code will need the new one.")) return;
+      try {
+        const res = await request("/classrooms/me/code/regenerate", { method: "POST", body: "{}" });
+        const el = document.getElementById("manage-class-code");
+        if (el && res?.code) el.textContent = res.code;
+      } catch(e) { alert("Failed to regenerate code: " + e.message); }
+    });
+    document.getElementById("refresh-students")?.addEventListener("click", () => loadClass(dashboard));
+    document.getElementById("edit-class-name")?.addEventListener("click", () => {
+      document.getElementById("manage-class-name-display").style.display = "none";
+      const editRow = document.getElementById("manage-class-name-edit");
+      editRow.style.display = "block";
+      const input = document.getElementById("manage-class-name-input");
+      input.focus();
+    });
+    document.getElementById("cancel-class-name")?.addEventListener("click", () => {
+      document.getElementById("manage-class-name-edit").style.display = "none";
+      document.getElementById("manage-class-name-display").style.display = "";
+    });
+    document.getElementById("save-class-name")?.addEventListener("click", async () => {
+      const input = document.getElementById("manage-class-name-input");
+      const status = document.getElementById("class-name-status");
+      const name = (input.value || "").trim();
+      if (!name) { status.style.display = "block"; status.style.color = "red"; status.textContent = "Enter a class name first."; return; }
+      status.style.display = "block";
+      status.style.color = "var(--color-text-muted)";
+      status.style.marginTop = "0.4rem";
+      status.style.fontSize = "0.8rem";
+      status.textContent = "Saving...";
+      try {
+        await request("/classrooms/me", { method: "POST", body: JSON.stringify({ name }) });
+        document.getElementById("manage-class-name-edit").style.display = "none";
+        const display = document.getElementById("manage-class-name-display");
+        display.textContent = name;
+        display.style.display = "";
+        status.style.display = "none";
+        showToast("Class name saved");
+      } catch(e) {
+        status.style.color = "red";
+        status.textContent = e.message || "Could not save class name.";
+      }
+    });
+    document.querySelectorAll("#teacher-content .student-card").forEach(card => {
+      card.addEventListener("click", () => viewStudent(dashboard, card.dataset.id, card.dataset.name));
+    });
+  } catch (err) {
+    dashboard.showView(`<div class="empty-state"><h2>Error</h2><p>${escapeHtml(err.message)}</p></div>`);
+  }
+}
+
+;
+// modules/teacher/students.js — student list and detail views
+
+async function loadStudents(dashboard) {
+  dashboard.showView('<div class="loading-state"><div class="spinner"></div><p>Loading...</p></div>');
+  try {
+    const [studentsRes, classroom] = await Promise.all([
+      request("/students"),
+      request("/classrooms/me").catch(() => null),
+    ]);
+    const students = studentsRes?.items;
+    const sList = Array.isArray(students) ? students : [];
+    const code = classroom?.code || "";
+    dashboard.showView(`
+      <div class="content" style="max-width:960px">
+        <h2>Students</h2>
+        ${code ? `
+          <div class="card" style="margin:1rem 0;padding:1rem;display:flex;align-items:center;justify-content:space-between;flex-wrap:wrap;gap:0.75rem;background:#eff6ff;border:1px solid #dbeafe">
+            <div>
+              <strong style="color:#1e40af">Class Code:</strong>
+              <span style="font-family:monospace;font-weight:800;letter-spacing:0.2em;font-size:1.1rem">${escapeHtml(code)}</span>
+            </div>
+            <button class="btn btn-sm" id="students-copy-code">Copy Code</button>
+          </div>` : ""}
+        <div class="card-grid" style="margin-top:1rem">
+          ${sList.length === 0 ? '<div class="empty-state"><p>No students connected yet. Share your class code so students can join.</p></div>' :
+            sList.map(s => `
+              <div class="card student-card" data-id="${escapeHtml(s.id || s.user_id)}" data-name="${escapeHtml(s.full_name || s.user_id)}" style="cursor:pointer">
+                <div style="display:flex;align-items:center;gap:0.75rem">
+                  <div style="width:40px;height:40px;border-radius:50%;background:var(--color-primary);color:#fff;display:flex;align-items:center;justify-content:center;font-weight:700;font-size:0.9rem;flex-shrink:0">${escapeHtml((s.full_name || "S").charAt(0).toUpperCase())}</div>
+                  <div style="flex:1;min-width:0">
+                    <h3 style="margin:0;font-size:0.95rem">${escapeHtml(s.full_name || s.user_id)}</h3>
+                    <p style="margin:0.15rem 0 0;color:var(--color-text-muted);font-size:0.8rem;overflow:hidden;text-overflow:ellipsis;white-space:nowrap">${escapeHtml(s.email || "")} ${s.form_level ? "— Form " + escapeHtml(s.form_level) : ""}</p>
+                  </div>
+                  <span style="color:var(--color-text-muted);font-size:0.8rem">→</span>
+                </div>
+              </div>
+            `).join("")}
+        </div>
+      </div>
+    `);
+    document.getElementById("students-copy-code")?.addEventListener("click", () => {
+      const done = () => { const b = document.getElementById("students-copy-code"); if (b) { const t=b.textContent; b.textContent="Copied ✓"; setTimeout(()=>b.textContent=t,1500);} };
+      if (navigator.clipboard?.writeText) navigator.clipboard.writeText(code).then(done).catch(done); else done();
+    });
+    document.querySelectorAll("#teacher-content .student-card").forEach(card => {
+      card.addEventListener("click", () => viewStudent(dashboard, card.dataset.id, card.dataset.name));
+    });
+  } catch (err) {
+    dashboard.showView(`<div class="empty-state"><h2>Error</h2><p>${escapeHtml(err.message)}</p></div>`);
+  }
+}
+
+async function viewStudent(dashboard, studentId, studentName) {
+  dashboard.showView('<div class="loading-state"><div class="spinner"></div><p>Loading student progress...</p></div>');
+  try {
+    const [progress, profile] = await Promise.all([
+      request(`/progress/${studentId}`).catch(() => []),
+      request(`/students/${studentId}`).catch(() => null),
+    ]);
+
+    const progressList = typeof asProgressItems === "function" ? asProgressItems(progress) : (Array.isArray(progress) ? progress : (progress && progress.items) || []);
+    const attempted = Array.isArray(progress) ? progress.length : ((progress && progress.total) || progressList.length);
+    const bySubject = {};
+    let totalCompleted = 0;
+    let avgScore = 0;
+    const scores = [];
+    progressList.forEach(p => {
+      const subj = p.subject_name || "General";
+      if (!bySubject[subj]) bySubject[subj] = { total: 0, completed: 0, scores: [] };
+      bySubject[subj].total++;
+      if (p.completion_percentage >= 100) { bySubject[subj].completed++; totalCompleted++; }
+      if (p.score_percentage != null && p.score_percentage > 0) {
+        bySubject[subj].scores.push(p.score_percentage);
+        scores.push(p.score_percentage);
+      }
+    });
+    if (scores.length > 0) avgScore = Math.round(scores.reduce((a, b) => a + b, 0) / scores.length);
+
+    dashboard.showView(`
+      <div class="content" style="max-width:960px">
+        <div style="display:flex;align-items:center;gap:0.5rem;margin-bottom:1rem">
+          <button class="btn" id="back-btn">← Back</button>
+          <h2>${escapeHtml(studentName)}</h2>
+        </div>
+
+        ${profile ? `
+          <div style="display:flex;gap:2rem;flex-wrap:wrap;margin-bottom:1.5rem;font-size:0.85rem;color:var(--color-text-muted)">
+            ${profile.email ? `<span>📧 ${escapeHtml(profile.email)}</span>` : ""}
+            ${profile.form_level ? `<span>📋 ${escapeHtml(profile.form_level)}</span>` : ""}
+            ${profile.phone ? `<span>📱 ${escapeHtml(profile.phone)}</span>` : ""}
+          </div>
+        ` : ""}
+
+        <div class="stat-grid">
+          <div class="stat-card">
+            <div class="stat-icon" style="background:#eff6ff;color:#2563eb">📚</div>
+            <div class="stat-value">${attempted}</div>
+            <div class="stat-label">Lessons Attempted</div>
+          </div>
+          <div class="stat-card">
+            <div class="stat-icon" style="background:#f0fdf4;color:#16a34a">✅</div>
+            <div class="stat-value">${totalCompleted}</div>
+            <div class="stat-label">Completed</div>
+          </div>
+          <div class="stat-card">
+            <div class="stat-icon" style="background:#fef3c7;color:#d97706">📈</div>
+            <div class="stat-value">${avgScore != null ? avgScore + "%" : "0%"}</div>
+            <div class="stat-label">Avg Score</div>
+          </div>
+        </div>
+
+        <div class="section-header">
+          <h3>Progress by Subject</h3>
+        </div>
+        ${Object.keys(bySubject).length === 0
+          ? '<div class="empty-state" style="padding:2rem"><p>No progress data yet</p></div>'
+          : Object.entries(bySubject).map(([name, data]) => {
+              const pct = data.total > 0 ? Math.round((data.completed / data.total) * 100) : 0;
+              const subjAvg = data.scores.length > 0 ? Math.round(data.scores.reduce((a, b) => a + b, 0) / data.scores.length) : 0;
+              return `
+                <div class="card" style="margin-bottom:0.75rem">
+                  <div style="display:flex;justify-content:space-between;align-items:center;margin-bottom:0.5rem">
+                    <strong>${escapeHtml(name)}</strong>
+                    <span style="font-size:0.85rem;color:var(--color-text-muted)">${data.completed}/${data.total} lessons${subjAvg > 0 ? " · " + subjAvg + "% avg" : ""}</span>
+                  </div>
+                  <div class="progress-bar">
+                    <div class="progress-bar-fill" style="width:${pct}%"></div>
+                  </div>
+                </div>
+              `;
+            }).join("")}
+      </div>
+    `);
+
+    document.getElementById("back-btn")?.addEventListener("click", () => loadStudents(dashboard));
+  } catch (err) {
+    dashboard.showView(`<div class="empty-state"><p>Error loading student data</p><button class="btn" id="back-btn">← Back</button></div>`);
+    document.getElementById("back-btn")?.addEventListener("click", () => loadStudents(dashboard));
+  }
+}
+
+;
+// modules/teacher/lessons.js — lesson browser and bookmarks
+
+async function loadLessons(dashboard) {
+  dashboard.showView('<div class="loading-state"><div class="spinner"></div><p>Loading...</p></div>');
+  try {
+    const [lessons, classroom] = await Promise.all([
+      request("/lessons"),
+      request("/classrooms/me").catch(() => null),
+    ]);
+    let drafts = [];
+    try { drafts = JSON.parse(localStorage.getItem("casuya_teacher_drafts") || "[]"); } catch(e) {}
+    const pubLessons = (Array.isArray(lessons) ? lessons : []).filter(l => l.status === "published");
+    const lessonLimit = classroom?.lesson_limit ?? 2;
+    const lessonLimitLine = `Published lessons: <b>${pubLessons.length}/${lessonLimit}</b>${pubLessons.length >= lessonLimit ? ' — limit reached. Ask an administrator to raise your allocation.' : ''}`;
+    dashboard.showView(`
+      <div class="content">
+        <div style="display:flex;justify-content:space-between;align-items:center;flex-wrap:wrap;gap:0.5rem">
+          <h2>Lessons</h2>
+          <div style="display:flex;gap:0.5rem">
+            <button class="btn btn-primary" id="publish-lesson-btn">＋ Publish Lesson</button>
+            <button class="btn btn-sm" id="create-draft-btn">Create Draft</button>
+          </div>
+        </div>
+        <div id="lesson-form-area"></div>
+        <div id="draft-form-area"></div>
+        ${lessonLimitLine ? `<p style="font-size:0.8rem;color:var(--color-text-muted);margin:0.5rem 0 0">${lessonLimitLine}</p>` : ""}
+        ${drafts.length > 0 ? `
+          <h3 style="margin:1.5rem 0 0.75rem">Your Drafts (${drafts.length})</h3>
+          <div class="card-grid">
+            ${drafts.map((d, i) => `
+              <div class="card" style="padding:1rem">
+                <div style="display:flex;justify-content:space-between;align-items:start">
+                  <div>
+                    <h4 style="margin:0">${escapeHtml(d.title)}</h4>
+                    <p style="color:var(--color-text-muted);font-size:0.85rem;margin-top:0.25rem">Created: ${new Date(d.createdAt).toLocaleDateString()}</p>
+                    <p style="color:var(--color-text-muted);font-size:0.75rem;margin-top:0.15rem">Content: ${d.html_content.length} chars</p>
+                  </div>
+                  <div style="display:flex;gap:0.25rem">
+                    <button class="btn btn-sm" data-view-draft="${i}">View</button>
+                    <button class="btn btn-sm btn-danger" data-delete-draft="${i}">Delete</button>
+                  </div>
+                </div>
+              </div>
+            `).join("")}
+          </div>
+        ` : ''}
+        <h3 style="margin:1.5rem 0 0.75rem">Published Lessons</h3>
+        <div class="card-grid">
+          ${!Array.isArray(lessons) || lessons.length === 0 ? '<div class="empty-state"><p>No lessons yet</p></div>' :
+            lessons.map(l => `
+              <div class="card lesson-card clickable" data-id="${escapeHtml(l.id)}">
+                <h3>${escapeHtml(l.title)}</h3>
+                <p style="color:var(--color-text-muted)">${escapeHtml(l.status)}</p>
+              </div>
+            `).join("")}
+        </div>
+      </div>
+    `);
+    document.querySelectorAll("#teacher-content .lesson-card.clickable").forEach(el => {
+      el.addEventListener("click", () => viewLessonContent("#teacher-content", el.dataset.id, () => loadLessons(dashboard)));
+    });
+    document.getElementById("create-draft-btn")?.addEventListener("click", () => {
+      document.getElementById("draft-form-area").innerHTML = `
+        <div class="card" style="margin-top:1rem;padding:1.5rem">
+          <h3 style="margin-bottom:0.75rem">Create Lesson Draft</h3>
+          <form id="draft-form" style="display:flex;flex-direction:column;gap:0.75rem">
+            <div>
+              <label style="font-size:0.8rem;color:var(--color-text-muted);display:block;margin-bottom:0.25rem">Title</label>
+              <input class="input" name="title" placeholder="Lesson title" required>
+            </div>
+            <div>
+              <label style="font-size:0.8rem;color:var(--color-text-muted);display:block;margin-bottom:0.25rem">HTML Content</label>
+              <textarea class="input" name="html_content" rows="12" placeholder="Write lesson content in HTML..." required style="font-family:monospace;font-size:0.85rem"></textarea>
+            </div>
+            <div style="display:flex;gap:0.5rem">
+              <button class="btn btn-success" type="submit">Save Draft</button>
+              <button class="btn" type="button" id="cancel-draft">Cancel</button>
+            </div>
+          </form>
+        </div>
+      `;
+      document.getElementById("cancel-draft").addEventListener("click", () => document.getElementById("draft-form-area").innerHTML = "");
+      document.getElementById("draft-form").addEventListener("submit", (e) => {
+        e.preventDefault();
+        const fd = new FormData(e.target);
+        drafts.unshift({
+          title: fd.get("title"),
+          html_content: fd.get("html_content"),
+          createdAt: Date.now(),
+        });
+        localStorage.setItem("casuya_teacher_drafts", JSON.stringify(drafts));
+        loadLessons(dashboard);
+      });
+    });
+    document.getElementById("publish-lesson-btn")?.addEventListener("click", async () => {
+      if (pubLessons.length >= lessonLimit) {
+        alert("You have reached your limit of " + lessonLimit + " published lessons. Ask an administrator to increase your allocation.");
+        return;
+      }
+      try {
+        const subjects = await request("/subjects");
+        const subjList = Array.isArray(subjects) ? subjects : [];
+        document.getElementById("lesson-form-area").innerHTML = `
+          <div class="card" style="margin-top:1rem;padding:1.5rem">
+            <h3 style="margin-bottom:0.5rem">Publish a Lesson</h3>
+            <p style="font-size:0.8rem;color:var(--color-text-muted);margin:0 0 1rem">
+              This lesson is published instantly to your connected students. Remaining allowance: <b>${lessonLimit - pubLessons.length}</b>.
+            </p>
+            <form id="publish-form" style="display:flex;flex-direction:column;gap:0.75rem">
+              <div>
+                <label style="font-size:0.8rem;color:var(--color-text-muted);display:block;margin-bottom:0.25rem">Title</label>
+                <input class="input" name="title" placeholder="e.g. Introduction to Algebra" required>
+              </div>
+              <div>
+                <label style="font-size:0.8rem;color:var(--color-text-muted);display:block;margin-bottom:0.25rem">Subject</label>
+                <select class="input" id="pub-subject" required>
+                  <option value="">Select subject...</option>
+                  ${subjList.map(s => `<option value="${escapeHtml(s.id)}">${escapeHtml(s.name)}</option>`).join("")}
+                </select>
+              </div>
+              <div>
+                <label style="font-size:0.8rem;color:var(--color-text-muted);display:block;margin-bottom:0.25rem">Topic</label>
+                <select class="input" id="pub-topic" required><option value="">Select subject first...</option></select>
+              </div>
+              <div>
+                <label style="font-size:0.8rem;color:var(--color-text-muted);display:block;margin-bottom:0.25rem">Subtopic</label>
+                <select class="input" id="pub-subtopic" required><option value="">Select topic first...</option></select>
+              </div>
+              <div>
+                <label style="font-size:0.8rem;color:var(--color-text-muted);display:block;margin-bottom:0.25rem">Lesson Content (HTML)</label>
+                <textarea class="input" name="html_content" rows="12" placeholder="Write lesson content in HTML..." required style="font-family:monospace;font-size:0.85rem"></textarea>
+              </div>
+              <div style="display:flex;gap:0.5rem">
+                <button class="btn btn-success" type="submit" id="publish-submit">Publish Lesson</button>
+                <button class="btn" type="button" id="cancel-publish">Cancel</button>
+              </div>
+              <p id="publish-status" style="display:none;font-size:0.85rem;margin:0"></p>
+            </form>
+          </div>
+        `;
+        document.getElementById("cancel-publish").addEventListener("click", () => document.getElementById("lesson-form-area").innerHTML = "");
+        const subjSel = document.getElementById("pub-subject");
+        const topicSel = document.getElementById("pub-topic");
+        const subtopicSel = document.getElementById("pub-subtopic");
+        subjSel.addEventListener("change", async () => {
+          topicSel.innerHTML = '<option value="">Loading...</option>';
+          subtopicSel.innerHTML = '<option value="">Select topic first...</option>';
+          if (!subjSel.value) { topicSel.innerHTML = '<option value="">Select subject first...</option>'; return; }
+          try {
+            const topics = await request(`/topics/?subject_id=${encodeURIComponent(subjSel.value)}`);
+            const tList = Array.isArray(topics) ? topics : [];
+            topicSel.innerHTML = '<option value="">Select topic...</option>' + tList.map(t => `<option value="${escapeHtml(t.id)}">${escapeHtml(t.title)}</option>`).join("");
+          } catch(e) { topicSel.innerHTML = '<option value="">No topics found</option>'; }
+        });
+        topicSel.addEventListener("change", async () => {
+          subtopicSel.innerHTML = '<option value="">Loading...</option>';
+          if (!topicSel.value) { subtopicSel.innerHTML = '<option value="">Select topic first...</option>'; return; }
+          try {
+            const subs = await request(`/subtopics/?topic_id=${encodeURIComponent(topicSel.value)}`);
+            const sList = Array.isArray(subs) ? subs : [];
+            subtopicSel.innerHTML = '<option value="">Select subtopic...</option>' + sList.map(s => `<option value="${escapeHtml(s.id)}">${escapeHtml(s.title)}</option>`).join("");
+          } catch(e) { subtopicSel.innerHTML = '<option value="">No subtopics found</option>'; }
+        });
+        document.getElementById("publish-form").addEventListener("submit", async (e) => {
+          e.preventDefault();
+          const fd = new FormData(e.target);
+          const status = document.getElementById("publish-status");
+          status.style.display = "block";
+          status.style.color = "var(--color-text-muted)";
+          status.textContent = "Publishing lesson...";
+          document.getElementById("publish-submit").disabled = true;
+          try {
+            await request("/lessons", {
+              method: "POST",
+              body: JSON.stringify({
+                subtopic_id: subtopicSel.value,
+                title: fd.get("title"),
+                html_content: fd.get("html_content"),
+              }),
+            });
+            status.style.color = "var(--color-success)";
+            status.textContent = "Lesson published successfully!";
+            setTimeout(() => loadLessons(dashboard), 1200);
+          } catch(err) {
+            status.style.color = "red";
+            status.textContent = "Failed: " + err.message;
+            document.getElementById("publish-submit").disabled = false;
+          }
+        });
+      } catch(e) {
+        alert("Could not load subjects: " + e.message);
+      }
+    });
+    document.querySelectorAll("[data-view-draft]").forEach(btn => {
+      btn.addEventListener("click", () => {
+        const idx = parseInt(btn.dataset.viewDraft);
+        const draft = drafts[idx];
+        dashboard.showView(`
+          <div class="content">
+            <div style="display:flex;align-items:center;gap:0.5rem;margin-bottom:1rem">
+              <button class="btn" id="back-btn">← Back</button>
+              <h2>${escapeHtml(draft.title)}</h2>
+              <span style="font-size:0.75rem;padding:0.2rem 0.6rem;background:#fef3c7;color:#d97706;border-radius:var(--radius);font-weight:600">Draft</span>
+            </div>
+            <div class="lesson-viewer" id="draft-viewer"></div>
+          </div>
+        `);
+        const viewer = document.getElementById("draft-viewer");
+        if (viewer) {
+          const iframe = document.createElement("iframe");
+          iframe.style.cssText = "width:100%;min-height:600px;border:1px solid var(--color-border);border-radius:var(--radius);background:#fff";
+          iframe.sandbox = "allow-same-origin";
+          iframe.srcdoc = draft.html_content || "<p>No content</p>";
+          viewer.appendChild(iframe);
+        }
+        document.getElementById("back-btn").addEventListener("click", () => loadLessons(dashboard));
+      });
+    });
+    document.querySelectorAll("[data-delete-draft]").forEach(btn => {
+      btn.addEventListener("click", () => {
+        const idx = parseInt(btn.dataset.deleteDraft);
+        drafts.splice(idx, 1);
+        localStorage.setItem("casuya_teacher_drafts", JSON.stringify(drafts));
+        loadLessons(dashboard);
+      });
+    });
+  } catch (err) {
+    dashboard.showView(`<div class="empty-state"><h2>Error</h2><p>${escapeHtml(err.message)}</p></div>`);
+  }
+}
+
+async function loadBookmarks(dashboard) {
+  dashboard.showView('<div class="loading-state"><div class="spinner"></div><p>Loading bookmarks...</p></div>');
+  try {
+    const data = await request("/bookmarks/");
+    const bookmarks = Array.isArray(data) ? data : [];
+    if (bookmarks.length === 0) {
+      dashboard.showView('<div class="content"><h2>Bookmarks</h2><div class="empty-state"><p>No bookmarks yet. Open a lesson and click ☆ to bookmark it.</p></div></div>');
+      return;
+    }
+    dashboard.showView(`
+      <div class="content">
+        <h2>Bookmarks</h2>
+        <div class="card-grid" style="margin-top:1rem">
+          ${bookmarks.map(b => `
+            <div class="card lesson-card clickable" data-id="${escapeHtml(b.lesson_id || b.id)}" style="position:relative">
+              <h3>${escapeHtml(b.lesson_title || b.title || "Untitled")}</h3>
+              <span style="position:absolute;top:0.5rem;right:0.5rem;font-size:0.75rem">🔖</span>
+            </div>
+          `).join("")}
+        </div>
+      </div>
+    `);
+    document.querySelectorAll("#teacher-content .lesson-card.clickable").forEach(el => {
+      el.addEventListener("click", () => viewLessonContent("#teacher-content", el.dataset.id, () => loadBookmarks(dashboard)));
+    });
+  } catch(e) {
+    dashboard.showView('<div class="content"><h2>Bookmarks</h2><div class="empty-state"><p>Error loading bookmarks</p></div></div>');
+  }
+}
+
+;
+// modules/teacher/assignments-crud.js — assignments management with AI exam generation
+// List/create/edit/delete + exam paper preview. Submission grading moved to
+// assignments-grading.js (openAssignmentSubmissions).
+
+async function loadAssignments(dashboard) {
+  dashboard.showView('<div class="loading-state"><div class="spinner"></div><p>Loading assignments...</p></div>');
+  try {
+    const [lessons, students, assignments] = await Promise.all([
+      request("/lessons"),
+      request("/students"),
+      request("/assignments").catch(() => []),
+    ]);
+    const lessonList = Array.isArray(lessons) ? lessons : [];
+    const studentList = Array.isArray(students?.items) ? students.items : [];
+    const assignmentList = Array.isArray(assignments) ? assignments : [];
+
+    dashboard.showView(`
+      <div class="content">
+        <div style="display:flex;justify-content:space-between;align-items:center">
+          <h2>Assignments</h2>
+          <button class="btn btn-primary" id="new-assignment-btn">+ New Assignment</button>
+        </div>
+        <div id="assignment-form-area"></div>
+        <div style="margin-top:1rem">
+          ${assignmentList.length === 0 ? '<div class="empty-state"><p>No assignments yet. Create one to assign lessons to students.</p></div>' :
+            assignmentList.map((a, i) => `
+              <div class="card" style="padding:1rem;margin-bottom:0.5rem">
+                <div style="display:flex;justify-content:space-between;align-items:start">
+                  <div style="flex:1;min-width:0">
+                    <h4 style="margin:0">${escapeHtml(a.title)}</h4>
+                    <p style="color:var(--color-text-muted);font-size:0.85rem;margin-top:0.25rem">${escapeHtml((a.lesson_title || a.lesson_id || "Unknown lesson"))}</p>
+                    <p style="color:var(--color-text-muted);font-size:0.75rem;margin-top:0.15rem">Due: ${a.due_date ? new Date(a.due_date).toLocaleDateString() : "No due date"} | ${a.status}</p>
+                    ${a.paper_summary ? `<p style="color:var(--color-accent);font-size:0.78rem;margin-top:0.15rem">📄 ${examPaperMetaLine(a.paper_summary)}</p>` : ""}
+                  </div>
+                  <div style="display:flex;gap:0.35rem;flex-shrink:0;margin-left:0.5rem">
+                    <button class="btn btn-sm" data-open-assignment="${a.id}" title="View exam paper">Open</button>
+                    <button class="btn btn-sm" data-edit-assignment="${a.id}" title="Edit assignment">Edit</button>
+                    <button class="btn btn-sm" data-subs-assignment="${a.id}" title="View submissions">Submissions</button>
+                    <button class="btn btn-sm btn-danger" data-delete-assignment="${a.id}" title="Delete assignment">Remove</button>
+                  </div>
+                </div>
+              </div>
+            `).join("")}
+        </div>
+      </div>
+    `);
+    document.getElementById("new-assignment-btn")?.addEventListener("click", () => {
+      showAssignmentCreateForm(dashboard, lessonList);
+    });
+    document.querySelectorAll("[data-delete-assignment]").forEach(btn => {
+      btn.addEventListener("click", async () => {
+        const id = btn.dataset.deleteAssignment;
+        try {
+          await request(`/assignments/${id}`, { method: "DELETE" });
+          loadAssignments(dashboard);
+        } catch(err) { alert("Failed to delete assignment"); }
+      });
+    });
+    document.querySelectorAll("[data-open-assignment]").forEach(btn => {
+      btn.addEventListener("click", async () => {
+        const id = btn.dataset.openAssignment;
+        try {
+          const a = await request(`/assignments/${id}`);
+          if (!a || !a.paper) { alert("This assignment has no exam paper attached."); return; }
+          dashboard.showView(`
+            <div class="content">
+              <div style="display:flex;align-items:center;gap:0.5rem;margin-bottom:1rem;flex-wrap:wrap">
+                <button class="btn" id="back-to-list">← Back to Assignments</button>
+                <h2 style="flex:1">${escapeHtml(a.title)}</h2>
+              </div>
+              <p style="color:var(--color-text-muted);font-size:0.85rem;margin-bottom:0.5rem">
+                ${escapeHtml(a.lesson_title || "")} | Due: ${a.due_date ? new Date(a.due_date).toLocaleDateString() : "No due date"} | ${a.status}
+              </p>
+              ${renderExamPaper(a.paper, { mode: "preview", ns: "open-" + (a.paper.header?.form_level || 0) })}
+            </div>
+          `);
+          document.getElementById("back-to-list").addEventListener("click", () => loadAssignments(dashboard));
+        } catch(err) { alert("Failed to load assignment: " + err.message); }
+      });
+    });
+    document.querySelectorAll("[data-edit-assignment]").forEach(btn => {
+      btn.addEventListener("click", async () => {
+        const id = btn.dataset.editAssignment;
+        try {
+          const a = await request(`/assignments/${id}`);
+          if (!a) { alert("Assignment not found."); return; }
+          document.getElementById("assignment-form-area").innerHTML = `
+            <div class="card" style="margin-top:1rem;padding:1.5rem">
+              <h3 style="margin-bottom:0.5rem">Edit Assignment</h3>
+              <form id="edit-assignment-form" style="display:grid;grid-template-columns:1fr 1fr;gap:0.75rem">
+                <div style="grid-column:1/-1">
+                  <label style="font-size:0.8rem;color:var(--color-text-muted);display:block;margin-bottom:0.25rem">Title</label>
+                  <input class="input" name="title" id="edit-title" value="${escapeHtml(a.title)}" required>
+                </div>
+                <div>
+                  <label style="font-size:0.8rem;color:var(--color-text-muted);display:block;margin-bottom:0.25rem">Lesson</label>
+                  <select class="input" name="lesson_id" id="edit-lesson">
+                    ${lessonList.map(l => `<option value="${l.id}" ${l.id === a.lesson_id ? "selected" : ""}>${escapeHtml(l.title)}</option>`).join("")}
+                  </select>
+                </div>
+                <div>
+                  <label style="font-size:0.8rem;color:var(--color-text-muted);display:block;margin-bottom:0.25rem">Due Date</label>
+                  <input class="input" type="date" name="due_date" value="${a.due_date ? a.due_date.split("T")[0] : ""}">
+                </div>
+                <div style="grid-column:1/-1">
+                  <label style="font-size:0.8rem;color:var(--color-text-muted);display:block;margin-bottom:0.25rem">Notes</label>
+                  <input class="input" name="notes" value="${escapeHtml(a.notes || "")}">
+                </div>
+                <div style="grid-column:1/-1;display:flex;gap:0.5rem;align-items:center">
+                  <button class="btn btn-success" type="submit">Save Changes</button>
+                  <button class="btn" type="button" id="cancel-edit">Cancel</button>
+                  <span id="edit-status" style="font-size:0.8rem;color:var(--color-text-muted)"></span>
+                </div>
+              </form>
+            </div>
+          `;
+          document.getElementById("cancel-edit").addEventListener("click", () => document.getElementById("assignment-form-area").innerHTML = "");
+          document.getElementById("edit-assignment-form").addEventListener("submit", async (e) => {
+            e.preventDefault();
+            const fd = new FormData(e.target);
+            const status = document.getElementById("edit-status");
+            status.textContent = "Saving...";
+            try {
+              await request(`/assignments/${id}?` + new URLSearchParams({
+                title: fd.get("title"),
+                lesson_id: fd.get("lesson_id"),
+                due_date: fd.get("due_date") || "",
+                notes: fd.get("notes") || "",
+              }), { method: "PUT" });
+              document.getElementById("assignment-form-area").innerHTML = "";
+              loadAssignments(dashboard);
+            } catch(err) { status.textContent = "Failed: " + err.message; }
+          });
+        } catch(err) { alert("Failed to load assignment: " + err.message); }
+      });
+    });
+    document.querySelectorAll("[data-subs-assignment]").forEach(btn => {
+      btn.addEventListener("click", () => openAssignmentSubmissions(dashboard, btn.dataset.subsAssignment));
+    });
+  } catch(e) {
+    dashboard.showView('<div class="content"><h2>Assignments</h2><div class="empty-state"><p>Error loading assignments</p></div></div>');
+  }
+}
+;
+// modules/teacher/assignments-create-form.js — create-assignment form and AI exam paper generation
+// Rendered from the assignments list (assignments-crud.js) when the teacher clicks
+// "+ New Assignment". Handles the exam section editor, AI generation, preview and
+// final assignment creation. Uses the global helpers request / escapeHtml / renderExamPaper.
+
+function showAssignmentCreateForm(dashboard, lessonList) {
+  document.getElementById("assignment-form-area").innerHTML = `
+    <div class="card" style="margin-top:1rem;padding:1.5rem">
+      <h3 style="margin-bottom:0.5rem">Create a New Assignment</h3>
+      <p style="font-size:0.85rem;color:var(--color-text-muted);margin:0 0 0.9rem">
+        Use the <b>AI exam generator</b> to create a NECTA / internal-format paper for a lesson, preview it, then assign it to students.
+      </p>
+      <form id="assignment-form" style="display:grid;grid-template-columns:1fr 1fr;gap:0.75rem">
+        <div style="grid-column:1/-1">
+          <label style="font-size:0.8rem;color:var(--color-text-muted);display:block;margin-bottom:0.25rem">Title</label>
+          <input class="input" name="title" id="exam-title" placeholder="e.g. Form Two Chemistry - Mid-Term Examination">
+        </div>
+        <div>
+          <label style="font-size:0.8rem;color:var(--color-text-muted);display:block;margin-bottom:0.25rem">Lesson</label>
+          <select class="input" name="lesson_id" id="exam-lesson" required>
+            <option value="">Select lesson...</option>
+            ${lessonList.map(l => `<option value="${l.id}">${escapeHtml(l.title)}</option>`).join("")}
+          </select>
+        </div>
+        <div>
+          <label style="font-size:0.8rem;color:var(--color-text-muted);display:block;margin-bottom:0.25rem">Exam Type</label>
+          <select class="input" name="kind" id="exam-kind">
+            <option value="necta">NECTA Style (FTNA/CSEE)</option>
+            <option value="internal">Internal Examination</option>
+            <option value="exercise">Class Exercise</option>
+          </select>
+        </div>
+        <div>
+          <label style="font-size:0.8rem;color:var(--color-text-muted);display:block;margin-bottom:0.25rem">Due Date</label>
+          <input class="input" type="date" name="due_date">
+        </div>
+        <div>
+          <label style="font-size:0.8rem;color:var(--color-text-muted);display:block;margin-bottom:0.25rem">Time Allowed</label>
+          <input class="input" name="duration" id="exam-duration" placeholder="2 Hours">
+        </div>
+        <div style="grid-column:1/-1">
+          <label style="font-size:0.8rem;color:var(--color-text-muted);display:block;margin-bottom:0.25rem">Notes (optional)</label>
+          <input class="input" name="notes" placeholder="Optional instructions for students">
+        </div>
+        <div style="grid-column:1/-1">
+          <label style="font-size:0.8rem;color:var(--color-text-muted);display:block;margin-bottom:0.25rem">Exam Structure — adjust question counts & marks per section</label>
+          <div id="exam-sections"></div>
+        </div>
+        <div style="grid-column:1/-1;display:flex;gap:0.5rem;align-items:center;flex-wrap:wrap">
+          <button class="btn btn-primary" type="button" id="exam-generate">✨ Generate Exam with AI</button>
+          <span id="exam-generate-status" style="font-size:0.8rem;color:var(--color-text-muted)"></span>
+          <button class="btn" type="button" id="cancel-assignment" style="margin-left:auto">Cancel</button>
+        </div>
+      </form>
+      <div id="exam-preview-area" style="margin-top:1rem"></div>
+    </div>
+  `;
+  document.getElementById("cancel-assignment").addEventListener("click", () => document.getElementById("assignment-form-area").innerHTML = "");
+
+  const sectionsByKind = () => {
+    const out = [];
+    document.querySelectorAll("#exam-sections [data-sec-row]").forEach(row => {
+      out.push({
+        id: row.dataset.secRow,
+        count: parseInt(row.querySelector('[data-field="count"]').value, 10) || 1,
+        marks_per_question: parseInt(row.querySelector('[data-field="marks_per_question"]').value, 10) || 1,
+      });
+    });
+    return out;
+  };
+  const updateExamTotal = () => {
+    const line = document.getElementById("exam-total-line");
+    if (!line) return;
+    const secs = sectionsByKind();
+    const total = secs.reduce((s, x) => s + x.count * x.marks_per_question, 0);
+    line.innerHTML = `Total: <b>${total} marks</b> (${secs.length} sections)`;
+  };
+  const loadSectionEditor = async () => {
+    const kind = document.getElementById("exam-kind").value;
+    try {
+      const presets = await request("/assignments/exam-presets");
+      const cfg = presets && presets[kind];
+      if (!cfg) return;
+      const dur = document.getElementById("exam-duration");
+      if (!dur.value) dur.value = cfg.duration || "";
+      const total = cfg.sections.reduce((s, x) => s + x.count * x.marks_per_question, 0);
+      document.getElementById("exam-sections").innerHTML =
+        cfg.sections.map(sec => `
+          <div data-sec-row="${escapeHtml(sec.id)}" style="display:flex;align-items:center;gap:0.5rem;padding:0.35rem 0;border-bottom:1px dashed var(--color-border)">
+            <span style="width:1.7rem;font-weight:700">${escapeHtml(sec.id)}</span>
+            <span style="flex:1;font-size:0.85rem">${escapeHtml(sec.title)}</span>
+            <label style="font-size:0.75rem;color:var(--color-text-muted)">Questions <input class="input" style="width:4.5rem" type="number" min="1" max="40" data-field="count" value="${sec.count}"></label>
+            <label style="font-size:0.75rem;color:var(--color-text-muted)">Marks each <input class="input" style="width:4.5rem" type="number" min="1" max="50" data-field="marks_per_question" value="${sec.marks_per_question}"></label>
+          </div>
+        `).join("") +
+        `<div style="margin-top:0.4rem;font-size:0.8rem;color:var(--color-text-muted)" id="exam-total-line">Total: <b>${total} marks</b> (${cfg.sections.length} sections)</div>`;
+      document.querySelectorAll("#exam-sections input").forEach(inp => inp.addEventListener("input", updateExamTotal));
+    } catch(e) { /* presets unavailable */ }
+  };
+  document.getElementById("exam-kind").addEventListener("change", loadSectionEditor);
+  loadSectionEditor();
+
+  document.getElementById("exam-generate").addEventListener("click", async () => {
+    const lessonId = document.getElementById("exam-lesson").value;
+    if (!lessonId) { alert("Select a lesson first"); return; }
+    const btn = document.getElementById("exam-generate");
+    const status = document.getElementById("exam-generate-status");
+    const titleEl = document.getElementById("exam-title");
+    const kind = document.getElementById("exam-kind").value;
+    btn.disabled = true;
+    status.textContent = "Generating exam paper...";
+    try {
+      const res = await request("/assignments/generate-paper", {
+        method: "POST",
+        body: JSON.stringify({
+          lesson_id: lessonId,
+          kind,
+          duration: document.getElementById("exam-duration").value || "",
+          sections: sectionsByKind(),
+        }),
+      });
+      const paper = res && res.paper;
+      if (!paper) throw new Error("No paper returned");
+      if (!titleEl.value.trim()) {
+        const h = paper.header || {};
+        const label = paper.kind === "necta" ? "NECTA-Style Exam" : paper.kind === "exercise" ? "Class Exercise" : "Internal Exam";
+        titleEl.value = [h.subject, h.form_label, label].filter(Boolean).join(" — ");
+      }
+      document.getElementById("exam-preview-area").innerHTML = `
+        <div class="card" style="padding:1rem">
+          <div style="display:flex;justify-content:space-between;align-items:center;flex-wrap:wrap;gap:0.5rem;margin-bottom:0.75rem">
+            <h4 style="margin:0">Exam Preview</h4>
+            <div style="display:flex;gap:0.5rem">
+              <button class="btn btn-sm" id="exam-regenerate">↻ Regenerate</button>
+              <button class="btn btn-sm btn-success" id="exam-assign">Assign Exam to Students</button>
+            </div>
+          </div>
+          ${res.generator === "local" ? '<p style="font-size:0.8rem;color:var(--color-warning);margin:0 0 0.5rem">⚠ AI service unavailable — a valid paper was generated offline from the lesson content.</p>' : ""}
+          ${renderExamPaper(paper, { mode: "preview", ns: "preview-" + (paper.header?.form_level || 0) })}
+        </div>
+      `;
+      document.getElementById("exam-regenerate").addEventListener("click", () => {
+        document.getElementById("exam-generate").click();
+      });
+      document.getElementById("exam-assign").addEventListener("click", async () => {
+        const fd = new FormData(document.getElementById("assignment-form"));
+        try {
+          await request("/assignments?" + new URLSearchParams({
+            lesson_id: lessonId,
+            title: titleEl.value.trim() || fd.get("title") || "Assignment",
+            due_date: fd.get("due_date") || "",
+            notes: fd.get("notes") || "",
+            paper: JSON.stringify(paper),
+          }), { method: "POST" });
+          loadAssignments(dashboard);
+        } catch(err) { alert("Failed to create assignment: " + err.message); }
+      });
+      status.textContent = res.generator === "casuya-ai" ? "Generated by AI ✓ — review and assign." : "Generated offline ✓ — review and assign.";
+    } catch(err) {
+      status.textContent = "";
+      alert("Failed to generate exam: " + err.message);
+    } finally {
+      btn.disabled = false;
+    }
+  });
+}
+;
+// modules/teacher/assignments-grading.js — submission review & grading view
+// Extracted from assignments.js. Relies on globals: loadAssignments (back-to-list),
+// renderBlackboardReplay (teacher/utils.js), renderExamPaper (exams.js).
+
+async function openAssignmentSubmissions(dashboard, id) {
+  try {
+    const [a, subs] = await Promise.all([
+      request(`/assignments/${id}`),
+      request(`/assignments/${id}/submissions`),
+    ]);
+    const subList = Array.isArray(subs) ? subs : [];
+    dashboard.showView(`
+      <div class="content">
+        <div style="display:flex;align-items:center;gap:0.5rem;margin-bottom:1rem;flex-wrap:wrap">
+          <button class="btn" id="back-to-list">← Back to Assignments</button>
+          <h2 style="flex:1">Submissions: ${escapeHtml(a.title)}</h2>
+        </div>
+        ${subList.length === 0 ?
+          '<div class="empty-state"><p>No submissions yet. Students haven\'t submitted their work for this assignment.</p></div>' :
+          `<div style="margin-bottom:1rem"><p style="color:var(--color-text-muted);font-size:0.85rem">${subList.length} submission(s) received — click to view</p></div>
+           <div style="display:grid;gap:0.5rem">
+             ${subList.map(s => `
+               <div class="card" style="padding:0.75rem 1rem;cursor:pointer;transition:box-shadow 0.15s" data-view-submission="${s.id}" data-sub-assignment="${id}">
+                 <div style="display:flex;justify-content:space-between;align-items:center">
+                   <div>
+                     <span style="font-weight:600">${escapeHtml(s.student_id)}</span>
+                     <span style="color:var(--color-text-muted);font-size:0.8rem;margin-left:0.5rem">${s.status}</span>
+                   </div>
+                   <span style="font-size:0.8rem;color:var(--color-text-muted)">${s.submitted_at ? new Date(s.submitted_at).toLocaleString() : ""}</span>
+                 </div>
+               </div>
+             `).join("")}
+           </div>`
+        }
+        <div id="submission-detail" style="margin-top:1rem"></div>
+      </div>
+    `);
+    document.getElementById("back-to-list").addEventListener("click", () => loadAssignments(dashboard));
+    document.querySelectorAll("[data-view-submission]").forEach(card => {
+      card.addEventListener("mouseenter", () => card.style.boxShadow = "0 2px 8px rgba(0,0,0,0.1)");
+      card.addEventListener("mouseleave", () => card.style.boxShadow = "none");
+      card.addEventListener("click", async () => {
+        const subId = card.dataset.viewSubmission;
+        const assignId = card.dataset.subAssignment;
+        const detail = document.getElementById("submission-detail");
+        detail.innerHTML = '<div style="padding:1rem;color:var(--color-text-muted)">Loading submission...</div>';
+        try {
+          const [subData, assignData] = await Promise.all([
+            request(`/assignments/${assignId}/submissions`),
+            request(`/assignments/${assignId}`),
+          ]);
+          const sub = (Array.isArray(subData) ? subData : []).find(s => s.id === subId);
+          if (!sub) { detail.innerHTML = '<div style="padding:1rem;color:var(--color-error)">Submission not found</div>'; return; }
+          let elements = [];
+          let mcqAnswers = {};
+          let structuredAnswers = {};
+          try {
+            const parsed = JSON.parse(sub.elements_json || "{}");
+            if (Array.isArray(parsed)) {
+              elements = parsed;
+            } else {
+              elements = parsed.elements || [];
+              mcqAnswers = parsed.mcq_answers || {};
+              structuredAnswers = parsed.structured_answers || {};
+            }
+          } catch {}
+          const paper = assignData && assignData.paper;
+          let html = `
+            <div class="card" style="padding:1.25rem">
+              <div style="display:flex;justify-content:space-between;align-items:center;margin-bottom:0.75rem;flex-wrap:wrap;gap:0.5rem">
+                <h3 style="margin:0">Student: ${escapeHtml(sub.student_id)}</h3>
+                <span style="font-size:0.8rem;color:var(--color-text-muted)">Submitted: ${sub.submitted_at ? new Date(sub.submitted_at).toLocaleString() : "N/A"} | ${sub.status}</span>
+              </div>
+          `;
+          if (paper && paper.sections) {
+            html += '<div style="margin-bottom:1rem"><h4 style="margin:0 0 0.5rem">Multiple Choice Answers</h4>';
+            paper.sections.forEach(sec => {
+              if (sec.question_type !== "mcq") return;
+              (sec.questions || []).forEach(q => {
+                const chosen = mcqAnswers[q.number] != null ? mcqAnswers[q.number] : -1;
+                const correct = q.answer;
+                const isCorrect = chosen === correct;
+                const opts = (q.options || []).map((o, i) => {
+                  const sel = i === chosen;
+                  const cor = i === correct;
+                  let style = "padding:0.15rem 0.4rem;border-radius:3px;margin:0.1rem 0;display:block;font-size:0.85rem;";
+                  if (cor) style += "background:#dcfce7;font-weight:600;";
+                  else if (sel && !cor) style += "background:#fee2e2;text-decoration:line-through;";
+                  return `<span style="${style}">${i + 1}. ${escapeHtml(o)}</span>`;
+                }).join("");
+                html += `<div style="margin-bottom:0.5rem;padding:0.4rem;border-left:3px solid ${isCorrect ? "#16a34a" : "#dc2626"};padding-left:0.6rem">
+                  <span style="font-weight:600;font-size:0.85rem">Q${q.number}.</span> <span style="font-size:0.85rem">${escapeHtml(q.text).slice(0, 80)}</span>
+                  <div style="margin-top:0.2rem">${opts}</div>
+                  <span style="font-size:0.75rem;color:${isCorrect ? "#16a34a" : "#dc2626"};font-weight:600">${chosen >= 0 ? (isCorrect ? "Correct" : "Wrong") : "No answer"} (${q.marks} mark${q.marks > 1 ? "s" : ""})</span>
+                </div>`;
+              });
+            });
+            const hasStructured = Object.keys(structuredAnswers).length > 0;
+            if (hasStructured) {
+              html += '<h4 style="margin:1rem 0 0.5rem">Structured / Essay Answers</h4>';
+              paper.sections.forEach(sec => {
+                if (sec.question_type === "mcq") return;
+                (sec.questions || []).forEach(q => {
+                  const answer = structuredAnswers[q.number] || "";
+                  html += `<div style="margin-bottom:0.75rem;padding:0.5rem;border-left:3px solid #2563eb;padding-left:0.6rem;background:#f8fafc;border-radius:0 6px 6px 0">
+                    <div style="font-weight:600;font-size:0.85rem;margin-bottom:0.25rem">Q${q.number}. ${escapeHtml(q.text).slice(0, 100)}</div>
+                    <div style="font-size:0.75rem;color:var(--color-text-muted);margin-bottom:0.25rem">(${q.marks} mark${q.marks > 1 ? "s" : ""})</div>
+                    ${answer
+                      ? `<div style="background:#fff;padding:0.5rem;border:1px solid #e5e7eb;border-radius:4px;font-size:0.9rem;white-space:pre-wrap">${escapeHtml(answer)}</div>`
+                      : '<div style="color:#dc2626;font-size:0.85rem;font-style:italic">No answer submitted</div>'
+                    }
+                  </div>`;
+                });
+              });
+            }
+            html += '</div>';
+          }
+          if (elements.length > 0) {
+            html += '<div style="margin-bottom:0.5rem"><h4 style="margin:0 0 0.5rem">Blackboard Work</h4>';
+            html += '<div style="background:#f9fafb;border:1px solid #e5e7eb;border-radius:6px;padding:0.75rem;position:relative">';
+            html += '<canvas id="bb-replay-canvas" style="width:100%;border-radius:4px;background:#fff;cursor:default"></canvas>';
+            html += '</div></div>';
+          } else if (!paper) {
+            html += '<div style="color:var(--color-text-muted);font-size:0.85rem;padding:1rem">No work submitted yet.</div>';
+          }
+          html += '</div>';
+          detail.innerHTML = html;
+          card.scrollIntoView({ behavior: "smooth", block: "start" });
+          if (elements.length > 0) {
+            const replay = () => requestAnimationFrame(() => renderBlackboardReplay(elements));
+            if (window.ensureKaTeX) window.ensureKaTeX().then(replay); else replay();
+          }
+        } catch(err) { detail.innerHTML = '<div style="padding:1rem;color:var(--color-error)">Failed to load submission: ' + escapeHtml(err.message) + '</div>'; }
+      });
+    });
+  } catch(err) { alert("Failed to load submissions: " + err.message); }
+}
+;
+// modules/teacher/reports.js — class reports view
+
+async function loadReports(dashboard) {
+  dashboard.showView('<div class="loading-state"><div class="spinner"></div><p>Loading reports...</p></div>');
+  try {
+    const [students, lessons] = await Promise.all([
+      request("/students"),
+      request("/lessons"),
+    ]);
+    const studentList = Array.isArray(students?.items) ? students.items : [];
+    const lessonList = Array.isArray(lessons) ? lessons : [];
+
+    const studentProgress = [];
+    const rows = await Promise.all(studentList.slice(0, 20).map(async (s) => {
+      try {
+        const progress = await request(`/progress/${s.id || s.user_id}`);
+        const items = typeof asProgressItems === "function" ? asProgressItems(progress) : (Array.isArray(progress) ? progress : (progress && progress.items) || []);
+        if (items.length || (progress && progress.total)) {
+          const completed = items.filter(p => p.completion_percentage >= 100).length;
+          const scores = items.filter(p => p.score_percentage != null && p.score_percentage > 0);
+          const avgScore = scores.length > 0 ? Math.round(scores.reduce((a, b) => a + b.score_percentage, 0) / scores.length) : 0;
+          return {
+            name: s.full_name || "Unknown",
+            id: s.id || s.user_id,
+            total: Array.isArray(progress) ? progress.length : ((progress && progress.total) || items.length),
+            completed,
+            avgScore,
+          };
+        }
+      } catch(e) {}
+      return null;
+    }));
+    for (const r of rows) if (r) studentProgress.push(r);
+
+    const topStudents = [...studentProgress].sort((a, b) => b.avgScore - a.avgScore).slice(0, 5);
+    const mostActive = [...studentProgress].sort((a, b) => b.completed - a.completed).slice(0, 5);
+
+    dashboard.showView(`
+      <div class="content">
+        <h2>Class Reports</h2>
+        <div class="stat-grid" style="margin:1rem 0">
+          <div class="stat-card"><div class="stat-value">${studentList.length}</div><div class="stat-label">Total Students</div></div>
+          <div class="stat-card"><div class="stat-value">${lessonList.length}</div><div class="stat-label">Total Lessons</div></div>
+          <div class="stat-card"><div class="stat-value">${studentProgress.reduce((a, s) => a + s.completed, 0)}</div><div class="stat-label">Lessons Completed</div></div>
+          <div class="stat-card"><div class="stat-value">${studentProgress.length > 0 ? Math.round(studentProgress.reduce((a, s) => a + s.avgScore, 0) / studentProgress.length) : 0}%</div><div class="stat-label">Class Average</div></div>
+        </div>
+        ${topStudents.length > 0 ? `
+          <h3 style="margin:1.5rem 0 0.75rem">Top Performers</h3>
+          <div class="card-grid">
+            ${topStudents.map((s, i) => `
+              <div class="card" style="padding:1rem">
+                <div style="display:flex;align-items:center;gap:0.5rem">
+                  <span style="font-size:1.2rem;font-weight:700;color:var(--color-primary)">#${i + 1}</span>
+                  <div>
+                    <h4 style="margin:0">${escapeHtml(s.name)}</h4>
+                    <p style="color:var(--color-text-muted);font-size:0.85rem;margin:0.15rem 0 0">Avg: ${s.avgScore}% | ${s.completed} completed</p>
+                  </div>
+                </div>
+              </div>
+            `).join("")}
+          </div>
+        ` : ''}
+        ${mostActive.length > 0 ? `
+          <h3 style="margin:1.5rem 0 0.75rem">Most Active Students</h3>
+          <div class="card-grid">
+            ${mostActive.map(s => `
+              <div class="card" style="padding:1rem">
+                <h4 style="margin:0">${escapeHtml(s.name)}</h4>
+                <p style="color:var(--color-text-muted);font-size:0.85rem;margin:0.25rem 0 0">${s.completed}/${s.total} lessons completed | Avg: ${s.avgScore}%</p>
+              </div>
+            `).join("")}
+          </div>
+        ` : ''}
+        ${studentProgress.length === 0 ? '<div class="empty-state"><p>No student progress data available yet.</p></div>' : ''}
+      </div>
+    `);
+  } catch(e) {
+    dashboard.showView('<div class="content"><h2>Reports</h2><div class="empty-state"><p>Error loading reports</p></div></div>');
+  }
+}
+
+;
+// modules/teacher/plans-syllabus.js — teaching documents: curriculum data & syllabus topic loading
+// Extracted from plans.js (classic script, shared global scope).
+
+const plansSubjects = [
+  { slug: "mathematics", name: "Mathematics", sw: false },
+  { slug: "chemistry", name: "Chemistry", sw: false },
+  { slug: "physics", name: "Physics", sw: false },
+];
+const plansRoman = { 1: "I", 2: "II", 3: "III", 4: "IV", 5: "V", 6: "VI" };
+const plansTermNames = { "Term 1": "Term I", "Term 2": "Term II" };
+const plansTermNamesSw = { "Term 1": "Muhtasari wa Kwanza", "Term 2": "Muhtasari wa Pili" };
+
+function plansSubjectOptions() {
+  return plansSubjects.map(s => `<option value="${s.slug}">${escapeHtml(s.name)}${s.sw ? " (Kiswahili)" : ""}</option>`).join("");
+}
+
+function plansIsSwSubject(slug) {
+  return plansSubjects.find(s => s.slug === slug)?.sw || false;
+}
+
+function plansPlanLabel(p) {
+  if (p.plan_type === "scheme_of_work") {
+    const tn = p.language === "sw" ? (plansTermNamesSw[p.term] || p.term) : (plansTermNames[p.term] || p.term);
+    return `${p.title}`;
+  }
+  return p.title;
+}
+
+async function plansLoadSyllabusTopics() {
+  const ss = document.getElementById("tdoc-ss")?.value;
+  const formLevel = document.querySelector("#tdoc-lesson-form [name=form_level]")?.value;
+  const topicSel = document.getElementById("tdoc-topic");
+  const subSel = document.getElementById("tdoc-subtopic");
+  if (!topicSel) return;
+  topicSel.innerHTML = '<option value="">Loading topics…</option>';
+  subSel.innerHTML = '<option value="">— choose a topic first —</option>';
+  if (!ss || !formLevel) { topicSel.innerHTML = '<option value="">— choose subject & form to load topics —</option>'; return; }
+  let topics = [];
+  try {
+    const res = await request(`/syllabus/subjects/${encodeURIComponent(ss)}/forms/${formLevel}?_t=${Date.now()}`);
+    topics = (res && Array.isArray(res.topics)) ? res.topics : [];
+  } catch(e) { topics = []; }
+  if (!topics.length) { topicSel.innerHTML = '<option value="">No syllabus topics found</option>'; return; }
+  topicSel.innerHTML = '<option value="">— select a topic —</option>' + topics.map(t => {
+    const code = t.code ? `${t.code} ` : "";
+    const subs = (t.subtopics || []).map(s => ({ title: s.title, code: s.code || "" }));
+    const subJson = escapeHtml(JSON.stringify(subs)).replace(/"/g, "&quot;");
+    return `<option value="${escapeHtml(t.title)}" data-subtopics="${subJson}">${escapeHtml(code + t.title)}</option>`;
+  }).join("");
+}
+
+function plansLoadSubtopicOptions() {
+  const topicSel = document.getElementById("tdoc-topic");
+  const subSel = document.getElementById("tdoc-subtopic");
+  if (!subSel || !topicSel) return;
+  subSel.innerHTML = '<option value="">— select a topic first —</option>';
+  const chosen = topicSel.value;
+  if (!chosen) return;
+  const option = Array.from(topicSel.options).find(o => o.value === chosen);
+  const subtopics = option ? (option.dataset.subtopics ? JSON.parse(option.dataset.subtopics) : []) : [];
+  subSel.innerHTML = '<option value="">— select a subtopic —</option>' + subtopics.map(s => {
+    const code = s.code ? `${s.code} ` : "";
+    return `<option value="${escapeHtml(s.title)}">${escapeHtml(code + s.title)}</option>`;
+  }).join("");
+}
+;
+// modules/teacher/plans-builder.js — teaching documents: generated document build/preview/export/save
+// Extracted from plans.js (classic script, shared global scope).
+
+let plansLastGenHtml = "";
+function plansSetLastGenHtml(h) { plansLastGenHtml = h || ""; }
+function plansGetLastGenHtml() { return plansLastGenHtml; }
+
+async function plansViewDocument(id) {
+  const detail = await request(`/teacher-plans/${id}?_t=${Date.now()}`).catch(() => null);
+  if (!detail) { alert("Could not load document"); return; }
+  const win = window.open("", "_blank", "width=1100,height=750");
+  if (win) { win.document.write(detail.html_render || "<p>No preview</p>"); win.document.close(); }
+  else { alert("Popup blocked. Please allow popups to preview."); }
+}
+
+async function plansPrintDocument(id) {
+  const detail = await request(`/teacher-plans/${id}?_t=${Date.now()}`).catch(() => null);
+  if (!detail) { alert("Could not load document"); return; }
+  const win = window.open("", "_blank", "width=1100,height=750");
+  if (win) { win.document.write(detail.html_render || "<p>No preview</p>"); win.document.close(); win.focus(); setTimeout(()=>win.print(), 400); }
+  else { alert("Popup blocked. Please allow popups."); }
+}
+
+function plansBuildWordHtml(html) {
+  let doc = null;
+  try { doc = new DOMParser().parseFromString(html || "", "text/html"); } catch(e) { doc = null; }
+  if (!doc || !doc.body || doc.querySelector("parsererror")) return html || "";
+  const body = doc.body.cloneNode(true);
+  body.querySelectorAll("script,iframe,.actions,.no-print").forEach(n => { if (n.parentNode) n.parentNode.removeChild(n); });
+  let styles = "";
+  doc.querySelectorAll("head style").forEach(s => { if (s.textContent) styles += s.textContent + "\n"; });
+  styles = styles.replace(/@import[^;]+;\s*/g, "");
+  const wordMeta = '<!--[if gte mso 9]><xml><w:WordDocument><w:View>Print</w:View><w:Zoom>100</w:Zoom><w:DoNotExpandShiftReturn/></w:WordDocument></xml><![endif]-->';
+  const wordCss = (styles || "") +
+    'body{margin:14pt 16pt;font-family:"Calibri","Segoe UI",Arial,sans-serif;font-size:9pt;color:#1e293b;line-height:1.4}' +
+    'table{border-collapse:collapse;width:100%}th,td{border:1px solid #e2e8f0;padding:4px 5px;vertical-align:top}' +
+    'th{background:#f1f5f9;font-weight:700}thead{display:table-header-group}tr{page-break-inside:avoid}' +
+    '.actions,.no-print{display:none}@page{size:A4 portrait;margin:12mm 10mm 12mm 10mm}';
+  return '<!DOCTYPE html>\n<html xmlns:o="urn:schemas-microsoft-com:office:office" ' +
+    'xmlns:w="urn:schemas-microsoft-com:office:word" xmlns="http://www.w3.org/TR/REC-html40">\n' +
+    '<head><meta charset="UTF-8">' + wordMeta + '\n' +
+    `<title>${(doc.title || "Casuya Document")}</title>` + '\n' +
+    `<style>${wordCss}</style>\n</head>\n<body>\n${body.innerHTML}\n</body>\n</html>`;
+}
+
+function plansSaveWordFile(wordHtml, filename) {
+  const blob = new Blob(["\ufeff" + wordHtml], { type: "application/msword" });
+  const url = URL.createObjectURL(blob);
+  const a = document.createElement("a");
+  a.href = url; a.download = filename;
+  document.body.appendChild(a); a.click();
+  setTimeout(() => { URL.revokeObjectURL(url); a.remove(); }, 400);
+}
+
+function plansSanitizeName(name) {
+  return String(name || "document").replace(/[^a-z0-9]+/gi, "_").replace(/^_+|_+$/g, "").slice(0, 80);
+}
+
+async function plansDownloadWord(id) {
+  const detail = await request(`/teacher-plans/${id}?_t=${Date.now()}`).catch(() => null);
+  if (!detail) { alert("Could not load document"); return; }
+  plansSaveWordFile(plansBuildWordHtml(detail.html_render || ""), plansSanitizeName("casuya_" + (detail.title || "document")) + ".doc");
+}
+
+function plansDownloadLastGeneratedWord(filename) {
+  if (!plansGetLastGenHtml()) return;
+  plansSaveWordFile(plansBuildWordHtml(plansGetLastGenHtml()), plansSanitizeName(filename || "casuya_document") + ".doc");
+}
+
+async function plansSaveGenerated(form, res, planType) {
+  const fd = new FormData(form);
+  const ss = fd.get("subject_slug");
+  const isSw = plansIsSwSubject(ss);
+  const subjectName = plansSubjects.find(s => s.slug === ss)?.name || ss;
+  return request("/teacher-plans/save", {
+    method: "POST",
+    body: JSON.stringify({
+      plan_type: planType,
+      title: res.title,
+      subject_slug: ss,
+      subject_name: subjectName,
+      form_level: parseInt(fd.get("form_level")) || 2,
+      topic: fd.get("topic") || res.title,
+      subtopic: fd.get("subtopic") || null,
+      term: fd.get("term") || null,
+      plan_data: JSON.stringify(res.plan_data),
+      html_render: res.html_render,
+      language: isSw ? "sw" : "en",
+    }),
+  });
+}
+
+function plansRenderGenerated(res, planType) {
+  plansSetLastGenHtml(res.html_render || "");
+  const actionsId = planType === "scheme_of_work" ? "tdoc-scheme-preview-actions" : "tdoc-lesson-preview-actions";
+  setTimeout(() => { const actionsEl = document.getElementById(actionsId); if (actionsEl) actionsEl.style.display = "flex"; }, 50);
+  const footer = typeof renderAiResultFooter === "function"
+    ? `<div class="tutor-response-footer tdocs-plan-source">${renderAiResultFooter(res)}</div>`
+    : (res.source ? `<div class="tutor-response-footer tdocs-plan-source">${renderAiSourceBadge(res.source)}</div>` : "");
+  return `${footer}<iframe class="tdocs-preview-frame" id="gen-frame" style="width:100%;min-height:520px;border:none;background:#fff"></iframe>`;
+}
+
+function plansOpenPreview() {
+  if (!plansGetLastGenHtml()) return;
+  const win = window.open("", "_blank", "width=1100,height=750");
+  if (win) { win.document.write(plansGetLastGenHtml()); win.document.close(); }
+  else { alert("Popup blocked. Allow popups to preview/export."); }
+}
+
+function plansPrintPreview() {
+  if (!plansGetLastGenHtml()) return;
+  const win = window.open("", "_blank", "width=1100,height=750");
+  if (win) { win.document.write(plansGetLastGenHtml()); win.document.close(); win.focus(); setTimeout(() => win.print(), 500); }
+  else { alert("Popup blocked. Allow popups to print."); }
+}
+
+function plansFillGenFrame() {
+  const frame = document.getElementById("gen-frame");
+  if (frame && plansGetLastGenHtml()) frame.srcdoc = plansGetLastGenHtml();
+}
+;
+// modules/teacher/plans/state.js — teaching-documents shared state.
+
+function createPlansState(dashboard) {
+  return { dashboard, savedPlans: [], activeSubTab: "lesson" };
+}
+;
+// modules/teacher/plans/layout.js — teaching-documents page layout template.
+
+function renderPlansLayout() {
+  return `
+    <div class="content">
+      <h2 class="tdocs-page-title">Teaching Documents</h2>
+      <p class="tdocs-page-desc">
+        Generate official TIE Competence-Based Lesson Plans and Schemes of Work, then save, print, or as PDF/Word.
+        Generated in Kiswahili for Kiswahili-medium subjects and English for all others.
+      </p>
+      <div class="tdocs-tabs" id="tdocs-tabs"></div>
+
+      <div id="tdocs-lesson-panel" style="margin-top:1.25rem">
+        <div class="tdocs-layout">
+          <div class="tdocs-form-col">
+            <div class="card" style="padding:1.5rem">
+              <h3 style="margin-bottom:0.6rem;font-size:1rem;font-weight:700">Lesson Plan Generator</h3>
+              <form id="tdoc-lesson-form" style="display:grid;gap:0.6rem">
+                <div class="tdocs-section">
+                  <div class="tdocs-section-title">Curriculum</div>
+                  <div class="tdocs-field-grid">
+                    <label class="tdocs-field"><span>Subject</span><select class="input" name="subject_slug" id="tdoc-ss">${plansSubjectOptions()}</select></label>
+                    <label class="tdocs-field"><span>Form Level</span><select class="input" name="form_level"><option value="1">Form I</option><option value="2" selected>Form II</option><option value="3">Form III</option><option value="4">Form IV</option></select></label>
+                  </div>
+                  <div class="tdocs-field-grid" style="margin-top:0.5rem">
+                    <label class="tdocs-field" style="grid-column:1/-1"><span>Topic / Mada</span><select class="input" name="topic" id="tdoc-topic" required><option value="">— choose subject & form to load topics —</option></select></label>
+                  </div>
+                  <div class="tdocs-field-grid" style="margin-top:0.5rem">
+                    <label class="tdocs-field" style="grid-column:1/-1"><span>Subtopic / Sehemu ya Mada</span><select class="input" name="subtopic" id="tdoc-subtopic"><option value="">— choose a topic first —</option></select></label>
+                  </div>
+                </div>
+                <div class="tdocs-section">
+                  <div class="tdocs-section-title">School & Teacher</div>
+                  <div class="tdocs-field-grid">
+                    <label class="tdocs-field"><span>School / Shule</span><input class="input" name="school_name" placeholder="School name"></label>
+                    <label class="tdocs-field"><span>Teacher / Mwalimu</span><input class="input" name="teacher_name" placeholder="Teacher name"></label>
+                  </div>
+                </div>
+                <div class="tdocs-section">
+                  <div class="tdocs-section-title">Class Details</div>
+                  <div class="tdocs-field-grid-4">
+                    <label class="tdocs-field"><span>Total Students</span><input class="input" type="number" name="number_of_students" value="40" min="1"></label>
+                    <label class="tdocs-field"><span>Boys</span><input class="input" type="number" name="students_boys" min="0" placeholder="auto"></label>
+                    <label class="tdocs-field"><span>Girls</span><input class="input" type="number" name="students_girls" min="0" placeholder="auto"></label>
+                    <label class="tdocs-field"><span>Duration (min)</span><input class="input" type="number" name="duration_minutes" value="40" min="10" max="120"></label>
+                  </div>
+                  <div class="tdocs-field-grid" style="margin-top:0.5rem">
+                    <label class="tdocs-field"><span>Period / Kipindi</span><input class="input" name="period" placeholder="Period 1"></label>
+                  </div>
+                </div>
+                <div class="tdocs-form-actions">
+                  <button class="btn tdocs-generate-btn" type="submit" style="flex:1">✨ Generate Lesson Plan</button>
+                  <button class="btn btn-outline" type="button" id="tdoc-lesson-seed" style="font-size:0.8rem">Autofill</button>
+                </div>
+              </form>
+            </div>
+          </div>
+          <div class="tdocs-preview-col">
+            <div class="tdocs-preview-panel" id="tdoc-lesson-preview">
+              <div class="tdocs-preview-header">
+                <h4>📄 Preview</h4>
+                <div class="tdocs-preview-actions" id="tdoc-lesson-preview-actions" style="display:none">
+                  <button class="btn btn-sm btn-outline" id="gen-view">👁 View</button>
+                  <button class="btn btn-sm btn-outline" id="gen-print">🖨 Print / PDF</button>
+                  <button class="btn btn-sm btn-outline" id="gen-doc">📥 Word</button>
+                </div>
+              </div>
+              <div id="tdoc-lesson-result">
+                <div class="tdocs-empty"><div class="tdocs-empty-icon">📋</div><p>Fill in the form and click <strong>Generate</strong> to create a lesson plan.</p></div>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+
+      <div id="tdocs-scheme-panel" style="display:none;margin-top:1.25rem">
+        <div class="tdocs-layout">
+          <div class="tdocs-form-col">
+            <div class="card" style="padding:1.5rem">
+              <h3 style="margin-bottom:0.6rem;font-size:1rem;font-weight:700">Scheme of Work Generator</h3>
+              <form id="tdoc-scheme-form" style="display:grid;gap:0.6rem">
+                <div class="tdocs-section">
+                  <div class="tdocs-section-title">Curriculum</div>
+                  <div class="tdocs-field-grid">
+                    <label class="tdocs-field"><span>Subject</span><select class="input" name="subject_slug">${plansSubjectOptions()}</select></label>
+                    <label class="tdocs-field"><span>Form Level</span><select class="input" name="form_level"><option value="1">Form I</option><option value="2" selected>Form II</option><option value="3">Form III</option><option value="4">Form IV</option></select></label>
+                  </div>
+                </div>
+                <div class="tdocs-section">
+                  <div class="tdocs-section-title">Term & Year</div>
+                  <div class="tdocs-field-grid">
+                    <label class="tdocs-field"><span>Term</span><select class="input" name="term"><option value="Term 1" selected>Term I</option><option value="Term 2">Term II</option></select></label>
+                    <label class="tdocs-field"><span>Academic Year</span><input class="input" name="academic_year" placeholder="2026"></label>
+                  </div>
+                </div>
+                <div class="tdocs-section">
+                  <div class="tdocs-section-title">Topics (Optional)</div>
+                  <label class="tdocs-field"><span>Topics to cover — comma-separated, or leave blank to use full curriculum</span><input class="input" name="topics" placeholder="e.g. Indices and Logarithms, Algebraic Expressions, Equations"></label>
+                </div>
+                <div class="tdocs-section">
+                  <div class="tdocs-section-title">School & Teacher</div>
+                  <div class="tdocs-field-grid">
+                    <label class="tdocs-field"><span>School / Shule</span><input class="input" name="school_name" placeholder="School name"></label>
+                    <label class="tdocs-field"><span>Teacher / Mwalimu</span><input class="input" name="teacher_name" placeholder="Teacher name"></label>
+                  </div>
+                </div>
+                <div class="tdocs-form-actions">
+                  <button class="btn tdocs-generate-btn" type="submit" style="flex:1">✨ Generate Scheme of Work</button>
+                </div>
+              </form>
+            </div>
+          </div>
+          <div class="tdocs-preview-col">
+            <div class="tdocs-preview-panel" id="tdoc-scheme-preview">
+              <div class="tdocs-preview-header">
+                <h4>📄 Preview</h4>
+                <div class="tdocs-preview-actions" id="tdoc-scheme-preview-actions" style="display:none">
+                  <button class="btn btn-sm btn-outline" id="scheme-view">👁 View</button>
+                  <button class="btn btn-sm btn-outline" id="scheme-print">🖨 Print / PDF</button>
+                  <button class="btn btn-sm btn-outline" id="scheme-doc">📥 Word</button>
+                </div>
+              </div>
+              <div id="tdoc-scheme-result">
+                <div class="tdocs-empty"><div class="tdocs-empty-icon">📋</div><p>Fill in the form and click <strong>Generate</strong> to create a scheme of work.</p></div>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+
+      <div id="tdocs-saved-panel" style="display:none;margin-top:1.25rem">
+        <div class="tdocs-saved-header">
+          <h3 style="margin:0">Saved Documents</h3>
+          <button class="btn btn-sm btn-outline" id="tdoc-refresh">↻ Refresh</button>
+        </div>
+        <div id="tdocs-saved-list"></div>
+      </div>
+    </div>
+  `;
+}
+;
+// modules/teacher/plans/saved.js — saved teaching documents list.
+
+async function loadSaved(state) {
+  try { state.savedPlans = await request("/teacher-plans/list?_t=" + Date.now()).catch(() => []); } catch(e) { state.savedPlans = []; }
+}
+
+function renderSavedList(state) {
+  const listDiv = document.getElementById("tdocs-saved-list");
+  if (!listDiv) return;
+  if (!state.savedPlans.length) {
+    listDiv.innerHTML = '<div class="tdocs-empty"><div class="tdocs-empty-icon">📂</div><p>No saved documents yet. Generate one above.</p></div>';
+    return;
+  }
+  listDiv.innerHTML = state.savedPlans.map(p => {
+    const isSw = p.language === "sw";
+    const typeLabel = p.plan_type === "scheme_of_work" ? (isSw ? "Mpango wa Kazi" : "Scheme of Work") : (isSw ? "Mpango wa Somo" : "Lesson Plan");
+    const f = p.form_level ? ("Form " + (plansRoman[p.form_level] || p.form_level)) : "";
+    return `
+      <div class="card tdocs-doc-card" style="padding:1rem 1.15rem;margin-bottom:0.6rem">
+        <div class="tdocs-doc-row">
+          <div style="flex:1;min-width:0">
+            <div style="display:flex;align-items:center;gap:0.4rem;flex-wrap:wrap;margin-bottom:0.2rem">
+              <span class="tdocs-status ${p.plan_type === 'scheme_of_work' ? 'tdocs-status-info' : 'tdocs-status-success'}">${escapeHtml(typeLabel)}</span>
+              ${f ? `<span class="tdocs-status" style="background:var(--color-bg);color:var(--color-text-muted)">${escapeHtml(f)}</span>` : ""}
+            </div>
+            <h4 style="margin:0;font-size:0.9rem">${escapeHtml(plansPlanLabel(p))}</h4>
+            <p style="margin:0.15rem 0 0;font-size:0.72rem;color:var(--color-text-muted)">
+              ${escapeHtml(p.subject_name || p.subject_slug || "")} &middot; ${escapeHtml(p.created_at ? new Date(p.created_at).toLocaleDateString() : "")}
+            </p>
+          </div>
+          <div class="tdocs-actions">
+            <button class="btn btn-sm btn-outline" data-view="${p.id}">👁</button>
+            <button class="btn btn-sm btn-outline" data-print="${p.id}">🖨</button>
+            <button class="btn btn-sm btn-outline" data-doc="${p.id}">📥</button>
+            <button class="btn btn-sm btn-danger" data-del="${p.id}">✕</button>
+          </div>
+        </div>
+      </div>`;
+  }).join("");
+}
+;
+// modules/teacher/plans/tabs.js — teaching-documents sub-tabs.
+
+function renderSubTabs(state) {
+  const ss = document.querySelector("#tdoc-ss")?.value || "mathematics";
+  const sw = plansIsSwSubject(ss);
+  const labels = {
+    lesson: sw ? "Mpango wa Somo" : "Lesson Plan",
+    scheme: "Scheme of Work",
+    saved: state.savedPlans.length ? `Saved (${state.savedPlans.length})` : (sw ? "Hati Zilizohifadhiwa" : "Saved Documents"),
+  };
+  const tabHtml = (["lesson", "scheme", "saved"]).map(key =>
+    `<button class="btn btn-sm tdocs-tab ${state.activeSubTab === key ? "btn-primary" : "btn-outline"}" data-panel="${key}" style="flex:1 1 auto;min-width:0">${escapeHtml(labels[key])}</button>`
+  ).join("");
+  const el = document.getElementById("tdocs-tabs");
+  if (el) el.innerHTML = tabHtml;
+}
+
+function showPanel(panel) {
+  const lesson = document.getElementById("tdocs-lesson-panel");
+  const scheme = document.getElementById("tdocs-scheme-panel");
+  const saved = document.getElementById("tdocs-saved-panel");
+  if (lesson) lesson.style.display = panel === "lesson" ? "" : "none";
+  if (scheme) scheme.style.display = panel === "scheme" ? "" : "none";
+  if (saved) saved.style.display = panel === "saved" ? "" : "none";
+}
+;
+// modules/teacher/plans/lesson.js — lesson-plan generator form (autofill, syllabus wiring, submit).
+
+function setupLessonForm(state) {
+  const lessonSs = document.getElementById("tdoc-ss");
+  lessonSs?.addEventListener("change", plansLoadSyllabusTopics);
+  const lessonFormLevel = document.querySelector("#tdoc-lesson-form [name=form_level]");
+  lessonFormLevel?.addEventListener("change", plansLoadSyllabusTopics);
+  document.getElementById("tdoc-topic")?.addEventListener("change", plansLoadSubtopicOptions);
+  plansLoadSyllabusTopics();
+
+  document.getElementById("tdoc-lesson-seed")?.addEventListener("click", async () => {
+    const topicSel = document.getElementById("tdoc-topic");
+    const subSel = document.getElementById("tdoc-subtopic");
+    const form = document.querySelector("#tdoc-lesson-form");
+    if (topicSel && topicSel.options.length > 1) {
+      topicSel.selectedIndex = 1;
+      topicSel.dispatchEvent(new Event("change"));
+      await new Promise(r => setTimeout(r, 0));
+      if (subSel && subSel.options.length > 1) subSel.selectedIndex = 1;
+    }
+    if (form) {
+      if (form.period) form.period.value = "Period 1";
+      if (form.number_of_students) form.number_of_students.value = "40";
+      if (form.students_boys) form.students_boys.value = "20";
+      if (form.students_girls) form.students_girls.value = "20";
+      if (form.duration_minutes) form.duration_minutes.value = "40";
+    }
+  });
+
+  document.getElementById("tdoc-lesson-form")?.addEventListener("submit", async e => {
+    e.preventDefault();
+    const form = e.target;
+    const fd = new FormData(form);
+    const resultDiv = document.getElementById("tdoc-lesson-result");
+    resultDiv.style.display = "block";
+    resultDiv.innerHTML = '<div class="tutor-thinking"><div class="tutor-thinking-dots"><span></span><span></span><span></span></div>Generating lesson plan...</div>';
+    try {
+      const res = await request("/teacher-plans/generate/lesson-plan", {
+        method: "POST",
+        body: JSON.stringify({
+          subject_slug: fd.get("subject_slug"),
+          form_level: parseInt(fd.get("form_level")) || 2,
+          topic: fd.get("topic"),
+          subtopic: fd.get("subtopic") || null,
+          school_name: fd.get("school_name") || null,
+          teacher_name: fd.get("teacher_name") || null,
+          number_of_students: parseInt(fd.get("number_of_students")) || 40,
+          students_boys: fd.get("students_boys") ? parseInt(fd.get("students_boys")) : null,
+          students_girls: fd.get("students_girls") ? parseInt(fd.get("students_girls")) : null,
+          duration_minutes: parseInt(fd.get("duration_minutes")) || 40,
+          period: fd.get("period") || null,
+        }),
+      });
+      await plansSaveGenerated(form, res, "lesson_plan");
+      resultDiv.innerHTML = plansRenderGenerated(res, "lesson_plan");
+      plansFillGenFrame();
+      window.renderMath?.(resultDiv);
+    } catch(err) { resultDiv.innerHTML = `<p style="color:var(--color-danger)">Error: ${escapeHtml(err.message)}</p>`; }
+  });
+}
+;
+// modules/teacher/plans/scheme.js — scheme-of-work generator form submit.
+
+function setupSchemeForm(state) {
+  document.getElementById("tdoc-scheme-form")?.addEventListener("submit", async e => {
+    e.preventDefault();
+    const form = e.target;
+    const fd = new FormData(form);
+    const resultDiv = document.getElementById("tdoc-scheme-result");
+    resultDiv.style.display = "block";
+    resultDiv.innerHTML = '<div class="tutor-thinking"><div class="tutor-thinking-dots"><span></span><span></span><span></span></div>Generating scheme of work...</div>';
+    try {
+      const topicsRaw = (fd.get("topics") || "").split(",").map(t => t.trim()).filter(Boolean);
+      const res = await request("/teacher-plans/generate/scheme-of-work", {
+        method: "POST",
+        body: JSON.stringify({
+          subject_slug: fd.get("subject_slug"),
+          form_level: parseInt(fd.get("form_level")) || 2,
+          term: fd.get("term"),
+          academic_year: fd.get("academic_year") || null,
+          school_name: fd.get("school_name") || null,
+          teacher_name: fd.get("teacher_name") || null,
+          topics: topicsRaw.length ? topicsRaw : null,
+        }),
+      });
+      await plansSaveGenerated(form, res, "scheme_of_work");
+      resultDiv.innerHTML = plansRenderGenerated(res, "scheme_of_work");
+      plansFillGenFrame();
+      window.renderMath?.(resultDiv);
+    } catch(err) { resultDiv.innerHTML = `<p style="color:var(--color-danger)">Error: ${escapeHtml(err.message)}</p>`; }
+  });
+}
+;
+// modules/teacher/plans/actions.js — preview/print/word buttons + saved document actions.
+
+function setupActions(state) {
+  document.getElementById("gen-view")?.addEventListener("click", e => { e.preventDefault(); plansOpenPreview(); });
+  document.getElementById("gen-print")?.addEventListener("click", e => { e.preventDefault(); plansPrintPreview(); });
+  document.getElementById("gen-doc")?.addEventListener("click", e => { e.preventDefault(); plansDownloadLastGeneratedWord("lesson_plan"); });
+  document.getElementById("scheme-view")?.addEventListener("click", e => { e.preventDefault(); plansOpenPreview(); });
+  document.getElementById("scheme-print")?.addEventListener("click", e => { e.preventDefault(); plansPrintPreview(); });
+  document.getElementById("scheme-doc")?.addEventListener("click", e => { e.preventDefault(); plansDownloadLastGeneratedWord("scheme_of_work"); });
+
+  document.getElementById("tdocs-saved-list")?.addEventListener("click", async ev => {
+    const viewBtn = ev.target.closest("[data-view]");
+    const printBtn = ev.target.closest("[data-print]");
+    const docBtn = ev.target.closest("[data-doc]");
+    const delBtn = ev.target.closest("[data-del]");
+    if (viewBtn) { ev.preventDefault(); await plansViewDocument(viewBtn.dataset.view); }
+    else if (printBtn) { ev.preventDefault(); await plansPrintDocument(printBtn.dataset.print); }
+    else if (docBtn) { ev.preventDefault(); await plansDownloadWord(docBtn.dataset.doc); }
+    else if (delBtn) {
+      ev.preventDefault();
+      if (confirm("Delete this document?")) {
+        await request(`/teacher-plans/${delBtn.dataset.del}`, { method: "DELETE" }).catch(()=>{});
+        await loadSaved(state);
+        renderSubTabs(state);
+        renderSavedList(state);
+      }
+    }
+  });
+}
+;
+// modules/teacher/plans/index.js — teaching documents orchestration.
+// View orchestration only. Curriculum data + syllabus topic loading live in
+// modules/teacher/plans-syllabus.js; document build/preview/export/save helpers in plans-builder.js.
+
+async function loadPlans(dashboard) {
+  const state = createPlansState(dashboard);
+
+  dashboard.showView(renderPlansLayout());
+
+  (async function initDocs() {
+    await loadSaved(state);
+    renderSubTabs(state);
+    showPanel(state.activeSubTab);
+    renderSavedList(state);
+
+    document.getElementById("tdocs-tabs")?.addEventListener("click", e => {
+      const btn = e.target.closest("[data-panel]");
+      if (!btn) return;
+      state.activeSubTab = btn.dataset.panel;
+      renderSubTabs(state);
+      showPanel(state.activeSubTab);
+      if (state.activeSubTab === "saved") renderSavedList(state);
+    });
+    document.getElementById("tdoc-refresh")?.addEventListener("click", async () => {
+      await loadSaved(state);
+      renderSubTabs(state);
+      renderSavedList(state);
+    });
+
+    setupLessonForm(state);
+    setupSchemeForm(state);
+    setupActions(state);
+  })();
+}
+;
+// modules/teacher/library.js — reference library view
+
+async function loadLibrary(dashboard) {
+  const SUBJECTS = [
+    { slug: "mathematics", name: "Mathematics" },
+    { slug: "chemistry", name: "Chemistry" },
+    { slug: "physics", name: "Physics" },
+  ];
+  let docs = [];
+  let stats = {};
+  let filters = { doc_type: "", subject_slug: "", form_level: "", query: "" };
+  let page = 0;
+  const PAGE_SIZE = 20;
+
+  function subjectOpts() {
+    return '<option value="">All Subjects</option>' + SUBJECTS.map(s => `<option value="${s.slug}">${escapeHtml(s.name)}</option>`).join("");
+  }
+
+  async function loadDocs() {
+    const params = new URLSearchParams();
+    if (filters.doc_type) params.set("doc_type", filters.doc_type);
+    if (filters.subject_slug) params.set("subject_slug", filters.subject_slug);
+    if (filters.form_level) params.set("form_level", filters.form_level);
+    if (filters.query) params.set("query", filters.query);
+    params.set("limit", PAGE_SIZE);
+    params.set("offset", page * PAGE_SIZE);
+    try {
+      const res = await request("/reference-docs?" + params.toString());
+      docs = res.items || [];
+      stats = { total: res.total || 0 };
+    } catch(e) { docs = []; stats = { total: 0 }; }
+  }
+
+  function renderDocList() {
+    const el = document.getElementById("lib-results");
+    if (!el) return;
+    if (!docs.length) {
+      el.innerHTML = '<div class="tdocs-empty"><div class="tdocs-empty-icon">📖</div><p>No reference documents found.</p></div>';
+      return;
+    }
+    const ROMAN = { 1: "I", 2: "II", 3: "III", 4: "IV", 5: "V", 6: "VI" };
+    el.innerHTML = docs.map(d => {
+      const typeLabel = d.doc_type === "scheme_of_work" ? "Scheme of Work" : "Lesson Plan";
+      const typeCls = d.doc_type === "scheme_of_work" ? "tdocs-status-info" : "tdocs-status-success";
+      const form = d.form_level ? "Form " + (ROMAN[d.form_level] || d.form_level) : "";
+      return `
+        <div class="lib-card" data-lib-view="${d.id}">
+          <div style="display:flex;align-items:center;gap:0.5rem;flex-wrap:wrap;margin-bottom:0.25rem">
+            <span class="tdocs-status ${typeCls}">${typeLabel}</span>
+            ${form ? `<span class="tdocs-status" style="background:var(--color-bg);color:var(--color-text-muted)">${form}</span>` : ""}
+          </div>
+          <h4 style="margin:0;font-size:0.88rem;font-weight:600">${escapeHtml(d.title)}</h4>
+          <p style="margin:0.2rem 0 0;font-size:0.72rem;color:var(--color-text-muted)">${escapeHtml(d.subject_name || "")}</p>
+        </div>`;
+    }).join("");
+    const totalPages = Math.ceil(stats.total / PAGE_SIZE);
+    const pag = document.getElementById("lib-pagination");
+    if (pag) {
+      pag.innerHTML = totalPages > 1 ? `
+        <div style="display:flex;gap:0.5rem;align-items:center;justify-content:center;margin-top:1rem">
+          <button class="btn btn-sm btn-outline" id="lib-prev" ${page === 0 ? "disabled" : ""}>← Prev</button>
+          <span style="font-size:0.8rem;color:var(--color-text-muted)">Page ${page + 1} of ${totalPages} (${stats.total} total)</span>
+          <button class="btn btn-sm btn-outline" id="lib-next" ${page >= totalPages - 1 ? "disabled" : ""}>Next →</button>
+        </div>` : "";
+    }
+  }
+
+  async function viewDoc(id) {
+    const el = document.getElementById("lib-viewer");
+    if (!el) return;
+    el.innerHTML = '<div class="tdocs-loading"><div class="spinner"></div>Loading document...</div>';
+    el.style.display = "block";
+    try {
+      const resp = await fetch(`${API_BASE}/reference-docs/${id}/render`);
+      const html = await resp.text();
+      el.innerHTML = `
+        <div style="display:flex;align-items:center;justify-content:space-between;margin-bottom:0.75rem;flex-wrap:wrap;gap:0.5rem">
+          <h4 style="margin:0;font-size:0.9rem;font-weight:700">Reference Document</h4>
+          <button class="btn btn-sm btn-outline" id="lib-close-viewer">✕ Close</button>
+        </div>
+        <iframe srcdoc="${escapeHtml(html).replace(/"/g, '&quot;')}" style="width:100%;min-height:500px;border:1px solid var(--color-border);border-radius:8px;background:#fff"></iframe>`;
+      document.getElementById("lib-close-viewer")?.addEventListener("click", () => { el.style.display = "none"; });
+    } catch(e) {
+      el.innerHTML = '<p style="color:var(--color-danger)">Error loading document.</p>';
+    }
+  }
+
+  dashboard.showView(`
+    <div class="content">
+      <h2 class="tdocs-page-title">Reference Library</h2>
+      <p class="tdocs-page-desc">Browse official TIE lesson plans and schemes of work. Use these as reference when generating your own documents.</p>
+      <div style="display:grid;gap:0.6rem;margin-top:1.25rem">
+        <div style="display:flex;gap:0.5rem;flex-wrap:wrap">
+          <select class="input" id="lib-type" style="max-width:180px;padding:0.45rem 0.6rem;font-size:0.85rem">
+            <option value="">All Types</option>
+            <option value="lesson_plan">Lesson Plans</option>
+            <option value="scheme_of_work">Schemes of Work</option>
+          </select>
+          <select class="input" id="lib-subject" style="max-width:180px;padding:0.45rem 0.6rem;font-size:0.85rem">${subjectOpts()}</select>
+          <select class="input" id="lib-form" style="max-width:140px;padding:0.45rem 0.6rem;font-size:0.85rem">
+            <option value="">All Forms</option>
+            <option value="1">Form I</option>
+            <option value="2">Form II</option>
+            <option value="3">Form III</option>
+            <option value="4">Form IV</option>
+          </select>
+          <input class="input" id="lib-search" type="search" placeholder="Search titles..." style="max-width:220px;padding:0.45rem 0.6rem;font-size:0.85rem">
+        </div>
+        <div id="lib-results"></div>
+        <div id="lib-pagination"></div>
+      </div>
+      <div id="lib-viewer" style="display:none;margin-top:1.5rem"></div>
+    </div>
+  `);
+
+  const typeEl = document.getElementById("lib-type");
+  const subjEl = document.getElementById("lib-subject");
+  const formEl = document.getElementById("lib-form");
+  const searchEl = document.getElementById("lib-search");
+  let searchTimer;
+
+  function applyFilters() {
+    filters.doc_type = typeEl.value;
+    filters.subject_slug = subjEl.value;
+    filters.form_level = formEl.value;
+    page = 0;
+    loadDocs().then(renderDocList);
+  }
+
+  typeEl?.addEventListener("change", applyFilters);
+  subjEl?.addEventListener("change", applyFilters);
+  formEl?.addEventListener("change", applyFilters);
+  searchEl?.addEventListener("input", () => {
+    clearTimeout(searchTimer);
+    searchTimer = setTimeout(() => { filters.query = searchEl.value.trim(); page = 0; loadDocs().then(renderDocList); }, 300);
+  });
+
+  document.getElementById("lib-results")?.addEventListener("click", e => {
+    const btn = e.target.closest("[data-lib-view]");
+    if (btn) viewDoc(btn.dataset.libView);
+  });
+  document.getElementById("lib-pagination")?.addEventListener("click", e => {
+    if (e.target.id === "lib-prev") { page--; loadDocs().then(renderDocList); }
+    if (e.target.id === "lib-next") { page++; loadDocs().then(renderDocList); }
+  });
+
+  await loadDocs();
+  renderDocList();
+}
+
+;
+// modules/teacher/ai-assistant.js — AI tutoring tools
+
+function teacherAiPrefs() {
+  return {
+    subject: localStorage.getItem("casuya_teacher_ai_subject") || "chemistry",
+    form: localStorage.getItem("casuya_teacher_ai_form") || "2",
+  };
+}
+
+function saveTeacherAiPrefs(subject, form) {
+  if (subject) localStorage.setItem("casuya_teacher_ai_subject", subject);
+  if (form) localStorage.setItem("casuya_teacher_ai_form", form);
+}
+
+async function loadAIAssistant(dashboard) {
+  const prefs = teacherAiPrefs();
+  dashboard.showView(`
+    <div class="content">
+      <h2>AI Assistant</h2>
+      <p style="color:var(--color-text-muted);font-size:0.85rem;margin-top:0.25rem">Use AI to help with teaching tasks.</p>
+      <div style="display:grid;gap:1rem;margin-top:1.5rem">
+        <div class="card" style="padding:1.5rem">
+          <h3 style="margin-bottom:0.75rem">Tutoring Explanation</h3>
+          <p style="color:var(--color-text-muted);font-size:0.85rem;margin-bottom:0.75rem">Get an AI explanation for a student question.</p>
+          <form id="ai-tutor-form" style="display:flex;flex-direction:column;gap:0.5rem">
+            <div style="display:flex;gap:0.5rem">
+              <select class="input" name="subject_slug" style="flex:1">
+                <option value="mathematics"${prefs.subject === "mathematics" ? " selected" : ""}>Mathematics</option>
+                <option value="chemistry"${prefs.subject === "chemistry" ? " selected" : ""}>Chemistry</option>
+                <option value="physics"${prefs.subject === "physics" ? " selected" : ""}>Physics</option>
+              </select>
+              <select class="input" name="form_level" style="flex:0.5">
+                <option value="1"${prefs.form === "1" ? " selected" : ""}>Form I</option>
+                <option value="2"${prefs.form === "2" ? " selected" : ""}>Form II</option>
+                <option value="3"${prefs.form === "3" ? " selected" : ""}>Form III</option>
+                <option value="4"${prefs.form === "4" ? " selected" : ""}>Form IV</option>
+              </select>
+            </div>
+            <div style="display:flex;gap:0.5rem;align-items:flex-start">
+              <textarea class="input" name="question" rows="3" placeholder="Enter the student's question..." required style="flex:1"></textarea>
+              <button type="button" class="casuya-record" title="Speak the question" aria-label="Speak the question">🎤 Voice</button>
+            </div>
+            <input class="input" name="context" placeholder="Optional lesson context...">
+            <button class="btn btn-primary" type="submit">Get Explanation</button>
+          </form>
+          <div id="ai-tutor-result" style="margin-top:1rem;display:none">
+            <div class="card" style="background:var(--color-bg);padding:1.25rem;border-radius:12px;border:1px solid var(--color-border)">
+              <div id="ai-tutor-text" class="tutor-response"></div>
+              <span id="ai-tutor-listen-slot"></span>
+            </div>
+          </div>
+        </div>
+        <div class="card" style="padding:1.5rem">
+          <h3 style="margin-bottom:0.75rem">Generate Quiz Questions</h3>
+          <p style="color:var(--color-text-muted);font-size:0.85rem;margin-bottom:0.75rem">Auto-generate quiz questions from lesson content.</p>
+          <form id="ai-questions-form" style="display:flex;flex-direction:column;gap:0.5rem">
+            <div style="display:flex;gap:0.5rem">
+              <select class="input" name="subject_slug" style="flex:1">
+                <option value="mathematics"${prefs.subject === "mathematics" ? " selected" : ""}>Mathematics</option>
+                <option value="chemistry"${prefs.subject === "chemistry" ? " selected" : ""}>Chemistry</option>
+                <option value="physics"${prefs.subject === "physics" ? " selected" : ""}>Physics</option>
+              </select>
+              <select class="input" name="form_level" style="flex:0.5">
+                <option value="1"${prefs.form === "1" ? " selected" : ""}>Form I</option>
+                <option value="2"${prefs.form === "2" ? " selected" : ""}>Form II</option>
+                <option value="3"${prefs.form === "3" ? " selected" : ""}>Form III</option>
+                <option value="4"${prefs.form === "4" ? " selected" : ""}>Form IV</option>
+              </select>
+            </div>
+            <textarea class="input" name="lesson_html" rows="5" placeholder="Paste lesson content..." required></textarea>
+            <div style="display:flex;gap:0.5rem;align-items:center">
+              <label style="font-size:0.85rem;color:var(--color-text-muted)">Number of questions:</label>
+              <input class="input" type="number" name="count" value="5" min="1" max="20" style="width:80px">
+            </div>
+            <button class="btn btn-primary" type="submit">Generate Questions</button>
+          </form>
+          <div id="ai-questions-result" style="margin-top:1rem;display:none">
+              <div id="ai-questions-text"></div>
+          </div>
+        </div>
+        <div class="card" style="padding:1.5rem">
+          <h3 style="margin-bottom:0.75rem">Translate Text</h3>
+          <p style="color:var(--color-text-muted);font-size:0.85rem;margin-bottom:0.75rem">Translate text to another language.</p>
+          <form id="ai-translate-form" style="display:flex;flex-direction:column;gap:0.5rem">
+            <textarea class="input" name="text" rows="3" placeholder="Text to translate..." required></textarea>
+            <select class="input" name="target_language">
+              <option value="Swahili">Swahili</option>
+              <option value="English">English</option>
+              <option value="French">French</option>
+              <option value="Arabic">Arabic</option>
+              <option value="Spanish">Spanish</option>
+            </select>
+            <button class="btn btn-primary" type="submit">Translate</button>
+          </form>
+          <div id="ai-translate-result" style="margin-top:1rem;display:none">
+            <div class="card" style="background:var(--color-bg);padding:1.25rem;border-radius:12px;border:1px solid var(--color-border)">
+              <div id="ai-translate-text" class="tutor-response"></div>
+              <span id="ai-translate-listen-slot"></span>
+              <div id="ai-translate-footer" class="tutor-response-footer"></div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  `);
+  document.querySelectorAll("#ai-tutor-form select, #ai-questions-form select").forEach(function (sel) {
+    sel.addEventListener("change", function () {
+      saveTeacherAiPrefs(
+        document.querySelector("#ai-tutor-form [name=subject_slug]")?.value
+          || document.querySelector("#ai-questions-form [name=subject_slug]")?.value,
+        document.querySelector("#ai-tutor-form [name=form_level]")?.value
+          || document.querySelector("#ai-questions-form [name=form_level]")?.value,
+      );
+    });
+  });
+  document.getElementById("ai-tutor-form")?.addEventListener("submit", async e => {
+    e.preventDefault();
+    const fd = new FormData(e.target);
+    const resultDiv = document.getElementById("ai-tutor-result");
+    const textDiv = document.getElementById("ai-tutor-text");
+    resultDiv.style.display = "block";
+    const payload = buildLessonTutorPayload({
+      question: String(fd.get("question") || ""),
+      subject_slug: fd.get("subject_slug"),
+      form_level: parseInt(fd.get("form_level")) || 2,
+      lessonContent: fd.get("context") || "",
+      mode: "deep",
+    });
+    runTutorQuery(payload, {
+      container: textDiv,
+      loadingLabel: "Thinking...",
+      errorMessage: "The AI tutor could not be reached. Please try again.",
+      listenSlot: document.getElementById("ai-tutor-listen-slot"),
+      listenTitle: "Listen to this explanation",
+    });
+  });
+  document.getElementById("ai-questions-form")?.addEventListener("submit", async e => {
+    e.preventDefault();
+    const fd = new FormData(e.target);
+    const resultDiv = document.getElementById("ai-questions-result");
+    const textDiv = document.getElementById("ai-questions-text");
+    resultDiv.style.display = "block";
+    runAiGenerateTask({
+      container: textDiv,
+      loadingLabel: "Generating...",
+      path: "/ai/questions/generate",
+      body: {
+        lesson_html: fd.get("lesson_html"),
+        count: parseInt(fd.get("count")) || 5,
+        subject_slug: fd.get("subject_slug"),
+        form_level: parseInt(fd.get("form_level")) || 2,
+      },
+      render: function (result) {
+        const questions = result?.questions || result;
+        if (!Array.isArray(questions) || !questions.length) {
+          return '<p style="color:var(--color-text-muted)">No questions generated. Try different content.</p>';
+        }
+        return renderQuizQuestions(questions, {
+          subject: fd.get("subject_slug"),
+          formLevel: fd.get("form_level"),
+          topic: questions[0]?.topic || "",
+        });
+      },
+    }).catch(function () {});
+  });
+  try {
+    const profile = await request("/teachers/me");
+    const subjects = String(profile?.subjects || "").toLowerCase();
+    let subject = prefs.subject;
+    if (subjects.includes("math")) subject = "mathematics";
+    else if (subjects.includes("chem")) subject = "chemistry";
+    else if (subjects.includes("phys")) subject = "physics";
+    saveTeacherAiPrefs(subject, prefs.form);
+    document.querySelectorAll('#ai-tutor-form [name=subject_slug], #ai-questions-form [name=subject_slug]').forEach(function (sel) {
+      sel.value = subject;
+    });
+  } catch (e) {}
+
+  document.getElementById("ai-translate-form")?.addEventListener("submit", async e => {
+    e.preventDefault();
+    const fd = new FormData(e.target);
+    const resultDiv = document.getElementById("ai-translate-result");
+    const textDiv = document.getElementById("ai-translate-text");
+    const footerDiv = document.getElementById("ai-translate-footer");
+    resultDiv.style.display = "block";
+    if (footerDiv) footerDiv.innerHTML = "";
+    var accumulated = "";
+    textDiv.innerHTML = renderTutorStreamingSkeleton() + renderTutorThinking("Translating...");
+    if (typeof streamTranslateResponse === "function") {
+      streamTranslateResponse(
+        { text: fd.get("text"), target_language: fd.get("target_language") },
+        function (chunk) {
+          accumulated += chunk;
+          textDiv.innerHTML = renderTutorMarkdown(accumulated);
+          scheduleTutorMath(textDiv);
+        },
+        function (meta) {
+          var raw = accumulated || (meta && meta.translatedText) || "";
+          if (footerDiv) {
+            footerDiv.innerHTML = typeof renderAiResultFooter === "function"
+              ? renderAiResultFooter({ source: (meta && meta.source) || "casuya-ai" }, raw)
+              : renderAiSourceBadge((meta && meta.source) || "casuya-ai");
+          }
+          scheduleTutorMath(textDiv);
+        },
+        function () {
+          runAiGenerateTask({
+            container: textDiv,
+            loadingLabel: "Translating...",
+            skipAutoFooter: true,
+            path: "/ai/content/translate",
+            body: { text: fd.get("text"), target_language: fd.get("target_language") },
+            render: function (result) {
+              const raw = result?.translated || result?.translatedText || result?.text || JSON.stringify(result);
+              if (footerDiv) {
+                footerDiv.innerHTML = typeof renderAiResultFooter === "function"
+                  ? renderAiResultFooter(result, raw)
+                  : renderAiSourceBadge(result?.source);
+              }
+              return renderTutorMarkdown(raw);
+            },
+            listenTitle: "Listen to translation",
+          }).catch(function () {
+            if (footerDiv) footerDiv.innerHTML = "";
+          });
+        }
+      );
+    } else {
+      runAiGenerateTask({
+        container: textDiv,
+        loadingLabel: "Translating...",
+        skipAutoFooter: true,
+        path: "/ai/content/translate",
+        body: { text: fd.get("text"), target_language: fd.get("target_language") },
+        render: function (result) {
+          const raw = result?.translated || result?.translatedText || result?.text || JSON.stringify(result);
+          if (footerDiv) {
+            footerDiv.innerHTML = typeof renderAiResultFooter === "function"
+              ? renderAiResultFooter(result, raw)
+              : renderAiSourceBadge(result?.source);
+          }
+          return renderTutorMarkdown(raw);
+        },
+        listenTitle: "Listen to translation",
+      }).catch(function () {
+        if (footerDiv) footerDiv.innerHTML = "";
+      });
+    }
+  });
+}
+
+;
+// modules/teacher/test-generator.js — Test Generator view for the teacher dashboard.
+
+function loadTeacherTestGenerator(dashboard) {
+  dashboard.showView(renderTestGeneratorView({
+    title: "Test Generator",
+    intro: "Build practice tests for your class grounded in the NECTA/TIE knowledge base. Pick an exam type (Topical, Monthly, Midterm, Terminal, Annual, or NECTA Form II/IV/VI), then choose the subject, form, and topic.",
+  }));
+  initTestGeneratorView(document.getElementById("teacher-content"));
+}
+;
+// modules/teacher/files.js — file management view
+
+async function loadFiles(dashboard) {
+  dashboard.showView('<div class="loading-state"><div class="spinner"></div><p>Loading files...</p></div>');
+  try {
+    const files = await request("/uploads/public").catch(() => []);
+    const fileList = Array.isArray(files) ? files : [];
+    let activeFilter = "all";
+
+    function renderFiles() {
+      let filtered = fileList;
+      if (activeFilter !== "all") {
+        if (activeFilter === "images") filtered = fileList.filter(f => /\.(png|jpg|jpeg|gif|svg|webp)$/i.test(f.filename || f.path || ""));
+        else if (activeFilter === "documents") filtered = fileList.filter(f => /\.(pdf|doc|docx|txt)$/i.test(f.filename || f.path || ""));
+        else if (activeFilter === "media") filtered = fileList.filter(f => /\.(mp4|webm|mp3|wav|ogg)$/i.test(f.filename || f.path || ""));
+      }
+      const grid = document.getElementById("teacher-files-grid");
+      if (!grid) return;
+      if (filtered.length === 0) {
+        grid.innerHTML = '<div class="empty-state" style="padding:2rem"><p>No files available</p></div>';
+        return;
+      }
+      grid.innerHTML = filtered.map(f => {
+        const name = f.filename || f.path || "unknown";
+        const displayName = f.display_name || name;
+        const isImage = /\.(png|jpg|jpeg|gif|svg|webp)$/i.test(name);
+        const isVideo = /\.(mp4|webm)$/i.test(name);
+        const isAudio = /\.(mp3|wav|ogg)$/i.test(name);
+        const icon = isImage ? "🖼️" : isVideo ? "🎬" : isAudio ? "🎵" : "📄";
+        return `
+          <div class="card" style="padding:0.75rem;cursor:pointer" onclick="window.open('${API_BASE}/uploads/${encodeURIComponent(name)}', '_blank')">
+            <div style="display:flex;align-items:center;gap:0.75rem">
+              <div style="font-size:1.5rem;flex-shrink:0">${icon}</div>
+              <div style="flex:1;min-width:0">
+                <p style="margin:0;font-size:0.85rem;font-weight:500;overflow:hidden;text-overflow:ellipsis;white-space:nowrap">${escapeHtml(displayName)}</p>
+                <p style="margin:0.15rem 0 0;font-size:0.7rem;color:var(--color-text-muted)">${f.size ? (f.size / 1024).toFixed(1) + " KB" : ""}</p>
+              </div>
+            </div>
+          </div>
+        `;
+      }).join("");
+    }
+
+    dashboard.showView(`
+      <div class="content">
+        <h2>📂 Files & Resources</h2>
+        <p style="color:var(--color-text-muted);font-size:0.85rem;margin-top:0.25rem">Browse uploaded teaching materials and resources.</p>
+        <div style="margin-top:1rem;display:flex;gap:0.5rem;flex-wrap:wrap">
+          <button class="btn-filter teacher-files-filter active" data-filter="all">All</button>
+          <button class="btn-filter teacher-files-filter" data-filter="images">🖼️ Images</button>
+          <button class="btn-filter teacher-files-filter" data-filter="documents">📄 Documents</button>
+          <button class="btn-filter teacher-files-filter" data-filter="media">🎬 Media</button>
+        </div>
+        <div id="teacher-files-grid" style="margin-top:0.75rem;display:grid;grid-template-columns:repeat(auto-fill,minmax(250px,1fr));gap:0.5rem"></div>
+      </div>
+    `);
+    document.querySelectorAll(".teacher-files-filter").forEach(btn => {
+      btn.addEventListener("click", () => {
+        activeFilter = btn.dataset.filter;
+        document.querySelectorAll(".teacher-files-filter").forEach(b => b.classList.toggle("active", b.dataset.filter === activeFilter));
+        renderFiles();
+      });
+    });
+    renderFiles();
+  } catch(e) { dashboard.showView('<div class="empty-state"><p>Error loading files</p></div>'); }
+}
+
+;
+// modules/teacher/payments.js — payments, subscriptions, invoices
+
+async function loadPayments(dashboard) {
+  dashboard.showView('<div class="loading-state"><div class="spinner"></div><p>Loading payments...</p></div>');
+  try {
+    const [history, subs, invoices] = await Promise.all([
+      request("/payments/my-history").catch(() => ({ transactions: [], total_paid: 0, pending_amount: 0, total_transactions: 0 })),
+      request("/payments/subscriptions").catch(() => []),
+      request("/payments/invoices").catch(() => []),
+    ]);
+    const txList = Array.isArray(history.transactions) ? history.transactions : [];
+    const subList = Array.isArray(subs) ? subs : [];
+    const invList = Array.isArray(invoices) ? invoices : [];
+    const totalPaid = history.total_paid || 0;
+    const pendingAmount = history.pending_amount || 0;
+    const totalTx = history.total_transactions || 0;
+
+    function renderTab(tabId) {
+      if (tabId === "payments") {
+        return `
+          <div class="card" style="padding:1.5rem;margin-top:1rem">
+            <h3>Available Plans</h3>
+            <p style="color:var(--color-text-muted);font-size:0.85rem;margin-top:0.25rem">Pay a plan fee to Casuya (Admin) via mobile money.</p>
+            <div id="teacher-plans-list"><div class="loading-state"><div class="spinner"></div></div></div>
+          </div>
+          <div class="card" style="padding:0;max-width:560px;margin-top:1rem;overflow:hidden">
+            <div class="checkout-header">
+              <svg width="20" height="20" fill="none" stroke="currentColor" stroke-width="2" viewBox="0 0 24 24"><path d="M3 10h18M7 15h1m4 0h1m-7 4h12a3 3 0 003-3V8a3 3 0 00-3-3H6a3 3 0 00-3 3v8a3 3 0 003 3z"/></svg>
+              <h3>Make a Payment</h3>
+            </div>
+            <form id="teacher-payment-form" class="checkout-body">
+              <div>
+                <label class="field-label">Mobile Number</label>
+                <div class="input-icon-wrap">
+                  <svg width="16" height="16" fill="none" stroke="currentColor" stroke-width="2" viewBox="0 0 24 24"><path d="M3 5a2 2 0 012-2h3.28a1 1 0 01.948.684l1.498 4.493a1 1 0 01-.502 1.21l-2.257 1.13a11.042 11.042 0 005.516 5.516l1.13-2.257a1 1 0 011.21-.502l4.493 1.498a1 1 0 01.684.949V19a2 2 0 01-2 2h-1C9.716 21 3 14.284 3 6V5z"/></svg>
+                  <input class="input" name="mobile_number" placeholder="0712345678" required>
+                </div>
+              </div>
+              <div>
+                <label class="field-label">Amount (TZS)</label>
+                <div class="input-icon-wrap">
+                  <span class="input-currency-prefix">TZS</span>
+                  <input class="input" name="amount_tzs" type="number" placeholder="5,000" required min="100">
+                </div>
+              </div>
+              <div>
+                <label class="field-label">Provider</label>
+                <div class="provider-grid">
+                  <label class="provider-card"><input type="radio" name="provider" value="m-pesa" required><span class="provider-dot" style="background:#16a34a"></span><span>M-Pesa</span></label>
+                  <label class="provider-card"><input type="radio" name="provider" value="tigo-pesa"><span class="provider-dot" style="background:#2563eb"></span><span>Tigo Pesa</span></label>
+                  <label class="provider-card"><input type="radio" name="provider" value="halopesa"><span class="provider-dot" style="background:#d97706"></span><span>HaloPesa</span></label>
+                  <label class="provider-card"><input type="radio" name="provider" value="azampay"><span class="provider-dot" style="background:#8b5cf6"></span><span>AzamPay</span></label>
+                </div>
+              </div>
+              <button class="btn btn-success btn-block" type="submit" id="teacher-payment-submit-btn">Pay Now</button>
+            </form>
+            <div id="teacher-payment-result" style="padding:0 1.5rem 1.5rem"></div>
+          </div>
+          <div class="card" style="padding:1.5rem;margin-top:1rem">
+            <div style="display:flex;justify-content:space-between;align-items:center;margin-bottom:0.75rem">
+              <h3>Payment History</h3>
+              <button class="btn btn-sm" id="teacher-refresh-tx-btn">Refresh</button>
+            </div>
+            ${txList.length === 0 ? '<div class="empty-state" style="padding:2rem"><p>No payments yet</p></div>' : `<div style="overflow-x:auto"><table class="tx-table" style="width:100%;border-collapse:collapse;font-size:0.85rem"><thead><tr style="border-bottom:2px solid var(--color-border)"><th style="padding:0.6rem;text-align:left;font-weight:600">Date</th><th style="padding:0.6rem;text-align:left;font-weight:600">Provider</th><th style="padding:0.6rem;text-align:right;font-weight:600">Amount</th><th style="padding:0.6rem;text-align:center;font-weight:600">Status</th></tr></thead><tbody>${txList.map(t => `<tr style="border-bottom:1px solid var(--color-border)"><td style="padding:0.6rem;color:var(--color-text-muted)">${t.created_at ? new Date(t.created_at).toLocaleDateString() : "\u2014"}</td><td style="padding:0.6rem">${escapeHtml(t.provider || "\u2014")}</td><td style="padding:0.6rem;text-align:right;font-weight:600">${(t.amount_tzs || 0).toLocaleString()} TZS</td><td style="padding:0.6rem;text-align:center"><span class="badge badge-${t.status || 'pending'}">${escapeHtml(t.status || "unknown")}</span></td></tr>`).join("")}</tbody></table></div>`}
+          </div>`;
+      }
+      if (tabId === "subscriptions") {
+        return subList.length === 0
+          ? '<div class="empty-state" style="padding:3rem"><p>No active subscriptions</p></div>'
+          : `<div style="display:grid;gap:0.75rem;margin-top:1rem">${subList.map(s => `
+            <div class="card" style="padding:1rem;display:flex;justify-content:space-between;align-items:center">
+              <div><div style="font-weight:600">${escapeHtml(s.plan_id)}</div><div style="font-size:0.8rem;color:var(--color-text-muted)">Since ${new Date(s.created_at).toLocaleDateString()}</div></div>
+              <div style="text-align:right"><div style="font-weight:600">${(s.amount || 0).toLocaleString()} TZS</div><span class="badge badge-${s.status === 'active' ? 'completed' : 'pending'}">${escapeHtml(s.status)}</span></div>
+            </div>`).join("")}</div>`;
+      }
+      if (tabId === "invoices") {
+        return invList.length === 0
+          ? '<div class="empty-state" style="padding:3rem"><p>No invoices yet</p></div>'
+          : `<div style="overflow-x:auto;margin-top:1rem"><table class="tx-table" style="width:100%;border-collapse:collapse;font-size:0.85rem"><thead><tr style="border-bottom:2px solid var(--color-border)"><th style="padding:0.6rem;text-align:left;font-weight:600">Invoice #</th><th style="padding:0.6rem;text-align:right;font-weight:600">Amount</th><th style="padding:0.6rem;text-align:left;font-weight:600">Due Date</th><th style="padding:0.6rem;text-align:center;font-weight:600">Status</th></tr></thead><tbody>${invList.map(inv => `<tr style="border-bottom:1px solid var(--color-border)"><td style="padding:0.6rem;font-weight:500">${escapeHtml(inv.invoice_number || "\u2014")}</td><td style="padding:0.6rem;text-align:right;font-weight:600">${(inv.total_amount || 0).toLocaleString()} TZS</td><td style="padding:0.6rem;color:var(--color-text-muted)">${inv.due_date ? new Date(inv.due_date).toLocaleDateString() : "\u2014"}</td><td style="padding:0.6rem;text-align:center"><span class="badge badge-${inv.status === 'paid' ? 'completed' : inv.status === 'pending' ? 'pending' : 'failed'}">${escapeHtml(inv.status)}</span></td></tr>`).join("")}</tbody></table></div>`;
+      }
+      return "";
+    }
+
+    async function loadPlans() {
+      const el = document.getElementById("teacher-plans-list");
+      if (!el) return;
+      try {
+        const plans = await request("/payments/plans").catch(() => []);
+        if (!Array.isArray(plans) || plans.length === 0) {
+          el.innerHTML = '<div class="empty-state" style="padding:1.5rem"><p>No payment plans available right now.</p></div>';
+          return;
+        }
+        el.innerHTML = plans.map(p => `
+          <div class="plan-card" style="border:1px solid var(--color-border);border-radius:var(--radius);padding:1rem;margin-top:0.75rem">
+            <div style="display:flex;justify-content:space-between;align-items:flex-start;gap:0.5rem">
+              <div>
+                <div style="font-weight:600;font-size:1rem">${escapeHtml(p.name)}</div>
+                <div style="font-size:0.8rem;color:var(--color-text-muted);margin-top:0.25rem">${escapeHtml(p.description || "")}</div>
+                <div style="font-weight:700;font-size:1.1rem;margin-top:0.5rem">${Number(p.amount_tzs).toLocaleString()} ${escapeHtml(p.currency || "TZS")}</div>
+              </div>
+              <span class="badge badge-completed" style="text-transform:capitalize">${escapeHtml(p.audience)}</span>
+            </div>
+            <form class="teacher-plan-form" data-plan-id="${p.id}" style="margin-top:0.75rem;display:flex;gap:0.5rem;flex-wrap:wrap;align-items:end">
+              <div style="flex:1;min-width:140px">
+                <label class="field-label">Mobile Number</label>
+                <input class="input" name="mobile_number" placeholder="0712345678" required>
+              </div>
+              <div style="min-width:130px">
+                <label class="field-label">Provider</label>
+                <select class="input" name="provider" required>
+                  <option value="m-pesa">M-Pesa</option>
+                  <option value="tigo-pesa">Tigo Pesa</option>
+                  <option value="halopesa">HaloPesa</option>
+                  <option value="azampay">AzamPay</option>
+                </select>
+              </div>
+              <button class="btn btn-success" type="submit">Pay ${Number(p.amount_tzs).toLocaleString()} ${escapeHtml(p.currency || "TZS")}</button>
+            </form>
+            <div class="teacher-plan-result" data-plan-id="${p.id}" style="margin-top:0.5rem"></div>
+          </div>
+        `).join("");
+        bindPlanForms();
+      } catch(e) {
+        el.innerHTML = '<div class="empty-state" style="padding:1.5rem"><p>Could not load plans.</p></div>';
+      }
+    }
+
+    function bindPlanForms() {
+      document.querySelectorAll(".teacher-plan-form").forEach(form => {
+        form.addEventListener("submit", async ev => {
+          ev.preventDefault();
+          const planId = form.getAttribute("data-plan-id");
+          const btn = form.querySelector("button[type=submit]");
+          const resultEl = document.querySelector(`.teacher-plan-result[data-plan-id="${planId}"]`);
+          const fd = new FormData(ev.target);
+          btn.disabled = true; btn.innerHTML = '<span class="btn-spinner">Processing...</span>';
+          try {
+            const result = await request(`/payments/plans/${planId}/checkout`, {
+              method: "POST",
+              body: JSON.stringify({
+                mobile_number: fd.get("mobile_number"),
+                provider: fd.get("provider"),
+                idempotency_key: crypto.randomUUID ? crypto.randomUUID() : Date.now().toString(),
+              }),
+            });
+            if (result === null) return;
+            resultEl.innerHTML = `<div class="payment-result success"><svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M9 12l2 2 4-4m6 2a9 9 0 11-18 0 9 9 0 0118 0z"/></svg><div><strong>Payment initiated!</strong><br><span style="opacity:0.8;font-size:0.8rem">${escapeHtml(result.id || "")}</span></div></div>`;
+            loadPayments(dashboard);
+          } catch(err) {
+            resultEl.innerHTML = `<div class="payment-result error"><svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M12 8v4m0 4h.01M21 12a9 9 0 11-18 0 9 9 0 0118 0z"/></svg><div>${escapeHtml(err.message)}</div></div>`;
+          } finally {
+            btn.disabled = false; btn.textContent = "Pay";
+          }
+        });
+      });
+    }
+
+    function bindPaymentForm() {
+      let inProgress = false;
+      document.getElementById("teacher-payment-form")?.addEventListener("submit", async ev => {
+        ev.preventDefault();
+        const btn = document.getElementById("teacher-payment-submit-btn");
+        if (inProgress) return;
+        inProgress = true;
+        btn.innerHTML = '<span class="btn-spinner"><svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="3"><circle cx="12" cy="12" r="10" stroke-dasharray="31.4 31.4" stroke-linecap="round"/></svg> Processing...</span>';
+        btn.disabled = true;
+        const fd = new FormData(ev.target);
+        try {
+          const result = await request("/payments/checkout", {
+            method: "POST",
+            body: JSON.stringify({
+              mobile_number: fd.get("mobile_number"),
+              amount_tzs: parseInt(fd.get("amount_tzs"), 10),
+              provider: fd.get("provider"),
+              idempotency_key: crypto.randomUUID ? crypto.randomUUID() : Date.now().toString(),
+            }),
+          });
+          if (result === null) return;
+          document.getElementById("teacher-payment-result").innerHTML = `<div class="payment-result success"><svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M9 12l2 2 4-4m6 2a9 9 0 11-18 0 9 9 0 0118 0z"/></svg><div><strong>Payment initiated!</strong><br><span style="opacity:0.8;font-size:0.8rem">${escapeHtml(result.id || "")}</span></div></div>`;
+          loadPayments(dashboard);
+        } catch(err) {
+          document.getElementById("teacher-payment-result").innerHTML = `<div class="payment-result error"><svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M12 8v4m0 4h.01M21 12a9 9 0 11-18 0 9 9 0 0118 0z"/></svg><div>${escapeHtml(err.message)}</div></div>`;
+        }
+        inProgress = false;
+        btn.innerHTML = 'Pay Now';
+        btn.disabled = false;
+      });
+    }
+
+    dashboard.showView(`
+      <div class="content">
+        <h2>Payments</h2>
+        <p style="color:var(--color-text-muted);font-size:0.85rem;margin-top:0.25rem">Manage your payments, subscriptions and invoices</p>
+        <div class="stat-grid" style="margin-top:1rem">
+          <div class="stat-card"><div class="stat-icon" style="background:#f0fdf4;color:#16a34a">💰</div><div class="stat-value">${totalPaid.toLocaleString()}</div><div class="stat-label">Total Paid (TZS)</div></div>
+          <div class="stat-card"><div class="stat-icon" style="background:#fef3c7;color:#d97706">⏳</div><div class="stat-value">${pendingAmount.toLocaleString()}</div><div class="stat-label">Pending (TZS)</div></div>
+          <div class="stat-card"><div class="stat-icon" style="background:#eff6ff;color:#2563eb">📊</div><div class="stat-value">${totalTx}</div><div class="stat-label">Transactions</div></div>
+          <div class="stat-card"><div class="stat-icon" style="background:#ede9fe;color:#7c3aed">🔄</div><div class="stat-value">${subList.filter(s => s.status === "active").length}</div><div class="stat-label">Active Subs</div></div>
+        </div>
+        <div class="tab-bar" style="margin-top:1rem">
+          <button class="tab-btn active" data-ttab="payments">💳 Payments</button>
+          <button class="tab-btn" data-ttab="subscriptions">🔄 Subscriptions</button>
+          <button class="tab-btn" data-ttab="invoices">📄 Invoices</button>
+        </div>
+        <div id="teacher-payment-tab-content">${renderTab("payments")}</div>
+      </div>
+    `);
+
+    document.querySelectorAll("[data-ttab]").forEach(btn => {
+      btn.addEventListener("click", () => {
+        document.querySelectorAll("[data-ttab]").forEach(b => b.classList.remove("active"));
+        btn.classList.add("active");
+        document.getElementById("teacher-payment-tab-content").innerHTML = renderTab(btn.dataset.ttab);
+        bindPaymentForm();
+        loadPlans();
+      });
+    });
+
+    bindPaymentForm();
+    loadPlans();
+    document.getElementById("teacher-refresh-tx-btn")?.addEventListener("click", () => loadPayments(dashboard));
+  } catch(e) { dashboard.showView('<div class="empty-state"><p>Error loading payments: ' + escapeHtml(e.message) + '</p></div>'); }
+}
+
+;
+// modules/teacher/notifications.js — notifications management view
+
+async function loadNotifications(dashboard) {
+  dashboard.showView('<div class="loading-state"><div class="spinner"></div><p>Loading notifications...</p></div>');
+  try {
+    const data = await request("/notifications");
+    const allNotifs = Array.isArray(data?.items) ? data.items : [];
+    const unread = allNotifs.filter(n => !n.is_read);
+    const read = allNotifs.filter(n => n.is_read);
+    let showFilter = "all";
+
+    function render() {
+      let list = allNotifs;
+      if (showFilter === "unread") list = unread;
+      else if (showFilter === "read") list = read;
+      const el = document.getElementById("teacher-notif-list");
+      if (!el) return;
+      if (list.length === 0) {
+        el.innerHTML = '<div class="empty-state" style="padding:2rem"><p>No notifications</p></div>';
+        return;
+      }
+      el.innerHTML = list.map(n => `
+        <div class="card" style="padding:0.75rem 1rem;margin-bottom:0.5rem;${n.is_read ? "opacity:0.7" : "border-left:3px solid var(--color-primary)"}">
+          <div style="display:flex;justify-content:space-between;align-items:start;gap:0.5rem">
+            <div style="flex:1">
+              <p style="margin:0;font-size:0.875rem;${n.is_read ? "" : "font-weight:600"}">${escapeHtml(n.message)}</p>
+              <p style="margin:0.25rem 0 0;font-size:0.75rem;color:var(--color-text-muted)">${n.created_at ? new Date(n.created_at).toLocaleString() : ""}</p>
+            </div>
+            ${!n.is_read ? `<button class="btn btn-primary btn-xs teacher-notif-read" data-id="${n.id}">✓ Read</button>` : ""}
+          </div>
+        </div>
+      `).join("");
+      document.querySelectorAll(".teacher-notif-read").forEach(btn => {
+        btn.addEventListener("click", async () => {
+          await request(`/notifications/${btn.dataset.id}/read`, { method: "POST" });
+          const n = allNotifs.find(x => x.id === btn.dataset.id);
+          if (n) n.is_read = true;
+          unread.length = 0; unread.push(...allNotifs.filter(x => !x.is_read));
+          read.length = 0; read.push(...allNotifs.filter(x => x.is_read));
+          const badge = document.getElementById("notif-badge");
+          if (badge) { const c = unread.length; badge.textContent = c; badge.style.display = c > 0 ? "inline" : "none"; }
+          render();
+        });
+      });
+    }
+
+    dashboard.showView(`
+      <div class="content">
+        <div style="display:flex;justify-content:space-between;align-items:center">
+          <h2>🔔 Notifications</h2>
+          <button class="btn btn-ghost btn-sm" id="teacher-mark-all-read">✓ Mark All Read</button>
+        </div>
+        <div style="margin-top:1rem;display:flex;gap:0.5rem;flex-wrap:wrap;align-items:center">
+          <button class="btn-filter teacher-notif-filter active" data-filter="all">All <span class="filter-count">${allNotifs.length}</span></button>
+          <button class="btn-filter teacher-notif-filter" data-filter="unread">🔴 Unread <span class="filter-count">${unread.length}</span></button>
+          <button class="btn-filter teacher-notif-filter" data-filter="read">✅ Read <span class="filter-count">${read.length}</span></button>
+        </div>
+        <div id="teacher-notif-list" style="margin-top:0.75rem"></div>
+      </div>
+    `);
+    document.querySelectorAll(".teacher-notif-filter").forEach(btn => {
+      btn.addEventListener("click", () => {
+        showFilter = btn.dataset.filter;
+        document.querySelectorAll(".teacher-notif-filter").forEach(b => b.classList.toggle("active", b.dataset.filter === showFilter));
+        render();
+      });
+    });
+    document.getElementById("teacher-mark-all-read")?.addEventListener("click", async () => {
+      await Promise.all(unread.map(n =>
+        request(`/notifications/${n.id}/read`, { method: "POST" }).catch(() => {})
+      ));
+      unread.forEach(n => n.is_read = true);
+      unread.length = 0; read.length = 0; read.push(...allNotifs);
+      const badge = document.getElementById("notif-badge");
+      if (badge) badge.style.display = "none";
+      render();
+    });
+    render();
+  } catch(e) { dashboard.showView('<div class="empty-state"><p>Error loading notifications</p></div>'); }
+}
+
+;
+// modules/teacher/settings.js — profile, password, appearance settings
+
+async function loadSettings(dashboard) {
+  dashboard.showView('<div class="loading-state"><div class="spinner"></div><p>Loading settings...</p></div>');
+  try {
+    const [me, profile] = await Promise.all([
+      request("/users/me").catch(() => ({})),
+      request("/teachers/me").catch(() => ({})),
+    ]);
+    const activeTab = localStorage.getItem("teacher_settings_tab") || "profile";
+
+    function renderTab(tab) {
+      localStorage.setItem("teacher_settings_tab", tab);
+      document.querySelectorAll(".teacher-settings-tab").forEach(b => b.classList.toggle("active", b.dataset.tab === tab));
+      const panel = document.getElementById("teacher-settings-panel");
+      if (!panel) return;
+
+      if (tab === "profile") {
+        panel.innerHTML = `
+          <div class="card" style="padding:1.5rem">
+            <h3 style="margin-bottom:0.75rem">My Profile</h3>
+            <form id="teacher-profile-form" style="display:flex;flex-direction:column;gap:0.75rem">
+              <div>
+                <label style="font-size:0.85rem;font-weight:500;display:block;margin-bottom:0.25rem">Full Name</label>
+                <input class="input" name="full_name" value="${escapeHtml(profile.full_name || "")}" placeholder="Your name">
+              </div>
+              <div>
+                <label style="font-size:0.85rem;font-weight:500;display:block;margin-bottom:0.25rem">Email</label>
+                <input class="input" value="${escapeHtml(me.email || "")}" disabled style="opacity:0.6">
+              </div>
+              <div>
+                <label style="font-size:0.85rem;font-weight:500;display:block;margin-bottom:0.25rem">Phone</label>
+                <input class="input" name="phone" value="${escapeHtml(me.phone || "")}" placeholder="Phone number">
+              </div>
+              <div>
+                <label style="font-size:0.85rem;font-weight:500;display:block;margin-bottom:0.25rem">Subjects</label>
+                <input class="input" name="subjects" value="${escapeHtml(profile.subjects || "")}" placeholder="e.g. Mathematics, Physics">
+              </div>
+              <button class="btn btn-primary btn-pattern" type="submit" style="align-self:flex-start">💾 Save Changes</button>
+            </form>
+            <p id="teacher-profile-msg" style="font-size:0.85rem;margin-top:0.5rem;display:none"></p>
+          </div>
+        `;
+        document.getElementById("teacher-profile-form")?.addEventListener("submit", async e => {
+          e.preventDefault();
+          const fd = new FormData(e.target);
+          const msg = document.getElementById("teacher-profile-msg");
+          try {
+            await request("/users/me", { method: "PATCH", body: JSON.stringify({ phone: fd.get("phone") }) });
+            await request("/teachers/me", { method: "PATCH", body: JSON.stringify({ full_name: fd.get("full_name"), subjects: fd.get("subjects") }) });
+            msg.textContent = "✅ Profile updated!"; msg.style.color = "var(--color-success)"; msg.style.display = "block";
+            setTimeout(() => msg.style.display = "none", 3000);
+          } catch(err) { msg.textContent = "❌ " + err.message; msg.style.color = "var(--color-danger)"; msg.style.display = "block"; }
+        });
+      } else if (tab === "password") {
+        panel.innerHTML = `
+          <div class="card" style="padding:1.5rem">
+            <h3 style="margin-bottom:0.75rem">Change Password</h3>
+            <form id="teacher-pw-form" style="display:flex;flex-direction:column;gap:0.75rem;max-width:400px">
+              <div>
+                <label style="font-size:0.85rem;font-weight:500;display:block;margin-bottom:0.25rem">Current Password</label>
+                <input class="input" name="current_password" type="password" required>
+              </div>
+              <div>
+                <label style="font-size:0.85rem;font-weight:500;display:block;margin-bottom:0.25rem">New Password</label>
+                <input class="input" name="new_password" type="password" required minlength="6">
+              </div>
+              <div>
+                <label style="font-size:0.85rem;font-weight:500;display:block;margin-bottom:0.25rem">Confirm New Password</label>
+                <input class="input" name="confirm_password" type="password" required>
+              </div>
+              <button class="btn btn-primary btn-pattern" type="submit" style="align-self:flex-start">🔐 Update Password</button>
+            </form>
+            <p id="teacher-pw-msg" style="font-size:0.85rem;margin-top:0.5rem;display:none"></p>
+          </div>
+        `;
+        document.getElementById("teacher-pw-form")?.addEventListener("submit", async e => {
+          e.preventDefault();
+          const fd = new FormData(e.target);
+          const msg = document.getElementById("teacher-pw-msg");
+          if (fd.get("new_password") !== fd.get("confirm_password")) {
+            msg.textContent = "❌ Passwords do not match"; msg.style.color = "var(--color-danger)"; msg.style.display = "block";
+            return;
+          }
+          try {
+            await request("/auth/change-password", { method: "POST", body: JSON.stringify({ current_password: fd.get("current_password"), new_password: fd.get("new_password") }) });
+            msg.textContent = "✅ Password updated!"; msg.style.color = "var(--color-success)"; msg.style.display = "block";
+            e.target.reset();
+          } catch(err) { msg.textContent = "❌ " + err.message; msg.style.color = "var(--color-danger)"; msg.style.display = "block"; }
+        });
+      } else if (tab === "appearance") {
+        panel.innerHTML = appearancePanelHTML();
+        setupAppearanceControls();
+      }
+    }
+
+    dashboard.showView(`
+      <div class="content">
+        <h2>⚙️ Settings</h2>
+        <div class="tab-bar">
+          <button class="tab-btn teacher-settings-tab${activeTab === "profile" ? " active" : ""}" data-tab="profile">👤 Profile</button>
+          <button class="tab-btn teacher-settings-tab${activeTab === "password" ? " active" : ""}" data-tab="password">🔒 Password</button>
+          <button class="tab-btn teacher-settings-tab${activeTab === "appearance" ? " active" : ""}" data-tab="appearance">🎨 Appearance</button>
+        </div>
+        <div id="teacher-settings-panel"></div>
+      </div>
+    `);
+    document.querySelectorAll(".teacher-settings-tab").forEach(btn => {
+      btn.addEventListener("click", () => renderTab(btn.dataset.tab));
+    });
+    renderTab(activeTab);
+  } catch(e) { dashboard.showView('<div class="empty-state"><p>Error loading settings</p></div>'); }
+}
+
+async function showProfileEditor(dashboard) {
+  dashboard.showView('<div class="loading-state"><div class="spinner"></div><p>Loading...</p></div>');
+  try {
+    const [me, profile] = await Promise.all([
+      request("/users/me"),
+      request("/teachers/me").catch(() => null),
+    ]);
+    dashboard.showView(`
+      <div class="content" style="max-width:500px;margin:0 auto">
+        <h2>Edit Profile</h2>
+        <form id="profile-form">
+          <label>Email</label>
+          <input type="email" value="${escapeHtml(me.email || "")}" disabled style="width:100%;padding:0.5rem;margin-bottom:0.75rem;border:1px solid var(--color-border);border-radius:var(--radius)">
+          <label>Phone</label>
+          <input type="tel" id="pf-phone" value="${escapeHtml(me.phone || "")}" style="width:100%;padding:0.5rem;margin-bottom:0.75rem;border:1px solid var(--color-border);border-radius:var(--radius)">
+          ${profile ? `
+            <label>Full Name</label>
+            <input type="text" id="pf-name" value="${escapeHtml(profile.full_name || "")}" style="width:100%;padding:0.5rem;margin-bottom:0.75rem;border:1px solid var(--color-border);border-radius:var(--radius)">
+            <label>Subjects</label>
+            <input type="text" id="pf-subjects" value="${escapeHtml(profile.subjects || "")}" style="width:100%;padding:0.5rem;margin-bottom:0.75rem;border:1px solid var(--color-border);border-radius:var(--radius)">
+          ` : ""}
+          <button type="submit" class="btn btn-primary" style="width:100%">Save Changes</button>
+        </form>
+        <p id="profile-msg" style="display:none;margin-top:0.75rem"></p>
+        <button class="btn lesson-back-btn" style="margin-top:1rem">&larr; Back</button>
+      </div>
+    `);
+    document.querySelector("#teacher-content .lesson-back-btn")?.addEventListener("click", () => loadOverview(dashboard));
+    document.getElementById("profile-form").addEventListener("submit", async e => {
+      e.preventDefault();
+      const msg = document.getElementById("profile-msg");
+      try {
+        await request("/users/me", { method: "PATCH", body: JSON.stringify({ phone: document.getElementById("pf-phone").value || null }) });
+        if (profile) {
+          await request("/teachers/me", { method: "PATCH", body: JSON.stringify({
+            full_name: document.getElementById("pf-name").value || null,
+            subjects: document.getElementById("pf-subjects").value || null,
+          })});
+        }
+        msg.style.display = "block"; msg.style.color = "var(--color-success)"; msg.textContent = "Profile updated!";
+        setTimeout(() => msg.style.display = "none", 3000);
+      } catch(err) {
+        msg.style.display = "block"; msg.style.color = "red"; msg.textContent = err.message;
+      }
+    });
+  } catch(err) {
+    dashboard.showView(`<div class="empty-state"><h2>Error</h2><p>${escapeHtml(err.message)}</p></div>`);
+  }
+}
+
+;
+// modules/teacher/sidebar.js — sidebar setup, search, notifications bell, profile
+
+function setupSidebar(dashboard) {
+  const { signal } = dashboard._abort;
+
+  document.getElementById("sidebar-toggle")?.addEventListener("click", () => {
+    document.getElementById("teacher-sidebar").classList.toggle("open");
+  }, { signal });
+  document.addEventListener("click", (e) => {
+    if (!e.target.closest("#teacher-sidebar") && !e.target.closest("#sidebar-toggle")) {
+      document.getElementById("teacher-sidebar")?.classList.remove("open");
+    }
+  }, { signal });
+
+  const teacherSearchInput = document.getElementById("teacher-search");
+  const teacherSearchResults = document.getElementById("teacher-search-results");
+  let searchTimer;
+
+  teacherSearchInput.addEventListener("input", () => {
+    clearTimeout(searchTimer);
+    const q = teacherSearchInput.value.trim();
+    if (q.length < 2) { teacherSearchResults.style.display = "none"; return; }
+    searchTimer = setTimeout(async () => {
+      try {
+        const results = await request(`/search/?q=${encodeURIComponent(q)}`);
+        if (!Array.isArray(results) || results.length === 0) {
+          teacherSearchResults.innerHTML = '<div style="padding:0.5rem;color:var(--color-text-muted)">No results</div>';
+        } else {
+          teacherSearchResults.innerHTML = results.map(r => `
+            <div class="teacher-search-item" data-id="${escapeHtml(r.id)}" data-type="${escapeHtml(r.type)}" style="padding:0.5rem;cursor:pointer;border-bottom:1px solid var(--color-border);display:flex;justify-content:space-between">
+              <span>${escapeHtml(r.title)}</span>
+              <span style="color:var(--color-text-muted);font-size:0.8rem">${escapeHtml(r.type)}</span>
+            </div>
+          `).join("");
+          teacherSearchResults.querySelectorAll(".teacher-search-item").forEach(el => {
+            el.addEventListener("click", () => {
+              teacherSearchResults.style.display = "none";
+              teacherSearchInput.value = "";
+              const type = el.dataset.type;
+              const id = el.dataset.id;
+              if (type === "lesson") {
+                viewLessonContent("#teacher-content", id, () => loadLessons(dashboard));
+              } else if (type === "student") {
+                viewStudent(dashboard, id, el.querySelector("span")?.textContent || "Student");
+              } else {
+                dashboard.showViewByName("overview");
+              }
+            });
+          });
+        }
+        teacherSearchResults.style.display = "block";
+      } catch(e) { teacherSearchResults.style.display = "none"; }
+    }, 300);
+  });
+  document.addEventListener("click", (e) => {
+    if (!e.target.closest("#teacher-search") && !e.target.closest("#teacher-search-results")) teacherSearchResults.style.display = "none";
+  }, { signal });
+
+  const notifBell = document.getElementById("notif-bell");
+  const notifDropdown = document.getElementById("notif-dropdown");
+  const notifBadge = document.getElementById("notif-badge");
+
+  async function loadNotifs() {
+    try {
+      const res = await request("/notifications");
+      dashboard.notifData = Array.isArray(res?.items) ? res.items : [];
+      const unread = dashboard.notifData.filter(n => !n.is_read).length;
+      if (unread > 0) { notifBadge.textContent = unread; notifBadge.style.display = "inline"; }
+      else notifBadge.style.display = "none";
+    } catch(e) {}
+  }
+
+  notifBell.addEventListener("click", async (e) => {
+    e.stopPropagation();
+    if (notifDropdown.style.display === "block") { notifDropdown.style.display = "none"; return; }
+    await loadNotifs();
+    if (dashboard.notifData.length === 0) {
+      notifDropdown.innerHTML = '<div style="padding:0.75rem;color:var(--color-text-muted)">No notifications</div>';
+    } else {
+      notifDropdown.innerHTML = dashboard.notifData.map(n => `
+        <div class="notif-item ${n.is_read ? "" : "unread"}" data-id="${escapeHtml(n.id)}" style="padding:0.5rem 0.75rem;border-bottom:1px solid var(--color-border);${n.is_read ? "opacity:0.6" : "font-weight:600"}">
+          <p style="margin:0;font-size:0.85rem">${escapeHtml(n.message)}</p>
+        </div>
+      `).join("");
+      notifDropdown.querySelectorAll(".notif-item.unread").forEach(el => {
+        el.addEventListener("click", async () => {
+          await request(`/notifications/${el.dataset.id}/read`, { method: "POST" });
+          await loadNotifs();
+        });
+      });
+    }
+    notifDropdown.style.display = "block";
+  });
+  document.addEventListener("click", (e) => {
+    if (!e.target.closest("#notif-bell") && !e.target.closest("#notif-dropdown")) notifDropdown.style.display = "none";
+  }, { signal });
+
+  document.getElementById("profile-btn").addEventListener("click", (e) => {
+    e.stopPropagation();
+    const dd = document.getElementById("profile-dropdown");
+    dd.style.display = dd.style.display === "block" ? "none" : "block";
+  });
+  document.addEventListener("click", (e) => {
+    const pd = document.getElementById("profile-dropdown");
+    if (pd && !e.target.closest("#profile-btn") && !e.target.closest("#profile-dropdown")) pd.style.display = "none";
+  }, { signal });
+
+  document.getElementById("prof-logout").addEventListener("click", handleLogout);
+  document.getElementById("prof-edit").addEventListener("click", () => {
+    document.getElementById("profile-dropdown").style.display = "none";
+    showProfileEditor(dashboard);
+  });
+
+  document.querySelectorAll("#teacher-nav .sidebar-nav-item").forEach(el => {
+    el.addEventListener("click", (e) => {
+      e.preventDefault();
+      document.getElementById("teacher-sidebar")?.classList.remove("open");
+      dashboard.showViewByName(el.dataset.view);
+    });
+  });
+
+  window.addEventListener("hashchange", () => {
+    const view = location.hash.slice(1) || "overview";
+    if (dashboard._viewLoaders[view]) dashboard._viewLoaders[view]();
+  });
+
+  (async function applyModuleVisibility() {
+    try {
+      var vis = await request("/settings/modules/my");
+      if (!vis || typeof vis !== "object") return;
+      var items = document.querySelectorAll("#teacher-nav .sidebar-nav-item");
+      var firstEnabled = null;
+      items.forEach(function(el) {
+        var view = el.getAttribute("data-view");
+        if (vis[view] === false) {
+          el.style.display = "none";
+        } else if (!firstEnabled) {
+          firstEnabled = view;
+        }
+      });
+      var currentHash = location.hash.slice(1) || "overview";
+      if (vis[currentHash] === false && firstEnabled) {
+        dashboard.showViewByName(firstEnabled);
+      }
+    } catch(e) {}
+  })();
+
+  loadNotifs();
+}
+
+;
+// modules/teacher/index.js — main entry point for teacher dashboard
+
+async function renderTeacherDashboard() {
+  const dashboard = new TeacherDashboard();
+
+  render("#app", `
+    <div class="sidebar-layout">
+      <aside id="teacher-sidebar" class="sidebar">
+        <div class="sidebar-header">
+          <h2>Casuya</h2>
+          <p>${escapeHtml(dashboard.payload.full_name || dashboard.payload.email || "Teacher")}</p>
+        </div>
+        <nav class="sidebar-nav" id="teacher-nav">
+          <div class="sidebar-nav-item active" data-view="overview">📊 Overview</div>
+          <div class="sidebar-nav-item" data-view="class">🏫 My Class</div>
+          <div class="sidebar-nav-item" data-view="students">👥 Students</div>
+          <div class="sidebar-nav-item" data-view="lessons">📝 Lessons</div>
+          <div class="sidebar-nav-item" data-view="test-generator">📝 Test Generator</div>
+          <div class="sidebar-nav-item" data-view="assignments">📋 Assignments</div>
+          <div class="sidebar-nav-item" data-view="reports">📈 Reports</div>
+          <div class="sidebar-nav-item" data-view="ai-assistant">🤖 AI Assistant</div>
+          <div class="sidebar-nav-item" data-view="teaching-docs">📚 Teaching Docs</div>
+          <div class="sidebar-nav-item" data-view="library">📖 Reference Library</div>
+          <div class="sidebar-nav-item" data-view="bookmarks">🔖 Bookmarks</div>
+          <div class="sidebar-nav-item" data-view="files">📁 Files</div>
+          <div class="sidebar-nav-item" data-view="payments">💳 Payments</div>
+          <div class="sidebar-nav-item" data-view="notifications">🔔 Notifications</div>
+          <div class="sidebar-nav-item" data-view="settings">⚙️ Settings</div>
+        </nav>
+        <div class="sidebar-footer">
+          <div class="sidebar-footer-row">
+            <div style="position:relative;flex:1">
+              <button id="notif-bell" class="icon-btn" style="width:100%;font-size:1.1rem" title="Notifications">🔔<span id="notif-badge" style="display:none;position:absolute;top:-4px;right:-6px;background:red;color:#fff;font-size:0.6rem;padding:1px 4px;border-radius:8px;min-width:14px;text-align:center">0</span></button>
+              <div id="notif-dropdown" class="notif-dropdown"></div>
+            </div>
+            <div style="position:relative">
+              <button id="profile-btn" class="icon-btn" title="Profile">👤</button>
+              <div id="profile-dropdown" class="profile-dropdown">
+                <button class="dropdown-item" id="prof-edit">Edit Profile</button>
+                <button class="dropdown-item" id="prof-logout" style="color:var(--color-danger)">Sign Out</button>
+              </div>
+            </div>
+          </div>
+        </div>
+      </aside>
+      <main class="main-content">
+        <header class="main-header">
+          <button id="sidebar-toggle" class="sidebar-toggle-btn">&#9776;</button>
+          <div style="position:relative;flex:1;max-width:360px">
+            <input id="teacher-search" type="search" class="input" placeholder="Search lessons, students..." style="padding:0.4rem 0.75rem;font-size:0.85rem">
+            <div id="teacher-search-results" style="display:none;position:absolute;top:100%;left:0;right:0;background:var(--color-surface);border:1px solid var(--color-border);border-radius:var(--radius);z-index:100;max-height:300px;overflow-y:auto"></div>
+          </div>
+        </header>
+        <div id="teacher-content" class="main-body"></div>
+      </main>
+    </div>
+  `);
+
+  dashboard._navItems = document.querySelectorAll("#teacher-nav .sidebar-nav-item");
+
+  dashboard._viewLoaders = {
+    overview: () => { dashboard.setActiveNav("overview"); loadOverview(dashboard); },
+    dashboard: () => { dashboard.setActiveNav("overview"); loadOverview(dashboard); },
+    class: () => { dashboard.setActiveNav("class"); loadClass(dashboard); },
+    students: () => { dashboard.setActiveNav("students"); loadStudents(dashboard); },
+    lessons: () => { dashboard.setActiveNav("lessons"); loadLessons(dashboard); },
+    "test-generator": () => { dashboard.setActiveNav("test-generator"); loadTeacherTestGenerator(dashboard); },
+    assignments: () => { dashboard.setActiveNav("assignments"); loadAssignments(dashboard); },
+    reports: () => { dashboard.setActiveNav("reports"); loadReports(dashboard); },
+    "ai-assistant": () => { dashboard.setActiveNav("ai-assistant"); loadAIAssistant(dashboard); },
+    "teaching-docs": () => { dashboard.setActiveNav("teaching-docs"); loadPlans(dashboard); },
+    library: () => { dashboard.setActiveNav("library"); loadLibrary(dashboard); },
+    bookmarks: () => { dashboard.setActiveNav("bookmarks"); loadBookmarks(dashboard); },
+    files: () => { dashboard.setActiveNav("files"); loadFiles(dashboard); },
+    payments: () => { dashboard.setActiveNav("payments"); loadPayments(dashboard); },
+    notifications: () => { dashboard.setActiveNav("notifications"); loadNotifications(dashboard); },
+    settings: () => { dashboard.setActiveNav("settings"); loadSettings(dashboard); },
+  };
+
+  setupSidebar(dashboard);
+
+  const initialView = location.hash.slice(1) || "overview";
+  if (dashboard._viewLoaders[initialView]) {
+    dashboard._viewLoaders[initialView]();
+  } else {
+    loadOverview(dashboard);
+  }
+}
+
+;
+// modules/dashboards.js — extracted from main.js (classic script, shared global scope)
+function renderApp() {
+  const token = localStorage.getItem("casuya_token");
+  const payload = decodeToken(token);
+  const role = payload.role || "student";
+  if (role === "admin") {
+    renderAdminDashboard();
+  } else if (role === "student") {
+    renderStudentDashboard();
+  } else if (role === "teacher") {
+    renderTeacherDashboard();
+  } else {
+    render("#app", `
+      <div style="display:flex;flex-direction:column;align-items:center;justify-content:center;min-height:100vh;padding:2rem;text-align:center">
+        <h2 style="margin-bottom:0.5rem">Access Not Available</h2>
+        <p style="color:var(--color-text-muted);margin-bottom:1.5rem">Your account role ("<strong>${escapeHtml(role || "unknown")}</strong>") does not have a dashboard yet.</p>
+        <button class="btn btn-primary" onclick="localStorage.removeItem('casuya_token');window.location.href='/login.html'">Log Out</button>
+      </div>
+    `);
+  }
+}
+
+;
+// main.js — bootstrap/glue. Loaded AFTER modules/*.js (classic scripts, shared global scope).
+// Derive the API base the same way auth-client.js does: when the page is
+// served from the API host (port 8765) use same-origin, otherwise assume the
+// backend runs on :8765. This keeps dev (separate frontend port) and a
+// reverse-proxied production deploy behaviour consistent.
+// --- Login ---
+// --- App Router ---
+// --- Student Dashboard ---
+// --- Admin Dashboard ---
+// --- Teacher Dashboard ---
+document.addEventListener("DOMContentLoaded", async () => {
+  applyAppearance();
+  const token = localStorage.getItem("casuya_token");
+  if (token) {
+    // Render the shell immediately. The maintenance check runs in parallel and
+    // overlays the maintenance screen only if it's actually enabled — otherwise
+    // it used to block every page load on a server round-trip.
+    renderApp();
+    if (typeof requestIdleCallback === "function") {
+      requestIdleCallback(function () {
+        if (typeof ensureSpeechBundle === "function") ensureSpeechBundle();
+      }, { timeout: 8000 });
+    }
+    try {
+      const data = await request("/settings/maintenance");
+      if (data && data.enabled === true && localStorage.getItem("casuya_role") !== "admin") {
+        renderMaintenanceScreen(data);
+      }
+    } catch (_) {}
+  } else {
+    renderLogin();
+  }
+});
+
+function renderMaintenanceScreen(data) {
+  var app = document.getElementById("app");
+  if (app) app.style.visibility = "hidden";
+  if (document.getElementById("casuya-maintenance")) return;
+  var fmt = data.until ? new Date(data.until) : null;
+  var whenHtml = "";
+  if (fmt && !isNaN(fmt.getTime())) {
+    var days = ["Sunday","Monday","Tuesday","Wednesday","Thursday","Friday","Saturday"];
+    var months = ["January","February","March","April","May","June","July","August","September","October","November","December"];
+    var whenText = days[fmt.getDay()] + ", " + months[fmt.getMonth()] + " " + fmt.getDate() + (fmt.getHours()||fmt.getMinutes() ? " at " + (fmt.getHours()%12||12) + ":" + (fmt.getMinutes()<10?"0":"") + fmt.getMinutes() + (fmt.getHours()>=12?" PM":" AM") + " EAT" : "");
+    whenHtml = '<p style="margin:1.25rem 0 0;font-size:1rem;color:rgba(255,255,255,0.92);font-weight:600">' + "We should be back by <span style='border-bottom:2px solid rgba(255,255,255,0.55)'>&nbsp;" + whenText + "&nbsp;</span></p>";
+  }
+  var overlay = document.createElement("div");
+  overlay.id = "casuya-maintenance";
+  overlay.style.cssText = "position:fixed;inset:0;z-index:99999;display:flex;align-items:center;justify-content:center;padding:1.5rem;background:linear-gradient(140deg,#1e3a8a 0%,#2563eb 55%,#3b82f6 100%);color:#fff;font-family:-apple-system,BlinkMacSystemFont,'Segoe UI',Roboto,sans-serif;text-align:center;overflow:auto";
+  overlay.innerHTML = '<div style="max-width:560px;width:100%">'
+    + '<div style="width:56px;height:56px;margin:0 auto 1.25rem;display:flex;align-items:center;justify-content:center;background:rgba(255,255,255,0.15);border-radius:16px;font-size:1.7rem">🔧</div>'
+    + '<h1 style="margin:0 0 0.75rem;font-size:1.85rem;line-height:1.2;font-weight:800">' + (data.title || "We'll Be Back Soon") + '</h1>'
+    + '<p style="margin:0 auto;font-size:1.05rem;line-height:1.7;color:rgba(255,255,255,0.92);max-width:460px">' + (data.message || "We're fixing bugs and making improvements to Casuya to serve you even better. Your learning progress is safe with us — hang tight, we're almost ready to welcome you back.") + '</p>'
+    + whenHtml
+    + '<p style="margin:1.5rem 0 0;font-size:0.9rem;color:rgba(255,255,255,0.85)">Need urgent assistance? Contact us at <a href="mailto:admin@casuya.co.tz" style="color:#fff;font-weight:600;text-decoration:underline">admin@casuya.co.tz</a></p>'
+    + '<p style="margin:1.25rem 0 0;font-size:0.85rem;color:rgba(255,255,255,0.7)">Thank you for your patience — see you very soon. 💙</p>'
+    + '</div>';
+  document.body.appendChild(overlay);
+}

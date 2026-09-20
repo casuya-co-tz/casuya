@@ -41,6 +41,8 @@ export interface SearchOptions {
   file?: string;
   kind?: KbKind[];
   limit?: number;
+  /** Precomputed query vector for hybrid RAG (optional). */
+  queryEmbedding?: number[];
 }
 
 export interface SearchHit {

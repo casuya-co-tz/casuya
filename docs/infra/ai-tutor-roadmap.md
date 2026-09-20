@@ -1,7 +1,7 @@
 # Casuya AI Tutor — Product & Engineering Roadmap
 
 **Author:** Engineering plan (2026-09-20)  
-**Status:** Phase 1–4 core shipped (2026-09-20); hybrid RAG, deep tier, offline queue, admin AI dashboard live  
+**Status:** Phase 1–5 shipped (2026-09-20); hybrid RAG + embeddings, review queue, server threads, translate streaming  
 **Legend:** `[x]` done · `[~]` partial · `[ ]` not started  
 **Related:**
 - [`ai-connectivity-plan.md`](./ai-connectivity-plan.md) — provider health, bridge, fallbacks
@@ -25,7 +25,7 @@ Updated when AI tutor work lands. **Committed and deployed to production.**
 | Exam-style quiz tutor | **A+** | Full quiz text context via `buildQuizLessonContent` |
 | Question gen (teacher/admin) | **A+** | `runAiGenerateTask` + KB chips |
 | Test generator | **A+** | Unified `renderAiResultFooter` |
-| Translate | **A** | Footer + listen; no streaming |
+| Translate | **A+** | Streaming translate + listen + `/explain` fallback |
 | Lesson plans / scheme | **A** | Source badge + TIE syllabus chip |
 
 ### Repo / ops (still open)
@@ -34,7 +34,8 @@ Updated when AI tutor work lands. **Committed and deployed to production.**
 - [x] Deploy Railway (backend) + Vercel/static (frontend)
 - [~] Hard refresh smoke test on production (manual)
 - [x] E2E test: student lesson → ask AI → NECTA tip visible (`e2e/lesson-ai.spec.ts`)
-- [ ] Manual QA: 360px viewport, 3G throttle, dark mode
+- [x] E2E: 360px viewport + dark mode (`e2e/ai-tutor-phase5.spec.ts`)
+- [~] Manual QA: 3G throttle (automated mocks partial; manual spot-check still useful)
 - [x] Roadmap checkboxes synced with code (this section)
 
 ### Key files (implemented)
@@ -319,7 +320,7 @@ flowchart TB
 
 - [x] Cross-check TIE terms against syllabus JSON for subtopic — `answer-validation.ts`
 - [x] Uncertainty phrasing: *Thibitisha na kitabu chako* (auto footer when flagged)
-- [~] Teacher review queue for flagged answers (admin dashboard shows `needs_review` samples; no dedicated queue UI)
+- [x] Teacher review queue for flagged answers (`tutor_review_items` + Admin → AI Tutor approve/dismiss)
 
 **Phase 3 exit criteria:**
 - Paraphrased Swahili questions retrieve relevant syllabus docs
@@ -439,7 +440,7 @@ Reference: [`packages/ai/docs/tutoring-ui-spec.md`](../../packages/ai/docs/tutor
 |------|-------|
 | API | Pytest: empty progress-style patterns for tutoring; format post-process unit tests |
 | AI package | Jest: `post-process.ts`, KB search with Swahili queries |
-| Frontend | Manual: 360px viewport, 3G throttle, dark mode |
+| Frontend | E2E: 360px viewport, dark mode, admin review queue, translate stream |
 | E2E | Student opens lesson → asks question → sees NECTA tip + context blockquote |
 | Offline | Disable AI service → verify KB fallback + badge |
 | Accessibility | Voice in/out, 44px touch targets, screen reader on chat |
@@ -464,8 +465,31 @@ Reference: [`packages/ai/docs/tutoring-ui-spec.md`](../../packages/ai/docs/tutor
 | Default language | English vs both | `both` for Form I–II |
 | Rate limit | 20 vs 30 vs unlimited teachers | 30/student/day |
 | Claude in prod | Yes/no | Yes, teacher `deep` mode only |
-| Conversation storage | Client-only vs server | Client sessionStorage first; server later |
+| Conversation storage | Client-only vs server | **Shipped:** sessionStorage + server sync (`tutor_threads`) |
 
 ---
 
-*Last updated: 2026-09-20 (implementation tracker §0.5)*
+---
+
+## 12. Phase 5 — QA & maturity (shipped 2026-09-20)
+
+### 5A — Automated QA
+
+- [x] Playwright: 360px mobile viewport + 44px FAB touch target
+- [x] Playwright: dark mode (`data-theme=dark`)
+- [x] Playwright: admin review queue approve/dismiss
+- [x] Playwright: teacher translate streaming
+
+### 5B — Quality hardening
+
+- [x] Optional query embeddings at runtime (`query-embed.ts`) + `build-kb-embed` script
+- [x] Persistent review queue (`tutor_review_items`) enqueued on `needsReview`
+- [x] Admin AI Tutor page: pending queue with Approve / Dismiss
+
+### 5C — Platform maturity
+
+- [x] Server-side tutor threads (`GET/PUT /ai/tutor/thread/{lesson_id}`)
+- [x] Student chat loads server thread on mount (`loadTutorThreadFromServer`)
+- [x] Translate streaming (`POST /ai/content/translate/stream`)
+
+*Last updated: 2026-09-20 (Phase 5 complete)*
