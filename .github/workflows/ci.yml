@@ -42,7 +42,11 @@ jobs:
       - name: Verify KB embed script
         working-directory: packages/ai
         run: npm run verify-kb-embed
-      - run: pnpm turbo run test --force
+      - name: JavaScript package tests
+        run: pnpm turbo run test --filter=!casuya-platform --force
+      - name: Platform frontend tests
+        working-directory: apps/platform
+        run: pnpm test:frontend
 
   backend:
     runs-on: ubuntu-latest
