@@ -168,6 +168,7 @@ const roles = {
     "modules/admin-dashboard/admin-notifications.js",
     "modules/admin-dashboard/admin-uploads.js",
     "modules/admin-dashboard/admin-library.js",
+    "modules/admin-dashboard/admin-ai-quality.js",
     "modules/admin-dashboard/05-branding-analytics-settings.js",
     "modules/admin-dashboard/admin-branding.js",
     "modules/admin-dashboard/admin-analytics.js",

@@ -21,7 +21,7 @@ function renderTutorMarkdown(raw) {
     return html;
   });
 
-  text = text.replace(/^(.*💡\s*(?:NECTA\s+(?:Examination\s+)?Tip|Mtihani).*)\n((?:(?!\*\*\*).+\n?)*)/gim, (_, tipLine, body) => {
+  text = text.replace(/^(.*💡\s*(?:\*\*)?(?:NECTA\s+(?:Examination\s+)?Tip|Mtihani)(?:\*\*)?.*)\n((?:(?!\*\*\*).+\n?)*)/gim, (_, tipLine, body) => {
     const cleanBody = escapeHtml(body.trim()).replace(/\n/g, "<br>");
     return `<div class="tutor-necta-tip"><div class="tutor-necta-tip-label">💡 NECTA Examination Tip</div><p>${cleanBody}</p></div>`;
   });

@@ -20,6 +20,7 @@ jobs:
       - run: pip install pytest
       - run: pip install -r apps/platform/requirements.txt
       - run: pip install -r apps/payments/requirements.txt
+      - run: pip install -e libs/core
 
       - uses: pnpm/action-setup@v4
       - uses: actions/setup-node@v4

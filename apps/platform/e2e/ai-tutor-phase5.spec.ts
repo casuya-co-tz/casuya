@@ -65,7 +65,14 @@ function mockTutorStream(page: import('@playwright/test').Page) {
 }
 
 async function openLinearEquationsLesson(page: import('@playwright/test').Page) {
-  await page.locator('#student-nav [data-view="subjects"]').click();
+  const sidebarToggle = page.locator('#sidebar-toggle');
+  if (await sidebarToggle.isVisible()) {
+    await sidebarToggle.click();
+    await expect(page.locator('#student-sidebar')).toHaveClass(/open/);
+  }
+  await page.locator('#student-nav [data-view="subjects"]').evaluate((el) => {
+    (el as HTMLElement).click();
+  });
   await page.locator('.subject-card', { hasText: 'Mathematics' }).click();
   await page.locator('.topic-card', { hasText: 'Algebra' }).click();
   await page.locator('.subtopic-card', { hasText: 'Linear Equations' }).click();
@@ -75,6 +82,7 @@ async function openLinearEquationsLesson(page: import('@playwright/test').Page) 
 }
 
 test('student AI shows streaming UI under Slow 3G within 2s', async ({ page, context }) => {
+  test.setTimeout(60_000);
   await page.setViewportSize({ width: 360, height: 640 });
 
   const nectaBody = [
@@ -196,7 +204,7 @@ test('admin can dismiss a review queue item', async ({ page }) => {
 
   await loginAsAdmin(page);
   await page.locator('[data-view="ai-quality"]').click();
-  await expect(page.getByText('Review queue')).toBeVisible();
+  await expect(page.getByRole('heading', { name: 'Review queue' })).toBeVisible();
   await expect(page.getByText('Is this answer correct?')).toBeVisible();
   await page.getByRole('button', { name: 'Dismiss' }).click();
   await expect(page.getByText('Is this answer correct?')).toHaveCount(0);

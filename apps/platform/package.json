@@ -9,7 +9,7 @@
     "seed": "python -m database.seeds.seed_dev_data",
     "reseed": "python -m database.seeds.reseed",
     "create-admin": "python -m database.seeds.create_admin",
-    "test": "python -m pytest tests/backend -q",
+    "test": "python -m pytest tests/backend -q && node --test tests/frontend/*.test.mjs",
     "test:frontend": "node --test tests/frontend/*.test.mjs",
     "test:e2e": "playwright test -c e2e/playwright.config.ts",
     "test:coverage": "pytest tests/ --cov=backend --cov=integrations -v",
