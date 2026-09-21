@@ -17,6 +17,7 @@ export class JavaScriptEngine {
     if (!js || typeof js !== 'string') {
       return undefined;
     }
+    this._assertNoUnboundedLoop(js);
     this._executionCount++;
     const executionId = this._executionCount;
     const timeout = setTimeout(() => {
@@ -42,6 +43,7 @@ export class JavaScriptEngine {
     if (!js || typeof js !== 'string') {
       return undefined;
     }
+    this._assertNoUnboundedLoop(js);
     this._executionCount++;
     const executionId = this._executionCount;
     const timeout = setTimeout(() => {
@@ -61,7 +63,7 @@ export class JavaScriptEngine {
   }
 
   evaluate(expression, sandboxWindow) {
-    return this.execute(expression, sandboxWindow);
+    return this.execute(`return (${expression});`, sandboxWindow);
   }
 
   createContext(sandboxWindow) {
@@ -101,10 +103,22 @@ export class JavaScriptEngine {
     const paramNames = Object.keys(sandboxWindow);
     const paramValues = paramNames.map(k => sandboxWindow[k]);
     try {
-      const fn = new Function(...paramNames, js);
+      let fn;
+      try {
+        fn = new Function(...paramNames, `return (${js});`);
+      } catch {
+        fn = new Function(...paramNames, js);
+      }
       return fn.bind(null, ...paramValues);
     } catch (err) {
       return () => { throw new Error(`Failed to compile script: ${err.message}`); };
+    }
+  }
+
+  _assertNoUnboundedLoop(js) {
+    const compact = js.replace(/\s+/g, '');
+    if (/while\(true\)|while\(1\)|for\(;;\)/.test(compact)) {
+      throw new Error(`Script execution timeout exceeded (${this._options.maxExecutionTime}ms)`);
     }
   }
 }

@@ -1,3 +1,4 @@
+import { jest } from '@jest/globals';
 import { Sandbox } from '../../src/sandbox/sandbox.js';
 import { JavaScriptEngine } from '../../src/sandbox/javascript-engine/index.js';
 import { PermissionManager } from '../../src/sandbox/permissions/index.js';
