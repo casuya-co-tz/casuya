@@ -38,6 +38,9 @@ jobs:
       - run: pnpm build
       - run: pnpm typecheck
       - run: pnpm lint
+      - name: Verify KB embed script
+        working-directory: packages/ai
+        run: npm run verify-kb-embed
       - run: pnpm test
 
   backend:

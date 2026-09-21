@@ -32,10 +32,11 @@ Updated when AI tutor work lands. **Committed and deployed to production.**
 
 - [x] Git commit + push of all AI tutor changes
 - [x] Deploy Railway (backend) + Vercel/static (frontend)
-- [~] Hard refresh smoke test on production (manual)
+- [x] Production smoke script incl. tutor stream (`scripts/smoke-production.ps1`)
 - [x] E2E test: student lesson → ask AI → NECTA tip visible (`e2e/lesson-ai.spec.ts`)
 - [x] E2E: 360px viewport + dark mode (`e2e/ai-tutor-phase5.spec.ts`)
-- [~] Manual QA: 3G throttle (automated mocks partial; manual spot-check still useful)
+- [x] E2E Slow 3G emulation + first paint < 2.5s (`ai-tutor-phase5.spec.ts`)
+- [~] Manual QA: real device 3G spot-check (optional)
 - [x] Roadmap checkboxes synced with code (this section)
 
 ### Key files (implemented)
@@ -483,6 +484,7 @@ Reference: [`packages/ai/docs/tutoring-ui-spec.md`](../../packages/ai/docs/tutor
 ### 5B — Quality hardening
 
 - [x] Optional query embeddings at runtime (`query-embed.ts`) + `build-kb-embed` script
+- [x] CI verify + weekly GitHub Action to build/commit `embeddings.json` (`.github/workflows/build-kb-embeddings.yml`)
 - [x] Persistent review queue (`tutor_review_items`) enqueued on `needsReview`
 - [x] Admin AI Tutor page: pending queue with Approve / Dismiss
 

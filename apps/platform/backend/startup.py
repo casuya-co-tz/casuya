@@ -115,6 +115,8 @@ def check_casuya_ai() -> dict:
                         "kb_ready": ready_payload.get("kb_ready"),
                         "providers_ready": ready_payload.get("providers_ready"),
                         "provider_chain": ready_payload.get("provider_chain"),
+                        "embeddings_ready": ready_payload.get("embeddings_ready"),
+                        "embeddings_count": ready_payload.get("embeddings_count"),
                     }
                 )
             health = client.get(f"{base_url}/health", headers=headers)

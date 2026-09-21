@@ -22,6 +22,7 @@
     "test:watch": "jest --config jest.config.js --watch",
     "test:coverage": "jest --config jest.config.js --coverage",
     "build-kb-embed": "node scripts/build-kb-embed.mjs",
+    "verify-kb-embed": "node scripts/build-kb-embed.mjs --verify",
     "prepublishOnly": "npm run clean && npm run build && npm run test"
   },
   "engines": {

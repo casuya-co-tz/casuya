@@ -60,6 +60,12 @@ async function loadAdminAiQuality() {
             <strong>${ai.kb_ready ? "Ready" : "Missing"}</strong>
           </div>
           <div style="border:1px solid var(--color-border);border-radius:var(--radius);padding:0.75rem;text-align:center">
+            <div style="font-size:0.75rem;color:var(--color-text-muted)">Hybrid embeddings</div>
+            <strong style="color:${ai.embeddings_ready ? "var(--color-success)" : "var(--color-warning)"}">
+              ${ai.embeddings_ready ? (ai.embeddings_count || 0) + " vectors" : "BM25 only"}
+            </strong>
+          </div>
+          <div style="border:1px solid var(--color-border);border-radius:var(--radius);padding:0.75rem;text-align:center">
             <div style="font-size:0.75rem;color:var(--color-text-muted)">Provider chain</div>
             <strong style="font-size:0.8rem">${escapeHtml(chain)}</strong>
           </div>

@@ -74,6 +74,56 @@ async function openLinearEquationsLesson(page: import('@playwright/test').Page) 
   await expect(page.locator('#casuya-ai-chat-fab')).toBeVisible({ timeout: 30000 });
 }
 
+test('student AI shows streaming UI under Slow 3G within 2s', async ({ page, context }) => {
+  await page.setViewportSize({ width: 360, height: 640 });
+
+  const nectaBody = [
+    '💡 **NECTA Examination Tip**',
+    'Always isolate the variable before substituting values.',
+  ].join('\n');
+
+  await page.route('**/ai/tutoring/stream', async (route) => {
+    await new Promise((r) => setTimeout(r, 350));
+    const sse = [
+      `data: ${JSON.stringify({ chunk: nectaBody + '\n\n', done: false })}\n\n`,
+      `data: ${JSON.stringify({
+        chunk: '',
+        done: true,
+        source: 'casuya-ai',
+        kbHits: [],
+        formatComplete: true,
+        formatLevel: 'complete',
+      })}\n\n`,
+    ].join('');
+    await route.fulfill({
+      status: 200,
+      headers: { 'Content-Type': 'text/event-stream' },
+      body: sse,
+    });
+  });
+
+  const cdp = await context.newCDPSession(page);
+  await cdp.send('Network.enable');
+  await cdp.send('Network.emulateNetworkConditions', {
+    offline: false,
+    downloadThroughput: (400 * 1024) / 8,
+    uploadThroughput: (400 * 1024) / 8,
+    latency: 400,
+  });
+
+  await loginAsStudent(page);
+  await openLinearEquationsLesson(page);
+  await page.locator('#casuya-ai-chat-fab').click();
+  await page.fill('#casuya-ai-chat-input', 'What is a linear equation?');
+
+  const t0 = Date.now();
+  await page.locator('#casuya-ai-chat-form button[type="submit"]').click();
+  await expect(page.locator('.tutor-thinking, .tutor-streaming-skeleton').first()).toBeVisible({ timeout: 3000 });
+  expect(Date.now() - t0).toBeLessThan(2500);
+
+  await expect(page.locator('.tutor-necta-tip')).toBeVisible({ timeout: 20000 });
+});
+
 test('student AI chat works at 360px mobile viewport', async ({ page }) => {
   await page.setViewportSize({ width: 360, height: 640 });
   await mockTutorStream(page);

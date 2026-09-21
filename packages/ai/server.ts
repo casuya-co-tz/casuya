@@ -21,6 +21,7 @@ import { HttpError, clientIp, readApiKey, requireAuthorized } from './server-sec
 import { buildFreeProviderSpecs, specsToConfigMap } from './src/providers/free-chain';
 import { buildQualityProviderSpec } from './src/providers/quality-provider';
 import { getKnowledgeBase } from './src/kb';
+import { embeddingsStatus } from './src/kb/hybrid-search';
 import { handleQuestionGenerate, handleTutoringQuiz } from './routes/questions';
 import { handleTutoringExplain, handleTutoringStream, handlePlanLesson, handlePlanScheme } from './routes/tutoring';
 import { handleTestGenerate } from './routes/tests';
@@ -154,12 +155,15 @@ async function start() {
     }
 
     if (req.method === 'GET' && url === '/readyz') {
+      const embed = embeddingsStatus(path.join(__dirname, '..'));
       const ready = kb.ready && chain.length > 0;
       return send(res, 200, {
         status: ready ? 'ok' : 'degraded',
         kb_ready: kb.ready,
         providers_ready: chain.length > 0,
         provider_chain: chain,
+        embeddings_ready: embed.ready,
+        embeddings_count: embed.count,
       });
     }
 

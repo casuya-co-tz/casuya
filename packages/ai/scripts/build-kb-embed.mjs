@@ -40,6 +40,17 @@ async function embedText(text, key) {
 }
 
 async function main() {
+  if (process.argv.includes('--verify')) {
+    if (!existsSync(INDEX_PATH)) {
+      console.error('Missing kb-data/index.json');
+      process.exit(1);
+    }
+    const index = JSON.parse(readFileSync(INDEX_PATH, 'utf8'));
+    const docs = index.docs || [];
+    console.error(`KB index OK (${docs.length} docs)`);
+    process.exit(0);
+  }
+
   const key = apiKey();
   if (!key) {
     console.error('Set GEMINI_API_KEY or GOOGLE_AI_API_KEY to build embeddings.');
@@ -74,6 +85,7 @@ async function main() {
         out[String(doc.id)] = vec;
         done += 1;
         if (done % 25 === 0) console.error(`Embedded ${done} docs…`);
+        await new Promise((r) => setTimeout(r, 120));
       }
     } catch (err) {
       console.error(`Skip doc ${doc.id}:`, err.message || err);

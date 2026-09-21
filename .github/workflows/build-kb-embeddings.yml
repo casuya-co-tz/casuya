@@ -1,0 +1,62 @@
+name: Build KB embeddings
+
+on:
+  workflow_dispatch:
+    inputs:
+      limit:
+        description: Max docs to embed (0 = all)
+        required: false
+        default: "0"
+  schedule:
+    # Weekly refresh — Sunday 03:00 UTC
+    - cron: "0 3 * * 0"
+
+permissions:
+  contents: write
+
+jobs:
+  embed:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v4
+
+      - uses: actions/setup-node@v4
+        with:
+          node-version: 20
+
+      - name: Verify KB index
+        working-directory: packages/ai
+        run: npm run verify-kb-embed
+
+      - name: Build embeddings
+        working-directory: packages/ai
+        env:
+          GEMINI_API_KEY: ${{ secrets.GEMINI_API_KEY }}
+          GOOGLE_AI_API_KEY: ${{ secrets.GOOGLE_AI_API_KEY }}
+        run: |
+          if [ -z "$GEMINI_API_KEY" ] && [ -z "$GOOGLE_AI_API_KEY" ]; then
+            echo "No Gemini API key configured — skipping embed build."
+            exit 0
+          fi
+          LIMIT="${{ github.event.inputs.limit || '0' }}"
+          if [ "$LIMIT" != "0" ]; then
+            node scripts/build-kb-embed.mjs --limit "$LIMIT"
+          else
+            node scripts/build-kb-embed.mjs
+          fi
+
+      - name: Commit embeddings artifact
+        run: |
+          if [ ! -f packages/ai/kb-data/embeddings.json ]; then
+            echo "No embeddings.json produced — nothing to commit."
+            exit 0
+          fi
+          git config user.name "github-actions[bot]"
+          git config user.email "41898282+github-actions[bot]@users.noreply.github.com"
+          git add packages/ai/kb-data/embeddings.json
+          if git diff --staged --quiet; then
+            echo "embeddings.json unchanged."
+            exit 0
+          fi
+          git commit -m "chore: refresh kb-data/embeddings.json [skip ci]"
+          git push

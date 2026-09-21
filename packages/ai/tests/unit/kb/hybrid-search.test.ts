@@ -1,4 +1,4 @@
-import { hybridSearch, resetEmbeddingCache } from '../../../src/kb/hybrid-search';
+import { embeddingsStatus, hybridSearch, resetEmbeddingCache } from '../../../src/kb/hybrid-search';
 import { KbDoc, KbIndex, SearchHit } from '../../../src/kb/types';
 
 function hit(docId: number, title: string, score: number): SearchHit {
@@ -15,6 +15,12 @@ function hit(docId: number, title: string, score: number): SearchHit {
 
 describe('hybridSearch', () => {
   beforeEach(() => resetEmbeddingCache());
+
+  it('reports missing embeddings index', () => {
+    const status = embeddingsStatus('/tmp/casuya-kb-missing');
+    expect(status.ready).toBe(false);
+    expect(status.count).toBe(0);
+  });
 
   it('re-ranks BM25 hits using metadata overlap', () => {
     const index = { docs: [], version: '1', generated: '', counts: { total: 0, byKind: {} }, subjectCodes: {}, inverted: {} } as KbIndex;

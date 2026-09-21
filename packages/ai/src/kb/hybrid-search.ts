@@ -102,6 +102,14 @@ export function hybridSearch(
   return merged.slice(0, limit);
 }
 
+/** Report precomputed embedding index status (ops / readyz). */
+export function embeddingsStatus(kbRoot: string): { ready: boolean; count: number } {
+  const embeddings = loadEmbeddings(kbRoot);
+  if (!embeddings) return { ready: false, count: 0 };
+  const count = Object.keys(embeddings).length;
+  return { ready: count > 0, count };
+}
+
 /** Reset cached embeddings (tests). */
 export function resetEmbeddingCache(): void {
   cachedEmbeddings = undefined;
