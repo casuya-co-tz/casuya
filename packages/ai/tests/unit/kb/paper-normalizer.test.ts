@@ -120,6 +120,73 @@ describe('paper normalizer', () => {
     expect(validation.valid).toBe(true);
   });
 
+  it('assemblePaperFromContent reconciles part marks to question total', () => {
+    const preset = resolvePaperPreset({
+      subject_slug: 'physics',
+      form_level: 4,
+      test_type: 'necta_iv',
+      paper: 'theory',
+    })!;
+    const paper = assemblePaperFromContent(
+      preset,
+      {
+        sections: preset.sections!.map((sec) => ({
+          id: sec.id,
+          questions: sec.questions.map((slot) => {
+            if (slot.type === 'mcq_bundle') {
+              return {
+                type: 'mcq_bundle',
+                items: Array.from({ length: slot.item_count || 10 }, (_, i) => ({
+                  number: String(i + 1),
+                  text: `Q${i}`,
+                  options: { A: 'a', B: 'b', C: 'c', D: 'd' },
+                  answer: 'A',
+                  marks: 1,
+                })),
+              };
+            }
+            if (slot.type === 'matching') {
+              const count = slot.item_count || 5;
+              return {
+                type: 'matching',
+                stem: 'Match the following:',
+                listA: Array.from({ length: count }, (_, i) => `A${i + 1}`),
+                listB: Array.from({ length: count + 2 }, (_, i) => `B${i + 1}`),
+                answers: Array.from({ length: count }, (_, i) => String.fromCharCode(65 + i)),
+              };
+            }
+            const count = slot.part_count || 2;
+            return {
+              type: slot.type,
+              stem: 'Structured question',
+              parts: Array.from({ length: count }, (_, i) => ({
+                label: String.fromCharCode(97 + i),
+                text: `Part ${i}`,
+                marks: 7,
+              })),
+            };
+          }),
+        })),
+      },
+      {
+        subject: 'PHYSICS',
+        subjectSlug: 'physics',
+        formLevel: 4,
+        topics: ['Force'],
+        generator: 'test',
+      },
+    );
+    const validation = validateNectaPaper(paper, preset);
+    if (!validation.valid) throw new Error(validation.issues.join('; '));
+    expect(validation.valid).toBe(true);
+    const partQuestions = paper.sections
+      .flatMap((s) => s.questions)
+      .filter((q) => q.parts?.length);
+    for (const q of partQuestions) {
+      expect(q.parts!.reduce((n, p) => n + p.marks, 0)).toBe(q.marks);
+    }
+  });
+
   it('validateNectaPaper rejects wrong mcq_bundle count', () => {
     const preset = resolvePaperPreset({
       subject_slug: 'physics',

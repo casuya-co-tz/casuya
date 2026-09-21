@@ -202,21 +202,59 @@ function normalizeMcqItem(raw: any, idx: number, marksEach: number): McqItem {
   };
 }
 
+function reconcilePartMarks(parts: StructuredPart[], totalMarks: number): StructuredPart[] {
+  if (!parts.length || !(totalMarks > 0)) return parts;
+  const raw = parts.map((p) => Math.max(1, Math.max(0, Number(p.marks) || 0)));
+  const sum = raw.reduce((n, m) => n + m, 0);
+  if (sum === totalMarks) return parts;
+
+  let marks: number[];
+  if (sum === 0 || parts.length > totalMarks) {
+    marks = distributeMarks(totalMarks, parts.length);
+  } else {
+    const scaled = raw.map((m) => (m / sum) * totalMarks);
+    marks = scaled.map((m) => Math.floor(m));
+    const order = scaled
+      .map((m, i) => ({ i, frac: m - Math.floor(m) }))
+      .sort((a, b) => b.frac - a.frac);
+    let remaining = totalMarks - marks.reduce((n, m) => n + m, 0);
+    let o = 0;
+    while (remaining > 0) {
+      marks[order[o % order.length].i] += 1;
+      remaining -= 1;
+      o += 1;
+    }
+    marks = marks.map((m) => Math.max(1, m));
+    let excess = marks.reduce((n, m) => n + m, 0) - totalMarks;
+    while (excess > 0) {
+      const maxIdx = marks.indexOf(Math.max(...marks));
+      if (maxIdx < 0 || marks[maxIdx] <= 1) break;
+      marks[maxIdx] -= 1;
+      excess -= 1;
+    }
+  }
+
+  return parts.map((p, i) => ({ ...p, marks: marks[i] }));
+}
+
 function normalizeParts(raw: any, totalMarks: number, count: number): StructuredPart[] {
   const src = raw?.parts || raw?.sub_questions || raw?.tasks || [];
+  let parts: StructuredPart[];
   if (!Array.isArray(src) || !src.length) {
     const marks = distributeMarks(totalMarks, count);
-    return marks.map((m, i) => ({
+    parts = marks.map((m, i) => ({
       label: PART_LABELS[i] || String(i + 1),
       text: `(Part ${PART_LABELS[i] || i + 1})`,
       marks: m,
     }));
+  } else {
+    parts = src.slice(0, count).map((p: any, i: number) => ({
+      label: String(p?.label || PART_LABELS[i] || i + 1),
+      text: String(p?.text || '').trim(),
+      marks: Number(p?.marks) || Math.max(1, Math.floor(totalMarks / count)),
+    }));
   }
-  return src.slice(0, count).map((p: any, i: number) => ({
-    label: String(p?.label || PART_LABELS[i] || i + 1),
-    text: String(p?.text || '').trim(),
-    marks: Number(p?.marks) || Math.max(1, Math.floor(totalMarks / count)),
-  }));
+  return reconcilePartMarks(parts, totalMarks);
 }
 
 function normalizeQuestion(raw: any, slot: QuestionSlot, number: number): ExamQuestion {
