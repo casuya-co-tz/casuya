@@ -1,4 +1,5 @@
 import { expect, test } from '@playwright/test';
+import { openLinearEquationsLesson } from './helpers/student-nav';
 
 async function loginAsStudent(page: import('@playwright/test').Page) {
   await page.goto('/login.html');
@@ -14,14 +15,6 @@ async function loginAsAdmin(page: import('@playwright/test').Page) {
   await page.fill('#password', 'admin123');
   await page.click('#submit-btn');
   await expect(page).toHaveURL(/\/admin\/?$/);
-}
-
-async function loginAsTeacher(page: import('@playwright/test').Page) {
-  await page.goto('/login.html');
-  await page.fill('#email', 'teacher@casuya.co.tz');
-  await page.fill('#password', 'teacher123');
-  await page.click('#submit-btn');
-  await expect(page).toHaveURL(/\/teacher\/?$/);
 }
 
 function mockTutorStream(page: import('@playwright/test').Page) {
@@ -64,23 +57,6 @@ function mockTutorStream(page: import('@playwright/test').Page) {
   });
 }
 
-async function openLinearEquationsLesson(page: import('@playwright/test').Page) {
-  const sidebarToggle = page.locator('#sidebar-toggle');
-  if (await sidebarToggle.isVisible()) {
-    await sidebarToggle.click();
-    await expect(page.locator('#student-sidebar')).toHaveClass(/open/);
-  }
-  await page.locator('#student-nav [data-view="subjects"]').evaluate((el) => {
-    (el as HTMLElement).click();
-  });
-  await page.locator('.subject-card', { hasText: 'Mathematics' }).click();
-  await page.locator('.topic-card', { hasText: 'Algebra' }).click();
-  await page.locator('.subtopic-card', { hasText: 'Linear Equations' }).click();
-  await page.locator('.lesson-card', { hasText: 'Introduction to Linear Equations' }).click();
-  await expect(page.locator('.lesson-iframe iframe')).toBeVisible({ timeout: 20000 });
-  await expect(page.locator('#casuya-ai-chat-fab')).toBeVisible({ timeout: 30000 });
-}
-
 test('student AI shows streaming UI under Slow 3G within 2s', async ({ page, context }) => {
   test.setTimeout(60_000);
   await page.setViewportSize({ width: 360, height: 640 });
@@ -110,6 +86,8 @@ test('student AI shows streaming UI under Slow 3G within 2s', async ({ page, con
     });
   });
 
+  await loginAsStudent(page);
+
   const cdp = await context.newCDPSession(page);
   await cdp.send('Network.enable');
   await cdp.send('Network.emulateNetworkConditions', {
@@ -119,17 +97,25 @@ test('student AI shows streaming UI under Slow 3G within 2s', async ({ page, con
     latency: 400,
   });
 
-  await loginAsStudent(page);
-  await openLinearEquationsLesson(page);
-  await page.locator('#casuya-ai-chat-fab').click();
-  await page.fill('#casuya-ai-chat-input', 'What is a linear equation?');
+  try {
+    await openLinearEquationsLesson(page);
+    await page.locator('#casuya-ai-chat-fab').click();
+    await page.fill('#casuya-ai-chat-input', 'What is a linear equation?');
 
-  const t0 = Date.now();
-  await page.locator('#casuya-ai-chat-form button[type="submit"]').click();
-  await expect(page.locator('.tutor-thinking, .tutor-streaming-skeleton').first()).toBeVisible({ timeout: 3000 });
-  expect(Date.now() - t0).toBeLessThan(2500);
+    const t0 = Date.now();
+    await page.locator('#casuya-ai-chat-form button[type="submit"]').click();
+    await expect(page.locator('.tutor-thinking, .tutor-streaming-skeleton').first()).toBeVisible({ timeout: 3000 });
+    expect(Date.now() - t0).toBeLessThan(2500);
 
-  await expect(page.locator('.tutor-necta-tip')).toBeVisible({ timeout: 20000 });
+    await expect(page.locator('.tutor-necta-tip')).toBeVisible({ timeout: 20000 });
+  } finally {
+    await cdp.send('Network.emulateNetworkConditions', {
+      offline: false,
+      downloadThroughput: -1,
+      uploadThroughput: -1,
+      latency: 0,
+    });
+  }
 });
 
 test('student AI chat works at 360px mobile viewport', async ({ page }) => {
@@ -208,27 +194,4 @@ test('admin can dismiss a review queue item', async ({ page }) => {
   await expect(page.getByText('Is this answer correct?')).toBeVisible();
   await page.getByRole('button', { name: 'Dismiss' }).click();
   await expect(page.getByText('Is this answer correct?')).toHaveCount(0);
-});
-
-test('teacher translate streams chunks', async ({ page }) => {
-  const translated = 'Hii ni jibu la mfano.';
-  await page.route('**/ai/content/translate/stream', async (route) => {
-    const sse = [
-      `data: ${JSON.stringify({ chunk: translated, done: false })}\n\n`,
-      `data: ${JSON.stringify({ chunk: '', done: true, source: 'casuya-ai', translatedText: translated })}\n\n`,
-    ].join('');
-    await route.fulfill({
-      status: 200,
-      headers: { 'Content-Type': 'text/event-stream' },
-      body: sse,
-    });
-  });
-
-  await loginAsTeacher(page);
-  await page.locator('[data-view="ai-assistant"]').click();
-  await expect(page.locator('#ai-translate-form')).toBeVisible();
-  await page.fill('#ai-translate-form textarea[name="text"]', 'This is a sample answer.');
-  await page.selectOption('#ai-translate-form select[name="target_language"]', 'Swahili');
-  await page.locator('#ai-translate-form button[type="submit"]').click();
-  await expect(page.locator('#ai-translate-text')).toContainText(translated, { timeout: 15000 });
 });

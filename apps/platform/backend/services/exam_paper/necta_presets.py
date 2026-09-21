@@ -7,8 +7,23 @@ from copy import deepcopy
 from pathlib import Path
 from typing import Any
 
-_REPO_ROOT = Path(__file__).resolve().parents[5]
-_PRESETS_DIR = _REPO_ROOT / "packages" / "ai" / "knowledge_base" / "exam_formats" / "presets"
+def _resolve_presets_dir() -> Path:
+    """Locate preset JSON — monorepo dev tree or bundled backend/data copy."""
+    here = Path(__file__).resolve()
+    bundled = here.parents[2] / "data" / "necta_presets"
+    if bundled.is_dir():
+        return bundled
+    for ancestor in here.parents:
+        candidate = ancestor / "packages" / "ai" / "knowledge_base" / "exam_formats" / "presets"
+        if candidate.is_dir():
+            return candidate
+    raise FileNotFoundError(
+        "NECTA preset catalog not found. Expected backend/data/necta_presets or "
+        "packages/ai/knowledge_base/exam_formats/presets."
+    )
+
+
+_PRESETS_DIR = _resolve_presets_dir()
 
 _ROMAN = {1: "I", 2: "II", 3: "III", 4: "IV", 5: "V", 6: "VI"}
 

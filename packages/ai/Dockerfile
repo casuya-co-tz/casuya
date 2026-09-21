@@ -1,21 +1,24 @@
 # Casuya AI — Dockerfile
 # Builds the TypeScript library + HTTP server (server.ts → dist/server.js)
 #
-# Railway sets the service root to packages/ai, so all COPY paths are relative
-# to that directory (not the monorepo root).
+# IMPORTANT: Railway uses the monorepo root as the Docker build context.
+# All COPY paths below are relative to the repo root (casuya/).
 FROM node:20-alpine AS builder
 
 WORKDIR /app
 
-COPY package.json package-lock.json ./
-RUN npm install
+# Railway sets NODE_ENV=production globally; keep devDependencies for tsc.
+ENV NODE_ENV=development
 
-COPY tsconfig.json tsconfig.server.json ./
-COPY src/ src/
-COPY routes/ routes/
-COPY server-utils.ts ./
-COPY server-utils/ server-utils/
-COPY server.ts server-security.ts ./
+COPY packages/ai/package.json packages/ai/package-lock.json ./
+RUN npm ci --include=dev
+
+COPY packages/ai/tsconfig.json packages/ai/tsconfig.server.json ./
+COPY packages/ai/src/ src/
+COPY packages/ai/routes/ routes/
+COPY packages/ai/server-utils.ts ./
+COPY packages/ai/server-utils/ server-utils/
+COPY packages/ai/server.ts packages/ai/server-security.ts ./
 
 RUN npm run build
 
@@ -30,7 +33,7 @@ COPY --from=builder /app/package.json ./package.json
 
 # Knowledge base ships as a single tarball to avoid Docker's context file-count
 # limit (the raw KB is 2,600+ files). Extract it at /app/knowledge_base.
-COPY kb-data/ kb-data/
+COPY packages/ai/kb-data/ kb-data/
 RUN mkdir -p /app/knowledge_base \
   && tar -xzf /app/kb-data/knowledge.tar.gz -C /app/knowledge_base \
   && rm /app/kb-data/knowledge.tar.gz

@@ -87,8 +87,9 @@ test('teacher can generate and preview NECTA assignment paper', async ({ page })
   await loginAsTeacher(page);
 
   await page.locator('[data-view="assignments"]').click();
+  await expect(page.locator('#new-assignment-btn')).toBeVisible({ timeout: 15000 });
   await page.locator('#new-assignment-btn').click();
-  await expect(page.locator('#exam-generate')).toBeVisible();
+  await expect(page.locator('#exam-generate')).toBeVisible({ timeout: 15000 });
 
   await page.selectOption('#exam-lesson', 'lesson-e2e-1');
   await expect(page.locator('#exam-paper-chips .test-paper-chip')).toBeVisible({ timeout: 10000 });

@@ -1,19 +1,12 @@
 import { expect, test } from '@playwright/test';
-
-async function loginAsStudent(page: import('@playwright/test').Page) {
-  await page.goto('/login.html');
-  await page.fill('#email', 'student@casuya.co.tz');
-  await page.fill('#password', 'student123');
-  await page.click('#submit-btn');
-  await expect(page).toHaveURL(/\/student\/?$/);
-  await expect(page.locator('#student-content')).toBeVisible();
-}
+import { loginAsStudent } from './helpers/auth';
+import { openSubjectsView } from './helpers/student-nav';
 
 test('student can open a seeded lesson and see the iframe', async ({ page }) => {
   await loginAsStudent(page);
 
-  await page.locator('#student-nav [data-view="subjects"]').click();
-  await page.locator('.subject-card', { hasText: 'Mathematics' }).click();
+  const mathCard = await openSubjectsView(page);
+  await mathCard.click();
   await page.locator('.topic-card', { hasText: 'Algebra' }).click();
   await page.locator('.subtopic-card', { hasText: 'Linear Equations' }).click();
   await page.locator('.lesson-card', { hasText: 'Introduction to Linear Equations' }).click();

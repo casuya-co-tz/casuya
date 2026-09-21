@@ -1,0 +1,121 @@
+{
+  "family": "acsee",
+  "subject_slug": "physics",
+  "subject_name": "PHYSICS",
+  "subject_code": "131",
+  "papers": {
+    "theory": {
+      "paper_code": "131/1",
+      "paper_title": "PHYSICS 1",
+      "duration": "3:00 Hours",
+      "total_marks": 100,
+      "exam_body": "NATIONAL EXAMINATIONS COUNCIL OF TANZANIA",
+      "assessment_type": "ADVANCED CERTIFICATE OF SECONDARY EDUCATION EXAMINATION (PRACTICE)",
+      "id_label": "Examination Number",
+      "candidate_kind": "For Both School and Private Candidates",
+      "materials": [
+        "Non-programmable calculators and mathematical tables/formulae may be used."
+      ],
+      "constants": [
+        "Where necessary, use g = 9.8 m/s², c = 3.0 × 10⁸ m/s, e = 1.6 × 10⁻¹⁹ C."
+      ],
+      "instructions": [
+        "This paper consists of sections A and B with a total of ten (10) questions.",
+        "Answer ALL questions in section A and TWO (2) questions from section B.",
+        "Show all your working clearly."
+      ],
+      "sections": [
+        {
+          "id": "A",
+          "title": "SHORT ANSWER",
+          "marks": 70,
+          "instruction": "Answer ALL questions in this section.",
+          "choice": { "mode": "all" },
+          "questions": [
+            { "slot": 1, "type": "structured", "marks": 10, "part_count": 3 },
+            { "slot": 2, "type": "structured", "marks": 10, "part_count": 3 },
+            { "slot": 3, "type": "structured", "marks": 10, "part_count": 3 },
+            { "slot": 4, "type": "structured", "marks": 10, "part_count": 3 },
+            { "slot": 5, "type": "structured", "marks": 10, "part_count": 3 },
+            { "slot": 6, "type": "structured", "marks": 10, "part_count": 3 },
+            { "slot": 7, "type": "structured", "marks": 10, "part_count": 3 }
+          ]
+        },
+        {
+          "id": "B",
+          "title": "STRUCTURED",
+          "marks": 30,
+          "instruction": "Answer TWO (2) questions from this section.",
+          "choice": { "mode": "n_of_m", "n": 2, "m": 3 },
+          "questions": [
+            { "slot": 8, "type": "essay", "marks": 15, "optional": true, "part_count": 4 },
+            { "slot": 9, "type": "essay", "marks": 15, "optional": true, "part_count": 4 },
+            { "slot": 10, "type": "essay", "marks": 15, "optional": true, "part_count": 4 }
+          ]
+        }
+      ]
+    },
+    "theory_2": {
+      "paper_code": "131/2",
+      "paper_title": "PHYSICS 2",
+      "duration": "3:00 Hours",
+      "total_marks": 100,
+      "exam_body": "NATIONAL EXAMINATIONS COUNCIL OF TANZANIA",
+      "assessment_type": "ADVANCED CERTIFICATE OF SECONDARY EDUCATION EXAMINATION (PRACTICE)",
+      "id_label": "Examination Number",
+      "candidate_kind": "For Both School and Private Candidates",
+      "materials": [
+        "Non-programmable calculators and mathematical tables/formulae may be used."
+      ],
+      "constants": [],
+      "instructions": [
+        "This paper consists of six (6) structured questions.",
+        "Answer FIVE (5) questions.",
+        "Show all your working clearly."
+      ],
+      "flat_questions": [
+        { "slot": 1, "type": "essay", "marks": 20, "optional": true, "part_count": 4 },
+        { "slot": 2, "type": "essay", "marks": 20, "optional": true, "part_count": 4 },
+        { "slot": 3, "type": "essay", "marks": 20, "optional": true, "part_count": 4 },
+        { "slot": 4, "type": "essay", "marks": 20, "optional": true, "part_count": 4 },
+        { "slot": 5, "type": "essay", "marks": 20, "optional": true, "part_count": 4 },
+        { "slot": 6, "type": "essay", "marks": 20, "optional": true, "part_count": 4 }
+      ],
+      "choice": { "mode": "n_of_m", "n": 5, "m": 6 }
+    },
+    "practical": {
+      "paper_code": "131/3",
+      "paper_title": "PHYSICS 3",
+      "duration": "3:20 Hours",
+      "total_marks": 50,
+      "exam_body": "NATIONAL EXAMINATIONS COUNCIL OF TANZANIA",
+      "assessment_type": "ADVANCED CERTIFICATE OF SECONDARY EDUCATION EXAMINATION (PRACTICE)",
+      "id_label": "Examination Number",
+      "candidate_kind": "For Both School and Private Candidates",
+      "confidential": true,
+      "materials": [
+        "Non-programmable calculators may be used."
+      ],
+      "constants": [],
+      "instructions": [
+        "This paper consists of three (3) questions.",
+        "Answer ALL questions.",
+        "This is Alternative A."
+      ],
+      "sections": [
+        {
+          "id": "A",
+          "title": "PRACTICAL",
+          "marks": 50,
+          "instruction": "Answer ALL questions in this section.",
+          "choice": { "mode": "all" },
+          "questions": [
+            { "slot": 1, "type": "practical", "marks": 20, "part_count": 4 },
+            { "slot": 2, "type": "practical", "marks": 15, "part_count": 3 },
+            { "slot": 3, "type": "practical", "marks": 15, "part_count": 3 }
+          ]
+        }
+      ]
+    }
+  }
+}

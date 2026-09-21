@@ -42,7 +42,7 @@ jobs:
       - name: Verify KB embed script
         working-directory: packages/ai
         run: npm run verify-kb-embed
-      - run: pnpm test
+      - run: pnpm turbo run test --force
 
   backend:
     runs-on: ubuntu-latest
