@@ -14,6 +14,7 @@ import {
   StructuredPart,
 } from '../src/kb/paper-types';
 import { MCQ_LABELS, PART_LABELS, formLabel } from '../src/kb/paper-presets';
+import { offlineBankAvailable, offlineContentForSlot, OfflineContext } from '../src/kb/offline-question-bank';
 import { PAPER_GENERATION_TEMPLATE } from '../src/prompts/necta/paper-generation-grounded';
 import { parseJsonObject } from './exam';
 
@@ -453,75 +454,44 @@ export function buildPlaceholderPaper(
   preset: PaperPreset,
   args: { subject: string; subjectSlug: string; formLevel: number; topics: string[] },
 ): ExamPaper {
-  const topic = args.topics[0] || args.subject;
+  const topics = Array.isArray(args.topics) ? args.topics.filter((t) => String(t).trim()) : [];
+  const topicList = topics.length ? topics : [args.subject];
+
+  const makeContext = (idx: number): OfflineContext => ({
+    subjectSlug: args.subjectSlug.toLowerCase(),
+    subjectName: args.subject,
+    topic: topicList[idx % topicList.length],
+    seed: idx,
+  });
+
+  let useBank = true;
+  try {
+    useBank = offlineBankAvailable();
+  } catch {
+    useBank = false;
+  }
+
+  const offlineContent =
+    (slot: QuestionSlot, idx: number): Record<string, unknown> => {
+      if (!useBank) return legacySlotContent(slot, topicList[0]);
+      return offlineContentForSlot(slot, makeContext(idx));
+    };
+
+  let slotIndex = 0;
   const fakeContent = {
     sections: preset.sections?.map((sec) => ({
       id: sec.id,
       questions: sec.questions.map((slot) => {
-        if (slot.type === 'mcq_bundle') {
-          const count = slot.item_count || 10;
-          return {
-            type: 'mcq_bundle',
-            stem: slot.stem,
-            items: Array.from({ length: count }, (_, i) => ({
-              number: MCQ_LABELS[i],
-              text: `(${MCQ_LABELS[i]}) Which statement about ${topic} is correct?`,
-              options: {
-                A: 'Correct concept',
-                B: 'Unrelated idea',
-                C: 'Common misconception',
-                D: 'Another distractor',
-              },
-              answer: 'A',
-              marks: 1,
-            })),
-          };
-        }
-        if (slot.type === 'matching') {
-          const count = slot.item_count || 5;
-          return {
-            type: 'matching',
-            stem: slot.stem,
-            listA: Array.from({ length: count }, (_, i) => `Term ${i + 1} about ${topic}`),
-            listB: ['Definition A', 'Definition B', 'Definition C', 'Definition D', 'Definition E', 'Definition F'],
-            answers: Array.from({ length: count }, (_, i) => String.fromCharCode(65 + (i % 6))),
-          };
-        }
-        if (slot.type === 'practical') {
-          return {
-            type: 'practical',
-            text: `Practical investigation related to ${topic}.`,
-            apparatus: ['Metre rule', 'Stopwatch', 'Measuring cylinder'],
-            procedure: ['Arrange the apparatus.', 'Take readings and record in the table.', 'Calculate the required quantity.'],
-            tables: [{ title: 'Readings', columns: ['Trial', 'Time (s)'], rows: 4 }],
-            tasks: distributeMarks(slot.marks, slot.part_count || 3).map((m, i) => ({
-              label: PART_LABELS[i],
-              text: `(${PART_LABELS[i]}) Complete the task for ${topic}.`,
-              marks: m,
-            })),
-          };
-        }
-        const parts = distributeMarks(slot.marks, slot.part_count || 2);
-        return {
-          type: slot.type,
-          stem: `Question on ${topic}.`,
-          parts: parts.map((m, i) => ({
-            label: PART_LABELS[i],
-            text: `(${PART_LABELS[i]}) Explain or calculate using ${topic}.`,
-            marks: m,
-          })),
-        };
+        const content = offlineContent(slot, slotIndex);
+        slotIndex += 1;
+        return content;
       }),
     })),
-    questions: preset.flat_questions?.map((slot) => ({
-      type: slot.type,
-      stem: `Question on ${topic}.`,
-      parts: distributeMarks(slot.marks, slot.part_count || 2).map((m, i) => ({
-        label: PART_LABELS[i],
-        text: `(${PART_LABELS[i]}) Work on ${topic}.`,
-        marks: m,
-      })),
-    })),
+    questions: preset.flat_questions?.map((slot) => {
+      const content = offlineContent(slot, slotIndex);
+      slotIndex += 1;
+      return content;
+    }),
   };
 
   return assemblePaperFromContent(preset, fakeContent, {
@@ -531,6 +501,62 @@ export function buildPlaceholderPaper(
     topics: args.topics,
     generator: 'offline',
   });
+}
+
+function legacySlotContent(slot: QuestionSlot, topic: string): Record<string, unknown> {
+  if (slot.type === 'mcq_bundle') {
+    const count = slot.item_count || 10;
+    return {
+      type: 'mcq_bundle',
+      stem: slot.stem,
+      items: Array.from({ length: count }, (_, i) => ({
+        number: MCQ_LABELS[i],
+        text: `(${MCQ_LABELS[i]}) Which statement about ${topic} is correct?`,
+        options: {
+          A: 'Correct concept',
+          B: 'Unrelated idea',
+          C: 'Common misconception',
+          D: 'Another distractor',
+        },
+        answer: 'A',
+        marks: 1,
+      })),
+    };
+  }
+  if (slot.type === 'matching') {
+    const count = slot.item_count || 5;
+    return {
+      type: 'matching',
+      stem: slot.stem,
+      listA: Array.from({ length: count }, (_, i) => `Term ${i + 1} about ${topic}`),
+      listB: ['Definition A', 'Definition B', 'Definition C', 'Definition D', 'Definition E', 'Definition F'],
+      answers: Array.from({ length: count }, (_, i) => String.fromCharCode(65 + (i % 6))),
+    };
+  }
+  if (slot.type === 'practical') {
+    return {
+      type: 'practical',
+      text: `Practical investigation related to ${topic}.`,
+      apparatus: ['Metre rule', 'Stopwatch', 'Measuring cylinder'],
+      procedure: ['Arrange the apparatus.', 'Take readings and record in the table.', 'Calculate the required quantity.'],
+      tables: [{ title: 'Readings', columns: ['Trial', 'Time (s)'], rows: 4 }],
+      tasks: distributeMarks(slot.marks, slot.part_count || 3).map((m, i) => ({
+        label: PART_LABELS[i],
+        text: `(${PART_LABELS[i]}) Complete the task for ${topic}.`,
+        marks: m,
+      })),
+    };
+  }
+  const parts = distributeMarks(slot.marks, slot.part_count || 2);
+  return {
+    type: slot.type,
+    stem: `Question on ${topic}.`,
+    parts: parts.map((m, i) => ({
+      label: PART_LABELS[i],
+      text: `(${PART_LABELS[i]}) Explain or calculate using ${topic}.`,
+      marks: m,
+    })),
+  };
 }
 
 export function buildMarkingSchemeFromPaper(paper: ExamPaper, parsed?: any): MarkingScheme {

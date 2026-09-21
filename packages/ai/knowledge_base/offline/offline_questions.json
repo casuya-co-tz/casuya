@@ -1,0 +1,1398 @@
+{
+  "version": 1,
+  "subjects": {
+    "mathematics": {
+      "subject_name": "Basic Mathematics",
+      "units": {
+        "concept of mathematics": {
+          "structured": [
+            {
+              "stem": "Mathematics is a discipline studied at every level of education.",
+              "parts": [
+                "Explain in your own words what is meant by the term mathematics.",
+                "Mention four branches of mathematics that you have studied so far."
+              ]
+            },
+            {
+              "stem": "Mathematics is used in many everyday activities.",
+              "parts": [
+                "Give three examples of daily-life activities that require mathematics.",
+                "Explain why a shopkeeper uses arithmetic in his or her work."
+              ]
+            }
+          ],
+          "essay": [
+            {
+              "stem": "Mathematics is called the language of science.",
+              "parts": [
+                "Explain why mathematics is described as the language of science.",
+                "Describe how mathematics is connected to at least two other school subjects.",
+                "Give two reasons why every citizen needs basic mathematical skills."
+              ]
+            }
+          ]
+        },
+        "numbers": {
+          "structured": [
+            {
+              "stem": "Use the order of operations to evaluate each expression.",
+              "parts": [
+                "Find the value of {a} + {b} × {c}.",
+                "Find the value of ({d} + {e}) ÷ {f}."
+              ],
+              "vars": {
+                "a": [12, 18, 7, 21],
+                "b": [3, 2, 5, 4],
+                "c": [4, 5, 2, 3],
+                "d": [24, 30, 15, 20],
+                "e": [6, 10, 5, 8],
+                "f": [3, 5, 4, 7]
+              }
+            },
+            {
+              "stem": "The prices of four items at a market, in shillings, are {a}, {b}, {c} and {d}.",
+              "parts": [
+                "Find the total cost of all four items.",
+                "How much change would a customer receive from {e} shillings?"
+              ],
+              "vars": {
+                "a": [1200, 2500, 900, 1800],
+                "b": [800, 1500, 1100, 2200],
+                "c": [900, 1000, 600, 500],
+                "d": [1100, 2000, 1400, 900],
+                "e": [5000, 9000, 4500, 7000]
+              }
+            },
+            {
+              "stem": "Classify the following numbers according to their properties.",
+              "parts": [
+                "Write {a} as a product of its prime factors.",
+                "State whether {b} is a prime number, giving a reason for your answer."
+              ],
+              "vars": {
+                "a": [36, 48, 100, 72],
+                "b": [17, 21, 29, 39]
+              }
+            }
+          ],
+          "mcq": [
+            { "stem": "Find the value of 12 + 3 × 4.", "answer": "24", "distractors": ["48", "60", "20"] },
+            { "stem": "Evaluate (18 + 6) ÷ 3.", "answer": "8", "distractors": ["26", "12", "6"] },
+            { "stem": "Which of the following is a prime number?", "answer": "17", "distractors": ["15", "21", "27"] },
+            { "stem": "Simplify 2 × (5 + 3).", "answer": "16", "distractors": ["13", "30", "18"] },
+            { "stem": "Which of these numbers is divisible by 3?", "answer": "246", "distractors": ["251", "254", "253"] },
+            { "stem": "Write 72 as a product of its prime factors.", "answer": "2³ × 3²", "distractors": ["2² × 3³", "2 × 3²", "2³ × 3³"] }
+          ],
+          "essay": [
+            {
+              "stem": "The number system forms the foundation of mathematics.",
+              "parts": [
+                "Distinguish between natural numbers, whole numbers and integers.",
+                "Explain what is meant by a prime number and a composite number.",
+                "Give a real-life situation where each type of number is used."
+              ]
+            }
+          ]
+        },
+        "approximations": {
+          "structured": [
+            {
+              "stem": "Round each of the following numbers to the accuracy stated.",
+              "parts": [
+                "Round {a} to the nearest whole number.",
+                "Round {b} to one decimal place."
+              ],
+              "vars": {
+                "a": [14.7, 23.5, 98.4, 7.6],
+                "b": [12.35, 8.67, 25.92, 3.44]
+              }
+            },
+            {
+              "stem": "Work out the following without using a calculator.",
+              "parts": [
+                "Write {a}/{b} as a percentage.",
+                "Express {c}% as a fraction in its simplest form."
+              ],
+              "vars": {
+                "a": [1, 3, 2, 1],
+                "b": [4, 5, 5, 2],
+                "c": [25, 40, 60, 12]
+              }
+            }
+          ],
+          "mcq": [
+            { "stem": "Round 14.79 to the nearest whole number.", "answer": "15", "distractors": ["14", "14.8", "147"] },
+            { "stem": "Write 0.125 as a fraction in its simplest form.", "answer": "1/8", "distractors": ["1/4", "25/200", "1/125"] },
+            { "stem": "Express 3/4 as a percentage.", "answer": "75%", "distractors": ["34%", "7.5%", "0.75%"] },
+            { "stem": "Round 6.482 to two decimal places.", "answer": "6.48", "distractors": ["6.49", "6.5", "6.4820"] }
+          ]
+        },
+        "ratios and proportions": {
+          "structured": [
+            {
+              "stem": "Two numbers are in the ratio {a}:{b} and their sum is {c}.",
+              "parts": [
+                "Find the two numbers.",
+                "Express the larger number as a percentage of the total."
+              ],
+              "vars": {
+                "a": [2, 1, 3, 2],
+                "b": [3, 4, 5, 5],
+                "c": [20, 25, 32, 28]
+              }
+            },
+            {
+              "stem": "A recipe for a cake needs {a} cups of flour and {b} cups of sugar to serve {s} people.",
+              "parts": [
+                "Give the ratio of flour to sugar in its simplest form.",
+                "How many cups of flour are needed to serve {t} people?"
+              ],
+              "vars": {
+                "a": [4, 6, 2, 3],
+                "b": [2, 3, 1, 2],
+                "s": [8, 9, 4, 6],
+                "t": [12, 15, 10, 9]
+              }
+            }
+          ],
+          "mcq": [
+            { "stem": "Divide 36 in the ratio 1 : 2.", "answer": "12 and 24", "distractors": ["6 and 30", "18 and 18", "12 and 12"] },
+            { "stem": "Express the ratio 45 : 60 in its simplest form.", "answer": "3 : 4", "distractors": ["9 : 12", "5 : 6", "15 : 20"] },
+            { "stem": "If 3 pens cost 450 shillings, how much do 7 pens cost?", "answer": "1050 shillings", "distractors": ["150 shillings", "3150 shillings", "750 shillings"] },
+            { "stem": "A map has a scale of 1 : 50 000. A distance of 1 km on the ground is how many cm on the map?", "answer": "2 cm", "distractors": ["0.5 cm", "5 cm", "20 cm"] }
+          ]
+        },
+        "algebra": {
+          "structured": [
+            {
+              "stem": "Simplify each of the following algebraic expressions.",
+              "parts": [
+                "Simplify {a}x + {b} − {c}x.",
+                "Simplify {d}y × {e}."
+              ],
+              "vars": {
+                "a": [3, 5, 7, 4],
+                "b": [8, 9, 2, 7],
+                "c": [1, 2, 3, 2],
+                "d": [2, 3, 4, 5],
+                "e": [6, 2, 3, 4]
+              }
+            },
+            {
+              "stem": "Solve the following linear equation.",
+              "parts": [
+                "Solve {a}x + {b} = {c}.",
+                "Verify your solution by substituting it back into the equation."
+              ],
+              "vars": {
+                "a": [3, 2, 5, 4],
+                "b": [4, 9, 3, 7],
+                "c": [13, 17, 18, 27]
+              }
+            },
+            {
+              "stem": "Solve the quadratic equation by factorisation.",
+              "parts": [
+                "Write x² − {s}x + {p} = 0 in factorised form.",
+                "State the two solutions of the equation."
+              ],
+              "vars": {
+                "s": [5, 6, 6, 8],
+                "p": [6, 8, 5, 15]
+              }
+            },
+            {
+              "stem": "Expand and simplify the following product.",
+              "parts": [
+                "Expand (x + {a})(x + {b}).",
+                "Evaluate the product when x = {v}."
+              ],
+              "vars": {
+                "a": [2, 3, 1, 4],
+                "b": [3, 4, 5, 2],
+                "v": [5, 6, 4, 7]
+              }
+            }
+          ],
+          "mcq": [
+            { "stem": "Simplify 5x + 3 − 2x.", "answer": "3x + 3", "distractors": ["3x + 3x", "7x − 2x", "3x"] },
+            { "stem": "Solve 2x + 3 = 15.", "answer": "x = 6", "distractors": ["x = 9", "x = 12", "x = 5"] },
+            { "stem": "Which of the following is equivalent to (x + 2)(x + 3)?", "answer": "x² + 5x + 6", "distractors": ["x² + 6x + 5", "x² + 5x + 5", "x² + 6"] },
+            { "stem": "Solve x² − 5x + 6 = 0 for real values of x.", "answer": "x = 2 or x = 3", "distractors": ["x = 2 only", "x = −2 or x = −3", "x = 1 or x = 6"] },
+            { "stem": "Collect the like terms in 3a + 4b − a.", "answer": "2a + 4b", "distractors": ["3a + 3b", "2a − 4b", "4a + 4b"] }
+          ],
+          "essay": [
+            {
+              "stem": "Algebra uses symbols to represent numbers in a general way.",
+              "parts": [
+                "Explain the meaning of a coefficient, a variable and a constant term.",
+                "Show how the equation x + 7 = 12 can be solved using inverse operations.",
+                "Why is algebra important in solving real-world problems? Give one example."
+              ]
+            }
+          ]
+        },
+        "coordinate geometry": {
+          "structured": [
+            {
+              "stem": "A straight line passes through the points A({x1}, {y1}) and B({x2}, {y2}).",
+              "parts": [
+                "Find the gradient of the line AB.",
+                "Write the equation of the line in the form y = mx + c."
+              ],
+              "vars": {
+                "x1": [1, 1, 0, 1],
+                "y1": [2, 1, 3, 5],
+                "x2": [5, 4, 4, 3],
+                "y2": [10, 7, 11, 9]
+              }
+            },
+            {
+              "stem": "A line crosses the y-axis at (0, {c}) and passes through the point ({x}, {y}).",
+              "parts": [
+                "Find the gradient of the line.",
+                "State the equation of the line in the form y = mx + c."
+              ],
+              "vars": {
+                "c": [4, 1, 5, 2],
+                "x": [4, 2, 3, 6],
+                "y": [8, 9, 11, 14]
+              }
+            }
+          ],
+          "mcq": [
+            { "stem": "Find the gradient of the line joining (1, 2) and (5, 10).", "answer": "2", "distractors": ["8", "4", "−2"] },
+            { "stem": "What is the y-intercept of the line y = 3x − 4?", "answer": "−4", "distractors": ["3", "4", "7"] },
+            { "stem": "Which line has gradient 2 and passes through (0, 3)?", "answer": "y = 2x + 3", "distractors": ["y = 3x + 2", "y = 2x − 3", "y = 3x − 2"] }
+          ]
+        },
+        "rates and variations": {
+          "structured": [
+            {
+              "stem": "A car travels {a} km in {t} hours at a steady speed.",
+              "parts": [
+                "Calculate the average speed of the car in km/h.",
+                "At this speed, how far does the car travel in {h} hours?"
+              ],
+              "vars": {
+                "a": [120, 240, 180, 60],
+                "t": [2, 3, 3, 1],
+                "h": [3, 2, 4, 5]
+              }
+            },
+            {
+              "stem": "The quantities x and y are in direct proportion. When x = {a}, y = {b}.",
+              "parts": [
+                "Find the constant of proportionality k in y = kx.",
+                "Find the value of y when x = {c}."
+              ],
+              "vars": {
+                "a": [3, 5, 2, 4],
+                "b": [18, 30, 16, 36],
+                "c": [7, 9, 6, 5]
+              }
+            }
+          ],
+          "mcq": [
+            { "stem": "A cyclist travels 60 km in 2 hours. Find the average speed.", "answer": "30 km/h", "distractors": ["120 km/h", "20 km/h", "6 km/h"] },
+            { "stem": "If y is proportional to x and y = 10 when x = 2, find y when x = 5.", "answer": "25", "distractors": ["4", "50", "20"] },
+            { "stem": "A car uses 8 litres of fuel to travel 100 km. How much fuel is needed for 250 km?", "answer": "20 litres", "distractors": ["32 litres", "12.5 litres", "25 litres"] }
+          ]
+        },
+        "congruence": {
+          "structured": [
+            {
+              "stem": "In quadrilateral ABCD the diagonal AC is drawn such that AB = AD and CB = CD.",
+              "parts": [
+                "Name the three pairs of equal parts that make triangles ABC and ADC congruent.",
+                "State the congruence criterion used (SSS, SAS, ASA or RHS)."
+              ]
+            },
+            {
+              "stem": "Two triangles PQR and XYZ are congruent under the correspondence P ↔ X, Q ↔ Y, R ↔ Z.",
+              "parts": [
+                "Write down the six equalities of sides and angles implied by the congruence.",
+                "If PQ = 6 cm, Q R = 5 cm and angle Q = 90°, state the lengths XY and YZ."
+              ]
+            }
+          ],
+          "mcq": [
+            { "stem": "Two triangles are congruent by SSS. What does SSS stand for?", "answer": "Side-Side-Side", "distractors": ["Same-Size-Scale", "Side-Side-Sum", "Side-Angle-Side"] },
+            { "stem": "Which criterion proves congruence when two sides and the included angle are equal?", "answer": "SAS", "distractors": ["SSS", "AAA", "AAS"] },
+            { "stem": "For right-angled triangles, which criterion uses the hypotenuse and one other side?", "answer": "RHS", "distractors": ["SSA", "ASA", "AAA"] }
+          ],
+          "matching": {
+            "listA": ["SSS", "SAS", "ASA", "RHS", "Corresponding sides", "Corresponding angles"],
+            "listB": ["Three pairs of corresponding sides equal", "Two sides and the included angle equal", "Two angles and the included side equal", "Right angle, hypotenuse and one other side equal", "Sides that occupy the same position in congruent figures", "Angles that occupy the same position in congruent figures", "A non-congruence criterion involving ambiguous cases", "A measure that is the same for every right angle"],
+            "answers": ["A", "B", "C", "D", "E", "F"]
+          }
+        },
+        "similarity": {
+          "structured": [
+            {
+              "stem": "Triangle ABC is similar to triangle DEF. AB = {a} cm, DE = {b} cm and BC = {c} cm.",
+              "parts": [
+                "Find the scale factor from triangle ABC to triangle DEF.",
+                "Use the scale factor to find the length EF."
+              ],
+              "vars": {
+                "a": [3, 5, 4, 2],
+                "b": [6, 15, 8, 10],
+                "c": [4, 7, 6, 5]
+              }
+            },
+            {
+              "stem": "A tree casts a shadow of {s} m long while a vertical pole of height {h} m casts a shadow of {s2} m long at the same time.",
+              "parts": [
+                "Explain why the two triangles formed are similar.",
+                "Calculate the height of the tree."
+              ],
+              "vars": {
+                "h": [6, 5, 8, 3],
+                "s": [4, 2, 4, 2],
+                "s2": [10, 6, 5, 8]
+              }
+            }
+          ],
+          "mcq": [
+            { "stem": "Two similar triangles have scale factor 2 from the smaller to the larger. If the smaller has a base of 3 cm, the larger base is:", "answer": "6 cm", "distractors": ["3 cm", "1.5 cm", "9 cm"] },
+            { "stem": "Which statement about similar triangles is true?", "answer": "Corresponding angles are equal", "distractors": ["Corresponding sides are always equal", "They have the same area", "They must be congruent"] }
+          ]
+        },
+        "exponents and radicals": {
+          "structured": [
+            {
+              "stem": "Simplify the following using the laws of indices.",
+              "parts": [
+                "Simplify {a}^{m} × {a}^{n} and write your answer as a single power.",
+                "Simplify {b}^{p} ÷ {b}^{q} and write your answer as a single power."
+              ],
+              "vars": {
+                "a": [2, 3, 5, 7],
+                "m": [3, 2, 4, 2],
+                "n": [2, 4, 1, 3],
+                "b": [4, 2, 6, 3],
+                "p": [5, 6, 4, 5],
+                "q": [2, 1, 2, 3]
+              }
+            },
+            {
+              "stem": "Express each of the following in its simplest surd form.",
+              "parts": [
+                "Simplify √{n1}.",
+                "Simplify √{n1} √{n2}."
+              ],
+              "vars": {
+                "n1": [18, 32, 50, 12],
+                "n2": [2, 2, 2, 3]
+              }
+            }
+          ],
+          "mcq": [
+            { "stem": "Simplify 2³ × 2².", "answer": "32", "distractors": ["10", "64", "512"] },
+            { "stem": "Simplify (a²)³.", "answer": "a⁶", "distractors": ["a⁵", "a⁸", "a²³"] },
+            { "stem": "Write √18 in simplest surd form.", "answer": "3√2", "distractors": ["2√3", "9√2", "6√3"] },
+            { "stem": "Evaluate 5⁰.", "answer": "1", "distractors": ["0", "5", "50"] }
+          ]
+        },
+        "logarithms": {
+          "structured": [
+            {
+              "stem": "Evaluate each of the following logarithms without using a calculator.",
+              "parts": [
+                "Find the value of log₁₀({a}).",
+                "Find the value of log₁₀({b})."
+              ],
+              "vars": {
+                "a": [100, 1000, 10, 100000],
+                "b": [10000, 100, 1000, 10]
+              }
+            },
+            {
+              "stem": "Solve each of the following equations for x.",
+              "parts": [
+                "Solve log₂(x) = {a}.",
+                "Solve log₁₀(x) = {b}."
+              ],
+              "vars": {
+                "a": [3, 5, 4, 6],
+                "b": [2, 3, 1, 4]
+              }
+            }
+          ],
+          "mcq": [
+            { "stem": "Find the value of log₁₀(1000).", "answer": "3", "distractors": ["10", "100", "30"] },
+            { "stem": "Solve log₂(x) = 5.", "answer": "x = 32", "distractors": ["x = 25", "x = 10", "x = 7"] },
+            { "stem": "Which statement about logarithms is correct?", "answer": "log ab = log a + log b", "distractors": ["log ab = log a × log b", "log (a/b) = log a + log b", "log a² = 2 log (log a)"] }
+          ]
+        },
+        "sets": {
+          "structured": [
+            {
+              "stem": "Given the sets A = {2, 4, 6, 8, 10} and B = {3, 6, 9}.",
+              "parts": [
+                "Find A ∪ B (the union of A and B).",
+                "Find A ∩ B (the intersection of A and B)."
+              ]
+            },
+            {
+              "stem": "In a class of {u} students, {p} students play netball and {q} students play football. {b} students play both games.",
+              "parts": [
+                "How many students play at least one of the two games?",
+                "How many students do not play either game?"
+              ],
+              "vars": {
+                "u": [40, 30, 25, 50],
+                "p": [18, 15, 12, 20],
+                "q": [22, 12, 10, 25],
+                "b": [6, 5, 4, 10]
+              }
+            },
+            {
+              "stem": "The universal set ξ = {1, 2, 3, 4, 5, 6, 7, 8, 9, 10} and A = {2, 4, 6, 8, 10}.",
+              "parts": [
+                "List the elements of the complement of A.",
+                "Find n(A′) (the number of elements in the complement of A)."
+              ]
+            }
+          ],
+          "mcq": [
+            { "stem": "Given A = {1, 2, 3} and B = {3, 4, 5}, find A ∪ B.", "answer": "{1, 2, 3, 4, 5}", "distractors": ["{3}", "{1, 2, 3, 3, 4, 5}", "{1, 2, 4, 5}"] },
+            { "stem": "Given A = {1, 2, 3} and B = {3, 4, 5}, find A ∩ B.", "answer": "{3}", "distractors": ["{1, 2, 3, 4, 5}", "{}", "{1, 2}"] },
+            { "stem": "If n(A) = 10, n(B) = 6 and n(A ∩ B) = 2, find n(A ∪ B).", "answer": "14", "distractors": ["16", "18", "6"] },
+            { "stem": "The set {1, 3, 5, 7} written in set-builder notation is:", "answer": "{x : x is an odd number less than 8}", "distractors": ["{x : x is even}", "{x : x > 7}", "{x : 1 ≤ x ≤ 7}"] }
+          ],
+          "essay": [
+            {
+              "stem": "The set is a fundamental idea in mathematics.",
+              "parts": [
+                "Define the terms universal set, subset and complement of a set.",
+                "Explain with an example the meaning of union and intersection of two sets.",
+                "Describe how a Venn diagram can be used to find the number of elements in A ∪ B."
+              ]
+            }
+          ]
+        },
+        "trigonometry": {
+          "structured": [
+            {
+              "stem": "In a right-angled triangle the side opposite angle θ is {a} cm and the hypotenuse is {h} cm.",
+              "parts": [
+                "Write down the value of sin θ.",
+                "Given sin 30° = 1/2, state the size of θ if θ is acute."
+              ],
+              "vars": {
+                "a": [5, 4, 3, 6],
+                "h": [10, 8, 6, 12]
+              }
+            },
+            {
+              "stem": "A right-angled triangle has hypotenuse {c} cm and legs {a} cm and {b} cm. The angle θ is opposite the leg of length {a} cm.",
+              "parts": [
+                "Find sin θ and cos θ.",
+                "Find tan θ."
+              ],
+              "vars": {
+                "a": [3, 5, 8, 6],
+                "b": [4, 12, 15, 8],
+                "c": [5, 13, 17, 10]
+              }
+            }
+          ],
+          "mcq": [
+            { "stem": "In a 3–4–5 triangle, what is sin θ when θ is opposite the side of length 3?", "answer": "3/5", "distractors": ["4/5", "5/3", "3/4"] },
+            { "stem": "What is the value of sin 30°?", "answer": "1/2", "distractors": ["√3/2", "1", "0"] },
+            { "stem": "What is the value of tan 45°?", "answer": "1", "distractors": ["0", "1/2", "√3"] },
+            { "stem": "In a right-angled triangle, sin θ = opposite ÷ what?", "answer": "Hypotenuse", "distractors": ["Adjacent", "Base", "Perpendicular"] }
+          ]
+        },
+        "geometry": {
+          "structured": [
+            {
+              "stem": "The three angles of a triangle are {a}°, {b}° and {c}°.",
+              "parts": [
+                "Write an equation that links the three angles.",
+                "Solve the equation to find the size of the third angle."
+              ],
+              "vars": {
+                "a": [40, 60, 35, 70],
+                "b": [70, 45, 55, 50]
+              }
+            },
+            {
+              "stem": "A regular polygon has {n} sides.",
+              "parts": [
+                "Calculate the sum of the interior angles of the polygon.",
+                "Find the size of each interior angle of the polygon."
+              ],
+              "vars": {
+                "n": [6, 8, 5, 10]
+              }
+            },
+            {
+              "stem": "In a parallelogram, one interior angle measures {a}°.",
+              "parts": [
+                "State the sizes of the other three interior angles.",
+                "Name the property of a parallelogram that you used."
+              ],
+              "vars": {
+                "a": [65, 110, 75, 120]
+              }
+            }
+          ],
+          "mcq": [
+            { "stem": "What is the sum of the interior angles of a triangle?", "answer": "180°", "distractors": ["90°", "360°", "120°"] },
+            { "stem": "The angles of a triangle are 40°, 60° and x. Find x.", "answer": "80°", "distractors": ["100°", "60°", "20°"] },
+            { "stem": "What is the size of each interior angle of a regular hexagon?", "answer": "120°", "distractors": ["60°", "108°", "90°"] },
+            { "stem": "How many degrees are there in a right angle?", "answer": "90°", "distractors": ["45°", "180°", "360°"] }
+          ],
+          "essay": [
+            {
+              "stem": "Polygons and their properties appear throughout geometry.",
+              "parts": [
+                "Define a polygon and distinguish between regular and irregular polygons.",
+                "Derive the formula for the sum of the interior angles of an n-sided polygon.",
+                "Use the formula to find each interior angle of a regular decagon."
+              ]
+            }
+          ]
+        },
+        "statistics and probability": {
+          "structured": [
+            {
+              "stem": "The marks scored by five students in a test are: {a}, {b}, {c}, {d}, {e}.",
+              "parts": [
+                "Calculate the mean of the marks.",
+                "State the median of the marks."
+              ],
+              "vars": {
+                "a": [5, 6, 4, 7],
+                "b": [6, 8, 5, 7],
+                "c": [7, 8, 5, 8],
+                "d": [8, 9, 6, 9],
+                "e": [9, 9, 10, 9]
+              }
+            },
+            {
+              "stem": "A bag contains {r} red, {g} green and {b} blue marbles. One marble is picked at random.",
+              "parts": [
+                "Find the total number of marbles in the bag.",
+                "Find the probability of picking a green marble."
+              ],
+              "vars": {
+                "r": [3, 2, 6, 4],
+                "g": [5, 4, 1, 3],
+                "b": [2, 6, 5, 7]
+              }
+            },
+            {
+              "stem": "The heights, in cm, of six pupils are: {a}, {b}, {c}, {d}, {e}, {f}.",
+              "parts": [
+                "Arrange the heights in ascending order.",
+                "State the mode of the heights."
+              ],
+              "vars": {
+                "a": [152, 145, 150, 148],
+                "b": [148, 152, 145, 152],
+                "c": [150, 150, 152, 145],
+                "d": [145, 148, 150, 150],
+                "e": [152, 145, 148, 148],
+                "f": [150, 152, 148, 150]
+              }
+            }
+          ],
+          "mcq": [
+            { "stem": "The mean of 4, 6, 8, 9 and 9 is:", "answer": "7.2", "distractors": ["7", "8", "6"] },
+            { "stem": "A fair coin is tossed once. What is the probability of getting a tail?", "answer": "1/2", "distractors": ["1", "1/4", "2/1"] },
+            { "stem": "A bag has 3 red and 2 blue balls. The probability of picking a blue ball is:", "answer": "2/5", "distractors": ["3/5", "1/2", "2/3"] },
+            { "stem": "What is the median of 3, 5, 7, 9, 11?", "answer": "7", "distractors": ["5", "9", "6"] }
+          ],
+          "essay": [
+            {
+              "stem": "Statistics helps us make sense of data collected from the world around us.",
+              "parts": [
+                "Explain the meaning of mean, median and mode.",
+                "Describe one advantage and one disadvantage of each measure of central tendency.",
+                "Use a set of your own marks to demonstrate how each measure is calculated."
+              ]
+            }
+          ]
+        }
+      },
+      "fallback": {
+        "structured": [
+          {
+            "stem": "Consider the topic {topic} as studied in {subject}.",
+            "parts": [
+              "Define the concept of {topic} in your own words.",
+              "Give two examples showing how {topic} is applied in daily life."
+            ]
+          },
+          {
+            "stem": "{topic} is one of the topics covered in {subject}.",
+            "parts": [
+              "Explain why it is important to study {topic}.",
+              "Describe two key ideas or skills that a student learns under {topic}."
+            ]
+          },
+          {
+            "stem": "A student is preparing for an examination on {topic}.",
+            "parts": [
+              "Outline the main ideas that the student should revise under {topic}.",
+              "Suggest a study technique that can help the student remember the content."
+            ]
+          }
+        ],
+        "essay": [
+          {
+            "stem": "Discuss the topic {topic} in detail.",
+            "parts": [
+              "Give a clear definition of {topic}.",
+              "Explain three important concepts or skills related to {topic}.",
+              "Give two examples that show how {topic} is used in real life."
+            ]
+          }
+        ],
+        "mcq": [
+          { "stem": "Which of the following best describes {topic}?", "answer": "A concept studied within {subject}", "distractors": ["A device found in a laboratory", "A foreign language", "A type of crop"] },
+          { "stem": "Studying {topic} mainly helps a learner to:", "answer": "Master concepts taught in {subject}", "distractors": ["Memorise maps", "Learn a trade", "Play sports better"] },
+          { "stem": "'{topic}' is a term used in which school subject?", "answer": "{subject}", "distractors": ["Geography", "History", "English"] }
+        ],
+        "matching": {
+          "listA": ["Definition", "Application", "Example", "Importance", "Key idea", "Skill"],
+          "listB": ["A clear meaning of {topic}", "A real-life use of {topic}", "An illustration of {topic} in practice", "A reason for studying {topic}", "An essential concept related to {topic}", "A technique used when working with {topic}", "An unrelated school activity", "A foreign language word"],
+          "answers": ["A", "B", "C", "D", "E", "F"]
+        }
+      }
+    },
+    "physics": {
+      "subject_name": "Physics",
+      "units": {
+        "introduction to physics": {
+          "structured": [
+            {
+              "stem": "Physics is one of the important science subjects studied in secondary schools.",
+              "parts": [
+                "Give the meaning of the term physics.",
+                "State three branches of physics and give one application of each."
+              ]
+            }
+          ],
+          "mcq": [
+            { "stem": "Which instrument is used to measure the thickness of a sheet of paper?", "answer": "Micrometer screw gauge", "distractors": ["Metre rule", "Tape measure", "Spring balance"] },
+            { "stem": "What does the abbreviation SI stand for?", "answer": "Systeme International d'unites", "distractors": ["Standard Institute", "Science International", "Simple Instruments"] }
+          ]
+        },
+        "measurement": {
+          "structured": [
+            {
+              "stem": "A student measures the length of a table three times and records {a} cm, {b} cm and {c} cm.",
+              "parts": [
+                "Calculate the mean reading of the three measurements.",
+                "State the number of decimal places shown by the readings."
+              ],
+              "vars": {
+                "a": [75.4, 120.2, 49.6, 98.5],
+                "b": [75.6, 120.4, 49.8, 98.7],
+                "c": [75.5, 120.3, 49.7, 98.6]
+              }
+            },
+            {
+              "stem": "Convert each of the following measurements to the stated unit.",
+              "parts": [
+                "Convert {km} km into metres.",
+                "Convert {mg} mg into grams."
+              ],
+              "vars": {
+                "km": [2.5, 3.75, 1.2, 0.8],
+                "mg": [2500, 4800, 3200, 1500]
+              }
+            }
+          ],
+          "mcq": [
+            { "stem": "What is the SI unit of length?", "answer": "Metre", "distractors": ["Centimetre", "Kilometre", "Foot"] },
+            { "stem": "Which instrument would you use to measure the diameter of a wire accurately?", "answer": "Micrometer screw gauge", "distractors": ["Metre rule", "Measuring cylinder", "Balance"] },
+            { "stem": "The volume of a liquid is measured using a:", "answer": "Measuring cylinder", "distractors": ["Balance", "Stopwatch", "Thermometer"] }
+          ]
+        },
+        "density and relative density": {
+          "structured": [
+            {
+              "stem": "A block of wood has a mass of {a} g and a volume of {c} cm³.",
+              "parts": [
+                "Calculate the density of the block in g/cm³.",
+                "State the SI unit of density."
+              ],
+              "vars": {
+                "a": [120, 90, 200, 150],
+                "c": [40, 30, 50, 60]
+              }
+            },
+            {
+              "stem": "An empty beaker has a mass of {m1} g. When filled with a liquid its total mass is {m2} g. The liquid occupies a volume of {v} cm³.",
+              "parts": [
+                "Calculate the mass of the liquid.",
+                "Calculate the density of the liquid in g/cm³."
+              ],
+              "vars": {
+                "m1": [40, 55, 30, 70],
+                "m2": [88, 115, 90, 130],
+                "v": [40, 50, 50, 60]
+              }
+            }
+          ],
+          "mcq": [
+            { "stem": "An object floats in water. Its density compared with that of water is:", "answer": "Less than that of water", "distractors": ["Equal to that of water", "Greater than that of water", "Unrelated to water"] },
+            { "stem": "The density of water is:", "answer": "1000 kg/m³", "distractors": ["10 kg/m³", "1 kg/m³", "10 000 kg/m³"] }
+          ]
+        },
+        "introduction to force": {
+          "structured": [
+            {
+              "stem": "A force is any push or pull acting on a body.",
+              "parts": [
+                "State the SI unit of force.",
+                "Give three examples of forces we experience in daily life."
+              ]
+            },
+            {
+              "stem": "A block requires a horizontal force of {f} N to be pulled across a rough floor at constant speed.",
+              "parts": [
+                "Explain why a force is needed even though the speed is constant.",
+                "Name the force that opposes the motion of the block."
+              ],
+              "vars": {
+                "f": [25, 40, 15, 60]
+              }
+            }
+          ],
+          "mcq": [
+            { "stem": "The SI unit of force is the:", "answer": "Newton", "distractors": ["Joule", "Watt", "Pascal"] },
+            { "stem": "Which of the following is a contact force?", "answer": "Friction", "distractors": ["Gravity", "Magnetism", "Electrostatic force"] }
+          ]
+        },
+        "sinking and floating": {
+          "structured": [
+            {
+              "stem": "A ship made of steel floats on the sea while a small steel nail sinks in water.",
+              "parts": [
+                "Explain why the steel ship floats although steel is denser than water.",
+                "State the principle that governs floating bodies."
+              ]
+            }
+          ],
+          "mcq": [
+            { "stem": "A body floats if its density is:", "answer": "Less than that of the liquid", "distractors": ["Greater than that of the liquid", "Equal to that of air", "Always zero"] },
+            { "stem": "Buoyancy force acts in which direction?", "answer": "Upwards", "distractors": ["Downwards", "Sideways", "In all directions"] }
+          ]
+        },
+        "mechanical properties of matter": {
+          "structured": [
+            {
+              "stem": "A spring is stretched by hanging different loads on it.",
+              "parts": [
+                "State the law that links the extension of a spring to the applied force.",
+                "If a load of {w} N produces an extension of {e} cm, state the extension produced by a load of {w2} N."
+              ],
+              "vars": {
+                "w": [2, 4, 5, 3],
+                "e": [4, 8, 10, 6],
+                "w2": [4, 8, 10, 6]
+              }
+            }
+          ],
+          "mcq": [
+            { "stem": "Hooke's law states that extension is directly proportional to:", "answer": "The applied force", "distractors": ["The weight of material", "Temperature", "Length of the spring"] }
+          ]
+        },
+        "pressure": {
+          "structured": [
+            {
+              "stem": "A crate of weight {w} N rests on horizontal ground over an area of {a} m².",
+              "parts": [
+                "Calculate the pressure exerted on the ground in pascals.",
+                "State what happens to the pressure if the same crate rests on an area twice as large."
+              ],
+              "vars": {
+                "w": [800, 600, 1000, 500],
+                "a": [0.5, 0.4, 0.2, 0.25]
+              }
+            },
+            {
+              "stem": "Water of density 1000 kg/m³ fills a container to a depth of {h} m.",
+              "parts": [
+                "Calculate the pressure at the bottom of the container (take g = 10 m/s²).",
+                "Explain why the pressure increases with depth."
+              ],
+              "vars": {
+                "h": [2, 3, 1.5, 4]
+              }
+            }
+          ],
+          "mcq": [
+            { "stem": "The SI unit of pressure is the:", "answer": "Pascal", "distractors": ["Newton", "Joule", "Watt"] },
+            { "stem": "Pressure is calculated as:", "answer": "Force ÷ Area", "distractors": ["Force × Area", "Area ÷ Force", "Mass × Acceleration"] },
+            { "stem": "Why does a sharp knife cut better than a blunt one?", "answer": "It has a smaller area, giving larger pressure", "distractors": ["It is heavier", "It has more force", "It is made of sharper metal"] }
+          ]
+        },
+        "linear motion": {
+          "structured": [
+            {
+              "stem": "A car accelerates uniformly from rest to {v} m/s in {t} seconds.",
+              "parts": [
+                "Calculate the acceleration of the car in m/s².",
+                "Calculate the distance travelled during this time."
+              ],
+              "vars": {
+                "v": [20, 30, 12, 15],
+                "t": [5, 6, 4, 3]
+              }
+            },
+            {
+              "stem": "A bus travels at a steady speed of {s} m/s for {t} seconds.",
+              "parts": [
+                "Calculate the distance covered by the bus.",
+                "Express the speed of the bus in km/h."
+              ],
+              "vars": {
+                "s": [10, 25, 15, 20],
+                "t": [60, 40, 80, 50]
+              }
+            }
+          ],
+          "mcq": [
+            { "stem": "The SI unit of speed is:", "answer": "m/s", "distractors": ["km/h", "m/s²", "km"] },
+            { "stem": "Acceleration is defined as the rate of change of:", "answer": "Velocity", "distractors": ["Distance", "Displacement", "Speed"] },
+            { "stem": "A body moving with uniform velocity has acceleration equal to:", "answer": "Zero", "distractors": ["Constant speed", "Its velocity", "Gravity"] }
+          ]
+        },
+        "work energy and power": {
+          "structured": [
+            {
+              "stem": "A machine lifts a load of {w} N through a height of {h} m in {t} seconds.",
+              "parts": [
+                "Calculate the work done in joules.",
+                "Calculate the power developed in watts."
+              ],
+              "vars": {
+                "w": [200, 150, 250, 100],
+                "h": [5, 6, 4, 8],
+                "t": [4, 3, 5, 2]
+              }
+            },
+            {
+              "stem": "A boy of mass {m} kg climbs a flight of stairs of height {h} m.",
+              "parts": [
+                "State the two factors on which the work done in climbing the stairs depends.",
+                "If g = 10 m/s², calculate the work done by the boy."
+              ],
+              "vars": {
+                "m": [40, 50, 30, 60],
+                "h": [5, 8, 3, 10]
+              }
+            }
+          ],
+          "mcq": [
+            { "stem": "The SI unit of work is the:", "answer": "Joule", "distractors": ["Newton", "Watt", "Pascal"] },
+            { "stem": "Power is defined as:", "answer": "Work done per unit time", "distractors": ["Force per unit area", "Energy stored per unit volume", "Mass per unit volume"] },
+            { "stem": "Which of the following is the SI unit of power?", "answer": "Watt", "distractors": ["Joule", "Newton", "Volt"] }
+          ]
+        },
+        "static electricity": {
+          "structured": [
+            {
+              "stem": "A plastic ruler is rubbed with a cloth and then brought near small pieces of paper.",
+              "parts": [
+                "Explain why the pieces of paper are attracted to the ruler.",
+                "State the type of charge that the ruler acquires if it is rubbed with a woollen cloth."
+              ]
+            }
+          ],
+          "mcq": [
+            { "stem": "Like charges:", "answer": "Repel each other", "distractors": ["Attract each other", "Neutralise each other", "Have no effect on each other"] },
+            { "stem": "Unlike charges:", "answer": "Attract each other", "distractors": ["Repel each other", "Neutralise each other", "Have no effect on each other"] }
+          ]
+        },
+        "current electricity": {
+          "structured": [
+            {
+              "stem": "A current of {i} A flows through a resistor of resistance {r} Ω for {m} minutes.",
+              "parts": [
+                "Calculate the potential difference across the resistor.",
+                "Calculate the charge that passes through the resistor in {m} minutes."
+              ],
+              "vars": {
+                "i": [2, 3, 0.5, 4],
+                "r": [6, 5, 8, 2],
+                "m": [2, 4, 3, 1]
+              }
+            },
+            {
+              "stem": "A cell drives a current of {i} A through a circuit when connected to a resistor of {r} Ω.",
+              "parts": [
+                "State Ohm's law.",
+                "Calculate the potential difference across the resistor."
+              ],
+              "vars": {
+                "i": [1.5, 0.4, 2, 1],
+                "r": [4, 10, 6, 12]
+              }
+            }
+          ],
+          "mcq": [
+            { "stem": "The SI unit of electric current is the:", "answer": "Ampere", "distractors": ["Volt", "Ohm", "Watt"] },
+            { "stem": "The SI unit of resistance is the:", "answer": "Ohm", "distractors": ["Volt", "Ampere", "Joule"] },
+            { "stem": "Ohm's law relates current, voltage and:", "answer": "Resistance", "distractors": ["Power", "Charge", "Capacitance"] }
+          ]
+        },
+        "magnetism": {
+          "structured": [
+            {
+              "stem": "A magnet is dipped into a box containing iron fillings and aluminium filings.",
+              "parts": [
+                "Explain what will be observed.",
+                "State one way of demagnetising a steel bar."
+              ]
+            }
+          ],
+          "mcq": [
+            { "stem": "Which of the following materials is magnetic?", "answer": "Iron", "distractors": ["Wood", "Copper", "Glass"] },
+            { "stem": "The ends of a bar magnet are called:", "answer": "Poles", "distractors": ["Faces", "Terminals", "Cells"] }
+          ]
+        },
+        "light and reflection": {
+          "structured": [
+            {
+              "stem": "A ray of light strikes a plane mirror at an angle of incidence of {a}°.",
+              "parts": [
+                "State the size of the angle of reflection.",
+                "Find the angle between the incident ray and the reflected ray."
+              ],
+              "vars": {
+                "a": [30, 45, 20, 60]
+              }
+            },
+            {
+              "stem": "Describe how an image is formed in a plane mirror.",
+              "parts": [
+                "State three characteristics of the image formed by a plane mirror.",
+                "Explain whether the image can be captured on a screen."
+              ]
+            }
+          ],
+          "mcq": [
+            { "stem": "The angle of incidence equals the angle of reflection according to:", "answer": "The laws of reflection", "distractors": ["Snell's law", "Ohm's law", "Hooke's law"] },
+            { "stem": "The image formed by a plane mirror is:", "answer": "Virtual and upright", "distractors": ["Real and inverted", "Real and upright", "Virtual and inverted"] },
+            { "stem": "Reflection from a rough surface is called:", "answer": "Diffuse reflection", "distractors": ["Regular reflection", "Total reflection", "Refraction"] }
+          ]
+        },
+        "refraction of light": {
+          "structured": [
+            {
+              "stem": "A ray of light travels from air into a glass block.",
+              "parts": [
+                "State what happens to the speed of the light as it enters the glass.",
+                "State how the ray bends as it enters the glass."
+              ]
+            }
+          ],
+          "mcq": [
+            { "stem": "When light travels from a denser to a rarer medium, it:", "answer": "Bends away from the normal", "distractors": ["Bends towards the normal", "Continues straight", "Changes colour"] },
+            { "stem": "Bending of light as it passes from one medium to another is called:", "answer": "Refraction", "distractors": ["Reflection", "Diffraction", "Dispersion"] }
+          ]
+        },
+        "optical instruments": {
+          "structured": [
+            {
+              "stem": "A human eye and a camera both form images on a light-sensitive surface.",
+              "parts": [
+                "Name the part of the eye that works like the film (sensor) of a camera.",
+                "State how the eye adjusts to see objects at different distances."
+              ]
+            }
+          ],
+          "mcq": [
+            { "stem": "The type of lens used in a magnifying glass is a:", "answer": "Convex lens", "distractors": ["Concave lens", "Plane mirror", "Convex mirror"] }
+          ]
+        },
+        "thermal expansion": {
+          "structured": [
+            {
+              "stem": "A metal rod measures {l1} cm at 20 °C and {l2} cm at 80 °C.",
+              "parts": [
+                "Calculate the expansion of the rod.",
+                "State one useful application of expansion of solids in daily life."
+              ],
+              "vars": {
+                "l1": [50.00, 100.00, 25.00, 80.00],
+                "l2": [50.03, 100.05, 25.01, 80.08]
+              }
+            },
+            {
+              "stem": "Water expands when heated between 0 °C and 4 °C instead of contracting.",
+              "parts": [
+                "Explain the meaning of the anomalous expansion of water.",
+                "State one consequence of this behaviour for life in a lake during cold weather."
+              ]
+            }
+          ],
+          "mcq": [
+            { "stem": "Solids expand when heated because:", "answer": "Their particles vibrate more and move further apart", "distractors": ["Their particles shrink", "They gain electrons", "Their mass increases"] },
+            { "stem": "Which of the following expands most for a given temperature rise?", "answer": "Gases", "distractors": ["Solids", "Liquids", "Metals"] }
+          ]
+        },
+        "transfer of thermal energy": {
+          "structured": [
+            {
+              "stem": "Heat energy can be transferred by conduction, convection and radiation.",
+              "parts": [
+                "Explain each of the three mechanisms of heat transfer.",
+                "Give one everyday example of each mechanism."
+              ]
+            }
+          ],
+          "mcq": [
+            { "stem": "Heat transfer in liquids and gases mainly takes place by:", "answer": "Convection", "distractors": ["Conduction", "Radiation", "Expansion"] },
+            { "stem": "Heat from the sun reaches the Earth by:", "answer": "Radiation", "distractors": ["Conduction", "Convection", "Evaporation"] }
+          ]
+        },
+        "vapour and humidity": {
+          "structured": [
+            {
+              "stem": "A wet cloth is hung on a line to dry on a sunny windy day.",
+              "parts": [
+                "Name the process by which the cloth dries.",
+                "State two factors that affect the rate of this process."
+              ]
+            }
+          ],
+          "mcq": [
+            { "stem": "Evaporation is: ", "answer": "A surface phenomenon that occurs at any temperature", "distractors": ["A boiling process inside the liquid", "A type of condensation", "A form of conduction"] }
+          ]
+        },
+        "electromagnetism": {
+          "structured": [
+            {
+              "stem": "A conducting wire is placed between the poles of a powerful magnet and connected to a battery.",
+              "parts": [
+                "Explain what is observed when the current is switched on.",
+                "State two factors that affect the size of the force on the wire."
+              ]
+            }
+          ],
+          "mcq": [
+            { "stem": "A current-carrying conductor in a magnetic field experiences a:", "answer": "Force", "distractors": ["Charge", "Voltage", "Resistance"] },
+            { "stem": "An electromagnet works on the principle that a current-carrying coil produces:", "answer": "A magnetic field", "distractors": ["Heat", "Light", "Electric charge"] }
+          ]
+        },
+        "radioactivity": {
+          "structured": [
+            {
+              "stem": "Some elements are naturally radioactive.",
+              "parts": [
+                "Name the three types of radiation emitted by radioactive substances.",
+                "State the nature (charge and penetrating power) of each type."
+              ]
+            }
+          ],
+          "mcq": [
+            { "stem": "Which of the following is the most penetrating type of nuclear radiation?", "answer": "Gamma rays", "distractors": ["Alpha particles", "Beta particles", "X-rays"] },
+            { "stem": "Which of the following can be stopped by a sheet of paper?", "answer": "Alpha particles", "distractors": ["Beta particles", "Gamma rays", "Neutrons"] }
+          ]
+        },
+        "elementary astronomy": {
+          "structured": [
+            {
+              "stem": "Astronomy is the study of the universe and the bodies in it.",
+              "parts": [
+                "Distinguish between a planet and a star.",
+                "Give two examples of bodies found in the solar system."
+              ]
+            }
+          ],
+          "mcq": [
+            { "stem": "The Earth revolves around the Sun. This motion is called:", "answer": "Revolution", "distractors": ["Rotation", "Precession", "Oscillation"] },
+            { "stem": "The natural satellite of the Earth is the:", "answer": "Moon", "distractors": ["Sun", "Mars", "Venus"] }
+          ]
+        }
+      },
+      "fallback": {
+        "structured": [
+          {
+            "stem": "Consider the topic {topic} as studied in {subject}.",
+            "parts": [
+              "Define the concept of {topic} in your own words.",
+              "Give two examples showing how {topic} is applied in daily life."
+            ]
+          },
+          {
+            "stem": "{topic} is one of the topics covered in {subject}.",
+            "parts": [
+              "Explain why it is important to study {topic}.",
+              "Describe two key ideas or skills that a student learns under {topic}."
+            ]
+          }
+        ],
+        "essay": [
+          {
+            "stem": "Discuss the topic {topic} in detail.",
+            "parts": [
+              "Give a clear definition of {topic}.",
+              "Explain three important concepts or skills related to {topic}.",
+              "Give two examples that show how {topic} is used in real life."
+            ]
+          }
+        ],
+        "mcq": [
+          { "stem": "Which of the following best describes {topic}?", "answer": "A concept studied within {subject}", "distractors": ["A device found in a laboratory", "A foreign language", "A type of crop"] },
+          { "stem": "{topic} is a term used mainly in which school subject?", "answer": "{subject}", "distractors": ["Geography", "History", "English"] }
+        ],
+        "matching": {
+          "listA": ["Definition", "Application", "Example", "Unit", "Importance", "Skill"],
+          "listB": ["A clear meaning of {topic}", "A real-life use of {topic}", "An illustration of {topic} in practice", "A measurement or quantity related to {topic}", "A reason for studying {topic}", "A technique used when working with {topic}", "An unrelated school activity", "A foreign language word"],
+          "answers": ["A", "B", "C", "D", "E", "F"]
+        }
+      }
+    },
+    "chemistry": {
+      "subject_name": "Chemistry",
+      "units": {
+        "introduction to chemistry": {
+          "structured": [
+            {
+              "stem": "Chemistry is one of the core science subjects in Tanzanian secondary schools.",
+              "parts": [
+                "Give the meaning of the term chemistry.",
+                "State four careers or activities that require the knowledge of chemistry."
+              ]
+            }
+          ],
+          "mcq": [
+            { "stem": "Chemistry is the study of:", "answer": "Matter and its changes", "distractors": ["Living organisms", "The Earth and the sky", "Numbers and quantities"] }
+          ]
+        },
+        "laboratory techniques": {
+          "structured": [
+            {
+              "stem": "A student is asked to separate a mixture of salt and water.",
+              "parts": [
+                "Name the method used to separate the mixture.",
+                "Describe how the method is carried out in the laboratory."
+              ]
+            },
+            {
+              "stem": "A student spills a small amount of acid on the laboratory bench.",
+              "parts": [
+                "State the first step the student should take for safety.",
+                "Name the apparatus used to measure an exact volume of a liquid."
+              ]
+            }
+          ],
+          "mcq": [
+            { "stem": "Which method separates a mixture of immiscible liquids?", "answer": "Separating funnel", "distractors": ["Filtration", "Evaporation", "Sublimation"] },
+            { "stem": "Which apparatus is used to measure 25 cm³ of a liquid accurately?", "answer": "Measuring cylinder", "distractors": ["Beaker", "Flask", "Test tube"] }
+          ]
+        },
+        "matter": {
+          "structured": [
+            {
+              "stem": "Matter exists in three states.",
+              "parts": [
+                "Name the three states of matter and describe how their particles are arranged.",
+                "State two changes of state that involve heating."
+              ]
+            },
+            {
+              "stem": "Ice is melted to water and the water is then boiled to steam.",
+              "parts": [
+                "Name the two changes of state involved.",
+                "State whether heat is absorbed or released during melting."
+              ]
+            }
+          ],
+          "mcq": [
+            { "stem": "Which of the following is a characteristic of a gas?", "answer": "It fills the whole space available", "distractors": ["It has a fixed shape", "It has a fixed volume", "Its particles are tightly packed"] },
+            { "stem": "Which of the following is a pure substance?", "answer": "Distilled water", "distractors": ["Sea water", "Orange juice", "Air"] },
+            { "stem": "The change of state from solid to liquid is called:", "answer": "Melting", "distractors": ["Freezing", "Condensation", "Sublimation"] }
+          ]
+        },
+        "elements compounds and mixtures": {
+          "structured": [
+            {
+              "stem": "Carbon, carbon dioxide and air are an element, a compound and a mixture respectively.",
+              "parts": [
+                "Distinguish between an element, a compound and a mixture.",
+                "Classify sugar, oxygen and sea water into the three categories."
+              ]
+            },
+            {
+              "stem": "A hammerhead made of iron is left outside and it starts to rust.",
+              "parts": [
+                "Is rusting a physical or a chemical change? Explain.",
+                "Give one way of preventing iron from rusting."
+              ]
+            }
+          ],
+          "mcq": [
+            { "stem": "Which of the following is a mixture?", "answer": "Air", "distractors": ["Oxygen", "Water", "Salt"] },
+            { "stem": "Which of the following is an element?", "answer": "Oxygen", "distractors": ["Water", "Carbon dioxide", "Salt"] },
+            { "stem": "A compound is formed when elements combine in:", "answer": "A fixed ratio", "distractors": ["Any ratio", "Equal masses", "Increasing sizes"] }
+          ]
+        },
+        "atomic structure": {
+          "structured": [
+            {
+              "stem": "An atom of element X has {p} protons, {n} neutrons and {p} electrons.",
+              "parts": [
+                "State the atomic number and the mass number of element X.",
+                "Describe the arrangement of electrons in the shells of atom X."
+              ],
+              "vars": {
+                "p": [3, 8, 11, 12],
+                "n": [4, 8, 12, 12]
+              }
+            },
+            {
+              "stem": "Isotopes of an element have the same number of protons but different numbers of neutrons.",
+              "parts": [
+                "State what is meant by an isotope.",
+                "Give one use of isotopes in daily life."
+              ]
+            }
+          ],
+          "mcq": [
+            { "stem": "The proton carries which charge?", "answer": "Positive", "distractors": ["Negative", "No charge", "Either positive or negative"] },
+            { "stem": "The lightest subatomic particle is the:", "answer": "Electron", "distractors": ["Proton", "Neutron", "Atom"] },
+            { "stem": "The atomic number of an element equals the number of:", "answer": "Protons", "distractors": ["Neutrons", "Electrons and neutrons", "Nucleons"] }
+          ]
+        },
+        "periodic classification": {
+          "structured": [
+            {
+              "stem": "Elements are arranged in the periodic table in order of increasing atomic number.",
+              "parts": [
+                "Explain the meaning of a period and a group in the periodic table.",
+                "State the number of periods and groups in the modern periodic table."
+              ]
+            }
+          ],
+          "mcq": [
+            { "stem": "Elements in the same group of the periodic table have the same number of:", "answer": "Valence electrons", "distractors": ["Neutrons", "Shells", "Protons"] }
+          ]
+        },
+        "chemical bonding formula and nomenclature": {
+          "structured": [
+            {
+              "stem": "Sodium and chlorine combine to form sodium chloride.",
+              "parts": [
+                "Describe the type of bond formed between sodium and chlorine.",
+                "Write the chemical formula of sodium chloride."
+              ]
+            },
+            {
+              "stem": "Hydrogen chloride is a covalent compound while sodium chloride is an ionic compound.",
+              "parts": [
+                "Distinguish between covalent and ionic bonding.",
+                "Explain why molten sodium chloride conducts electricity but solid sodium chloride does not."
+              ]
+            }
+          ],
+          "mcq": [
+            { "stem": "The chemical formula of sodium chloride is:", "answer": "NaCl", "distractors": ["NaCl₂", "Na₂Cl", "NaClO"] },
+            { "stem": "The formula of carbon dioxide is:", "answer": "CO₂", "distractors": ["CO", "C₂O", "C₂O₃"] },
+            { "stem": "Electrons involved in bonding are called:", "answer": "Valence electrons", "distractors": ["Free electrons", "Core electrons", "Ground electrons"] }
+          ]
+        },
+        "chemical reactions": {
+          "structured": [
+            {
+              "stem": "A piece of magnesium ribbon is burnt in air.",
+              "parts": [
+                "Write a word equation for the reaction.",
+                "Name the product formed and state its appearance."
+              ]
+            },
+            {
+              "stem": "Limewater turns milky when carbon dioxide is bubbled through it.",
+              "parts": [
+                "State which gas this test detects.",
+                "Name the white precipitate formed in the limewater."
+              ]
+            }
+          ],
+          "mcq": [
+            { "stem": "Burning of magnesium in air is an example of:", "answer": "Combustion", "distractors": ["Rusting", "Neutralisation", "Distillation"] },
+            { "stem": "Which of the following is a sign that a chemical reaction has occurred?", "answer": "Formation of a precipitate", "distractors": ["Change in size", "Melting of a solid", "Evaporation of water"] }
+          ]
+        },
+        "acids bases and salts": {
+          "structured": [
+            {
+              "stem": "Zinc metal reacts with dilute hydrochloric acid.",
+              "parts": [
+                "Write the word equation for the reaction.",
+                "Name the salt and the gas produced."
+              ]
+            },
+            {
+              "stem": "A student adds sodium hydroxide solution to dilute hydrochloric acid until the solution is neutral.",
+              "parts": [
+                "Name the salt produced in this reaction.",
+                "Write a word equation for the neutralisation reaction."
+              ]
+            },
+            {
+              "stem": "Lemon juice and soap solution are common household substances.",
+              "parts": [
+                "State whether lemon juice is acidic or basic, giving a reason.",
+                "Describe how you would test the pH of a solution in the laboratory."
+              ]
+            }
+          ],
+          "mcq": [
+            { "stem": "The pH of a strong acid is closest to:", "answer": "1", "distractors": ["7", "10", "14"] },
+            { "stem": "A substance with pH 14 is:", "answer": "A strong base", "distractors": ["A weak acid", "A strong acid", "Neutral"] },
+            { "stem": "The salt formed when sodium hydroxide reacts with hydrochloric acid is:", "answer": "Sodium chloride", "distractors": ["Sodium sulphate", "Sodium nitrate", "Sodium carbonate"] }
+          ]
+        }
+      },
+      "fallback": {
+        "structured": [
+          {
+            "stem": "Consider the topic {topic} as studied in {subject}.",
+            "parts": [
+              "Define the concept of {topic} in your own words.",
+              "Give two examples showing how {topic} is applied in daily life."
+            ]
+          },
+          {
+            "stem": "{topic} is one of the topics covered in {subject}.",
+            "parts": [
+              "Explain why it is important to study {topic}.",
+              "Describe two key ideas or skills that a student learns under {topic}."
+            ]
+          }
+        ],
+        "essay": [
+          {
+            "stem": "Discuss the topic {topic} in detail.",
+            "parts": [
+              "Give a clear definition of {topic}.",
+              "Explain three important concepts or skills related to {topic}.",
+              "Give two examples that show how {topic} is used in real life."
+            ]
+          }
+        ],
+        "mcq": [
+          { "stem": "Which of the following best describes {topic}?", "answer": "A concept studied within {subject}", "distractors": ["A device found in a laboratory", "A foreign language", "A type of crop"] },
+          { "stem": "{topic} is a term used mainly in which school subject?", "answer": "{subject}", "distractors": ["Geography", "History", "English"] }
+        ],
+        "matching": {
+          "listA": ["Definition", "Application", "Example", "Observation", "Importance", "Skill"],
+          "listB": ["A clear meaning of {topic}", "A real-life use of {topic}", "An illustration of {topic} in practice", "Something observed while studying {topic}", "A reason for studying {topic}", "A technique used when working with {topic}", "An unrelated school activity", "A foreign language word"],
+          "answers": ["A", "B", "C", "D", "E", "F"]
+        }
+      }
+    }
+  }
+}
