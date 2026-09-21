@@ -18,6 +18,39 @@ import { PAPER_GENERATION_TEMPLATE } from '../src/prompts/necta/paper-generation
 import { parseJsonObject } from './exam';
 
 const OPTS = ['A', 'B', 'C', 'D'];
+const PART_PLACEHOLDER = /^\(Part [a-z]\)$/;
+const ITEM_PLACEHOLDER = /^Item \d+$/;
+
+/**
+ * True when a question was filled with assembly fallbacks because the model
+ * returned no real content for its slot. Such papers must not be served.
+ */
+export function isSyntheticQuestion(q: ExamQuestion): boolean {
+  const body = String(q.text || q.stem || '').trim();
+  if (body === `Question ${q.number}`) return true;
+  if (q.type === 'mcq_bundle') {
+    const items = q.items || [];
+    return items.length > 0 && items.every((it) => !String(it.text || '').trim());
+  }
+  if (q.type === 'matching') {
+    const listA = q.listA || [];
+    return listA.length > 0 && listA.every((a) => ITEM_PLACEHOLDER.test(String(a).trim()));
+  }
+  if (q.parts?.length) {
+    return q.parts.every((p) => PART_PLACEHOLDER.test(String(p.text || '').trim()));
+  }
+  return false;
+}
+
+export function countSyntheticQuestions(paper: ExamPaper): { count: number; numbers: (string | number)[] } {
+  const numbers: (string | number)[] = [];
+  (paper.sections || []).forEach((sec) => {
+    (sec.questions || []).forEach((q) => {
+      if (isSyntheticQuestion(q)) numbers.push(q.number);
+    });
+  });
+  return { count: numbers.length, numbers };
+}
 
 function distributeMarks(total: number, parts: number): number[] {
   const base = Math.floor(total / parts);

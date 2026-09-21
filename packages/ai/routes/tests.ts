@@ -19,6 +19,7 @@ import {
   buildMarkingSchemeFromPaper,
   buildPaperPrompt,
   buildPlaceholderPaper,
+  countSyntheticQuestions,
   parsePaperJson,
   validateNectaPaper,
 } from '../server-utils/paper';
@@ -174,6 +175,11 @@ async function generatePaperWithAi(
   const validation = validateNectaPaper(paper, preset);
   if (!validation.valid) {
     console.warn('[tests/generate] assembled paper failed validation:', validation.issues);
+    return null;
+  }
+  const synthetic = countSyntheticQuestions(paper);
+  if (synthetic.count > 0) {
+    console.warn(`[tests/generate] assembled paper had ${synthetic.count} placeholder question(s): Q${synthetic.numbers.join(', Q')}`);
     return null;
   }
   const markingScheme = buildMarkingSchemeFromPaper(paper, parsed);

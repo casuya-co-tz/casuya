@@ -38,6 +38,7 @@ RULES:
 - For matching use type "matching" with listA, listB, answers (letters).
 - For structured/essay use stem + parts[{label,text,marks}].
 - For practical use apparatus[], procedure[], tables[{title,columns,rows}], tasks[{label,text,marks}].
+- You MUST fill EVERY question slot listed above. Never output an empty object, an empty stem, or empty parts for any slot.
 
 Respond with ONLY JSON:
 { "sections": [{ "id": "A", "questions": [...] }], "marking_scheme": { "sections": [...] } }

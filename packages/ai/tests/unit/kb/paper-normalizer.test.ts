@@ -3,6 +3,7 @@ import {
   assemblePaperFromContent,
   buildPlaceholderPaper,
   buildPaperPrompt,
+  countSyntheticQuestions,
   validateNectaPaper,
 } from '../../../server-utils/paper';
 
@@ -185,6 +186,50 @@ describe('paper normalizer', () => {
     for (const q of partQuestions) {
       expect(q.parts!.reduce((n, p) => n + p.marks, 0)).toBe(q.marks);
     }
+  });
+
+  it('countSyntheticQuestions flags empty slots after assembly', () => {
+    const preset = resolvePaperPreset({
+      subject_slug: 'mathematics',
+      form_level: 2,
+      test_type: 'necta_ii',
+      paper: 'theory',
+    })!;
+    const srcQs = preset.flat_questions!.map((slot, i) => {
+      if (i === 2 || i === 3) return {};
+      return {
+        type: slot.type,
+        stem: `Solve problem ${i + 1} about ratios.`,
+        parts: [
+          { label: 'a', text: `(a) Show the working for ${i + 1}.`, marks: 5 },
+          { label: 'b', text: `(b) State the answer for ${i + 1}.`, marks: 5 },
+        ],
+      };
+    });
+    const paper = assemblePaperFromContent(
+      preset,
+      { questions: srcQs },
+      { subject: 'MATHEMATICS', subjectSlug: 'mathematics', formLevel: 2, topics: ['Rates'], generator: 'test' },
+    );
+    const synthetic = countSyntheticQuestions(paper);
+    expect(synthetic.count).toBe(2);
+    expect(synthetic.numbers).toEqual([3, 4]);
+  });
+
+  it('countSyntheticQuestions passes fully-filled and offline papers', () => {
+    const preset = resolvePaperPreset({
+      subject_slug: 'physics',
+      form_level: 4,
+      test_type: 'necta_iv',
+      paper: 'theory',
+    })!;
+    const paper = buildPlaceholderPaper(preset, {
+      subject: 'PHYSICS',
+      subjectSlug: 'physics',
+      formLevel: 4,
+      topics: ['Force'],
+    });
+    expect(countSyntheticQuestions(paper).count).toBe(0);
   });
 
   it('validateNectaPaper rejects wrong mcq_bundle count', () => {
