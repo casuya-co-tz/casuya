@@ -1,6 +1,7 @@
 import { resolvePaperPreset } from '../../../src/kb/paper-presets';
 import {
   assemblePaperFromContent,
+  buildMarkingSchemeFromPaper,
   buildPlaceholderPaper,
   buildPaperPrompt,
   countSyntheticQuestions,
@@ -230,6 +231,98 @@ describe('paper normalizer', () => {
       topics: ['Force'],
     });
     expect(countSyntheticQuestions(paper).count).toBe(0);
+  });
+
+  it('assemblePaperFromContent strips echoed part/choice labels from text', () => {
+    const preset = resolvePaperPreset({
+      subject_slug: 'physics',
+      form_level: 4,
+      test_type: 'necta_iv',
+      paper: 'theory',
+    })!;
+    const paper = assemblePaperFromContent(
+      preset,
+      {
+        sections: preset.sections!.map((sec) => ({
+          id: sec.id,
+          questions: sec.questions.map((slot, i) => {
+            if (slot.type === 'mcq_bundle') {
+              return {
+                type: 'mcq_bundle',
+                items: Array.from({ length: slot.item_count || 10 }, (_, i) => ({
+                  number: String(i + 1),
+                  text: `(i) Which law applies?`,
+                  options: { A: 'a', B: 'b', C: 'c', D: 'd' },
+                  answer: 'A',
+                  marks: 1,
+                })),
+              };
+            }
+            if (slot.type === 'matching') {
+              const count = slot.item_count || 5;
+              return {
+                type: 'matching',
+                listA: Array.from({ length: count }, (_, i) => `Term ${i + 1}`),
+                listB: Array.from({ length: count + 2 }, (_, i) => `Def ${i + 1}`),
+                answers: Array.from({ length: count }, () => 'A'),
+              };
+            }
+            const count = slot.part_count || 2;
+            return {
+              type: slot.type,
+              stem: `${String.fromCharCode(65 + i)}. Force acts on a body.`,
+              parts: Array.from({ length: count }, (_, p) => ({
+                label: String.fromCharCode(97 + p),
+                text: `(${String.fromCharCode(97 + p)}) State the effect.`,
+                marks: 7,
+              })),
+            };
+          }),
+        })),
+      },
+      {
+        subject: 'PHYSICS',
+        subjectSlug: 'physics',
+        formLevel: 4,
+        topics: ['Force'],
+        generator: 'test',
+      },
+    );
+    const structured = paper.sections.flatMap((s) => s.questions).find((q) => q.type !== 'mcq_bundle' && q.type !== 'matching');
+    expect(structured?.text).toBe('Force acts on a body.');
+    expect(structured?.parts?.[0]?.text).toBe('State the effect.');
+    const mcqItem = paper.sections.flatMap((s) => s.questions).filter((q) => q.type === 'mcq_bundle')[0]?.items?.[0];
+    expect(mcqItem?.text).toBe('Which law applies?');
+    const validation = validateNectaPaper(paper, preset);
+    if (!validation.valid) throw new Error(validation.issues.join('; '));
+    expect(validation.valid).toBe(true);
+  });
+
+  it('buildMarkingSchemeFromPaper ignores garbage parsed scheme', () => {
+    const preset = resolvePaperPreset({
+      subject_slug: 'physics',
+      form_level: 4,
+      test_type: 'necta_iv',
+      paper: 'theory',
+    })!;
+    const paper = buildPlaceholderPaper(preset, {
+      subject: 'PHYSICS',
+      subjectSlug: 'physics',
+      formLevel: 4,
+      topics: ['Force'],
+    });
+    const scheme = buildMarkingSchemeFromPaper(paper, {
+      marking_scheme: { sections: [{ name: 'X', questions: [{}, {}] }] },
+    });
+    expect(scheme.code).toBe(paper.header.subject_code);
+    expect(scheme.max_marks).toBe(paper.header.total_marks);
+    for (const sec of scheme.sections) {
+      for (const q of sec.questions) {
+        expect(q.number).toBeDefined();
+        expect(q.marks).toBeDefined();
+        expect(String(q.answer_html || '')).not.toBe('');
+      }
+    }
   });
 
   it('validateNectaPaper rejects wrong mcq_bundle count', () => {

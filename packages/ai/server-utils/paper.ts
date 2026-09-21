@@ -21,6 +21,16 @@ const OPTS = ['A', 'B', 'C', 'D'];
 const PART_PLACEHOLDER = /^\(Part [a-z]\)$/;
 const ITEM_PLACEHOLDER = /^Item \d+$/;
 
+function stripLabelPrefix(text: string): string {
+  return String(text || '')
+    .replace(/^\([a-z]\)/i, '')
+    .replace(/^\([ivxlcdm]+\)/i, '')
+    .replace(/^[a-z][.)]/i, '')
+    .replace(/^[A-Z][.)]/i, '')
+    .replace(/^\d+[.)]\s*/, '')
+    .trim();
+}
+
 /**
  * True when a question was filled with assembly fallbacks because the model
  * returned no real content for its slot. Such papers must not be served.
@@ -228,7 +238,7 @@ function normalizeMcqItem(raw: any, idx: number, marksEach: number): McqItem {
   if (!/^[A-D]$/.test(answer)) answer = 'A';
   return {
     number: num,
-    text: String(raw?.text || '').trim(),
+    text: stripLabelPrefix(String(raw?.text || '').trim()),
     options,
     answer,
     marks: Number(raw?.marks) || marksEach,
@@ -283,7 +293,7 @@ function normalizeParts(raw: any, totalMarks: number, count: number): Structured
   } else {
     parts = src.slice(0, count).map((p: any, i: number) => ({
       label: String(p?.label || PART_LABELS[i] || i + 1),
-      text: String(p?.text || '').trim(),
+      text: stripLabelPrefix(p?.text),
       marks: Number(p?.marks) || Math.max(1, Math.floor(totalMarks / count)),
     }));
   }
@@ -291,12 +301,14 @@ function normalizeParts(raw: any, totalMarks: number, count: number): Structured
 }
 
 function normalizeQuestion(raw: any, slot: QuestionSlot, number: number): ExamQuestion {
+  const body = stripLabelPrefix(String(raw?.text || raw?.stem || '').trim())
+    || String(slot.stem || '').trim();
   const base: ExamQuestion = {
     number,
     type: slot.type,
     marks: slot.marks,
-    text: String(raw?.text || raw?.stem || slot.stem || '').trim(),
-    stem: String(raw?.stem || raw?.text || slot.stem || '').trim(),
+    text: body,
+    stem: body,
     optional: slot.optional,
   };
 
@@ -522,8 +534,15 @@ export function buildPlaceholderPaper(
 }
 
 export function buildMarkingSchemeFromPaper(paper: ExamPaper, parsed?: any): MarkingScheme {
+  const parsedQs = new Map<string | number, any>();
   const parsedMs = parsed?.marking_scheme;
-  if (parsedMs?.sections) return parsedMs as MarkingScheme;
+  if (parsedMs?.sections) {
+    for (const sec of Array.isArray(parsedMs.sections) ? parsedMs.sections : []) {
+      for (const q of Array.isArray(sec?.questions) ? sec.questions : []) {
+        if (q?.number != null && !parsedQs.has(q.number)) parsedQs.set(q.number, q);
+      }
+    }
+  }
 
   const sections = paper.sections.map((sec) => ({
     name: `SECTION ${sec.id} (${sec.marks ?? ''} MARKS)`.trim(),
@@ -542,6 +561,11 @@ export function buildMarkingSchemeFromPaper(paper: ExamPaper, parsed?: any): Mar
         entry.answer_html = q.parts.map((p) => `(${p.label}) [${p.marks} marks]`).join(' ');
       } else {
         entry.answer_html = 'See examiner guidance.';
+      }
+      const src = parsedQs.get(q.number) || parsedQs.get(String(q.number));
+      const srcAnswer = typeof src?.answer_html === 'string' ? src.answer_html.trim() : '';
+      if (q.parts?.length && srcAnswer && !q.items && q.type !== 'matching') {
+        entry.answer_html = srcAnswer;
       }
       return entry;
     }),
