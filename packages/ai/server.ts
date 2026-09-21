@@ -24,7 +24,7 @@ import { getKnowledgeBase } from './src/kb';
 import { embeddingsStatus } from './src/kb/hybrid-search';
 import { handleQuestionGenerate, handleTutoringQuiz } from './routes/questions';
 import { handleTutoringExplain, handleTutoringStream, handlePlanLesson, handlePlanScheme } from './routes/tutoring';
-import { handleTestGenerate } from './routes/tests';
+import { handleTestGenerate, handleTestPresets } from './routes/tests';
 import {
   handleContentAnalyze,
   handleContentModerate,
@@ -227,8 +227,12 @@ async function start() {
           return safeAsync(() => handleExamGenerate(ai, body), { paper: null }, { soft: false });
         case '/api/tutoring/quiz':
           return handleTutoringQuiz(ai, body);
+        case '/api/tests/presets':
+          return handleTestPresets(body);
         case '/api/tests/generate':
           return safeAsync(() => handleTestGenerate(ai, body), {
+            paper: null,
+            markingScheme: null,
             questions: [],
             count: 0,
             testType: 'topical',
@@ -237,6 +241,7 @@ async function start() {
             subject: '',
             formLevel: null,
             kbHits: [],
+            source: 'offline',
           }, { soft: false });
         case '/api/content/analyze':
           return handleContentAnalyze(body);

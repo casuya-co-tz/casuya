@@ -1,0 +1,343 @@
+{
+  "topical": {
+    "duration_factor": 0.33,
+    "csee_science": {
+      "total_marks": 45,
+      "duration": "1:00 Hour",
+      "sections": [
+        {
+          "id": "A",
+          "title": "MULTIPLE CHOICE AND MATCHING",
+          "marks": 8,
+          "instruction": "Answer ALL questions in this section.",
+          "choice": { "mode": "all" },
+          "questions": [
+            { "slot": 1, "type": "mcq_bundle", "marks": 5, "item_count": 5, "stem": "For each of the items (i)-(v), choose the correct answer and write its letter in the box provided:" },
+            { "slot": 2, "type": "matching", "marks": 3, "item_count": 3, "stem": "Match the items in List A with the correct responses in List B by writing the letter of the correct response in the box provided:" }
+          ]
+        },
+        {
+          "id": "B",
+          "title": "SHORT ANSWER",
+          "marks": 18,
+          "instruction": "Answer ALL questions in this section.",
+          "choice": { "mode": "all" },
+          "questions": [
+            { "slot": 3, "type": "structured", "marks": 9, "part_count": 2 },
+            { "slot": 4, "type": "structured", "marks": 9, "part_count": 2 }
+          ]
+        },
+        {
+          "id": "C",
+          "title": "STRUCTURED",
+          "marks": 19,
+          "instruction": "Answer the question in this section.",
+          "choice": { "mode": "all" },
+          "questions": [
+            { "slot": 5, "type": "essay", "marks": 19, "part_count": 3 }
+          ]
+        }
+      ]
+    },
+    "ftna_science": {
+      "total_marks": 40,
+      "duration": "1:00 Hour",
+      "sections": [
+        {
+          "id": "A",
+          "title": "OBJECTIVE",
+          "marks": 8,
+          "instruction": "Answer ALL questions in this section.",
+          "choice": { "mode": "all" },
+          "questions": [
+            { "slot": 1, "type": "mcq_bundle", "marks": 5, "item_count": 5 },
+            { "slot": 2, "type": "matching", "marks": 3, "item_count": 3 }
+          ]
+        },
+        {
+          "id": "B",
+          "title": "SHORT ANSWER",
+          "marks": 27,
+          "instruction": "Answer ALL questions in this section.",
+          "choice": { "mode": "all" },
+          "questions": [
+            { "slot": 3, "type": "structured", "marks": 9, "part_count": 2 },
+            { "slot": 4, "type": "structured", "marks": 9, "part_count": 2 },
+            { "slot": 5, "type": "structured", "marks": 9, "part_count": 2 }
+          ]
+        },
+        {
+          "id": "C",
+          "title": "STRUCTURED",
+          "marks": 5,
+          "instruction": "Answer the question in this section.",
+          "choice": { "mode": "all" },
+          "questions": [
+            { "slot": 6, "type": "essay", "marks": 5, "part_count": 1 }
+          ]
+        }
+      ],
+      "assessor_table": { "question_numbers": [1, 2, 3, 4, 5, 6], "checker": true }
+    },
+    "csee_math": {
+      "total_marks": 40,
+      "duration": "1:00 Hour",
+      "sections": [
+        {
+          "id": "A",
+          "title": "SHORT ANSWER",
+          "marks": 24,
+          "instruction": "Answer ALL questions in this section.",
+          "choice": { "mode": "all" },
+          "questions": [
+            { "slot": 1, "type": "structured", "marks": 6, "part_count": 1 },
+            { "slot": 2, "type": "structured", "marks": 6, "part_count": 1 },
+            { "slot": 3, "type": "structured", "marks": 6, "part_count": 1 },
+            { "slot": 4, "type": "structured", "marks": 6, "part_count": 1 }
+          ]
+        },
+        {
+          "id": "B",
+          "title": "STRUCTURED",
+          "marks": 16,
+          "instruction": "Answer ALL questions in this section.",
+          "choice": { "mode": "all" },
+          "questions": [
+            { "slot": 5, "type": "essay", "marks": 10, "part_count": 2 },
+            { "slot": 6, "type": "essay", "marks": 6, "part_count": 1 }
+          ]
+        }
+      ]
+    },
+    "ftna_math": {
+      "total_marks": 40,
+      "duration": "1:00 Hour",
+      "flat_questions": [
+        { "slot": 1, "type": "structured", "marks": 10, "part_count": 2 },
+        { "slot": 2, "type": "structured", "marks": 10, "part_count": 2 },
+        { "slot": 3, "type": "structured", "marks": 10, "part_count": 2 },
+        { "slot": 4, "type": "structured", "marks": 10, "part_count": 2 }
+      ],
+      "assessor_table": { "question_numbers": [1, 2, 3, 4], "checker": true }
+    },
+    "acsee_science_p1": {
+      "total_marks": 45,
+      "duration": "1:00 Hour",
+      "sections": [
+        {
+          "id": "A",
+          "title": "SHORT ANSWER",
+          "marks": 30,
+          "instruction": "Answer ALL questions in this section.",
+          "choice": { "mode": "all" },
+          "questions": [
+            { "slot": 1, "type": "structured", "marks": 10, "part_count": 2 },
+            { "slot": 2, "type": "structured", "marks": 10, "part_count": 2 },
+            { "slot": 3, "type": "structured", "marks": 10, "part_count": 2 }
+          ]
+        },
+        {
+          "id": "B",
+          "title": "STRUCTURED",
+          "marks": 15,
+          "instruction": "Answer ONE (1) question from this section.",
+          "choice": { "mode": "n_of_m", "n": 1, "m": 2 },
+          "questions": [
+            { "slot": 4, "type": "essay", "marks": 15, "optional": true, "part_count": 3 },
+            { "slot": 5, "type": "essay", "marks": 15, "optional": true, "part_count": 3 }
+          ]
+        }
+      ]
+    },
+    "acsee_math": {
+      "total_marks": 40,
+      "duration": "1:00 Hour",
+      "flat_questions": [
+        { "slot": 1, "type": "structured", "marks": 10, "part_count": 2 },
+        { "slot": 2, "type": "structured", "marks": 10, "part_count": 2 },
+        { "slot": 3, "type": "structured", "marks": 10, "part_count": 2 },
+        { "slot": 4, "type": "structured", "marks": 10, "part_count": 2 }
+      ]
+    }
+  },
+  "monthly": {
+    "duration_factor": 0.5,
+    "csee_science": {
+      "total_marks": 70,
+      "duration": "1:30 Hours",
+      "sections": [
+        {
+          "id": "A",
+          "title": "MULTIPLE CHOICE AND MATCHING",
+          "marks": 16,
+          "instruction": "Answer ALL questions in this section.",
+          "choice": { "mode": "all" },
+          "questions": [
+            { "slot": 1, "type": "mcq_bundle", "marks": 10, "item_count": 10 },
+            { "slot": 2, "type": "matching", "marks": 6, "item_count": 6 }
+          ]
+        },
+        {
+          "id": "B",
+          "title": "SHORT ANSWER",
+          "marks": 36,
+          "instruction": "Answer ALL questions in this section.",
+          "choice": { "mode": "all" },
+          "questions": [
+            { "slot": 3, "type": "structured", "marks": 9, "part_count": 2 },
+            { "slot": 4, "type": "structured", "marks": 9, "part_count": 2 },
+            { "slot": 5, "type": "structured", "marks": 9, "part_count": 2 },
+            { "slot": 6, "type": "structured", "marks": 9, "part_count": 2 }
+          ]
+        },
+        {
+          "id": "C",
+          "title": "STRUCTURED",
+          "marks": 18,
+          "instruction": "Answer TWO (2) questions from this section.",
+          "choice": { "mode": "n_of_m", "n": 2, "m": 3 },
+          "questions": [
+            { "slot": 7, "type": "essay", "marks": 9, "optional": true, "part_count": 2 },
+            { "slot": 8, "type": "essay", "marks": 9, "optional": true, "part_count": 2 },
+            { "slot": 9, "type": "essay", "marks": 9, "optional": true, "part_count": 2 }
+          ]
+        }
+      ]
+    },
+    "ftna_science": {
+      "total_marks": 70,
+      "duration": "1:30 Hours",
+      "sections": [
+        {
+          "id": "A",
+          "title": "OBJECTIVE",
+          "marks": 15,
+          "instruction": "Answer ALL questions in this section.",
+          "choice": { "mode": "all" },
+          "questions": [
+            { "slot": 1, "type": "mcq_bundle", "marks": 10, "item_count": 10 },
+            { "slot": 2, "type": "matching", "marks": 5, "item_count": 5 }
+          ]
+        },
+        {
+          "id": "B",
+          "title": "SHORT ANSWER",
+          "marks": 50,
+          "instruction": "Answer ALL questions in this section.",
+          "choice": { "mode": "all" },
+          "questions": [
+            { "slot": 3, "type": "structured", "marks": 10, "part_count": 2 },
+            { "slot": 4, "type": "structured", "marks": 10, "part_count": 2 },
+            { "slot": 5, "type": "structured", "marks": 10, "part_count": 2 },
+            { "slot": 6, "type": "structured", "marks": 10, "part_count": 2 },
+            { "slot": 7, "type": "structured", "marks": 10, "part_count": 2 }
+          ]
+        },
+        {
+          "id": "C",
+          "title": "STRUCTURED",
+          "marks": 5,
+          "instruction": "Answer the question in this section.",
+          "choice": { "mode": "all" },
+          "questions": [
+            { "slot": 8, "type": "essay", "marks": 5, "part_count": 1 }
+          ]
+        }
+      ],
+      "assessor_table": { "question_numbers": [1, 2, 3, 4, 5, 6, 7, 8], "checker": true }
+    },
+    "csee_math": {
+      "total_marks": 70,
+      "duration": "1:30 Hours",
+      "sections": [
+        {
+          "id": "A",
+          "title": "SHORT ANSWER",
+          "marks": 42,
+          "instruction": "Answer ALL questions in this section.",
+          "choice": { "mode": "all" },
+          "questions": [
+            { "slot": 1, "type": "structured", "marks": 6, "part_count": 1 },
+            { "slot": 2, "type": "structured", "marks": 6, "part_count": 1 },
+            { "slot": 3, "type": "structured", "marks": 6, "part_count": 1 },
+            { "slot": 4, "type": "structured", "marks": 6, "part_count": 1 },
+            { "slot": 5, "type": "structured", "marks": 6, "part_count": 1 },
+            { "slot": 6, "type": "structured", "marks": 6, "part_count": 1 },
+            { "slot": 7, "type": "structured", "marks": 6, "part_count": 1 }
+          ]
+        },
+        {
+          "id": "B",
+          "title": "STRUCTURED",
+          "marks": 28,
+          "instruction": "Answer ALL questions in this section.",
+          "choice": { "mode": "all" },
+          "questions": [
+            { "slot": 8, "type": "essay", "marks": 10, "part_count": 2 },
+            { "slot": 9, "type": "essay", "marks": 10, "part_count": 2 },
+            { "slot": 10, "type": "essay", "marks": 8, "part_count": 2 }
+          ]
+        }
+      ]
+    },
+    "ftna_math": {
+      "total_marks": 70,
+      "duration": "1:30 Hours",
+      "flat_questions": [
+        { "slot": 1, "type": "structured", "marks": 10, "part_count": 2 },
+        { "slot": 2, "type": "structured", "marks": 10, "part_count": 2 },
+        { "slot": 3, "type": "structured", "marks": 10, "part_count": 2 },
+        { "slot": 4, "type": "structured", "marks": 10, "part_count": 2 },
+        { "slot": 5, "type": "structured", "marks": 10, "part_count": 2 },
+        { "slot": 6, "type": "structured", "marks": 10, "part_count": 2 },
+        { "slot": 7, "type": "structured", "marks": 10, "part_count": 2 }
+      ],
+      "assessor_table": { "question_numbers": [1, 2, 3, 4, 5, 6, 7], "checker": true }
+    },
+    "acsee_science_p1": {
+      "total_marks": 70,
+      "duration": "1:30 Hours",
+      "sections": [
+        {
+          "id": "A",
+          "title": "SHORT ANSWER",
+          "marks": 50,
+          "instruction": "Answer ALL questions in this section.",
+          "choice": { "mode": "all" },
+          "questions": [
+            { "slot": 1, "type": "structured", "marks": 10, "part_count": 2 },
+            { "slot": 2, "type": "structured", "marks": 10, "part_count": 2 },
+            { "slot": 3, "type": "structured", "marks": 10, "part_count": 2 },
+            { "slot": 4, "type": "structured", "marks": 10, "part_count": 2 },
+            { "slot": 5, "type": "structured", "marks": 10, "part_count": 2 }
+          ]
+        },
+        {
+          "id": "B",
+          "title": "STRUCTURED",
+          "marks": 20,
+          "instruction": "Answer TWO (2) questions from this section.",
+          "choice": { "mode": "n_of_m", "n": 2, "m": 3 },
+          "questions": [
+            { "slot": 6, "type": "essay", "marks": 10, "optional": true, "part_count": 2 },
+            { "slot": 7, "type": "essay", "marks": 10, "optional": true, "part_count": 2 },
+            { "slot": 8, "type": "essay", "marks": 10, "optional": true, "part_count": 2 }
+          ]
+        }
+      ]
+    },
+    "acsee_math": {
+      "total_marks": 70,
+      "duration": "1:30 Hours",
+      "flat_questions": [
+        { "slot": 1, "type": "structured", "marks": 10, "part_count": 2 },
+        { "slot": 2, "type": "structured", "marks": 10, "part_count": 2 },
+        { "slot": 3, "type": "structured", "marks": 10, "part_count": 2 },
+        { "slot": 4, "type": "structured", "marks": 10, "part_count": 2 },
+        { "slot": 5, "type": "structured", "marks": 10, "part_count": 2 },
+        { "slot": 6, "type": "structured", "marks": 10, "part_count": 2 },
+        { "slot": 7, "type": "structured", "marks": 10, "part_count": 2 }
+      ]
+    }
+  }
+}

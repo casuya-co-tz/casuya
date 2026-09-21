@@ -10,15 +10,18 @@ import type { PromptTemplate } from '../types';
 import { NECTA_TUTORING_TEMPLATE } from './necta/tutoring';
 import { NECTA_QUESTION_TEMPLATE } from './necta/question';
 import { TEST_GENERATION_TEMPLATE } from './necta/test-generation';
+import { PAPER_GENERATION_TEMPLATE } from './necta/paper-generation-grounded';
 
 export {
   NECTA_TUTORING_TEMPLATE,
   NECTA_QUESTION_TEMPLATE,
   TEST_GENERATION_TEMPLATE,
+  PAPER_GENERATION_TEMPLATE,
 };
 
 export const NECTA_TEMPLATES: PromptTemplate[] = [
   NECTA_TUTORING_TEMPLATE,
   NECTA_QUESTION_TEMPLATE,
   TEST_GENERATION_TEMPLATE,
+  PAPER_GENERATION_TEMPLATE,
 ];

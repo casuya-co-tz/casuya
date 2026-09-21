@@ -1,0 +1,104 @@
+{
+  "family": "ftna",
+  "subject_slug": "physics",
+  "subject_name": "PHYSICS",
+  "subject_code": "031",
+  "papers": {
+    "theory": {
+      "paper_code": "031",
+      "paper_title": "PHYSICS",
+      "duration": "2:30 Hours",
+      "total_marks": 100,
+      "exam_body": "NATIONAL EXAMINATIONS COUNCIL OF TANZANIA",
+      "assessment_type": "FORM TWO NATIONAL ASSESSMENT (PRACTICE)",
+      "id_label": "Assessment Number",
+      "candidate_kind": "For Both School and Private Students",
+      "materials": [
+        "Non-programmable calculators and mathematical tables may be used."
+      ],
+      "constants": [
+        "Where necessary, use g = 10 m/s² and π = 3.14."
+      ],
+      "instructions": [
+        "This paper consists of sections A, B, and C with a total of ten (10) questions.",
+        "Answer ALL questions.",
+        "Write your Assessment Number on every page.",
+        "Cellular phones and any unauthorized materials are NOT allowed."
+      ],
+      "assessor_table": { "question_numbers": [1, 2, 3, 4, 5, 6, 7, 8, 9, 10], "checker": true },
+      "sections": [
+        {
+          "id": "A",
+          "title": "OBJECTIVE",
+          "marks": 15,
+          "instruction": "Answer ALL questions in this section.",
+          "choice": { "mode": "all" },
+          "questions": [
+            { "slot": 1, "type": "mcq_bundle", "marks": 10, "item_count": 10, "stem": "For each of the items (i)-(x), choose the correct answer and write its letter in the box provided:" },
+            { "slot": 2, "type": "matching", "marks": 5, "item_count": 5, "stem": "Match the items in List A with the correct responses in List B:" }
+          ]
+        },
+        {
+          "id": "B",
+          "title": "SHORT ANSWER",
+          "marks": 70,
+          "instruction": "Answer ALL questions in this section.",
+          "choice": { "mode": "all" },
+          "questions": [
+            { "slot": 3, "type": "structured", "marks": 10, "part_count": 3 },
+            { "slot": 4, "type": "structured", "marks": 10, "part_count": 3 },
+            { "slot": 5, "type": "structured", "marks": 10, "part_count": 3 },
+            { "slot": 6, "type": "structured", "marks": 10, "part_count": 3 },
+            { "slot": 7, "type": "structured", "marks": 10, "part_count": 3 },
+            { "slot": 8, "type": "structured", "marks": 10, "part_count": 3 },
+            { "slot": 9, "type": "structured", "marks": 10, "part_count": 3 }
+          ]
+        },
+        {
+          "id": "C",
+          "title": "STRUCTURED",
+          "marks": 15,
+          "instruction": "Answer the question in this section.",
+          "choice": { "mode": "all" },
+          "questions": [
+            { "slot": 10, "type": "essay", "marks": 15, "part_count": 3 }
+          ]
+        }
+      ]
+    },
+    "practical": {
+      "paper_code": "031/P",
+      "paper_title": "PHYSICS PRACTICAL",
+      "duration": "1:30 Hours",
+      "total_marks": 50,
+      "exam_body": "SCHOOL INTERNAL EXAMINATION",
+      "assessment_type": "FORM TWO PRACTICAL ASSESSMENT (PRACTICE)",
+      "id_label": "Assessment Number",
+      "candidate_kind": "For School Candidates",
+      "confidential": false,
+      "materials": [
+        "Non-programmable calculators may be used."
+      ],
+      "constants": [],
+      "instructions": [
+        "This paper consists of two (2) practical questions.",
+        "Answer ALL questions.",
+        "Show all observations and calculations clearly."
+      ],
+      "assessor_table": { "question_numbers": [1, 2], "checker": true },
+      "sections": [
+        {
+          "id": "A",
+          "title": "PRACTICAL",
+          "marks": 50,
+          "instruction": "Answer ALL questions in this section.",
+          "choice": { "mode": "all" },
+          "questions": [
+            { "slot": 1, "type": "practical", "marks": 25, "part_count": 3 },
+            { "slot": 2, "type": "practical", "marks": 25, "part_count": 3 }
+          ]
+        }
+      ]
+    }
+  }
+}

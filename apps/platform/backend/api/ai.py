@@ -16,7 +16,14 @@ from backend.middleware.auth import get_current_user
 from backend.middleware.permissions import require_role
 from backend.startup import check_casuya_ai
 from backend.services.ai_bridge.prompts import _SUBJECT_LABELS, _strip_html, check_subject_relevance
-from backend.services.ai_bridge.tests import TEST_TYPES, generate_test_questions
+from backend.services.ai_bridge.tests import (
+    PAPER_VARIANTS,
+    TEST_TYPES,
+    generate_test_paper,
+    generate_test_questions,
+    get_test_presets,
+)
+from backend.services.exam_paper.necta_presets import list_available_papers
 from backend.services.ai_service import (
     analyze_content,
     generate_practice_questions,
@@ -162,10 +169,11 @@ class TestGenerationRequest(BaseModel):
     subtopic: str = ""
     topics: list[str] = []
     subtopics: list[str] = []
-    count: int = 10
+    count: int | None = None
     difficulty: str = "medium"
     subject_slug: str | None = None
     form_level: int | None = None
+    paper: str = "theory"
 
 
 @router.post("/questions/generate")
@@ -276,16 +284,36 @@ async def api_tutoring_quiz(
     return {"questions": questions, "count": len(questions), "source": source}
 
 
+@router.get("/tests/presets")
+async def api_test_presets(
+    subject_slug: str,
+    form_level: int,
+    test_type: str = "topical",
+    _user=Depends(get_current_user),
+):
+    """Return available NECTA-style paper presets for subject/form/test type."""
+    if test_type not in TEST_TYPES:
+        raise HTTPException(
+            status_code=422,
+            detail=f"test_type must be one of {sorted(TEST_TYPES)}",
+        )
+    if subject_slug not in _ALLOWED_SUBJECTS:
+        raise HTTPException(
+            status_code=422,
+            detail=f"subject_slug must be one of {sorted(_ALLOWED_SUBJECTS)}",
+        )
+    if form_level < 1 or form_level > 6:
+        raise HTTPException(status_code=422, detail="form_level must be between 1 and 6")
+
+    result = await get_test_presets(subject_slug, form_level, test_type)
+    if not result.get("presets"):
+        result["presets"] = list_available_papers(subject_slug, form_level, test_type)
+    return result
+
+
 @router.post("/tests/generate")
 async def api_generate_tests(req: TestGenerationRequest, _user=Depends(get_current_user)):
-    """Generate exam-style practice questions grounded in the NECTA/TIE
-    knowledge base (Test Generator shared by admin, teacher, and student).
-
-    The casuya-ai route picks the matching past-paper bucket for the test type
-    (topical/monthly/midterm/terminal/annual/NECTA Form II/IV/VI) + subject +
-    form, grounds the questions on it via RAG, and runs at a low temperature
-    (0.1-0.2) so past questions are never copied verbatim.
-    """
+    """Generate a full NECTA-style examination paper (Test Generator)."""
     if req.test_type not in TEST_TYPES:
         raise HTTPException(
             status_code=422,
@@ -307,10 +335,18 @@ async def api_generate_tests(req: TestGenerationRequest, _user=Depends(get_curre
         raise HTTPException(status_code=422, detail="At most 30 topics and 30 subtopics per test")
     if any(len(t) > 120 for t in req.topics + req.subtopics):
         raise HTTPException(status_code=422, detail="Topic/subtopic titles must be at most 120 characters")
-    if req.count < 1 or req.count > 20:
-        raise HTTPException(status_code=422, detail="count must be between 1 and 20")
+    paper_variant = (req.paper or "theory").lower()
+    if paper_variant not in PAPER_VARIANTS:
+        raise HTTPException(
+            status_code=422,
+            detail=f"paper must be one of {sorted(PAPER_VARIANTS)}",
+        )
+    if req.subject_slug == "mathematics" and paper_variant == "practical":
+        raise HTTPException(status_code=422, detail="Mathematics has no practical paper")
+    if req.count is not None and (req.count < 1 or req.count > 20):
+        raise HTTPException(status_code=422, detail="count must be between 1 and 20 when provided")
 
-    questions, meta = await generate_test_questions(
+    paper_obj, meta = await generate_test_paper(
         req.test_type,
         subject_slug=req.subject_slug,
         form_level=req.form_level,
@@ -318,11 +354,18 @@ async def api_generate_tests(req: TestGenerationRequest, _user=Depends(get_curre
         subtopic=req.subtopic,
         topics=req.topics,
         subtopics=req.subtopics,
-        count=req.count,
+        paper=paper_variant,
         difficulty=req.difficulty,
     )
+    if not paper_obj:
+        raise HTTPException(status_code=503, detail="Could not generate examination paper")
+
     source = meta.get("source", "offline")
+    questions = meta.get("questions") or []
     return {
+        "paper": paper_obj,
+        "markingScheme": meta.get("markingScheme"),
+        "preset": meta.get("preset"),
         "questions": questions,
         "count": len(questions),
         "testType": req.test_type,

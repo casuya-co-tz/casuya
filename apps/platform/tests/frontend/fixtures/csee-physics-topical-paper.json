@@ -1,0 +1,233 @@
+{
+  "kind": "necta",
+  "format_label": "CERTIFICATE OF SECONDARY EDUCATION EXAMINATION (PRACTICE)",
+  "header": {
+    "country": "THE UNITED REPUBLIC OF TANZANIA",
+    "exam_body": "NATIONAL EXAMINATIONS COUNCIL OF TANZANIA",
+    "assessment_type": "CERTIFICATE OF SECONDARY EDUCATION EXAMINATION (PRACTICE)",
+    "exam": "CERTIFICATE OF SECONDARY EDUCATION EXAMINATION (PRACTICE)",
+    "subject": "PHYSICS",
+    "subject_slug": "physics",
+    "subject_code": "031",
+    "paper_code": "031/1",
+    "paper_title": "PHYSICS 1",
+    "candidate_kind": "For Both School and Private Candidates",
+    "id_label": "Examination Number",
+    "form_level": 4,
+    "form_label": "Form IV",
+    "topic": "Force",
+    "duration": "1:00 Hour",
+    "year": "2026",
+    "total_marks": 45,
+    "instructions": [
+      "This paper consists of sections A, B, and C with a total of eleven (11) questions.",
+      "Answer ALL questions in sections A and B, and TWO (2) questions from section C.",
+      "Cellular phones and any unauthorized materials are NOT allowed in the examination room.",
+      "Non-programmable calculators and mathematical tables may be used.",
+      "Where necessary, use g = 10 m/s\u00b2, c = 3.0 \u00d7 10\u2078 m/s, e = 1.6 \u00d7 10\u207b\u00b9\u2079 C, \u03c1w = 1000 kg/m\u00b3."
+    ],
+    "materials": [
+      "Non-programmable calculators and mathematical tables may be used."
+    ],
+    "constants": [
+      "Where necessary, use g = 10 m/s\u00b2, c = 3.0 \u00d7 10\u2078 m/s, e = 1.6 \u00d7 10\u207b\u00b9\u2079 C, \u03c1w = 1000 kg/m\u00b3."
+    ],
+    "confidential": false
+  },
+  "assessor_table": null,
+  "sections": [
+    {
+      "id": "A",
+      "title": "MULTIPLE CHOICE AND MATCHING",
+      "marks": 8,
+      "instruction": "Answer ALL questions in this section.",
+      "choice": {
+        "mode": "all"
+      },
+      "questions": [
+        {
+          "number": 1,
+          "type": "mcq_bundle",
+          "marks": 5,
+          "text": "For each of the items (i)-(v), choose the correct answer and write its letter in the box provided:",
+          "optional": null,
+          "items": [
+            {
+              "number": "i",
+              "text": "(i) Which statement about Force is correct?",
+              "options": {
+                "A": "Correct concept",
+                "B": "Unrelated idea",
+                "C": "Common misconception",
+                "D": "Another distractor"
+              },
+              "answer": "A",
+              "marks": 1
+            },
+            {
+              "number": "ii",
+              "text": "(ii) Which statement about Force is correct?",
+              "options": {
+                "A": "Correct concept",
+                "B": "Unrelated idea",
+                "C": "Common misconception",
+                "D": "Another distractor"
+              },
+              "answer": "A",
+              "marks": 1
+            },
+            {
+              "number": "iii",
+              "text": "(iii) Which statement about Force is correct?",
+              "options": {
+                "A": "Correct concept",
+                "B": "Unrelated idea",
+                "C": "Common misconception",
+                "D": "Another distractor"
+              },
+              "answer": "A",
+              "marks": 1
+            },
+            {
+              "number": "iv",
+              "text": "(iv) Which statement about Force is correct?",
+              "options": {
+                "A": "Correct concept",
+                "B": "Unrelated idea",
+                "C": "Common misconception",
+                "D": "Another distractor"
+              },
+              "answer": "A",
+              "marks": 1
+            },
+            {
+              "number": "v",
+              "text": "(v) Which statement about Force is correct?",
+              "options": {
+                "A": "Correct concept",
+                "B": "Unrelated idea",
+                "C": "Common misconception",
+                "D": "Another distractor"
+              },
+              "answer": "A",
+              "marks": 1
+            }
+          ]
+        },
+        {
+          "number": 2,
+          "type": "matching",
+          "marks": 3,
+          "text": "Match the items in List A with the correct responses in List B by writing the letter of the correct response in the box provided:",
+          "optional": null,
+          "listA": [
+            "Term 1 about Force",
+            "Term 2 about Force",
+            "Term 3 about Force"
+          ],
+          "listB": [
+            "Definition A",
+            "Definition B",
+            "Definition C",
+            "Definition D",
+            "Definition E",
+            "Definition F"
+          ],
+          "answers": [
+            "A",
+            "B",
+            "C"
+          ]
+        }
+      ]
+    },
+    {
+      "id": "B",
+      "title": "SHORT ANSWER",
+      "marks": 18,
+      "instruction": "Answer ALL questions in this section.",
+      "choice": {
+        "mode": "all"
+      },
+      "questions": [
+        {
+          "number": 3,
+          "type": "structured",
+          "marks": 9,
+          "text": "Question on Force.",
+          "optional": null,
+          "parts": [
+            {
+              "label": "a",
+              "text": "Calculate force using $F=ma$ where $m=2$ kg.",
+              "marks": 5
+            },
+            {
+              "label": "b",
+              "text": "(b) Explain using Force.",
+              "marks": 4
+            }
+          ]
+        },
+        {
+          "number": 4,
+          "type": "structured",
+          "marks": 9,
+          "text": "Question on Force.",
+          "optional": null,
+          "parts": [
+            {
+              "label": "a",
+              "text": "(a) Explain using Force.",
+              "marks": 5
+            },
+            {
+              "label": "b",
+              "text": "(b) Explain using Force.",
+              "marks": 4
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "id": "C",
+      "title": "STRUCTURED",
+      "marks": 19,
+      "instruction": "Answer the question in this section.",
+      "choice": {
+        "mode": "all"
+      },
+      "questions": [
+        {
+          "number": 5,
+          "type": "essay",
+          "marks": 19,
+          "text": "Question on Force.",
+          "optional": null,
+          "parts": [
+            {
+              "label": "a",
+              "text": "(a) Explain using Force.",
+              "marks": 7
+            },
+            {
+              "label": "b",
+              "text": "(b) Explain using Force.",
+              "marks": 6
+            },
+            {
+              "label": "c",
+              "text": "(c) Explain using Force.",
+              "marks": 6
+            }
+          ]
+        }
+      ]
+    }
+  ],
+  "meta": {
+    "generator": "offline",
+    "preset_id": "csee_physics_theory"
+  }
+}

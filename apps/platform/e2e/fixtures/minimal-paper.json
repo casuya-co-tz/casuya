@@ -1,0 +1,69 @@
+{
+  "paper": {
+    "kind": "necta",
+    "format_label": "CERTIFICATE OF SECONDARY EDUCATION EXAMINATION (PRACTICE)",
+    "header": {
+      "country": "THE UNITED REPUBLIC OF TANZANIA",
+      "exam_body": "NATIONAL EXAMINATIONS COUNCIL OF TANZANIA",
+      "assessment_type": "CERTIFICATE OF SECONDARY EDUCATION EXAMINATION (PRACTICE)",
+      "subject": "PHYSICS",
+      "subject_slug": "physics",
+      "subject_code": "031",
+      "paper_code": "031/1",
+      "paper_title": "PHYSICS 1",
+      "form_level": 4,
+      "form_label": "Form IV",
+      "topic": "Force",
+      "duration": "1:00 Hour",
+      "year": "2026",
+      "total_marks": 45,
+      "instructions": ["Answer ALL questions in section A."],
+      "materials": [],
+      "constants": []
+    },
+    "sections": [
+      {
+        "id": "A",
+        "title": "MULTIPLE CHOICE",
+        "marks": 5,
+        "instruction": "Answer ALL questions.",
+        "choice": { "mode": "all" },
+        "questions": [
+          {
+            "number": 1,
+            "type": "mcq_bundle",
+            "marks": 5,
+            "text": "Choose the correct answer:",
+            "items": [
+              {
+                "number": "i",
+                "text": "Which formula is correct?",
+                "options": { "A": "F=ma", "B": "F=m/a", "C": "F=a/m", "D": "F=ma^2" },
+                "answer": "A",
+                "marks": 1
+              }
+            ]
+          }
+        ]
+      }
+    ],
+    "meta": { "generator": "e2e-fixture" }
+  },
+  "markingScheme": {
+    "code": "031",
+    "subject": "PHYSICS",
+    "max_marks": 45,
+    "sections": []
+  },
+  "preset": {
+    "id": "csee_physics_theory",
+    "paper_code": "031/1",
+    "paper_title": "PHYSICS 1",
+    "duration": "1:00 Hour",
+    "total_marks": 45
+  },
+  "source": "casuya-ai",
+  "grounded": true,
+  "kbHits": [],
+  "testTypeLabel": "Topical Test"
+}

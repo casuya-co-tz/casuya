@@ -1,0 +1,86 @@
+{
+  "family": "acsee",
+  "subject_slug": "mathematics",
+  "subject_name": "ADVANCED MATHEMATICS",
+  "subject_code": "142",
+  "papers": {
+    "theory": {
+      "paper_code": "142/1",
+      "paper_title": "ADVANCED MATHEMATICS 1",
+      "duration": "3:00 Hours",
+      "total_marks": 100,
+      "exam_body": "NATIONAL EXAMINATIONS COUNCIL OF TANZANIA",
+      "assessment_type": "ADVANCED CERTIFICATE OF SECONDARY EDUCATION EXAMINATION (PRACTICE)",
+      "id_label": "Examination Number",
+      "candidate_kind": "For Both School and Private Candidates",
+      "materials": [
+        "Non-programmable calculators may be used."
+      ],
+      "constants": [],
+      "instructions": [
+        "This paper consists of ten (10) structured questions.",
+        "Answer ALL questions.",
+        "Show clearly all the steps involved in arriving at your answers."
+      ],
+      "flat_questions": [
+        { "slot": 1, "type": "structured", "marks": 10, "part_count": 2 },
+        { "slot": 2, "type": "structured", "marks": 10, "part_count": 2 },
+        { "slot": 3, "type": "structured", "marks": 10, "part_count": 2 },
+        { "slot": 4, "type": "structured", "marks": 10, "part_count": 2 },
+        { "slot": 5, "type": "structured", "marks": 10, "part_count": 2 },
+        { "slot": 6, "type": "structured", "marks": 10, "part_count": 2 },
+        { "slot": 7, "type": "structured", "marks": 10, "part_count": 2 },
+        { "slot": 8, "type": "structured", "marks": 10, "part_count": 2 },
+        { "slot": 9, "type": "structured", "marks": 10, "part_count": 2 },
+        { "slot": 10, "type": "structured", "marks": 10, "part_count": 2 }
+      ]
+    },
+    "theory_2": {
+      "paper_code": "142/2",
+      "paper_title": "ADVANCED MATHEMATICS 2",
+      "duration": "3:00 Hours",
+      "total_marks": 100,
+      "exam_body": "NATIONAL EXAMINATIONS COUNCIL OF TANZANIA",
+      "assessment_type": "ADVANCED CERTIFICATE OF SECONDARY EDUCATION EXAMINATION (PRACTICE)",
+      "id_label": "Examination Number",
+      "candidate_kind": "For Both School and Private Candidates",
+      "materials": [
+        "Non-programmable calculators may be used."
+      ],
+      "constants": [],
+      "instructions": [
+        "This paper consists of sections A and B.",
+        "Answer ALL questions in section A and TWO (2) questions from section B.",
+        "Show clearly all the steps involved in arriving at your answers."
+      ],
+      "sections": [
+        {
+          "id": "A",
+          "title": "PROBLEM SOLVING",
+          "marks": 60,
+          "instruction": "Answer ALL questions in this section.",
+          "choice": { "mode": "all" },
+          "questions": [
+            { "slot": 1, "type": "structured", "marks": 15, "part_count": 3 },
+            { "slot": 2, "type": "structured", "marks": 15, "part_count": 3 },
+            { "slot": 3, "type": "structured", "marks": 15, "part_count": 3 },
+            { "slot": 4, "type": "structured", "marks": 15, "part_count": 3 }
+          ]
+        },
+        {
+          "id": "B",
+          "title": "PROBLEM SOLVING",
+          "marks": 40,
+          "instruction": "Answer TWO (2) questions from this section.",
+          "choice": { "mode": "n_of_m", "n": 2, "m": 4 },
+          "questions": [
+            { "slot": 5, "type": "essay", "marks": 20, "optional": true, "part_count": 4 },
+            { "slot": 6, "type": "essay", "marks": 20, "optional": true, "part_count": 4 },
+            { "slot": 7, "type": "essay", "marks": 20, "optional": true, "part_count": 4 },
+            { "slot": 8, "type": "essay", "marks": 20, "optional": true, "part_count": 4 }
+          ]
+        }
+      ]
+    }
+  }
+}

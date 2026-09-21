@@ -1,0 +1,396 @@
+/* exam-paper.css — A4 NECTA-style printable examination papers */
+
+.exam-paper-root {
+  background: #525659;
+  padding: 1rem 0;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 1rem;
+}
+
+.exam-paper-actions {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 0.5rem;
+  width: 100%;
+  max-width: 210mm;
+  padding: 0 0.5rem;
+}
+
+.exam-page {
+  background: #fff;
+  color: #000;
+  width: 210mm;
+  min-height: 297mm;
+  padding: 15mm 20mm;
+  box-shadow: 0 0 10px rgba(0, 0, 0, 0.3);
+  font-family: "Times New Roman", Times, serif;
+  font-size: 11pt;
+  line-height: 1.4;
+  box-sizing: border-box;
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+}
+
+.exam-page-body {
+  flex: 1;
+}
+
+.exam-header-text {
+  text-align: center;
+  font-weight: bold;
+  font-size: 11pt;
+  line-height: 1.3;
+  text-transform: uppercase;
+}
+
+.exam-code-box {
+  display: inline-block;
+  border: 2px solid #000;
+  padding: 0.15rem 0.5rem;
+  font-weight: bold;
+  font-size: 12pt;
+  margin-bottom: 0.35rem;
+}
+
+.exam-id-line {
+  border-bottom: 1px solid #000;
+  margin: 0.5rem 0;
+  padding-bottom: 0.15rem;
+  font-size: 10pt;
+}
+
+.exam-meta-bar {
+  display: flex;
+  justify-content: space-between;
+  font-weight: bold;
+  margin: 8px 0;
+  border-bottom: 1px solid #000;
+  padding-bottom: 3px;
+}
+
+.exam-instructions-block {
+  font-size: 10pt;
+  border: 1px solid #000;
+  padding: 6px 10px;
+  margin-bottom: 12px;
+}
+
+.exam-instructions-block ol {
+  margin: 2px 0;
+  padding-left: 18px;
+}
+
+.exam-assessor-table {
+  width: 100%;
+  border-collapse: collapse;
+  margin: 10px 0;
+  font-size: 9pt;
+}
+
+.exam-assessor-table th,
+.exam-assessor-table td {
+  border: 1px solid #000;
+  padding: 3px 5px;
+  text-align: center;
+}
+
+.exam-section-head {
+  text-align: center;
+  font-weight: bold;
+  text-decoration: underline;
+  margin: 12px 0 8px;
+}
+
+.exam-section-instr {
+  font-style: italic;
+  font-size: 10pt;
+  margin-bottom: 8px;
+}
+
+.exam-question {
+  margin-bottom: 12px;
+  text-align: justify;
+}
+
+.exam-sub-q {
+  padding-left: 18px;
+  margin-top: 4px;
+}
+
+.exam-mcq-item {
+  margin: 6px 0;
+}
+
+.exam-mcq-header {
+  display: flex;
+  justify-content: space-between;
+  gap: 0.5rem;
+}
+
+.exam-answer-box {
+  width: 28px;
+  height: 22px;
+  border: 1px solid #000;
+  flex-shrink: 0;
+}
+
+.exam-options-grid {
+  padding-left: 18px;
+  font-size: 10.5pt;
+}
+
+.exam-matching-table {
+  width: 100%;
+  border-collapse: collapse;
+  margin: 8px 0;
+  font-size: 10.5pt;
+}
+
+.exam-matching-table th,
+.exam-matching-table td {
+  border: 1px solid #000;
+  padding: 5px;
+  vertical-align: top;
+}
+
+.exam-marks-tag {
+  color: #333;
+  font-size: 10pt;
+  white-space: nowrap;
+}
+
+.exam-answer-space {
+  border-bottom: 1px dotted #666;
+  min-height: 2rem;
+  margin: 4px 0 8px 18px;
+}
+
+.exam-practical-table {
+  width: 100%;
+  border-collapse: collapse;
+  margin: 8px 0;
+}
+
+.exam-practical-table th,
+.exam-practical-table td {
+  border: 1px solid #000;
+  padding: 6px;
+  min-height: 24px;
+}
+
+.exam-footer-bar {
+  display: flex;
+  justify-content: space-between;
+  font-size: 9.5pt;
+  border-top: 1px solid #000;
+  padding-top: 3px;
+  margin-top: 12px;
+}
+
+.exam-marking-scheme {
+  background: #fff;
+  color: #000;
+  width: 210mm;
+  min-height: 200px;
+  padding: 15mm 20mm;
+  box-shadow: 0 0 10px rgba(0, 0, 0, 0.3);
+  font-family: "Times New Roman", Times, serif;
+  font-size: 10pt;
+}
+
+.exam-marking-scheme h3 {
+  text-align: center;
+  text-transform: uppercase;
+}
+
+/* Legacy assignment paper card (backward compat) */
+.exam-paper {
+  background: #fff;
+  color: #1f2937;
+  border: 1px solid #d1d5db;
+  border-radius: 8px;
+  padding: 1.25rem;
+  font-size: 0.9rem;
+  line-height: 1.5;
+}
+
+.exam-cover {
+  text-align: center;
+  padding: 0.75rem 0 0.9rem;
+  border-bottom: 2px solid #e5e7eb;
+  margin-bottom: 0.75rem;
+}
+
+.exam-country {
+  letter-spacing: 0.18em;
+  font-weight: 700;
+  font-size: 0.7rem;
+  color: #374151;
+}
+
+.exam-label {
+  font-size: 1.05rem;
+  font-weight: 800;
+  margin: 0.25rem 0;
+  text-decoration: underline;
+}
+
+.exam-subject {
+  font-size: 1.15rem;
+  font-weight: 800;
+  text-transform: uppercase;
+  letter-spacing: 0.05em;
+}
+
+.exam-meta {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 0.5rem 1.5rem;
+  justify-content: center;
+  margin-top: 0.45rem;
+  font-size: 0.85rem;
+}
+
+.exam-instr {
+  background: #f3f4f6;
+  border: 1px solid #e5e7eb;
+  border-radius: 6px;
+  padding: 0.6rem 1rem;
+  margin-bottom: 1rem;
+}
+
+.exam-section {
+  margin-bottom: 1.1rem;
+}
+
+.exam-sec-head {
+  display: flex;
+  align-items: center;
+  gap: 0.65rem;
+  border-bottom: 2px solid #e5e7eb;
+  padding-bottom: 0.3rem;
+  margin-bottom: 0.4rem;
+}
+
+.exam-sec-id {
+  color: #fff;
+  font-weight: 800;
+  font-size: 0.7rem;
+  padding: 0.15rem 0.6rem;
+  border-radius: 4px;
+}
+
+.exam-sec-title {
+  font-weight: 800;
+  font-size: 0.85rem;
+  flex: 1;
+}
+
+.exam-sec-marks {
+  font-size: 0.78rem;
+  color: #4b5563;
+}
+
+.exam-sec-instr {
+  font-size: 0.82rem;
+  color: #4b5563;
+  margin-bottom: 0.45rem;
+  font-style: italic;
+}
+
+.exam-q {
+  margin-bottom: 0.7rem;
+}
+
+.exam-q-head {
+  display: flex;
+  gap: 0.4rem;
+  align-items: baseline;
+}
+
+.exam-q-no {
+  font-weight: 700;
+  min-width: 1.4rem;
+}
+
+.exam-q-text {
+  flex: 1;
+  font-weight: 500;
+}
+
+.exam-q-marks {
+  color: #6b7280;
+  font-size: 0.8rem;
+}
+
+.exam-opts {
+  margin: 0.3rem 0 0 1.8rem;
+  display: flex;
+  flex-direction: column;
+  gap: 0.15rem;
+}
+
+.exam-opts-static .exam-opt::before {
+  content: "\25CB";
+  color: #6b7280;
+  margin-right: 0.45rem;
+}
+
+.exam-opt {
+  display: flex;
+  gap: 0.45rem;
+  align-items: flex-start;
+  font-size: 0.85rem;
+}
+
+.exam-answer-line {
+  border-bottom: 1px dotted #9ca3af;
+  height: 2.2rem;
+  margin: 0.25rem 0 0 1.8rem;
+}
+
+.exam-check {
+  margin-top: 0.6rem;
+  border-top: 1px dashed #d1d5db;
+  padding-top: 0.6rem;
+  display: flex;
+  gap: 0.75rem;
+  align-items: center;
+  flex-wrap: wrap;
+}
+
+.exam-score-good {
+  color: #15803d;
+  font-weight: 600;
+}
+
+@media print {
+  body * {
+    visibility: hidden;
+  }
+  .exam-paper-root,
+  .exam-paper-root * {
+    visibility: visible;
+  }
+  .exam-paper-root {
+    background: transparent;
+    padding: 0;
+  }
+  .exam-paper-actions {
+    display: none !important;
+  }
+  .exam-page,
+  .exam-marking-scheme {
+    box-shadow: none;
+    margin: 0;
+    page-break-after: always;
+  }
+}
+
+@page {
+  size: A4;
+  margin: 0;
+}

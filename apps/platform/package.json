@@ -10,6 +10,7 @@
     "reseed": "python -m database.seeds.reseed",
     "create-admin": "python -m database.seeds.create_admin",
     "test": "python -m pytest tests/backend -q",
+    "test:frontend": "node --test tests/frontend/*.test.mjs",
     "test:e2e": "playwright test -c e2e/playwright.config.ts",
     "test:coverage": "pytest tests/ --cov=backend --cov=integrations -v",
     "build": "echo 'Frontend assets are built in apps/platform/frontend (CI + Vercel)'",

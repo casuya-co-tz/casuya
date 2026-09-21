@@ -1,17 +1,11 @@
-"""AI bridge — knowledge-base-grounded test/exam generation (Test Generator).
-
-Bridges the platform to the casuya-ai ``/api/tests/generate`` route, which
-grounds generated questions in the NECTA/TIE knowledge base (past papers,
-syllabuses, schemes) for the requested test type (topical/monthly/midterm/
-terminal/annual/NECTA Form II/IV/VI) and runs at a low temperature so the
-model never copies past questions verbatim.
-"""
+"""AI bridge — knowledge-base-grounded test/exam paper generation (Test Generator)."""
 
 from __future__ import annotations
 
-import re
-
 import logging
+
+from backend.services.exam_paper.necta_presets import list_available_papers, resolve_paper_preset
+from backend.services.exam_paper.validator import validate_necta_paper
 
 from .client import AiServiceError, _call_ai_service
 
@@ -28,15 +22,107 @@ TEST_TYPES = {
     "necta_vi": "NECTA Form VI",
 }
 
-_SUBJECT_LABELS = {
-    "mathematics": "Mathematics",
-    "chemistry": "Chemistry",
-    "physics": "Physics",
-}
-
-_FORM_ROMAN = {1: "I", 2: "II", 3: "III", 4: "IV", 5: "V", 6: "VI"}
+PAPER_VARIANTS = ("theory", "theory_2", "practical")
 
 
+async def get_test_presets(
+    subject_slug: str,
+    form_level: int,
+    test_type: str,
+) -> dict:
+    """Return available paper presets for the Test Generator UI."""
+    try:
+        result = await _call_ai_service(
+            "/api/tests/presets",
+            {"subject_slug": subject_slug, "form_level": form_level, "test_type": test_type},
+        )
+        if result and result.get("presets") is not None:
+            return result
+    except AiServiceError as exc:
+        logger.warning("AI presets lookup failed: %s", exc)
+
+    return {
+        "presets": list_available_papers(subject_slug, form_level, test_type),
+        "testType": test_type,
+        "formLevel": form_level,
+        "source": "local",
+    }
+
+
+async def generate_test_paper(
+    test_type: str,
+    subject_slug: str | None = None,
+    form_level: int | None = None,
+    topic: str = "",
+    subtopic: str = "",
+    topics: list[str] | None = None,
+    subtopics: list[str] | None = None,
+    paper: str = "theory",
+    difficulty: str = "medium",
+) -> tuple[dict | None, dict]:
+    """Generate a full NECTA-style examination paper."""
+    topics = [t.strip() for t in (topics or []) if t and t.strip()]
+    subtopics = [t.strip() for t in (subtopics or []) if t and t.strip()]
+    payload: dict = {
+        "test_type": test_type,
+        "topic": topic,
+        "subtopic": subtopic,
+        "topics": topics[:30],
+        "subtopics": subtopics[:30],
+        "paper": paper,
+        "difficulty": difficulty,
+    }
+    if subject_slug:
+        payload["subject_slug"] = subject_slug
+    if form_level:
+        payload["form_level"] = form_level
+
+    preset = resolve_paper_preset(subject_slug or "", form_level or 0, test_type, paper) if subject_slug and form_level else None
+
+    try:
+        result = await _call_ai_service("/api/tests/generate", payload)
+        if result and result.get("paper"):
+            paper_obj = result["paper"]
+            valid, issues = validate_necta_paper(paper_obj, preset)
+            if not valid:
+                logger.warning("AI paper failed validation: %s", issues)
+            else:
+                result["source"] = result.get("source", "casuya-ai")
+                return paper_obj, result
+    except AiServiceError as exc:
+        logger.warning("AI test paper generation failed: %s", exc)
+
+    if subject_slug and form_level:
+        if not preset:
+            preset = resolve_paper_preset(subject_slug, form_level, test_type, paper)
+        if preset:
+            from backend.services.exam_paper.local_paper import build_offline_paper
+
+            offline_paper = build_offline_paper(
+                preset,
+                subject_slug=subject_slug,
+                form_level=form_level,
+                topics=topics or ([topic] if topic else []),
+            )
+            return offline_paper["paper"], {
+                "paper": offline_paper["paper"],
+                "markingScheme": offline_paper.get("markingScheme"),
+                "preset": {
+                    "id": preset["id"],
+                    "paper_code": preset["paper_code"],
+                    "paper_title": preset["paper_title"],
+                    "duration": preset["duration"],
+                    "total_marks": preset["total_marks"],
+                },
+                "grounded": False,
+                "kbHits": [],
+                "source": "offline",
+            }
+
+    return None, {"source": "offline", "grounded": False, "kbHits": []}
+
+
+# Backward-compatible alias used by older tests
 async def generate_test_questions(
     test_type: str,
     subject_slug: str | None = None,
@@ -47,104 +133,44 @@ async def generate_test_questions(
     subtopics: list[str] | None = None,
     count: int = 10,
     difficulty: str = "medium",
+    paper: str = "theory",
 ) -> tuple[list[dict], dict]:
-    """Generate exam-style practice questions grounded in the NECTA/TIE KB.
-
-    ``topics``/``subtopics`` are multi-selection lists (checkboxes) that scope
-    how many topics/subtopics the exam covers. Returns ``(questions, meta)``
-    where ``meta`` carries the machine-readable result from the AI service
-    (``grounded``, ``kbHits``, ``testTypeLabel``) so the frontend can show
-    which papers were used.
-    """
-    topics = [t.strip() for t in (topics or []) if t and t.strip()]
-    subtopics = [t.strip() for t in (subtopics or []) if t and t.strip()]
-    payload: dict = {
-        "test_type": test_type,
-        "topic": topic,
-        "subtopic": subtopic,
-        "topics": topics[:30],
-        "subtopics": subtopics[:30],
-        "count": count,
-        "difficulty": difficulty,
-    }
-    if subject_slug:
-        payload["subject_slug"] = subject_slug
-    if form_level:
-        payload["form_level"] = form_level
-
-    try:
-        result = await _call_ai_service("/api/tests/generate", payload)
-        if result and result.get("questions"):
-            result["source"] = "casuya-ai"
-            return result["questions"], result
-    except AiServiceError as exc:
-        logger.warning("AI test generation failed: %s", exc)
-
-    questions = _generate_test_questions_locally(
-        topic or (topics[0] if topics else ""),
-        count,
-        subject_slug,
-        form_level,
+    paper_obj, meta = await generate_test_paper(
+        test_type,
+        subject_slug=subject_slug,
+        form_level=form_level,
+        topic=topic,
+        subtopic=subtopic,
+        topics=topics,
+        subtopics=subtopics,
+        paper=paper,
+        difficulty=difficulty,
     )
-    return questions, {
-        "questions": questions,
-        "grounded": False,
-        "kbHits": [],
-        "count": len(questions),
-        "source": "offline",
-    }
+    questions = meta.get("questions") or []
+    if not questions and paper_obj:
+        questions = _flatten_mcq_from_paper(paper_obj)
+    meta["questions"] = questions
+    meta["count"] = len(questions)
+    return questions, meta
 
 
-def _generate_test_questions_locally(
-    topic: str,
-    count: int = 10,
-    subject_slug: str | None = None,
-    form_level: int | None = None,
-) -> list[dict]:
-    """Offline fallback: build basic NECTA-style MCQ questions from the topic.
-
-    Uses the same canonical schema as the AI path so ``renderQuizQuestions``
-    works whether or not the casuya-ai service is reachable.
-    """
-    label = _SUBJECT_LABELS.get((subject_slug or "").lower(), "the subject")
-    form_text = _FORM_ROMAN.get(form_level, str(form_level)) if form_level else ""
-    scope = f" for {label}{f', Form {form_text}' if form_text else ''}"
-
-    base = [
-        (
-            f"What key concept in the topic “{topic}” is a student expected to master{scope}?",
-            ("The defining concept of the topic", "An unrelated detail", "A rule from another subject", "A random guess"),
-            "A",
-            f"In this {label} topic, the essential concept is the focus of the lesson.",
-        ),
-        (
-            f"Which of the following is most closely related to “{topic}”{scope}?",
-            ("Applications and problems of the topic", "A topic from another subject", "A non-subject matter item", "An unrelated fact"),
-            "A",
-            f"The question tests recognition of ideas that belong to “{topic}” in {label}.",
-        ),
-        (
-            f"When studying “{topic}”{scope}, the most reliable approach is to",
-            ("practice problems and review worked examples", "memorize without understanding", "skip the topic", "guess the answer"),
-            "A",
-            "Practice and review of worked examples build the competence the syllabus requires.",
-        ),
-        (
-            f"The topic “{topic}” belongs to the study area of",
-            (label, "History", "Geography", "Literature"),
-            "A",
-            f"“{topic}” is studied under {label} in the Tanzanian curriculum.",
-        ),
-    ]
-
-    questions = []
-    for i, (text, options, answer, explanation) in enumerate(base[:count]):
-        questions.append(
-            {
-                "text": text,
-                "options": list(options),
-                "correctAnswer": answer,
-                "explanation": explanation,
-            }
-        )
-    return questions
+def _flatten_mcq_from_paper(paper: dict) -> list[dict]:
+    out: list[dict] = []
+    for sec in paper.get("sections") or []:
+        for q in sec.get("questions") or []:
+            if q.get("type") == "mcq_bundle":
+                for item in q.get("items") or []:
+                    opts = item.get("options") or {}
+                    if isinstance(opts, dict):
+                        options = [f"{k}. {v}" for k, v in opts.items()]
+                    else:
+                        options = list(opts)
+                    out.append(
+                        {
+                            "text": f"({item.get('number', '')}) {item.get('text', '')}",
+                            "options": options,
+                            "correctAnswer": item.get("answer", "A"),
+                            "explanation": "",
+                        }
+                    )
+    return out

@@ -1,10 +1,5 @@
 import { CasuyaAI } from '../src/casuya-ai';
 import {
-  Difficulty,
-  QuestionCategory,
-  QuestionType,
-} from '../src/types/index';
-import {
   getKnowledgeBase,
   SearchOptions,
   examTypeToKbFilter,
@@ -12,34 +7,32 @@ import {
   TEST_EXAM_TYPE_LABELS,
   TestExamType,
 } from '../src/kb';
+import {
+  listAvailablePapers,
+  resolvePaperPreset,
+} from '../src/kb/paper-presets';
+import { PaperVariant } from '../src/kb/paper-types';
+import { ProviderFactory } from '../src/providers/provider-factory';
 import { resolveSubject } from '../server';
+import {
+  assemblePaperFromContent,
+  buildMarkingSchemeFromPaper,
+  buildPaperPrompt,
+  buildPlaceholderPaper,
+  parsePaperJson,
+  validateNectaPaper,
+} from '../server-utils/paper';
 
-/** Low sampling temperature so questions stay close to the source material
- *  without ever copying exam questions verbatim (user requirement: 0.1–0.2). */
+/** Low sampling temperature — grounded, no verbatim copying. */
 const TEST_TEMPERATURE = 0.15;
 
-const DIFFICULTY_MAP: Record<string, Difficulty> = {
-  easy: Difficulty.BEGINNER,
-  beginner: Difficulty.BEGINNER,
-  medium: Difficulty.INTERMEDIATE,
-  intermediate: Difficulty.INTERMEDIATE,
-  hard: Difficulty.ADVANCED,
-  advanced: Difficulty.ADVANCED,
-};
-
-function clampCount(value: unknown): number {
-  const n = Number(value);
-  return Number.isFinite(n) ? Math.min(Math.max(Math.round(n), 1), 20) : 10;
+function parsePaperVariant(value: unknown): PaperVariant {
+  const v = String(value || 'theory').toLowerCase();
+  if (v === 'theory_2' || v === 'theory2') return 'theory_2';
+  if (v === 'practical') return 'practical';
+  return 'theory';
 }
 
-/**
- * Knowledge-base retrieval for a test type.
- *
- * Prefers the exact exam-paper bucket for the request (e.g. `_form4_terminal_`
- * for Terminal Test Form IV, level `csee` for NECTA Form IV). Falls back to the
- * syllabus/scheme/lessons corpus so even types without dedicated papers
- * (Monthly Test today) are still grounded in the knowledge base as requested.
- */
 function retrieveTestContext(body: any): { ragText: string; kbHits: unknown[] } {
   const kb = getKnowledgeBase();
   const empty = { ragText: '', kbHits: [] };
@@ -66,8 +59,9 @@ function retrieveTestContext(body: any): { ragText: string; kbHits: unknown[] } 
     .trim();
   if (!query) return empty;
 
-  const maxChars = Number(process.env.KB_RAG_MAX_CHARS) || 7000;
+  const maxChars = Number(process.env.KB_RAG_MAX_CHARS) || 9000;
   const filter = examTypeToKbFilter(testType, validForm);
+  const paper = parsePaperVariant(body.paper);
 
   const examOpts: SearchOptions = {
     subject,
@@ -81,13 +75,26 @@ function retrieveTestContext(body: any): { ragText: string; kbHits: unknown[] } 
   let rag = kb.buildRagContext(query, examOpts, maxChars);
 
   if (!rag.docs.length) {
-    // No dedicated papers for this type/level — widen to the general corpus
-    // (syllabus, schemes, lessons, marking schemes, exam formats).
     rag = kb.buildRagContext(
       query,
-      { subject, kind: ['syllabus', 'scheme', 'lesson', 'exam_format', 'marking_scheme'], limit: 4 },
+      {
+        subject,
+        kind: ['syllabus', 'scheme', 'lesson', 'exam_format', 'marking_scheme'],
+        limit: 5,
+      },
       maxChars,
     );
+  }
+
+  if (paper === 'practical') {
+    const practicalRag = kb.buildRagContext(
+      `${query} practical experiment apparatus`,
+      { subject, kind: ['syllabus', 'scheme', 'lesson'], limit: 3 },
+      Math.floor(maxChars / 2),
+    );
+    if (practicalRag.text) {
+      rag = { text: `${rag.text}\n\nPRACTICAL CONTEXT:\n${practicalRag.text}`, docs: [...rag.docs, ...practicalRag.docs] };
+    }
   }
 
   return {
@@ -105,17 +112,91 @@ function retrieveTestContext(body: any): { ragText: string; kbHits: unknown[] } 
   };
 }
 
+export function handleTestPresets(body: any): unknown {
+  const subjectSlug = String(body.subject_slug || '').toLowerCase();
+  const formLevel = Number(body.form_level);
+  const testType: TestExamType = isTestExamType(body.test_type) ? body.test_type : 'topical';
+  if (!subjectSlug || !Number.isInteger(formLevel) || formLevel < 1 || formLevel > 6) {
+    return { presets: [], error: 'subject_slug and form_level (1-6) required' };
+  }
+  const presets = listAvailablePapers({ subject_slug: subjectSlug, form_level: formLevel, test_type: testType });
+  return { presets, testType, formLevel };
+}
+
+async function generatePaperWithAi(
+  preset: NonNullable<ReturnType<typeof resolvePaperPreset>>,
+  args: {
+    subject: string;
+    subjectSlug: string;
+    formLevel: number;
+    topics: string[];
+    subtopics: string[];
+    testTypeLabel: string;
+    ragText: string;
+  },
+): Promise<{ paper: ReturnType<typeof assemblePaperFromContent>; markingScheme: ReturnType<typeof buildMarkingSchemeFromPaper> } | null> {
+  const provider = ProviderFactory.getProvider('failover') || ProviderFactory.getProvider('local');
+  if (!provider) return null;
+
+  const prompt = buildPaperPrompt({
+    preset,
+    subject: args.subject,
+    topics: args.topics,
+    subtopics: args.subtopics,
+    testTypeLabel: args.testTypeLabel,
+    referenceContext: args.ragText,
+  });
+
+  const slotCount = preset.flat_questions?.length
+    || preset.sections?.reduce((n, s) => n + s.questions.length, 0)
+    || 10;
+  const maxTokens = Math.min(12000, Math.max(4096, slotCount * 400));
+
+  const result = await provider.chatCompletion({
+    messages: [
+      { role: 'system', content: 'You are a Tanzanian NECTA examination setter. Respond with valid JSON only.' },
+      { role: 'user', content: prompt },
+    ],
+    temperature: TEST_TEMPERATURE,
+    maxTokens,
+  });
+
+  const parsed = parsePaperJson(result.content);
+  if (!parsed) return null;
+
+  const paper = assemblePaperFromContent(preset, parsed, {
+    subject: args.subject,
+    subjectSlug: args.subjectSlug,
+    formLevel: args.formLevel,
+    topics: args.topics,
+    generator: 'casuya-ai',
+  });
+  const validation = validateNectaPaper(paper, preset);
+  if (!validation.valid) {
+    console.warn('[tests/generate] assembled paper failed validation:', validation.issues);
+    return null;
+  }
+  const markingScheme = buildMarkingSchemeFromPaper(paper, parsed);
+  return { paper, markingScheme };
+}
+
 export async function handleTestGenerate(
   ai: CasuyaAI,
   body: any,
 ): Promise<unknown> {
+  void ai;
   const testType: TestExamType = isTestExamType(body.test_type) ? body.test_type : 'topical';
   const testTypeLabel = TEST_EXAM_TYPE_LABELS[testType];
   const subject = resolveSubject(body.subject_slug);
+  const subjectSlug = String(body.subject_slug || '').toLowerCase();
   const formLevel = Number(body.form_level);
-  const validForm = Number.isInteger(formLevel) && formLevel >= 1 && formLevel <= 6 ? formLevel : undefined;
-  const count = clampCount(body.count);
-  const difficulty = DIFFICULTY_MAP[String(body.difficulty || '').toLowerCase()] ?? Difficulty.INTERMEDIATE;
+  const validForm = Number.isInteger(formLevel) && formLevel >= 1 && formLevel <= 6 ? formLevel : 4;
+  const paperVariant = parsePaperVariant(body.paper);
+
+  if (subjectSlug === 'mathematics' && paperVariant === 'practical') {
+    return { error: 'Mathematics has no practical paper', paper: null };
+  }
+
   const topics = (Array.isArray(body.topics) ? body.topics : [])
     .map((t: unknown) => String(t || '').trim())
     .filter(Boolean)
@@ -126,42 +207,90 @@ export async function handleTestGenerate(
     .slice(0, 30);
   const topic =
     String(body.topic || '').trim() || topics[0] || `${subject.name} ${testTypeLabel.toLowerCase()}`;
-  const subtopic = String(body.subtopic || '').trim() || subtopics[0] || '';
 
-  const { ragText, kbHits } = retrieveTestContext(body);
+  const preset = resolvePaperPreset({
+    subject_slug: subjectSlug,
+    form_level: validForm,
+    test_type: testType,
+    paper: paperVariant,
+  });
 
-  let questions: unknown[] = [];
-  try {
-    const generated = await ai.questionGenerator.generateQuestions({
-      subject: subject.name || subject.enumValue,
-      topic: topic.slice(0, 80),
-      subtopic,
-      topicsCovered: topics.length ? topics : undefined,
-      subtopicsCovered: subtopics.length ? subtopics : undefined,
-      questionType: QuestionType.MULTIPLE_CHOICE,
-      difficulty,
-      category: QuestionCategory.COMPREHENSION,
-      count,
-      formLevel: validForm,
-      testTypeLabel,
-      referenceContext: ragText || undefined,
-      temperature: TEST_TEMPERATURE,
-    });
-    questions = (generated || []).slice(0, count);
-  } catch (err) {
-    console.error('[tests/generate] question generation failed:', err);
+  if (!preset) {
+    return { error: 'No preset for subject/form/paper combination', paper: null };
   }
 
+  const { ragText, kbHits } = retrieveTestContext(body);
+  const allTopics = topics.length ? topics : [topic];
+
+  let paper;
+  let markingScheme;
+  let source = 'offline';
+
+  try {
+    const generated = await generatePaperWithAi(preset, {
+      subject: subject.name || subject.enumValue,
+      subjectSlug,
+      formLevel: validForm,
+      topics: allTopics,
+      subtopics,
+      testTypeLabel,
+      ragText,
+    });
+    if (generated?.paper?.sections?.length) {
+      paper = generated.paper;
+      markingScheme = generated.markingScheme;
+      source = 'casuya-ai';
+    }
+  } catch (err) {
+    console.error('[tests/generate] paper generation failed:', err);
+  }
+
+  if (!paper) {
+    paper = buildPlaceholderPaper(preset, {
+      subject: subject.name || subject.enumValue,
+      subjectSlug,
+      formLevel: validForm,
+      topics: allTopics,
+    });
+    markingScheme = buildMarkingSchemeFromPaper(paper);
+  }
+
+  const flatQuestions = paper.sections.flatMap((sec) =>
+    sec.questions.flatMap((q) => {
+      if (q.type === 'mcq_bundle' && q.items) {
+        return q.items.map((it) => ({
+          text: `(${it.number}) ${it.text}`,
+          options: Object.entries(typeof it.options === 'object' && !Array.isArray(it.options) ? it.options : {}).map(
+            ([k, v]) => `${k}. ${v}`,
+          ),
+          correctAnswer: it.answer,
+          explanation: '',
+        }));
+      }
+      return [];
+    }),
+  );
+
   return {
-    questions,
-    count: questions.length,
+    paper,
+    markingScheme,
+    preset: {
+      id: preset.id,
+      paper_code: preset.paper_code,
+      paper_title: preset.paper_title,
+      duration: preset.duration,
+      total_marks: preset.total_marks,
+    },
+    questions: flatQuestions,
+    count: flatQuestions.length,
     testType,
     testTypeLabel,
     grounded: !!ragText,
     subject: subject.name,
-    formLevel: validForm ?? null,
-    topics,
+    formLevel: validForm,
+    topics: allTopics,
     subtopics,
     kbHits,
+    source,
   };
 }

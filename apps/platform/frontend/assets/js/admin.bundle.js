@@ -2376,63 +2376,19 @@ function injectBridgeScript(html) {
   return html.replace("</html>", bridgeScript + "</html>");
 }
 ;
-// modules/exams.js — shared NECTA / internal-exam format paper renderer.
+// modules/exams.js — NECTA / internal-exam format paper renderer (A4 print layout).
 //
-// Renders the canonical assignment "paper_json" (see
-// backend/services/exam_paper_service.py) exactly like a printed NECTA /
-// internal examination: cover, instructions, sections, numbered questions
-// with marks and options. Used by the teacher dashboard for the
-// "Generate with AI -> preview -> assign" flow and by the student dashboard
-// for an answerable paper (multiple-choice auto-check).
-//
-// Both role bundles load this from the shared core, so these helpers are
-// intentionally plain global functions (no imports/exports).
+// Renders paper_json from Test Generator and assignment flows. Supports
+// mcq_bundle, matching, structured, essay, practical, and legacy flat MCQ.
 
 "use strict";
-
-(function injectExamStyles() {
-  if (document.getElementById("exam-paper-styles")) return;
-  const style = document.createElement("style");
-  style.id = "exam-paper-styles";
-  style.textContent = [
-    ".exam-paper{background:#fff;color:#1f2937;border:1px solid #d1d5db;border-radius:8px;padding:1.25rem 1.25rem 0.75rem;font-size:0.9rem;line-height:1.5}",
-    ".exam-cover{text-align:center;padding:0.75rem 0 0.9rem;border-bottom:2px solid #e5e7eb;margin-bottom:0.75rem}",
-    ".exam-country{letter-spacing:0.18em;font-weight:700;font-size:0.7rem;color:#374151}",
-    ".exam-label{font-size:1.05rem;font-weight:800;margin:0.25rem 0 0.15rem;text-decoration:underline}",
-    ".exam-subject{font-size:1.15rem;font-weight:800;text-transform:uppercase;letter-spacing:0.05em;margin-top:0.15rem}",
-    ".exam-meta{display:flex;flex-wrap:wrap;gap:0.5rem 1.5rem;justify-content:center;margin-top:0.45rem;font-size:0.85rem;color:#374151}",
-    ".exam-topic{margin-top:0.3rem;font-style:italic;font-size:0.85rem;color:#4b5563}",
-    ".exam-instr{background:#f3f4f6;border:1px solid #e5e7eb;border-radius:6px;padding:0.6rem 1rem 0.6rem 0.6rem;margin-bottom:1rem}",
-    ".exam-instr-title{font-weight:800;font-size:0.78rem;letter-spacing:0.12em;margin-bottom:0.25rem}",
-    ".exam-instr ol{margin:0 0 0 1.1rem;padding:0;font-size:0.85rem}",
-    ".exam-section{margin-bottom:1.1rem}",
-    ".exam-sec-head{display:flex;align-items:center;gap:0.65rem;border-bottom:2px solid #e5e7eb;padding-bottom:0.3rem;margin-bottom:0.4rem}",
-    ".exam-sec-id{color:#fff;font-weight:800;font-size:0.7rem;letter-spacing:0.08em;padding:0.15rem 0.6rem;border-radius:4px;white-space:nowrap}",
-    ".exam-sec-title{font-weight:800;font-size:0.85rem;letter-spacing:0.05em;flex:1}",
-    ".exam-sec-marks{font-size:0.78rem;color:#4b5563;white-space:nowrap}",
-    ".exam-sec-instr{font-size:0.82rem;color:#4b5563;margin-bottom:0.45rem;font-style:italic}",
-    ".exam-q{margin-bottom:0.7rem}",
-    ".exam-q-head{display:flex;gap:0.4rem;align-items:baseline}",
-    ".exam-q-no{font-weight:700;min-width:1.4rem}",
-    ".exam-q-text{flex:1;font-weight:500}",
-    ".exam-q-marks{color:#6b7280;font-size:0.8rem;white-space:nowrap}",
-    ".exam-opts{margin:0.3rem 0 0 1.8rem;display:flex;flex-direction:column;gap:0.15rem}",
-    ".exam-opts-static .exam-opt::before{content:'\\25CB';color:#6b7280;margin-right:0.45rem}",
-    ".exam-opt{display:flex;gap:0.45rem;align-items:flex-start;cursor:pointer;font-size:0.85rem;font-variant-numeric:tabular-nums}",
-    ".exam-opt input{margin-top:0.18rem}",
-    ".exam-answer-line{border-bottom:1px dotted #9ca3af;height:2.2rem;margin:0.25rem 0 0 1.8rem}",
-    ".exam-check{margin-top:0.6rem;border-top:1px dashed #d1d5db;padding-top:0.6rem;display:flex;gap:0.75rem;align-items:center;flex-wrap:wrap}",
-    ".exam-score{font-size:0.85rem}",
-    ".exam-score-good{color:#15803d;font-weight:600}",
-  ].join("");
-  document.head.appendChild(style);
-})();
 
 const EXAM_PAPER_COLORS = { necta: "#0b3d91", internal: "#14532d", exercise: "#7c2d12" };
 
 function examKindLabel(paper) {
   const k = paper && paper.kind;
   if (paper && paper.format_label) return paper.format_label;
+  if (paper?.header?.assessment_type) return paper.header.assessment_type;
   if (k === "necta") return "NECTA-STYLE EXAMINATION";
   if (k === "exercise") return "CLASS EXERCISE";
   return "INTERNAL EXAMINATION";
@@ -2450,176 +2406,391 @@ function examPaperMetaLine(psummary) {
   return parts.join(" \u2022 ");
 }
 
-function renderExamSection(sec, ctx) {
-  const qs = Array.isArray(sec.questions) ? sec.questions : [];
-  const marks = qs.reduce((n, q) => n + (parseInt(q.marks, 10) || 0), 0);
-  let html =
-    '<div class="exam-section">' +
-    '<div class="exam-sec-head">' +
-    '<span class="exam-sec-id" style="background:' + escapeHtml(ctx.color) + '">SECTION ' + escapeHtml((sec.id || "").trim()) + "</span>" +
-    '<span class="exam-sec-title">' + escapeHtml(sec.title || "QUESTIONS") + "</span>" +
-    '<span class="exam-sec-marks">' + marks + " marks</span>" +
-    "</div>";
-  if (sec.instruction) html += '<div class="exam-sec-instr">' + escapeHtml(sec.instruction) + "</div>";
-  html += qs.map((q) => renderExamQuestion(q, sec.question_type, ctx)).join("");
+function _isNectaPaper(paper) {
+  return Boolean(
+    paper?.header?.subject_code ||
+    paper?.header?.paper_code ||
+    (paper?.sections || []).some((s) =>
+      (s.questions || []).some((q) =>
+        q.type === "mcq_bundle" || q.type === "matching" || q.type === "practical" || q.items
+      )
+    )
+  );
+}
+
+function _renderMcqBundle(q, ctx) {
+  const items = Array.isArray(q.items) ? q.items : [];
+  let html = '<div class="exam-question">';
+  html += `<strong>${escapeHtml(q.number)}.</strong> ${escapeHtml(q.text || q.stem || "")}`;
+  if (q.marks) html += ` <span class="exam-marks-tag">[${q.marks}]</span>`;
+  html += items.map((it) => {
+    const opts = it.options || {};
+    const optHtml = typeof opts === "object" && !Array.isArray(opts)
+      ? Object.entries(opts).map(([k, v]) => `${escapeHtml(k)}. ${escapeHtml(v)}`).join(" &nbsp;&nbsp; ")
+      : (Array.isArray(opts) ? opts.map((o) => escapeHtml(o)).join(" &nbsp;&nbsp; ") : "");
+    let block = `<div class="exam-mcq-item"><div class="exam-mcq-header">`;
+    block += `<div class="exam-mcq-text">(${escapeHtml(it.number || "")}) ${escapeHtml(it.text || "")}</div>`;
+    if (ctx.mode === "student") {
+      block += `<input type="text" maxlength="1" class="exam-answer-box-input" style="width:28px;height:22px;border:1px solid #000;text-align:center" aria-label="Answer for item ${escapeHtml(it.number || "")}">`;
+    } else {
+      block += '<div class="exam-answer-box"></div>';
+    }
+    block += `</div><div class="exam-options-grid">${optHtml}</div></div>`;
+    return block;
+  }).join("");
   html += "</div>";
   return html;
 }
 
-function renderExamQuestion(q, type, ctx) {
+function _renderMatching(q, ctx) {
+  const listA = Array.isArray(q.listA) ? q.listA : [];
+  const listB = Array.isArray(q.listB) ? q.listB : [];
+  let html = '<div class="exam-question">';
+  html += `<strong>${escapeHtml(q.number)}.</strong> ${escapeHtml(q.text || q.stem || "Match List A with List B:")}`;
+  if (q.marks) html += ` <span class="exam-marks-tag">[${q.marks}]</span>`;
+  html += '<table class="exam-matching-table"><thead><tr><th>List A</th><th>Answer</th></tr></thead><tbody>';
+  html += listA.map((item, i) => {
+    const ansCell = ctx.mode === "student"
+      ? `<input type="text" maxlength="1" style="width:28px;border:1px solid #000;text-align:center">`
+      : '<div class="exam-answer-box" style="margin:0 auto"></div>';
+    return `<tr><td>(${escapeHtml(String.fromCharCode(105 + i))}) ${escapeHtml(item)}</td><td style="text-align:center;width:60px">${ansCell}</td></tr>`;
+  }).join("");
+  html += "</tbody></table>";
+  html += '<p style="font-size:10pt"><strong>List B</strong></p><ol style="font-size:10.5pt">';
+  html += listB.map((b) => `<li>${escapeHtml(b)}</li>`).join("");
+  html += "</ol></div>";
+  return html;
+}
+
+function _renderStructured(q, ctx) {
+  const parts = q.parts || q.sub_questions || q.tasks || [];
+  let html = '<div class="exam-question">';
+  html += `<strong>${escapeHtml(q.number)}.</strong> ${escapeHtml(q.text || q.stem || "")}`;
+  if (q.marks) html += ` <span class="exam-marks-tag">[${q.marks}]</span>`;
+  if (q.type === "practical") {
+    if (Array.isArray(q.apparatus) && q.apparatus.length) {
+      html += '<p><strong>Apparatus:</strong></p><ul>';
+      html += q.apparatus.map((a) => `<li>${escapeHtml(a)}</li>`).join("");
+      html += "</ul>";
+    }
+    if (Array.isArray(q.procedure) && q.procedure.length) {
+      html += '<p><strong>Procedure:</strong></p><ol>';
+      html += q.procedure.map((p) => `<li>${escapeHtml(p)}</li>`).join("");
+      html += "</ol>";
+    }
+    (q.tables || []).forEach((tbl) => {
+      html += `<p><strong>${escapeHtml(tbl.title || "Table")}</strong></p>`;
+      html += '<table class="exam-practical-table"><thead><tr>';
+      (tbl.columns || []).forEach((c) => { html += `<th>${escapeHtml(c)}</th>`; });
+      html += "</tr></thead><tbody>";
+      const rows = Math.max(3, parseInt(tbl.rows, 10) || 4);
+      for (let r = 0; r < rows; r++) {
+        html += "<tr>";
+        (tbl.columns || ["Col"]).forEach(() => { html += "<td>&nbsp;</td>"; });
+        html += "</tr>";
+      }
+      html += "</tbody></table>";
+    });
+  }
+  html += parts.map((p) => {
+    const label = p.label || "";
+    const marks = p.marks ? ` <span class="exam-marks-tag">[${p.marks}]</span>` : "";
+    let part = `<div class="exam-sub-q">(${escapeHtml(label)}) ${escapeHtml(p.text || "")}${marks}`;
+    if (ctx.mode === "student") {
+      part += `<textarea class="exam-structured-answer" data-question="${escapeHtml(q.number)}-${escapeHtml(label)}" placeholder="Write your answer..." style="width:100%;min-height:60px;margin-top:4px;font-family:inherit;font-size:10pt"></textarea>`;
+    } else {
+      part += '<div class="exam-answer-space"></div>';
+    }
+    part += "</div>";
+    return part;
+  }).join("");
+  html += "</div>";
+  return html;
+}
+
+function _renderLegacyQuestion(q, type, ctx) {
   const marks = parseInt(q.marks, 10) || 0;
-  const isMcq = type === "mcq";
-  let html =
-    '<div class="exam-q" data-q="' + escapeHtml(q.number) + '">' +
-    '<div class="exam-q-head">' +
-    '<span class="exam-q-no">' + escapeHtml(q.number) + ".</span>" +
-    '<span class="exam-q-text">' + escapeHtml(q.text) + "</span>" +
-    (marks ? '<span class="exam-q-marks">(' + marks + ")</span>" : "") +
-    "</div>";
+  const isMcq = type === "mcq" || (Array.isArray(q.options) && q.options.length);
+  let html = `<div class="exam-q" data-q="${escapeHtml(q.number)}">`;
+  html += '<div class="exam-q-head">';
+  html += `<span class="exam-q-no">${escapeHtml(q.number)}.</span>`;
+  html += `<span class="exam-q-text">${escapeHtml(q.text || "")}</span>`;
+  if (marks) html += `<span class="exam-q-marks">(${marks})</span>`;
+  html += "</div>";
   if (isMcq) {
     const opts = Array.isArray(q.options) ? q.options : [];
     if (ctx.mode === "student") {
-      html +=
-        '<div class="exam-opts">' +
-        opts
-          .map(
-            (o, i) =>
-              '<label class="exam-opt"><input type="radio" name="' +
-              escapeHtml(ctx.ns + "-" + q.number) +
-              '" value="' +
-              i +
-              '"><span>' +
-              escapeHtml(o) +
-              "</span></label>"
-          )
-          .join("") +
-        "</div>";
+      html += '<div class="exam-opts">';
+      html += opts.map((o, i) =>
+        `<label class="exam-opt"><input type="radio" name="${escapeHtml(ctx.ns + "-" + q.number)}" value="${i}"><span>${escapeHtml(o)}</span></label>`
+      ).join("");
+      html += "</div>";
     } else {
-      html +=
-        '<div class="exam-opts exam-opts-static">' +
-        opts.map((o) => '<div class="exam-opt">' + escapeHtml(o) + "</div>").join("") +
-        "</div>";
+      html += '<div class="exam-opts exam-opts-static">';
+      html += opts.map((o) => `<div class="exam-opt">${escapeHtml(o)}</div>`).join("");
+      html += "</div>";
     }
+  } else if (ctx.mode === "student") {
+    html += `<textarea class="exam-structured-answer" data-question="${escapeHtml(q.number)}" placeholder="Write your answer..." style="width:100%;min-height:80px;margin-top:4px"></textarea>`;
   } else {
-    if (ctx.mode === "student") {
-      html +=
-        '<div style="display:flex;gap:0.35rem;align-items:flex-start">' +
-        '<textarea class="exam-structured-answer" data-question="' + escapeHtml(q.number) + '" placeholder="Write your answer here..." style="flex:1;min-width:0;min-height:80px;padding:0.5rem;border:1px solid #d1d5db;border-radius:6px;font-family:inherit;font-size:0.9rem;resize:vertical;margin-top:0"></textarea>' +
-        '<button type="button" class="casuya-record" data-human-speech-only="true" data-lang="auto" data-label="Speak your answer" title="Speak your answer" aria-label="Speak your answer" style="margin-top:0">🎤 Voice</button>' +
-        "</div>";
-    } else {
-      html += '<div class="exam-answer-line"></div>';
-    }
+    html += '<div class="exam-answer-line"></div>';
   }
   html += "</div>";
   return html;
 }
 
-// Render the exam paper as HTML. opts.mode: "preview" (teacher) | "student".
-// opts.ns: a unique namespace for radio name attributes (per assignment).
+function _renderNectaSection(sec, ctx) {
+  const qs = Array.isArray(sec.questions) ? sec.questions : [];
+  const marks = sec.marks || qs.reduce((n, q) => n + (parseInt(q.marks, 10) || 0), 0);
+  let html = `<div class="exam-section-block">`;
+  html += `<div class="exam-section-head">SECTION ${escapeHtml(sec.id || "")} (${marks} Marks)</div>`;
+  if (sec.instruction) html += `<div class="exam-section-instr">${escapeHtml(sec.instruction)}</div>`;
+  if (sec.choice?.mode === "n_of_m") {
+    html += `<div class="exam-section-instr">Answer ${sec.choice.n} of ${sec.choice.m} questions.</div>`;
+  }
+  html += qs.map((q) => {
+    const t = q.type || sec.question_type || "structured";
+    if (t === "mcq_bundle" || q.items) return _renderMcqBundle(q, ctx);
+    if (t === "matching") return _renderMatching(q, ctx);
+    if (t === "mcq") return _renderLegacyQuestion(q, "mcq", ctx);
+    return _renderStructured(q, ctx);
+  }).join("");
+  html += "</div>";
+  return html;
+}
+
+function _renderAssessorTable(table) {
+  if (!table?.question_numbers?.length) return "";
+  const nums = table.question_numbers;
+  let html = '<p style="font-size:9pt;font-weight:bold;text-align:center;margin-top:10px">FOR ASSESSOR\'S USE ONLY</p>';
+  html += '<table class="exam-assessor-table"><thead><tr>';
+  nums.forEach((n) => { html += `<th>Q${n}</th>`; });
+  html += "<th>TOTAL</th>";
+  if (table.checker) html += "<th>CHECKER</th>";
+  html += "</tr></thead><tbody><tr>";
+  nums.forEach(() => { html += "<td>&nbsp;</td>"; });
+  html += "<td>&nbsp;</td>";
+  if (table.checker) html += "<td>&nbsp;</td>";
+  html += "</tr></tbody></table>";
+  return html;
+}
+
+function _renderNectaCover(h, paper, pageNum, totalPages) {
+  const code = h.subject_code || "";
+  const title = h.paper_code ? `${h.paper_code} ${h.paper_title || h.subject || ""}`.trim() : (h.subject || "");
+  let html = '<div class="exam-page"><div class="exam-page-body">';
+  if (pageNum === 1) {
+    if (code) html += `<div style="text-align:left"><span class="exam-code-box">${escapeHtml(code)}</span></div>`;
+    html += `<div class="exam-id-line">${escapeHtml(h.id_label || "Examination Number")}: _________________________</div>`;
+    html += '<div class="exam-header-text">';
+    html += `${escapeHtml(h.country || "THE UNITED REPUBLIC OF TANZANIA")}<br>`;
+    html += `${escapeHtml(h.exam_body || "NATIONAL EXAMINATIONS COUNCIL OF TANZANIA")}<br>`;
+    html += `${escapeHtml(h.assessment_type || examKindLabel(paper))}`;
+    html += "</div>";
+    if (h.candidate_kind) html += `<div class="exam-header-text" style="font-size:10pt;margin-top:4px">(${escapeHtml(h.candidate_kind)})</div>`;
+    html += `<div class="exam-header-text" style="margin-top:6px">${escapeHtml(title.toUpperCase())}</div>`;
+    html += '<div class="exam-meta-bar">';
+    html += `<span>Time: ${escapeHtml(h.duration || "")}</span>`;
+    html += `<span>Year: ${escapeHtml(h.year || new Date().getFullYear())}</span>`;
+    html += "</div>";
+    const instr = Array.isArray(h.instructions) ? h.instructions : [];
+    if (instr.length) {
+      html += '<div class="exam-instructions-block"><strong>Instructions</strong><ol>';
+      html += instr.map((i) => `<li>${escapeHtml(i)}</li>`).join("");
+      html += "</ol></div>";
+    }
+    if (Array.isArray(h.materials) && h.materials.length) {
+      html += '<p style="font-size:10pt"><strong>Materials:</strong> ';
+      html += h.materials.map((m) => escapeHtml(m)).join(" ");
+      html += "</p>";
+    }
+    if (Array.isArray(h.constants) && h.constants.length) {
+      html += h.constants.map((c) => `<p style="font-size:10pt">${escapeHtml(c)}</p>`).join("");
+    }
+    if (paper.assessor_table) html += _renderAssessorTable(paper.assessor_table);
+  }
+  html += "</div>";
+  html += `<div class="exam-footer-bar"><span>${escapeHtml(code)} ${escapeHtml(h.subject || "")}</span><span>Page ${pageNum} of ${totalPages}</span></div>`;
+  html += "</div>";
+  return html;
+}
+
+function renderMarkingScheme(scheme) {
+  if (!scheme?.sections) return "";
+  let html = '<div class="exam-marking-scheme">';
+  html += "<h3>CONFIDENTIAL — MARKING SCHEME</h3>";
+  html += `<p style="text-align:center">${escapeHtml(scheme.subject || "")} (${escapeHtml(scheme.code || "")}) — ${scheme.max_marks || ""} marks</p>`;
+  scheme.sections.forEach((sec) => {
+    html += `<h4>${escapeHtml(sec.name || "")}</h4>`;
+    (sec.questions || []).forEach((q) => {
+      html += `<p><strong>Q${escapeHtml(q.number)}</strong> (${q.marks} marks): `;
+      html += escapeHtml(q.answer_html || (q.items ? q.items.map((it) => `${it.number}:${it.answer}`).join(", ") : "See rubric"));
+      html += "</p>";
+    });
+  });
+  html += "</div>";
+  return html;
+}
+
 function renderExamPaper(paper, opts) {
   opts = opts || {};
   const h = paper.header || {};
   const sections = Array.isArray(paper.sections) ? paper.sections : [];
   const mode = opts.mode || "preview";
   const ns = opts.ns || "exam";
+  const ctx = { mode, ns };
+  const markingScheme = opts.markingScheme || null;
+  const showActions = opts.showActions !== false;
+
+  if (_isNectaPaper(paper)) {
+    const totalPages = Math.max(2, Math.ceil(sections.length / 2) + 1);
+    let bodyHtml = "";
+    sections.forEach((sec) => { bodyHtml += _renderNectaSection(sec, ctx); });
+
+    let html = '<div class="exam-paper-root" data-exam-root>';
+    if (showActions) {
+      html += '<div class="exam-paper-actions">';
+      html += '<button type="button" class="btn btn-sm btn-primary" data-exam-print>Print / PDF</button>';
+      if (markingScheme) html += '<button type="button" class="btn btn-sm btn-secondary" data-exam-toggle-ms>Marking Scheme</button>';
+      html += "</div>";
+    }
+    html += _renderNectaCover(h, paper, 1, totalPages);
+    html += `<div class="exam-page"><div class="exam-page-body">${bodyHtml}</div>`;
+    html += `<div class="exam-footer-bar"><span>${escapeHtml(h.subject_code || "")} ${escapeHtml(h.subject || "")}</span><span>Page 2 of ${totalPages}</span></div></div>`;
+    if (markingScheme) {
+      html += `<div data-exam-ms-wrap style="display:none">${renderMarkingScheme(markingScheme)}</div>`;
+    }
+    html += "</div>";
+    return html;
+  }
+
+  // Legacy card layout for assignment papers
   const color = EXAM_PAPER_COLORS[paper.kind] || "#0b3d91";
   const label = examKindLabel(paper);
-
   let html = '<div class="exam-paper">';
-
-  // Cover block (mirrors the top of a NECTA paper).
-  html +=
-    '<div class="exam-cover" style="border-top:5px solid ' +
-    escapeHtml(color) +
-    '">' +
-    '<div class="exam-country">UNITED REPUBLIC OF TANZANIA</div>' +
-    '<div class="exam-label">' +
-    escapeHtml(label) +
-    "</div>" +
-    (h.subject ? '<div class="exam-subject">' + escapeHtml(h.subject) + "</div>" : "") +
-    '<div class="exam-meta">' +
-    (h.form_label
-      ? '<span>Class: <b>' + escapeHtml(h.form_label) + "</b></span>"
-      : "") +
-    (h.duration ? '<span>Time Allowed: <b>' + escapeHtml(h.duration) + "</b></span>" : "") +
-    '<span>Total: <b>' + (h.total_marks != null ? parseInt(h.total_marks, 10) : 0) + " marks</b></span>" +
-    "</div>" +
-    (h.topic ? '<div class="exam-topic">Topic: ' + escapeHtml(h.topic) + "</div>" : "") +
-    "</div>";
-
-  // Instructions.
+  html += `<div class="exam-cover" style="border-top:5px solid ${escapeHtml(color)}">`;
+  html += '<div class="exam-country">UNITED REPUBLIC OF TANZANIA</div>';
+  html += `<div class="exam-label">${escapeHtml(label)}</div>`;
+  if (h.subject) html += `<div class="exam-subject">${escapeHtml(h.subject)}</div>`;
+  html += '<div class="exam-meta">';
+  if (h.form_label) html += `<span>Class: <b>${escapeHtml(h.form_label)}</b></span>`;
+  if (h.duration) html += `<span>Time Allowed: <b>${escapeHtml(h.duration)}</b></span>`;
+  html += `<span>Total: <b>${h.total_marks != null ? parseInt(h.total_marks, 10) : 0} marks</b></span>`;
+  html += "</div>";
+  if (h.topic) html += `<div class="exam-topic">Topic: ${escapeHtml(h.topic)}</div>`;
+  html += "</div>";
   const instr = Array.isArray(h.instructions) ? h.instructions : [];
   if (instr.length) {
-    html +=
-      '<div class="exam-instr">' +
-      '<div class="exam-instr-title">INSTRUCTIONS</div>' +
-      "<ol>" +
-      instr.map((i) => "<li>" + escapeHtml(i) + "</li>").join("") +
-      "</ol>" +
-      "</div>";
+    html += '<div class="exam-instr"><div class="exam-instr-title">INSTRUCTIONS</div><ol>';
+    html += instr.map((i) => `<li>${escapeHtml(i)}</li>`).join("");
+    html += "</ol></div>";
   }
-
-  // Sections.
-  html += sections.map((sec) => renderExamSection(sec, { mode, ns, color })).join("");
-
-  // Auto-check control for the student view.
+  html += sections.map((sec) => {
+    const qs = Array.isArray(sec.questions) ? sec.questions : [];
+    const marks = qs.reduce((n, q) => n + (parseInt(q.marks, 10) || 0), 0);
+    let s = '<div class="exam-section"><div class="exam-sec-head">';
+    s += `<span class="exam-sec-id" style="background:${escapeHtml(color)}">SECTION ${escapeHtml((sec.id || "").trim())}</span>`;
+    s += `<span class="exam-sec-title">${escapeHtml(sec.title || "QUESTIONS")}</span>`;
+    s += `<span class="exam-sec-marks">${marks} marks</span></div>`;
+    if (sec.instruction) s += `<div class="exam-sec-instr">${escapeHtml(sec.instruction)}</div>`;
+    s += qs.map((q) => _renderLegacyQuestion(q, sec.question_type, ctx)).join("");
+    s += "</div>";
+    return s;
+  }).join("");
   if (mode === "student") {
-    html +=
-      '<div class="exam-check">' +
-      '<button type="button" class="btn btn-sm btn-primary" data-exam-check data-exam-ns="' +
-      escapeHtml(ns) +
-      '">Check Objective Answers</button>' +
-      '<div data-exam-score class="exam-score"></div>' +
-      "</div>";
+    html += '<div class="exam-check">';
+    html += `<button type="button" class="btn btn-sm btn-primary" data-exam-check data-exam-ns="${escapeHtml(ns)}">Check Objective Answers</button>`;
+    html += '<div data-exam-score class="exam-score"></div></div>';
   }
-
   html += "</div>";
   return html;
 }
 
-// Bind the "Check Objective Answers" auto-score using the answers carried by
-// the paper object already available to the caller (kept out of the DOM).
-// root: the container that holds the rendered paper.
+function renderExamMath(root) {
+  if (!root) return;
+  const run = function () {
+    if (typeof window.renderMathInElement !== "function") return;
+    try {
+      window.renderMathInElement(root, {
+        delimiters: [
+          { left: "\\[", right: "\\]", display: true },
+          { left: "\\(", right: "\\)", display: false },
+          { left: "$$", right: "$$", display: true },
+          { left: "$", right: "$", display: false },
+        ],
+        throwOnError: false,
+      });
+    } catch (e) { /* never break exam preview */ }
+  };
+  if (typeof window.ensureKaTeX === "function") {
+    window.ensureKaTeX().then(run);
+  } else {
+    run();
+  }
+}
+
+function bindExamPaperActions(root) {
+  if (!root) return;
+  renderExamMath(root);
+  const printBtn = root.querySelector("[data-exam-print]");
+  if (printBtn) {
+    printBtn.addEventListener("click", () => {
+      const w = window.open("", "_blank");
+      if (!w) return;
+      const styles = Array.from(document.querySelectorAll('link[rel="stylesheet"], style'))
+        .map((el) => el.outerHTML).join("");
+      const katexCss = '<link rel="stylesheet" href="/static/lib/katex/katex.min.css">';
+      const katexJs = '<script src="/static/lib/katex/katex.min.js"><\/script>';
+      const autoRender = '<script src="/static/lib/katex/contrib/auto-render.min.js"><\/script>';
+      const mathBoot = `<script>
+        document.addEventListener("DOMContentLoaded",function(){
+          if(typeof renderMathInElement==="function"){
+            renderMathInElement(document.body,{delimiters:[{left:"\\\\[",right:"\\\\]",display:true},{left:"\\\\(",right:"\\\\)",display:false},{left:"$$",right:"$$",display:true},{left:"$",right:"$",display:false}],throwOnError:false});
+          }
+          setTimeout(function(){window.print();},500);
+        });
+      <\/script>`;
+      w.document.write(`<!DOCTYPE html><html><head><title>Exam Paper</title>${styles}${katexCss}${katexJs}${autoRender}</head><body>${root.innerHTML}${mathBoot}</body></html>`);
+      w.document.close();
+      w.focus();
+    });
+  }
+  const msBtn = root.querySelector("[data-exam-toggle-ms]");
+  const msWrap = root.querySelector("[data-exam-ms-wrap]");
+  if (msBtn && msWrap) {
+    msBtn.addEventListener("click", () => {
+      const show = msWrap.style.display === "none";
+      msWrap.style.display = show ? "block" : "none";
+      msBtn.textContent = show ? "Hide Marking Scheme" : "Marking Scheme";
+    });
+  }
+}
+
 function bindExamScore(root, paper) {
   const btn = root.querySelector("[data-exam-check]");
   if (!btn) return;
   const out = root.querySelector("[data-exam-score]");
   const ns = btn.dataset.examNs || "exam";
   btn.addEventListener("click", () => {
-    let correctMarks = 0;
-    let objectiveMarks = 0;
     let correctQs = 0;
     let objectiveQs = 0;
     (paper.sections || []).forEach((sec) => {
-      if (sec.question_type !== "mcq") return;
+      const type = sec.question_type;
       (sec.questions || []).forEach((q) => {
-        objectiveQs += 1;
-        objectiveMarks += parseInt(q.marks, 10) || 1;
-        const sel = root.querySelector('input[name="' + ns + "-" + q.number + '"]:checked');
-        if (sel && parseInt(sel.value, 10) === q.answer) {
-          correctQs += 1;
-          correctMarks += parseInt(q.marks, 10) || 1;
+        if (type === "mcq" || (q.options && q.answer != null)) {
+          objectiveQs += 1;
+          const sel = root.querySelector(`input[name="${ns}-${q.number}"]:checked`);
+          if (sel && parseInt(sel.value, 10) === q.answer) correctQs += 1;
         }
       });
     });
     const pct = objectiveQs ? Math.round((correctQs / objectiveQs) * 100) : 0;
     if (out) {
-      out.innerHTML =
-        '<span class="exam-score-good">Objective answers: <b>' +
-        correctQs +
-        "/" +
-        objectiveQs +
-        " correct (" +
-        correctMarks +
-        "/" +
-        objectiveMarks +
-        " marks)</b> \u2014 " +
-        pct +
-        "%</span>";
+      out.innerHTML = `<span class="exam-score-good">Objective: <b>${correctQs}/${objectiveQs}</b> (${pct}%)</span>`;
     }
   });
 }
+
 ;
 // modules/lazy-script.js — one-shot classic-script loader (shared global scope).
 // Used to fetch route chunks and the speech bundle after first paint.
@@ -3793,22 +3964,26 @@ async function viewLessonContent(containerId, lessonId, backFn) {
 // same module id. The sub-modules must be loaded before this file.
 ;
 // modules/api-client/core/test-generator.js — Test Generator UI (shared global scope).
-// Shared by admin, teacher, and student dashboards. Renders the picker of exam
-// types (Topical/Monthly/Midterm/Terminal/Annual/NECTA Form II/IV/VI) plus a
-// subject/form/topic form, then calls POST /ai/tests/generate (grounded in the
-// NECTA/TIE knowledge base at low temperature) and renders the result with the
-// shared quiz renderer.
+// Generates full NECTA-style printable examination papers via POST /ai/tests/generate.
 
 const TEST_TYPE_OPTIONS = [
-  { value: "topical", label: "📌 Topical Test", desc: "Topical questions grouped by topic." },
-  { value: "monthly", label: "📆 Monthly Test", desc: "Monthly-style test for your class." },
-  { value: "midterm", label: "🕘 Midterm Test", desc: "Midterm examination style." },
-  { value: "terminal", label: "🏁 Terminal Test", desc: "Terminal examination style." },
-  { value: "annual", label: "📅 Annual Test", desc: "Annual examination style." },
-  { value: "necta_ii", label: "🎓 NECTA Form II", desc: "Form II / FTNA style questions." },
-  { value: "necta_iv", label: "🎓 NECTA Form IV", desc: "CSEE Section A style questions." },
-  { value: "necta_vi", label: "🎓 NECTA Form VI", desc: "ACSEE style questions." },
+  { value: "topical", label: "📌 Topical Test", desc: "Short topical paper (~1 hour)." },
+  { value: "monthly", label: "📆 Monthly Test", desc: "Monthly-style paper (~1.5 hours)." },
+  { value: "midterm", label: "🕘 Midterm Test", desc: "Full midterm paper for your form level." },
+  { value: "terminal", label: "🏁 Terminal Test", desc: "Full terminal paper for your form level." },
+  { value: "annual", label: "📅 Annual Test", desc: "Full annual paper for your form level." },
+  { value: "necta_ii", label: "🎓 NECTA Form II", desc: "FTNA-style practice paper (Form II)." },
+  { value: "necta_iv", label: "🎓 NECTA Form IV", desc: "CSEE-style practice paper (Form IV)." },
+  { value: "necta_vi", label: "🎓 NECTA Form VI", desc: "ACSEE-style practice paper (Form VI)." },
 ];
+
+const PAPER_LABELS = {
+  theory: "Theory",
+  theory_2: "Paper 2",
+  practical: "Practical",
+};
+
+const NECTA_FORM_LOCK = { necta_ii: 2, necta_iv: 4, necta_vi: 6 };
 
 let _testGenStylesInjected = false;
 
@@ -3822,6 +3997,10 @@ function _injectTestGenStyles() {
     .test-type-card{text-align:left;padding:0.7rem 0.85rem;border:1px solid var(--color-border);border-radius:var(--radius);background:transparent;cursor:pointer;transition:border-color .15s ease,background .15s ease}
     .test-type-card:hover{border-color:var(--color-primary)}
     .test-type-card.selected{border-color:var(--color-primary);background:color-mix(in srgb,var(--color-primary) 8%,transparent);box-shadow:inset 0 0 0 1px var(--color-primary)}
+    .test-paper-grid{display:flex;flex-wrap:wrap;gap:0.5rem;margin-top:0.5rem}
+    .test-paper-chip{padding:0.45rem 0.75rem;border:1px solid var(--color-border);border-radius:var(--radius);background:transparent;cursor:pointer;font-size:0.82rem;text-align:left}
+    .test-paper-chip.selected{border-color:var(--color-primary);background:color-mix(in srgb,var(--color-primary) 10%,transparent);font-weight:600}
+    .test-paper-chip small{display:block;color:var(--color-text-muted);font-weight:400;margin-top:0.15rem}
   `;
   document.head.appendChild(style);
 }
@@ -3829,7 +4008,7 @@ function _injectTestGenStyles() {
 function renderTestGeneratorView(meta = {}) {
   _injectTestGenStyles();
   const title = meta.title || "Test Generator";
-  const intro = meta.intro || "Pick an exam type, then choose a subject and form. Tick the topics (and sub-topics) the exam must cover — the more you tick, the wider the paper. The system reads the NECTA/TIE knowledge base (past papers, syllabuses) to generate fresh practice questions without copying any past question.";
+  const intro = meta.intro || "Pick an exam type and subject, then tick topics to cover. The system generates a printable NECTA-style examination paper grounded in the knowledge base.";
   const typeCards = TEST_TYPE_OPTIONS.map((t, i) => `
     <button type="button" class="test-type-card${i === 0 ? " selected" : ""}" data-test-type="${t.value}">
       <div style="font-weight:600;font-size:0.95rem">${t.label}</div>
@@ -3863,17 +4042,14 @@ function renderTestGeneratorView(meta = {}) {
               ${["I","II","III","IV","V","VI"].map((f, i) => `<option value="${i+1}">Form ${f}</option>`).join("")}
             </select>
           </div>
-          <div>
-            <label style="font-size:0.8rem;color:var(--color-text-muted)">Questions</label>
-            <select class="input" id="test-gen-count">
-              ${[5,10,15,20].map(n => `<option value="${n}"${n === 10 ? " selected" : ""}>${n}</option>`).join("")}
-            </select>
-          </div>
+        </div>
+        <div id="test-gen-paper-section" style="margin-top:1rem">
+          <label style="font-size:0.8rem;color:var(--color-text-muted)">Paper</label>
+          <div id="test-gen-paper-chips" class="test-paper-grid"></div>
+          <div id="test-gen-structure" style="font-size:0.82rem;color:var(--color-text-muted);margin-top:0.5rem"></div>
         </div>
         <div style="margin-top:1.1rem">
-          <label style="font-size:0.8rem;color:var(--color-text-muted)">Topics &amp; sub-topics to cover
-            <span style="color:var(--color-text-muted);font-weight:400">(tick topics and sub-topics — the more you tick, the wider the exam)</span>
-          </label>
+          <label style="font-size:0.8rem;color:var(--color-text-muted)">Topics &amp; sub-topics to cover</label>
           <div id="test-gen-scope" style="margin-top:0.6rem"></div>
           <div id="test-gen-scope-summary" style="font-size:0.8rem;color:var(--color-text-muted);font-weight:600;margin-top:0.5rem"></div>
           <div id="test-gen-fallback" style="display:none;margin-top:0.6rem;font-size:0.85rem">
@@ -3886,7 +4062,7 @@ function renderTestGeneratorView(meta = {}) {
       </div>
 
       <div style="display:flex;gap:0.5rem;align-items:center;margin-bottom:1rem">
-        <button class="btn btn-primary" id="test-gen-run">⚡ Generate Test</button>
+        <button class="btn btn-primary" id="test-gen-run">⚡ Generate Paper</button>
         <span id="test-gen-status" style="font-size:0.8rem;color:var(--color-text-muted)"></span>
       </div>
 
@@ -3896,6 +4072,7 @@ function renderTestGeneratorView(meta = {}) {
 }
 
 let _testGenScopeCache = {};
+let _testGenPresetsCache = {};
 
 function _testGenUpdateSummary(root) {
   const summary = root.querySelector("#test-gen-scope-summary");
@@ -3907,6 +4084,55 @@ function _testGenUpdateSummary(root) {
     return;
   }
   summary.textContent = `Scope: ${topics} topic${topics === 1 ? "" : "s"} · ${subs} sub-topic${subs === 1 ? "" : "s"} selected`;
+}
+
+async function _testGenLoadPresets(root, subject, form, testType) {
+  const chipsEl = root.querySelector("#test-gen-paper-chips");
+  const structEl = root.querySelector("#test-gen-structure");
+  if (!chipsEl) return;
+  chipsEl.innerHTML = '<span style="font-size:0.82rem;color:var(--color-text-muted)">Loading paper options…</span>';
+  structEl.textContent = "";
+
+  const cacheKey = `${subject}:${form}:${testType}`;
+  let presets = _testGenPresetsCache[cacheKey];
+  if (!presets) {
+    try {
+      const res = await request(
+        `/ai/tests/presets?subject_slug=${encodeURIComponent(subject)}&form_level=${form}&test_type=${encodeURIComponent(testType)}`
+      );
+      presets = Array.isArray(res.presets) ? res.presets : [];
+      _testGenPresetsCache[cacheKey] = presets;
+    } catch (e) {
+      presets = [];
+    }
+  }
+
+  if (!presets.length) {
+    chipsEl.innerHTML = '<span style="color:var(--color-text-muted)">No paper preset for this combination.</span>';
+    return;
+  }
+
+  chipsEl.innerHTML = presets.map((p, i) => `
+    <button type="button" class="test-paper-chip${i === 0 ? " selected" : ""}" data-paper="${escapeHtml(p.paper)}">
+      ${escapeHtml(PAPER_LABELS[p.paper] || p.paper)} ${escapeHtml(p.paper_code || "")}
+      <small>${escapeHtml(p.duration || "")} · ${p.total_marks || 0} marks · ${escapeHtml(p.structure_summary || "")}</small>
+    </button>`).join("");
+
+  const selected = presets[0];
+  structEl.textContent = selected
+    ? `${selected.paper_title || ""} — ${selected.question_count || "?"} questions, ${selected.total_marks} marks, ${selected.duration}`
+    : "";
+
+  chipsEl.querySelectorAll(".test-paper-chip").forEach((chip) => {
+    chip.addEventListener("click", () => {
+      chipsEl.querySelectorAll(".test-paper-chip").forEach((c) => c.classList.remove("selected"));
+      chip.classList.add("selected");
+      const p = presets.find((x) => x.paper === chip.dataset.paper);
+      if (p && structEl) {
+        structEl.textContent = `${p.paper_title || ""} — ${p.question_count || "?"} questions, ${p.total_marks} marks, ${p.duration}`;
+      }
+    });
+  });
 }
 
 async function _testGenLoadScope(subject, form) {
@@ -3933,7 +4159,7 @@ async function _testGenLoadScope(subject, form) {
   }
 
   if (!topics.length) {
-    scopeEl.innerHTML = '<p style="font-size:0.85rem;color:var(--color-text-muted)">No syllabus topics found for this subject and form. Type the topic below instead.</p>';
+    scopeEl.innerHTML = '<p style="font-size:0.85rem;color:var(--color-text-muted)">No syllabus topics found. Type the topic below instead.</p>';
     fallbackEl.style.display = "block";
     _testGenUpdateSummary(root);
     return;
@@ -3941,13 +4167,11 @@ async function _testGenLoadScope(subject, form) {
 
   const items = topics.map((t) => {
     const subs = Array.isArray(t.subtopics) ? t.subtopics : [];
-    const subLabels = subs
-      .map((s) => `
-        <label style="display:flex;align-items:center;gap:0.4rem;font-size:0.84rem;margin-top:0.2rem">
-          <input type="checkbox" class="test-gen-subtopic-cb" data-topic="${escapeHtml(t.title)}" value="${escapeHtml(s.title)}">
-          <span>${escapeHtml(s.title)}</span>
-        </label>`)
-      .join("");
+    const subLabels = subs.map((s) => `
+      <label style="display:flex;align-items:center;gap:0.4rem;font-size:0.84rem;margin-top:0.2rem">
+        <input type="checkbox" class="test-gen-subtopic-cb" data-topic="${escapeHtml(t.title)}" value="${escapeHtml(s.title)}">
+        <span>${escapeHtml(s.title)}</span>
+      </label>`).join("");
     const toggle = subs.length
       ? `<button type="button" class="test-gen-sub-toggle" style="margin-left:auto;background:none;border:none;color:var(--color-primary);font-size:0.75rem;cursor:pointer">${subs.length} sub-topic${subs.length === 1 ? "" : "s"} ▾</button>`
       : "";
@@ -3979,6 +4203,9 @@ function initTestGeneratorView(root = document) {
       cards.forEach((x) => x.classList.remove("selected"));
       c.classList.add("selected");
       selected = c.dataset.testType;
+      const lock = NECTA_FORM_LOCK[selected];
+      if (lock && formEl) formEl.value = String(lock);
+      reloadAll();
     });
   });
 
@@ -3991,19 +4218,19 @@ function initTestGeneratorView(root = document) {
   const subjectEl = root.querySelector("#test-gen-subject");
   const formEl = root.querySelector("#test-gen-form");
 
-  const reloadScope = () => {
+  const reloadAll = () => {
     const subject = subjectEl.value;
     const form = formEl.value || "1";
     _testGenLoadScope(subject, form);
+    _testGenLoadPresets(root, subject, form, selected);
   };
-  subjectEl.addEventListener("change", reloadScope);
-  formEl.addEventListener("change", reloadScope);
+  subjectEl.addEventListener("change", reloadAll);
+  formEl.addEventListener("change", reloadAll);
 
   const scopeEl = root.querySelector("#test-gen-scope");
   if (scopeEl) {
     scopeEl.addEventListener("change", (e) => {
-      if (e.target.matches(".test-gen-topic-cb")) _testGenUpdateSummary(root);
-      if (e.target.matches(".test-gen-subtopic-cb")) _testGenUpdateSummary(root);
+      if (e.target.matches(".test-gen-topic-cb, .test-gen-subtopic-cb")) _testGenUpdateSummary(root);
     });
     scopeEl.addEventListener("click", (e) => {
       const toggle = e.target.closest(".test-gen-sub-toggle");
@@ -4012,27 +4239,16 @@ function initTestGeneratorView(root = document) {
         const wrap = toggle.closest(".scope-topic-item")?.querySelector(".test-gen-sub-wrap");
         if (wrap) {
           wrap.style.display = wrap.style.display === "none" ? "block" : "none";
-          toggle.textContent = wrap.style.display === "none"
-            ? toggle.textContent.replace("▴", "▾")
-            : toggle.textContent.replace("▾", "▴");
         }
         return;
       }
-      const selectAll = e.target.closest(".test-gen-select-all");
-      if (selectAll) {
-        const scope = root.querySelector("#test-gen-scope");
-        Array.from(scope.querySelectorAll(".test-gen-topic-cb")).forEach((t) => {
-          t.checked = true;
-          const wrap = t.closest(".scope-topic-item")?.querySelector(".test-gen-sub-wrap");
-          if (wrap) wrap.style.display = "block";
-        });
+      if (e.target.closest(".test-gen-select-all")) {
+        Array.from(root.querySelectorAll(".test-gen-topic-cb")).forEach((t) => { t.checked = true; });
         _testGenUpdateSummary(root);
         return;
       }
-      const clearAll = e.target.closest(".test-gen-clear-all");
-      if (clearAll) {
-        const scope = root.querySelector("#test-gen-scope");
-        Array.from(scope.querySelectorAll(".test-gen-topic-cb, .test-gen-subtopic-cb")).forEach((t) => { t.checked = false; });
+      if (e.target.closest(".test-gen-clear-all")) {
+        Array.from(root.querySelectorAll(".test-gen-topic-cb, .test-gen-subtopic-cb")).forEach((t) => { t.checked = false; });
         _testGenUpdateSummary(root);
       }
     });
@@ -4041,7 +4257,8 @@ function initTestGeneratorView(root = document) {
   runBtn.addEventListener("click", async () => {
     const subject = subjectEl.value;
     const form = formEl.value || "1";
-    const count = Number(root.querySelector("#test-gen-count").value);
+    const paperChip = root.querySelector(".test-paper-chip.selected");
+    const paper = paperChip?.dataset.paper || "theory";
 
     const topics = Array.from(root.querySelectorAll(".test-gen-topic-cb:checked")).map((t) => t.value.trim());
     const subtopics = Array.from(root.querySelectorAll(".test-gen-subtopic-cb:checked")).map((s) => s.value.trim());
@@ -4052,11 +4269,9 @@ function initTestGeneratorView(root = document) {
       statusEl.textContent = "Tick at least one topic (or sub-topic), then press Generate.";
       return;
     }
-    const topic = topics[0] || fallbackTopic;
-    const subtopic = subtopics[0] || fallbackSubtopic;
 
     runBtn.disabled = true;
-    statusEl.textContent = "Reading knowledge base and generating questions...";
+    statusEl.textContent = "Reading knowledge base and generating paper…";
     sourcesEl.innerHTML = "";
     resultsEl.innerHTML = "";
     try {
@@ -4066,54 +4281,54 @@ function initTestGeneratorView(root = document) {
           test_type: selected,
           subject_slug: subject,
           form_level: Number(form),
-          topic,
-          subtopic,
+          topic: topics[0] || fallbackTopic,
+          subtopic: subtopics[0] || fallbackSubtopic,
           topics,
           subtopics,
-          count,
+          paper,
         }),
       });
-      if (!Array.isArray(data.questions) || !data.questions.length) {
-        resultsEl.innerHTML = '<div class="card" style="padding:1rem"><p style="color:var(--color-text-muted)">No questions were generated. Try a different topic, subject, or exam type.</p></div>';
+      if (!data.paper) {
+        resultsEl.innerHTML = '<div class="card" style="padding:1rem"><p style="color:var(--color-text-muted)">No paper was generated. Try a different topic or paper type.</p></div>';
         statusEl.textContent = "";
         return;
       }
       const label = data.testTypeLabel || selected;
       const hits = Array.isArray(data.kbHits) ? data.kbHits : [];
-      const footerPayload = {
-        source: data.source || "casuya-ai",
-        kbHits: hits,
-        sourced: data.grounded !== false,
-      };
+      const preset = data.preset || {};
       sourcesEl.innerHTML = `
         <div class="card" style="padding:0.75rem 1rem;margin-bottom:1rem">
           <p style="font-size:0.8rem;margin:0 0 0.35rem;color:var(--color-text-muted)">
-            📚 <strong>${escapeHtml(label)}</strong> — grounded in ${hits.length || "syllabus"} knowledge-base source(s)
-            ${data.grounded ? "" : " (syllabus/topic fallback)"}
+            📚 <strong>${escapeHtml(label)}</strong> — ${escapeHtml(preset.paper_code || "")} ${escapeHtml(preset.paper_title || "")}
+            · ${preset.total_marks || data.paper.header?.total_marks || 0} marks · ${escapeHtml(preset.duration || data.paper.header?.duration || "")}
+            ${data.grounded ? "" : " (offline/syllabus fallback)"}
           </p>
           <div class="tutor-response-footer">
             ${typeof renderAiResultFooter === "function"
-              ? renderAiResultFooter(footerPayload)
-              : (typeof renderTutorSourceChips === "function" ? renderTutorSourceChips(hits) : "")
-                + (typeof renderAiSourceBadge === "function" ? renderAiSourceBadge(footerPayload.source) : "")}
+              ? renderAiResultFooter({ source: data.source, kbHits: hits, sourced: data.grounded !== false })
+              : ""}
           </div>
         </div>`;
-      resultsEl.innerHTML = renderQuizQuestions(data.questions, {
-        subject,
-        formLevel: data.formLevel,
-        topic: `${topic}${topics.length + subtopics.length ? ` (+${Math.max(0, topics.length + subtopics.length - 1)} more)` : ""}`,
+      resultsEl.innerHTML = renderExamPaper(data.paper, {
+        mode: "preview",
+        markingScheme: data.markingScheme,
+        showActions: true,
       });
-      statusEl.textContent = `Done — ${data.count || data.questions.length} question(s).`;
+      const examRoot = resultsEl.querySelector("[data-exam-root]");
+      if (examRoot && typeof bindExamPaperActions === "function") bindExamPaperActions(examRoot);
+      else if (examRoot && typeof renderExamMath === "function") renderExamMath(examRoot);
+      statusEl.textContent = `Done — ${escapeHtml(preset.paper_code || "paper")} generated (${data.source || "casuya-ai"}).`;
     } catch (e) {
-      resultsEl.innerHTML = `<div class="card" style="padding:1rem"><p style="color:var(--color-danger)">${escapeHtml(e.message || "Generation failed. Please try again.")}</p></div>`;
+      resultsEl.innerHTML = `<div class="card" style="padding:1rem"><p style="color:var(--color-danger)">${escapeHtml(e.message || "Generation failed.")}</p></div>`;
       statusEl.textContent = "";
     } finally {
       runBtn.disabled = false;
     }
   });
 
-  reloadScope();
+  reloadAll();
 }
+
 ;
 // modules/admin-dashboard.js — extracted from main.js (classic script, shared global scope)
 function showAdminView(content) {

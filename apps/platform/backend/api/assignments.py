@@ -9,7 +9,6 @@ from backend.middleware.auth import get_current_user
 from backend.middleware.permissions import require_role
 from backend.models.student import Student
 from backend.services import exam_paper_service
-from backend.services.ai_service import generate_exam_paper
 from backend.services.assignment_service import (
     create_assignment,
     delete_assignment,
@@ -31,6 +30,7 @@ class GeneratePaperRequest(BaseModel):
     kind: str = "internal"
     duration: str | None = None
     sections: list[dict] | None = None
+    paper: str = "theory"
 
 
 router = APIRouter(prefix="/assignments", tags=["assignments"])
@@ -44,8 +44,17 @@ def list_assignments_route(current_user=Depends(get_current_user)):
 
 @router.get("/exam-presets", response_model=dict)
 @router.get("/exam-presets/", response_model=dict)
-def exam_presets_route(form_level: int | None = None, current_user=Depends(get_current_user)):
-    return exam_paper_service.presets(form_level)
+def exam_presets_route(
+    form_level: int | None = None,
+    lesson_id: str | None = None,
+    kind: str = "necta",
+    current_user=Depends(get_current_user),
+):
+    ctx = exam_paper_service.resolve_lesson_context(lesson_id) if lesson_id else None
+    if ctx:
+        return exam_paper_service.assignment_presets(ctx, kind)
+    legacy = exam_paper_service.presets(form_level)
+    return {"mode": "legacy", "kind": kind, **(legacy.get(kind) or legacy["internal"])}
 
 
 @router.get("/{assignment_id}", response_model=dict)
@@ -93,12 +102,16 @@ async def generate_paper_route(body: GeneratePaperRequest, current_user=Depends(
     if not ctx:
         raise HTTPException(status_code=404, detail="Lesson not found")
 
-    kind, duration, spec = exam_paper_service.build_spec(body.kind, body.sections, body.duration)
-    paper, generator = await generate_exam_paper(ctx, kind, spec, duration)
-
-    ok, issues = exam_paper_service.validate_paper(paper)
+    paper, generator, marking_scheme, ok, issues = await exam_paper_service.generate_assignment_paper(
+        ctx,
+        body.kind,
+        paper=body.paper or "theory",
+        duration=body.duration,
+        sections=body.sections,
+    )
     return {
         "paper": paper,
+        "markingScheme": marking_scheme,
         "generator": generator,
         "valid": ok,
         "issues": issues,

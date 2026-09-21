@@ -1,0 +1,63 @@
+{
+  "family": "csee",
+  "subject_slug": "mathematics",
+  "subject_name": "BASIC MATHEMATICS",
+  "subject_code": "041",
+  "papers": {
+    "theory": {
+      "paper_code": "041",
+      "paper_title": "BASIC MATHEMATICS",
+      "duration": "3:00 Hours",
+      "total_marks": 100,
+      "exam_body": "NATIONAL EXAMINATIONS COUNCIL OF TANZANIA",
+      "assessment_type": "CERTIFICATE OF SECONDARY EDUCATION EXAMINATION (PRACTICE)",
+      "id_label": "Examination Number",
+      "candidate_kind": "For Both School and Private Candidates",
+      "materials": [
+        "Mathematical tables published by the National Examinations Council of Tanzania may be used.",
+        "Non-programmable calculators may be used."
+      ],
+      "constants": [],
+      "instructions": [
+        "This paper consists of sections A and B with a total of fourteen (14) questions.",
+        "Answer ALL questions.",
+        "Show all your working clearly.",
+        "Mathematical tables and non-programmable calculators may be used."
+      ],
+      "sections": [
+        {
+          "id": "A",
+          "title": "SHORT ANSWER",
+          "marks": 60,
+          "instruction": "Answer ALL questions in this section.",
+          "choice": { "mode": "all" },
+          "questions": [
+            { "slot": 1, "type": "structured", "marks": 6, "part_count": 1 },
+            { "slot": 2, "type": "structured", "marks": 6, "part_count": 1 },
+            { "slot": 3, "type": "structured", "marks": 6, "part_count": 1 },
+            { "slot": 4, "type": "structured", "marks": 6, "part_count": 1 },
+            { "slot": 5, "type": "structured", "marks": 6, "part_count": 1 },
+            { "slot": 6, "type": "structured", "marks": 6, "part_count": 1 },
+            { "slot": 7, "type": "structured", "marks": 6, "part_count": 1 },
+            { "slot": 8, "type": "structured", "marks": 6, "part_count": 1 },
+            { "slot": 9, "type": "structured", "marks": 6, "part_count": 1 },
+            { "slot": 10, "type": "structured", "marks": 6, "part_count": 1 }
+          ]
+        },
+        {
+          "id": "B",
+          "title": "STRUCTURED",
+          "marks": 40,
+          "instruction": "Answer ALL questions in this section.",
+          "choice": { "mode": "all" },
+          "questions": [
+            { "slot": 11, "type": "essay", "marks": 10, "part_count": 3 },
+            { "slot": 12, "type": "essay", "marks": 10, "part_count": 3 },
+            { "slot": 13, "type": "essay", "marks": 10, "part_count": 3 },
+            { "slot": 14, "type": "essay", "marks": 10, "part_count": 3 }
+          ]
+        }
+      ]
+    }
+  }
+}

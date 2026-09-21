@@ -3,7 +3,13 @@
 // "+ New Assignment". Handles the exam section editor, AI generation, preview and
 // final assignment creation. Uses the global helpers request / escapeHtml / renderExamPaper.
 
+const ASSIGNMENT_PAPER_LABELS = { theory: "Theory", theory_2: "Paper 2", practical: "Practical" };
+
 function showAssignmentCreateForm(dashboard, lessonList) {
+  let presetMode = "legacy";
+  let selectedPaper = "theory";
+  let presetCfg = null;
+
   document.getElementById("assignment-form-area").innerHTML = `
     <div class="card" style="margin-top:1rem;padding:1.5rem">
       <h3 style="margin-bottom:0.5rem">Create a New Assignment</h3>
@@ -38,11 +44,12 @@ function showAssignmentCreateForm(dashboard, lessonList) {
           <label style="font-size:0.8rem;color:var(--color-text-muted);display:block;margin-bottom:0.25rem">Time Allowed</label>
           <input class="input" name="duration" id="exam-duration" placeholder="2 Hours">
         </div>
-        <div style="grid-column:1/-1">
-          <label style="font-size:0.8rem;color:var(--color-text-muted);display:block;margin-bottom:0.25rem">Notes (optional)</label>
-          <input class="input" name="notes" placeholder="Optional instructions for students">
+        <div style="grid-column:1/-1;display:none" id="exam-paper-variant-wrap">
+          <label style="font-size:0.8rem;color:var(--color-text-muted);display:block;margin-bottom:0.25rem">Paper variant</label>
+          <div id="exam-paper-chips" class="test-paper-grid"></div>
+          <div id="exam-structure-summary" style="font-size:0.82rem;color:var(--color-text-muted);margin-top:0.5rem"></div>
         </div>
-        <div style="grid-column:1/-1">
+        <div style="grid-column:1/-1" id="exam-legacy-sections-wrap">
           <label style="font-size:0.8rem;color:var(--color-text-muted);display:block;margin-bottom:0.25rem">Exam Structure — adjust question counts & marks per section</label>
           <div id="exam-sections"></div>
         </div>
@@ -75,12 +82,59 @@ function showAssignmentCreateForm(dashboard, lessonList) {
     const total = secs.reduce((s, x) => s + x.count * x.marks_per_question, 0);
     line.innerHTML = `Total: <b>${total} marks</b> (${secs.length} sections)`;
   };
+  const renderNectaPaperChips = (papers) => {
+    const chipsEl = document.getElementById("exam-paper-chips");
+    const summaryEl = document.getElementById("exam-structure-summary");
+    if (!chipsEl) return;
+    if (!papers || !papers.length) {
+      chipsEl.innerHTML = '<span style="font-size:0.85rem;color:var(--color-text-muted)">No papers for this lesson.</span>';
+      if (summaryEl) summaryEl.textContent = "";
+      return;
+    }
+    if (!papers.some((p) => p.paper === selectedPaper)) selectedPaper = papers[0].paper;
+    chipsEl.innerHTML = papers.map((p) => {
+      const label = ASSIGNMENT_PAPER_LABELS[p.paper] || p.paper;
+      const sel = p.paper === selectedPaper ? " selected" : "";
+      return `<button type="button" class="test-paper-chip${sel}" data-paper="${escapeHtml(p.paper)}">
+        ${escapeHtml(label)}<small>${escapeHtml(p.paper_code || "")} · ${p.total_marks || 0} marks · ${escapeHtml(p.duration || "")}</small>
+      </button>`;
+    }).join("");
+    chipsEl.querySelectorAll("[data-paper]").forEach((btn) => {
+      btn.addEventListener("click", () => {
+        selectedPaper = btn.dataset.paper || "theory";
+        renderNectaPaperChips(papers);
+      });
+    });
+    const active = papers.find((p) => p.paper === selectedPaper) || papers[0];
+    if (summaryEl && active) {
+      summaryEl.textContent = active.structure_summary || `${active.question_count || 0} questions · ${active.total_marks || 0} marks`;
+    }
+    const dur = document.getElementById("exam-duration");
+    if (dur && active?.duration && !dur.value) dur.value = active.duration;
+  };
   const loadSectionEditor = async () => {
     const kind = document.getElementById("exam-kind").value;
+    const lessonId = document.getElementById("exam-lesson").value;
+    const variantWrap = document.getElementById("exam-paper-variant-wrap");
+    const legacyWrap = document.getElementById("exam-legacy-sections-wrap");
     try {
-      const presets = await request("/assignments/exam-presets");
-      const cfg = presets && presets[kind];
-      if (!cfg) return;
+      const qs = new URLSearchParams({ kind });
+      if (lessonId) qs.set("lesson_id", lessonId);
+      const presets = await request("/assignments/exam-presets?" + qs.toString());
+      presetCfg = presets;
+      presetMode = presets.mode || "legacy";
+      if (presetMode === "necta" && Array.isArray(presets.papers)) {
+        if (variantWrap) variantWrap.style.display = "block";
+        if (legacyWrap) legacyWrap.style.display = "none";
+        renderNectaPaperChips(presets.papers);
+        const dur = document.getElementById("exam-duration");
+        if (dur && presets.duration && !dur.value) dur.value = presets.duration;
+        return;
+      }
+      if (variantWrap) variantWrap.style.display = "none";
+      if (legacyWrap) legacyWrap.style.display = "block";
+      const cfg = presets.sections ? presets : (presets.necta || presets.internal || presets);
+      if (!cfg || !cfg.sections) return;
       const dur = document.getElementById("exam-duration");
       if (!dur.value) dur.value = cfg.duration || "";
       const total = cfg.sections.reduce((s, x) => s + x.count * x.marks_per_question, 0);
@@ -98,6 +152,7 @@ function showAssignmentCreateForm(dashboard, lessonList) {
     } catch(e) { /* presets unavailable */ }
   };
   document.getElementById("exam-kind").addEventListener("change", loadSectionEditor);
+  document.getElementById("exam-lesson").addEventListener("change", loadSectionEditor);
   loadSectionEditor();
 
   document.getElementById("exam-generate").addEventListener("click", async () => {
@@ -110,14 +165,19 @@ function showAssignmentCreateForm(dashboard, lessonList) {
     btn.disabled = true;
     status.textContent = "Generating exam paper...";
     try {
+      const payload = {
+        lesson_id: lessonId,
+        kind,
+        duration: document.getElementById("exam-duration").value || "",
+      };
+      if (presetMode === "necta") {
+        payload.paper = selectedPaper;
+      } else {
+        payload.sections = sectionsByKind();
+      }
       const res = await request("/assignments/generate-paper", {
         method: "POST",
-        body: JSON.stringify({
-          lesson_id: lessonId,
-          kind,
-          duration: document.getElementById("exam-duration").value || "",
-          sections: sectionsByKind(),
-        }),
+        body: JSON.stringify(payload),
       });
       const paper = res && res.paper;
       if (!paper) throw new Error("No paper returned");
@@ -136,9 +196,11 @@ function showAssignmentCreateForm(dashboard, lessonList) {
             </div>
           </div>
           ${res.generator === "local" ? '<p style="font-size:0.8rem;color:var(--color-warning);margin:0 0 0.5rem">⚠ AI service unavailable — a valid paper was generated offline from the lesson content.</p>' : ""}
-          ${renderExamPaper(paper, { mode: "preview", ns: "preview-" + (paper.header?.form_level || 0) })}
+          ${renderExamPaper(paper, { mode: "preview", ns: "preview-" + (paper.header?.form_level || 0), markingScheme: res.markingScheme, showActions: true })}
         </div>
       `;
+      const examRoot = document.querySelector("#exam-preview-area [data-exam-root]");
+      if (examRoot && typeof bindExamPaperActions === "function") bindExamPaperActions(examRoot);
       document.getElementById("exam-regenerate").addEventListener("click", () => {
         document.getElementById("exam-generate").click();
       });

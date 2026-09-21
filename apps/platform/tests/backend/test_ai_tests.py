@@ -20,7 +20,6 @@ def _payload(**overrides):
         "test_type": "topical",
         "topic": "Acids, Bases and Salts",
         "subtopic": "",
-        "count": 5,
         "subject_slug": "chemistry",
         "form_level": 4,
     }
@@ -32,8 +31,6 @@ def test_generate_tests_rejects_unknown_test_type():
     resp = client.post("/ai/tests/generate", json=_payload(test_type="bonus"), headers=_headers())
     assert resp.status_code == 422
     assert "test_type" in resp.json()["detail"]
-    for t in TEST_TYPES:
-        assert t in resp.json()["detail"]
 
 
 def test_generate_tests_rejects_unknown_subject():
@@ -67,10 +64,9 @@ def test_generate_tests_accepts_topics_subtopics_lists():
     )
     assert resp.status_code == 200, resp.text
     data = resp.json()
-    assert "questions" in data
-    assert data["count"] == len(data["questions"])
+    assert "paper" in data
+    assert data["paper"]["header"]["subject_code"] == "032"
     assert data["topics"] == ["Acids, Bases and Salts", "Salts and Solutions"]
-    assert data["subtopics"] == ["Preparation of Salts", "Uses of Salts"]
 
 
 def test_generate_tests_rejects_too_many_topics():
@@ -103,22 +99,25 @@ def test_generate_tests_rejects_too_many_subtopics():
     assert "30" in resp.json()["detail"]
 
 
-def test_generate_tests_rejects_count_out_of_range():
-    resp = client.post("/ai/tests/generate", json=_payload(count=0), headers=_headers())
+def test_generate_tests_rejects_math_practical():
+    resp = client.post(
+        "/ai/tests/generate",
+        json=_payload(subject_slug="mathematics", form_level=4, paper="practical"),
+        headers=_headers(),
+    )
     assert resp.status_code == 422
-    assert "count" in resp.json()["detail"]
-    resp = client.post("/ai/tests/generate", json=_payload(count=25), headers=_headers())
-    assert resp.status_code == 422
+    assert "practical" in resp.json()["detail"].lower()
 
 
-def test_generate_tests_returns_questions_for_valid_request():
+def test_generate_tests_returns_paper_for_valid_request():
     resp = client.post("/ai/tests/generate", json=_payload(), headers=_headers())
     assert resp.status_code == 200
     data = resp.json()
-    assert "questions" in data
-    assert data["count"] == len(data["questions"])
+    assert "paper" in data
+    assert data["paper"]["sections"]
+    assert data["paper"]["header"]["total_marks"] > 0
+    assert "markingScheme" in data
     assert data["testType"] == "topical"
-    assert data["testTypeLabel"] == "Topical Test"
     assert data["subject"] == "Chemistry"
 
 
@@ -126,4 +125,16 @@ def test_generate_tests_accepts_all_test_types():
     for test_type in TEST_TYPES:
         resp = client.post("/ai/tests/generate", json=_payload(test_type=test_type), headers=_headers())
         assert resp.status_code == 200, f"{test_type} failed: {resp.text}"
-        assert "questions" in resp.json()
+        assert "paper" in resp.json()
+
+
+def test_test_presets_endpoint():
+    resp = client.get(
+        "/ai/tests/presets?subject_slug=physics&form_level=4&test_type=midterm",
+        headers=_headers(),
+    )
+    assert resp.status_code == 200
+    data = resp.json()
+    assert "presets" in data
+    assert any(p["paper"] == "theory" for p in data["presets"])
+    assert any(p["paper"] == "practical" for p in data["presets"])

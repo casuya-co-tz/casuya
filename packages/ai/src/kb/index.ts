@@ -22,3 +22,18 @@ export type {
   TestExamType,
   KbExamFilter,
 } from './exam-types';
+export {
+  resolvePaperPreset,
+  listAvailablePapers,
+  formFamily,
+  formLabel as paperFormLabel,
+  countQuestionSlots,
+} from './paper-presets';
+export type {
+  PaperPreset,
+  PaperVariant,
+  ExamPaper,
+  MarkingScheme,
+  ExamQuestion,
+  ExamSection,
+} from './paper-types';
