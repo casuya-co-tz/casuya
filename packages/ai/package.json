@@ -44,6 +44,7 @@
   },
   "homepage": "https://github.com/casuya/casuya-ai#readme",
   "dependencies": {
+    "@tavily/core": "^0.7.13",
     "dotenv": "^17.4.2",
     "tslib": "^2.6.2"
   },

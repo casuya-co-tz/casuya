@@ -13,6 +13,15 @@ import {
 } from '../src/kb/paper-presets';
 import { PaperVariant } from '../src/kb/paper-types';
 import { ProviderFactory } from '../src/providers/provider-factory';
+import {
+  buildWebQuery,
+  fetchWebDocs,
+  formLevelLabel,
+  formatWebContext,
+  isKbThin,
+  webSearchEnabled,
+  WebSearchDoc,
+} from '../src/rag/web-search';
 import { resolveSubject } from '../server';
 import {
   assemblePaperFromContent,
@@ -225,8 +234,39 @@ export async function handleTestGenerate(
     return { error: 'No preset for subject/form/paper combination', paper: null };
   }
 
-  const { ragText, kbHits } = retrieveTestContext(body);
+  const kbCtx = retrieveTestContext(body);
+  let ragText = kbCtx.ragText;
+  const kbHits = kbCtx.kbHits;
   const allTopics = topics.length ? topics : [topic];
+  const formLabel = formLevelLabel(validForm);
+
+  // "Super" grounding: when the KB found nothing for the topic, enrich from the
+  // web (only if a search key is configured). Any web failure is ignored.
+  let webHits: WebSearchDoc[] = [];
+  let webSourced = false;
+  if (webSearchEnabled() && isKbThin(kbCtx.kbHits)) {
+    const query = buildWebQuery({
+      subject: subject.name || subject.enumValue,
+      subjectSlug,
+      formLabel,
+      testTypeLabel,
+      topic,
+      topics,
+      subtopics,
+      paper: paperVariant,
+    });
+    webHits = await fetchWebDocs(query, { limit: 4 });
+    if (webHits.length) {
+      const webContext = formatWebContext(webHits, {
+        maxChars: Number(process.env.WEB_RAG_MAX_CHARS) || 6500,
+        subject: subject.name || subject.enumValue,
+      });
+      if (webContext) {
+        ragText = [ragText, webContext].filter(Boolean).join('\n\n');
+        webSourced = true;
+      }
+    }
+  }
 
   let paper;
   let markingScheme;
@@ -292,6 +332,8 @@ export async function handleTestGenerate(
     testType,
     testTypeLabel,
     grounded: !!ragText,
+    webSourced,
+    webHits: webHits.map((h) => ({ title: h.title, url: h.url })),
     subject: subject.name,
     formLevel: validForm,
     topics: allTopics,

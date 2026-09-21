@@ -80,6 +80,19 @@ console.log(response.message);
 | Anthropic | `anthropic` | Chat, Long context |
 | Local (Ollama) | `local` | Chat, Embeddings |
 
+## Web grounding (super mode)
+
+The Test Generator can enrich papers with live web context when the local
+knowledge base has nothing for a topic. It is **opt-in** and fail-closed:
+
+- Set `TAVILY_API_KEY` to enable (https://tavily.com). Without the key the
+  feature is inert and generation behaves exactly as before.
+- `searchWeb` (`src/rag/web-search.ts`) is called only when
+  `retrieveTestContext` returns zero KB hits; any network/parse/timeout error
+  silently degrades to no web context.
+- Optional tuning: `WEB_RAG_MAX_CHARS` caps the injected reference block
+  (default 6500). Responses include `webSourced` and `webHits` (title/url).
+
 ## Configuration
 
 ```typescript
