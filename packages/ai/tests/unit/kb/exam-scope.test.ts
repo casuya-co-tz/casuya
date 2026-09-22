@@ -1,6 +1,7 @@
 import {
   effectiveFormForTest,
   cumulativeFormRange,
+  fallbackTestQuery,
   NATIONAL_TEST_FORM,
 } from '../../../src/kb/exam-types';
 import { buildPaperPrompt } from '../../../server-utils/paper';
@@ -44,6 +45,18 @@ describe('cumulativeFormRange', () => {
   it('defaults to the full O-Level band for an unknown form', () => {
     expect(cumulativeFormRange(0)).toEqual([1, 2, 3, 4]);
     expect(cumulativeFormRange(9)).toEqual([1, 2, 3, 4]);
+  });
+});
+
+describe('fallbackTestQuery', () => {
+  it('grounds a topic-less full exam on subject + exam type', () => {
+    expect(fallbackTestQuery('physics', 'Midterm Test')).toBe('physics Midterm Test');
+    expect(fallbackTestQuery('chemistry', 'NECTA Form IV')).toBe('chemistry NECTA Form IV');
+  });
+
+  it('tolerates a missing subject', () => {
+    expect(fallbackTestQuery(undefined, 'Terminal Test')).toBe('Terminal Test');
+    expect(fallbackTestQuery('', 'Annual Test')).toBe('Annual Test');
   });
 });
 

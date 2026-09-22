@@ -8,6 +8,7 @@ import {
   TestExamType,
   effectiveFormForTest,
   cumulativeFormRange,
+  fallbackTestQuery,
 } from '../src/kb';
 import {
   listAvailablePapers,
@@ -66,7 +67,7 @@ function retrieveTestContext(body: any): { ragText: string; kbHits: unknown[] } 
   const empty = { ragText: '', kbHits: [] };
   if (!kb.ready) return empty;
 
-  const testType = isTestExamType(body.test_type) ? body.test_type : 'topical';
+  const testType: TestExamType = isTestExamType(body.test_type) ? body.test_type : 'topical';
   const subject = String(body.subject_slug || '').trim() || undefined;
   const formLevel = Number(body.form_level);
   const validForm = effectiveFormForTest(testType, formLevel);
@@ -76,7 +77,7 @@ function retrieveTestContext(body: any): { ragText: string; kbHits: unknown[] } 
   const subtopics = (Array.isArray(body.subtopics) ? body.subtopics : [])
     .map((t: unknown) => String(t || '').trim())
     .filter(Boolean);
-  const query = [
+  const topicQuery = [
     String(body.topic || ''),
     ...topics,
     String(body.subtopic || ''),
@@ -85,6 +86,9 @@ function retrieveTestContext(body: any): { ragText: string; kbHits: unknown[] } 
     .filter(Boolean)
     .join(' ')
     .trim();
+  // Full-form exams may be generated with no topics ticked — ground on
+  // subject + exam type so KB exam papers are still retrieved.
+  const query = topicQuery || fallbackTestQuery(subject, TEST_EXAM_TYPE_LABELS[testType]);
   if (!query) return empty;
 
   const maxChars = Number(process.env.KB_RAG_MAX_CHARS) || 9000;

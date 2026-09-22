@@ -72,6 +72,14 @@ export function cumulativeFormRange(formLevel: number): number[] {
 }
 
 /**
+ * Grounding query for full-form exams generated with no topics ticked:
+ * fall back to subject + exam type so KB exam papers are still retrieved.
+ */
+export function fallbackTestQuery(subject: string | undefined, testTypeLabel: string): string {
+  return [subject, testTypeLabel].filter(Boolean).join(' ').trim();
+}
+
+/**
  * Rules for narrowing the KB exam corpus to one test type.
  *
  * - Internal papers are bucketed by their filename: `chemistry_form4_terminal_1_2024.json`

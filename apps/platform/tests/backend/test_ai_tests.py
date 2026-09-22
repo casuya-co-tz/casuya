@@ -45,10 +45,31 @@ def test_generate_tests_rejects_form_out_of_range():
     assert "form_level" in resp.json()["detail"]
 
 
-def test_generate_tests_rejects_missing_topic_and_subtopic():
+def test_generate_tests_rejects_missing_topic_for_focused_types():
     resp = client.post("/ai/tests/generate", json=_payload(topic="", subtopic=""), headers=_headers())
     assert resp.status_code == 422
     assert "topic" in resp.json()["detail"]
+
+
+def test_generate_tests_allows_empty_topics_for_full_form_types():
+    for test_type in ("midterm", "terminal", "annual", "necta_iv"):
+        resp = client.post(
+            "/ai/tests/generate",
+            json=_payload(test_type=test_type, topic="", subtopic=""),
+            headers=_headers(),
+        )
+        assert resp.status_code == 200, f"{test_type} failed: {resp.text}"
+        assert "paper" in resp.json()
+
+
+def test_generate_tests_locks_necta_form():
+    resp = client.post(
+        "/ai/tests/generate",
+        json=_payload(test_type="necta_iv", form_level=2),
+        headers=_headers(),
+    )
+    assert resp.status_code == 200, resp.text
+    assert resp.json()["formLevel"] == 4
 
 
 def test_generate_tests_accepts_topics_subtopics_lists():
@@ -138,3 +159,14 @@ def test_test_presets_endpoint():
     assert "presets" in data
     assert any(p["paper"] == "theory" for p in data["presets"])
     assert any(p["paper"] == "practical" for p in data["presets"])
+
+
+def test_test_presets_lock_necta_form():
+    resp = client.get(
+        "/ai/tests/presets?subject_slug=physics&form_level=2&test_type=necta_iv",
+        headers=_headers(),
+    )
+    assert resp.status_code == 200
+    data = resp.json()
+    assert data["formLevel"] == 4
+    assert data["presets"], "CSEE presets must exist for Form IV"

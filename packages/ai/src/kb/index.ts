@@ -19,6 +19,7 @@ export {
   matchesKbExamFilter,
   effectiveFormForTest,
   cumulativeFormRange,
+  fallbackTestQuery,
   NATIONAL_TEST_FORM,
 } from './exam-types';
 export type {

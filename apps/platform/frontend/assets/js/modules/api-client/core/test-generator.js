@@ -20,6 +20,10 @@ const PAPER_LABELS = {
 
 const NECTA_FORM_LOCK = { necta_ii: 2, necta_iv: 4, necta_vi: 6 };
 
+// Focused tests must scope to a topic; full-form exams cover the whole
+// cumulative syllabus, so an empty topic list is valid for them.
+const TOPIC_REQUIRED_TYPES = new Set(["topical", "monthly"]);
+
 let _testGenStylesInjected = false;
 
 function _injectTestGenStyles() {
@@ -115,7 +119,10 @@ function _testGenUpdateSummary(root) {
   const topics = Array.from(root.querySelectorAll(".test-gen-topic-cb:checked")).length;
   const subs = Array.from(root.querySelectorAll(".test-gen-subtopic-cb:checked")).length;
   if (!topics && !subs) {
-    summary.textContent = "";
+    const activeType = root.querySelector(".test-type-card.selected")?.dataset.testType;
+    // Full-form exams are cumulative: no ticked topics = whole-form scope.
+    summary.textContent =
+      activeType && !TOPIC_REQUIRED_TYPES.has(activeType) ? "Scope: whole form (cumulative)" : "";
     return;
   }
   summary.textContent = `Scope: ${topics} topic${topics === 1 ? "" : "s"} · ${subs} sub-topic${subs === 1 ? "" : "s"} selected`;
@@ -239,7 +246,14 @@ function initTestGeneratorView(root = document) {
       c.classList.add("selected");
       selected = c.dataset.testType;
       const lock = NECTA_FORM_LOCK[selected];
-      if (lock && formEl) formEl.value = String(lock);
+      if (formEl) {
+        // National exams own their form — lock the select so the scope and
+        // presets below always match what the backend will generate.
+        formEl.disabled = !!lock;
+        formEl.title = lock ? "Form is fixed for this national exam type" : "";
+        if (lock) formEl.value = String(lock);
+      }
+      _testGenUpdateSummary(root);
       reloadAll();
     });
   });
@@ -300,7 +314,7 @@ function initTestGeneratorView(root = document) {
     const fallbackTopic = root.querySelector("#test-gen-topic-fallback")?.value.trim() || "";
     const fallbackSubtopic = root.querySelector("#test-gen-subtopic-fallback")?.value.trim() || "";
 
-    if (!topics.length && !subtopics.length && !fallbackTopic) {
+    if (TOPIC_REQUIRED_TYPES.has(selected) && !topics.length && !subtopics.length && !fallbackTopic) {
       statusEl.textContent = "Tick at least one topic (or sub-topic), then press Generate.";
       return;
     }
@@ -324,7 +338,10 @@ function initTestGeneratorView(root = document) {
         }),
       });
       if (!data.paper) {
-        resultsEl.innerHTML = '<div class="card" style="padding:1rem"><p style="color:var(--color-text-muted)">No paper was generated. Try a different topic or paper type.</p></div>';
+        const reason = data.error
+          ? escapeHtml(data.error)
+          : "No paper was generated. Try a different topic or paper type.";
+        resultsEl.innerHTML = `<div class="card" style="padding:1rem"><p style="color:var(--color-text-muted)">${reason}</p></div>`;
         statusEl.textContent = "";
         return;
       }

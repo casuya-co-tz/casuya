@@ -121,6 +121,13 @@ class QuestionRequest(BaseModel):
 
 _ALLOWED_SUBJECTS = {"mathematics", "chemistry", "physics"}
 
+# National exam types own their form: the request must not relabel a paper.
+_NECTA_FORM_LOCK = {"necta_ii": 2, "necta_iv": 4, "necta_vi": 6}
+
+# Focused tests must scope to a topic; full-form exams cover the whole
+# cumulative syllabus, so an empty topic list is valid for them.
+_TOPIC_REQUIRED_TYPES = {"topical", "monthly"}
+
 
 class TutoringMessage(BaseModel):
     role: str
@@ -304,10 +311,14 @@ async def api_test_presets(
         )
     if form_level < 1 or form_level > 6:
         raise HTTPException(status_code=422, detail="form_level must be between 1 and 6")
+    # National exam types lock their form — mirror the AI service so local
+    # fallbacks and the echoed formLevel always agree with the paper built.
+    form_level = _NECTA_FORM_LOCK.get(test_type, form_level)
 
     result = await get_test_presets(subject_slug, form_level, test_type)
     if not result.get("presets"):
         result["presets"] = list_available_papers(subject_slug, form_level, test_type)
+    result["formLevel"] = form_level
     return result
 
 
@@ -326,7 +337,11 @@ async def api_generate_tests(req: TestGenerationRequest, _user=Depends(get_curre
         )
     if req.form_level is not None and (req.form_level < 1 or req.form_level > 6):
         raise HTTPException(status_code=422, detail="form_level must be between 1 and 6")
-    if not req.topic and not req.subtopic and not req.topics and not req.subtopics:
+    # National exam types lock their form before anything downstream sees it.
+    form_level = _NECTA_FORM_LOCK.get(req.test_type, req.form_level)
+    if req.test_type in _TOPIC_REQUIRED_TYPES and not (
+        req.topic or req.subtopic or req.topics or req.subtopics
+    ):
         raise HTTPException(
             status_code=422,
             detail="Provide a topic (or subtopic) to generate the test from",
@@ -349,7 +364,7 @@ async def api_generate_tests(req: TestGenerationRequest, _user=Depends(get_curre
     paper_obj, meta = await generate_test_paper(
         req.test_type,
         subject_slug=req.subject_slug,
-        form_level=req.form_level,
+        form_level=form_level,
         topic=req.topic,
         subtopic=req.subtopic,
         topics=req.topics,
@@ -372,7 +387,7 @@ async def api_generate_tests(req: TestGenerationRequest, _user=Depends(get_curre
         "testTypeLabel": TEST_TYPES.get(req.test_type, req.test_type),
         "grounded": bool(meta.get("grounded")),
         "subject": _SUBJECT_LABELS.get(req.subject_slug or "") or req.subject_slug or "",
-        "formLevel": req.form_level,
+        "formLevel": form_level,
         "topics": req.topics,
         "subtopics": req.subtopics,
         "kbHits": meta.get("kbHits") or [],
