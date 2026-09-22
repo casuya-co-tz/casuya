@@ -30,6 +30,7 @@ import {
   buildPlaceholderPaper,
   countSyntheticQuestions,
   parsePaperJson,
+  salvageSyntheticQuestions,
   validateNectaPaper,
 } from '../server-utils/paper';
 
@@ -160,7 +161,7 @@ async function generatePaperWithAi(
   const slotCount = preset.flat_questions?.length
     || preset.sections?.reduce((n, s) => n + s.questions.length, 0)
     || 10;
-  const maxTokens = Math.min(12000, Math.max(4096, slotCount * 400));
+  const maxTokens = Math.min(16000, Math.max(6000, slotCount * 750));
 
   const result = await provider.chatCompletion({
     messages: [
@@ -188,7 +189,19 @@ async function generatePaperWithAi(
   }
   const synthetic = countSyntheticQuestions(paper);
   if (synthetic.count > 0) {
-    console.warn(`[tests/generate] assembled paper had ${synthetic.count} placeholder question(s): Q${synthetic.numbers.join(', Q')}`);
+    const salvaged = salvageSyntheticQuestions(paper, preset, {
+      subject: args.subject,
+      subjectSlug: args.subjectSlug,
+      formLevel: args.formLevel,
+      topics: args.topics,
+    });
+    if (salvaged.replaced > 0) {
+      console.warn(`[tests/generate] salvaged ${salvaged.replaced} placeholder question(s) from offline bank (Q${salvaged.numbers.join(', Q')})`);
+    }
+    if (salvaged.replaced > 0 && countSyntheticQuestions(salvaged.paper).count === 0) {
+      const markingScheme = buildMarkingSchemeFromPaper(salvaged.paper, parsed);
+      return { paper: salvaged.paper, markingScheme };
+    }
     return null;
   }
   const markingScheme = buildMarkingSchemeFromPaper(paper, parsed);

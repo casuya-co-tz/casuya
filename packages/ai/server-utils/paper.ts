@@ -63,6 +63,64 @@ export function countSyntheticQuestions(paper: ExamPaper): { count: number; numb
   return { count: numbers.length, numbers };
 }
 
+export interface SalvageResult {
+  paper: ExamPaper;
+  replaced: number;
+  numbers: (string | number)[];
+}
+
+/**
+ * Replace only the questions the model left as placeholder slots with real
+ * offline-bank content, instead of discarding the whole generated paper.
+ * Slot positions and question numbers are preserved; marks are kept.
+ */
+export function salvageSyntheticQuestions(
+  paper: ExamPaper,
+  preset: PaperPreset,
+  args: { subject: string; subjectSlug: string; formLevel: number; topics: string[] },
+): SalvageResult {
+  const topics = Array.isArray(args.topics) ? args.topics.filter((t) => String(t).trim()) : [];
+  const topicList = topics.length ? topics : [args.subject];
+
+  let useBank = true;
+  try {
+    useBank = offlineBankAvailable();
+  } catch {
+    useBank = false;
+  }
+
+  const slots =
+    preset.flat_questions?.length
+      ? preset.flat_questions
+      : (preset.sections?.flatMap((s) => s.questions) || []);
+
+  let slotIndex = 0;
+  let replaced = 0;
+  const sections = (paper.sections || []).map((sec) => ({
+    ...sec,
+    questions: (sec.questions || []).map((q) => {
+      const slot = slots[slotIndex];
+      const idx = slotIndex;
+      slotIndex += 1;
+      if (!slot || !isSyntheticQuestion(q)) return q;
+      const context: OfflineContext = {
+        subjectSlug: args.subjectSlug.toLowerCase(),
+        subjectName: args.subject,
+        topic: topicList[idx % topicList.length],
+        seed: idx,
+      };
+      const raw = useBank ? offlineContentForSlot(slot, context) : legacySlotContent(slot, topicList[0]);
+      const rebuilt = normalizeQuestion(raw, slot, Number(q.number));
+      rebuilt.marks = q.marks != null ? q.marks : slot.marks;
+      replaced += 1;
+      return rebuilt;
+    }),
+  }));
+
+  const out = { ...paper, sections };
+  return { paper: out, replaced, numbers: countSyntheticQuestions(out).numbers };
+}
+
 function distributeMarks(total: number, parts: number): number[] {
   const base = Math.floor(total / parts);
   const rem = total % parts;
