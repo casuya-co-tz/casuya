@@ -222,3 +222,94 @@ export function parseJsonObject(content: string): any | null {
     return null;
   }
 }
+
+/**
+ * Recover JSON that a model stopped writing mid-stream (output-token cap).
+ * Cuts back to the last completed object/array, closes a half-written string,
+ * and appends the still-open brackets. First structure that parses wins
+ * (longest prefix first).
+ */
+export function parseTruncatedJsonObject(content: string): any | null {
+  let text = String(content || '').trim();
+  text = text.replace(/```json/gi, '').replace(/```/g, '');
+  const start = text.indexOf('{');
+  if (start === -1) return null;
+  text = text.slice(start);
+
+  interface Cut {
+    end: number;
+    stack: string[];
+  }
+  const cuts: Cut[] = [];
+  const stack: string[] = [];
+  let inStr = false;
+  let esc = false;
+
+  for (let i = 0; i < text.length; i++) {
+    const ch = text[i];
+    if (inStr) {
+      if (esc) esc = false;
+      else if (ch === '\\') esc = true;
+      else if (ch === '"') inStr = false;
+      continue;
+    }
+    if (ch === '"') {
+      inStr = true;
+      continue;
+    }
+    if (ch === '{') {
+      stack.push('}');
+      continue;
+    }
+    if (ch === '[') {
+      stack.push(']');
+      continue;
+    }
+    if (ch === '}' || ch === ']') {
+      stack.pop();
+      cuts.push({ end: i + 1, stack: [...stack] });
+    }
+  }
+
+  const attempt = (raw: string, open: string[]): any | null => {
+    let piece = raw.replace(/[\s,]+$/, '');
+    // Dangling key with no value: ... "stem":  → drop the key too.
+    piece = piece.replace(/"(?:[^"\\]|\\.)*"\s*:\s*$/, '');
+    piece = piece.replace(/:\s*$/, '');
+    const candidate = piece + [...open].reverse().join('');
+    try {
+      return JSON.parse(candidate);
+    } catch {
+      return null;
+    }
+  };
+
+  for (let i = cuts.length - 1; i >= 0; i--) {
+    const parsed = attempt(text.slice(0, cuts[i].end), cuts[i].stack);
+    if (parsed) return parsed;
+  }
+
+  // Truncated inside a string value — close it and the open brackets.
+  if (inStr) {
+    const fullStack: string[] = [];
+    let s = false;
+    let e = false;
+    for (let i = 0; i < text.length; i++) {
+      const ch = text[i];
+      if (s) {
+        if (e) e = false;
+        else if (ch === '\\') e = true;
+        else if (ch === '"') s = false;
+        continue;
+      }
+      if (ch === '"') s = true;
+      else if (ch === '{') fullStack.push('}');
+      else if (ch === '[') fullStack.push(']');
+      else if (ch === '}' || ch === ']') fullStack.pop();
+    }
+    const parsed = attempt(text + '"', fullStack);
+    if (parsed) return parsed;
+  }
+
+  return null;
+}

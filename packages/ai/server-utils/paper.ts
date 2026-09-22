@@ -16,7 +16,7 @@ import {
 import { MCQ_LABELS, PART_LABELS, formLabel } from '../src/kb/paper-presets';
 import { offlineBankAvailable, offlineContentForSlot, OfflineContext } from '../src/kb/offline-question-bank';
 import { PAPER_GENERATION_TEMPLATE } from '../src/prompts/necta/paper-generation-grounded';
-import { parseJsonObject } from './exam';
+import { parseJsonObject, parseTruncatedJsonObject } from './exam';
 
 const OPTS = ['A', 'B', 'C', 'D'];
 const PART_PLACEHOLDER = /^\(Part [a-z]\)$/;
@@ -670,5 +670,5 @@ export function buildMarkingSchemeFromPaper(paper: ExamPaper, parsed?: any): Mar
 }
 
 export function parsePaperJson(content: string): any | null {
-  return parseJsonObject(content);
+  return parseJsonObject(content) || parseTruncatedJsonObject(content);
 }

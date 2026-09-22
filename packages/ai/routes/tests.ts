@@ -224,9 +224,13 @@ async function generatePaperWithAi(
   const parsed = parsePaperJson(result.content);
   if (!parsed) {
     console.warn(
-      `[tests/generate] paper draft unparseable, falling back to offline bank (content length ${String(result.content || '').length})`,
+      `[tests/generate] paper draft unparseable even after truncation repair, falling back to offline bank ` +
+        `(content length ${String(result.content || '').length}, finish=${result.finishReason || 'unknown'})`,
     );
     return null;
+  }
+  if (result.finishReason === 'length') {
+    console.warn('[tests/generate] model hit output token cap; salvaged truncated paper JSON');
   }
 
   const assemble = (raw: any) =>
