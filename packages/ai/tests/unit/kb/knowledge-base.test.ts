@@ -71,4 +71,31 @@ describe('KnowledgeBase', () => {
     const exams = kb.lookupExam({ level: 'csee', subject: 'chemistry' }).slice(0, 3);
     expect(exams.length).toBeGreaterThan(0);
   });
+
+  it('supports a cumulative form range and surfaces earlier forms', () => {
+    const hits = kb.search('force and motion', {
+      subject: 'Physics',
+      kind: ['exam'],
+      formNumbers: [1, 2, 3, 4],
+      limit: 20,
+    });
+    expect(hits.length).toBeGreaterThan(0);
+    for (const h of hits) {
+      const file = h.doc.file.toLowerCase();
+      expect(file).toMatch(/_form[1-4]_/);
+    }
+    const coveredForms = new Set(hits.map((h) => (h.doc.file.match(/_form(\d)_/i)?.[1] ?? '')));
+    expect(coveredForms.size).toBeGreaterThan(1);
+  });
+
+  it('honors a single-form filter exclusively', () => {
+    const hits = kb.search('force and motion', {
+      subject: 'Physics',
+      kind: ['exam'],
+      formNumber: 4,
+      limit: 20,
+    });
+    expect(hits.length).toBeGreaterThan(0);
+    for (const h of hits) expect(h.doc.file.toLowerCase()).toMatch(/_form4_/);
+  });
 });

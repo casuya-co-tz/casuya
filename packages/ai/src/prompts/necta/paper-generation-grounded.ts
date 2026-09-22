@@ -16,6 +16,7 @@ EXAM TYPE: {{test_type_label}}
 SUBJECT: {{subject}}
 PAPER: {{paper_code}} {{paper_title}}
 TOTAL MARKS: {{total_marks}}
+{{scope_hint}}
 
 TOPICS TO COVER (spread questions across ALL):
 {{topics_covered}}
@@ -49,6 +50,7 @@ Include ALL sections from the preset. Use continuous question numbers.`,
     { name: 'paper_code', type: 'string', required: true },
     { name: 'paper_title', type: 'string', required: true },
     { name: 'total_marks', type: 'number', required: true },
+    { name: 'scope_hint', type: 'string', required: false },
     { name: 'topics_covered', type: 'string', required: true },
     { name: 'subtopics_covered', type: 'string', required: true },
     { name: 'reference_context', type: 'string', required: true },

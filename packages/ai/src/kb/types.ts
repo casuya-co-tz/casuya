@@ -34,6 +34,8 @@ export interface SearchOptions {
   form?: string;
   /** Match docs whose source filename contains formNumber (e.g. `_form4_`). */
   formNumber?: number;
+  /** Match docs whose source filename contains ANY of these forms (cumulative range). */
+  formNumbers?: number[];
   year?: string;
   /** Exact match on the KbDoc level field (e.g. 'internal', 'ftna', 'csee', 'acsee'). */
   level?: string;

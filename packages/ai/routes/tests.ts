@@ -6,6 +6,8 @@ import {
   isTestExamType,
   TEST_EXAM_TYPE_LABELS,
   TestExamType,
+  effectiveFormForTest,
+  cumulativeFormRange,
 } from '../src/kb';
 import {
   listAvailablePapers,
@@ -67,7 +69,7 @@ function retrieveTestContext(body: any): { ragText: string; kbHits: unknown[] } 
   const testType = isTestExamType(body.test_type) ? body.test_type : 'topical';
   const subject = String(body.subject_slug || '').trim() || undefined;
   const formLevel = Number(body.form_level);
-  const validForm = Number.isInteger(formLevel) && formLevel >= 1 && formLevel <= 6 ? formLevel : undefined;
+  const validForm = effectiveFormForTest(testType, formLevel);
   const topics = (Array.isArray(body.topics) ? body.topics : [])
     .map((t: unknown) => String(t || '').trim())
     .filter(Boolean);
@@ -89,14 +91,23 @@ function retrieveTestContext(body: any): { ragText: string; kbHits: unknown[] } 
   const filter = examTypeToKbFilter(testType, validForm);
   const paper = parsePaperVariant(body.paper);
 
+  // Cumulative internal exams (midterm/terminal/annual) draw from the whole
+  // form band of their NECTA level, not just the current class. National
+  // exams already search the entire level corpus. Topical stays form-scoped.
+  const CUMULATIVE_INTERNAL = ['midterm', 'terminal', 'annual'];
+
   const examOpts: SearchOptions = {
     subject,
     kind: ['exam'],
     limit: 4,
   };
   if (filter?.level) examOpts.level = filter.level;
-  if (filter?.file) examOpts.file = filter.file;
-  if (validForm && !filter?.level) examOpts.formNumber = validForm;
+  if (CUMULATIVE_INTERNAL.includes(testType)) {
+    examOpts.formNumbers = cumulativeFormRange(validForm);
+  } else {
+    if (filter?.file) examOpts.file = filter.file;
+    if (validForm && !filter?.level) examOpts.formNumber = validForm;
+  }
 
   let rag = kb.buildRagContext(query, examOpts, maxChars);
 
@@ -142,11 +153,26 @@ export function handleTestPresets(body: any): unknown {
   const subjectSlug = String(body.subject_slug || '').toLowerCase();
   const formLevel = Number(body.form_level);
   const testType: TestExamType = isTestExamType(body.test_type) ? body.test_type : 'topical';
-  if (!subjectSlug || !Number.isInteger(formLevel) || formLevel < 1 || formLevel > 6) {
+  // National exam types own their form; don't let the client relabel them.
+  const effectiveForm = effectiveFormForTest(testType, formLevel);
+  if (!subjectSlug || !Number.isInteger(effectiveForm) || effectiveForm < 1 || effectiveForm > 6) {
     return { presets: [], error: 'subject_slug and form_level (1-6) required' };
   }
-  const presets = listAvailablePapers({ subject_slug: subjectSlug, form_level: formLevel, test_type: testType });
-  return { presets, testType, formLevel };
+  const presets = listAvailablePapers({ subject_slug: subjectSlug, form_level: effectiveForm, test_type: testType });
+  return { presets, testType, formLevel: effectiveForm };
+}
+
+/** Tell the model the real cumulative scope of the exam it is writing. */
+function buildScopeHint(testType: TestExamType, testTypeLabel: string, validForm: number): string {
+  if (testType === 'necta_ii' || testType === 'necta_iv' || testType === 'necta_vi') {
+    const band = validForm >= 5 ? 'Forms 5 to 6 (A-Level)' : 'Forms 1 to 4 (O-Level)';
+    return `EXAM SCOPE: Cumulative ${testTypeLabel} - the whole NECTA band (${band}) applies. Questions may draw knowledge from earlier forms of the band, not only Form ${validForm}.`;
+  }
+  if (['midterm', 'terminal', 'annual'].includes(testType)) {
+    const range = cumulativeFormRange(validForm);
+    return `EXAM SCOPE: Cumulative ${testTypeLabel.toLowerCase()} at Form ${validForm} - this exam draws from earlier forms too (Forms ${range[0]} to ${range[range.length - 1]} of this level).`;
+  }
+  return 'EXAM SCOPE: Focused topical test - cover only the requested topics.';
 }
 
 async function generatePaperWithAi(
@@ -159,6 +185,7 @@ async function generatePaperWithAi(
     subtopics: string[];
     testTypeLabel: string;
     ragText: string;
+    scopeHint: string;
   },
 ): Promise<{ paper: ReturnType<typeof assemblePaperFromContent>; markingScheme: ReturnType<typeof buildMarkingSchemeFromPaper> } | null> {
   const provider = ProviderFactory.getProvider('failover') || ProviderFactory.getProvider('local');
@@ -171,6 +198,7 @@ async function generatePaperWithAi(
     subtopics: args.subtopics,
     testTypeLabel: args.testTypeLabel,
     referenceContext: args.ragText,
+    scopeHint: args.scopeHint,
   });
 
   const slotCount = preset.flat_questions?.length
@@ -342,7 +370,9 @@ export async function handleTestGenerate(
   const subject = resolveSubject(body.subject_slug);
   const subjectSlug = String(body.subject_slug || '').toLowerCase();
   const formLevel = Number(body.form_level);
-  const validForm = Number.isInteger(formLevel) && formLevel >= 1 && formLevel <= 6 ? formLevel : 4;
+  // National types own their form; never let the body mislabel an exam.
+  const validForm = effectiveFormForTest(testType, formLevel);
+  const scopeHint = buildScopeHint(testType, testTypeLabel, validForm);
   const paperVariant = parsePaperVariant(body.paper);
 
   if (subjectSlug === 'mathematics' && paperVariant === 'practical') {
@@ -423,6 +453,7 @@ export async function handleTestGenerate(
       subtopics,
       testTypeLabel,
       ragText,
+      scopeHint,
     });
     if (generated?.paper?.sections?.length) {
       paper = generated.paper;

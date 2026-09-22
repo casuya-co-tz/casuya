@@ -171,6 +171,7 @@ export function buildPaperPrompt(args: {
   subtopics: string[];
   testTypeLabel: string;
   referenceContext: string;
+  scopeHint?: string;
 }): string {
   return renderPaperGenerationTemplate({
     test_type_label: args.testTypeLabel,
@@ -178,6 +179,7 @@ export function buildPaperPrompt(args: {
     paper_code: args.preset.paper_code,
     paper_title: args.preset.paper_title,
     total_marks: String(args.preset.total_marks),
+    scope_hint: args.scopeHint || '',
     topics_covered: args.topics.join('; ') || '(general syllabus scope)',
     subtopics_covered: args.subtopics.join('; ') || '(none)',
     reference_context: args.referenceContext || '(syllabus only)',

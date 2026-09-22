@@ -53,7 +53,7 @@ export function bm25Search(
 
   // Pre-filter candidate docs by metadata when filters supplied.
   const hasFilters =
-    !!opts.subject || !!opts.form || !!opts.formNumber || !!opts.year ||
+    !!opts.subject || !!opts.form || !!opts.formNumber || !!opts.formNumbers?.length || !!opts.year ||
     !!opts.level || !!opts.file || !!opts.kind?.length;
   const isCandidate = hasFilters
       ? (d: KbDoc) => {
@@ -64,6 +64,10 @@ export function bm25Search(
           }
           if (opts.form && d.form && d.form !== opts.form) return false;
           if (opts.formNumber && !(d.file || '').includes(`_form${opts.formNumber}_`)) return false;
+          if (opts.formNumbers?.length) {
+            const inRange = opts.formNumbers.some((f) => (d.file || '').includes(`_form${f}_`));
+            if (!inRange) return false;
+          }
           if (opts.level && (d.level || '').toLowerCase() !== opts.level.toLowerCase()) return false;
           if (opts.file && !(d.file || '').includes(opts.file)) return false;
           if (opts.year && d.year !== opts.year) return false;

@@ -17,6 +17,9 @@ export {
   isTestExamType,
   examTypeToKbFilter,
   matchesKbExamFilter,
+  effectiveFormForTest,
+  cumulativeFormRange,
+  NATIONAL_TEST_FORM,
 } from './exam-types';
 export type {
   TestExamType,
