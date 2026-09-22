@@ -14,15 +14,30 @@ import {
 import { PaperVariant } from '../src/kb/paper-types';
 import { ProviderFactory } from '../src/providers/provider-factory';
 import {
+  buildQueryVariants,
   buildWebQuery,
-  fetchWebDocs,
   formLevelLabel,
   formatWebContext,
   isKbThin,
+  searchWebContext,
   webSearchEnabled,
   WebSearchDoc,
 } from '../src/rag/web-search';
 import { resolveSubject } from '../server';
+import {
+  applyAnswersToScheme,
+  buildAnswersCompletionPrompt,
+  buildCritiquePrompt,
+  buildRevisionPrompt,
+  detectDuplicateQuestions,
+  findMissingSchemeAnswers,
+  marksDiscrepancy,
+  needsRevision,
+  parseAnswersCompletion,
+  parseCritiqueResponse,
+  replaceQuestionsFromBank,
+  serializePaper,
+} from '../server-utils/paper-quality';
 import {
   assemblePaperFromContent,
   buildMarkingSchemeFromPaper,
@@ -162,6 +177,8 @@ async function generatePaperWithAi(
     || preset.sections?.reduce((n, s) => n + s.questions.length, 0)
     || 10;
   const maxTokens = Math.min(16000, Math.max(6000, slotCount * 750));
+  const qualityLoop = String(process.env.PAPER_QUALITY_LOOP || 'on').toLowerCase() !== 'off';
+  const paperTitle = `${preset.paper_code} ${preset.paper_title}`.trim();
 
   const result = await provider.chatCompletion({
     messages: [
@@ -175,37 +192,144 @@ async function generatePaperWithAi(
   const parsed = parsePaperJson(result.content);
   if (!parsed) return null;
 
-  const paper = assemblePaperFromContent(preset, parsed, {
-    subject: args.subject,
-    subjectSlug: args.subjectSlug,
-    formLevel: args.formLevel,
-    topics: args.topics,
-    generator: 'casuya-ai',
-  });
-  const validation = validateNectaPaper(paper, preset);
-  if (!validation.valid) {
-    console.warn('[tests/generate] assembled paper failed validation:', validation.issues);
-    return null;
-  }
-  const synthetic = countSyntheticQuestions(paper);
-  if (synthetic.count > 0) {
-    const salvaged = salvageSyntheticQuestions(paper, preset, {
+  const assemble = (raw: any) =>
+    assemblePaperFromContent(preset, raw, {
       subject: args.subject,
       subjectSlug: args.subjectSlug,
       formLevel: args.formLevel,
       topics: args.topics,
+      generator: 'casuya-ai',
     });
-    if (salvaged.replaced > 0) {
-      console.warn(`[tests/generate] salvaged ${salvaged.replaced} placeholder question(s) from offline bank (Q${salvaged.numbers.join(', Q')})`);
+
+  /** Validate, salvage placeholders, and reject if anything is still broken. */
+  const accept = (paper: ReturnType<typeof assemblePaperFromContent>): ReturnType<typeof assemblePaperFromContent> | null => {
+    const validation = validateNectaPaper(paper, preset);
+    if (!validation.valid) {
+      console.warn('[tests/generate] assembled paper failed validation:', validation.issues);
+      return null;
     }
-    if (salvaged.replaced > 0 && countSyntheticQuestions(salvaged.paper).count === 0) {
-      const markingScheme = buildMarkingSchemeFromPaper(salvaged.paper, parsed);
-      return { paper: salvaged.paper, markingScheme };
+    const synthetic = countSyntheticQuestions(paper);
+    if (synthetic.count > 0) {
+      const salvaged = salvageSyntheticQuestions(paper, preset, {
+        subject: args.subject,
+        subjectSlug: args.subjectSlug,
+        formLevel: args.formLevel,
+        topics: args.topics,
+      });
+      if (salvaged.replaced > 0) {
+        console.warn(`[tests/generate] salvaged ${salvaged.replaced} placeholder question(s) from offline bank (Q${salvaged.numbers.join(', Q')})`);
+      }
+      if (salvaged.replaced === 0 || countSyntheticQuestions(salvaged.paper).count > 0) return null;
+      return salvaged.paper;
     }
-    return null;
+    return paper;
+  };
+
+  let finalPaper = accept(assemble(parsed));
+  if (!finalPaper) return null;
+  let finalParsed = parsed;
+
+  // "Super" quality loop: the critic re-reads the draft, then one bounded
+  // revision pass fixes only what the critic flagged. Any step may fail
+  // silently (network/heat/cost) and we still serve the draft.
+  if (qualityLoop) {
+    const criticJson = serializePaper(finalPaper);
+    if (criticJson) {
+      try {
+        const criticPrompt = buildCritiquePrompt(args.subject, criticJson, args.ragText, preset.total_marks, paperTitle);
+        const criticResult = await provider.chatCompletion({
+          messages: [
+            { role: 'system', content: 'You are a strict NECTA chief examiner. Reply with valid JSON only.' },
+            { role: 'user', content: criticPrompt },
+          ],
+          temperature: 0.1,
+          maxTokens: 2000,
+        });
+        const critique = parseCritiqueResponse(criticResult.content);
+        if (critique) {
+          const need = needsRevision(critique);
+          console.warn(
+            `[tests/generate] quality: critic score ${critique.score}/100, ${critique.issues.length} issue(s)${need.yes ? ` -> revising (${need.reasons.join('; ')})` : ''}`,
+          );
+          if (need.yes) {
+            const revPrompt = buildRevisionPrompt(args.subject, criticJson, critique, preset.total_marks, paperTitle);
+            const revResult = await provider.chatCompletion({
+              messages: [
+                { role: 'system', content: 'You are a meticulous NECTA examiner. Output only the corrected paper JSON.' },
+                { role: 'user', content: revPrompt },
+              ],
+              temperature: TEST_TEMPERATURE,
+              maxTokens,
+            });
+            const revParsed = parsePaperJson(revResult.content);
+            if (revParsed) {
+              const revised = accept(assemble(revParsed));
+              if (revised && JSON.stringify(revised) !== JSON.stringify(finalPaper)) {
+                finalPaper = revised;
+                finalParsed = revParsed;
+                console.warn('[tests/generate] quality: revision accepted');
+              }
+            }
+          }
+        }
+      } catch (err) {
+        console.warn('[tests/generate] quality loop skipped:', err);
+      }
+    }
   }
-  const markingScheme = buildMarkingSchemeFromPaper(paper, parsed);
-  return { paper, markingScheme };
+
+  // Dedup: drop near-identical stems that slipped through, swapping in bank content.
+  const dups = detectDuplicateQuestions(finalPaper);
+  if (dups.length) {
+    const secondNumbers = dups.map((d) => {
+      const bare = String(d.b).replace(/^q/i, '');
+      return /^\d+$/.test(bare) ? Number(bare) : bare;
+    });
+    const swapped = replaceQuestionsFromBank(finalPaper, preset, {
+      subject: args.subject,
+      subjectSlug: args.subjectSlug,
+      formLevel: args.formLevel,
+      topics: args.topics,
+    }, secondNumbers);
+    if (swapped.replaced > 0) {
+      finalPaper = swapped.paper;
+      console.warn(
+        `[tests/generate] quality: replaced ${swapped.replaced} duplicated question(s) from offline bank (${dups.map((d) => `${d.a}~${d.b} ${d.overlap}`).join(', ')})`,
+      );
+    }
+  }
+
+  let markingScheme = buildMarkingSchemeFromPaper(finalPaper, finalParsed);
+
+  // Guarantee model answers: fill any empty/stub scheme entries in one pass.
+  const missingAnswers = findMissingSchemeAnswers(finalPaper, markingScheme);
+  if (qualityLoop && missingAnswers.length) {
+    try {
+      const ansPrompt = buildAnswersCompletionPrompt(args.subject, serializePaper(finalPaper), missingAnswers, paperTitle);
+      const ansResult = await provider.chatCompletion({
+        messages: [
+          { role: 'system', content: 'You are a NECTA examiner composing model answers. Reply with valid JSON only.' },
+          { role: 'user', content: ansPrompt },
+        ],
+        temperature: 0.2,
+        maxTokens: 4000,
+      });
+      const completed = parseAnswersCompletion(ansResult.content);
+      if (completed.length) {
+        markingScheme = applyAnswersToScheme(markingScheme, completed);
+        console.warn(`[tests/generate] quality: completed ${completed.length} missing model answer(s)`);
+      }
+    } catch (err) {
+      console.warn('[tests/generate] quality: answer completion skipped:', err);
+    }
+  }
+
+  const marks = marksDiscrepancy(finalPaper, preset);
+  if (!marks.equal) {
+    console.warn(`[tests/generate] quality: mark total ${marks.paperTotal} != preset ${marks.presetTotal}`);
+  }
+
+  return { paper: finalPaper, markingScheme };
 }
 
 export async function handleTestGenerate(
@@ -254,7 +378,9 @@ export async function handleTestGenerate(
   const formLabel = formLevelLabel(validForm);
 
   // "Super" grounding: when the KB found nothing for the topic, enrich from the
-  // web (only if a search key is configured). Any web failure is ignored.
+  // web (only if a search key is configured). Fans out to one query per topic,
+  // asks the provider for a synthesized answer, and dedupes by URL. Any web
+  // failure is ignored.
   let webHits: WebSearchDoc[] = [];
   let webSourced = false;
   if (webSearchEnabled() && isKbThin(kbCtx.kbHits)) {
@@ -268,11 +394,14 @@ export async function handleTestGenerate(
       subtopics,
       paper: paperVariant,
     });
-    webHits = await fetchWebDocs(query, { limit: 4 });
-    if (webHits.length) {
+    const variants = buildQueryVariants(query, topics, subtopics);
+    const { docs, answers } = await searchWebContext(variants, { limit: 6 });
+    webHits = docs;
+    if (webHits.length || answers.length) {
       const webContext = formatWebContext(webHits, {
         maxChars: Number(process.env.WEB_RAG_MAX_CHARS) || 6500,
         subject: subject.name || subject.enumValue,
+        answers,
       });
       if (webContext) {
         ragText = [ragText, webContext].filter(Boolean).join('\n\n');

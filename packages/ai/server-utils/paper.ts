@@ -78,9 +78,11 @@ export function salvageSyntheticQuestions(
   paper: ExamPaper,
   preset: PaperPreset,
   args: { subject: string; subjectSlug: string; formLevel: number; topics: string[] },
+  forceNumbers?: (string | number)[],
 ): SalvageResult {
   const topics = Array.isArray(args.topics) ? args.topics.filter((t) => String(t).trim()) : [];
   const topicList = topics.length ? topics : [args.subject];
+  const force = new Set(Array.isArray(forceNumbers) ? forceNumbers.map((n) => String(n)) : []);
 
   let useBank = true;
   try {
@@ -102,7 +104,8 @@ export function salvageSyntheticQuestions(
       const slot = slots[slotIndex];
       const idx = slotIndex;
       slotIndex += 1;
-      if (!slot || !isSyntheticQuestion(q)) return q;
+      const isForced = force.size > 0 && force.has(String(q.number));
+      if (!slot || (!isSyntheticQuestion(q) && !isForced)) return q;
       const context: OfflineContext = {
         subjectSlug: args.subjectSlug.toLowerCase(),
         subjectName: args.subject,

@@ -1,9 +1,12 @@
 import {
+  buildQueryVariants,
   buildWebQuery,
   fetchWebDocs,
   formLevelLabel,
   formatWebContext,
   isKbThin,
+  searchWebContext,
+  searchWebWithAnswer,
   TavilyLike,
   webSearchEnabled,
   WebSearchDoc,
@@ -127,6 +130,26 @@ describe('formatWebContext', () => {
     expect(out.length).toBeLessThanOrEqual(200);
   });
 
+  it('renders a synthesized answer summary above the sources', () => {
+    const docs: WebSearchDoc[] = [
+      { title: 'Forces notes', url: 'https://example.com/forces', snippet: '', content: 'Forces cause acceleration.' },
+    ];
+    const out = formatWebContext(docs, { subject: 'Physics', answers: [' Forces cause acceleration  '] });
+    expect(out).toContain('WEB RESEARCH SUMMARY');
+    expect(out).toContain('Forces cause acceleration');
+    expect(out.indexOf('WEB RESEARCH SUMMARY')).toBeLessThan(out.indexOf('1. Forces notes'));
+  });
+
+  it('renders answers even when no docs survived filtering', () => {
+    const out = formatWebContext([], { answers: ['Only a summary.'], subject: 'Physics' });
+    expect(out).toContain('Only a summary.');
+    expect(out).not.toContain('1.');
+  });
+
+  it('returns empty when there are no docs and no answers', () => {
+    expect(formatWebContext([], { answers: [] })).toBe('');
+  });
+
   it('ignores results without a title or content', () => {
     const docs = [{ title: '', url: 'https://example.com/x', snippet: '', content: 'body' }] as WebSearchDoc[];
     expect(formatWebContext(docs)).toBe('');
@@ -201,5 +224,100 @@ describe('fetchWebDocs', () => {
     });
     const docs = await fetchWebDocs('physics forces', { limit: 3 }, client);
     expect(docs).toHaveLength(3);
+  });
+});
+
+describe('buildQueryVariants', () => {
+  it('returns the base query plus one variant per distinct topic/subtopic', () => {
+    const variants = buildQueryVariants('physics forces', ['Forces', 'Friction', 'Forces'], ['Newton Laws']);
+    expect(variants[0]).toBe('physics forces');
+    expect(variants).toEqual(expect.arrayContaining(['physics forces Forces', 'physics forces Friction']));
+    expect(new Set(variants).size).toBe(variants.length);
+  });
+
+  it('caps the fan-out at three queries', () => {
+    const variants = buildQueryVariants('math sets', ['Sets', 'Sets2', 'Sets3', 'Sets4'], ['Operators', 'Venn Diagrams']);
+    expect(variants).toHaveLength(3);
+    expect(variants.length).toBeLessThanOrEqual(3);
+  });
+
+  it('handles empty input gracefully', () => {
+    expect(buildQueryVariants('math sets', [], [])).toEqual(['math sets']);
+    expect(buildQueryVariants('', [], [])).toEqual([]);
+  });
+});
+
+describe('searchWebWithAnswer', () => {
+  it('returns the synthesized answer when includeAnswer is on', async () => {
+    process.env.TAVILY_API_KEY = 'tvly-test';
+    const client = fakeClient({
+      search: jest.fn().mockResolvedValue({
+        answer: '  Forces cause acceleration.  ',
+        results: [{ title: 'Forces', url: 'https://example.com/forces', content: 'body' }],
+      }),
+    });
+    const batch = await searchWebWithAnswer('physics forces', { includeAnswer: true }, client);
+    expect(batch.answer).toBe('Forces cause acceleration.');
+    expect(batch.docs).toHaveLength(1);
+  });
+
+  it('requests includeAnswer only when asked', async () => {
+    process.env.TAVILY_API_KEY = 'tvly-test';
+    const searchFn = jest.fn().mockResolvedValue({ results: [] });
+    await searchWebWithAnswer('physics forces', { includeAnswer: true }, { search: searchFn });
+    expect(searchFn).toHaveBeenCalledWith('physics forces', expect.objectContaining({ includeAnswer: true }));
+  });
+
+  it('is failure-isolated', async () => {
+    process.env.TAVILY_API_KEY = 'tvly-test';
+    const client = fakeClient({ search: jest.fn().mockRejectedValue(new Error('boom')) });
+    await expect(searchWebWithAnswer('physics forces', {}, client)).resolves.toEqual({ docs: [] });
+  });
+});
+
+describe('searchWebContext', () => {
+  it('fans out across queries, merges and dedupes by url', async () => {
+    process.env.TAVILY_API_KEY = 'tvly-test';
+    const client = fakeClient({
+      search: jest.fn().mockImplementation(async (query: string) => ({
+        answer: `answer for ${query}`,
+        results: [
+          { title: 'Shared', url: 'https://example.com/shared', content: 'body' },
+          { title: query, url: `https://example.com/${encodeURIComponent(query)}`, content: 'body' },
+        ],
+      })),
+    });
+    const { docs, answers } = await searchWebContext(['physics', 'physics forces', 'physics friction'], { limit: 10 }, client);
+    expect(docs.length).toBe(4);
+    const shared = docs.filter((d) => d.url === 'https://example.com/shared');
+    expect(shared).toHaveLength(1);
+    expect(answers.length).toBeGreaterThanOrEqual(2);
+    expect(answers[0]).toContain('answer for');
+  });
+
+  it('caps merged results', async () => {
+    process.env.TAVILY_API_KEY = 'tvly-test';
+    const client = fakeClient({
+      search: jest.fn().mockResolvedValue({
+        answer: '',
+        results: [1, 2, 3, 4, 5].map((i) => ({ title: `R${i}`, url: `https://example.com/${i}`, content: 'body' })),
+      }),
+    });
+    const { docs } = await searchWebContext(['physics', 'physics two'], { limit: 4 }, client);
+    expect(docs).toHaveLength(4);
+  });
+
+  it('does nothing when disabled or with no queries', async () => {
+    delete process.env.TAVILY_API_KEY;
+    const { docs, answers } = await searchWebContext(['physics'], {}, fakeClient());
+    expect(docs).toEqual([]);
+    expect(answers).toEqual([]);
+
+    process.env.TAVILY_API_KEY = 'tvly-test';
+    const searchFn = jest.fn().mockResolvedValue({ results: [] });
+    const empty = await searchWebContext([], {}, { search: searchFn });
+    expect(empty.docs).toEqual([]);
+    expect(empty.answers).toEqual([]);
+    expect(searchFn).not.toHaveBeenCalled();
   });
 });

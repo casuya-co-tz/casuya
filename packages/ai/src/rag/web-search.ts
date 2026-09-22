@@ -17,8 +17,16 @@ import { stripHtml, truncate } from '../utilities/text-utils';
 export interface TavilyLike {
   search(
     query: string,
-    options?: { searchDepth?: string; maxResults?: number; timeout?: number },
-  ): Promise<{ results?: Array<{ title?: string; url?: string; content?: string; rawContent?: string }> }>;
+    options?: {
+      searchDepth?: string;
+      maxResults?: number;
+      timeout?: number;
+      includeAnswer?: boolean | string;
+    },
+  ): Promise<{
+    answer?: string;
+    results?: Array<{ title?: string; url?: string; content?: string; rawContent?: string }>;
+  }>;
 }
 
 export interface WebSearchDoc {
@@ -28,10 +36,16 @@ export interface WebSearchDoc {
   content: string;
 }
 
+export interface WebSearchBatch {
+  docs: WebSearchDoc[];
+  answer?: string;
+}
+
 export interface WebSearchOptions {
   limit?: number;
   maxChars?: number;
   timeoutMs?: number;
+  includeAnswer?: boolean;
 }
 
 const DEFAULT_LIMIT = 4;
@@ -104,11 +118,11 @@ function normalizeSpace(text: string): string {
 /** Render web results as a labeled reference block for the necta prompt. */
 export function formatWebContext(
   docs: WebSearchDoc[],
-  opts: { maxChars?: number; subject?: string } = {},
+  opts: { maxChars?: number; subject?: string; answers?: string[] } = {},
 ): string {
   const maxChars = opts.maxChars || DEFAULT_MAX_CHARS;
   const usable = (docs || []).filter((d) => d && d.title && (d.content || d.snippet)).slice(0, DEFAULT_LIMIT);
-  if (!usable.length) return '';
+  if (!usable.length && !(opts.answers || []).length) return '';
 
   const header = [
     `# SUPPLEMENTARY WEB REFERENCE (research material for ${opts.subject || 'this subject'})`,
@@ -116,13 +130,45 @@ export function formatWebContext(
     '',
   ].join('\n');
 
-  const entries = usable.map((d, i) => {
-    const body = d.content || d.snippet;
-    return `${i + 1}. ${d.title}\n   ${normalizeSpace(body)}\n   Source: ${d.url}`;
-  });
+  const blocks: string[] = [];
+  const synthesized = (opts.answers || []).map(normalizeSpace).filter((a) => a).slice(0, 3);
+  if (synthesized.length) {
+    blocks.push(
+      'WEB RESEARCH SUMMARY (synthesized from the sources below):',
+      ...synthesized.map((a) => `- ${a}`),
+      '',
+    );
+  }
+  if (usable.length) {
+    const entries = usable.map((d, i) => {
+      const body = d.content || d.snippet;
+      return `${i + 1}. ${d.title}\n   ${normalizeSpace(body)}\n   Source: ${d.url}`;
+    });
+    blocks.push(entries.join('\n\n'));
+  }
 
-  const full = `${header}\n${entries.join('\n\n')}`;
+  const full = `${header}\n${blocks.join('\n\n')}`;
   return full.length <= maxChars ? full : truncate(full, maxChars);
+}
+
+/** Build a primary query plus one focused variant per distinct topic/subtopic. */
+export function buildQueryVariants(base: string, topics: string[], subtopics: string[]): string[] {
+  const variants: string[] = [];
+  const seen = new Set<string>();
+  const push = (q: string) => {
+    const clean = q.replace(/\s+/g, ' ').trim().slice(0, 300);
+    if (!clean) return;
+    const key = clean.toLowerCase();
+    if (seen.has(key)) return;
+    seen.add(key);
+    variants.push(clean);
+  };
+  push(base);
+  for (const t of [...topics, ...subtopics]) {
+    push(`${base} ${String(t || '').trim()}`);
+    if (variants.length >= 3) break;
+  }
+  return variants;
 }
 
 /** Build the SDK client when a key is configured; otherwise null. */
@@ -137,49 +183,95 @@ function buildTavilyClient(): TavilyLike | null {
   }
 }
 
-async function searchTavily(client: TavilyLike, query: string, opts: WebSearchOptions = {}): Promise<WebSearchDoc[]> {
+async function searchTavilyFull(
+  client: TavilyLike,
+  query: string,
+  opts: WebSearchOptions = {},
+): Promise<WebSearchBatch> {
   const limit = opts.limit || DEFAULT_LIMIT;
-  const maxDoChars = 900;
+  const maxDoChars = 1400;
 
   const response = await client.search(query, {
     searchDepth: 'basic',
     maxResults: Math.max(1, Math.min(8, limit)),
     timeout: opts.timeoutMs || DEFAULT_TIMEOUT_MS,
+    includeAnswer: opts.includeAnswer || false,
   });
 
-  const results: WebSearchDoc[] = [];
+  const docs: WebSearchDoc[] = [];
   for (const raw of response.results || []) {
     if (!raw?.title || !raw?.url) continue;
     const body = raw.content || raw.rawContent || '';
-    results.push({
+    docs.push({
       title: normalizeSpace(raw.title),
       url: String(raw.url),
       snippet: cleanContent(body || raw.title, maxDoChars),
       content: cleanContent(body, maxDoChars),
     });
   }
-  return results.slice(0, limit);
+  const answer = typeof response.answer === 'string' ? response.answer.trim() : '';
+  return { docs: docs.slice(0, limit), answer: answer || undefined };
 }
 
 /**
- * Try to enrich a paper from the web. Returns [] on any error or if disabled.
- * An optional client may be injected for tests.
+ * Try to enrich a paper from the web. Returns { docs: [] } on any error or if
+ * disabled. An optional client may be injected for tests.
  */
+export async function searchWebWithAnswer(
+  query: string,
+  opts: WebSearchOptions = {},
+  client?: TavilyLike,
+): Promise<WebSearchBatch> {
+  if (!webSearchEnabled() || !query) return { docs: [] };
+  try {
+    const active = client ?? buildTavilyClient();
+    if (!active) return { docs: [] };
+    return await searchTavilyFull(active, query, opts);
+  } catch {
+    // Any failure (network, rate-limit, malformed response) — no results,
+    // never crash or block paper generation.
+    return { docs: [] };
+  }
+}
+
+/** Backward-compatible wrapper: doc list only (no synthesized answer). */
 export async function fetchWebDocs(
   query: string,
   opts: WebSearchOptions = {},
   client?: TavilyLike,
 ): Promise<WebSearchDoc[]> {
-  if (!webSearchEnabled() || !query) return [];
-  try {
-    const active = client ?? buildTavilyClient();
-    if (!active) return [];
-    return await searchTavily(active, query, opts);
-  } catch {
-    // Any failure (network, rate-limit, malformed response) — no results,
-    // never crash or block paper generation.
-    return [];
+  const batch = await searchWebWithAnswer(query, { ...opts, includeAnswer: false }, client);
+  return batch.docs;
+}
+
+/** Run a fan of queries in parallel and merge results (dedupe by URL). */
+export async function searchWebContext(
+  queries: string[],
+  opts: WebSearchOptions = {},
+  client?: TavilyLike,
+): Promise<{ docs: WebSearchDoc[]; answers: string[] }> {
+  if (!webSearchEnabled()) return { docs: [], answers: [] };
+  const list = (queries || []).map((q) => String(q || '').trim()).filter(Boolean).slice(0, 3);
+  if (!list.length) return { docs: [], answers: [] };
+
+  const batches = await Promise.allSettled(
+    list.map((q) => searchWebWithAnswer(q, { includeAnswer: true, ...opts }, client)),
+  );
+
+  const docs: WebSearchDoc[] = [];
+  const seen = new Set<string>();
+  const answers: string[] = [];
+  for (const result of batches) {
+    if (result.status !== 'fulfilled') continue;
+    if (result.value.answer) answers.push(result.value.answer);
+    for (const d of result.value.docs) {
+      if (seen.has(d.url)) continue;
+      seen.add(d.url);
+      docs.push(d);
+    }
   }
+  const cap = opts.limit || 6;
+  return { docs: docs.slice(0, cap), answers: answers.slice(0, 3) };
 }
 
 export function searchProviderName(): string {
