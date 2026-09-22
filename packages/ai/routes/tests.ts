@@ -222,7 +222,12 @@ async function generatePaperWithAi(
   });
 
   const parsed = parsePaperJson(result.content);
-  if (!parsed) return null;
+  if (!parsed) {
+    console.warn(
+      `[tests/generate] paper draft unparseable, falling back to offline bank (content length ${String(result.content || '').length})`,
+    );
+    return null;
+  }
 
   const assemble = (raw: any) =>
     assemblePaperFromContent(preset, raw, {
@@ -251,14 +256,22 @@ async function generatePaperWithAi(
       if (salvaged.replaced > 0) {
         console.warn(`[tests/generate] salvaged ${salvaged.replaced} placeholder question(s) from offline bank (Q${salvaged.numbers.join(', Q')})`);
       }
-      if (salvaged.replaced === 0 || countSyntheticQuestions(salvaged.paper).count > 0) return null;
+      if (salvaged.replaced === 0 || countSyntheticQuestions(salvaged.paper).count > 0) {
+        console.warn(
+          `[tests/generate] draft rejected: ${countSyntheticQuestions(paper).count} placeholder question(s) remain after salvage`,
+        );
+        return null;
+      }
       return salvaged.paper;
     }
     return paper;
   };
 
   let finalPaper = accept(assemble(parsed));
-  if (!finalPaper) return null;
+  if (!finalPaper) {
+    console.warn('[tests/generate] draft failed accept gate (validation or unresolvable placeholders)');
+    return null;
+  }
   let finalParsed = parsed;
 
   // "Super" quality loop: the critic re-reads the draft, then one bounded
