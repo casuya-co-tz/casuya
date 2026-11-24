@@ -1,21 +1,44 @@
 # CODEOWNERS
 # Defines who reviews changes in each layer (trunk-based, mandatory review).
 # Layer structure: libs/ (lowest) < packages/ < apps/ (highest)
+#
+# Enforcement requires branch protection on `main`:
+#   - Require pull request reviews before merging (CODEOWNERS approval).
+#   - Dismiss stale approvals when new commits are pushed.
+#   - Require status checks to pass (build, typecheck, lint, test, layers).
+#   - Block direct pushes to `main`.
+#   - Require at least 2 approvals for security-sensitive paths.
+#   - Restrict bypass permissions so admins cannot merge unreviewed.
+
+# Global fallback — every file not matched below
+* @casuya/maintainers @yakoboI
 
 # Core engine (Python)
-/libs/core/           @yakoboI
+/libs/core/           @casuya/core
 
 # Reusable frontend/TS libraries
-/packages/            @yakoboI
+/packages/            @casuya/frontend
 
 # The deployable application
-/apps/platform/       @yakoboI
+/apps/platform/       @casuya/platform
 
 # Infrastructure & deployment
-/infra/               @yakoboI
+/infra/               @casuya/devops
+
+# GitHub governance, CI/CD
+/.github/             @casuya/devops @casuya/security
+/.github/workflows/   @casuya/devops @casuya/security
 
 # Monorepo tooling & governance
-/package.json         @yakoboI
-/pnpm-workspace.yaml  @yakoboI
-/turbo.json           @yakoboI
-/tools/               @yakoboI
+/pnpm-lock.yaml       @casuya/maintainers
+/package.json         @casuya/maintainers
+/pnpm-workspace.yaml  @casuya/maintainers
+/turbo.json           @casuya/maintainers
+/tools/               @casuya/maintainers
+
+# Security-sensitive config
+/.env*                @casuya/security @casuya/maintainers
+/tsconfig*.json       @casuya/maintainers
+/security/**          @casuya/security
+/docs/**              @casuya/maintainers
+/**/Dockerfile*       @casuya/devops @casuya/security
