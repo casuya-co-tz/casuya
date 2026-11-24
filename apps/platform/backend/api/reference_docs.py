@@ -8,7 +8,7 @@ protected by the standard ``require_role("admin")`` dependency.
 
 from __future__ import annotations
 
-from fastapi import APIRouter, Depends, HTTPException, Query, Request, Response
+from fastapi import APIRouter, Depends, File, Form, HTTPException, Query, Request, Response, UploadFile
 from pydantic import BaseModel
 from sqlalchemy.orm import Session
 
@@ -224,6 +224,10 @@ def api_render_reference_doc(doc_id: str, request: Request, db: Session = Depend
         content = _json.loads(doc.content)
     except (TypeError, ValueError):
         content = {}
+    # File-backed documents (uploaded by admin) are served directly.
+    if isinstance(content, dict) and content.get("file_url"):
+        from fastapi.responses import RedirectResponse
+        return RedirectResponse(url=content["file_url"], status_code=307)
     if doc.doc_type == "scheme_of_work":
         html = render_reference_scheme_html(content)
     else:
@@ -243,8 +247,149 @@ class _VisibilityPayload(BaseModel):
     visible_to_students: bool
 
 
-@router.patch("/{doc_id}/visibility")
-@router.patch("/{doc_id}/visibility/")
+@router.post("/upload", dependencies=[Depends(require_role("admin"))])
+async def api_upload_reference_doc(
+    file: UploadFile = File(...),
+    doc_type: str = Form("lesson_plan"),
+    title: str = Form(""),
+    subject_slug: str = Form(""),
+    form_level: str = Form(""),
+):
+    """Upload a file (PDF/DOCX/HTML/TXT) as a reference library document.
+
+    The file is stored under the uploads storage root and a ReferenceDoc row is
+    created pointing at it, so teachers/students can open/download it.
+    """
+    import json as _json
+    import uuid as _uuid
+    from pathlib import Path
+
+    from backend.config.settings import get_settings
+    from backend.models.reference_doc import ReferenceDoc
+    from backend.models.lesson import Subject
+
+    if doc_type not in _VALID_TYPES:
+        raise HTTPException(status_code=422, detail=f"doc_type must be one of {_VALID_TYPES}")
+
+    if not file.filename:
+        raise HTTPException(status_code=400, detail="Missing filename")
+
+    # Sanitize filename
+    raw_name = file.filename
+    if "/" in raw_name or "\\" in raw_name or ".." in raw_name:
+        raise HTTPException(status_code=400, detail="Invalid filename")
+    safe_name = raw_name
+
+    settings = get_settings()
+    storage_dir = Path(settings.storage_root) / "documents"
+    storage_dir.mkdir(parents=True, exist_ok=True)
+
+    # Avoid clobbering an existing file with the same name
+    dest = storage_dir / safe_name
+    if dest.exists():
+        stem = Path(safe_name).stem
+        suffix = Path(safe_name).suffix
+        safe_name = f"{stem}-{_uuid.uuid4().hex[:8]}{suffix}"
+        dest = storage_dir / safe_name
+
+    content_bytes = await file.read()
+    if len(content_bytes) > 50 * 1024 * 1024:
+        raise HTTPException(status_code=413, detail="File too large (max 50 MB)")
+    dest.write_bytes(content_bytes)
+
+    # Resolve subject name
+    subject_name = None
+    slug = subject_slug.strip() or None
+    if slug:
+        _gen = get_db()
+        db_tmp = next(_gen)
+        try:
+            subj = db_tmp.query(Subject).filter(Subject.slug == slug).first()
+            if subj:
+                subject_name = subj.name
+        finally:
+            _gen.close()
+
+    # Parse form_level
+    fl = None
+    if form_level.strip():
+        try:
+            fl = int(form_level.strip())
+        except ValueError:
+            fl = None
+
+    resolved_title = title.strip() or Path(safe_name).stem
+
+    # Unique source_id per doc_type
+    db = next(get_db())
+    try:
+        source_id = safe_name
+        existing = db.query(ReferenceDoc).filter(
+            ReferenceDoc.doc_type == doc_type, ReferenceDoc.source_id == source_id
+        ).first()
+        if existing:
+            source_id = f"{safe_name}-{_uuid.uuid4().hex[:6]}"
+
+        doc = ReferenceDoc(
+            doc_type=doc_type,
+            source_id=source_id,
+            source_url=f"/uploads/documents/{safe_name}",
+            title=resolved_title,
+            subject_name=subject_name,
+            subject_slug=slug,
+            form_level=fl,
+            standard=None,
+            content=_json.dumps({
+                "file_url": f"/uploads/documents/{safe_name}",
+                "file_name": safe_name,
+                "mime": file.content_type or "application/octet-stream",
+                "title": resolved_title,
+            }),
+            visible_to_students=False,
+        )
+        db.add(doc)
+        db.commit()
+        db.refresh(doc)
+        cache_invalidate("reference_docs:")
+        return serialize_doc(doc)
+    except Exception as exc:  # noqa: BLE001
+        db.rollback()
+        # Best-effort cleanup of the written file
+        try:
+            dest.unlink(missing_ok=True)
+        except Exception:
+            pass
+        raise HTTPException(status_code=500, detail=f"Failed to register document: {exc}")
+    finally:
+        db.close()
+
+
+@router.delete("/{doc_id}", dependencies=[Depends(require_role("admin"))])
+@router.delete("/{doc_id}/", dependencies=[Depends(require_role("admin"))])
+def api_delete_reference_doc(doc_id: str, db: Session = Depends(get_db)):
+    doc = get_reference_doc(db, doc_id)
+    if not doc:
+        raise HTTPException(status_code=404, detail="Reference document not found")
+    # If it's a file-backed doc, remove the underlying file
+    try:
+        import json as _json
+        from pathlib import Path
+
+        from backend.config.settings import get_settings
+
+        content = _json.loads(doc.content) if doc.content else {}
+        file_url = content.get("file_url") if isinstance(content, dict) else None
+        if file_url:
+            name = file_url.rsplit("/", 1)[-1]
+            p = Path(get_settings().storage_root) / "documents" / name
+            if p.exists():
+                p.unlink(missing_ok=True)
+    except Exception:
+        pass
+    db.delete(doc)
+    db.commit()
+    cache_invalidate("reference_docs:")
+    return {"ok": True, "deleted": doc_id}
 def api_toggle_visibility(
     doc_id: str,
     body: _VisibilityPayload,

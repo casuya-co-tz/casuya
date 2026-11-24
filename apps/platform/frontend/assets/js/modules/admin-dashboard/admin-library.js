@@ -90,7 +90,31 @@
     showAdminView(`
       <div class="content">
         <h2 class="lib-page-title">Reference Library</h2>
-        <p class="lib-page-desc">Manage which reference documents are visible to students. Toggle visibility per document.</p>
+        <p class="lib-page-desc">Manage reference documents. Upload new ones or toggle visibility.</p>
+
+        <div class="card" style="margin-top:1rem;padding:1.25rem">
+          <h3 style="margin-bottom:0.75rem">📤 Upload Reference Document</h3>
+          <form id="lib-upload-form" style="display:grid;gap:0.5rem">
+            <input class="input" type="file" id="lib-upload-file" accept=".pdf,.doc,.docx,.txt,.html,.htm" required>
+            <div style="display:grid;grid-template-columns:1fr 1fr;gap:0.5rem">
+              <input class="input" name="title" placeholder="Title (optional — defaults to filename)">
+              <select class="input" name="doc_type">
+                <option value="lesson_plan">Lesson Plan</option>
+                <option value="scheme_of_work">Scheme of Work</option>
+              </select>
+            </div>
+            <div style="display:grid;grid-template-columns:1fr 1fr;gap:0.5rem">
+              <select class="input" name="subject_slug">${subjectOpts().replace('All Subjects','Select subject...')}</select>
+              <select class="input" name="form_level">
+                <option value="">Form level (optional)</option>
+                <option value="1">Form I</option><option value="2">Form II</option><option value="3">Form III</option>
+                <option value="4">Form IV</option><option value="5">Form V</option><option value="6">Form VI</option>
+              </select>
+            </div>
+            <button class="btn btn-primary" type="submit" id="lib-upload-btn">Upload</button>
+            <div id="lib-upload-result" style="font-size:0.85rem"></div>
+          </form>
+        </div>
 
         <div id="lib-stats"></div>
 
@@ -195,6 +219,40 @@
         await loadDocs();
         renderDocList();
       } catch(e) { alert("Failed"); }
+    });
+
+    document.getElementById("lib-upload-form")?.addEventListener("submit", async (e) => {
+      e.preventDefault();
+      const fileInput = document.getElementById("lib-upload-file");
+      const file = fileInput?.files?.[0];
+      if (!file) { showToast("Choose a file first"); return; }
+      const fd = new FormData(e.target);
+      fd.delete("file");
+      fd.append("file", file);
+      const btn = document.getElementById("lib-upload-btn");
+      if (btn) { btn.textContent = "Uploading..."; btn.disabled = true; }
+      const resEl = document.getElementById("lib-upload-result");
+      const token = localStorage.getItem("casuya_token");
+      try {
+        const resp = await fetch(`${API_BASE}/reference-docs/upload`, {
+          method: "POST",
+          headers: token ? { "Authorization": `Bearer ${token}` } : {},
+          body: fd,
+        });
+        const data = await resp.json();
+        if (resp.ok) {
+          if (resEl) resEl.innerHTML = `<span style="color:var(--color-success)">Uploaded: ${escapeHtml(data.title || file.name)}</span>`;
+          if (fileInput) fileInput.value = "";
+          await Promise.all([loadStats(), loadDocs()]);
+          renderStats(); renderDocList();
+        } else {
+          if (resEl) resEl.innerHTML = `<span style="color:var(--color-danger)">${escapeHtml(data.detail || "Upload failed")}</span>`;
+        }
+      } catch (err) {
+        if (resEl) resEl.innerHTML = `<span style="color:var(--color-danger)">${escapeHtml(err.message)}</span>`;
+      } finally {
+        if (btn) { btn.textContent = "Upload"; btn.disabled = false; }
+      }
     });
 
     await Promise.all([loadStats(), loadDocs()]);

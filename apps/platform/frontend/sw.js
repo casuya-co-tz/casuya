@@ -13,7 +13,7 @@
 // development before the build has run.
 
 // <!--casuya-precache-->
-const CACHE_VERSION = "casuya-static-e79f74ee0d";
+const CACHE_VERSION = "casuya-static-e4a73a7c65";
 const PRECACHE = [
   "/",
   "/manifest.webmanifest",

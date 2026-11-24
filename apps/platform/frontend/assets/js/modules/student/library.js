@@ -48,10 +48,11 @@ function registerLibraryView(d) {
         const typeCls = d.doc_type === "scheme_of_work" ? "lib-status-info" : "lib-status-success";
         const form = d.form_level ? "Form " + (ROMAN[d.form_level] || d.form_level) : "";
         return `
-          <div class="lib-card" data-lib-view="${d.id}">
+          <div class="lib-card" data-lib-view="${d.id}" data-file-url="${(d.content && d.content.file_url) ? escapeHtml(d.content.file_url) : ""}">
             <div style="display:flex;align-items:center;gap:0.5rem;flex-wrap:wrap;margin-bottom:0.25rem">
               <span class="lib-status ${typeCls}">${typeLabel}</span>
               ${form ? `<span class="lib-status" style="background:var(--color-bg);color:var(--color-text-muted)">${form}</span>` : ""}
+              ${(d.content && d.content.file_url) ? '<span class="lib-status" style="background:#fef3c7;color:#92400e">📎 File</span>' : ""}
             </div>
             <h4 style="margin:0;font-size:0.88rem;font-weight:600">${escapeHtml(d.title)}</h4>
             <p style="margin:0.2rem 0 0;font-size:0.72rem;color:var(--color-text-muted)">${escapeHtml(d.subject_name || "")}</p>
@@ -70,6 +71,11 @@ function registerLibraryView(d) {
     }
 
     async function viewDoc(id) {
+      const doc = docs.find(d => d.id === id);
+      if (doc && doc.content && doc.content.file_url) {
+        window.open(`${API_BASE}${doc.content.file_url}`, "_blank");
+        return;
+      }
       const el = document.getElementById("lib-viewer");
       if (!el) return;
       el.innerHTML = '<div class="lib-loading"><div class="spinner"></div>Loading document...</div>';
