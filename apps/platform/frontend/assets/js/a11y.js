@@ -15,6 +15,21 @@
     var saved = JSON.parse(localStorage.getItem('casuya_a11y'));
     if (saved) Object.assign(state, saved);
   } catch (e) {}
+  // Apply server-provided accessibility prefs (e.g. special-needs learners) if no local prefs exist yet.
+  try {
+    if (!localStorage.getItem('casuya_a11y')) {
+      var sp = JSON.parse(localStorage.getItem('casuya_accessibility_prefs'));
+      if (sp && typeof sp === 'object') {
+        if (sp.dyslexia !== undefined) state.dyslexia = !!sp.dyslexia;
+        if (sp.highContrast !== undefined) state.highContrast = !!sp.highContrast;
+        if (sp.largeText !== undefined) state.largeText = !!sp.largeText;
+        if (sp.wideSpacing !== undefined) state.wideSpacing = !!sp.wideSpacing;
+        if (sp.tts !== undefined) state.tts = !!sp.tts;
+        if (sp.fontSize) state.fontSize = sp.fontSize;
+        saveState();
+      }
+    }
+  } catch (e) {}
 
   function saveState() {
     try { localStorage.setItem('casuya_a11y', JSON.stringify(state)); } catch (e) {}

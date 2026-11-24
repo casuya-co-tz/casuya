@@ -181,7 +181,9 @@
   
   
   
-  <!--casuya-assets--><script>window.CASUYA_ASSETS={"/assets/js/student.bundle.js":"a79b49da2e","/assets/js/teacher.bundle.js":"32b2193b12","/assets/js/admin.bundle.js":"4aa7ecf720","/assets/js/student.extras.bundle.js":"99dde79f95","/assets/js/speech.bundle.js":"aa0ad62728","/assets/js/i18n.swahili.bundle.js":"d2d956d99b","/assets/js/blackboard-embed.js":"00646ab9fd","/assets/js/vendor-blackboard.min.js":"ba2a423c55","/assets/js/brand.js":"1c3806d811","/assets/js/rum.js":"533863d08a","/assets/js/tracker.js":"03f51fe004","/assets/js/env.js":"d77c4388f8","/assets/js/config.js":"2d2ed7a50c","/assets/css/main.min.css":"6d00387f4f","/assets/css/tailwind.min.css":"0bbab82978","/assets/js/landing-extra.js":"19a3822531","/assets/css/student.bundle.css":"eadb5ae7cc","/assets/css/teacher.bundle.css":"68820c509a","/assets/css/admin.bundle.css":"85ea5e91a2","/assets/css/landing.css":"bf7e62b513","/assets/css/landing-extra.css":"e93ed9439f","/assets/css/a11y-fonts.css":"50046e01d7","/static/pkg/runtime/casuya-runtime.min.js":"2c5a104ad2","/static/lib/hls.min.js":"d016c12304","/static/lib/katex/katex.min.css":"a34ad8fc18","/static/lib/katex/katex.min.js":"45fbe318fe","/static/lib/katex/contrib/auto-render.min.js":"e5372d199b"};window.CASUYA_ASSET=function(p){var v=window.CASUYA_ASSETS[p];return v?p+"?v="+v:p;};</script><!--/casuya-assets-->
+  
+  
+  <!--casuya-assets--><script>window.CASUYA_ASSETS={"/assets/js/student.bundle.js":"e6284fc231","/assets/js/teacher.bundle.js":"1beafade3e","/assets/js/admin.bundle.js":"0cb3b28173","/assets/js/student.extras.bundle.js":"99dde79f95","/assets/js/speech.bundle.js":"aa0ad62728","/assets/js/i18n.swahili.bundle.js":"d2d956d99b","/assets/js/blackboard-embed.js":"00646ab9fd","/assets/js/vendor-blackboard.min.js":"ba2a423c55","/assets/js/brand.js":"1c3806d811","/assets/js/rum.js":"533863d08a","/assets/js/tracker.js":"03f51fe004","/assets/js/env.js":"d77c4388f8","/assets/js/config.js":"2d2ed7a50c","/assets/css/main.min.css":"6d00387f4f","/assets/css/tailwind.min.css":"0bbab82978","/assets/js/landing-extra.js":"19a3822531","/assets/css/student.bundle.css":"eadb5ae7cc","/assets/css/teacher.bundle.css":"68820c509a","/assets/css/admin.bundle.css":"85ea5e91a2","/assets/css/landing.css":"bf7e62b513","/assets/css/landing-extra.css":"e93ed9439f","/assets/css/a11y-fonts.css":"50046e01d7","/static/pkg/runtime/casuya-runtime.min.js":"2c5a104ad2","/static/lib/hls.min.js":"d016c12304","/static/lib/katex/katex.min.css":"a34ad8fc18","/static/lib/katex/katex.min.js":"45fbe318fe","/static/lib/katex/contrib/auto-render.min.js":"e5372d199b"};window.CASUYA_ASSET=function(p){var v=window.CASUYA_ASSETS[p];return v?p+"?v="+v:p;};</script><!--/casuya-assets-->
 </head>
 <body class="bg-[#faf7f2] text-slate-800 antialiased overflow-x-hidden" style="font-family:'Plus Jakarta Sans',system-ui,sans-serif;">
 
@@ -275,6 +277,27 @@
               </div>
             </button>
           </div>
+
+          <!-- Special Needs / Neurodivergent Learner -->
+          <button
+            type="button"
+            class="role-card"
+            role="radio"
+            aria-checked="false"
+            data-role="special_needs"
+            id="role-special-needs"
+            tabindex="0"
+          >
+            <div class="flex items-center gap-4">
+              <div class="w-14 h-14 rounded-xl flex items-center justify-center flex-shrink-0" style="background:linear-gradient(135deg,#fef3c7,#ede9fe);">
+                <svg class="w-7 h-7" style="color:#d97706;" fill="none" stroke="currentColor" viewBox="0 0 24 24" stroke-width="1.5"><path stroke-linecap="round" stroke-linejoin="round" d="M12 3v2.25m6.364.386-1.591 1.591M21 12h-2.25m-.386 6.364-1.591-1.591M12 18.75V21m-4.773-4.227-1.591 1.591M5.25 12H3m4.227-4.773L5.636 5.636M15.75 12a3.75 3.75 0 1 1-7.5 0 3.75 3.75 0 0 1 7.5 0Z"/></svg>
+              </div>
+              <div class="text-left">
+                <div class="font-bold text-lg text-slate-900">I'm a Special Needs / Neurodivergent Learner</div>
+                <div class="text-sm mt-1" style="color:#64748b;">Dyslexia-friendly fonts, high contrast, large text, and text-to-speech enabled by default</div>
+              </div>
+            </div>
+          </button>
 
           <!-- Confirm Button -->
           <button
