@@ -1,6 +1,12 @@
+from fastapi import HTTPException
 from fastapi.testclient import TestClient
 
+import pytest
+
 from backend.main import app
+from backend.middleware import auth as auth_middleware
+
+from backend.config.security import create_access_token
 
 client = TestClient(app)
 
@@ -178,3 +184,27 @@ def test_health():
     resp = client.get("/health")
     assert resp.status_code == 200
     assert resp.json()["status"] == "ok"
+
+
+def test_dev_token_accepted_in_development(monkeypatch):
+    """Dev fallback tokens must work for authenticated calls when in development.
+
+    Regression: when the DB is unavailable, login/refresh mint ``dev-*`` tokens;
+    the auth middleware must accept them in development too, otherwise the client
+    gets a 401 on the first authenticated call and logs the user back out.
+    """
+    monkeypatch.setattr(auth_middleware.settings, "environment", "development")
+    token = create_access_token("dev-janedoe", extra_claims={"role": "teacher"})
+    user = auth_middleware._resolve_current_user(f"Bearer {token}", None)
+    assert user.get("is_active") is True
+    assert user.get("role") == "teacher"
+
+
+def test_dev_token_rejected_outside_development(monkeypatch):
+    """Synthetic dev tokens must never be honored outside development."""
+    monkeypatch.setattr(auth_middleware.settings, "environment", "production")
+    token = create_access_token("dev-janedoe", extra_claims={"role": "teacher"})
+    with pytest.raises(HTTPException) as exc:
+        auth_middleware._resolve_current_user(f"Bearer {token}", None)
+    assert exc.value.status_code == 401
+

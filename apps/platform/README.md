@@ -287,12 +287,19 @@ Large HTML lessons should never be stored directly in database rows.
 integrations/
 ├── casuya_core
 ├── casuya_runtime
-├── casuya_bridge
 ├── supabase
 ├── cloudflare
 ├── azampay
 └── africastalking
 ```
+
+The offline-first sync engine lives in **`packages/bridge`** (the rank-1 package
+with its own test suite). It is the only supported client-side bridge; older
+hand-rolled `casuya_bridge/` JavaScript copies under `integrations/` and
+`backend/integrations/` were removed because they were unreferenced, divergent,
+and posted to endpoints that do not exist. The live server-side integration is
+`integrations/casuya_bridge.py` (HMAC payload verification used by
+`/api/progress/sync`).
 
 Integrations may only be called from:
 
@@ -347,8 +354,8 @@ Implemented and deployed:
 * SQLAlchemy models + Alembic migrations
 * Frontend (static, served by the backend): student, teacher, and admin
   portals + marketing pages
-* Teacher lesson-plan / scheme-of-work generation (online + offline fallback)
-* AI tutoring engine (`packages/ai`) and offline knowledge base
+* Teacher lesson-plan / scheme-of-work generation (offline, syllabus-grounded)
+* Offline syllabus reference library
 * Background jobs (RQ), rate limiting, Sentry error tracking
 * CI/CD via `.github/workflows/ci.yml` (build, typecheck, lint, test, layer check)
 

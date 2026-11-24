@@ -15,12 +15,15 @@ except ImportError:
 sys.path.insert(0, os.path.join(os.path.dirname(__file__), "..", ".."))
 
 from backend.config.database import Base
+from backend.config.settings import get_settings
 
 config = context.config
 if config.config_file_name is not None:
     fileConfig(config.config_file_name)
 
-database_url = os.getenv("DATABASE_URL")
+# Prefer the application's resolved DATABASE_URL (which honours .env and the
+# same settings object the API uses); fall back to alembic.ini for parity.
+database_url = os.getenv("DATABASE_URL") or get_settings().database_url
 
 target_metadata = Base.metadata
 

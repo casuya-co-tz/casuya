@@ -6,6 +6,7 @@ first use, and enqueue attempts are skipped (returning None) if Redis is down.
 
 from __future__ import annotations
 
+import logging
 from typing import Any
 
 from redis import Redis
@@ -15,6 +16,17 @@ from rq import Queue
 from backend.config.settings import get_settings
 
 settings = get_settings()
+logger = logging.getLogger(__name__)
+
+# Enqueue attempts are observable instead of silently returning None. Useful
+# for readiness dashboards and tests without requiring a metrics backend.
+_job_stats: dict[str, int] = {"attempted": 0, "enqueued": 0, "failed": 0, "skipped_no_redis": 0}
+
+
+def get_job_stats() -> dict[str, int]:
+    """Return a copy of the in-process enqueue counters."""
+    return dict(_job_stats)
+
 
 _redis_conn: Redis | None = None
 _queues: dict[str, Queue] | None = None
@@ -46,9 +58,23 @@ def _get_queues() -> dict[str, Queue]:
 
 
 def enqueue_job(queue_name: str, func: str, *args: Any, **kwargs: Any):
+    """Enqueue a job, recording and logging every failure.
+
+    Callers can inspect ``get_job_stats()``; the scheduler additionally logs
+    failed enqueues so a Redis outage cannot silently drop maintenance work.
+    """
+    _job_stats["attempted"] += 1
     queues = _get_queues()
     if not queues:
-        # Redis unavailable — skip background job silently.
+        _job_stats["skipped_no_redis"] += 1
+        logger.warning("Job %s not enqueued: Redis unavailable", func)
         return None
     queue = queues.get(queue_name, queues["default"])
-    return queue.enqueue(func, *args, **kwargs)
+    try:
+        job = queue.enqueue(func, *args, **kwargs)
+    except Exception as exc:  # noqa: BLE001
+        _job_stats["failed"] += 1
+        logger.error("Job %s enqueue failed: %s", func, exc)
+        return None
+    _job_stats["enqueued"] += 1
+    return job

@@ -1,7 +1,10 @@
+import { readZipDirectory, readZipEntry } from './zip-reader.js';
+
 export class PackageParser {
   constructor() {
     this._magicBytes = new Uint8Array([0x43, 0x53, 0x59, 0x50]); // CSYP
     this._supportedFormats = ['application/zip', 'application/x-casuya-package'];
+    this._maxTotalBytes = 64 * 1024 * 1024;
   }
 
   async parse(buffer) {
@@ -92,12 +95,11 @@ export class PackageParser {
 
   async _extractManifestFromZip(bytes) {
     try {
-      const { ZipReader, BlobReader, TextWriter } = await import('@casuya/zip-utils');
-      const reader = new ZipReader(new BlobReader(new Blob([bytes])));
-      const entries = await reader.getEntries();
+      const entries = readZipDirectory(bytes);
       for (const entry of entries) {
         if (entry.filename === 'manifest.json' || entry.filename === 'package.json') {
-          return await entry.getData(new TextWriter());
+          const data = await readZipEntry(bytes, entry);
+          return new TextDecoder().decode(data);
         }
       }
       return null;
@@ -133,45 +135,21 @@ export class PackageParser {
     const resources = {};
     resources['manifest.json'] = new TextEncoder().encode(JSON.stringify(manifest));
     try {
-      const { ZipReader, BlobReader, BlobWriter } = await import('@casuya/zip-utils');
-      const reader = new ZipReader(new BlobReader(new Blob([bytes])));
-      const entries = await reader.getEntries();
+      const entries = readZipDirectory(bytes);
+      let totalBytes = 0;
       for (const entry of entries) {
         if (entry.filename === 'manifest.json') continue;
-        const blob = await entry.getData(new BlobWriter());
-        resources[entry.filename] = new Uint8Array(await blob.arrayBuffer());
+        totalBytes += entry.size;
+        if (totalBytes > this._maxTotalBytes) {
+          throw new Error('ZIP package exceeds size limit');
+        }
+        resources[entry.filename] = await readZipEntry(bytes, entry);
       }
     } catch {
-      this._fallbackExtractResources(bytes, manifest, resources);
+      // ZIP parsing failed (corrupt archive or unsupported method).
+      // No heuristic fallback: surface an empty resource set rather than
+      // guessing, so corrupt packages fail loudly.
     }
     return resources;
-  }
-
-  _fallbackExtractResources(bytes, manifest, resources) {
-    const assets = manifest.assets || [];
-    const slides = manifest.slides || [];
-    const allPaths = new Set();
-    for (const asset of assets) {
-      if (asset.src) allPaths.add(asset.src);
-    }
-    for (const slide of slides) {
-      if (slide.content) allPaths.add(slide.content);
-      if (slide.assets) {
-        for (const a of slide.assets) {
-          if (a.src) allPaths.add(a.src);
-        }
-      }
-    }
-    const text = new TextDecoder('utf-8', { fatal: false }).decode(bytes);
-    for (const path of allPaths) {
-      const escaped = path.replace(/[.*+?^${}()|[\]\\]/g, '\\$&');
-      const pattern = new RegExp(`"${escaped}"\\s*:\\s*"([^"]+)"`);
-      const match = text.match(pattern);
-      if (match) {
-        try {
-          resources[path] = new TextEncoder().encode(match[1]);
-        } catch {}
-      }
-    }
   }
 }

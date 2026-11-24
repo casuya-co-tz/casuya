@@ -4,14 +4,23 @@ A **single-trunk, layered monorepo** for the Casuya interactive-learning
 platform: one repository, one main branch, and **downward-only**
 dependencies between clearly separated layers.
 
-## Layers (dependencies point downward only)
+## Recent improvements (2026-11-22 audit)
+
+See [PLAN.md](./PLAN.md) for the full senior-level audit and remediation log.
+Highlights:
+
+- Streaming gzip + brotli compression (no 1MB buffering for gzip clients)
+- `/readyz` returns 503 when the database is required and down
+- Cache-busted `main.min.css` / `tailwind.min.css` via `STAMP_ASSETS`
+- Runtime ZIP loader replaced dead `@casuya/zip-utils` dependency
+- SQLite migration hardening (dialect-aware `ADD COLUMN`)
+- 270/270 backend tests, 12/12 monorepo test tasks, 14/14 builds green
 
 ```
 casuya-hybrid/
 ├── apps/            rank 2 — deployable application
 │   └── platform/    FastAPI backend + static/Vite frontend (the only runtime image)
 ├── packages/        rank 1 — reusable TypeScript libraries
-│   ├── ai/          AI tutoring engine
 │   ├── blackboard/  interactive math/handwriting blackboard
 │   ├── bridge/      offline-first sync + cache engine
 │   ├── ds-tokens/   design tokens + theme (flattened from design-system)
@@ -44,9 +53,9 @@ and in CI.
 ## Content scope
 
 Casuya delivers **three subjects**: Mathematics, Chemistry, and Physics
-(the core NECTA science/mathematics set). The data layer, AI knowledge base,
-frontend, and docs are trimmed to this scope; languages are Kiswahili and
-English.
+(the core NECTA science/mathematics set). The data layer, offline syllabus
+reference, frontend, and docs are trimmed to this scope; languages are
+Kiswahili and English.
 
 ## Getting started
 
@@ -73,7 +82,7 @@ docker compose -f infra/docker-compose.yml up -d
 pnpm build            # via turbo, across affected packages
 pnpm typecheck        # TypeScript type checking
 pnpm lint             # ESLint across JS/TS packages
-pnpm test             # vitest (TS) + pytest (Python) + jest (AI)
+pnpm test             # vitest + jest (TS) + pytest (Python) + node:test
 pnpm clean            # remove build artifacts
 
 pnpm check:layers     # enforce downward-only dependencies
@@ -88,12 +97,13 @@ Tests run across multiple frameworks:
 | Package | Framework | Command |
 |---------|-----------|---------|
 | TypeScript packages | vitest | `pnpm test` (via turbo) |
-| `@casuya/ai` | jest | `pnpm test` (via turbo) |
+| `casuya-runtime` | jest | `pnpm test` (via turbo, unit suite) |
 | `casuya-platform` | pytest | `pnpm test` (via turbo) |
 | `casuya-bridge` | node:test | `pnpm test` (via turbo) |
 
 CI installs Python + pytest before running `pnpm test` so the platform's
-Python test suite can execute alongside the TypeScript tests.
+Python test suite can execute alongside the TypeScript tests. Browser coverage
+is in `apps/platform/e2e/` (Playwright, Chromium).
 
 ## Deployment (production-preserving)
 

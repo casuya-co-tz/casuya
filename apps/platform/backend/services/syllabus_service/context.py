@@ -1,4 +1,4 @@
-"""Curriculum context builder for AI prompt injection."""
+"""Curriculum context builder for lesson content grounding."""
 
 from __future__ import annotations
 
@@ -6,10 +6,9 @@ from .subjects import get_subject_with_form
 
 
 def get_curriculum_context(subject_slug: str, form_level: int) -> str:
-    """Build a curriculum context string for AI prompt injection.
+    """Build a curriculum context string for lesson content grounding.
 
-    This is used by the AI tutoring engine to ensure responses are
-    aligned with the exact TIE syllabus content.
+    This ensures generated content is aligned with the exact TIE syllabus content.
     """
     subject_data = get_subject_with_form(subject_slug, form_level)
     if not subject_data:

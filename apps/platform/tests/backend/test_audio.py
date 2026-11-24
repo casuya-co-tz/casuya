@@ -4,7 +4,7 @@ from __future__ import annotations
 
 import io
 import wave
-from unittest.mock import MagicMock, patch
+from unittest.mock import AsyncMock, MagicMock, patch
 
 import numpy as np
 import pytest
@@ -66,17 +66,16 @@ def test_tts_rejects_oversized_text():
     assert resp.status_code == 422
 
 
-@patch("backend.api.audio.tts.httpx.Client")
-def test_tts_proxy_forwards_request(mock_client_cls):
+@patch("backend.api.audio.tts.get_async_client")
+def test_tts_proxy_forwards_request(mock_get_client):
     token = _register_token("audio-tts-proxy@test.com")
     mock_resp = MagicMock()
     mock_resp.status_code = 200
     mock_resp.content = b"RIFFwav"
     mock_resp.headers = {"content-type": "audio/wav"}
     mock_client = MagicMock()
-    mock_client.__enter__.return_value = mock_client
-    mock_client.post.return_value = mock_resp
-    mock_client_cls.return_value = mock_client
+    mock_client.post = AsyncMock(return_value=mock_resp)
+    mock_get_client.return_value = mock_client
 
     resp = client.post(
         "/v1/audio/tts",
@@ -100,16 +99,15 @@ def test_stt_requires_auth():
     assert resp.status_code == 401
 
 
-@patch("backend.api.audio.stt.httpx.Client")
-def test_stt_proxy_forwards_wav_and_language(mock_client_cls):
+@patch("backend.api.audio.stt.get_async_client")
+def test_stt_proxy_forwards_wav_and_language(mock_get_client):
     token = _register_token("audio-stt-proxy@test.com")
     mock_resp = MagicMock()
     mock_resp.status_code = 200
     mock_resp.json.return_value = {"text": "habari"}
     mock_client = MagicMock()
-    mock_client.__enter__.return_value = mock_client
-    mock_client.post.return_value = mock_resp
-    mock_client_cls.return_value = mock_client
+    mock_client.post = AsyncMock(return_value=mock_resp)
+    mock_get_client.return_value = mock_client
 
     resp = client.post(
         "/v1/audio/stt",

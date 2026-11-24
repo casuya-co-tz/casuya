@@ -1,0 +1,37 @@
+/* Self-hosted OpenDyslexic font for the accessibility toolbar.
+ *
+ * Previously reset-password.html pulled this from fonts.cdnfonts.com. That
+ * host is NOT in the FastAPI CSP allowlist (services/html_assets.py), so the
+ * font silently failed on same-origin deploys and was never cached offline by
+ * the service worker (which ignores cross-origin requests). Serving the font
+ * from /assets/fonts keeps behaviour identical on Vercel and FastAPI and works
+ * on 2G after the first visit.
+ */
+@font-face {
+  font-family: 'OpenDyslexic';
+  font-style: normal;
+  font-weight: 400;
+  font-display: swap;
+  src: url('/assets/fonts/OpenDyslexic-Regular.woff') format('woff');
+}
+@font-face {
+  font-family: 'OpenDyslexic';
+  font-style: italic;
+  font-weight: 400;
+  font-display: swap;
+  src: url('/assets/fonts/OpenDyslexic-Italic.woff') format('woff');
+}
+@font-face {
+  font-family: 'OpenDyslexic';
+  font-style: normal;
+  font-weight: 700;
+  font-display: swap;
+  src: url('/assets/fonts/OpenDyslexic-Bold.woff') format('woff');
+}
+@font-face {
+  font-family: 'OpenDyslexic';
+  font-style: italic;
+  font-weight: 700;
+  font-display: swap;
+  src: url('/assets/fonts/OpenDyslexic-BoldItalic.woff') format('woff');
+}

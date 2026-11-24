@@ -121,10 +121,6 @@ def export_users_xlsx(db: Session = Depends(get_db)):
     except ImportError as e:  # pragma: no cover — dependency guarded at deploy time
         raise HTTPException(status_code=503, detail="XLSX export is not available") from e
 
-    users = db.query(User).order_by(User.created_at.desc(), User.id.desc()).all()
-    items = [_serialize_user(u) for u in users]
-    _attach_profiles(items, db)
-
     wb = Workbook()
     ws = wb.active
     ws.title = "Users"
@@ -136,20 +132,38 @@ def export_users_xlsx(db: Session = Depends(get_db)):
         cell.fill = header_fill
         cell.font = header_font
 
-    for item in items:
-        profile = item.get("profile") or {}
-        ws.append(
-            [
-                item.get("full_name") or "",
-                item.get("email") or "",
-                item.get("phone") or "",
-                item.get("role") or "",
-                "Active" if item.get("is_active") else "Inactive",
-                profile.get("form_level") or "",
-                profile.get("subjects") or "",
-                item.get("created_at") or "",
-            ]
-        )
+    # Stream the table in bounded batches instead of materialising every User
+    # ORM row plus profile dict at once (the old `.all()` path held the whole
+    # user table in memory on every admin export).
+    batch_size = 500
+    pending: list[dict] = []
+
+    def flush_batch(rows: list[dict]) -> None:
+        if not rows:
+            return
+        _attach_profiles(rows, db)
+        for item in rows:
+            profile = item.get("profile") or {}
+            ws.append(
+                [
+                    item.get("full_name") or "",
+                    item.get("email") or "",
+                    item.get("phone") or "",
+                    item.get("role") or "",
+                    "Active" if item.get("is_active") else "Inactive",
+                    profile.get("form_level") or "",
+                    profile.get("subjects") or "",
+                    item.get("created_at") or "",
+                ]
+            )
+
+    query = db.query(User).order_by(User.created_at.desc(), User.id.desc()).yield_per(batch_size)
+    for user in query:
+        pending.append(_serialize_user(user))
+        if len(pending) >= batch_size:
+            flush_batch(pending)
+            pending = []
+    flush_batch(pending)
 
     for column_cells in ws.columns:
         max_length = max(len(str(cell.value or "")) for cell in column_cells)

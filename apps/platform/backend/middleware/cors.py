@@ -109,7 +109,7 @@ class CORSMiddleware:
             await send({"type": "http.response.body", "body": body})
             return
 
-        wrapped_send = functools.partial(self._send, send=send, origin=origin)
+        wrapped_send = functools.partial(self._send, send=send, origin=origin, scope=scope)
         try:
             await self.app(scope, receive, wrapped_send)
         except Exception:
@@ -129,12 +129,11 @@ class CORSMiddleware:
                 scope["_cors_response_sent"] = True
             raise
 
-    async def _send(self, message: Message, *, send: Send, origin: str) -> None:
+    async def _send(self, message: Message, *, send: Send, origin: str, scope: Scope) -> None:
         if message["type"] != "http.response.start":
             await send(message)
             return
 
-        scope = message.get("scope", {})
         if scope.get("_cors_response_sent"):
             await send(message)
             return

@@ -12,8 +12,9 @@
     "test": "python -m pytest tests/backend -q && node --test tests/frontend/render-exam-paper.test.mjs",
     "test:frontend": "node --test tests/frontend/render-exam-paper.test.mjs",
     "test:e2e": "playwright test -c e2e/playwright.config.ts",
+    "test:e2e:edge": "playwright test -c e2e/playwright.edge.config.ts",
     "test:coverage": "pytest tests/ --cov=backend --cov=integrations -v",
-    "build": "echo 'Frontend assets are built in apps/platform/frontend (CI + Vercel)'",
+    "build": "node -e \"require('fs').mkdirSync('dist',{recursive:true});require('fs').writeFileSync('dist/build-info.json', JSON.stringify({note:'Static frontend is built in apps/platform/frontend (CI + Vercel); this marker exists so turbo has a real output for casuya-platform#build.'}))\"",
     "docker:up": "docker compose -f ../infra/docker-compose.yml up -d",
     "docker:down": "docker compose -f ../infra/docker-compose.yml down"
   },

@@ -13,6 +13,13 @@
       ]
     },
     {
+      "source": "/sw.js",
+      "headers": [
+        { "key": "Cache-Control", "value": "public, max-age=0, must-revalidate" },
+        { "key": "Content-Type", "value": "application/javascript; charset=utf-8" }
+      ]
+    },
+    {
       "source": "/assets/(.*\\.css)",
       "headers": [
         { "key": "Content-Type", "value": "text/css; charset=utf-8" },
@@ -35,6 +42,14 @@
     {
       "source": "/static/(.*)",
       "headers": [
+        { "key": "Cache-Control", "value": "public, max-age=31536000, immutable" }
+      ]
+    },
+    {
+      "source": "/(.*\\.gz)",
+      "headers": [
+        { "key": "Content-Encoding", "value": "gzip" },
+        { "key": "Content-Type", "value": "application/octet-stream" },
         { "key": "Cache-Control", "value": "public, max-age=31536000, immutable" }
       ]
     },

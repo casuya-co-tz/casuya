@@ -15,11 +15,8 @@ async function renderTeacherDashboard() {
           <div class="sidebar-nav-item" data-view="class">🏫 My Class</div>
           <div class="sidebar-nav-item" data-view="students">👥 Students</div>
           <div class="sidebar-nav-item" data-view="lessons">📝 Lessons</div>
-          <div class="sidebar-nav-item" data-view="test-generator">📝 Test Generator</div>
           <div class="sidebar-nav-item" data-view="assignments">📋 Assignments</div>
           <div class="sidebar-nav-item" data-view="reports">📈 Reports</div>
-          <div class="sidebar-nav-item" data-view="ai-assistant">🤖 AI Assistant</div>
-          <div class="sidebar-nav-item" data-view="teaching-docs">📚 Teaching Docs</div>
           <div class="sidebar-nav-item" data-view="library">📖 Reference Library</div>
           <div class="sidebar-nav-item" data-view="bookmarks">🔖 Bookmarks</div>
           <div class="sidebar-nav-item" data-view="files">📁 Files</div>
@@ -64,11 +61,8 @@ async function renderTeacherDashboard() {
     class: () => { dashboard.setActiveNav("class"); loadClass(dashboard); },
     students: () => { dashboard.setActiveNav("students"); loadStudents(dashboard); },
     lessons: () => { dashboard.setActiveNav("lessons"); loadLessons(dashboard); },
-    "test-generator": () => { dashboard.setActiveNav("test-generator"); loadTeacherTestGenerator(dashboard); },
     assignments: () => { dashboard.setActiveNav("assignments"); loadAssignments(dashboard); },
     reports: () => { dashboard.setActiveNav("reports"); loadReports(dashboard); },
-    "ai-assistant": () => { dashboard.setActiveNav("ai-assistant"); loadAIAssistant(dashboard); },
-    "teaching-docs": () => { dashboard.setActiveNav("teaching-docs"); loadPlans(dashboard); },
     library: () => { dashboard.setActiveNav("library"); loadLibrary(dashboard); },
     bookmarks: () => { dashboard.setActiveNav("bookmarks"); loadBookmarks(dashboard); },
     files: () => { dashboard.setActiveNav("files"); loadFiles(dashboard); },

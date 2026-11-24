@@ -1,4 +1,4 @@
-"""Load NECTA paper presets shared with packages/ai knowledge base."""
+"""Load NECTA paper presets from the bundled backend data directory."""
 
 from __future__ import annotations
 
@@ -7,19 +7,15 @@ from copy import deepcopy
 from pathlib import Path
 from typing import Any
 
+
 def _resolve_presets_dir() -> Path:
-    """Locate preset JSON — monorepo dev tree or bundled backend/data copy."""
+    """Locate the bundled preset JSON catalogue."""
     here = Path(__file__).resolve()
     bundled = here.parents[2] / "data" / "necta_presets"
     if bundled.is_dir():
         return bundled
-    for ancestor in here.parents:
-        candidate = ancestor / "packages" / "ai" / "knowledge_base" / "exam_formats" / "presets"
-        if candidate.is_dir():
-            return candidate
     raise FileNotFoundError(
-        "NECTA preset catalog not found. Expected backend/data/necta_presets or "
-        "packages/ai/knowledge_base/exam_formats/presets."
+        "NECTA preset catalog not found. Expected backend/data/necta_presets."
     )
 
 

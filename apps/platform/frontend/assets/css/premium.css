@@ -54,21 +54,21 @@
   align-items: center;
   justify-content: center;
   gap: 0.5rem;
-  padding: 0.875rem 2rem;
-  background: linear-gradient(135deg, #2563eb 0%, #7c3aed 100%);
+  padding: 0.625rem 1.5rem;
+  background: #2563eb;
   color: #fff;
   border: none;
-  border-radius: var(--radius-lg);
-  font-size: 0.95rem;
-  font-weight: 700;
+  border-radius: 8px;
+  font-size: 0.9rem;
+  font-weight: 600;
   font-family: var(--font);
   cursor: pointer;
-  transition: transform 0.3s cubic-bezier(0.4, 0, 0.2, 1), box-shadow 0.3s cubic-bezier(0.4, 0, 0.2, 1), background 0.3s cubic-bezier(0.4, 0, 0.2, 1), color 0.3s cubic-bezier(0.4, 0, 0.2, 1), border-color 0.3s cubic-bezier(0.4, 0, 0.2, 1);
-  border: 1px solid rgba(255,255,255,0.18);
-  box-shadow: 0 4px 16px rgba(37,99,235,0.30), 0 1px 3px rgba(15,23,42,0.12), inset 0 1px 0 rgba(255,255,255,0.20);
+  transition: background 0.2s ease, transform 0.2s ease;
+  border: 1px solid transparent;
+  box-shadow: 0 2px 8px rgba(37,99,235,0.25);
   position: relative;
   overflow: hidden;
-  min-height: 52px;
+  min-height: 40px;
   letter-spacing: -0.01em;
 }
 .btn-premium:hover {
@@ -207,17 +207,17 @@
 
 .input-premium {
   width: 100%;
-  padding: 0.875rem 1rem;
-  border: 1.5px solid #cbd5e1;
-  border-radius: var(--radius-lg);
-  font-size: 0.95rem;
+  padding: 0.625rem 0.875rem;
+  border: 1px solid #cbd5e1;
+  border-radius: 8px;
+  font-size: 0.9rem;
   font-family: var(--font);
   font-weight: 500;
-  min-height: 48px;
+  min-height: 40px;
   background: #ffffff;
   color: var(--color-text);
-  transition: border-color 0.25s ease, box-shadow 0.25s ease;
-  box-shadow: 0 1px 3px rgba(15,23,42,0.06);
+  transition: border-color 0.2s ease, box-shadow 0.2s ease;
+  box-shadow: none;
 }
 .input-premium:hover {
   border-color: #94a3b8;
@@ -276,30 +276,12 @@
 
 .auth-card-premium {
   background: #ffffff;
-  border: 1.5px solid #e2e8f0;
-  border-radius: var(--radius-xl);
-  box-shadow: 0 2px 8px rgba(15,23,42,0.06), 0 16px 48px rgba(15,23,42,0.10), 0 0 0 1px rgba(255,255,255,1) inset;
-  padding: 2.5rem;
+  border: 1px solid #e2e8f0;
+  border-radius: 12px;
+  box-shadow: 0 4px 24px rgba(15,23,42,0.08);
+  padding: 1.5rem;
   position: relative;
   overflow: hidden;
-}
-.auth-card-premium::before {
-  content: '';
-  position: absolute;
-  top: 0;
-  left: 0;
-  right: 0;
-  height: 5px;
-  background: linear-gradient(90deg, #2563eb 0%, #7c3aed 50%, #ec4899 100%);
-  border-radius: var(--radius-xl) var(--radius-xl) 0 0;
-}
-.auth-card-premium::after {
-  content: '';
-  position: absolute;
-  inset: 0;
-  border-radius: var(--radius-xl);
-  border: 1px solid rgba(255,255,255,0.6);
-  pointer-events: none;
 }
 
 .form-group-premium {

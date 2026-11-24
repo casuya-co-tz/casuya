@@ -51,9 +51,13 @@ const LESSON_BRIDGE_SCRIPT = `
           hls.attachMedia(v);
         }
         if (window.Hls) { attach(window.Hls); return; }
-        // Lazy-load the vendored hls.js only when actually needed (no-op if absent).
+        // Lazy-load the vendored hls.js only when actually needed (no-op if
+        // absent). Use the build's versioned URL so immutable-cache headers do
+        // not pin an old library after an upgrade.
         var s = document.createElement('script');
-        s.src = '/static/lib/hls.min.js';
+        s.src = window.CASUYA_ASSET
+          ? window.CASUYA_ASSET('/static/lib/hls.min.js')
+          : '/static/lib/hls.min.js';
         s.onload = function () { attach(window.Hls); };
         document.head.appendChild(s);
       })(videos[i]);

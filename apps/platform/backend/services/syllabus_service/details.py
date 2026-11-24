@@ -70,8 +70,7 @@ def get_outcomes_for_subtopic(topic_id: str, subtopic_code: str | None = None) -
 def search_outcomes(query: str, subject_slug: str | None = None, form_level: int | None = None) -> list[dict]:
     """Search for learning outcomes matching a text query.
 
-    The AI agent uses this to find relevant syllabus objectives
-    when a student asks a question.
+    Used to find relevant syllabus objectives for a subject or topic.
     """
     _gen = get_db()
     db: Session = next(_gen)

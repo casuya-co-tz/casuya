@@ -151,7 +151,7 @@ def _reference_stage_assessments(subject_slug, form_level, topic):
 
 def _assessment_quality_reason(text, stage_name, lang):
     """Return why an existing Assessment Criterion cell is weak (None = keep
-    it). This lets good, naturally-written AI criteria survive - they are only
+    it). This lets good, naturally-written criteria survive - they are only
     replaced when they are empty, generic filler, too short, or name no actor."""
     text = _as_text(text).strip()
     if not text:

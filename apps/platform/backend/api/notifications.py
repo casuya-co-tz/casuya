@@ -36,20 +36,7 @@ def send_notification_route(body: SendNotificationRequest, db: Session = Depends
     if body.user_id:
         result = send_notification(db, user_id=body.user_id, message=body.message)
         return {"sent": 1, "notifications": [result]}
-    users = db.query(User.id).filter(User.role == body.role, User.is_active.is_(True)).all()
-    if not users:
-        raise HTTPException(status_code=404, detail=f"No active {body.role}s found")
-    from backend.models.notification import Notification
-    from datetime import datetime, timezone
-
-    now = datetime.now(timezone.utc)
-    notifications = [
-        Notification(user_id=u.id, channel="in_app", message=body.message, is_read=False, created_at=now)
-        for u in users
-    ]
-    db.add_all(notifications)
-    db.commit()
-    return {"sent": len(notifications)}
+    return _broadcast_by_role(db, body.role, body.message)
 
 
 @router.post("/bulk", dependencies=[Depends(require_role("admin"))])
@@ -57,20 +44,49 @@ def send_notification_route(body: SendNotificationRequest, db: Session = Depends
 def send_bulk_notification_route(body: SendNotificationRequest, db: Session = Depends(get_db)):
     if not body.role:
         raise HTTPException(status_code=400, detail="Provide role (student|teacher)")
-    user_ids = [r[0] for r in db.query(User.id).filter(User.role == body.role, User.is_active.is_(True)).all()]
-    if not user_ids:
-        raise HTTPException(status_code=404, detail=f"No active {body.role}s found")
-    from backend.models.notification import Notification
+    return _broadcast_by_role(db, body.role, body.message)
+
+
+def _broadcast_by_role(db: Session, role: str, message: str) -> dict:
+    """Create in-app notifications in bounded batches.
+
+    The old implementation loaded every active user id into a list and built
+    one Notification object per user before a single commit. Keyset pagination
+    keeps memory flat and commits in batches, so a large broadcast cannot pin
+    the whole user table in RAM. Keyset (rather than ``yield_per``) is used
+    because committing mid-iteration would invalidate a streaming cursor.
+    """
     from datetime import datetime, timezone
 
-    now = datetime.now(timezone.utc)
-    notifications = [
-        Notification(user_id=uid, channel="in_app", message=body.message, is_read=False, created_at=now)
-        for uid in user_ids
-    ]
-    db.add_all(notifications)
-    db.commit()
-    return {"sent": len(notifications)}
+    from backend.models.notification import Notification
+
+    batch_size = 500
+    sent = 0
+    last_id: str | None = None
+    while True:
+        query = db.query(User.id).filter(User.role == role, User.is_active.is_(True))
+        if last_id is not None:
+            query = query.filter(User.id > last_id)
+        rows = query.order_by(User.id).limit(batch_size).all()
+        if not rows:
+            break
+        now = datetime.now(timezone.utc)
+        db.add_all([
+            Notification(
+                user_id=row.id,
+                channel="in_app",
+                message=message,
+                is_read=False,
+                created_at=now,
+            )
+            for row in rows
+        ])
+        db.commit()
+        sent += len(rows)
+        last_id = rows[-1].id
+    if sent == 0:
+        raise HTTPException(status_code=404, detail=f"No active {role}s found")
+    return {"sent": sent}
 
 
 @router.post("/{notification_id}/read")

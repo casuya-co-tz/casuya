@@ -7,6 +7,7 @@ from sqlalchemy.orm import Session
 
 from backend.config.database import get_db
 from backend.middleware.auth import bridge_auth, get_current_user
+from backend.middleware.permissions import is_staff
 from backend.models.activity import RecentActivity
 from backend.models.student import Student
 from backend.schemas.progress import ProgressSyncPayload
@@ -27,8 +28,7 @@ def _resolve_student_id(current_user: dict, requested: str, db: Session) -> str:
 
     Students may only act on their own record; admins/teachers may act on any.
     """
-    role = current_user.get("role", "")
-    if role in ("admin", "teacher"):
+    if is_staff(current_user):
         return requested
     student = db.query(Student).filter(Student.user_id == current_user["sub"]).first()
     if not student:
@@ -91,8 +91,7 @@ def sync_progress(body: ProgressSyncPayload, background_tasks: BackgroundTasks, 
 @router.get("/{student_id}/stats/")
 def get_student_stats(student_id: str, db: Session = Depends(get_db), current_user=Depends(get_current_user)):
     """Return server-side streak, lessons viewed count, average score, and recent lessons."""
-    role = current_user.get("role", "")
-    if role not in ("admin", "teacher"):
+    if not is_staff(current_user):
         owned = _resolve_student_id(current_user, "", db)  # throws if caller has no student profile
         if owned != student_id:
             raise HTTPException(status_code=403, detail="Not authorized to view this student's data")
@@ -108,8 +107,7 @@ def get_lesson_progress_route(
     current_user=Depends(get_current_user),
 ):
     """Return saved blackboard state for a single lesson."""
-    role = current_user.get("role", "")
-    if role not in ("admin", "teacher"):
+    if not is_staff(current_user):
         owned = _resolve_student_id(current_user, "", db)
         if owned != student_id:
             raise HTTPException(status_code=403, detail="Not authorized to view this student's data")
@@ -128,8 +126,7 @@ def get_student_progress_route(
     db: Session = Depends(get_db),
     current_user=Depends(get_current_user),
 ):
-    role = current_user.get("role", "")
-    if role not in ("admin", "teacher"):
+    if not is_staff(current_user):
         owned = _resolve_student_id(current_user, "", db)
         if owned != student_id:
             raise HTTPException(status_code=403, detail="Not authorized to view this student's data")

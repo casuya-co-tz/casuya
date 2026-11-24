@@ -46,6 +46,7 @@ class SecurityHeadersMiddleware:
                 except Exception:
                     _cdn = []
                 _cdn_src = " ".join(_cdn)
+                connect_src = "'self' https://casuya.co.tz https://www.casuya.co.tz https://casuya-platform-production.up.railway.app wss://casuya.co.tz wss://www.casuya.co.tz wss://casuya-platform-production.up.railway.app"
                 headers["Content-Security-Policy"] = (
                     f"default-src 'self'; "
                     f"script-src 'self' 'unsafe-inline' {_cdn_src}; "
@@ -53,7 +54,7 @@ class SecurityHeadersMiddleware:
                     f"font-src 'self' data: {_cdn_src}; "
                     f"img-src 'self' data: blob: https:; "
                     f"frame-src 'self' https:; "
-                    f"connect-src 'self'"
+                    f"connect-src {connect_src}"
                 )
 
                 # ── Smart Cache-Control ───────────────────────────────────

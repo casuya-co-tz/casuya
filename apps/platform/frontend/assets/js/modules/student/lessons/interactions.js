@@ -109,22 +109,7 @@ function bindStudentLessonInteractions(d, ctx) {
         document.getElementById("retry-quiz-btn").addEventListener("click", () => {
           document.querySelectorAll('#quiz-form input[type="radio"]').forEach(r => r.checked = false);
           el.style.display = "none";
-          const tutor = el.parentNode && el.parentNode.querySelector(".quiz-tutor");
-          if (tutor) tutor.remove();
         });
-        if (Array.isArray(result.wrong_questions) && result.wrong_questions.length && typeof mountLessonQuizTutor === "function") {
-          mountLessonQuizTutor(el, result.wrong_questions, {
-            lessonId: lessonId,
-            lesson: lesson,
-            lessonTitle: lesson && lesson.title,
-            lessonContent: lessonContent,
-            iframeText: iframeText,
-            subject_slug: lesson && lesson.subject_slug,
-            form_level: lesson && lesson.form_level,
-            topic: lesson && lesson.topic_title,
-            subtopic: lesson && lesson.subtopic_title,
-          });
-        }
       }
     } catch(err) {
       const el = document.getElementById("quiz-result");

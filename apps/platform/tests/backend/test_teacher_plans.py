@@ -5,7 +5,7 @@ themed sub-test files so that pytest (and existing CI commands targeting this
 file) still discover the full suite. The focused files live alongside this
 one:
 
-- test_plan_generation.py  — AI lesson plan/scheme generation, repair, fallback
+- test_plan_generation.py  — offline lesson plan/scheme generation and fallback
 - test_plan_offline_render.py     — offline lesson plan builder rendering (EN/SW)
 - test_plan_offline_grounding.py  — offline lesson plan TIE/KB/reference grounding
 - test_plan_offline_verified.py  — offline verified Physics Form One plan

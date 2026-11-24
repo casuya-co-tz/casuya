@@ -3,6 +3,7 @@ from __future__ import annotations
 import logging
 from collections.abc import Generator
 
+from fastapi import HTTPException
 from sqlalchemy import create_engine
 from sqlalchemy.orm import DeclarativeBase, Session, sessionmaker
 
@@ -65,7 +66,10 @@ def get_db() -> Generator[Session, None, None]:
     if SessionLocal is None:
         get_engine()
     if SessionLocal is None:
-        raise RuntimeError("Database engine is not available")
+        # The module docstring has always promised a 503 here; a bare
+        # RuntimeError turned into a 500 and hid the real cause from
+        # orchestrators and smoke checks.
+        raise HTTPException(status_code=503, detail="Database unavailable")
     db = SessionLocal()
     try:
         yield db

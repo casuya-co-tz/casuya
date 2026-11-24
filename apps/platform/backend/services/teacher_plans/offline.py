@@ -24,7 +24,6 @@ __all__ = [
     "_lookup_lesson_plan_content",
     "_midterm_weeks",
     "_normalize_stage_times",
-    "_patch_weak_progression_from_offline",
     "_polish_progression_cells",
     "_progression_quality_issues",
     "_reference_lesson_grounding",
@@ -43,7 +42,6 @@ from .competences import _ground_progression_assessment  # noqa: F401
 from .offline_builder import _build_lesson_plan_offline  # noqa: F401
 from .offline_lesson import (  # noqa: F401
     _lookup_lesson_plan_content,
-    _patch_weak_progression_from_offline,
     _reference_lesson_grounding,
     _scheme_row_for_lesson,
 )

@@ -1,32 +1,66 @@
 """Startup sequence and health/readiness helpers for the FastAPI entrypoint.
 
 Extracted from ``backend.main`` so the entrypoint stays a thin wiring layer:
-the DDL/migration/rehydrate boot sequence, the casuya-ai health probe and the
-readiness (DB + Redis) probe live here.
+the DDL/migration/rehydrate boot sequence and the readiness (DB + Redis) probe
+live here.
 """
 
 from __future__ import annotations
+
+import asyncio
+import logging
+import os
+import subprocess
+import sys
+from pathlib import Path
+
+logger = logging.getLogger(__name__)
+
+
+def run_alembic_upgrade() -> None:
+    """Apply versioned migrations when explicitly enabled.
+
+    The runtime ``init_db()`` reconciliation still runs afterwards (it adds
+    columns/indexes defensively and is what SQLite tests use). Production can
+    set ``RUN_ALEMBIC_ON_STARTUP=true`` so a migration revision is recorded;
+    CI already runs ``alembic upgrade head`` as a separate step.
+    """
+    from backend.config.settings import get_settings
+
+    settings = get_settings()
+    if not settings.run_alembic_on_startup:
+        return
+
+    platform_root = Path(__file__).resolve().parents[1]
+    if not (platform_root / "alembic.ini").exists():
+        raise RuntimeError(f"alembic.ini not found under {platform_root}")
+
+    logger.info("Applying Alembic migrations (upgrade head)")
+    subprocess.run(
+        [sys.executable, "-m", "alembic", "upgrade", "head"],
+        cwd=str(platform_root),
+        check=True,
+        timeout=300,
+    )
 
 
 async def platform_startup():
     """Run the one-time worker startup sequence, then yield for serving.
 
-    Only the leader worker (holding the DB-init lock) runs DDL/migration and
+    Only the leader worker (holding the DB-init lock) runs migrations, DDL and
     the storage rehydration; every worker starts the payment cache sync.
     """
-    import asyncio
-    import os
-
     from backend.config.database import acquire_startup_lock, release_startup_lock
     from backend.services.email_service import smtp_configured
 
-    print(f"SMTP {'configured' if smtp_configured() else 'NOT configured (email resets disabled)'}")
+    logger.info("SMTP %s", "configured" if smtp_configured() else "NOT configured (email resets disabled)")
 
     acquired = await asyncio.to_thread(acquire_startup_lock)
     try:
         if acquired:
             from backend.config.database import init_db
 
+            await asyncio.to_thread(run_alembic_upgrade)
             await asyncio.to_thread(init_db)
 
             # Isolated analytics cluster: schema/retention-procedure creation is
@@ -36,7 +70,7 @@ async def platform_startup():
 
                 await asyncio.to_thread(init_analytics_db)
             except Exception as analytics_exc:  # noqa: BLE001
-                print(f"WARNING: analytics schema init skipped: {analytics_exc}")
+                logger.warning("analytics schema init skipped: %s", analytics_exc)
 
             admin_email = os.environ.get("CASUYA_ADMIN_EMAIL", "").strip()
             admin_password = os.environ.get("CASUYA_ADMIN_PASSWORD", "").strip()
@@ -55,85 +89,38 @@ async def platform_startup():
 
                 rules_result = await asyncio.to_thread(deploy_cache_rules)
                 if rules_result.get("status") == "success":
-                    print(f"Cloudflare cache rules {rules_result.get('action')}: {rules_result.get('rules_count')} rules")
+                    logger.info("Cloudflare cache rules %s: %s rules", rules_result.get("action"), rules_result.get("rules_count"))
             except Exception as cf_exc:
-                print(f"Cloudflare rules deployment skipped: {cf_exc}")
+                logger.warning("Cloudflare rules deployment skipped: %s", cf_exc)
     except Exception as exc:  # noqa: BLE001
         from backend.config.settings import get_settings
 
-        if get_settings().require_database_on_startup:
+        settings = get_settings()
+        if settings.require_database_on_startup or settings.run_alembic_on_startup:
             raise
-        print(f"WARNING: init_db failed, continuing without DB: {exc}")
+        logger.warning("startup schema init failed, continuing without DB: %s", exc)
     finally:
         if acquired:
             await asyncio.to_thread(release_startup_lock)
 
     from backend.services.analytics_events import start_retention_loop
+    from backend.services.job_scheduler import start_job_scheduler, stop_job_scheduler
     from backend.services.payment_cache import start_cache_sync, stop_cache_sync
 
     start_cache_sync()
     start_retention_loop()
+    start_job_scheduler(leader=bool(acquired))
     try:
         yield
     finally:
         from backend.services.analytics_events import stop_retention_loop
+        from backend.services.http_client import aclose_http_clients, close_http_clients
 
+        await stop_job_scheduler()
         stop_retention_loop()
         stop_cache_sync()
-
-
-def check_casuya_ai() -> dict:
-    """Probe casuya-ai /readyz (and /health) for connectivity.
-
-    Never raises and never blocks startup: any failure reports the AI service as
-    unreachable so the platform's offline fallbacks are still expected to run.
-    """
-    import httpx
-
-    from backend.config.settings import get_settings
-    from backend.services.ai_bridge.client import get_casuya_ai_url
-
-    base_url = get_casuya_ai_url()
-    if not base_url:
-        return {"configured": False, "reachable": False, "url": ""}
-
-    settings = get_settings()
-    headers: dict[str, str] = {}
-    if settings.casuya_ai_api_key:
-        headers["X-API-Key"] = settings.casuya_ai_api_key
-
-    result: dict = {"configured": True, "url": base_url, "reachable": False}
-    try:
-        with httpx.Client(timeout=4.0) as client:
-            ready = client.get(f"{base_url}/readyz", headers=headers)
-            if ready.status_code < 400:
-                ready_payload = ready.json()
-                result.update(
-                    {
-                        "reachable": ready_payload.get("status") == "ok",
-                        "ready": ready_payload.get("status"),
-                        "kb_ready": ready_payload.get("kb_ready"),
-                        "providers_ready": ready_payload.get("providers_ready"),
-                        "provider_chain": ready_payload.get("provider_chain"),
-                        "embeddings_ready": ready_payload.get("embeddings_ready"),
-                        "embeddings_count": ready_payload.get("embeddings_count"),
-                    }
-                )
-            health = client.get(f"{base_url}/health", headers=headers)
-            if health.status_code < 400:
-                health_payload = health.json()
-                result.update(
-                    {
-                        "service": health_payload.get("service"),
-                        "version": health_payload.get("version"),
-                        "provider": health_payload.get("provider"),
-                    }
-                )
-                if not result.get("reachable"):
-                    result["reachable"] = True
-    except Exception as exc:
-        result["error"] = str(exc)[:120]
-    return result
+        await aclose_http_clients()
+        close_http_clients()
 
 
 def readiness_status() -> dict:

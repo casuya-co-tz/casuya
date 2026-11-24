@@ -15,8 +15,7 @@
       "@casuya/ds-icons": ["packages/ds-icons/src"],
       "@casuya/ds-styles": ["packages/ds-styles/src"],
       "@casuya/ds-utils": ["packages/ds-utils/src"],
-      "@casuya/ds-theme": ["packages/ds-theme/src"],
-      "@casuya/ai": ["packages/ai/src"]
+      "@casuya/ds-theme": ["packages/ds-theme/src"]
     }
   },
   "exclude": ["node_modules", "**/dist", "**/build", "**/.next", "**/.turbo"]

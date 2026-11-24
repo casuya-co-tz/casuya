@@ -1,4 +1,4 @@
-// modules/teacher/assignments-crud.js — assignments management with AI exam generation
+// modules/teacher/assignments-crud.js — assignments management with offline exam paper generation
 // List/create/edit/delete + exam paper preview. Submission grading moved to
 // assignments-grading.js (openAssignmentSubmissions).
 

@@ -30,8 +30,6 @@ window.SW = Object.assign(window.SW || {}, {
     "feature.interactiveLessons.blurb": "Masomo yenye mvuto kama mchezo — chemsha bongo na mazoezi yanayojisahihisha yenyewe unapofanya. Unaweza kurudia mada mpaka uelewe vizuri.",
     "feature.offlineLearning.title": "Kujifunza Nje ya Mtandao",
     "feature.offlineLearning.blurb": "Umeme umekatika? Safari ndefu ya daladala? Pakua mada mara moja kukiwa na mtandao mzuri, kisha soma popote — hata mahali ambapo hakuna mawimbi kabisa.",
-    "feature.aiAssistant.title": "Msaidizi wa Walimu wa AI",
-    "feature.aiAssistant.blurb": "Unaandaa chemsha bongo usiku wa manane? Mwombe Casuya aiandae kwa dakika chache — kwa Kiingereza au Kiswahili. Msaidizi wa ziada kwa walimu wenye majukumu mengi.",
     "feature.analytics.title": "Maendeleo Yanayoonekana",
     "feature.analytics.blurb": "Kwa mtazamo mmoja tu, ona mada inayowatatiza wanafunzi darasani — hakuna haja ya kupekua rundo la karatasi zilizosahihishwa mwisho wa muhula.",
     "feature.assessments.title": "Tathmini na Mitihani",
@@ -40,8 +38,6 @@ window.SW = Object.assign(window.SW || {}, {
     "feature.cloudSync.blurb": "Alama na maendeleo yako yanahifadhiwa salama, na yanasawazishwa mara tu mtandao unapopatikana. Hakuna kinachopotea simu ikizima.",
     "feature.digitalExaminations.title": "Mitihani ya Kidijitali",
     "feature.digitalExaminations.blurb": "Endesha mitihani salama kwenye kivinjari inayojisahihisha na kutunza matokeo salama — kukiwa na usahihishaji wa papo hapo na matokeo ya uaminifu.",
-    "feature.aiLessonCreation.title": "Maandalizi ya Masomo kwa AI",
-    "feature.aiLessonCreation.blurb": "Tengeneza muhtasari wa masomo, chemsha bongo na vifaa vya kujifunzia kwa dakika chache — msaidizi imara pale siku ya shule inapokuwa ndefu.",
 
     // Subjects
     "subjects.badge": "Kidato cha 1–6 · Mtalaa wa Tanzania",

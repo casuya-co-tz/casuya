@@ -4,7 +4,7 @@ from sqlalchemy.orm import Session
 
 from backend.config.database import get_db
 from backend.middleware.auth import get_current_user
-from backend.middleware.permissions import require_role
+from backend.middleware.permissions import assert_staff, require_role
 from backend.models.teacher import Teacher
 from backend.models.user import User
 
@@ -116,9 +116,9 @@ def get_teacher(teacher_id: str, current_user=Depends(get_current_user), db: Ses
     teacher = db.query(Teacher).filter(Teacher.id == teacher_id).first()
     if not teacher:
         return {"error": "not_found"}
-    role = current_user.get("role", "")
-    if role not in ("admin", "teacher") and not (role == "teacher" and teacher.user_id == current_user["sub"]):
-        raise HTTPException(status_code=403, detail="Not authorized to view this teacher")
+    # Staff-only: the extra owner clause was dead code because a teacher is
+    # already in ("admin", "teacher").
+    assert_staff(current_user, detail="Not authorized to view this teacher")
     email = db.query(User.email).filter(User.id == teacher.user_id).scalar()
     return {
         "id": teacher.id,

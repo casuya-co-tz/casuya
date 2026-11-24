@@ -13,10 +13,10 @@ libs/      (rank 0)  reusable Python/low-level code — may depend on nothing ab
 ```
 
 - `apps/platform` is the main deployable application (FastAPI + static frontend).
-- Railway microservices: `apps/payments`, `apps/audio-tts`, `apps/audio-stt`, and `packages/ai` (HTTP server).
+- Railway microservices: `apps/payments`, `apps/audio-tts`, and `apps/audio-stt`.
 - Vercel static demos: platform frontend, editor, runtime, ds-playground.
 - `packages/*` are framework/libraries (runtime, bridge, editor, blackboard,
-  ai, and the flattened design system: `ds-tokens`, `ds-react`, `ds-a11y`,
+  and the flattened design system: `ds-tokens`, `ds-react`, `ds-a11y`,
   `ds-hooks`, `ds-icons`, `ds-styles`, `ds-utils`, `ds-theme`).
 - `libs/core` is the Python lesson engine.
 - The design system's dev `playground` and `docs` apps live under `apps/ds-playground`
@@ -85,6 +85,5 @@ pnpm test
 # Run tests for a specific package
 cd packages/blackboard && pnpm test
 cd packages/editor && pnpm test
-cd packages/ai && pnpm test
 cd apps/platform && pytest tests/ -v
 ```

@@ -32,13 +32,30 @@ def _resolve_current_user(authorization: str | None, db: Session) -> dict:
 
     user_id = payload.get("sub")
     cache_key = f"cache:user:{user_id}"
+
+    # Development-only fallback for synthetic dev tokens (mirrors the
+    # login/refresh fallbacks in ``auth_service``): when the platform runs with
+    # environment=development and the database is unreachable, login/refresh
+    # mint ``dev-*`` tokens. Accept them here too so the session issued by a
+    # successful login actually works for authenticated calls — otherwise every
+    # follow-up request 401s and the client logs the user straight back out.
+    if isinstance(user_id, str) and user_id.startswith("dev-"):
+        if settings.environment.strip().lower() == "development":
+            return {**payload, "is_active": True, "role": payload.get("role") or "student"}
+
     try:
         cached = redis_client.get(cache_key)
         if cached:
             user_data = json.loads(cached)
             if not user_data.get("is_active"):
                 raise HTTPException(status_code=status.HTTP_401_UNAUTHORIZED, detail="User inactive or not found")
-            return {**payload, "is_active": user_data.get("is_active", True)}
+            # Prefer the DB-backed role when the cache has one, so a role change
+            # takes effect as soon as the cache is invalidated instead of
+            # lingering for the lifetime of the JWT.
+            result = {**payload, "is_active": user_data.get("is_active", True)}
+            if user_data.get("role"):
+                result["role"] = user_data["role"]
+            return result
     except HTTPException:
         raise
     except Exception as exc:
@@ -49,11 +66,11 @@ def _resolve_current_user(authorization: str | None, db: Session) -> dict:
         if not user or not user.is_active:
             raise HTTPException(status_code=status.HTTP_401_UNAUTHORIZED, detail="User inactive or not found")
         try:
-            user_data = {"id": user.id, "is_active": user.is_active}
+            user_data = {"id": user.id, "is_active": user.is_active, "role": user.role}
             redis_client.setex(cache_key, USER_CACHE_TTL, json.dumps(user_data).encode("utf-8"))
         except Exception as exc:
             logger.warning("Redis cache write failed for user %s: %s", user_id, exc)
-        return {**payload, "is_active": user.is_active}
+        return {**payload, "is_active": user.is_active, "role": user.role}
     except HTTPException:
         raise
     except Exception as exc:

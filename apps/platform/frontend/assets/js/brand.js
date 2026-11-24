@@ -9,7 +9,7 @@ var API_BASE = window.casuyaApiBase ? window.casuyaApiBase()
 
 var DEFAULT_LOGO_SVG = "/assets/images/casuya-logo.svg";
 var CACHE_KEY_PREFIX = "casuya_brand_";
-var CACHE_TTL = 24 * 60 * 60 * 1000; // 24 hours
+var CACHE_TTL = 60 * 60 * 1000; // 1 hour (was 24 h) so branding changes propagate within an hour
 
 // ── Helpers ──────────────────────────────────────────────────────────────
 function _getCached(kind) {

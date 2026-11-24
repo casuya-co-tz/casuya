@@ -98,9 +98,9 @@ function registerClassView(d) {
                   </div>
                 `).join("")}
           ` : `
-            <div class="card" style="margin:1rem 0;padding:1.5rem">
-              <div style="font-size:2rem;text-align:center">🏫</div>
-              <h3 style="text-align:center;margin:0.5rem 0">Connect to your teacher</h3>
+            <div style="margin:1rem 0;text-align:center">
+              <button class="btn btn-primary" id="show-join-form" type="button">🏫 Connect to your teacher</button>
+              <div id="class-join-card" class="card" style="display:none;margin-top:1rem;padding:1.5rem">
               <p style="text-align:center;color:var(--color-text-muted);font-size:0.9rem;max-width:440px;margin:0 auto 1.25rem">
                 Your teacher will give you a <b>class code</b>. Enter it below and press <b>Save</b> to join their class — then they can see your progress, publish lessons and assign work to you.
               </p>
@@ -113,6 +113,7 @@ function registerClassView(d) {
                 <p id="class-join-status" style="display:none;font-size:0.85rem;margin:0;text-align:center"></p>
               </form>
             </div>
+          </div>
           `}
         </div>
       `);
@@ -132,6 +133,12 @@ function registerClassView(d) {
           card.addEventListener("click", () => d.callView("open-assignment", card.dataset.openAssignment));
         });
       } else {
+        const showBtn = document.getElementById("show-join-form");
+        const card = document.getElementById("class-join-card");
+        showBtn?.addEventListener("click", () => {
+          if (showBtn) showBtn.style.display = "none";
+          if (card) card.style.display = "block";
+        });
         const form = document.getElementById("class-join-form");
         form?.addEventListener("submit", async (e) => {
           e.preventDefault();

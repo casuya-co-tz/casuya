@@ -12,7 +12,7 @@ jobs:
 
       - uses: actions/setup-node@v4
         with:
-          node-version: 22
+          node-version: 20
 
       - uses: pnpm/action-setup@v4
 
@@ -28,7 +28,10 @@ jobs:
       - name: Build editor demo
         run: pnpm --filter @casuya/editor run build:demo
 
-      - name: Deploy ds-playground
+      # ds-playground is a non-critical design-system demo; its Vercel project
+      # can be unavailable independently of the platform. Keep it non-fatal but
+      # visible. The post-deploy smoke steps below are always fatal.
+      - name: Deploy ds-playground (optional demo)
         continue-on-error: true
         run: |
           vercel build --yes --prod --cwd apps/ds-playground --project=ds-playground --scope=casuya-codes --token=${{ secrets.VERCEL_TOKEN }}
@@ -48,3 +51,30 @@ jobs:
         run: |
           vercel build --yes --prod --cwd apps/platform/frontend --project=frontend --scope=casuya-codes --token=${{ secrets.VERCEL_TOKEN }}
           vercel deploy --prebuilt --yes --prod --cwd apps/platform/frontend --scope=casuya-codes --token=${{ secrets.VERCEL_TOKEN }}
+
+      - name: Post-deploy smoke (public health)
+        env:
+          PLATFORM_URL: ${{ vars.PLATFORM_URL || 'https://casuya-platform-production.up.railway.app' }}
+        run: |
+          set -euo pipefail
+          echo "Probing $PLATFORM_URL/health and /readyz"
+          for path in /health /readyz; do
+            body=$(curl --fail --silent --show-error --max-time 20 "$PLATFORM_URL$path")
+            echo "$path: $body"
+            echo "$body" | grep -q '"status":"ok"' || { echo "$path is not ok"; exit 1; }
+          done
+
+      # NOTE: `secrets` is not a valid context in an `if:` conditional, so the
+      # credential presence check lives in the script instead of the step
+      # condition (a secrets-based `if` makes the whole workflow fail to parse).
+      - name: Post-deploy smoke (authenticated)
+        env:
+          PLATFORM_URL: ${{ vars.PLATFORM_URL || 'https://casuya-platform-production.up.railway.app' }}
+          SMOKE_EMAIL: ${{ secrets.SMOKE_EMAIL }}
+          SMOKE_PASSWORD: ${{ secrets.SMOKE_PASSWORD }}
+        run: |
+          if [ -z "$SMOKE_EMAIL" ] || [ -z "$SMOKE_PASSWORD" ]; then
+            echo "SMOKE_EMAIL / SMOKE_PASSWORD not configured — skipping authenticated smoke."
+            exit 0
+          fi
+          pwsh -File scripts/smoke-production.ps1

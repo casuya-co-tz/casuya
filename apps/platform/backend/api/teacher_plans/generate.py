@@ -1,4 +1,4 @@
-"""Teacher plan generation routes — AI-generated lesson plans and schemes of work."""
+"""Teacher plan generation routes — offline-generated lesson plans and schemes of work."""
 
 from __future__ import annotations
 
@@ -45,18 +45,16 @@ async def api_generate_lesson_plan(
     html = render_lesson_plan_html(plan)
     title = f"{req.topic}" + (f" — {req.subtopic}" if req.subtopic else "")
     subject_label = req.subject_slug.replace("-", " ").title()
-    kb_hits = (
-        [{"title": f"TIE {subject_label} Form {req.form_level}", "kind": "syllabus"}]
-        if source == "casuya-ai"
-        else []
-    )
+    kb_hits = [
+        {"title": f"TIE {subject_label} Form {req.form_level}", "kind": "syllabus"}
+    ]
     return {
         "plan_data": plan,
         "html_render": html,
         "title": title,
         "plan_type": "lesson_plan",
         "source": source,
-        "sourced": source == "casuya-ai",
+        "sourced": source == "offline",
         "kbHits": kb_hits,
     }
 
@@ -110,17 +108,15 @@ async def api_generate_scheme_of_work(
     html = render_scheme_of_work_html(plan)
     subject_label = req.subject_slug.replace("-", " ").title()
     title = f"{subject_label} — {req.term}"
-    kb_hits = (
-        [{"title": f"TIE {subject_label} Form {req.form_level} — {req.term}", "kind": "syllabus"}]
-        if source == "casuya-ai"
-        else []
-    )
+    kb_hits = [
+        {"title": f"TIE {subject_label} Form {req.form_level} — {req.term}", "kind": "syllabus"}
+    ]
     return {
         "plan_data": plan,
         "html_render": html,
         "title": title,
         "plan_type": "scheme_of_work",
         "source": source,
-        "sourced": source == "casuya-ai",
+        "sourced": source == "offline",
         "kbHits": kb_hits,
     }

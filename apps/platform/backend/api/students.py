@@ -4,7 +4,7 @@ from sqlalchemy.orm import Session
 
 from backend.config.database import get_db
 from backend.middleware.auth import get_current_user
-from backend.middleware.permissions import require_role
+from backend.middleware.permissions import assert_staff_or_owner, require_role
 from backend.models.student import Student
 from backend.models.user import User
 
@@ -194,9 +194,9 @@ def get_student(student_id: str, current_user=Depends(get_current_user), db: Ses
     student = db.query(Student).filter(Student.id == student_id).first()
     if not student:
         return {"error": "not_found"}
-    role = current_user.get("role", "")
-    if role not in ("admin", "teacher") and not (role == "student" and student.user_id == current_user["sub"]):
-        raise HTTPException(status_code=403, detail="Not authorized to view this student")
+    assert_staff_or_owner(
+        current_user, student.user_id, detail="Not authorized to view this student"
+    )
     email = db.query(User.email).filter(User.id == student.user_id).scalar()
     return {
         "id": student.id,

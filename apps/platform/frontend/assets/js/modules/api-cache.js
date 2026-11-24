@@ -20,8 +20,10 @@ function isCacheableRequest(path, options) {
   const method = String(options.method || "GET").toUpperCase();
   if (method !== "GET") return false;
   if (options.skipCache || options._retry) return false;
-  // Auth, live progress, notifications, and AI must always hit the network.
-  if (/^\/(?:auth|progress|notifications|ai)\b/i.test(path)) return false;
+  // Auth, live progress, notifications and admin settings must always hit the
+  // network. A cached /settings/maintenance response can keep maintenance mode
+  // stale for up to 30s for every other user, so it is never cached.
+  if (/^\/(?:auth|progress|notifications|settings)\b/i.test(path)) return false;
   return true;
 }
 

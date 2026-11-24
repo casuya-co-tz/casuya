@@ -33,5 +33,4 @@ export async function openLinearEquationsLesson(page: Page) {
   await page.locator('.subtopic-card', { hasText: 'Linear Equations' }).click();
   await page.locator('.lesson-card', { hasText: 'Introduction to Linear Equations' }).click();
   await expect(page.locator('.lesson-iframe iframe')).toBeVisible({ timeout: 20000 });
-  await expect(page.locator('#casuya-ai-chat-fab')).toBeVisible({ timeout: 30000 });
 }

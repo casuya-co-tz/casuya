@@ -7,9 +7,7 @@ var STUDENT_EXTRAS_SRC = "/assets/js/student.extras.bundle.js";
 var STUDENT_LAZY_GROUPS = [
   { register: "registerGamesView", views: ["games", "game"] },
   { register: "registerExamsView", views: ["exams", "start-exam"] },
-  { register: "registerTestsView", views: ["test-generator"] },
   { register: "registerFilesView", views: ["files"] },
-  { register: "registerLibraryView", views: ["library"] },
   { register: "registerPaymentsView", views: ["payments"] },
   { register: "registerDownloadsView", views: ["downloads"] },
 ];

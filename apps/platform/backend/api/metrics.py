@@ -10,9 +10,12 @@ from fastapi import APIRouter, Depends
 from fastapi.responses import Response
 
 import json
+import logging
 import time
 
 from backend.config.database import redis_client
+
+logger = logging.getLogger(__name__)
 from backend.middleware.auth import get_current_user
 from backend.middleware.permissions import require_role
 
@@ -27,8 +30,8 @@ async def record_rum(payload: dict):
         redis_client.lpush("rum:events", json.dumps(event, default=str))
         redis_client.ltrim("rum:events", 0, 499)  # cap at 500 entries
         redis_client.expire("rum:events", 60 * 60 * 24 * 7)  # 7 days
-    except Exception:
-        pass
+    except Exception as exc:  # noqa: BLE001 — telemetry must never affect the request
+        logger.warning("RUM event dropped (redis unavailable): %s", exc)
     return Response(status_code=204)
 
 

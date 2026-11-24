@@ -6,7 +6,7 @@ import json
 from functools import lru_cache
 from typing import Annotated
 
-from pydantic import BeforeValidator
+from pydantic import BeforeValidator, model_validator
 from pydantic_settings import BaseSettings, SettingsConfigDict
 
 
@@ -69,12 +69,10 @@ class Settings(BaseSettings):
     ]
 
     cors_origin_regex: str | None = (
-        r"https://([a-z0-9-]+\.)*casuya\.co\.tz|https://.*\.vercel\.app|https://.*\.up\.railway\.app|http://(localhost|127\.0\.0\.1):[0-9]+"
+        r"https://([a-z0-9-]+\.)*casuya\.co\.tz|http://(localhost|127\.0\.0\.1):[0-9]+"
     )
 
     casuya_core_signing_key: str | None = None
-    casuya_ai_url: str = "http://localhost:3000"
-    casuya_ai_api_key: str | None = None
     casuya_bridge_shared_key: str | None = None
     supabase_url: str | None = None
     supabase_key: str | None = None
@@ -152,6 +150,14 @@ class Settings(BaseSettings):
     rate_limit_per_minute: int = 120
     # When true, abort boot if the primary database cannot be reached (B-07).
     require_database_on_startup: bool = False
+    # When true, run `alembic upgrade head` before the runtime reconciliation.
+    # Off by default so local SQLite tests do not require the alembic CLI;
+    # production should set this to true so a migration revision is recorded.
+    run_alembic_on_startup: bool = False
+    # When true, /readyz also returns 503 while Redis is unreachable. Off by
+    # default because cache/rate-limit fallbacks keep the API functional, but
+    # deployments that rely on shared limits should enable it.
+    require_redis_on_ready: bool = False
 
     # Brevo SMTP (transactional email)
     smtp_host: str = "smtp-relay.brevo.com"
@@ -165,6 +171,21 @@ class Settings(BaseSettings):
     # Brevo transactional SMS (used to deliver password reset codes/links by phone)
     brevo_sms_sender: str = "CASUYA"  # Brevo sender name, max 11 chars (alphanumeric) or E.164 number
     frontend_reset_sms_url: str = "https://casuya.co.tz/reset-password.html"
+
+    @model_validator(mode="after")
+    def _reject_payment_mock_in_production(self):
+        if self.azampay_mock and self.environment.strip().lower() in {"production", "prod"}:
+            raise ValueError("AZAMPAY_MOCK must never be enabled in production")
+        return self
+
+
+def is_payment_mock_enabled(settings: "Settings") -> bool:
+    """Runtime guard in addition to the settings validator.
+
+    Settings objects are mutable in tests and long-running processes, so the
+    production check is repeated at each payment call site.
+    """
+    return bool(settings.azampay_mock) and settings.environment.strip().lower() not in {"production", "prod"}
 
 
 @lru_cache

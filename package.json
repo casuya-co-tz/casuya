@@ -15,8 +15,9 @@
     "install:py": "pip install -e .",
     "check:layers": "node tools/check-layers.mjs",
     "check:deploy": "node tools/check-vercel-deploy.mjs",
+    "check:budget": "node tools/check-frontend-budget.mjs",
     "indexnow": "node tools/indexnow-ping.mjs",
-    "validate": "pnpm check:layers && pnpm check:deploy && pnpm lint && pnpm typecheck"
+    "validate": "pnpm check:layers && pnpm check:deploy && pnpm check:budget && pnpm lint && pnpm typecheck"
   },
   "devDependencies": {
     "turbo": "^2.0.0",

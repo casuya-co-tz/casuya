@@ -22,4 +22,4 @@ def list_files(current_user=Depends(require_role("admin"))):
 def list_files_public():
     files = _scan_files()
     enriched = _merge_with_db_meta(files)
-    return [f for f in enriched if f.get("is_visible", True)]
+    return [f for f in enriched if f.get("is_visible", False)]

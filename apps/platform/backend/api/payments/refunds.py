@@ -7,6 +7,7 @@ from pydantic import BaseModel
 
 from backend.api.payments.common import _service_unavailable
 from backend.middleware.auth import get_current_user
+from backend.middleware.permissions import assert_admin
 from backend.services.payment_service import list_user_refunds, process_refund
 
 router = APIRouter(tags=["payments"])
@@ -30,9 +31,7 @@ def list_refunds(current_user=Depends(get_current_user)):
 @router.post("/refunds")
 @router.post("/refunds/")
 def create_refund(body: RefundRequest, current_user=Depends(get_current_user)):
-    role = current_user.get("role", "student")
-    if role != "admin":
-        raise HTTPException(status_code=403, detail="Only admins can process refunds")
+    assert_admin(current_user, detail="Only admins can process refunds")
     try:
         return process_refund(body.payment_id, body.amount, body.reason)
     except HTTPException:

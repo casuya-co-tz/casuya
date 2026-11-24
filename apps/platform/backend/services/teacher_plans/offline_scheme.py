@@ -182,7 +182,7 @@ def _build_scheme_offline(
             subject_label=subject_label,
         ))
 
-    # Fallback: pull syllabus structure from the knowledge base (topics -> subtopics).
+    # Fallback: pull syllabus structure from the offline reference (topics -> subtopics).
     if not teaching_rows:
         teaching_rows.extend(_rows_from_knowledge_base(
             subject_slug=subject_slug,

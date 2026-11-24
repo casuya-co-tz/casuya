@@ -6,6 +6,7 @@ module.exports = {
     "./teacher/*.html",
     "./student/*.html",
     "./assets/js/*.js",
+    "./assets/js/modules/**/*.js",
   ],
   theme: {
     extend: {

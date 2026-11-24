@@ -25,12 +25,10 @@
           <div style="display:flex;justify-content:space-between;align-items:center;margin-bottom:1rem">
             <h2>Lessons</h2>
             <div style="display:flex;gap:0.5rem">
-              <button class="btn btn-primary" id="ai-generate-questions-btn">🤖 AI Generate Questions</button>
               <button class="btn btn-primary" id="add-lesson-btn">+ Add Lesson</button>
             </div>
           </div>
           <div id="form-area"></div>
-          <div id="ai-form-area"></div>
           <div class="card-grid">
             ${list.length === 0 ? '<div class="empty-state"><p>No lessons</p></div>' :
               list.map(l => `
@@ -117,79 +115,6 @@
         }
         document.getElementById("create-publish-btn").addEventListener("click", () => saveAdminLesson(true));
         document.getElementById("create-draft-btn").addEventListener("click", () => saveAdminLesson(false));
-      });
-      document.getElementById("ai-generate-questions-btn")?.addEventListener("click", () => {
-        document.getElementById("ai-form-area").innerHTML = `
-          <div class="card" style="padding:1.5rem">
-            <h3 style="margin-bottom:0.75rem">Generate Quiz Questions</h3>
-            <p style="color:var(--color-text-muted);font-size:0.85rem;margin-bottom:0.75rem">Auto-generate quiz questions from lesson content.</p>
-            <form id="ai-gen-form" style="display:flex;flex-direction:column;gap:0.5rem">
-              <div style="display:flex;gap:0.5rem">
-                <select class="input" name="subject_slug" style="flex:1">
-                  <option value="mathematics">Mathematics</option>
-                  <option value="chemistry">Chemistry</option>
-                  <option value="physics">Physics</option>
-                </select>
-                <select class="input" name="form_level" style="flex:0.5">
-                  <option value="1">Form I</option>
-                  <option value="2">Form II</option>
-                  <option value="3">Form III</option>
-                  <option value="4">Form IV</option>
-                  <option value="5">Form V</option>
-                  <option value="6">Form VI</option>
-                </select>
-              </div>
-              <textarea class="input" name="lesson_html" rows="5" placeholder="Paste lesson content..." required></textarea>
-              <div style="display:flex;gap:0.5rem;align-items:center">
-                <label style="font-size:0.85rem;color:var(--color-text-muted)">Number of questions:</label>
-                <input class="input" type="number" name="count" value="5" min="1" max="20" style="width:80px">
-              </div>
-              <div style="display:flex;gap:0.5rem">
-                <button class="btn btn-primary" type="submit">Generate Questions</button>
-                <button class="btn" type="button" id="cancel-ai-gen">Cancel</button>
-              </div>
-            </form>
-            <div id="ai-gen-result" style="margin-top:1rem;display:none">
-              <div id="ai-gen-text"></div>
-            </div>
-          </div>
-        `;
-        document.getElementById("cancel-ai-gen").addEventListener("click", () => document.getElementById("ai-form-area").innerHTML = "");
-        document.getElementById("ai-gen-form").addEventListener("submit", async (e) => {
-          e.preventDefault();
-          const fd = new FormData(e.target);
-          const resultDiv = document.getElementById("ai-gen-result");
-          const textDiv = document.getElementById("ai-gen-text");
-          const lessonHtml = fd.get("lesson_html") || "";
-          const subjectSlug = fd.get("subject_slug") || "";
-          const subjectCheck = checkSubjectContentMatch(subjectSlug, lessonHtml);
-          if (subjectCheck.warning) {
-            if (!confirm(subjectCheck.warning + "\n\nDo you want to continue generating anyway?")) return;
-          }
-          resultDiv.style.display = "block";
-          runAiGenerateTask({
-            container: textDiv,
-            loadingLabel: "Generating...",
-            path: "/ai/questions/generate",
-            body: {
-              lesson_html: lessonHtml,
-              count: parseInt(fd.get("count")) || 5,
-              subject_slug: subjectSlug,
-              form_level: parseInt(fd.get("form_level")) || 2,
-            },
-            render: function (result) {
-              const questions = result?.questions || result;
-              if (!Array.isArray(questions) || !questions.length) {
-                return '<p style="color:var(--color-text-muted)">No questions generated. Try different content.</p>';
-              }
-              return renderQuizQuestions(questions, {
-                subject: subjectSlug,
-                formLevel: fd.get("form_level"),
-                topic: questions[0]?.topic || "",
-              });
-            },
-          }).catch(function () {});
-        });
       });
     } catch(e) { showAdminView('<div class="empty-state"><p>Error loading lessons</p></div>'); }
   }

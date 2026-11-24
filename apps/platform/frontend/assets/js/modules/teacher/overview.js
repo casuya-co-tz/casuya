@@ -17,6 +17,37 @@ async function loadOverview(dashboard) {
     if (hour >= 12 && hour < 17) greeting = "Good afternoon";
     else if (hour >= 17) greeting = "Good evening";
 
+    let bookmarks = [];
+    try {
+      const bm = await request("/bookmarks/");
+      bookmarks = Array.isArray(bm) ? bm : (Array.isArray(bm?.items) ? bm.items : []);
+    } catch (e) {
+      bookmarks = [];
+    }
+
+    let lessons = [];
+    try {
+      const ls = await request("/lessons");
+      const all = Array.isArray(ls) ? ls : (Array.isArray(ls?.items) ? ls.items : []);
+      lessons = all.filter(l => l && l.status === "published");
+    } catch (e) {
+      lessons = [];
+    }
+
+    const displayList = (bookmarks.length > 0 ? bookmarks : lessons);
+    let cardsHtml;
+    if (!Array.isArray(displayList) || displayList.length === 0) {
+      cardsHtml = '<div class="empty-state" style="padding:2rem"><p>No lessons available yet</p></div>';
+    } else {
+      cardsHtml = displayList.map(l => {
+        return '<div class="card lesson-card clickable" data-id="' + escapeHtml(l.lesson_id || l.id) + '" style="position:relative">' +
+          '<h3>' + escapeHtml(l.lesson_title || l.title) + '</h3>' +
+          (l.lesson_id ? '<span style="position:absolute;top:0.5rem;right:0.5rem;font-size:0.75rem">🔖</span>' : '') +
+          '<p style="color:var(--color-text-muted);font-size:0.8rem">' + escapeHtml(l.status || "bookmarked") + '</p>' +
+          '</div>';
+      }).join("");
+    }
+
     let recent = [];
     try { recent = JSON.parse(localStorage.getItem("casuya_recently_viewed") || "[]"); } catch(e) {}
 
@@ -86,14 +117,7 @@ async function loadOverview(dashboard) {
           <h3>${bookmarks.length > 0 ? "Bookmarked Lessons" : "Published Lessons"}</h3>
         </div>
         <div class="card-grid">
-          ${!Array.isArray(lessons) || lessons.length === 0 ? '<div class="empty-state" style="padding:2rem"><p>No lessons available yet</p></div>' :
-            (bookmarks.length > 0 ? bookmarks : lessons).map(l => `
-              <div class="card lesson-card clickable" data-id="${escapeHtml(l.lesson_id || l.id)}" style="position:relative">
-                <h3>${escapeHtml(l.lesson_title || l.title)}</h3>
-                ${l.lesson_id ? '<span style="position:absolute;top:0.5rem;right:0.5rem;font-size:0.75rem">🔖</span>' : ""}
-                <p style="color:var(--color-text-muted);font-size:0.8rem">${escapeHtml(l.status || "bookmarked")}</p>
-              </div>
-            `).join("")}
+          ${cardsHtml}
         </div>
       </div>
     `);

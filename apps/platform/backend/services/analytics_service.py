@@ -48,6 +48,46 @@ def recompute_lesson_snapshot(lesson_id: str) -> dict:
         gen.close()
 
 
+def recompute_snapshots_for_lessons(db: Session, lesson_ids: list[str]) -> int:
+    """Recompute snapshots for many lessons in one session and two queries.
+
+    The batch refresh task used to call :func:`recompute_lesson_snapshot` per
+    lesson, which opened a fresh DB session, ran a COUNT/AVG query and committed
+    separately for every row (an N+1 pattern). This version groups all progress
+    aggregation into a single query and inserts all snapshots in one commit.
+    """
+    if not lesson_ids:
+        return 0
+    rows = (
+        db.query(
+            ProgressRecord.lesson_id,
+            func.count(ProgressRecord.id),
+            func.avg(ProgressRecord.completion_percentage),
+            func.avg(ProgressRecord.score_percentage),
+        )
+        .filter(ProgressRecord.lesson_id.in_(lesson_ids))
+        .group_by(ProgressRecord.lesson_id)
+        .all()
+    )
+    stats = {r[0]: r for r in rows}
+    generated_at = datetime.now(timezone.utc)
+    snapshots = []
+    for lesson_id in lesson_ids:
+        row = stats.get(lesson_id)
+        snapshots.append(
+            LessonAnalyticsSnapshot(
+                lesson_id=lesson_id,
+                session_count=int(row[1] or 0) if row else 0,
+                avg_completion_percentage=round(float(row[2] or 0.0), 2) if row else 0.0,
+                avg_score_percentage=round(float(row[3] or 0.0), 2) if row else 0.0,
+                generated_at=generated_at,
+            )
+        )
+    db.add_all(snapshots)
+    db.commit()
+    return len(snapshots)
+
+
 def get_lesson_analytics(lesson_id: str) -> dict | None:
     db, gen = _get_db()
     try:

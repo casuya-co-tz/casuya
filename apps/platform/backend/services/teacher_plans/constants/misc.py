@@ -2,9 +2,6 @@
 
 from __future__ import annotations
 
-# How many repair rounds the AI gets before the near-zero deterministic recovery.
-MAX_PLAN_REPAIR_ATTEMPTS = 2
-
 
 _GENERIC_ASSESSMENT_PHRASES = (
     "students will learn", "students will understand", "understand the concept",

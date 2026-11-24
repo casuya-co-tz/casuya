@@ -23,12 +23,10 @@ async function renderAdminDashboard() {
           <div class="sidebar-nav-item" data-view="subtopics">📂 Subtopics</div>
           <div class="sidebar-nav-item" data-view="lessons">📝 Lessons</div>
           <div class="sidebar-nav-item" data-view="quizzes">❓ Quizzes</div>
-          <div class="sidebar-nav-item" data-view="test-generator">📝 Test Generator</div>
           <div class="sidebar-nav-item" data-view="games">🎮 Games</div>
           <div class="sidebar-nav-item" data-view="users">👥 Users</div>
           <div class="sidebar-nav-item" data-view="progress">📈 Progress</div>
           <div class="sidebar-nav-item" data-view="analytics">📉 Analytics</div>
-          <div class="sidebar-nav-item" data-view="ai-quality">🤖 AI Tutor</div>
           <div class="sidebar-nav-item" data-view="payments">💳 Payments</div>
           <div class="sidebar-nav-item" data-view="notifications">🔔 Notifications</div>
           <div class="sidebar-nav-item" data-view="uploads">📤 Uploads</div>
@@ -122,12 +120,10 @@ async function renderAdminDashboard() {
     subtopics: () => { setActiveNav("subtopics"); loadAdminSubtopics(); },
     lessons: () => { setActiveNav("lessons"); loadAdminLessons(); },
     quizzes: () => { setActiveNav("quizzes"); loadAdminQuizzes(); },
-    "test-generator": () => { setActiveNav("test-generator"); loadAdminTestGenerator(); },
     games: () => { setActiveNav("games"); loadAdminGames(); },
     users: () => { setActiveNav("users"); loadAdminUsers(); },
     progress: () => { setActiveNav("progress"); loadAdminProgress(); },
     analytics: () => { setActiveNav("analytics"); loadAdminAnalytics(); },
-    "ai-quality": () => { setActiveNav("ai-quality"); loadAdminAiQuality(); },
     payments: () => { setActiveNav("payments"); loadAdminPayments(); },
     notifications: () => { setActiveNav("notifications"); loadAdminNotifications(); },
     uploads: () => { setActiveNav("uploads"); loadAdminUploads(); },

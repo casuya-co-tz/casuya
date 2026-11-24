@@ -1,11 +1,67 @@
 import { PackageLoader } from '../../src/package-loader/loader.js';
 import { PackageValidator } from '../../src/package-loader/validator.js';
 import { PackageParser } from '../../src/package-loader/parser.js';
+import { readZipDirectory } from '../../src/package-loader/zip-reader.js';
 
 if (typeof globalThis.TextEncoder === 'undefined') {
   const util = await import('node:util');
   globalThis.TextEncoder = util.TextEncoder;
   globalThis.TextDecoder = util.TextDecoder;
+}
+
+/** Build an uncompressed (stored) ZIP archive in memory. */
+function makeStoredZip(files) {
+  const encoder = new TextEncoder();
+  const locals = [];
+  const centrals = [];
+  let offset = 0;
+
+  for (const [name, content] of Object.entries(files)) {
+    const nameBytes = encoder.encode(name);
+    const data = encoder.encode(content);
+    const local = new Uint8Array(30 + nameBytes.length + data.length);
+    const lv = new DataView(local.buffer);
+    lv.setUint32(0, 0x04034b50, true);
+    lv.setUint16(4, 20, true);
+    lv.setUint16(8, 0, true); // stored
+    lv.setUint32(18, data.length, true);
+    lv.setUint32(22, data.length, true);
+    lv.setUint16(26, nameBytes.length, true);
+    local.set(nameBytes, 30);
+    local.set(data, 30 + nameBytes.length);
+    locals.push(local);
+
+    const central = new Uint8Array(46 + nameBytes.length);
+    const cv = new DataView(central.buffer);
+    cv.setUint32(0, 0x02014b50, true);
+    cv.setUint16(4, 20, true);
+    cv.setUint16(6, 20, true);
+    cv.setUint32(20, data.length, true);
+    cv.setUint32(24, data.length, true);
+    cv.setUint16(28, nameBytes.length, true);
+    cv.setUint32(42, offset, true);
+    central.set(nameBytes, 46);
+    centrals.push(central);
+
+    offset += local.length;
+  }
+
+  const centralSize = centrals.reduce((n, c) => n + c.length, 0);
+  const eocd = new Uint8Array(22);
+  const ev = new DataView(eocd.buffer);
+  ev.setUint32(0, 0x06054b50, true);
+  ev.setUint16(8, centrals.length, true);
+  ev.setUint16(10, centrals.length, true);
+  ev.setUint32(12, centralSize, true);
+  ev.setUint32(16, offset, true);
+
+  const out = new Uint8Array(offset + centralSize + eocd.length);
+  let pos = 0;
+  for (const chunk of [...locals, ...centrals, eocd]) {
+    out.set(chunk, pos);
+    pos += chunk.length;
+  }
+  return out;
 }
 
 describe('PackageParser', () => {
@@ -55,6 +111,32 @@ describe('PackageParser', () => {
     const pkg = await parser.parseFromObject(obj);
     expect(pkg.manifest.type).toBe('quiz');
     expect(pkg.manifest.slides).toHaveLength(1);
+  });
+
+  test('should extract manifest and resources from a real ZIP archive', async () => {
+    const zip = makeStoredZip({
+      'manifest.json': JSON.stringify({ id: 'zip-test', version: '1.0.0', title: 'Zip Test' }),
+      'style.css': 'body{color:red}',
+      'lesson.html': '<h1>Hello</h1>'
+    });
+
+    const pkg = await parser.parse(zip.buffer);
+    expect(pkg.id).toBe('zip-test');
+    expect(pkg.manifest.title).toBe('Zip Test');
+    expect(new TextDecoder().decode(pkg.resources['style.css'])).toBe('body{color:red}');
+    expect(new TextDecoder().decode(pkg.resources['lesson.html'])).toBe('<h1>Hello</h1>');
+  });
+
+  test('should ignore path-traversal entries in ZIP archives', async () => {
+    const zip = makeStoredZip({
+      'manifest.json': JSON.stringify({ id: 'safe-zip', version: '1.0.0', title: 'Safe Zip' }),
+      '../escape.txt': 'nope'
+    });
+
+    const pkg = await parser.parse(zip.buffer);
+    expect(pkg.id).toBe('safe-zip');
+    expect(pkg.resources['../escape.txt']).toBeUndefined();
+    expect(readZipDirectory(zip).map((e) => e.filename)).not.toContain('../escape.txt');
   });
 });
 

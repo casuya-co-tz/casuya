@@ -1,4 +1,12 @@
-"""Aggregated student dashboard payload (one round-trip instead of five)."""
+"""Aggregated student dashboard payload.
+
+The old docstring claimed "one round-trip instead of five", which was not
+true: profile, classroom, teacher, subjects and progress were resolved in
+separate queries. Profile+email and classroom+teacher are now each fetched
+with a single joined query, subjects are cached, and progress is aggregated
+server-side. A literal single query would require four outer joins across
+unrelated aggregates and would be slower on the target low-end/2G stack.
+"""
 
 from __future__ import annotations
 
@@ -16,8 +24,7 @@ from backend.models.user import User
 from backend.services.progress_service import compute_student_stats
 
 
-def _profile_dict(db: Session, student: Student) -> dict:
-    email = db.query(User.email).filter(User.id == student.user_id).scalar()
+def _profile_dict(student: Student, email: str | None) -> dict:
     return {
         "id": student.id,
         "user_id": student.user_id,
@@ -29,27 +36,23 @@ def _profile_dict(db: Session, student: Student) -> dict:
 
 
 def _classroom_payload(db: Session, student: Student) -> dict:
-    enrollment = (
-        db.query(ClassroomEnrollment, Classroom)
-        .join(Classroom, Classroom.id == ClassroomEnrollment.classroom_id)
+    """Resolve classroom, teacher and teacher email in one outer join."""
+    row = (
+        db.query(Classroom, Teacher, User.full_name, User.email)
+        .join(ClassroomEnrollment, ClassroomEnrollment.classroom_id == Classroom.id)
+        .outerjoin(Teacher, Teacher.id == Classroom.teacher_id)
+        .outerjoin(User, User.id == Teacher.user_id)
         .filter(
             ClassroomEnrollment.student_id == student.id,
             ClassroomEnrollment.status == "active",
         )
         .first()
     )
-    if not enrollment:
+    if not row:
         return {"classroom": None, "teacher": None}
-    _row, classroom = enrollment
-    teacher = db.get(Teacher, classroom.teacher_id)
+    classroom, teacher, name, email = row
     teacher_dict = None
     if teacher:
-        row = (
-            db.query(User.full_name, User.email)
-            .filter(User.id == teacher.user_id)
-            .first()
-        )
-        name, email = (row if row else (None, None))
         teacher_dict = {"name": name, "email": email, "subjects": teacher.subjects}
     return {
         "classroom": _classroom_dict(db, classroom, include_students=False),
@@ -58,12 +61,17 @@ def _classroom_payload(db: Session, student: Student) -> dict:
 
 
 def _subjects(db: Session) -> list[dict]:
-    cached = cache_get("subjects:list", ttl_seconds=600)
+    cached = cache_get("subjects:list:500", ttl_seconds=600)
     if cached is not None:
         return cached
-    subjects = db.query(Subject).all()
-    result = [{"id": s.id, "name": s.name, "slug": s.slug} for s in subjects]
-    cache_set("subjects:list", result, ttl=600)
+    rows = (
+        db.query(Subject.id, Subject.name, Subject.slug)
+        .order_by(Subject.name)
+        .limit(500)
+        .all()
+    )
+    result = [{"id": r.id, "name": r.name, "slug": r.slug} for r in rows]
+    cache_set("subjects:list:500", result, ttl=600)
     return result
 
 
@@ -97,17 +105,23 @@ def _progress_by_subject(db: Session, student_id: str) -> list[dict]:
 
 
 def build_student_dashboard(db: Session, user: dict) -> dict:
-    student = db.query(Student).filter(Student.user_id == user["sub"]).first()
-    if not student:
+    row = (
+        db.query(Student, User.email)
+        .outerjoin(User, User.id == Student.user_id)
+        .filter(Student.user_id == user["sub"])
+        .first()
+    )
+    if not row:
         from fastapi import HTTPException
 
         raise HTTPException(status_code=404, detail="Student profile not found")
+    student, email = row
 
     stats = compute_student_stats(db, student.id)
     progress_by_subject = _progress_by_subject(db, student.id)
     total_completed = sum(p["completed"] for p in progress_by_subject)
     return {
-        "profile": _profile_dict(db, student),
+        "profile": _profile_dict(student, email),
         "classroom": _classroom_payload(db, student),
         "subjects": _subjects(db),
         "progress_by_subject": progress_by_subject,

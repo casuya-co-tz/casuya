@@ -27,6 +27,25 @@ _memory_store: dict[str, list[float]] = defaultdict(list)
 _MEMORY_STORE_MAX = 10000  # prevent unbounded growth
 
 
+def _prune_memory_store(now: float) -> None:
+    """Drop expired entries/keys so rate limiting stays effective under churn."""
+    window_start = now - 60
+    stale_keys = []
+    for key, entries in _memory_store.items():
+        fresh = [t for t in entries if t > window_start]
+        if fresh:
+            _memory_store[key] = fresh
+        else:
+            stale_keys.append(key)
+    for key in stale_keys:
+        _memory_store.pop(key, None)
+    if len(_memory_store) >= _MEMORY_STORE_MAX:
+        # Still full: evict oldest buckets first to preserve rate-limit enforcement.
+        oldest = sorted(_memory_store.items(), key=lambda kv: max(kv[1]) if kv[1] else 0)
+        for key, _ in oldest[: max(1, len(_memory_store) // 10)]:
+            _memory_store.pop(key, None)
+
+
 def _header_from_scope(scope: Scope, name: str) -> str | None:
     want = name.lower().encode()
     for key, value in scope.get("headers", []):
@@ -106,17 +125,17 @@ class RateLimitMiddleware:
         # transfer and make every page load slower. Sensitive endpoints below
         # keep the strict shared Redis window. (S-12)
         if path not in ENDPOINT_LIMITS:
-            if len(_memory_store) < _MEMORY_STORE_MAX:
-                entries = _memory_store[redis_key]
-                # Purge old entries outside the window
-                _memory_store[redis_key] = [t for t in entries if t > window_start]
-                entries = _memory_store[redis_key]
-                if len(entries) >= limit:
-                    start, body = _rate_limited_429(limit, window_start, now)
-                    await send(start)
-                    await send(body)
-                    return
-                entries.append(now)
+            if redis_key not in _memory_store and len(_memory_store) >= _MEMORY_STORE_MAX:
+                _prune_memory_store(now)
+            entries = _memory_store[redis_key]
+            _memory_store[redis_key] = [t for t in entries if t > window_start]
+            entries = _memory_store[redis_key]
+            if len(entries) >= limit:
+                start, body = _rate_limited_429(limit, window_start, now)
+                await send(start)
+                await send(body)
+                return
+            entries.append(now)
             await self.app(scope, receive, send)
             return
 
@@ -150,26 +169,16 @@ class RateLimitMiddleware:
         except Exception as exc:
             # In-memory fallback when Redis is unavailable (S-09)
             logger.warning("Redis rate limit failed, using in-memory fallback: %s", exc)
-            if len(_memory_store) < _MEMORY_STORE_MAX:
-                entries = _memory_store[redis_key]
-                # Purge old entries outside the window
-                _memory_store[redis_key] = [t for t in entries if t > window_start]
-                entries = _memory_store[redis_key]
-                if len(entries) >= limit:
-                    ttl = int(entries[0] + 60 - now)
-                    body = json.dumps({"detail": f"Rate limit exceeded. Try again in {max(ttl, 1)} seconds."}).encode()
-                    await send(
-                        {
-                            "type": "http.response.start",
-                            "status": 429,
-                            "headers": [
-                                [b"content-type", b"application/json"],
-                                [b"content-length", str(len(body)).encode()],
-                            ],
-                        }
-                    )
-                    await send({"type": "http.response.body", "body": body})
-                    return
-                entries.append(now)
+            if redis_key not in _memory_store and len(_memory_store) >= _MEMORY_STORE_MAX:
+                _prune_memory_store(now)
+            entries = _memory_store[redis_key]
+            _memory_store[redis_key] = [t for t in entries if t > window_start]
+            entries = _memory_store[redis_key]
+            if len(entries) >= limit:
+                start, body = _rate_limited_429(limit, window_start, now)
+                await send(start)
+                await send(body)
+                return
+            entries.append(now)
 
         await self.app(scope, receive, send)

@@ -1,6 +1,6 @@
 """Syllabus queries for subject/topic trees.
 
-The AI agent queries this service to:
+This service is used to:
 1. Get the exact topic structure for a student's form level and subject
 2. Find learning outcomes for content generation
 3. Track syllabus coverage for teachers

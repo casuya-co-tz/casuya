@@ -10,7 +10,7 @@
 // Re-export api-client globals (already on window from api-client.js)
 // API_HOST, API_PROTOCOL, API_BASE, render, escapeHtml, injectNodeBase,
 // timeAgo, showToast, confirmDelete, deleteBtn, initDeleteButtons,
-// renderTutorMarkdown, renderQuizQuestions, renderMath,
-// _quizSubmit, _tutorWrongQuestions, _quizExtractData,
+// renderQuizQuestions, renderMath,
+// _quizSubmit, _quizExtractData,
 // _quizDownloadWord, _quizDownloadPdf, _quizTriggerDownload,
-// streamTutorResponse, request
+// request

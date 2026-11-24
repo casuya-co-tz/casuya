@@ -4,23 +4,6 @@
 "use strict";
 
 var _studentBbEmbedLoading = null;
-var _studentAiChatLoading = null;
-
-function ensureStudentAiChat(ctx) {
-  if (typeof mountLessonAiChat === "function") {
-    mountLessonAiChat(ctx);
-    return Promise.resolve(true);
-  }
-  if (!_studentAiChatLoading) {
-    _studentAiChatLoading = loadCasuyaScript("/assets/js/student-ai-chat.js").then(function () {
-      return typeof mountLessonAiChat === "function";
-    }).catch(function () { return false; });
-  }
-  return _studentAiChatLoading.then(function (ok) {
-    if (ok && typeof mountLessonAiChat === "function") mountLessonAiChat(ctx);
-    return ok;
-  });
-}
 
 function ensureStudentBlackboardEmbed() {
   if (window.CasuyaBlackboardEmbed) {
@@ -174,17 +157,6 @@ function registerLessonsView(d) {
         iframeCtx,
         lessonContent,
         iframeText: iframeBody,
-      });
-
-      ensureStudentAiChat({
-        lessonId: lessonId,
-        lesson: lesson,
-        lessonContent: lessonContent,
-        iframeText: iframeBody,
-        subject_slug: lesson.subject_slug || undefined,
-        form_level: lesson.form_level || undefined,
-        topic: lesson.topic_title || undefined,
-        subtopic: lesson.subtopic_title || undefined,
       });
     } catch(e) { d.showView('<div class="empty-state"><p>Error loading lesson.</p><button class="btn btn-primary" id="back-to-overview">← Back to Overview</button></div>'); document.getElementById("back-to-overview")?.addEventListener("click", () => d.callView("dashboard")); }
   }

@@ -1,119 +1,73 @@
-"""Tests for AI lesson-plan fallback and TIE competence override.
+"""Offline lesson-plan generation tests.
 
-Covers complete-plan acceptance, the reported topic-title-in-competence bug
-(TIE override), and rejection of incomplete AI output so the generator falls
-back to the offline rule-based builder.
+Covers the deterministic offline path used by ``generate_lesson_plan()``:
+complete-plan acceptance, TIE competence authority, and validity of the
+generated plan. Plans are always produced by the offline builders.
 """
+
+import asyncio
 
 from backend.services.teacher_plan_service import generate_lesson_plan
 
 
 def _run(coro):
-    import asyncio
-
     return asyncio.run(coro)
 
 
-def _async_return(value):
-    async def _fake(*args, **kwargs):
-        return value
-
-    return _fake
-
-
-def _curriculum_ctx(*args, **kwargs):
-    return "curriculum"
-
-
-def test_lesson_plan_uses_complete_ai_plan(monkeypatch):
-    """A complete AI lesson-plan JSON (dict with header) is used instead of
-    falling back to the offline rule-based builder."""
-    ai_plan = {
-        "header": {"school_name": "AI School", "teacher_name": "AI Teacher", "class_name": "Form 2"},
-        "competence_architecture": {
-            "main_competence": "Main", "specific_competence": "Spec",
-            "main_learning_activity": "MLA", "specific_learning_activity": "SLA",
-            "lesson_objective": "Obj",
-        },
-        "resources_strategies": {"resources": [], "strategies": []},
-        "progression_matrix": [
-            {"stage": "Knowledge", "duration_minutes": 10, "activities": []},
-            {"stage": "Skills", "duration_minutes": 10, "activities": []},
-            {"stage": "Competence", "duration_minutes": 10, "activities": []},
-            {"stage": "Realizations", "duration_minutes": 10, "activities": []},
-        ],
-        "evaluation_learners": [], "evaluation_teacher": [], "remarks": "",
-    }
-    monkeypatch.setattr(
-        "backend.services.teacher_plans.service._call_ai_service",
-        _async_return(ai_plan),
-    )
-    monkeypatch.setattr(
-        "backend.services.teacher_plans.service.get_curriculum_context",
-        _curriculum_ctx,
-    )
-    plan, _source = _run(generate_lesson_plan(
+def test_lesson_plan_offline_generates_complete_plan():
+    """The offline builder returns a complete lesson plan (header +
+    progression matrix) with the offline source marker."""
+    plan, source = _run(generate_lesson_plan(
         subject_slug="mathematics", form_level=2, topic="Algebra",
         subtopic="Linear Equations", school_name="X", teacher_name="Y",
     ))
-    assert plan["header"]["school_name"] == "AI School"
-    assert plan["progression_matrix"][3]["stage"] == "Realizations"
-    assert plan["competence_architecture"]["main_learning_activity"] == "MLA"
+    assert source == "offline"
+    assert "header" in plan
+    assert "progression_matrix" in plan
+    assert len(plan["progression_matrix"]) == 4
 
 
-def test_lesson_plan_ai_overrides_topic_title_competences_with_tie(monkeypatch):
-    """An AI plan that wrote topic/subtopic TITLES into the competence fields
-    (the reported lesson-plans bug) has those fields replaced by the real TIE
-    statements before returning."""
-    ai_plan = {
-        "header": {"school_name": "AI School", "teacher_name": "AI Teacher", "class_name": "Form 2"},
-        "competence_architecture": {
-            "main_competence": "# ATOMIC STRUCTURE",
-            "specific_competence": "# Atomic models",
-            "main_learning_activity": "MLA", "specific_learning_activity": "SLA",
-            "lesson_objective": "Obj",
-        },
-        "resources_strategies": {"resources": [], "strategies": []},
-        "progression_matrix": [
-            {"stage": "Knowledge", "duration_minutes": 10, "activities": []},
-            {"stage": "Skills", "duration_minutes": 10, "activities": []},
-            {"stage": "Competence", "duration_minutes": 10, "activities": []},
-            {"stage": "Realizations", "duration_minutes": 10, "activities": []},
-        ],
-        "evaluation_learners": [], "evaluation_teacher": [], "remarks": "",
-    }
+def test_lesson_plan_offline_topic_titles_never_fill_competences(monkeypatch):
+    """Offline generation never puts topic/subtopic TITLES into competence
+    fields - the TIE syllabus statements are authoritative instead."""
     monkeypatch.setattr(
-        "backend.services.teacher_plans.service._call_ai_service",
-        _async_return(ai_plan),
+        "backend.services.teacher_plans.offline.fetch_reference_grounding",
+        lambda *a, **k: None,
     )
     monkeypatch.setattr(
-        "backend.services.teacher_plans.service.get_curriculum_context",
-        _curriculum_ctx,
+        "backend.services.teacher_plans.competences.fetch_reference_grounding",
+        lambda *a, **k: None,
     )
-    plan, _source = _run(generate_lesson_plan(
+    monkeypatch.setattr(
+        "backend.services.teacher_plans.competences.lookup_competence",
+        lambda *a, **k: None,
+    )
+    monkeypatch.setattr(
+        "backend.services.teacher_plans.competences.ts_get_specific_competences",
+        lambda *a, **k: [],
+    )
+    plan, source = _run(generate_lesson_plan(
         subject_slug="chemistry", form_level=2, topic="Atomic Structure",
         subtopic="Atomic models", school_name="X", teacher_name="Y",
     ))
+    assert source == "offline"
     ca = plan["competence_architecture"]
-    assert ca["main_competence"] == "1.0 Demonstrate mastery of basic concepts, theories and principles in Chemistry"
-    assert ca["specific_competence"] == "1.1 Demonstrate mastery of concepts, theories and principles in Chemistry"
+    assert ca["main_competence"].strip()
+    assert ca["specific_competence"].strip()
     assert "# ATOMIC STRUCTURE" not in ca["main_competence"]
+    assert "# Atomic models" not in ca["specific_competence"]
 
 
-def test_lesson_plan_falls_back_on_incomplete_ai(monkeypatch):
-    """An incomplete AI lesson-plan JSON (empty header) is rejected so the
-    generator falls back to the offline builder."""
-    monkeypatch.setattr(
-        "backend.services.teacher_plans.service._call_ai_service",
-        _async_return({"header": {}}),
-    )
-    monkeypatch.setattr(
-        "backend.services.teacher_plans.service.get_curriculum_context",
-        _curriculum_ctx,
-    )
-    plan, _source = _run(generate_lesson_plan(
-        subject_slug="mathematics", form_level=2, topic="Algebra",
-        subtopic="Linear Equations", school_name="X", teacher_name="Y",
+def test_lesson_plan_offline_always_returns_valid_plan():
+    """Generation never falls back (no AI involved): the offline builder always
+    returns a valid four-stage plan."""
+    plan, source = _run(generate_lesson_plan(
+        subject_slug="physics", form_level=1, topic="Force",
+        subtopic="Newton's Laws", school_name="S", teacher_name="T",
     ))
-    assert "header" in plan
-    assert "progression_matrix" in plan
+    assert source == "offline"
+    assert plan["header"]["class_name"] == "Form 1"
+    assert len(plan["progression_matrix"]) == 4
+    for row in plan["progression_matrix"]:
+        for key in ("teacher_activity", "learner_activity", "assessment_criteria"):
+            assert (row.get(key) or "").strip(), (row.get("stage"), key)

@@ -8,6 +8,7 @@ import secrets
 from sqlalchemy.orm import Session
 
 from backend.config.database import get_db
+from backend.config.roles import PUBLIC_ROLES, STUDENT, TEACHER, normalize_role
 from backend.config.security import create_access_token, create_refresh_token, hash_password
 from backend.config.settings import get_settings
 from backend.models.student import Student
@@ -17,12 +18,8 @@ from backend.services.auth_service.tokens import _dev_token_response
 
 settings = get_settings()
 
-# Roles that are treated as "student" in the system but may carry extra metadata.
-_SPECIAL_ROLES = {"special_needs"}
-
-# Roles self-service registration may assign. Admin accounts are created only
-# through database/seeds/create_admin.py — never via the public endpoint.
-_PUBLIC_ROLES = {"student", "teacher", *_SPECIAL_ROLES}
+# Role policy lives in backend.config.roles. Admin accounts are seed-only;
+# public registration may assign student/teacher (and the special_needs alias).
 
 
 def register_user(
@@ -34,12 +31,12 @@ def register_user(
     form_level: str | None = None,
     accessibility_prefs: dict | None = None,
 ) -> dict:
-    if role not in _PUBLIC_ROLES:
+    if role not in PUBLIC_ROLES:
         raise ValueError("Role must be one of: student, teacher")
 
     # Map special-needs roles to the canonical "student" role so portal guards,
     # JWT claims, and dashboard routing all work without extra cases.
-    db_role = "student" if role in _SPECIAL_ROLES else role
+    db_role = normalize_role(role)
 
     _gen = get_db()
     db: Session = next(_gen)
@@ -57,7 +54,7 @@ def register_user(
         )
         db.add(user)
         db.flush()
-        if db_role == "student":
+        if db_role == STUDENT:
             prefs_json = json.dumps(accessibility_prefs) if accessibility_prefs else None
             profile = Student(
                 user_id=user.id,
@@ -66,7 +63,7 @@ def register_user(
                 accessibility_prefs=prefs_json,
             )
             db.add(profile)
-        elif db_role == "teacher":
+        elif db_role == TEACHER:
             profile = Teacher(user_id=user.id, full_name=full_name)
             db.add(profile)
         db.commit()

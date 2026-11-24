@@ -2,7 +2,6 @@
 // admin-settings.js, admin-settings-platform.js
 import "./admin-branding.js";
 import "./admin-analytics.js";
-import "./admin-ai-quality.js";
 import "./admin-settings-platform.js";
 import "./admin-settings.js";
 

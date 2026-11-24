@@ -77,6 +77,12 @@ for (const p of PROJECTS) {
   const stray = new RegExp(
     `vercel build[^\n]*--project=${p.name}\\b(?![\\s\\S]{0,200}--cwd)`
   ).test(yml);
+  if (stray) {
+    fail(
+      `Found a repo-root-only 'vercel build --project=${p.name}' line. With --cwd also in\n` +
+        `use this is the double-append failure mode; every build must carry --cwd ${p.rootDirectory}.`
+    );
+  }
 
   // Committed vercel.json must still produce the expected output directory.
   const vj = join(ROOT, p.vercelJson);

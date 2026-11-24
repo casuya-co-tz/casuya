@@ -14,8 +14,6 @@ from backend.services.reference_library_service import lesson_plan_grounding
 
 from . import offline as _offline
 from .competences import _tie_competences
-from .offline_builder import _build_lesson_plan_offline
-from .offline_quality import _progression_quality_issues
 from .offline_scheme import _build_scheme_offline
 
 logger = logging.getLogger(__name__)
@@ -149,36 +147,6 @@ def _lookup_lesson_plan_content(subject_slug, form_level, topic, subtopic, lang,
             "assessment": assessment,
         },
     }
-
-
-def _patch_weak_progression_from_offline(plan, *, subject_slug, subject_label, form_level,
-                                         topic, subtopic, school_name, teacher_name,
-                                         number_of_students, students_boys, students_girls,
-                                         duration_minutes, period, lang):
-    """Last-resort recovery (near-zero, used only after AI repairs are exhausted):
-    rebuild the progression matrix from the deterministic offline builder and keep
-    the rest of the AI plan. Patches nothing when the offline matrix also fails."""
-    try:
-        off = _build_lesson_plan_offline(
-            subject_slug=subject_slug,
-            subject_label=subject_label,
-            form_level=form_level,
-            topic=topic,
-            subtopic=subtopic,
-            school_name=school_name,
-            teacher_name=teacher_name,
-            number_of_students=number_of_students,
-            students_boys=students_boys,
-            students_girls=students_girls,
-            duration_minutes=duration_minutes,
-            period=period,
-            lang=lang,
-        )
-        if not _progression_quality_issues(off, lang):
-            plan["progression_matrix"] = off["progression_matrix"]
-    except Exception:
-        logger.warning("Offline progression recovery failed", exc_info=True)
-    return plan
 
 
 def _scheme_row_for_lesson(subject_slug, form_level, topic, subtopic, lang):

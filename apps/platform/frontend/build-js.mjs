@@ -26,7 +26,7 @@ const here = dirname(fileURLToPath(import.meta.url));
 const jsDir = join(here, "assets", "js");
 const cssDir = join(here, "assets", "css");
 
-// Shared by every portal. No landing i18n, speech, or test-generator.
+// Shared by every portal. No landing i18n or speech.
 const core = [
   "env.js",
   "config.js",
@@ -35,14 +35,9 @@ const core = [
   "modules/api-client/core/host.js",
   "modules/api-client/core/dom.js",
   "modules/api-client/core/errors.js",
-  "modules/api-client/core/markdown.js",
   "modules/api-client/core/quiz.js",
   "modules/api-client/core/katex-loader.js",
   "modules/api-client/core/fetch.js",
-  "modules/ai-source-badge.js",
-  "modules/ai/tutor-qa-idb.js",
-  "modules/ai/tutor-qa-queue.js",
-  "modules/ai/tutor-panel.js",
   "modules/api-quiz.js",
   "modules/api.js",
   "modules/auth.js",
@@ -66,7 +61,6 @@ const lessonViewer = [
   "modules/lesson/lesson-viewer/interactions.js",
   "modules/lesson/lesson-viewer/viewer.js",
   "modules/lesson.js",
-  "modules/api-client/core/test-generator.js",
 ];
 
 const speechFiles = [
@@ -75,11 +69,8 @@ const speechFiles = [
 ];
 
 const studentExtras = [
-  "modules/student/ai-chat.js",
-  "modules/api-client/core/test-generator.js",
   "modules/student/games.js",
   "modules/student/exams.js",
-  "modules/student/tests.js",
   "modules/student/files.js",
   "modules/student/library.js",
   "modules/student/payments.js",
@@ -126,19 +117,7 @@ const roles = {
     "modules/teacher/assignments-create-form.js",
     "modules/teacher/assignments-grading.js",
     "modules/teacher/reports.js",
-    "modules/teacher/plans-syllabus.js",
-    "modules/teacher/plans-builder.js",
-    "modules/teacher/plans/state.js",
-    "modules/teacher/plans/layout.js",
-    "modules/teacher/plans/saved.js",
-    "modules/teacher/plans/tabs.js",
-    "modules/teacher/plans/lesson.js",
-    "modules/teacher/plans/scheme.js",
-    "modules/teacher/plans/actions.js",
-    "modules/teacher/plans/index.js",
     "modules/teacher/library.js",
-    "modules/teacher/ai-assistant.js",
-    "modules/teacher/test-generator.js",
     "modules/teacher/files.js",
     "modules/teacher/payments.js",
     "modules/teacher/notifications.js",
@@ -158,7 +137,6 @@ const roles = {
     "modules/admin-dashboard/admin-progress.js",
     "modules/admin-dashboard/admin-lessons.js",
     "modules/admin-dashboard/admin-quizzes.js",
-    "modules/admin-dashboard/admin-test-generator.js",
     "modules/admin-dashboard/03-users.js",
     "modules/admin-dashboard/admin-games.js",
     "modules/admin-dashboard/admin-users-list.js",
@@ -168,7 +146,6 @@ const roles = {
     "modules/admin-dashboard/admin-notifications.js",
     "modules/admin-dashboard/admin-uploads.js",
     "modules/admin-dashboard/admin-library.js",
-    "modules/admin-dashboard/admin-ai-quality.js",
     "modules/admin-dashboard/05-branding-analytics-settings.js",
     "modules/admin-dashboard/admin-branding.js",
     "modules/admin-dashboard/admin-analytics.js",
@@ -234,7 +211,7 @@ function writeCssBundles() {
   writeCssBundle("student.bundle.css", ["main.min.css", "student.css", "tailwind.min.css"]);
   writeCssBundle("teacher.bundle.css", ["main.min.css", "teacher.css", "tailwind.min.css"]);
   writeCssBundle("admin.bundle.css", ["main.min.css", "admin.css", "tailwind.min.css"]);
-  ["main.min.css", "tailwind.min.css", "landing-extra.css", "landing.css", "student.css", "teacher.css", "admin.css"]
+  ["main.min.css", "tailwind.min.css", "landing-extra.css", "landing.css", "student.css", "teacher.css", "admin.css", "a11y-fonts.css"]
     .forEach((f) => gzipFile(join(cssDir, f)));
 }
 
@@ -282,20 +259,54 @@ const STAMP_ASSETS = [
   "assets/js/speech.bundle.js",
   "assets/js/i18n.swahili.bundle.js",
   "assets/js/blackboard-embed.js",
-  "assets/js/student-ai-chat.js",
   "assets/js/vendor-blackboard.min.js",
   "assets/js/brand.js",
   "assets/js/rum.js",
   "assets/js/tracker.js",
   "assets/js/env.js",
   "assets/js/config.js",
+  "assets/css/main.min.css",
+  "assets/css/tailwind.min.css",
   "assets/js/landing-extra.js",
   "assets/css/student.bundle.css",
   "assets/css/teacher.bundle.css",
   "assets/css/admin.bundle.css",
   "assets/css/landing.css",
   "assets/css/landing-extra.css",
+  "assets/css/a11y-fonts.css",
   "static/pkg/runtime/casuya-runtime.min.js",
+  // Lazily loaded libs live under /static/ which Vercel caches immutably for
+  // a year. Version them via window.CASUYA_ASSET so upgrades are not pinned.
+  "static/lib/hls.min.js",
+  "static/lib/katex/katex.min.css",
+  "static/lib/katex/katex.min.js",
+  "static/lib/katex/contrib/auto-render.min.js",
+];
+
+// Base URLs precached by the service worker. The build stamps each one with
+// its content hash so `cache.match(req)` actually hits the ?v=-stamped
+// requests made by the HTML instead of missing them on first load.
+const SW_PRECACHE_BASE = [
+  "/",
+  "/manifest.webmanifest",
+  "/assets/css/landing.css",
+  "/assets/css/landing-extra.css",
+  "/assets/fonts/plus-jakarta-sans-latin.woff2",
+  "/assets/fonts/manrope-latin.woff2",
+  "/assets/fonts/fraunces-latin.woff2",
+  "/assets/js/env.js",
+  "/assets/js/config.js",
+  "/assets/js/i18n.swahili.bundle.js",
+  "/assets/js/landing-extra.js",
+  "/assets/js/brand.js",
+  "/assets/js/rum.js",
+  "/static/lib/hls.min.js",
+  "/static/lib/katex/katex.min.js",
+  "/static/lib/katex/katex.min.css",
+  "/assets/images/casuya-logo.svg",
+  "/assets/images/icons/icon-192.png",
+  "/assets/images/icons/icon-512.png",
+  "/assets/images/icons/apple-touch-icon.png",
 ];
 
 function fileHash(absPath) {
@@ -322,21 +333,68 @@ function stampAssetRevs() {
   const json = JSON.stringify(map);
   const markerStart = "<!--casuya-assets-->";
   const markerEnd = "<!--/casuya-assets-->";
-  const inject = `${markerStart}<script>window.CASUYA_ASSETS=${json};</script>${markerEnd}`;
+  const inject = `${markerStart}<script>window.CASUYA_ASSETS=${json};window.CASUYA_ASSET=function(p){var v=window.CASUYA_ASSETS[p];return v?p+"?v="+v:p;};</script>${markerEnd}`;
+  // The production API host is a build-time setting, not a hardcoded value in
+  // env.js. Set CASUYA_API_URL when building to target staging or a custom
+  // domain; when unset, env.js keeps its safe production default.
+  const apiUrl = String(process.env.CASUYA_API_URL || "").replace(/\/+$/, "");
+  const envMarkerStart = "<!--casuya-env-->";
+  const envMarkerEnd = "<!--/casuya-env-->";
+  const envInject = apiUrl
+    ? `${envMarkerStart}<script>window.CASUYA_API_BASE_URL=${JSON.stringify(apiUrl)};</script>${envMarkerEnd}`
+    : "";
   const files = listHtmlFiles(here);
   for (const abs of files) {
     let html = readFileSync(abs, "utf8");
     html = html.replace(/<!--casuya-assets-->[\s\S]*?<!--\/casuya-assets-->/, "");
+    html = html.replace(/<!--casuya-env-->[\s\S]*?<!--\/casuya-env-->/, "");
     html = html.replace(/(["'])(\/assets\/[^"'?]+)(?:\?v=[^"']*)?\1/g, (_, q, path) => {
       const v = map[path];
       return v ? `${q}${path}?v=${v}${q}` : `${q}${path}${q}`;
     });
+    // The env override MUST run before env.js / role bundles, which are
+    // loaded in <head>. The asset manifest can go at the end of <head>.
+    if (envInject) {
+      html = html.replace(/<head[^>]*>/, (head) => `${head}\n  ${envInject}`);
+    }
     if (html.includes("</head>")) {
       html = html.replace("</head>", `  ${inject}\n</head>`);
     }
     writeFileSync(abs, html);
   }
   console.log(`stamped ?v= hashes on ${files.length} HTML files`);
+  updateServiceWorker(map);
+}
+
+function updateServiceWorker(manifest) {
+  const swPath = join(here, "sw.js");
+  if (!existsSync(swPath)) return;
+  let sw = readFileSync(swPath, "utf8");
+
+  const stamped = SW_PRECACHE_BASE.map((url) => {
+    const v = manifest[url];
+    return v ? `${url}?v=${v}` : url;
+  });
+  // Derive the cache name from the manifest itself: every content change
+  // automatically invalidates the old cache, so no manual version bump.
+  const version = createHash("sha256").update(JSON.stringify(manifest)).digest("hex").slice(0, 10);
+  const block = [
+    "// <!--casuya-precache-->",
+    `const CACHE_VERSION = "casuya-static-${version}";`,
+    "const PRECACHE = [",
+    ...stamped.map((u) => `  ${JSON.stringify(u)},`),
+    "];",
+    "// <!--/casuya-precache-->",
+  ].join("\n");
+
+  const re = /\/\/ <!--casuya-precache-->[\s\S]*?\/\/ <!--\/casuya-precache-->/;
+  if (!re.test(sw)) {
+    console.warn("sw.js precache markers not found; service worker not updated");
+    return;
+  }
+  sw = sw.replace(re, block);
+  writeFileSync(swPath, sw);
+  console.log("updated sw.js precache list and cache version");
 }
 
 if (process.argv.includes("--gzip-only")) {
@@ -349,7 +407,6 @@ if (process.argv.includes("--gzip-only")) {
   writeJs("i18n.swahili.bundle.js", concatJs(i18nBundleFiles));
   writeJs("speech.bundle.js", concatJs(speechFiles));
   writeJs("student.extras.bundle.js", concatJs(studentExtras));
-  writeJs("student-ai-chat.js", stripEsm(readFileSync(join(jsDir, "modules/student/ai-chat.js"), "utf8")));
   gzipBundles();
   stampAssetRevs();
   console.log(`wrote ${Object.keys(roles).length} role bundles, extras, speech, and CSS gz`);

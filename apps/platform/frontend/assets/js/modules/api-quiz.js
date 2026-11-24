@@ -1,4 +1,4 @@
-// modules/api-quiz.js — Quiz rendering, tutor, downloads
+// modules/api-quiz.js — Quiz rendering and downloads
 
 /* ── Math (KaTeX) Rendering ───────────────────────────────────────── */
 window.renderMath = function (el) {
@@ -69,90 +69,8 @@ window._quizSubmit = function(quizId, total) {
   btn = document.querySelector("#" + quizId + " .quiz-submit-all");
   if (btn) btn.style.display = "none";
 
-  if (wrong.length) {
-    _tutorWrongQuestions(quizId, total, wrong);
-  }
 };
 
-function _tutorWrongQuestions(quizId, total, wrongIndexes) {
-  var data = _quizExtractData(quizId);
-  if (!data || !data.questions || !wrongIndexes.length) return;
-
-  var subjectSlug = "";
-  var formLevel = "";
-  var slugMap = { mathematics:"mathematics", math:"mathematics", chemistry:"chemistry", physics:"physics" };
-  var m = (data.meta || "").match(/^([A-Za-z ]+)\s*(\u2022)?\s*Form\s*([IVX]+)/i);
-  if (m) {
-    var label = slugMap[m[1].trim().toLowerCase()];
-    if (label) subjectSlug = label;
-    var roman = m[3];
-    formLevel = (roman === "I") ? "1" : (roman === "II") ? "2" : (roman === "III") ? "3" : "4";
-  }
-
-  var parts = [];
-  wrongIndexes.forEach(function(idx) {
-    var q = data.questions[idx];
-    if (!q) return;
-    var chosen = null;
-    if (q.options) {
-      q.options.forEach(function(o) { if (o.letter === q.correct) chosen = o.text; });
-    }
-    var chosenText = chosen ? chosen : "(question left unanswered)";
-    parts.push(
-      "QUESTION " + (idx + 1) + ": " + (q.text || "")
-      + "\n- Options: " + (q.options || []).map(function(o){ return o.letter + ") " + o.text; }).join("; ")
-      + "\n- The student answered: " + chosenText
-      + "\n- The correct answer is: " + q.correct
-    );
-  });
-
-  var question = "A student answered the following questions incorrectly. Please explain, "
-    + "in simple step-by-step language a secondary school student will understand, EXACTLY how to arrive at the correct answer for each one. "
-    + "Do not just repeat the correct letter \u2014 show the working/method step by step, call out any common mistake the student likely made, and keep the tone encouraging.\n\n"
-    + parts.join("\n\n");
-
-  var wrap = document.getElementById(quizId + "-score");
-  if (!wrap) return;
-  var tutorHtml = '<div class="quiz-tutor" id="' + quizId + '-tutor">'
-    + '<div class="quiz-tutor-header"><span class="quiz-tutor-icon">\uD83C\uDF93</span>'
-    + '<div><div class="quiz-tutor-title">Let\u2019s Learn: Step-by-Step</div>'
-    + '<div class="quiz-tutor-sub">The AI tutor will show you exactly how to solve the ' + wrongIndexes.length + ' question'
-    + (wrongIndexes.length > 1 ? "s" : "") + ' you got wrong.</div></div></div>'
-    + '<div class="quiz-tutor-body"><div class="tutor-loading"><span class="spinner"></span> Explaining the correct method\u2026</div></div>'
-    + '</div>';
-  if (wrap.insertAdjacentHTML) {
-    wrap.insertAdjacentHTML("afterend", tutorHtml);
-  } else if (wrap.parentNode) {
-    var tmp = document.createElement("div");
-    tmp.innerHTML = tutorHtml;
-    while (tmp.firstChild) wrap.parentNode.insertBefore(tmp.firstChild, wrap.nextSibling);
-  }
-
-  var body = document.getElementById(quizId + "-tutor").querySelector(".quiz-tutor-body");
-
-  var quizEl = document.getElementById(quizId);
-  var lessonId = quizEl && quizEl.getAttribute("data-lesson-id");
-  var meta = window.__casuyaQuizLessonMeta || {};
-  var payload = buildLessonTutorPayload({
-    question: question,
-    lesson: { title: data.topic || data.meta || meta.title || "Quiz", id: lessonId || meta.lessonId },
-    lessonId: lessonId || meta.lessonId,
-    lessonContent: typeof buildQuizLessonContent === "function"
-      ? buildQuizLessonContent(data.questions)
-      : "",
-    subject_slug: subjectSlug || meta.subject_slug || undefined,
-    form_level: formLevel ? Number(formLevel) : (meta.form_level || undefined),
-    topic: data.topic || meta.topic || "",
-    subtopic: meta.subtopic || "",
-  });
-
-  runTutorQuery(payload, {
-    container: body,
-    loadingLabel: "Explaining the correct method…",
-    errorMessage: "The AI tutor is temporarily unavailable. Please review the explanations above or ask your teacher for help.",
-    listenTitle: "Listen to explanation",
-  });
-}
 
 function _quizExtractData(quizId) {
   var container = document.getElementById(quizId);

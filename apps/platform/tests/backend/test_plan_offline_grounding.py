@@ -1,5 +1,5 @@
-"""Tests for the offline lesson plan builder: TIE competency echo, knowledge
-base grounding, fallback without a knowledge base, and reference-grounded
+"""Tests for the offline lesson plan builder: TIE competency echo, offline
+syllabus grounding, fallback without reference data, and reference-grounded
 assessment criteria.
 """
 

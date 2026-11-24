@@ -7,6 +7,8 @@ import binascii
 
 import httpx
 
+from backend.services.http_client import get_sync_client
+
 _MAX_IMAGE_BYTES = 512 * 1024
 
 
@@ -36,12 +38,12 @@ def recognize_self_hosted(image_b64: str, service_url: str, api_key: str | None)
     if api_key:
         headers["X-API-Key"] = api_key
 
-    with httpx.Client(timeout=45.0) as client:
-        resp = client.post(
-            f"{service_url.rstrip('/')}/v1/ocr/recognize",
-            headers=headers,
-            json={"image": image},
-        )
+    client = get_sync_client(timeout=45.0)
+    resp = client.post(
+        f"{service_url.rstrip('/')}/v1/ocr/recognize",
+        headers=headers,
+        json={"image": image},
+    )
     if resp.status_code >= 400:
         raise RuntimeError(f"OCR service error: {resp.status_code}")
     return resp.json()
@@ -53,20 +55,20 @@ def recognize_mathpix(image_b64: str, app_id: str, app_key: str) -> dict:
     cleaned = image_b64.strip()
     src = cleaned if cleaned.startswith("data:") else f"data:image/png;base64,{cleaned}"
 
-    with httpx.Client(timeout=30.0) as client:
-        resp = client.post(
-            "https://api.mathpix.com/v3/text",
-            headers={
-                "Content-Type": "application/json",
-                "app_id": app_id,
-                "app_key": app_key,
-            },
-            json={
-                "src": src,
-                "formats": ["latex", "latex_styled"],
-                "data_options": {"include_asciimath": True, "include_latex": True},
-            },
-        )
+    client = get_sync_client(timeout=30.0)
+    resp = client.post(
+        "https://api.mathpix.com/v3/text",
+        headers={
+            "Content-Type": "application/json",
+            "app_id": app_id,
+            "app_key": app_key,
+        },
+        json={
+            "src": src,
+            "formats": ["latex", "latex_styled"],
+            "data_options": {"include_asciimath": True, "include_latex": True},
+        },
+    )
     if resp.status_code >= 400:
         raise RuntimeError(f"Mathpix error: {resp.status_code}")
 

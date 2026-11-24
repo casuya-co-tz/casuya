@@ -7,6 +7,7 @@ from pydantic import BaseModel
 
 from backend.api.payments.common import _service_unavailable
 from backend.middleware.auth import get_current_user
+from backend.middleware.permissions import is_admin
 from backend.services.payment_service import cancel_subscription, create_subscription, list_user_subscriptions
 
 router = APIRouter(tags=["payments"])
@@ -44,8 +45,7 @@ def create_sub(body: SubscriptionRequest, current_user=Depends(get_current_user)
 @router.post("/subscriptions/{subscription_id}/cancel/")
 def cancel_sub(subscription_id: str, immediate: bool = False, current_user=Depends(get_current_user)):
     try:
-        role = current_user.get("role", "student")
-        user_id = None if role == "admin" else current_user["sub"]
+        user_id = None if is_admin(current_user) else current_user["sub"]
         return cancel_subscription(subscription_id, immediate, user_id=user_id)
     except HTTPException:
         raise

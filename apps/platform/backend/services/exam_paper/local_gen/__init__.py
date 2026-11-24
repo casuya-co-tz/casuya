@@ -1,7 +1,6 @@
-"""Exam paper generation — deterministic offline (local) question generation.
+"""Exam paper generation - deterministic offline (local) question generation.
 
-Builds questions grounded in lesson text for the offline-first / 2G fallback
-path when the casuya-ai service is unreachable.
+Builds questions grounded in lesson text for the offline-first / 2G path.
 """
 
 from __future__ import annotations

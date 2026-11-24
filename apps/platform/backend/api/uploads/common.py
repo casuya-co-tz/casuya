@@ -91,6 +91,12 @@ def _scan_files() -> list[dict]:
     for kind_dir in root.iterdir() if root.exists() else []:
         if not kind_dir.is_dir() or kind_dir.name.startswith("."):
             continue
+        # Only scan the canonical upload kinds (images/videos/audio/documents).
+        # Other directories under storage_root (lesson-packages, backups,
+        # branding, ...) are not student-facing files and must never leak into
+        # the file browser — they carry UUID/opaque names and are not uploads.
+        if kind_dir.name not in ALLOWED_KINDS:
+            continue
         for f in kind_dir.iterdir():
             if f.is_file() and not f.name.startswith("."):
                 st = f.stat()
@@ -116,13 +122,18 @@ def _merge_with_db_meta(files: list[dict]) -> list[dict]:
     try:
         # Only the metadata columns are needed here; selecting with_entities
         # avoids pulling the large `data` (BYTEA) blobs on every uploads list.
-        records = db.query(FileRecord.id, FileRecord.filename, FileRecord.display_name, FileRecord.is_visible).all()
+        # Only fetch metadata for files that were actually scanned. Loading
+        # every FileRecord row on a large upload table is unbounded work that
+        # grows with storage history rather than with the page being shown.
+        names = [f["filename"] for f in files]
+        query = db.query(FileRecord.id, FileRecord.filename, FileRecord.display_name, FileRecord.is_visible)
+        records = query.filter(FileRecord.filename.in_(names)).all() if names else []
         meta_map = {r.filename: {"id": r.id, "display_name": r.display_name, "is_visible": r.is_visible} for r in records}
         result = []
         for f in files:
             rec = meta_map.get(f["filename"])
             f["display_name"] = rec["display_name"] if rec else f["filename"]
-            f["is_visible"] = rec["is_visible"] if rec else True
+            f["is_visible"] = rec["is_visible"] if rec else False
             if rec:
                 f["id"] = rec["id"]
             result.append(f)

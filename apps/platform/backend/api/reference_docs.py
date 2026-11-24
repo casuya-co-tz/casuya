@@ -8,12 +8,13 @@ protected by the standard ``require_role("admin")`` dependency.
 
 from __future__ import annotations
 
-from fastapi import APIRouter, Depends, HTTPException, Query
+from fastapi import APIRouter, Depends, HTTPException, Query, Request, Response
 from pydantic import BaseModel
 from sqlalchemy.orm import Session
 
-from backend.middleware.permissions import require_role
 from backend.config.database import get_db
+from backend.middleware.cache import apply_public_cache, cache_get, cache_invalidate, cache_set
+from backend.middleware.permissions import require_role
 from backend.services.reference_library_service import (
     count_reference_docs,
     get_reference_doc,
@@ -31,6 +32,8 @@ _VALID_TYPES = ("lesson_plan", "scheme_of_work")
 @router.get("")
 @router.get("/")
 def api_list_reference_docs(
+    response: Response,
+    request: Request,
     doc_type: str | None = Query(default=None),
     subject_slug: str | None = Query(default=None),
     form_level: int | None = Query(default=None),
@@ -41,6 +44,14 @@ def api_list_reference_docs(
 ):
     if doc_type is not None and doc_type not in _VALID_TYPES:
         raise HTTPException(status_code=422, detail=f"doc_type must be one of {_VALID_TYPES}")
+    cache_key = f"reference_docs:list:{doc_type or ''}:{subject_slug or ''}:{form_level or ''}:{query or ''}:{limit}:{offset}"
+    cached = cache_get(cache_key, ttl_seconds=300)
+    if cached is not None:
+        not_modified = apply_public_cache(response, request, cached, max_age=300)
+        if not_modified is not None:
+            return not_modified
+        return cached
+
     docs = list_reference_docs(
         db,
         doc_type=doc_type,
@@ -50,7 +61,7 @@ def api_list_reference_docs(
         limit=limit,
         offset=offset,
     )
-    return {
+    result = {
         "total": count_reference_docs(
             db,
             doc_type=doc_type,
@@ -62,12 +73,26 @@ def api_list_reference_docs(
         "limit": limit,
         "items": [serialize_doc(d) for d in docs],
     }
+    cache_set(cache_key, result, ttl=300)
+    not_modified = apply_public_cache(response, request, result, max_age=300)
+    if not_modified is not None:
+        return not_modified
+    return result
 
 
 @router.get("/stats")
 @router.get("/stats/")
-def api_reference_docs_stats(db: Session = Depends(get_db)):
+def api_reference_docs_stats(response: Response, request: Request, db: Session = Depends(get_db)):
+    cache_key = "reference_docs:stats"
+    cached = cache_get(cache_key, ttl_seconds=300)
+    if cached is not None:
+        not_modified = apply_public_cache(response, request, cached, max_age=300)
+        if not_modified is not None:
+            return not_modified
+        return cached
+
     from sqlalchemy import func
+
     from backend.models.reference_doc import ReferenceDoc
 
     rows = (
@@ -76,16 +101,23 @@ def api_reference_docs_stats(db: Session = Depends(get_db)):
         .all()
     )
     counts = {row[0]: row[1] for row in rows}
-    return {
+    result = {
         "lesson_plans": counts.get("lesson_plan", 0),
         "schemes_of_work": counts.get("scheme_of_work", 0),
         "total": sum(counts.values()),
     }
+    cache_set(cache_key, result, ttl=300)
+    not_modified = apply_public_cache(response, request, result, max_age=300)
+    if not_modified is not None:
+        return not_modified
+    return result
 
 
 @router.get("/student")
 @router.get("/student/")
 def api_student_reference_docs(
+    response: Response,
+    request: Request,
     doc_type: str | None = Query(default=None),
     subject_slug: str | None = Query(default=None),
     form_level: int | None = Query(default=None),
@@ -95,6 +127,16 @@ def api_student_reference_docs(
     db: Session = Depends(get_db),
 ):
     """Student-facing endpoint: only returns docs where visible_to_students=True."""
+    cache_key = f"reference_docs:student:{doc_type or ''}:{subject_slug or ''}:{form_level or ''}:{query or ''}:{limit}:{offset}"
+    cached = cache_get(cache_key, ttl_seconds=300)
+    if cached is not None:
+        not_modified = apply_public_cache(response, request, cached, max_age=300)
+        if not_modified is not None:
+            return not_modified
+        return cached
+
+    from sqlalchemy import or_
+
     from backend.models.reference_doc import ReferenceDoc
 
     q = db.query(ReferenceDoc).filter(ReferenceDoc.visible_to_students == True)  # noqa: E712
@@ -105,54 +147,93 @@ def api_student_reference_docs(
     if form_level:
         q = q.filter(ReferenceDoc.form_level == form_level)
     if query:
-        from sqlalchemy import or_
         like = f"%{query}%"
-        q = q.filter(or_(
-            ReferenceDoc.title.ilike(like),
-            ReferenceDoc.subject_name.ilike(like),
-        ))
+        q = q.filter(
+            or_(
+                ReferenceDoc.title.ilike(like),
+                ReferenceDoc.subject_name.ilike(like),
+            )
+        )
     total = q.count()
-    items = q.order_by(
-        ReferenceDoc.doc_type.asc(),
-        ReferenceDoc.form_level.asc(),
-        ReferenceDoc.title.asc(),
-    ).offset(offset).limit(limit).all()
-    return {
+    items = (
+        q.order_by(
+            ReferenceDoc.doc_type.asc(),
+            ReferenceDoc.form_level.asc(),
+            ReferenceDoc.title.asc(),
+        )
+        .offset(offset)
+        .limit(limit)
+        .all()
+    )
+    result = {
         "total": total,
         "offset": offset,
         "limit": limit,
         "items": [serialize_doc(d) for d in items],
     }
+    cache_set(cache_key, result, ttl=300)
+    not_modified = apply_public_cache(response, request, result, max_age=300)
+    if not_modified is not None:
+        return not_modified
+    return result
 
 
 @router.get("/{doc_id}")
 @router.get("/{doc_id}/")
-def api_get_reference_doc(doc_id: str, db: Session = Depends(get_db)):
+def api_get_reference_doc(doc_id: str, response: Response, request: Request, db: Session = Depends(get_db)):
+    cache_key = f"reference_docs:detail:{doc_id}"
+    cached = cache_get(cache_key, ttl_seconds=600)
+    if cached is not None:
+        not_modified = apply_public_cache(response, request, cached, max_age=600)
+        if not_modified is not None:
+            return not_modified
+        return cached
     doc = get_reference_doc(db, doc_id)
     if not doc:
         raise HTTPException(status_code=404, detail="Reference document not found")
-    return serialize_doc(doc)
+    result = serialize_doc(doc)
+    cache_set(cache_key, result, ttl=600)
+    not_modified = apply_public_cache(response, request, result, max_age=600)
+    if not_modified is not None:
+        return not_modified
+    return result
 
 
 @router.get("/{doc_id}/render")
 @router.get("/{doc_id}/render/")
-def api_render_reference_doc(doc_id: str, db: Session = Depends(get_db)):
+def api_render_reference_doc(doc_id: str, request: Request, db: Session = Depends(get_db)):
     """Return the reference document rendered as an HTML string."""
+    import hashlib
+    import json as _json
+
     from fastapi.responses import HTMLResponse
+
+    cache_key = f"reference_docs:render:{doc_id}"
+    cached_html = cache_get(cache_key, ttl_seconds=600)
+    if isinstance(cached_html, str):
+        etag = '"' + hashlib.sha256(cached_html.encode("utf-8")).hexdigest()[:16] + '"'
+        headers = {"Cache-Control": "public, max-age=600", "ETag": etag}
+        if request.headers.get("if-none-match") == etag:
+            return Response(status_code=304, headers=headers)
+        return HTMLResponse(content=cached_html, headers=headers)
 
     doc = get_reference_doc(db, doc_id)
     if not doc:
         raise HTTPException(status_code=404, detail="Reference document not found")
     try:
-        import json
-        content = json.loads(doc.content)
+        content = _json.loads(doc.content)
     except (TypeError, ValueError):
         content = {}
     if doc.doc_type == "scheme_of_work":
         html = render_reference_scheme_html(content)
     else:
         html = render_reference_lesson_plan_html(content)
-    return HTMLResponse(content=html)
+    cache_set(cache_key, html, ttl=600)
+    etag = '"' + hashlib.sha256(html.encode("utf-8")).hexdigest()[:16] + '"'
+    headers = {"Cache-Control": "public, max-age=600", "ETag": etag}
+    if request.headers.get("if-none-match") == etag:
+        return Response(status_code=304, headers=headers)
+    return HTMLResponse(content=html, headers=headers)
 
 
 # ── Admin endpoints ────────────────────────────────────────────────────
@@ -175,6 +256,7 @@ def api_toggle_visibility(
         raise HTTPException(status_code=404, detail="Reference document not found")
     doc.visible_to_students = body.visible_to_students
     db.commit()
+    cache_invalidate("reference_docs:")
     return {"ok": True, "visible_to_students": doc.visible_to_students}
 
 
@@ -244,4 +326,5 @@ def api_admin_set_all_visibility(
         q = q.filter(ReferenceDoc.form_level == form_level)
     count = q.update({ReferenceDoc.visible_to_students: body.visible_to_students})
     db.commit()
+    cache_invalidate("reference_docs:")
     return {"ok": True, "updated": count}

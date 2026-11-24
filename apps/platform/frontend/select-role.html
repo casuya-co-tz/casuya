@@ -1,6 +1,8 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
+  
+  
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <title>Casuya — Choose Your Role</title>
@@ -9,12 +11,13 @@
     <link rel="icon" href="/favicon.ico" sizes="any">
 <link rel="icon" type="image/svg+xml" href="/assets/images/casuya-logo.svg">
   <link rel="apple-touch-icon" href="/assets/images/icons/apple-touch-icon.png">
-  <link rel="stylesheet" href="/assets/css/main.min.css">
-  <link rel="stylesheet" href="/assets/css/tailwind.min.css">
+  <link rel="stylesheet" href="/assets/css/main.min.css?v=6d00387f4f">
+  <link rel="stylesheet" href="/assets/css/tailwind.min.css?v=0bbab82978">
+  <link rel="stylesheet" href="/assets/css/a11y-fonts.css?v=50046e01d7">
   <link rel="preload" href="/assets/fonts/plus-jakarta-sans-latin.woff2" as="font" type="font/woff2" crossorigin>
-  <script src="/assets/js/env.js?v=e9762f1a1f"></script>
+  <script src="/assets/js/env.js?v=d77c4388f8"></script>
   <script src="/assets/js/config.js?v=2d2ed7a50c"></script>
-  <script src="/assets/js/brand.js?v=239d338430"></script>
+  <script src="/assets/js/brand.js?v=1c3806d811"></script>
   <script>
     (function() {
       // If no pending auth data, redirect to login
@@ -84,7 +87,99 @@
   
   
   
-  <!--casuya-assets--><script>window.CASUYA_ASSETS={"/assets/js/student.bundle.js":"cb8c5daeaf","/assets/js/teacher.bundle.js":"84f1402128","/assets/js/admin.bundle.js":"5cedba790a","/assets/js/student.extras.bundle.js":"3d0d9269ae","/assets/js/speech.bundle.js":"1708dc29c2","/assets/js/i18n.swahili.bundle.js":"9629188378","/assets/js/blackboard-embed.js":"00646ab9fd","/assets/js/student-ai-chat.js":"0841ac5ee5","/assets/js/vendor-blackboard.min.js":"ba2a423c55","/assets/js/brand.js":"239d338430","/assets/js/rum.js":"533863d08a","/assets/js/tracker.js":"03f51fe004","/assets/js/env.js":"e9762f1a1f","/assets/js/config.js":"2d2ed7a50c","/assets/js/landing-extra.js":"bd0881c454","/assets/css/student.bundle.css":"d5ae5cb823","/assets/css/teacher.bundle.css":"7681b505e8","/assets/css/admin.bundle.css":"d313671bd8","/assets/css/landing.css":"d35d09a16d","/assets/css/landing-extra.css":"df852fdcb0","/static/pkg/runtime/casuya-runtime.min.js":"0d2fef54e2"};</script><!--/casuya-assets-->
+  
+  
+  
+  
+  
+  
+  
+  
+  
+  
+  
+  
+  
+  
+  
+  
+  
+  
+  
+  
+  
+  
+  
+  
+  
+  
+  
+  
+  
+  
+  
+  
+  
+  
+  
+  
+  
+  
+  
+  
+  
+  
+  
+  
+  
+  
+  
+  
+  
+  
+  
+  
+  
+  
+  
+  
+  
+  
+  
+  
+  
+  
+  
+  
+  
+  
+  
+  
+  
+  
+  
+  
+  
+  
+  
+  
+  
+  
+  
+  
+  
+  
+  
+  
+  
+  
+  
+  
+  
+  
+  
+  
+  <!--casuya-assets--><script>window.CASUYA_ASSETS={"/assets/js/student.bundle.js":"a79b49da2e","/assets/js/teacher.bundle.js":"1aa1a004e7","/assets/js/admin.bundle.js":"e1e78b056e","/assets/js/student.extras.bundle.js":"99dde79f95","/assets/js/speech.bundle.js":"aa0ad62728","/assets/js/i18n.swahili.bundle.js":"d2d956d99b","/assets/js/blackboard-embed.js":"00646ab9fd","/assets/js/vendor-blackboard.min.js":"ba2a423c55","/assets/js/brand.js":"1c3806d811","/assets/js/rum.js":"533863d08a","/assets/js/tracker.js":"03f51fe004","/assets/js/env.js":"d77c4388f8","/assets/js/config.js":"2d2ed7a50c","/assets/css/main.min.css":"6d00387f4f","/assets/css/tailwind.min.css":"0bbab82978","/assets/js/landing-extra.js":"19a3822531","/assets/css/student.bundle.css":"eadb5ae7cc","/assets/css/teacher.bundle.css":"68820c509a","/assets/css/admin.bundle.css":"85ea5e91a2","/assets/css/landing.css":"bf7e62b513","/assets/css/landing-extra.css":"e93ed9439f","/assets/css/a11y-fonts.css":"50046e01d7","/static/pkg/runtime/casuya-runtime.min.js":"2c5a104ad2","/static/lib/hls.min.js":"d016c12304","/static/lib/katex/katex.min.css":"a34ad8fc18","/static/lib/katex/katex.min.js":"45fbe318fe","/static/lib/katex/contrib/auto-render.min.js":"e5372d199b"};window.CASUYA_ASSET=function(p){var v=window.CASUYA_ASSETS[p];return v?p+"?v="+v:p;};</script><!--/casuya-assets-->
 </head>
 <body class="bg-[#faf7f2] text-slate-800 antialiased overflow-x-hidden" style="font-family:'Plus Jakarta Sans',system-ui,sans-serif;">
 
@@ -297,30 +392,45 @@
           });
       });
 
-      // Accessibility toolbar
-      var announcer = document.getElementById("sr-announcer");
-      document.getElementById("a11y-dyslexia")?.addEventListener("click", function() {
-        document.body.classList.toggle("dyslexia-mode");
-        this.classList.toggle("active");
-        announcer.textContent = "";
-        requestAnimationFrame(function() { announcer.textContent = document.body.classList.contains("dyslexia-mode") ? "Dyslexia-friendly font enabled" : "Dyslexia-friendly font disabled"; });
-      });
-      document.getElementById("a11y-contrast")?.addEventListener("click", function() {
-        document.body.classList.toggle("high-contrast");
-        this.classList.toggle("active");
-        announcer.textContent = "";
-        requestAnimationFrame(function() { announcer.textContent = document.body.classList.contains("high-contrast") ? "High contrast mode enabled" : "High contrast mode disabled"; });
-      });
-      document.getElementById("a11y-tts")?.addEventListener("click", function() {
-        this.classList.toggle("active");
-        if (this.classList.contains("active") && window.speechSynthesis) {
-          var text = document.querySelector("h1")?.textContent || "Choose your role";
-          var u = new SpeechSynthesisUtterance(text);
-          window.speechSynthesis.speak(u);
-        } else if (window.speechSynthesis) {
-          window.speechSynthesis.cancel();
+      // Accessibility toolbar — uses the SAME persisted state key as
+      // a11y.js (portals) and reset-password.html, so a preference chosen
+      // here carries through the whole login flow instead of resetting.
+      (function () {
+        var announcer = document.getElementById("sr-announcer");
+        var state = { dyslexia: false, highContrast: false, tts: false };
+        try {
+          var saved = JSON.parse(localStorage.getItem("casuya_a11y"));
+          if (saved) Object.assign(state, saved);
+        } catch (e) {}
+        function announce(msg) {
+          if (!announcer) return;
+          announcer.textContent = "";
+          requestAnimationFrame(function () { announcer.textContent = msg; });
         }
-      });
+        function apply() {
+          document.body.classList.toggle("dyslexia-mode", state.dyslexia);
+          document.body.classList.toggle("high-contrast", state.highContrast);
+          document.querySelectorAll(".a11y-mini button").forEach(function (b, i) {
+            b.classList.toggle("active", [state.dyslexia, state.highContrast, state.tts][i]);
+          });
+          try { localStorage.setItem("casuya_a11y", JSON.stringify(state)); } catch (e) {}
+        }
+        apply();
+        document.getElementById("a11y-dyslexia")?.addEventListener("click", function () {
+          state.dyslexia = !state.dyslexia; apply();
+          announce(state.dyslexia ? "Dyslexia-friendly font enabled" : "Dyslexia-friendly font disabled");
+        });
+        document.getElementById("a11y-contrast")?.addEventListener("click", function () {
+          state.highContrast = !state.highContrast; apply();
+          announce(state.highContrast ? "High contrast mode enabled" : "High contrast mode disabled");
+        });
+        document.getElementById("a11y-tts")?.addEventListener("click", function () {
+          state.tts = !state.tts; apply();
+          if (!state.tts) { if (window.speechSynthesis) window.speechSynthesis.cancel(); return; }
+          var text = document.querySelector("h1")?.textContent || "Choose your role";
+          if (window.speechSynthesis) window.speechSynthesis.speak(new SpeechSynthesisUtterance(text));
+        });
+      })();
     })();
   </script>
 </body>

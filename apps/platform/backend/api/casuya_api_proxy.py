@@ -24,7 +24,11 @@ async def _get_http_client() -> httpx.AsyncClient:
     return _http_client
 
 
-@router.api_route("/{path:path}", methods=["GET", "POST", "PUT", "PATCH", "DELETE"])
+@router.api_route(
+    "/{path:path}",
+    methods=["GET", "POST", "PUT", "PATCH", "DELETE"],
+    include_in_schema=False,
+)
 async def proxy_casuya_api(request: Request, path: str):
     settings = get_settings()
     target = f"{settings.casuya_api_url.rstrip('/')}/api/{path}"

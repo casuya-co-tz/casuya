@@ -1,12 +1,11 @@
 /* main.css — Facade that composes the split CSS modules.
-   Import order matters for CSS cascade: variables → base → layout → components → dashboard → premium → tutor → quiz → people → utilities */
+   Import order matters for CSS cascade: variables → base → layout → components → dashboard → premium → quiz → people → utilities */
 @import url('variables.css');
 @import url('base.css');
 @import url('layout.css');
 @import url('components.css');
 @import url('dashboard.css');
 @import url('premium.css');
-@import url('tutor.css');
 @import url('quiz.css');
 @import url('exam-paper.css');
 @import url('people.css');

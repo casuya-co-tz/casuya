@@ -35,19 +35,19 @@ async function loadLibrary(dashboard) {
     const el = document.getElementById("lib-results");
     if (!el) return;
     if (!docs.length) {
-      el.innerHTML = '<div class="tdocs-empty"><div class="tdocs-empty-icon">📖</div><p>No reference documents found.</p></div>';
+      el.innerHTML = '<div class="lib-empty"><div class="lib-empty-icon">📖</div><p>No reference documents found.</p></div>';
       return;
     }
     const ROMAN = { 1: "I", 2: "II", 3: "III", 4: "IV", 5: "V", 6: "VI" };
     el.innerHTML = docs.map(d => {
       const typeLabel = d.doc_type === "scheme_of_work" ? "Scheme of Work" : "Lesson Plan";
-      const typeCls = d.doc_type === "scheme_of_work" ? "tdocs-status-info" : "tdocs-status-success";
+      const typeCls = d.doc_type === "scheme_of_work" ? "lib-status-info" : "lib-status-success";
       const form = d.form_level ? "Form " + (ROMAN[d.form_level] || d.form_level) : "";
       return `
         <div class="lib-card" data-lib-view="${d.id}">
           <div style="display:flex;align-items:center;gap:0.5rem;flex-wrap:wrap;margin-bottom:0.25rem">
-            <span class="tdocs-status ${typeCls}">${typeLabel}</span>
-            ${form ? `<span class="tdocs-status" style="background:var(--color-bg);color:var(--color-text-muted)">${form}</span>` : ""}
+            <span class="lib-status ${typeCls}">${typeLabel}</span>
+            ${form ? `<span class="lib-status" style="background:var(--color-bg);color:var(--color-text-muted)">${form}</span>` : ""}
           </div>
           <h4 style="margin:0;font-size:0.88rem;font-weight:600">${escapeHtml(d.title)}</h4>
           <p style="margin:0.2rem 0 0;font-size:0.72rem;color:var(--color-text-muted)">${escapeHtml(d.subject_name || "")}</p>
@@ -68,7 +68,7 @@ async function loadLibrary(dashboard) {
   async function viewDoc(id) {
     const el = document.getElementById("lib-viewer");
     if (!el) return;
-    el.innerHTML = '<div class="tdocs-loading"><div class="spinner"></div>Loading document...</div>';
+    el.innerHTML = '<div class="lib-loading"><div class="spinner"></div>Loading document...</div>';
     el.style.display = "block";
     try {
       const resp = await fetch(`${API_BASE}/reference-docs/${id}/render`);
@@ -87,8 +87,8 @@ async function loadLibrary(dashboard) {
 
   dashboard.showView(`
     <div class="content">
-      <h2 class="tdocs-page-title">Reference Library</h2>
-      <p class="tdocs-page-desc">Browse official TIE lesson plans and schemes of work. Use these as reference when generating your own documents.</p>
+      <h2 class="lib-page-title">Reference Library</h2>
+      <p class="lib-page-desc">Browse official TIE lesson plans and schemes of work published for your classes.</p>
       <div style="display:grid;gap:0.6rem;margin-top:1.25rem">
         <div style="display:flex;gap:0.5rem;flex-wrap:wrap">
           <select class="input" id="lib-type" style="max-width:180px;padding:0.45rem 0.6rem;font-size:0.85rem">

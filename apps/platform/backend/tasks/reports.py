@@ -2,18 +2,20 @@ from sqlalchemy.orm import Session
 
 from backend.config.database import get_db
 from backend.models.lesson import Lesson
-from backend.services.analytics_service import recompute_lesson_snapshot
+from backend.services.analytics_service import recompute_snapshots_for_lessons
 
 
 def refresh_all_lesson_analytics():
-    _gen = get_db()
-    db: Session = next(_gen)
+    """Refresh analytics snapshots for all published lessons.
+
+    Previously this opened one DB session per lesson via
+    ``recompute_lesson_snapshot``. The batched helper aggregates every lesson's
+    progress in a single grouped query and writes all snapshots in one commit.
+    """
+    gen = get_db()
+    db: Session = next(gen)
     try:
-        lessons = db.query(Lesson).filter(Lesson.status == "published").all()
-        count = 0
-        for lesson in lessons:
-            recompute_lesson_snapshot(lesson.id)
-            count += 1
-        return count
+        lesson_ids = [row.id for row in db.query(Lesson.id).filter(Lesson.status == "published").all()]
+        return recompute_snapshots_for_lessons(db, lesson_ids)
     finally:
-        _gen.close()
+        gen.close()

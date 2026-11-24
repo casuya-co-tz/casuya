@@ -2,8 +2,6 @@
 // exposes. The homepage renders from this so a feature is only shown when the
 // system genuinely provides it — no marketing claims for un-wired features.
 //
-// `enabled: true` means a corresponding backend router/endpoint exists.
-// `aiAssistant` is enabled — the AI service is available and mounted.
 
 export const FEATURES = {
   interactiveLessons: {
@@ -21,14 +19,6 @@ export const FEATURES = {
     blurb: "Power cut? Long daladala ride? Download a topic once when the network is good, then study it anywhere — even where the signal never reaches.",
     hero: true,
     trusted: true,
-  },
-  aiAssistant: {
-    enabled: true,
-    icon: "🤖",
-    title: "AI Teacher Assistant",
-    blurb: "Preparing a quiz late at night? Ask Casuya to draft it in minutes — in English or Kiswahili. A second pair of hands for busy teachers.",
-    hero: true,
-    trusted: false,
   },
   analytics: {
     enabled: true,
@@ -59,14 +49,6 @@ export const FEATURES = {
     icon: "🧪",
     title: "Digital Examinations",
     blurb: "Run secure, browser-based exams that grade themselves and keep results safe — with automatic marking and instant, honest results.",
-    hero: false,
-    trusted: true,
-  },
-  aiLessonCreation: {
-    enabled: true,
-    icon: "✨",
-    title: "AI Lesson Creation",
-    blurb: "Generate lesson outlines, quizzes and study materials in minutes — a steady helper when the school day has already been long.",
     hero: false,
     trusted: true,
   },

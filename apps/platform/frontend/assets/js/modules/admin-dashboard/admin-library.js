@@ -50,21 +50,21 @@
       const el = document.getElementById("lib-results");
       if (!el) return;
       if (!docs.length) {
-        el.innerHTML = '<div class="tdocs-empty"><div class="tdocs-empty-icon">📖</div><p>No reference documents found.</p></div>';
+        el.innerHTML = '<div class="lib-empty"><div class="lib-empty-icon">📖</div><p>No reference documents found.</p></div>';
         return;
       }
       const ROMAN = { 1: "I", 2: "II", 3: "III", 4: "IV", 5: "V", 6: "VI" };
       el.innerHTML = docs.map(d => {
         const typeLabel = d.doc_type === "scheme_of_work" ? "Scheme of Work" : "Lesson Plan";
-        const typeCls = d.doc_type === "scheme_of_work" ? "tdocs-status-info" : "tdocs-status-success";
+        const typeCls = d.doc_type === "scheme_of_work" ? "lib-status-info" : "lib-status-success";
         const form = d.form_level ? "Form " + (ROMAN[d.form_level] || d.form_level) : "";
         const vis = d.visible_to_students;
         return `
           <div class="card" style="padding:0.75rem 1rem;margin-bottom:0.4rem;display:flex;align-items:center;gap:0.75rem;flex-wrap:wrap">
             <div style="flex:1;min-width:0">
               <div style="display:flex;align-items:center;gap:0.4rem;flex-wrap:wrap;margin-bottom:0.15rem">
-                <span class="tdocs-status ${typeCls}">${typeLabel}</span>
-                ${form ? `<span class="tdocs-status" style="background:var(--color-bg);color:var(--color-text-muted)">${form}</span>` : ""}
+                <span class="lib-status ${typeCls}">${typeLabel}</span>
+                ${form ? `<span class="lib-status" style="background:var(--color-bg);color:var(--color-text-muted)">${form}</span>` : ""}
               </div>
               <h4 style="margin:0;font-size:0.85rem;font-weight:600">${escapeHtml(d.title)}</h4>
               <p style="margin:0.15rem 0 0;font-size:0.7rem;color:var(--color-text-muted)">${escapeHtml(d.subject_name || "")}</p>
@@ -89,8 +89,8 @@
 
     showAdminView(`
       <div class="content">
-        <h2 class="tdocs-page-title">Reference Library</h2>
-        <p class="tdocs-page-desc">Manage which reference documents are visible to students. Toggle visibility per document.</p>
+        <h2 class="lib-page-title">Reference Library</h2>
+        <p class="lib-page-desc">Manage which reference documents are visible to students. Toggle visibility per document.</p>
 
         <div id="lib-stats"></div>
 

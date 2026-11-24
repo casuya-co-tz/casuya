@@ -10,7 +10,6 @@ and 2G/3G networks.
 
 ```
 apps/platform/         FastAPI backend + static frontend (rank 2)
-packages/ai/           AI tutoring engine (rank 1)
 packages/blackboard/   Digital blackboard (rank 1)
 packages/bridge/       Offline-first sync engine (rank 1)
 packages/ds-tokens/    Design tokens + theme (flattened from design-system)

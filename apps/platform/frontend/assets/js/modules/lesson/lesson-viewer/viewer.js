@@ -99,7 +99,7 @@ async function viewLessonContent(containerId, lessonId, backFn) {
             completion_percentage: state.lastSentCompletion,
             score_percentage: state.lastSentScore >= 0 ? state.lastSentScore : null,
           }),
-        }).then(() => showToast("Progress saved")).catch(() => {});
+        }).then(() => showToast("Progress saved")).catch(() => showToast("Progress could not be saved — will not retry"));
       }, 2000);
     }
 

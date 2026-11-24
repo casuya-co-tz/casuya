@@ -150,7 +150,7 @@ def _rows_from_knowledge_base(
     existing_count: int = 0,
 ) -> list:
     """Fallback: pull syllabus structure (topics -> subtopics) from the
-    knowledge base into teaching-week rows."""
+    offline syllabus reference into teaching-week rows."""
     rows = []
     try:
         subject_data = _offline.get_subject_with_form(subject_slug, form_level)

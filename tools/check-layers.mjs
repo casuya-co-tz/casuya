@@ -4,10 +4,18 @@
 //   packages/(rank 1) -> may depend on libs/ only
 //   apps/   (rank 2) -> may depend on packages/ and libs/
 // A violation is any import whose target lives in a HIGHER layer than the source.
-import { readdirSync, readFileSync, statSync } from "node:fs";
+import { existsSync, readdirSync, readFileSync, statSync } from "node:fs";
 import { join, dirname, resolve } from "node:path";
 
 const ROOT = resolve(".");
+
+function safeReaddir(dir) {
+  try {
+    return readdirSync(dir);
+  } catch {
+    return [];
+  }
+}
 const LAYER = (p) => {
   if (p.startsWith(join(ROOT, "apps"))) return 2;
   if (p.startsWith(join(ROOT, "packages"))) return 1;
@@ -30,6 +38,36 @@ function walk(dir, acc = []) {
   return acc;
 }
 
+// Workspace package name -> package directory, so `@casuya/*` alias imports
+// are checked too instead of being skipped as "bare".
+const PKG_DIRS = ["apps", "packages", "libs"];
+const ALIASES = new Map();
+for (const layer of PKG_DIRS) {
+  for (const entry of safeReaddir(join(ROOT, layer))) {
+    const pkgJson = join(ROOT, layer, entry, "package.json");
+    if (!existsSync(pkgJson)) continue;
+    try {
+      const name = JSON.parse(readFileSync(pkgJson, "utf8")).name;
+      if (name) ALIASES.set(name, join(ROOT, layer, entry));
+    } catch {
+      /* unreadable package.json is reported elsewhere */
+    }
+  }
+}
+
+function resolveTarget(from, spec) {
+  if (spec.startsWith(".") || spec.startsWith("/")) return resolve(dirname(from), spec);
+  // Workspace alias: match the longest registered package name prefix.
+  let best = null;
+  for (const [name, dir] of ALIASES) {
+    if (spec === name || spec.startsWith(name + "/")) {
+      if (!best || name.length > best[0].length) best = [name, dir];
+    }
+  }
+  if (!best) return null; // true third-party bare import (node_modules)
+  return spec === best[0] ? best[1] : join(best[1], spec.slice(best[0].length + 1));
+}
+
 const files = walk(ROOT);
 const violations = [];
 for (const file of files) {
@@ -41,8 +79,8 @@ for (const file of files) {
   while ((m = IMPORT_RE.exec(txt))) targets.push(m[2]);
   while ((m = PY_IMPORT_RE.exec(txt))) targets.push(m[1] || m[2]);
   for (let t of targets) {
-    if (!t.startsWith(".") && !t.startsWith("/")) continue; // skip bare/alias for this simple check
-    const abs = resolve(dirname(file), t);
+    const abs = resolveTarget(file, t);
+    if (abs === null) continue; // third-party bare import, outside the layered tree
     const tr = LAYER(abs);
     if (tr > rank) {
       violations.push(`${file.replace(ROOT + "\\", "")}  ->  ${t}  (imports higher layer)`);

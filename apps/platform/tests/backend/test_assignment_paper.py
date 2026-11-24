@@ -44,14 +44,6 @@ async def test_generate_assignment_paper_offline(monkeypatch):
         "subtopic_title": "Newton Laws",
     }
 
-    async def _fail_ai(*_args, **_kwargs):
-        return None, {"source": "offline"}
-
-    monkeypatch.setattr(
-        "backend.services.ai_bridge.tests.generate_test_paper",
-        _fail_ai,
-    )
-
     preset = resolve_paper_preset("physics", 4, "topical", "theory")
     paper, generator, marking, valid, issues = await generate_assignment_paper(
         ctx, "exercise", paper="theory"

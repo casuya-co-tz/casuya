@@ -1,4 +1,4 @@
-from fastapi import APIRouter, Depends, HTTPException, Request, Response
+from fastapi import APIRouter, Depends, HTTPException, Query, Request, Response
 from sqlalchemy.orm import Session
 
 from backend.config.database import get_db
@@ -12,8 +12,13 @@ router = APIRouter(prefix="/subjects", tags=["subjects"])
 
 @router.get("", response_model=list[SubjectResponse])
 @router.get("/", response_model=list[SubjectResponse])
-def list_subjects(request: Request, response: Response):
-    cached = cache_get("subjects:list", ttl_seconds=600)
+def list_subjects(
+    request: Request,
+    response: Response,
+    limit: int = Query(500, ge=1, le=1000),
+):
+    cache_key = f"subjects:list:{limit}"
+    cached = cache_get(cache_key, ttl_seconds=600)
     if cached is not None:
         not_modified = apply_public_cache(response, request, cached, max_age=300)
         if not_modified is not None:
@@ -23,9 +28,9 @@ def list_subjects(request: Request, response: Response):
     _gen = get_db()
     db: Session = next(_gen)
     try:
-        subjects = db.query(Subject).all()
+        subjects = db.query(Subject).order_by(Subject.name).limit(limit).all()
         result = [SubjectResponse(id=s.id, name=s.name, slug=s.slug) for s in subjects]
-        cache_set("subjects:list", [r.model_dump() for r in result], ttl=600)
+        cache_set(cache_key, [r.model_dump() for r in result], ttl=600)
         not_modified = apply_public_cache(response, request, result, max_age=300)
         if not_modified is not None:
             return not_modified

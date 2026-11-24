@@ -5,7 +5,6 @@ Set-Location $PSScriptRoot
 
 Write-Host "1. Typechecking..." -ForegroundColor Cyan
 npx tsc --noEmit -p "packages/blackboard/tsconfig.json"
-npx tsc --noEmit -p "packages/ai/tsconfig.json"
 npx tsc --noEmit -p "packages/editor/tsconfig.json"
 
 Write-Host "2. Building CSS..." -ForegroundColor Cyan

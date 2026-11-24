@@ -9,7 +9,6 @@ from __future__ import annotations
 from fastapi import FastAPI
 
 from backend.api import (
-    ai,
     audio,
     analytics,
     analytics_events,
@@ -22,7 +21,6 @@ from backend.api import (
     core,
     games,
     lessons,
-    math,
     metrics,
     note,
     notifications,
@@ -80,8 +78,6 @@ def include_routers(app: FastAPI) -> None:
         bookmarks,
         note,
         metrics,
-        ai,
-        math,
         assignments,
         settings_api,
         teacher_plans,

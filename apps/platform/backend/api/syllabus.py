@@ -1,6 +1,6 @@
 """API endpoints for the NECTA/TIE syllabus.
 
-Provides the curriculum data that the AI agent and platform frontend use
+Provides the curriculum data that the platform frontend uses
 to serve Tanzania-aligned educational content.
 """
 
@@ -52,8 +52,8 @@ def list_syllabus_subjects(
 def get_syllabus_subject(slug: str, request: Request, response: Response):
     """Get a NECTA/TIE subject with all topics, subtopics, and learning outcomes.
 
-    This is the primary endpoint the AI agent uses to understand the
-    exact curriculum structure for a subject.
+    This is the primary endpoint for understanding the exact curriculum
+    structure for a subject.
     """
     cache_key = f"syllabus:subject:{slug}"
     cached = cache_get(cache_key, ttl_seconds=600)
@@ -156,50 +156,3 @@ def get_syllabus_subtopic(subtopic_id: str, request: Request, response: Response
         return not_modified
     return result
 
-
-# ── AI Agent Endpoints ─────────────────────────────────────────────────────
-
-
-@router.get("/ai/curriculum-context/{slug}/{form_level}")
-@router.get("/ai/curriculum-context/{slug}/{form_level}/")
-def get_ai_curriculum_context(slug: str, form_level: int, request: Request, response: Response):
-    """Get the curriculum context string for AI prompt injection.
-
-    Returns a formatted text block describing the exact TIE syllabus
-    content for a given subject and form level. The AI tutoring engine
-    uses this to ensure responses align with the official curriculum.
-    """
-    cache_key = f"syllabus:ai-context:{slug}:{form_level}"
-    cached = cache_get(cache_key, ttl_seconds=600)
-    if cached is not None:
-        not_modified = apply_public_cache(response, request, cached, max_age=600)
-        if not_modified is not None:
-            return not_modified
-        return cached
-
-    context = syllabus_service.get_curriculum_context(slug, form_level)
-    if not context:
-        raise HTTPException(status_code=404, detail=f"No curriculum data for '{slug}' at form {form_level}")
-    result = {"subject": slug, "form_level": form_level, "context": context}
-    cache_set(cache_key, result, ttl=600)
-    not_modified = apply_public_cache(response, request, result, max_age=600)
-    if not_modified is not None:
-        return not_modified
-    return result
-
-
-@router.get("/ai/search-outcomes")
-@router.get("/ai/search-outcomes/")
-def search_syllabus_outcomes(
-    q: str = Query(..., description="Search query"),
-    subject: str | None = Query(None, description="Filter by subject slug"),
-    form_level: int | None = Query(None, description="Filter by form level"),
-):
-    """Search for learning outcomes matching a text query.
-
-    The AI agent uses this to find relevant syllabus objectives
-    when a student asks a question, ensuring the response targets
-    the correct TIE learning outcome.
-    """
-    results = syllabus_service.search_outcomes(q, subject_slug=subject, form_level=form_level)
-    return {"query": q, "results": results, "total": len(results)}

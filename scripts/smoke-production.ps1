@@ -1,107 +1,73 @@
-# Production smoke checks (services-improvement-plan section 6, ai-tutor-roadmap section 0.5)
+# Production smoke checks (health, readiness and authentication)
+# All probes are fatal by default: a deploy that fails a smoke check must fail
+# loudly. Set SMOKE_ALLOW_DEGRADED=1 only for intentional degraded-mode runs
+# (e.g. verifying fallback behaviour during a planned dependency outage).
+param(
+    [string] $PlatformUrl = $env:PLATFORM_URL,
+    [string] $SmokeEmail = $env:SMOKE_EMAIL,
+    [string] $SmokePassword = $env:SMOKE_PASSWORD,
+    [switch] $AllowDegraded
+)
+
 $ErrorActionPreference = "Stop"
 
-$platform = $env:PLATFORM_URL
-if (-not $platform) { $platform = "https://casuya-platform-production.up.railway.app" }
-$platform = $platform.TrimEnd("/")
+if (-not $PlatformUrl) { $PlatformUrl = "https://casuya-platform-production.up.railway.app" }
+$PlatformUrl = $PlatformUrl.TrimEnd("/")
+if (-not $SmokeEmail) { $SmokeEmail = "student@casuya.co.tz" }
+if (-not $SmokePassword) { $SmokePassword = "student123" }
+if ($env:SMOKE_ALLOW_DEGRADED -eq "1") { $AllowDegraded = $true }
 
-$smokeEmail = $env:SMOKE_EMAIL
-if (-not $smokeEmail) { $smokeEmail = "student@casuya.co.tz" }
-$smokePassword = $env:SMOKE_PASSWORD
-if (-not $smokePassword) { $smokePassword = "student123" }
+$failures = [System.Collections.Generic.List[string]]::new()
+
+function Assert-Probe {
+    param([string] $Name, [scriptblock] $Probe)
+    try {
+        & $Probe
+        Write-Host "PASS: $Name" -ForegroundColor Green
+    } catch {
+        $message = "$Name failed: $_"
+        if ($AllowDegraded) {
+            Write-Warning $message
+        } else {
+            $failures.Add($message)
+            Write-Error $message
+        }
+    }
+}
 
 Write-Host "== Platform health =="
-$health = Invoke-RestMethod -Uri "$platform/health" -TimeoutSec 20
-$health | ConvertTo-Json -Depth 6
-
-if ($health.status -ne "ok") { throw "Platform health not ok" }
-if (-not $health.casuya_ai.reachable) { Write-Warning "casuya-ai not reachable from platform" }
-if ($health.casuya_ai.embeddings_ready -eq $false) {
-  Write-Warning "Hybrid RAG embeddings not loaded on casuya-ai (BM25-only until embeddings.json is built)"
+$health = $null
+Assert-Probe "health" {
+    $script:health = Invoke-RestMethod -Uri "$PlatformUrl/health" -TimeoutSec 20
+    $script:health | ConvertTo-Json -Depth 6
+    if ($script:health.status -ne "ok") { throw "status=$($script:health.status)" }
 }
 
 Write-Host ""
 Write-Host "== Platform readyz =="
-try {
-  Invoke-RestMethod -Uri "$platform/readyz" -TimeoutSec 20 | ConvertTo-Json -Depth 4
-} catch {
-  Write-Warning "readyz probe failed: $_"
-}
-
-if ($env:SMOKE_SKIP_STREAM -eq "1") {
-  Write-Warning "SMOKE_SKIP_STREAM=1 - skipping tutor stream probe"
-  Write-Host ""
-  Write-Host "Smoke complete."
-  exit 0
+Assert-Probe "readyz" {
+    $ready = Invoke-RestMethod -Uri "$PlatformUrl/readyz" -TimeoutSec 20
+    $ready | ConvertTo-Json -Depth 4
+    # /readyz now returns HTTP 503 when the primary DB is down, so a 200 here
+    # must still report status=ok. Redis is only required when explicitly set.
+    if ($ready.status -ne "ok") { throw "status=$($ready.status) (db=$($ready.database), redis=$($ready.redis))" }
 }
 
 Write-Host ""
-Write-Host "== Tutor stream probe =="
-try {
-  $loginBody = @{ email = $smokeEmail; password = $smokePassword } | ConvertTo-Json
-  $login = Invoke-RestMethod -Uri "$platform/auth/login" -Method POST -ContentType "application/json" -Body $loginBody -TimeoutSec 20
-  $token = $login.access_token
-  if (-not $token) { throw "Login succeeded but no access_token returned" }
-  Write-Host "Logged in as $smokeEmail"
-
-  $streamBody = @{
-    question = "Smoke test: what is a linear equation?"
-    lesson_context = "A linear equation has the form ax + b = 0."
-    subject_slug = "mathematics"
-    form_level = 1
-    language = "en"
-  } | ConvertTo-Json
-
-  Add-Type -AssemblyName System.Net.Http
-  $handler = New-Object System.Net.Http.HttpClientHandler
-  $client = New-Object System.Net.Http.HttpClient($handler)
-  $client.Timeout = [TimeSpan]::FromSeconds(60)
-  [void]$client.DefaultRequestHeaders.TryAddWithoutValidation("Authorization", "Bearer $token")
-
-  $content = New-Object System.Net.Http.StringContent($streamBody, [System.Text.Encoding]::UTF8, "application/json")
-  $request = New-Object System.Net.Http.HttpRequestMessage([System.Net.Http.HttpMethod]::Post, "$platform/ai/tutoring/stream")
-  $request.Content = $content
-
-  $response = $client.SendAsync($request, [System.Net.Http.HttpCompletionOption]::ResponseHeadersRead).GetAwaiter().GetResult()
-  if (-not $response.IsSuccessStatusCode) {
-    throw "Tutor stream HTTP $($response.StatusCode)"
-  }
-
-  $stream = $response.Content.ReadAsStreamAsync().GetAwaiter().GetResult()
-  $reader = New-Object System.IO.StreamReader($stream)
-  $deadline = (Get-Date).AddSeconds(55)
-  $sawEvent = $false
-  $firstByteMs = $null
-  $started = Get-Date
-
-  while ((Get-Date) -lt $deadline) {
-    if ($reader.EndOfStream) { break }
-    $line = $reader.ReadLine()
-    if ($null -eq $line) { Start-Sleep -Milliseconds 50; continue }
-    if ($line.StartsWith("data:")) {
-      $sawEvent = $true
-      if ($null -eq $firstByteMs) {
-        $firstByteMs = [int]((Get-Date) - $started).TotalMilliseconds
-      }
-      if ($line.Contains('"done": true') -or $line.Contains('"done":true')) { break }
-    }
-  }
-
-  $reader.Dispose()
-  $client.Dispose()
-
-  if (-not $sawEvent) { throw "Tutor stream returned no SSE data events within 55s" }
-
-  Write-Host "First SSE event in ${firstByteMs}ms"
-  if ($firstByteMs -gt 15000) {
-    Write-Warning "First tutor chunk slower than 15s - check casuya-ai provider chain"
-  } else {
-    Write-Host "Tutor stream OK"
-  }
-} catch {
-  Write-Warning "Tutor stream probe failed: $_"
-  Write-Warning "Platform health passed; investigate AI provider latency separately."
+Write-Host "== Authentication probe =="
+Assert-Probe "authentication" {
+    $loginBody = @{ email = $SmokeEmail; password = $SmokePassword } | ConvertTo-Json
+    $login = Invoke-RestMethod -Uri "$PlatformUrl/auth/login" -Method POST -ContentType "application/json" -Body $loginBody -TimeoutSec 20
+    if (-not $login.access_token) { throw "login succeeded but returned no access_token" }
+    Write-Host "Logged in as $SmokeEmail"
+    # Verify the token actually authorizes a request, not just that it exists.
+    $me = Invoke-RestMethod -Uri "$PlatformUrl/users/me" -Headers @{ Authorization = "Bearer $($login.access_token)" } -TimeoutSec 20
+    if (-not $me.id) { throw "/auth/me returned no user id" }
 }
 
 Write-Host ""
-Write-Host "Smoke complete."
+if ($failures.Count -gt 0) {
+    throw "Smoke checks failed ($($failures.Count)):`n- $($failures -join "`n- ")"
+}
+
+Write-Host "Smoke complete." -ForegroundColor Green

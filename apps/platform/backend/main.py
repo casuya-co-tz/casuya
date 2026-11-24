@@ -25,13 +25,15 @@ settings = get_settings()
 configure_logging()
 init_sentry()
 
+_is_prod = settings.environment.strip().lower() in {"production", "prod"}
+
 app = FastAPI(
     title=settings.app_name,
     description="Offline-first lesson delivery, quizzes, games, and progress tracking for Tanzanian secondary education.",
     version="1.0.0",
-    docs_url="/docs",
-    redoc_url="/redoc",
-    openapi_url="/openapi.json",
+    docs_url=None if _is_prod else "/docs",
+    redoc_url=None if _is_prod else "/redoc",
+    openapi_url=None if _is_prod else "/openapi.json",
     debug=settings.debug,
     lifespan=lifespan,
     redirect_slashes=False,

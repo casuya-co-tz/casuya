@@ -42,7 +42,7 @@ def _parse_plan_json(raw: str) -> dict | None:
 
 
 def _is_complete_lesson_plan(plan) -> bool:
-    """Accept an AI-generated lesson plan only when it has the domain structure
+    """Accept a generated lesson plan only when it has the domain structure
     the renderer needs. Anything less (e.g. a Headers-only or explanation
     payload) is rejected so the generator falls back to the offline builder."""
     if not isinstance(plan, dict):
@@ -58,7 +58,7 @@ def _is_complete_lesson_plan(plan) -> bool:
 
 
 def _is_complete_scheme(plan) -> bool:
-    """Accept an AI-generated scheme of work only when it carries weeks."""
+    """Accept a generated scheme of work only when it carries weeks."""
     if not isinstance(plan, dict):
         return False
     if not isinstance(plan.get("header"), dict):

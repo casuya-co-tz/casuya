@@ -15,12 +15,13 @@ from fastapi.responses import Response
 
 from backend.config.settings import get_settings
 from backend.middleware.auth import get_current_user
+from backend.services.http_client import get_async_client
 
 router = APIRouter(tags=["audio-tts"])
 
 
 @router.post("/tts")
-def proxy_tts(
+async def proxy_tts(
     text: str = Body(..., min_length=1, max_length=1000),
     lang: str = Body("sw"),
     speed: float = Body(1.0, ge=0.5, le=2.0),
@@ -46,8 +47,8 @@ def proxy_tts(
     body = {"user_id": current_user.get("sub"), "text": text, "lang": lang, "speed": speed}
 
     try:
-        with httpx.Client(timeout=120) as client:
-            resp = client.post(url, headers=headers, json=body)
+        client = get_async_client(timeout=120)
+        resp = await client.post(url, headers=headers, json=body)
     except httpx.HTTPError as exc:
         raise HTTPException(status_code=503, detail=f"audio-tts unavailable: {exc}") from exc
 

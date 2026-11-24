@@ -67,7 +67,7 @@ async def generate_assignment_paper(
 ) -> tuple[dict, str, dict | None, bool, list[str]]:
     """Generate a paper for teacher assignments.
 
-    STEM subjects use the shared NECTA preset catalog (Test Generator parity).
+    STEM subjects use the shared NECTA preset catalog.
     Other subjects keep the legacy section-based generator.
     """
     subject = (ctx.get("subject_slug") or "").lower()
@@ -84,22 +84,7 @@ async def generate_assignment_paper(
         if not topics:
             topics = [ctx.get("lesson_title") or subject.title()]
 
-        from backend.services.ai_bridge.tests import generate_test_paper
-
-        paper_obj, meta = await generate_test_paper(
-            test_type=test_type,
-            subject_slug=subject,
-            form_level=form_level,
-            topic=ctx.get("subtopic_title") or ctx.get("topic_title") or "",
-            topics=topics,
-            paper=paper,
-        )
-        marking = (meta or {}).get("markingScheme")
-        if paper_obj:
-            valid, issues = validate_necta_paper(paper_obj, preset)
-            if valid:
-                return paper_obj, (meta or {}).get("source", "casuya-ai"), marking, True, []
-
+        # Build the paper offline directly from the lesson content.
         offline = build_offline_paper(
             preset,
             subject_slug=subject,
@@ -111,12 +96,7 @@ async def generate_assignment_paper(
         valid, issues = validate_necta_paper(paper_obj, preset)
         return paper_obj, "local", marking, valid, issues
 
-    from backend.services.ai_bridge.exam import generate_exam_paper
-
-    _kind, dur, spec = build_spec(kind, sections, duration)
-    paper_obj, generator = await generate_exam_paper(ctx, _kind, spec, dur)
-    ok, issues = validate_paper(paper_obj)
-    return paper_obj, generator, None, ok, issues
+    return None, "offline", None, False, ["Paper generation unavailable"]
 
 
 __all__ = [

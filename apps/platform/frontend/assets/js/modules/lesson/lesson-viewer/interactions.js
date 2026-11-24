@@ -92,20 +92,10 @@ function bindLessonInteractions({ container, iframe, lessonId, isStudent, canBoo
           ${pct >= 50 ? '<p style="color:var(--color-success)">✅ Passed!</p>' : '<p style="color:red">❌ Try again</p>'}
           ${hasWork && result.work_score < result.work_total ? '<p style="font-size:0.8rem;color:var(--color-text-muted)">Tip: open "Show your work" on each question to earn work credit.</p>' : ''}
         `;
-        if (pct < 50 && Array.isArray(result.wrong_questions) && result.wrong_questions.length && typeof mountLessonQuizTutor === "function") {
-          mountLessonQuizTutor(el, result.wrong_questions, {
-            lessonId: lessonId,
-            lesson: lesson,
-            lessonTitle: lesson && lesson.title,
-            lessonContent: lessonContent,
-            subject_slug: lesson && lesson.subject_slug,
-            form_level: lesson && lesson.form_level,
-            topic: lesson && lesson.topic_title,
-            subtopic: lesson && lesson.subtopic_title,
-          });
+        if (pct >= 50) {
+          sendProgress(100, pct);
+          state.quizScoreSent = true;
         }
-        sendProgress(100, pct);
-        state.quizScoreSent = true;
       } catch(err) {
         document.getElementById("quiz-result").style.display = "block";
         document.getElementById("quiz-result").innerHTML = `<p style="color:red">Error: ${escapeHtml(err.message)}</p>`;

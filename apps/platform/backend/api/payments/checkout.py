@@ -7,7 +7,7 @@ import json
 from fastapi import APIRouter, Depends, HTTPException, Request
 
 from backend.api.payments.common import _service_unavailable
-from backend.config.settings import get_settings
+from backend.config.settings import get_settings, is_payment_mock_enabled
 from backend.middleware.auth import get_current_user
 from backend.schemas.payments import CheckoutRequest, PaymentResponse
 from backend.services.payment_service import handle_webhook_payload, initiate_checkout
@@ -48,7 +48,7 @@ async def azampay_webhook(request: Request):
     body_bytes = await request.body()
     settings = get_settings()
 
-    if not getattr(settings, "azampay_mock", False):
+    if not is_payment_mock_enabled(settings):
         secret = settings.azampay_webhook_secret or settings.azampay_client_secret
         signature = (
             request.headers.get("X-Signature")

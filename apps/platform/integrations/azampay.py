@@ -2,7 +2,7 @@ import re
 
 from httpx import Client
 
-from backend.config.settings import get_settings
+from backend.config.settings import get_settings, is_payment_mock_enabled
 
 
 # AzamPay uses a separate authenticator host for token issuance and a
@@ -74,7 +74,7 @@ def mobile_checkout(amount_tzs: float, mobile_number: str, provider: str, extern
 
     # Dev-only mock mode: simulate a successful AzamPay response without
     # contacting AzamPay (used when sandbox credentials aren't activated yet).
-    if getattr(settings, "azampay_mock", False):
+    if is_payment_mock_enabled(settings):
         import uuid
 
         mock_ref = f"MOCK-{uuid.uuid4().hex[:12].upper()}"

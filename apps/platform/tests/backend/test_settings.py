@@ -26,16 +26,17 @@ def test_admin_sees_new_teacher_modules():
     assert resp.status_code == 200
     teacher = resp.json().get("teacher", {})
     assert teacher.get("class") is True
-    assert teacher.get("teaching-docs") is True
+    # The Teaching Docs view was removed — it must no longer be a module.
+    assert "teaching-docs" not in teacher
 
 
-def test_admin_sees_test_generator_and_library_modules():
+def test_admin_sees_files_and_library_modules():
     admin_headers, _ = _register("admin")
     resp = client.get("/settings/modules", headers=admin_headers)
     assert resp.status_code == 200
     for role in ("student", "teacher"):
         mods = resp.json().get(role, {})
-        assert mods.get("test-generator") is True
+        assert mods.get("files") is True
         assert mods.get("library") is True
 
 
@@ -43,7 +44,6 @@ def test_new_teacher_modules_default_enabled_for_teacher():
     teacher_headers, _ = _register("teacher")
     resp = client.get("/settings/modules/my", headers=teacher_headers)
     assert resp.status_code == 200
-    assert resp.json().get("teaching-docs") is True
     assert resp.json().get("class") is True
 
 
@@ -51,59 +51,63 @@ def test_new_student_modules_default_enabled_for_student():
     student_headers, _ = _register("student")
     resp = client.get("/settings/modules/my", headers=student_headers)
     assert resp.status_code == 200
-    assert resp.json().get("test-generator") is True
+    assert resp.json().get("files") is True
     assert resp.json().get("library") is True
 
 
-def test_admin_can_toggle_test_generator_and_library_off():
+def test_admin_can_toggle_files_and_library_off():
     admin_headers, _ = _register("admin")
     student_headers, _ = _register("student")
     teacher_headers, _ = _register("teacher")
 
     updated = client.put("/settings/modules", headers=admin_headers, json={
-        "student": {"test-generator": False, "library": False},
-        "teacher": {"test-generator": False, "library": False},
+        "student": {"files": False, "library": False},
+        "teacher": {"files": False, "library": False},
     }).json()
-    assert updated["student"]["test-generator"] is False
+    assert updated["student"]["files"] is False
     assert updated["student"]["library"] is False
-    assert updated["teacher"]["test-generator"] is False
+    assert updated["teacher"]["files"] is False
     assert updated["teacher"]["library"] is False
 
     student_my = client.get("/settings/modules/my", headers=student_headers).json()
-    assert student_my["test-generator"] is False
+    assert student_my["files"] is False
     assert student_my["library"] is False
 
     teacher_my = client.get("/settings/modules/my", headers=teacher_headers).json()
-    assert teacher_my["test-generator"] is False
+    assert teacher_my["files"] is False
     assert teacher_my["library"] is False
 
 
-def test_admin_can_toggle_teaching_docs_off():
+def test_removed_teaching_docs_module_is_stripped():
+    """A stale stored entry for a removed module must not resurface."""
+    import json
+
     admin_headers, _ = _register("admin")
-    teacher_headers, _ = _register("teacher")
 
-    current = client.get("/settings/modules", headers=admin_headers).json()
+    # Simulate a settings row written before the Teaching Docs view was removed.
+    stale = client.get("/settings/modules", headers=admin_headers).json()
+    stale.setdefault("teacher", {})["teaching-docs"] = False
 
-    # Use whatever subset the backend exposes to ensure the toggle persists.
-    updated = client.put("/settings/modules", headers=admin_headers, json={
-        "teacher": {"teaching-docs": False, "class": False},
-    }).json()
-    assert updated["teacher"]["teaching-docs"] is False
-    assert updated["teacher"]["class"] is False
+    import backend.config.database as db_module
+    from backend.api.settings.modules import MODULE_VISIBILITY_KEY
+    from backend.models.setting import Setting
 
-    # Teacher sees the disabled state.
-    my = client.get("/settings/modules/my", headers=teacher_headers).json()
-    assert my["teaching-docs"] is False
-    assert my["class"] is False
+    with db_module.SessionLocal() as s:
+        row = s.query(Setting).filter(Setting.key == MODULE_VISIBILITY_KEY).first()
+        if row:
+            row.value = json.dumps(stale)
+        else:
+            s.add(Setting(key=MODULE_VISIBILITY_KEY, value=json.dumps(stale)))
+        s.commit()
+
+    teacher = client.get("/settings/modules", headers=admin_headers).json().get("teacher", {})
+    assert "teaching-docs" not in teacher
 
 
 def test_student_role_not_affected_by_teacher_toggle():
-    admin_headers, _ = _register("admin")
     student_headers, _ = _register("student")
 
-    client.put("/settings/modules", headers=admin_headers, json={
-        "teacher": {"teaching-docs": False},
-    })
     resp = client.get("/settings/modules/my", headers=student_headers)
     assert resp.status_code == 200
-    assert "teaching-docs" not in resp.json()
+    # Teacher-only modules never appear in the student payload.
+    assert "class" not in resp.json()

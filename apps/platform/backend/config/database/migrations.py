@@ -7,6 +7,17 @@ from sqlalchemy.exc import SQLAlchemyError
 logger = logging.getLogger(__name__)
 
 
+def _add_column_sql(dialect_name: str, table: str, column: str, type_sql: str) -> str:
+    """Build an idempotent ADD COLUMN statement for the active dialect.
+
+    PostgreSQL supports ``ADD COLUMN IF NOT EXISTS``; SQLite does not, so the
+    caller only emits the plain form after confirming the column is missing.
+    """
+    if dialect_name == "postgresql":
+        return f"ALTER TABLE {table} ADD COLUMN IF NOT EXISTS {column} {type_sql}"
+    return f"ALTER TABLE {table} ADD COLUMN {column} {type_sql}"
+
+
 def init_db() -> None:
     from backend.models import (  # noqa: F401
         activity,
@@ -33,8 +44,6 @@ def init_db() -> None:
         syllabus,
         teacher,
         teacher_plan,
-        tutor_review,
-        tutor_thread,
         user,
     )
 
@@ -55,6 +64,7 @@ def init_db() -> None:
             # first created.
             try:
                 insp = inspect(engine)
+                dialect = engine.dialect.name
                 db_cols = {t: {c["name"] for c in insp.get_columns(t)} for t in insp.get_table_names()}
                 for table in Base.metadata.tables.values():
                     if table.name not in db_cols:
@@ -62,13 +72,31 @@ def init_db() -> None:
                     for col in table.columns:
                         if col.name in db_cols[table.name]:
                             continue
+                        # SQLite cannot add a NOT NULL column without a default,
+                        # so skip those instead of aborting the whole migration.
+                        if (
+                            dialect != "postgresql"
+                            and not col.nullable
+                            and col.server_default is None
+                            and not col.primary_key
+                        ):
+                            logger.warning(
+                                "init_db: cannot add NOT NULL column %s.%s on %s; needs a manual migration",
+                                table.name,
+                                col.name,
+                                dialect,
+                            )
+                            continue
                         try:
                             with conn.begin_nested():
                                 conn.execute(
                                     text(
-                                        f"ALTER TABLE {table.name} "
-                                        f"ADD COLUMN IF NOT EXISTS {col.name} "
-                                        f"{col.type.compile(engine.dialect)}"
+                                        _add_column_sql(
+                                            dialect,
+                                            table.name,
+                                            col.name,
+                                            col.type.compile(engine.dialect),
+                                        )
                                     )
                                 )
                         except Exception as exc:
@@ -82,20 +110,8 @@ def init_db() -> None:
                 logger.exception("init_db: column reconciliation loop failed: %s", exc)
 
             is_postgres = engine.dialect.name == "postgresql"
-            plan_id_alter = (
-                "DO $$ BEGIN ALTER TABLE payments ADD COLUMN plan_id VARCHAR; "
-                "EXCEPTION WHEN duplicate_column THEN NULL; END $$"
-                if is_postgres
-                else "ALTER TABLE payments ADD COLUMN IF NOT EXISTS plan_id VARCHAR"
-            )
-            plan_name_alter = (
-                "DO $$ BEGIN ALTER TABLE payments ADD COLUMN plan_name VARCHAR; "
-                "EXCEPTION WHEN duplicate_column THEN NULL; END $$"
-                if is_postgres
-                else "ALTER TABLE payments ADD COLUMN IF NOT EXISTS plan_name VARCHAR"
-            )
 
-            for stmt in [
+            index_statements = [
                 "CREATE INDEX IF NOT EXISTS ix_topic_subject_id ON topics(subject_id)",
                 "CREATE INDEX IF NOT EXISTS ix_subtopic_topic_id ON subtopics(topic_id)",
                 "CREATE INDEX IF NOT EXISTS ix_lesson_subtopic_id ON lessons(subtopic_id)",
@@ -142,28 +158,15 @@ def init_db() -> None:
                 "CREATE INDEX IF NOT EXISTS ix_enrollment_classroom ON classroom_enrollments(classroom_id)",
                 "CREATE INDEX IF NOT EXISTS ix_enrollment_student ON classroom_enrollments(student_id)",
                 "CREATE INDEX IF NOT EXISTS ix_file_record_kind ON file_records(kind)",
-                # Full-text search: functional GIN index over to_tsvector(title).
-                # Postgres-only (SQLite tests fall back to LIKE in search_service).
-                (
+            ]
+            # Full-text search: functional GIN index over to_tsvector(title).
+            # Postgres-only (SQLite tests fall back to LIKE in search_service).
+            if is_postgres:
+                index_statements.append(
                     "CREATE INDEX IF NOT EXISTS ix_lessons_title_fts "
                     "ON lessons USING gin (to_tsvector('english', title))"
-                    if is_postgres
-                    else "-- noop"
-                ),
-                "ALTER TABLE games ADD COLUMN IF NOT EXISTS package_html TEXT",
-                "ALTER TABLE quizzes ADD COLUMN IF NOT EXISTS package_html TEXT",
-                "ALTER TABLE lessons ADD COLUMN IF NOT EXISTS package_html TEXT",
-                "ALTER TABLE lessons ADD COLUMN IF NOT EXISTS package_filename VARCHAR",
-                "ALTER TABLE lessons ADD COLUMN IF NOT EXISTS created_by VARCHAR",
-                "ALTER TABLE lessons ADD COLUMN IF NOT EXISTS slug VARCHAR",
-                "ALTER TABLE lessons ADD COLUMN IF NOT EXISTS package_version VARCHAR",
-                "ALTER TABLE file_records ADD COLUMN IF NOT EXISTS data BYTEA",
-                plan_id_alter,
-                plan_name_alter,
-                # PostgreSQL does not support IF NOT EXISTS for ADD COLUMN.
-                # Use a DO block so the migration is idempotent.
-                "DO $$ BEGIN ALTER TABLE students ADD COLUMN accessibility_prefs TEXT; EXCEPTION WHEN duplicate_column THEN NULL; END $$",
-            ]:
+                )
+            for stmt in index_statements:
                 # Run each statement in its own savepoint so a single failure
                 # (e.g. a missing column on an older schema) cannot abort the
                 # transaction and prevent the remaining ALTERs from applying.
@@ -173,4 +176,8 @@ def init_db() -> None:
                 except Exception as exc:
                     logger.warning("init_db: statement failed (%s...): %s", stmt.splitlines()[0][:80], exc)
     except SQLAlchemyError as exc:
-        logger.warning("init_db failed, continuing without DB: %s", exc)
+        # Never silently swallow a real DB failure: the startup sequence owns
+        # the decision to continue (REQUIRE_DATABASE_ON_STARTUP). Swallowing it
+        # here made that fail-fast flag ineffective.
+        logger.error("init_db failed: %s", exc)
+        raise

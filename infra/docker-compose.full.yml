@@ -1,7 +1,7 @@
 # Optional full microservice stack — use with base compose:
 #   docker compose -f infra/docker-compose.yml -f infra/docker-compose.full.yml --profile full up -d
 #
-# Adds payments + audio TTS/STT + casuya-ai for end-to-end local testing.
+# Adds payments + audio TTS/STT for end-to-end local testing.
 
 services:
   payments:
@@ -38,18 +38,6 @@ services:
       dockerfile: Dockerfile
     ports:
       - "8020:8000"
-    restart: unless-stopped
-
-  casuya-ai:
-    profiles: [full]
-    build:
-      context: ..
-      dockerfile: packages/ai/Dockerfile
-    ports:
-      - "3000:3000"
-    environment:
-      CASUYA_AI_PORT: "3000"
-      CASUYA_AI_API_KEY: ${CASUYA_AI_API_KEY:-dev-ai-key}
     restart: unless-stopped
 
   ocr-math:

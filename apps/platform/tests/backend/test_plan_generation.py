@@ -1,278 +1,158 @@
-"""Tests for AI-driven lesson plan generation acceptance and repair.
+"""Offline lesson-plan generation tests.
 
-Covers generate_lesson_plan() against AI mocks: complete-plan acceptance,
-weak-cell repair, near-zero offline recovery on failing repairs, TIE
-competence override, incomplete-AI fallback, and the AI prompt asking for
-verbatim TIE competence statements. Scheme-of-work tests live in
-``test_plan_generation_scheme.py``.
+Covers ``generate_lesson_plan()``: deterministic offline builder acceptance,
+the TIE four-stage progression shape, stage-specific assessment criteria
+quality, TIE competence authority, and the returned source marker. The
+scheme-of-work coverage lives in ``test_plan_generation_scheme.py``.
 """
 
-from backend.services.teacher_plan_service import (
-    _build_lesson_plan_prompt,
-    generate_lesson_plan,
-)
+import asyncio
+
+from backend.services.teacher_plan_service import generate_lesson_plan
+from backend.services.teacher_plans.offline import _progression_quality_issues
 
 
 def _run(coro):
-    import asyncio
-
     return asyncio.run(coro)
 
 
-def _async_return(value):
-    async def _fake(*args, **kwargs):
-        return value
-
-    return _fake
-
-
-def _curriculum_ctx(*args, **kwargs):
-    return "curriculum"
-
-
-def _ref_grounding(*args, **kwargs):
-    return {
-        "doc_type": "lesson_plan",
-        "title": "Algebra Reference",
-        "content": {
-            "plan_details": [{
-                "teaching_structure": [
-                    {"stage": "Introduction", "assessment_criteria": "Students recall algebraic terms from prior knowledge"},
-                    {"stage": "Competence Development", "assessment_criteria": "Students solve linear equations accurately in pairs"},
-                    {"stage": "Design", "assessment_criteria": "Students model word problems as equations with variables"},
-                    {"stage": "Realizations", "assessment_criteria": "Students present and justify their solutions to the class"},
-                ],
-            }]
-        },
-    }
+def _suppress_reference_grounding(monkeypatch):
+    """Keep these tests on the deterministic scaffold / TIE-fallback path."""
+    monkeypatch.setattr(
+        "backend.services.teacher_plans.offline.fetch_reference_grounding",
+        lambda *a, **k: None,
+    )
+    monkeypatch.setattr(
+        "backend.services.teacher_plans.competences.fetch_reference_grounding",
+        lambda *a, **k: None,
+    )
+    monkeypatch.setattr(
+        "backend.services.teacher_plans.competences.lookup_competence",
+        lambda *a, **k: None,
+    )
+    monkeypatch.setattr(
+        "backend.services.teacher_plans.competences.ts_get_specific_competences",
+        lambda *a, **k: [],
+    )
+    monkeypatch.setattr(
+        "backend.services.teacher_plans.offline_lesson.ts_get_specific_competences",
+        lambda *a, **k: [],
+    )
 
 
-def _ai_plan_progression(overrides=None):
-    stages = [
-        {"stage": "Introduction", "time": "10 min",
-         "teacher_activity": "Shows word cards and asks oral questions about unknown variables.",
-         "learner_activity": "Observe the word cards and answer the oral questions.",
-         "assessment_criteria": "Observe whether students, guided by your word-card prompt, identify the unknown variable correctly."},
-        {"stage": "Competence Development", "time": "20 min",
-         "teacher_activity": "Guides groups to convert scenarios into equations.",
-         "learner_activity": "In groups, convert scenarios into equations and solve them.",
-         "assessment_criteria": "Check that students, guided by your demonstration, successfully convert the scenarios into equations."},
-        {"stage": "Design", "time": "5 min",
-         "teacher_activity": "Assigns individual contextual problems and asks students to write their own word problems.",
-         "learner_activity": "Formulate individual word problems for a peer to solve.",
-         "assessment_criteria": "Verify that students formulate a correct word problem and solve the peer-given one."},
-        {"stage": "Realizations", "time": "5 min",
-         "teacher_activity": "Guides summary and gives exit ticket questions.",
-         "learner_activity": "Complete exit ticket questions individually.",
-         "assessment_criteria": "Verify that students complete the exit ticket questions correctly and independently."},
-    ]
-    for idx, patch in (overrides or {}).items():
-        stages[idx].update(patch)
-    return {
-        "header": {"school_name": "AI School", "teacher_name": "AI Teacher", "class_name": "Form 2"},
-        "competence_architecture": {
-            "main_competence": "Main", "specific_competence": "Spec",
-            "main_learning_activity": "MLA", "specific_learning_activity": "SLA",
-            "lesson_objective": "Obj",
-        },
-        "resources_strategies": {"resources": [], "strategies": []},
-        "progression_matrix": stages,
-        "evaluation_learners": [], "evaluation_teacher": [], "remarks": "",
-    }
-
-
-def _plan_ai(monkeypatch, *patches):
-    for attr, fn in patches:
-        monkeypatch.setattr(f"backend.services.teacher_plans.{attr}", fn)
-
-
-def test_lesson_plan_ai_keeps_strong_stage_specific_criteria(monkeypatch):
-    """Good, naturally-written AI Assessment Criteria survive: they are not
-    clobbered by templates when they already evaluate the stage (actor-named,
-    non-generic), matching the reference-library quality teachers expect."""
-    ai_plan = {
-        "header": {"school_name": "AI School", "teacher_name": "AI Teacher", "class_name": "Form 2"},
-        "competence_architecture": {
-            "main_competence": "Main", "specific_competence": "Spec",
-            "main_learning_activity": "MLA", "specific_learning_activity": "SLA",
-            "lesson_objective": "Obj",
-        },
-        "resources_strategies": {"resources": [], "strategies": []},
-        "progression_matrix": [
-            {"stage": "Introduction", "time": "10 min",
-             "teacher_activity": "Shows word cards and asks oral questions about unknown variables.",
-             "learner_activity": "Observe the word cards and answer the oral questions.",
-             "assessment_criteria": "Learners recall unknown quantities from daily situations and state why variables matter."},
-            {"stage": "Competence Development", "time": "20 min",
-             "teacher_activity": "Guides groups to convert scenarios into equations.",
-             "learner_activity": "In groups, convert scenarios into equations and solve them.",
-             "assessment_criteria": "Learners correctly convert scenarios into equations and solve them accurately."},
-            {"stage": "Design", "time": "5 min",
-             "teacher_activity": "Assigns individual contextual problems and asks students to write their own word problems.",
-             "learner_activity": "Formulate individual word problems for a peer to solve.",
-             "assessment_criteria": "Learners formulate correct word problems and accurately solve a peer's problem."},
-            {"stage": "Realizations", "time": "5 min",
-             "teacher_activity": "Guides summary and gives exit ticket questions.",
-             "learner_activity": "Complete exit ticket questions individually.",
-             "assessment_criteria": "Learners complete the exit ticket correctly and state the key takeaway."},
-        ],
-        "evaluation_learners": [], "evaluation_teacher": [], "remarks": "",
-    }
-    _plan_ai(monkeypatch, (
-        "service._call_ai_service", _async_return(ai_plan),
-    ), (
-        "service.get_curriculum_context", _curriculum_ctx,
-    ), (
-        "offline.fetch_reference_grounding", lambda *a, **k: None,
+def _generate(**kwargs):
+    return _run(generate_lesson_plan(
+        subject_slug=kwargs.get("subject_slug", "mathematics"),
+        form_level=kwargs.get("form_level", 2),
+        topic=kwargs.get("topic", "Algebra"),
+        subtopic=kwargs.get("subtopic", "Linear Equations"),
+        school_name=kwargs.get("school_name", "X"),
+        teacher_name=kwargs.get("teacher_name", "Y"),
+        number_of_students=kwargs.get("number_of_students", 40),
+        duration_minutes=kwargs.get("duration_minutes", 40),
     ))
-    plan, _source = _run(generate_lesson_plan(
-        subject_slug="mathematics", form_level=2, topic="Algebra",
-        subtopic="Linear Equations", school_name="X", teacher_name="Y",
-    ))
+
+
+def test_lesson_plan_offline_returns_complete_valid_plan(monkeypatch):
+    """The deterministic offline builder always returns a complete lesson plan:
+    header, competence architecture, progression matrix and evaluation fields."""
+    _suppress_reference_grounding(monkeypatch)
+    plan, source = _generate()
+    assert source == "offline"
+    for key in (
+        "header", "competence_architecture", "resources_strategies",
+        "progression_matrix", "fields", "evaluation_learners", "evaluation_teacher", "remarks",
+    ):
+        assert key in plan, key
+    header = plan["header"]
+    assert header["school_name"] == "X"
+    assert header["teacher_name"] == "Y"
+    assert header["class_name"] == "Form 2"
     matrix = plan["progression_matrix"]
-    assert matrix[0]["assessment_criteria"] == (
-        "Learners recall unknown quantities from daily situations and state why variables matter."
-    )
-    assert matrix[3]["assessment_criteria"] == (
-        "Learners complete the exit ticket correctly and state the key takeaway."
-    )
-    criteria = [r["assessment_criteria"] for r in matrix]
-    assert len(set(criteria)) == 4, "each stage keeps its own unique criterion"
+    assert [r["stage"] for r in matrix] == [
+        "Introduction", "Competence Development", "Design", "Realizations",
+    ]
+    for row in matrix:
+        for key in ("teacher_activity", "learner_activity", "assessment_criteria"):
+            assert (row.get(key) or "").strip(), (row.get("stage"), key)
     # TIE time weights: Introduction 5 / CD 15 / Design 12 / Realizations 8.
     assert [r["time"] for r in matrix] == ["5 min", "15 min", "12 min", "8 min"]
 
 
-def test_lesson_plan_ai_repairs_weak_cells(monkeypatch):
-    """When the AI's first attempt has broken progression cells, it is asked to
-    repair precisely those cells before the plan is accepted."""
-    weak = _ai_plan_progression({0: {"teacher_activity": "", "assessment_criteria": "Students will learn the topic."}})
-    fixed = _ai_plan_progression()
-    calls = {"n": 0}
-
-    async def _fake(ep, payload):
-        calls["n"] += 1
-        return weak if calls["n"] == 1 else fixed
-
-    _plan_ai(monkeypatch, (
-        "service._call_ai_service", _fake,
-    ), (
-        "service.get_curriculum_context", _curriculum_ctx,
-    ), (
-        "offline.fetch_reference_grounding", lambda *a, **k: None,
-    ))
-    plan, _source = _run(generate_lesson_plan(
-        subject_slug="mathematics", form_level=2, topic="Algebra",
-        subtopic="Linear Equations", school_name="X", teacher_name="Y",
-    ))
-    assert calls["n"] == 2, "expected one initial call plus one repair round"
-    assert plan["header"]["school_name"] == "AI School"
-    assert plan["progression_matrix"][0]["teacher_activity"].startswith("Shows word cards")
-    assert "students will learn" not in plan["progression_matrix"][0]["assessment_criteria"].lower()
+def test_lesson_plan_offline_progression_passes_quality_gate(monkeypatch):
+    """Offline generation is deterministic, so the progression quality gate
+    passes outright - no AI repair round is ever needed."""
+    _suppress_reference_grounding(monkeypatch)
+    plan, source = _generate()
+    assert source == "offline"
+    assert _progression_quality_issues(plan, "en") == []
 
 
-def test_lesson_plan_ai_failing_repairs_use_near_zero_offline_recovery(monkeypatch):
-    """If the AI cannot fix its progression table after the allowed repair
-    rounds, only the progression matrix is rebuilt from the deterministic
-    builder; the rest of the AI plan (header, competences) is preserved."""
-    broken = _ai_plan_progression({
-        0: {"teacher_activity": "", "learner_activity": "", "assessment_criteria": "Students will learn the topic."},
-        1: {"teacher_activity": "", "learner_activity": "", "assessment_criteria": "Students will learn the topic."},
-        2: {"teacher_activity": "", "learner_activity": "", "assessment_criteria": "Students will learn the topic."},
-        3: {"teacher_activity": "", "learner_activity": "", "assessment_criteria": "Students will learn the topic."},
-    })
-    _plan_ai(monkeypatch, (
-        "service._call_ai_service", _async_return(broken),
-    ), (
-        "service.get_curriculum_context", _curriculum_ctx,
-    ), (
-        "offline.fetch_reference_grounding", lambda *a, **k: None,
-    ))
-    plan, _source = _run(generate_lesson_plan(
-        subject_slug="mathematics", form_level=2, topic="Algebra",
-        subtopic="Linear Equations", school_name="X", teacher_name="Y",
-    ))
+def test_lesson_plan_offline_keeps_strong_stage_specific_criteria(monkeypatch):
+    """Every stage carries its own unique, learner-anchored Assessment Criteria
+    built from that stage's Teacher/Learner activities (never a reused generic
+    line, never a placeholder token)."""
+    _suppress_reference_grounding(monkeypatch)
+    plan, _source = _generate()
     matrix = plan["progression_matrix"]
-    assert plan["header"]["school_name"] == "AI School"
-    assert [r["stage"] for r in matrix] == [
-        "Introduction", "Competence Development", "Design", "Realizations"]
+    criteria = []
     for row in matrix:
-        assert len(row["teacher_activity"]) >= 30, row["teacher_activity"]
-        assert len(row["learner_activity"]) >= 30, row["learner_activity"]
-        assert len(row["assessment_criteria"]) >= 30, row["assessment_criteria"]
+        c = (row.get("assessment_criteria") or "").strip()
+        criteria.append(c)
+        lowered = c.lower()
+        assert "learners" in lowered or "teacher" in lowered, c
+        assert len([w for w in c.split() if w.strip()]) >= 6, c
+        assert "{" not in c and "}" not in c, c
+    assert len(set(criteria)) == 4, "each stage must have a unique criterion"
 
 
-def test_lesson_plan_ai_assessment_grounded_by_reference(monkeypatch):
-    """An AI plan's generic Assessment Criteria are replaced with the reference
-    library's per-stage text when a matching topic reference exists."""
-    ai_plan = {
-        "header": {"school_name": "AI School", "teacher_name": "AI Teacher", "class_name": "Form 2"},
-        "competence_architecture": {
-            "main_competence": "Main", "specific_competence": "Spec",
-            "main_learning_activity": "MLA", "specific_learning_activity": "SLA",
-            "lesson_objective": "Obj",
-        },
-        "resources_strategies": {"resources": [], "strategies": []},
-        "progression_matrix": [
-            {"stage": "Introduction", "time": "10 min",
-             "teacher_activity": "Shows word cards and asks oral questions about unknown variables.",
-             "learner_activity": "Observe the word cards and answer the oral questions.",
-             "assessment_criteria": "Observe whether students identify the unknown variable from the word cards correctly."},
-            {"stage": "Competence Development", "time": "20 min",
-             "teacher_activity": "Guides groups to convert scenarios into equations.",
-             "learner_activity": "In groups, convert scenarios into equations and solve them.",
-             "assessment_criteria": "Check that students, guided by your demonstration, convert scenarios into equations."},
-            {"stage": "Design", "time": "5 min",
-             "teacher_activity": "Assigns individual contextual problems and asks students to write their own word problems.",
-             "learner_activity": "Formulate individual word problems for a peer to solve.",
-             "assessment_criteria": "Verify that students formulate their own word problem and solve the peer's."},
-            {"stage": "Realizations", "time": "5 min",
-             "teacher_activity": "Guides summary and gives exit ticket questions.",
-             "learner_activity": "Complete exit ticket questions individually.",
-             "assessment_criteria": "Verify that students complete exit ticket questions correctly."},
-        ],
-        "evaluation_learners": [], "evaluation_teacher": [], "remarks": "",
-    }
-    _plan_ai(monkeypatch, (
-        "service._call_ai_service", _async_return(ai_plan),
-    ), (
-        "service.get_curriculum_context", _curriculum_ctx,
-    ), (
-        "offline.fetch_reference_grounding", _ref_grounding,
-    ), (
-        "competences.fetch_reference_grounding", _ref_grounding,
-    ))
-    plan, _source = _run(generate_lesson_plan(
-        subject_slug="mathematics", form_level=2, topic="Algebra",
-        subtopic="Linear Equations", school_name="X", teacher_name="Y",
-    ))
+def test_lesson_plan_offline_assessment_grounded_by_reference(monkeypatch):
+    """The offline builder grounds Assessment Criteria from the reference
+    library's authentic per-stage text when a matching topic reference exists."""
+    def _ref_grounding(*args, **kwargs):
+        return {
+            "doc_type": "lesson_plan",
+            "title": "Algebra Reference",
+            "content": {
+                "plan_details": [{
+                    "teaching_structure": [
+                        {"stage": "Introduction", "assessment_criteria": "Students recall algebraic terms from prior knowledge"},
+                        {"stage": "Competence Development", "assessment_criteria": "Students solve linear equations accurately in pairs"},
+                        {"stage": "Design", "assessment_criteria": "Students model word problems as equations with variables"},
+                        {"stage": "Realizations", "assessment_criteria": "Students present and justify their solutions to the class"},
+                    ],
+                }],
+            },
+        }
+
+    monkeypatch.setattr(
+        "backend.services.teacher_plans.offline.fetch_reference_grounding", _ref_grounding,
+    )
+    monkeypatch.setattr(
+        "backend.services.teacher_plans.competences.fetch_reference_grounding", _ref_grounding,
+    )
+    plan, _source = _generate(
+        subject_slug="mathematics", form_level=2, topic="INDICES AND LOGARITHMS",
+        subtopic="Laws of Indices", school_name="School", teacher_name="Teacher",
+    )
     matrix = plan["progression_matrix"]
+    assert matrix[0]["assessment_criteria"] == "Students recall algebraic terms from prior knowledge"
+    assert matrix[1]["assessment_criteria"] == "Students solve linear equations accurately in pairs"
     assert matrix[2]["assessment_criteria"] == "Students model word problems as equations with variables"
     assert matrix[3]["assessment_criteria"] == "Students present and justify their solutions to the class"
-    assert matrix[0]["assessment_criteria"] == "Students recall algebraic terms from prior knowledge"
 
 
-def test_lesson_plan_prompt_asks_for_verbatim_tie_competence():
-    """The AI prompt instructs the model to copy the REAL TIE competence
-    statements verbatim; the topic/subtopic TITLES never fill the competence
-    fields."""
-    prompt = _build_lesson_plan_prompt(
-        lang="en",
-        curriculum_ctx=_curriculum_ctx(),
-        subject_label="Chemistry",
-        subject_slug="chemistry",
-        form_level=2,
-        topic="Atomic Structure",
-        subtopic="Atomic models",
-        school_name="School",
-        teacher_name="Teacher",
-        number_of_students=40,
-        duration_minutes=40,
-        period="Period 1",
+def test_lesson_plan_offline_topic_titles_never_fill_competences(monkeypatch):
+    """Offline generation never puts topic/subtopic TITLES into competence
+    fields - the TIE syllabus statements are authoritative instead."""
+    _suppress_reference_grounding(monkeypatch)
+    plan, source = _generate(
+        subject_slug="chemistry", form_level=2, topic="Atomic Structure",
+        subtopic="Atomic models", school_name="X", teacher_name="Y",
     )
-    assert ("main_competence = 1.0 Demonstrate mastery of basic concepts, "
-            "theories and principles in Chemistry") in prompt
-    assert ("specific_competence = 1.1 Demonstrate mastery of concepts, "
-            "theories and principles in Chemistry") in prompt
-    assert "# Atomic Structure" not in prompt
-    assert "# Atomic models" not in prompt
-    assert "NEVER the topic title" in prompt
+    assert source == "offline"
+    ca = plan["competence_architecture"]
+    assert ca["main_competence"].strip()
+    assert ca["specific_competence"].strip()
+    assert "# ATOMIC STRUCTURE" not in ca["main_competence"]
+    assert "# Atomic models" not in ca["specific_competence"]

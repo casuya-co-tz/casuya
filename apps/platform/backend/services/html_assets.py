@@ -35,6 +35,9 @@ _CDN_REWRITES: list[tuple[str, str]] = [
 
 # Common public CDN hosts that are allowed to load referenced assets even when
 # we have no vendored copy. Kept for cases rendered without a CSP (srcdoc).
+# Typekit hosts are required: the primary UI font stack loads its stylesheet
+# from p.typekit.net (Adobe Fonts) — without them the login/student/teacher
+# stylesheets are blocked by the CSP and render unstyled.
 _ALLOWED_CDN_HOSTS = (
     "cdnjs.cloudflare.com",
     "cdn.jsdelivr.net",
@@ -45,6 +48,9 @@ _ALLOWED_CDN_HOSTS = (
     "cdn.datatables.net",
     "fonts.googleapis.com",
     "fonts.gstatic.com",
+    "p.typekit.net",
+    "use.typekit.net",
+    "fonts.cdnfonts.com",
     "cdn.casuya.co.tz",
 )
 

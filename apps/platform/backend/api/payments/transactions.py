@@ -6,6 +6,7 @@ from fastapi import APIRouter, Depends
 
 from backend.api.payments.common import _service_unavailable
 from backend.middleware.auth import get_current_user
+from backend.middleware.permissions import is_admin
 from backend.services.payment_service import list_all_payments, list_user_payments, get_user_payment_stats
 
 router = APIRouter(tags=["payments"])
@@ -15,8 +16,7 @@ router = APIRouter(tags=["payments"])
 @router.get("/transactions/")
 def list_transactions(current_user=Depends(get_current_user)):
     try:
-        role = current_user.get("role", "student")
-        if role == "admin":
+        if is_admin(current_user):
             return list_all_payments()
         return list_user_payments(current_user["sub"])
     except ConnectionError:

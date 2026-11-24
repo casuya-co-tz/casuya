@@ -1,6 +1,6 @@
 // modules/exams.js — NECTA / internal-exam format paper renderer (A4 print layout).
 //
-// Renders paper_json from Test Generator and assignment flows. Supports
+// Renders paper_json from the exam builder and assignment flows. Supports
 // mcq_bundle, matching, structured, essay, practical, and legacy flat MCQ.
 
 "use strict";

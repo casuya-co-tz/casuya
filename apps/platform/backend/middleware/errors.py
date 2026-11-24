@@ -5,6 +5,17 @@ from fastapi.responses import JSONResponse
 
 from backend.config.settings import get_settings
 
+_CORS_REGEX_CACHE: dict[str | None, re.Pattern[str] | None] = {}
+
+
+def _compiled_cors_regex(pattern: str | None) -> re.Pattern[str] | None:
+    if pattern in _CORS_REGEX_CACHE:
+        return _CORS_REGEX_CACHE[pattern]
+    compiled = re.compile(pattern) if pattern else None
+    _CORS_REGEX_CACHE.clear()
+    _CORS_REGEX_CACHE[pattern] = compiled
+    return compiled
+
 
 def _is_allowed_origin(origin: str) -> bool:
     settings = get_settings()
@@ -12,10 +23,9 @@ def _is_allowed_origin(origin: str) -> bool:
         return True
     if origin in settings.allowed_origins:
         return True
-    if settings.cors_origin_regex:
-        pattern = re.compile(settings.cors_origin_regex)
-        if pattern.fullmatch(origin):
-            return True
+    pattern = _compiled_cors_regex(settings.cors_origin_regex)
+    if pattern and pattern.fullmatch(origin):
+        return True
     return False
 
 

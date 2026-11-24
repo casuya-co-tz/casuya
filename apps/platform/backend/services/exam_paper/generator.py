@@ -1,10 +1,9 @@
 """Exam paper generation — NECTA-style paper structure generation.
 
 Builds validated, NECTA-style exam papers as JSON (stored in the
-``assignments.paper_json`` column). Question *content* is composed by the
-casuya-ai service (see ``ai_bridge.generate_exam_paper``); this module provides
-the canonical section layout per exam kind plus the deterministic, offline
-fallback that builds a complete paper from the lesson text (2G/3G safe).
+``assignments.paper_json`` column). This module provides the canonical section
+layout per exam kind plus the deterministic, offline question generation that
+builds a complete paper from the lesson text (2G/3G safe).
 """
 
 from __future__ import annotations
@@ -163,7 +162,7 @@ def generate_exam_paper_local(ctx: dict, kind: str, spec: list[dict]) -> dict:
 
 
 def ensure_paper_complete(paper: dict, spec: list[dict], ctx: dict) -> dict:
-    """Pad an AI-generated paper up to the requested section sizes using local
+    """Pad a generated paper up to the requested section sizes using local
     questions, so the teacher always previews a complete paper."""
     paper = repair_paper(paper)
     by_id = {str(s.get("id")).upper(): s for s in (paper.get("sections") or []) if isinstance(s, dict)}

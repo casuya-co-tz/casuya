@@ -64,7 +64,7 @@ def test_recognize_self_hosted_sends_internal_request():
 
             return _Resp()
 
-    with patch("backend.services.ocr_service.httpx.Client", new=_FakeClient) as fake_cls:
+    with patch("backend.services.ocr_service.get_sync_client", return_value=_FakeClient(timeout=45.0)):
         result = recognize_self_hosted(FIXTURE_BLANK_PNG, "http://ocr-math:8030", "secret")
 
     assert result == expected_body
@@ -98,7 +98,7 @@ def test_recognize_self_hosted_strips_data_uri_prefix():
 
             return _Resp()
 
-    with patch("backend.services.ocr_service.httpx.Client", new=_FakeClient):
+    with patch("backend.services.ocr_service.get_sync_client", return_value=_FakeClient(timeout=45.0)):
         recognize_self_hosted(f"data:image/png;base64,{FIXTURE_BLANK_PNG}", "http://ocr-math:8030", None)
 
     assert captured["image"] == FIXTURE_BLANK_PNG

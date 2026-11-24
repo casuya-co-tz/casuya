@@ -17,6 +17,7 @@ from fastapi import APIRouter, Depends, File, Form, HTTPException, UploadFile
 from backend.api.audio.wav_validate import validate_wav
 from backend.config.settings import get_settings
 from backend.middleware.auth import get_current_user
+from backend.services.http_client import get_async_client
 
 router = APIRouter(tags=["audio-stt"])
 
@@ -46,13 +47,15 @@ async def proxy_stt(
         raise HTTPException(status_code=status, detail=detail) from exc
 
     try:
-        with httpx.Client(timeout=120) as client:
-            resp = client.post(
-                url,
-                headers=headers,
-                data=data,
-                files={"audio": (audio.filename, io.BytesIO(wav), "audio/wav")},
-            )
+        # Shared async client: a slow STT service must never block the event
+        # loop, and pooled keep-alive avoids a TLS handshake per recording.
+        client = get_async_client(timeout=120)
+        resp = await client.post(
+            url,
+            headers=headers,
+            data=data,
+            files={"audio": (audio.filename, io.BytesIO(wav), "audio/wav")},
+        )
     except httpx.HTTPError as exc:
         raise HTTPException(status_code=503, detail=f"audio-stt unavailable: {exc}") from exc
 

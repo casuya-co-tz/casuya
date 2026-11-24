@@ -1,8 +1,7 @@
-from sqlalchemy import func, literal_column, text
+from sqlalchemy import func, text
 from sqlalchemy.orm import Session
 
 from backend.config.database import get_db, get_engine
-from backend.models.lesson import Lesson, Subject, Subtopic, Topic
 
 _FTS_BOOKSTOP = "english"
 
@@ -49,19 +48,28 @@ def search_content(query: str, *, published_only: bool = False) -> list[dict]:
             for r in rows:
                 results.append({"id": r.id, "type": r.kind, "title": r.title, "match": r.match})
         else:
-            # SQLite fallback: 4 parallel-ish ILIKE queries (still 4 round trips but lightweight)
-            pattern = f"%{q}%"
-            lesson_query = db.query(Lesson.id, Lesson.title).filter(Lesson.title.ilike(pattern))
-            if published_only:
-                lesson_query = lesson_query.filter(Lesson.status == "published")
-            for l in lesson_query.limit(10).all():
-                results.append({"id": l.id, "type": "lesson", "title": l.title, "match": l.title})
-            for s in db.query(Subject.id, Subject.name).filter(Subject.name.ilike(pattern)).limit(5).all():
-                results.append({"id": s.id, "type": "subject", "title": s.name, "match": s.name})
-            for t in db.query(Topic.id, Topic.title).filter(Topic.title.ilike(pattern)).limit(5).all():
-                results.append({"id": t.id, "type": "topic", "title": t.title, "match": t.title})
-            for st in db.query(Subtopic.id, Subtopic.title).filter(Subtopic.title.ilike(pattern)).limit(5).all():
-                results.append({"id": st.id, "type": "subtopic", "title": st.title, "match": st.title})
+            # SQLite fallback: one UNION ALL round trip instead of four.
+            # Escape LIKE metacharacters so a user typing '%' does not turn the
+            # search into a full-table scan.
+            escaped = q.replace("\\", "\\\\").replace("%", "\\%").replace("_", "\\_")
+            pattern = f"%{escaped}%"
+            lesson_filter = " AND status = 'published'" if published_only else ""
+            union_sql = text(f"""
+                SELECT * FROM (SELECT id, 'lesson' AS kind, title, title AS match FROM lessons
+                 WHERE title LIKE :pattern ESCAPE '\\'{lesson_filter} LIMIT 10)
+                UNION ALL
+                SELECT * FROM (SELECT id, 'subject' AS kind, name AS title, name AS match FROM subjects
+                 WHERE name LIKE :pattern ESCAPE '\\' LIMIT 5)
+                UNION ALL
+                SELECT * FROM (SELECT id, 'topic' AS kind, title, title AS match FROM topics
+                 WHERE title LIKE :pattern ESCAPE '\\' LIMIT 5)
+                UNION ALL
+                SELECT * FROM (SELECT id, 'subtopic' AS kind, title, title AS match FROM subtopics
+                 WHERE title LIKE :pattern ESCAPE '\\' LIMIT 5)
+            """)
+            rows = db.execute(union_sql, {"pattern": pattern}).fetchall()
+            for r in rows:
+                results.append({"id": r.id, "type": r.kind, "title": r.title, "match": r.match})
         return results
     finally:
         _gen.close()

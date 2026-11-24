@@ -2,7 +2,7 @@
 //
 // katex.min.js (~265KB) + auto-render + katex.min.css no longer ship in the
 // portal <head> for every user. They are injected lazily, only when something
-// actually renders math (quiz/lesson math, admin previews, AI tutor answers,
+// actually renders math (quiz/lesson math, admin previews, quiz feedback,
 // blackboard replays). The service worker caches them once fetched, so repeat
 // usage is instant and offline-safe.
 //
@@ -25,11 +25,17 @@ window.ensureKaTeX = function () {
       });
     }
 
+    // Resolve versioned URLs when the build injected the asset manifest so a
+    // KaTeX upgrade is not pinned for a year by Vercel's immutable /static/ header.
+    function asset(path) {
+      return window.CASUYA_ASSET ? window.CASUYA_ASSET(path) : path;
+    }
+
     // katex.min.css is required for proper math layout, inject it first.
     if (!document.querySelector('link[href$="katex.min.css"]')) {
       var css = document.createElement("link");
       css.rel = "stylesheet";
-      css.href = "/static/lib/katex/katex.min.css";
+      css.href = asset("/static/lib/katex/katex.min.css");
       document.head.appendChild(css);
     }
 
@@ -38,12 +44,12 @@ window.ensureKaTeX = function () {
       return;
     }
 
-    loadScript("/static/lib/katex/katex.min.js", 8000).then(function () {
+    loadScript(asset("/static/lib/katex/katex.min.js"), 8000).then(function () {
       if (typeof window.renderMathInElement === "function") {
         resolve(true);
         return;
       }
-      return loadScript("/static/lib/katex/contrib/auto-render.min.js", 8000);
+      return loadScript(asset("/static/lib/katex/contrib/auto-render.min.js"), 8000);
     }).then(function () {
       resolve(!!(window.katex && typeof window.renderMathInElement === "function"));
     });

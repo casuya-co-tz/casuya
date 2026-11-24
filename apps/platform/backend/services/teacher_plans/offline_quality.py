@@ -51,8 +51,7 @@ def _normalize_stage_times(plan, duration_minutes):
 
 def _progression_quality_issues(plan, lang) -> list[str]:
     """Return a list of concrete, fixable quality problems in the progression
-    table. Empty when every cell is meaningful, grammatical and stage-specific.
-    The AI is asked to repair exactly these issues."""
+    table. Empty when every cell is meaningful, grammatical and stage-specific."""
     issues: list[str] = []
     matrix = plan.get("progression_matrix") or []
     if len(matrix) != 4:

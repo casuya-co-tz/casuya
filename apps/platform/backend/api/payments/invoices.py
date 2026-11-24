@@ -6,6 +6,7 @@ from fastapi import APIRouter, Depends, HTTPException
 
 from backend.api.payments.common import _service_unavailable
 from backend.middleware.auth import get_current_user
+from backend.middleware.permissions import is_admin
 from backend.services.payment_service import get_invoice, list_user_invoices, pay_invoice
 
 router = APIRouter(tags=["payments"])
@@ -15,8 +16,7 @@ router = APIRouter(tags=["payments"])
 @router.get("/invoices/")
 def list_invoices(status: str | None = None, current_user=Depends(get_current_user)):
     try:
-        role = current_user.get("role", "student")
-        if role == "admin":
+        if is_admin(current_user):
             from backend.services.payment_cache import get_invoices
 
             return get_invoices()
@@ -29,8 +29,7 @@ def list_invoices(status: str | None = None, current_user=Depends(get_current_us
 @router.get("/invoices/{invoice_id}/")
 def get_inv(invoice_id: str, current_user=Depends(get_current_user)):
     try:
-        role = current_user.get("role", "student")
-        user_id = None if role == "admin" else current_user["sub"]
+        user_id = None if is_admin(current_user) else current_user["sub"]
         return get_invoice(invoice_id, user_id=user_id)
     except HTTPException:
         raise
@@ -44,8 +43,7 @@ def get_inv(invoice_id: str, current_user=Depends(get_current_user)):
 @router.post("/invoices/{invoice_id}/pay/")
 def pay_inv(invoice_id: str, current_user=Depends(get_current_user)):
     try:
-        role = current_user.get("role", "student")
-        user_id = None if role == "admin" else current_user["sub"]
+        user_id = None if is_admin(current_user) else current_user["sub"]
         return pay_invoice(invoice_id, user_id=user_id)
     except HTTPException:
         raise

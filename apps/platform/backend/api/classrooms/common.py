@@ -88,6 +88,8 @@ def _list_connected_students(db: Session, classroom_id: str) -> list[dict]:
         .join(ClassroomEnrollment, ClassroomEnrollment.student_id == Student.id)
         .outerjoin(User, User.id == Student.user_id)
         .filter(ClassroomEnrollment.classroom_id == classroom_id, ClassroomEnrollment.status == "active")
+        .order_by(Student.full_name)
+        .limit(500)
         .all()
     )
     return [

@@ -1,6 +1,6 @@
 """Saved lesson plans and schemes of work for teachers.
 
-Stores AI-generated TIE-format teaching documents as structured JSON,
+Stores generated TIE-format teaching documents as structured JSON,
 with pre-rendered HTML for print/PDF/Word export.
 """
 

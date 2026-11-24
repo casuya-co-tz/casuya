@@ -3,6 +3,7 @@ are shown to students and teachers."""
 
 from __future__ import annotations
 
+import copy
 import json
 
 from fastapi import APIRouter, Depends
@@ -23,14 +24,14 @@ DEFAULT_MODULES = {
         "dashboard": True, "subjects": True, "progress": True,
         "bookmarks": True, "assignments": True, "games": True,
         "downloads": True, "exams": True, "files": True,
-        "test-generator": True, "library": True,
+        "library": True,
         "payments": True, "notifications": True, "settings": True,
     },
     "teacher": {
         "overview": True, "class": True, "students": True, "lessons": True,
-        "assignments": True, "reports": True, "ai-assistant": True,
-        "teaching-docs": True, "bookmarks": True, "files": True,
-        "test-generator": True, "library": True,
+        "assignments": True, "reports": True,
+        "bookmarks": True, "files": True,
+        "library": True,
         "payments": True, "notifications": True, "settings": True,
     },
 }
@@ -39,20 +40,25 @@ DEFAULT_MODULES = {
 def _load_visibility(db: Session) -> dict:
     row = db.query(Setting).filter(Setting.key == MODULE_VISIBILITY_KEY).first()
     if not row:
-        return DEFAULT_MODULES.copy()
+        return copy.deepcopy(DEFAULT_MODULES)
     try:
         data = json.loads(row.value)
+        if not isinstance(data, dict):
+            return copy.deepcopy(DEFAULT_MODULES)
         # Merge with defaults so new modules appear as enabled
         for role, modules in DEFAULT_MODULES.items():
-            if role not in data:
-                data[role] = modules
+            if not isinstance(data.get(role), dict):
+                data[role] = dict(modules)
             else:
                 for mod, enabled in modules.items():
                     if mod not in data[role]:
                         data[role][mod] = enabled
+                # Drop modules that no longer exist (e.g. removed features)
+                for mod in [m for m in data[role] if m not in modules]:
+                    del data[role][mod]
         return data
     except (json.JSONDecodeError, TypeError):
-        return DEFAULT_MODULES.copy()
+        return copy.deepcopy(DEFAULT_MODULES)
 
 
 def _save_visibility(db: Session, data: dict) -> None:

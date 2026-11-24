@@ -2,7 +2,7 @@
 
 These models store the official Tanzania Institute of Education (TIE) syllabus
 structure for all CSEE (Certificate of Secondary Education Examination) subjects.
-The AI agent uses this data to serve curriculum-aligned content to students.
+The platform uses this data to serve curriculum-aligned content to students.
 """
 
 from __future__ import annotations
@@ -99,8 +99,8 @@ class SyllabusTopic(Base):
 class SyllabusSubtopic(Base):
     """A subtopic within a NECTA syllabus topic.
 
-    Contains the specific learning outcomes that the AI agent uses to:
-    1. Generate curriculum-aligned tutoring explanations
+    Contains the specific learning outcomes that the platform uses to:
+    1. Generate curriculum-aligned lesson content
     2. Create practice questions matching TIE objectives
     3. Track syllabus coverage for teachers
     4. Recommend the next topic to study
@@ -133,8 +133,8 @@ class SyllabusSubtopic(Base):
 class LearningOutcome(Base):
     """A specific learning outcome (objective) from the TIE syllabus.
 
-    Each subtopic has one or more specific objectives. The AI uses these to:
-    - Frame tutoring responses at the correct cognitive level
+    Each subtopic has one or more specific objectives. The platform uses these to:
+    - Frame lesson content at the correct cognitive level
     - Generate assessment questions that test the exact stated objective
     - Verify lesson content covers all required outcomes
 

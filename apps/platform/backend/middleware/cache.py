@@ -16,7 +16,7 @@ _KEY_PREFIX = "cache:"
 # small deployments (no extra infrastructure). A plain dict + lock is enough:
 # FastAPI async workers keep this cheap, and the TTL keeps memory bounded.
 _MEM_LOCK = threading.Lock()
-_MEMORY_CACHE: dict[str, tuple[float, object]] = {}
+_MEMORY_CACHE: dict[str, tuple[float, object, int]] = {}
 _MEM_TTL_MAX = 3600  # never hold fallback entries longer than this
 
 
@@ -25,8 +25,8 @@ def _memory_get(key: str):
         entry = _MEMORY_CACHE.get(key)
         if entry is None:
             return None
-        stored_at, value = entry
-        if time.time() - stored_at > _MEM_TTL_MAX:
+        stored_at, value, ttl = entry
+        if time.time() - stored_at > min(ttl, _MEM_TTL_MAX):
             _MEMORY_CACHE.pop(key, None)
             return None
         return value
@@ -34,9 +34,23 @@ def _memory_get(key: str):
 
 def _memory_set(key: str, value: object, ttl: int) -> None:
     with _MEM_LOCK:
+        now = time.time()
+        # Evict expired entries first. Only when the cache is still over the
+        # cap do we make room by dropping the oldest entries — a blunt
+        # `.clear()` here caused a thundering herd of DB reads on every wrap.
         if len(_MEMORY_CACHE) > 5000:
-            _MEMORY_CACHE.clear()
-        _MEMORY_CACHE[key] = (time.time(), value)
+            expired = [
+                k for k, (at, _, ttl) in _MEMORY_CACHE.items()
+                if now - at > min(ttl, _MEM_TTL_MAX)
+            ]
+            for k in expired:
+                _MEMORY_CACHE.pop(k, None)
+        if len(_MEMORY_CACHE) > 5000:
+            overflow = len(_MEMORY_CACHE) - 4000
+            oldest = sorted(_MEMORY_CACHE, key=lambda k: _MEMORY_CACHE[k][0])[:overflow]
+            for k in oldest:
+                _MEMORY_CACHE.pop(k, None)
+        _MEMORY_CACHE[key] = (now, value, ttl)
 
 
 def _memory_invalidate(pattern: str) -> None:
@@ -89,12 +103,15 @@ def cache_set(key: str, value: object, ttl: int = 300):
 
 
 def cache_invalidate(pattern: str | None = None):
-    """Delete keys matching a pattern using SCAN (non-blocking)."""
+    """Delete keys matching a pattern using SCAN (non-blocking).
+
+    ``pattern=None`` invalidates the whole application namespace rather than
+    being a silent no-op, so callers cannot accidentally believe a flush
+    happened when nothing was removed.
+    """
     try:
-        if pattern is None:
-            return 0
         cursor = 0
-        match_pattern = f"{_KEY_PREFIX}{pattern}*"
+        match_pattern = f"{_KEY_PREFIX}{pattern or ''}*"
         deleted = 0
         while True:
             cursor, keys = redis_client.scan(cursor, match=match_pattern, count=100)
@@ -103,10 +120,18 @@ def cache_invalidate(pattern: str | None = None):
                 deleted += len(keys)
             if cursor == 0:
                 break
-        _memory_invalidate(pattern)
+        if pattern is None:
+            with _MEM_LOCK:
+                _MEMORY_CACHE.clear()
+        else:
+            _memory_invalidate(pattern)
         return deleted
     except Exception:
-        _memory_invalidate(pattern)
+        if pattern is None:
+            with _MEM_LOCK:
+                _MEMORY_CACHE.clear()
+        else:
+            _memory_invalidate(pattern)
         return 0
 
 

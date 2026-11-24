@@ -33,7 +33,6 @@ _ENV_META = {
     "allowed_origins": ("Allowed Origins", "CORS", False),
     "cors_origin_regex": ("CORS Origin Regex", "CORS", False),
     "casuya_core_signing_key": ("Core Signing Key", "Integrations", True),
-    "casuya_ai_url": ("AI Service URL", "Integrations", False),
     "casuya_bridge_shared_key": ("Bridge Shared Key", "Integrations", True),
     "supabase_url": ("Supabase URL", "Integrations", False),
     "supabase_key": ("Supabase Key", "Integrations", True),
