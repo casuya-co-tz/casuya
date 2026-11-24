@@ -89,7 +89,8 @@ def _scan_files() -> list[dict]:
     root = Path(settings.storage_root)
     files = []
     for kind_dir in root.iterdir() if root.exists() else []:
-        if not kind_dir.is_dir() or kind_dir.name.startswith("."):
+        if not kind_dir.is_dir() or kind_dir.is_symlink() or kind_dir.name.startswith("."):
+            continue
             continue
         # Only scan the canonical upload kinds (images/videos/audio/documents).
         # Other directories under storage_root (lesson-packages, backups,
@@ -98,17 +99,18 @@ def _scan_files() -> list[dict]:
         if kind_dir.name not in ALLOWED_KINDS:
             continue
         for f in kind_dir.iterdir():
-            if f.is_file() and not f.name.startswith("."):
-                st = f.stat()
-                files.append(
-                    {
-                        "filename": f.name,
-                        "path": f"{kind_dir.name}/{f.name}",
-                        "kind": kind_dir.name,
-                        "size": st.st_size,
-                        "uploaded_at": st.st_mtime,
-                    }
-                )
+            if not f.is_file() or f.is_symlink() or f.name.startswith("."):
+                continue
+            st = f.stat()
+            files.append(
+                {
+                    "filename": f.name,
+                    "path": f"{kind_dir.name}/{f.name}",
+                    "kind": kind_dir.name,
+                    "size": st.st_size,
+                    "uploaded_at": st.st_mtime,
+                }
+            )
     files.sort(key=lambda x: x.get("uploaded_at") or 0, reverse=True)
     _scan_cache["files"] = files
     _scan_cache["expires_at"] = now + _SCAN_CACHE_TTL
@@ -146,7 +148,12 @@ def _merge_with_db_meta(files: list[dict]) -> list[dict]:
 
 
 def _sanitize_filename(filename: str) -> str:
-    """Reject filenames with path separators or .. components (S-08)."""
+    """Reject filenames with path separators, traversal, null bytes, or symlink targets (S-08)."""
+    if not filename or "\x00" in filename:
+        raise HTTPException(status_code=400, detail="Invalid filename")
     if "/" in filename or "\\" in filename or ".." in filename:
+        raise HTTPException(status_code=400, detail="Invalid filename")
+    # Reject hidden/absolute-ish names
+    if filename.startswith(".") or filename in {".", ".."}:
         raise HTTPException(status_code=400, detail="Invalid filename")
     return filename
