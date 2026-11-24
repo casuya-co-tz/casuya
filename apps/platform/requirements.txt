@@ -12,6 +12,8 @@ pytest>=9.1.1,<10
 pytest-asyncio==1.4.0
 pytest-cov==7.1.0
 redis==8.1.0
+boto3>=1.34.0
+Brotli>=1.1.0
 rq>=2.11.0
 sentry-sdk>=2.68.0
 psycopg2-binary>=2.9.12
