@@ -12,13 +12,7 @@ settings = get_settings()
 def add_health_routes(app: FastAPI) -> None:
     @app.get("/health")
     def health_check():
-        from backend.services.email_service import smtp_configured
-
-        return {
-            "status": "ok",
-            "environment": settings.environment,
-            "smtp_configured": smtp_configured(),
-        }
+        return {"status": "ok"}
 
     @app.get("/readyz")
     def readiness_check():
