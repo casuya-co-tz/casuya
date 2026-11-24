@@ -17,6 +17,7 @@ class ProgressRecord(Base):
         Index("ix_progress_student_id", "student_id"),
         Index("ix_progress_lesson_id", "lesson_id"),
         Index("ix_progress_synced_at", "synced_at"),
+        Index("ix_progress_student_synced", "student_id", "synced_at"),
         UniqueConstraint("student_id", "lesson_id", name="uq_progress_student_lesson"),
     )
 

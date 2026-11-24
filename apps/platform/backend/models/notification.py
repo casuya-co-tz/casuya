@@ -23,4 +23,5 @@ class Notification(Base):
 
     __table_args__ = (
         Index("ix_notifications_user_id", "user_id"),
+        Index("ix_notifications_user_read_created", "user_id", "is_read", "created_at"),
     )

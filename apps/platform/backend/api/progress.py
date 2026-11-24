@@ -10,7 +10,7 @@ from backend.middleware.auth import bridge_auth, get_current_user
 from backend.middleware.permissions import is_staff
 from backend.models.activity import RecentActivity
 from backend.models.student import Student
-from backend.schemas.progress import ProgressSyncPayload
+from backend.schemas.progress import ProgressSyncBatchPayload, ProgressSyncPayload
 from backend.services.progress_service import (
     apply_progress_sync,
     compute_student_stats,
@@ -87,7 +87,19 @@ def sync_progress(body: ProgressSyncPayload, background_tasks: BackgroundTasks, 
     return {"status": "queued", "student_id": student_id, "lesson_id": body.lesson_id}
 
 
-@router.get("/{student_id}/stats")
+@router.post("/sync/batch", response_model=dict)
+@router.post("/sync/batch/", response_model=dict)
+def sync_progress_batch(body: ProgressSyncBatchPayload, background_tasks: BackgroundTasks, db: Session = Depends(get_db), current_user=Depends(bridge_auth)):
+    """Queue multiple progress syncs in one request (reduces round-trips for bulk/offline sync)."""
+    role = current_user.get("role", "")
+    queued = 0
+    for item in body.items:
+        student_id = item.student_id
+        if role != "bridge":
+            student_id = _resolve_student_id(current_user, student_id, db)
+        background_tasks.add_task(_do_sync, student_id=student_id, payload=item.model_dump())
+        queued += 1
+    return {"status": "queued", "count": queued}
 @router.get("/{student_id}/stats/")
 def get_student_stats(student_id: str, db: Session = Depends(get_db), current_user=Depends(get_current_user)):
     """Return server-side streak, lessons viewed count, average score, and recent lessons."""

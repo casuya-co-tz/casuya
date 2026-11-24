@@ -1,4 +1,4 @@
-from typing import Any
+from typing import Any, List
 
 from pydantic import BaseModel
 
@@ -12,6 +12,10 @@ class ProgressSyncPayload(BaseModel):
     score_percentage: float | None = None
     step: int | None = None
     elements: list[Any] | None = None
+
+
+class ProgressSyncBatchPayload(BaseModel):
+    items: List[ProgressSyncPayload]
 
 
 class ProgressResponse(BaseModel):
