@@ -82,7 +82,7 @@ function registerClassView(d) {
               <h3>Assignments from your teacher</h3>
             </div>
             ${assignments.length === 0
-              ? '<div class="empty-state" style="padding:1.5rem"><p>No assignments yet. Check back later.</p></div>'
+              ? '<div class="empty-state" style="padding:1.5rem"><p>Your next assignment will show up here.</p></div>'
               : assignments.map(a => `
                   <div class="card" style="padding:0.9rem 1.1rem;margin-bottom:0.5rem;cursor:pointer" data-open-assignment="${escapeHtml(a.id)}">
                     <div style="display:flex;justify-content:space-between;align-items:center;gap:0.75rem;flex-wrap:wrap">

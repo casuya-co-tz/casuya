@@ -13,7 +13,7 @@ function registerAssignmentsView(d) {
           <div style="display:flex;justify-content:space-between;align-items:center;margin-bottom:1rem">
             <h2 style="margin:0">📋 Assignments</h2>
           </div>
-          ${assignmentList.length === 0 ? '<div class="empty-state"><p>No assignments yet. Check back later.</p></div>' :
+          ${assignmentList.length === 0 ? '<div class="empty-state"><p>Your next assignment will show up here.</p></div>' :
             assignmentList.map(a => `
               <div class="card" style="padding:1rem;margin-bottom:0.5rem;cursor:pointer" data-open-assignment="${a.id}">
                 <div style="display:flex;justify-content:space-between;align-items:start">

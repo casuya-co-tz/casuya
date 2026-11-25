@@ -16,7 +16,7 @@ function registerGamesView(d) {
         d.showView(`
           <h2>Games</h2>
           <div class="empty-state" style="margin-top:1rem">
-            <p>No games available yet.</p>
+            <p>A little learning fun is on the way.</p>
             <p style="color:var(--color-text-muted);font-size:0.85rem">Games are added by your teacher and appear inside lessons.</p>
             <button class="btn btn-primary" id="browse-lessons-btn" style="margin-top:1rem">Browse Lessons</button>
           </div>
@@ -45,7 +45,7 @@ function registerGamesView(d) {
           </div>
         ` : `
           <div class="empty-state" style="padding:2rem">
-            <p>No standalone games found.</p>
+            <p>A little learning fun is on the way.</p>
           </div>
         `}
       `);

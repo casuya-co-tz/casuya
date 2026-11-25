@@ -9,7 +9,7 @@ function registerBookmarksView(d) {
       const data = await request("/bookmarks/");
       const bookmarks = Array.isArray(data) ? data : [];
       if (bookmarks.length === 0) {
-        d.showView('<div class="empty-state"><p>No bookmarks yet</p></div>');
+        d.showView('<div class="empty-state"><p>Save something useful, and you’ll find it here.</p></div>');
         return;
       }
       d.showView(`

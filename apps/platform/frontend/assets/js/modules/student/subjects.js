@@ -12,7 +12,7 @@ function registerSubjectsView(d) {
       const subjects = await request("/subjects");
       const filtered = Array.isArray(subjects) ? subjects : [];
       if (filtered.length === 0) {
-        d.showView('<div class="empty-state"><p>No subjects found</p></div>');
+        d.showView('<div class="empty-state"><p>Your learning journey starts here.</p></div>');
         return;
       }
       d.showView(`

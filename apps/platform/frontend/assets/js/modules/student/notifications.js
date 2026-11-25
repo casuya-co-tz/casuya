@@ -19,7 +19,7 @@ function registerNotificationsView(d) {
         const el = document.getElementById("student-notif-list");
         if (!el) return;
         if (list.length === 0) {
-          el.innerHTML = '<div class="empty-state" style="padding:2rem"><p>No notifications</p></div>';
+          el.innerHTML = '<div class="empty-state" style="padding:2rem"><p>You’re all caught up. We’ll let you know when something new arrives.</p></div>';
           return;
         }
         el.innerHTML = list.map(n => `

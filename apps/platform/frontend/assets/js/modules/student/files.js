@@ -21,7 +21,7 @@ function registerFilesView(d) {
         const grid = document.getElementById("student-files-grid");
         if (!grid) return;
         if (filtered.length === 0) {
-          grid.innerHTML = '<div class="empty-state" style="padding:2rem"><p>No files available</p></div>';
+          grid.innerHTML = '<div class="empty-state" style="padding:2rem"><p>Your learning materials will be waiting here.</p></div>';
           return;
         }
         grid.innerHTML = filtered.map(f => {

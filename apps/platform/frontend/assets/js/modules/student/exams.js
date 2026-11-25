@@ -15,7 +15,7 @@ function registerExamsView(d) {
         <div class="content">
           <h2>Exams</h2>
           <p style="color:var(--color-text-muted);font-size:0.85rem;margin-top:0.25rem">Take timed exams. Your progress is saved automatically.</p>
-          ${quizList.length === 0 ? '<div class="empty-state" style="margin-top:1rem"><p>No exams available yet.</p></div>' : `
+          ${quizList.length === 0 ? '<div class="empty-state" style="margin-top:1rem"><p>You’re all caught up. Check back for upcoming exams.</p></div>' : `
             <div class="card-grid" style="margin-top:1rem">
               ${quizList.map(q => {
                 const history = examHistory.filter(h => h.quizId === q.id);

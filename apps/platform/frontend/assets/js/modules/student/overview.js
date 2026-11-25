@@ -141,7 +141,7 @@ function registerOverviewView(d) {
             <button class="btn btn-sm" id="browse-all-subjects">Browse All</button>
           </div>
           ${subjectList.length === 0
-            ? '<div class="empty-state" style="padding:2rem"><p>No subjects available yet</p></div>'
+            ? '<div class="empty-state" style="padding:2rem"><p>Your learning journey starts here.</p></div>'
             : `<div class="subject-card-grid">
                 ${subjectList.map((s, i) => {
                   const ic = iconColors[i % iconColors.length];
