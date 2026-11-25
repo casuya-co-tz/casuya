@@ -43,8 +43,8 @@ def _get_current_student(current_user: dict, db: Session) -> Student:
     return student
 
 
-@router.get("", dependencies=[Depends(require_role("student", "teacher", "admin"))])
-@router.get("/", dependencies=[Depends(require_role("student", "teacher", "admin"))])
+@router.get("", dependencies=[Depends(require_role("student", "special_needs", "teacher", "admin"))])
+@router.get("/", dependencies=[Depends(require_role("student", "special_needs", "teacher", "admin"))])
 def list_students(
     current_user=Depends(get_current_user),
     offset: int = Query(0, ge=0),

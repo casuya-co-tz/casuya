@@ -7,6 +7,7 @@ from sqlalchemy.orm import Session
 from backend.config.database import get_db, redis_client
 from backend.config.security import decode_access_token
 from backend.config.settings import get_settings
+from backend.config.roles import normalize_role
 from backend.models.user import User
 
 logger = logging.getLogger(__name__)
@@ -41,7 +42,7 @@ def _resolve_current_user(authorization: str | None, db: Session) -> dict:
     # follow-up request 401s and the client logs the user straight back out.
     if isinstance(user_id, str) and user_id.startswith("dev-"):
         if settings.environment.strip().lower() == "development":
-            return {**payload, "is_active": True, "role": payload.get("role") or "student"}
+            return {**payload, "is_active": True, "role": normalize_role(payload.get("role")) or payload.get("role") or "student"}
 
     try:
         cached = redis_client.get(cache_key)
@@ -54,7 +55,7 @@ def _resolve_current_user(authorization: str | None, db: Session) -> dict:
             # lingering for the lifetime of the JWT.
             result = {**payload, "is_active": user_data.get("is_active", True)}
             if user_data.get("role"):
-                result["role"] = user_data["role"]
+                result["role"] = normalize_role(user_data["role"]) or user_data["role"]
             return result
     except HTTPException:
         raise
@@ -66,11 +67,13 @@ def _resolve_current_user(authorization: str | None, db: Session) -> dict:
         if not user or not user.is_active:
             raise HTTPException(status_code=status.HTTP_401_UNAUTHORIZED, detail="User inactive or not found")
         try:
-            user_data = {"id": user.id, "is_active": user.is_active, "role": user.role}
+            db_role = normalize_role(user.role) or user.role
+            user_data = {"id": user.id, "is_active": user.is_active, "role": db_role}
             redis_client.setex(cache_key, USER_CACHE_TTL, json.dumps(user_data).encode("utf-8"))
         except Exception as exc:
             logger.warning("Redis cache write failed for user %s: %s", user_id, exc)
-        return {**payload, "is_active": user.is_active, "role": user.role}
+        db_role = normalize_role(user.role) or user.role
+        return {**payload, "is_active": user.is_active, "role": db_role}
     except HTTPException:
         raise
     except Exception as exc:
