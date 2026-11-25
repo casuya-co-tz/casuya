@@ -85,7 +85,7 @@
           }).forEach(s => {
             const topic = topicById[s.topic_id] || {};
             const subject = subjectById[topic.subject_id]?.name || "Subject";
-            const form = topic.form_level ? ` (Form ${topic.form_level})` : "";
+            const form = topic.form_level ? ` (${topic.form_level.toString().startsWith("Form") ? topic.form_level : "Form " + topic.form_level})` : "";
             const o = document.createElement("option");
             o.value = s.id;
             o.textContent = `${subject} → ${topic.title || "Topic"}${form} → ${s.title}`;
@@ -133,7 +133,7 @@
       const subject = topic
         ? (Array.isArray(subjects) ? subjects : []).find((s) => s.id === topic.subject_id)
         : null;
-      const form = topic?.form_level ? ` (Form ${topic.form_level})` : "";
+      const form = topic?.form_level ? ` (${topic.form_level.toString().startsWith("Form") ? topic.form_level : "Form " + topic.form_level})` : "";
       return `${subject?.name || "Subject"} → ${topic?.title || "Topic"}${form} → ${subtopic.title}`;
     } catch (e) {
       return "";

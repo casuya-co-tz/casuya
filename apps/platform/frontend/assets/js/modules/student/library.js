@@ -46,7 +46,7 @@ function registerLibraryView(d) {
       el.innerHTML = docs.map(d => {
         const typeLabel = d.doc_type === "scheme_of_work" ? "Scheme of Work" : "Lesson Plan";
         const typeCls = d.doc_type === "scheme_of_work" ? "lib-status-info" : "lib-status-success";
-        const form = d.form_level ? "Form " + (ROMAN[d.form_level] || d.form_level) : "";
+        const form = d.form_level ? (String(d.form_level).startsWith("Form") ? d.form_level : "Form " + (ROMAN[d.form_level] || d.form_level)) : "";
         return `
           <div class="lib-card" data-lib-view="${d.id}" data-file-url="${(d.content && d.content.file_url) ? escapeHtml(d.content.file_url) : ""}">
             <div style="display:flex;align-items:center;gap:0.5rem;flex-wrap:wrap;margin-bottom:0.25rem">

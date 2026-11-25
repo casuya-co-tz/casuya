@@ -57,7 +57,7 @@
       el.innerHTML = docs.map(d => {
         const typeLabel = d.doc_type === "scheme_of_work" ? "Scheme of Work" : "Lesson Plan";
         const typeCls = d.doc_type === "scheme_of_work" ? "lib-status-info" : "lib-status-success";
-        const form = d.form_level ? "Form " + (ROMAN[d.form_level] || d.form_level) : "";
+        const form = d.form_level ? (String(d.form_level).startsWith("Form") ? d.form_level : "Form " + (ROMAN[d.form_level] || d.form_level)) : "";
         const vis = d.visible_to_students;
         return `
           <div class="card" style="padding:0.75rem 1rem;margin-bottom:0.4rem;display:flex;align-items:center;gap:0.75rem;flex-wrap:wrap">
