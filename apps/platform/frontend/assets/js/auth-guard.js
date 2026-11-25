@@ -37,6 +37,7 @@ export function guardPortal(expectedRole) {
     return false;
   }
   const role = decodeTokenRole(token);
+  if (role) localStorage.setItem("casuya_role", role);
   if (!role) {
     clearAuthData();
     window.location.replace("/login.html");
