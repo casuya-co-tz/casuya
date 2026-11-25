@@ -260,7 +260,7 @@ function downloadAsWord() {{
   var style = '';
   var styles = document.head ? document.head.querySelectorAll('style') : [];
   [].forEach.call(styles, function (s) {{ style += (s.textContent || '') + '\n'; }});
-  style = style.replace(/@import[^;]+;\s*/g, '');
+  style = style.replace(/@import[^;]+;\\s*/g, '');
   var wordMeta = '<!--[if gte mso 9]><xml><w:WordDocument><w:View>Print</w:View><w:Zoom>100</w:Zoom></w:WordDocument></xml><![endif]-->';
   var html = '<!DOCTYPE html>' +
     '<html xmlns:o="urn:schemas-microsoft-com:office:office" xmlns:w="urn:schemas-microsoft-com:office:word" xmlns="http://www.w3.org/TR/REC-html40">' +
