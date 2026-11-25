@@ -7,7 +7,7 @@
     var host = window.location.hostname || "";
     var isLocal = host === "localhost" || host === "127.0.0.1";
     if (isLocal) return "";
-    return "https://casuya-platform-production.up.railway.app";
+    return "https://casuya-platform-production-7e446e73.up.railway.app";
   }
 
   function send(ev) {

@@ -11,7 +11,7 @@ param(
 
 $ErrorActionPreference = "Stop"
 
-if (-not $PlatformUrl) { $PlatformUrl = "https://casuya-platform-production.up.railway.app" }
+if (-not $PlatformUrl) { $PlatformUrl = "https://casuya-platform-production-7e446e73.up.railway.app" }
 $PlatformUrl = $PlatformUrl.TrimEnd("/")
 if (-not $SmokeEmail) { $SmokeEmail = "student@casuya.co.tz" }
 if (-not $SmokePassword) { $SmokePassword = "student123" }

@@ -63,7 +63,7 @@ class Settings(BaseSettings):
         "http://localhost:8765",
         "http://127.0.0.1:5173",
         "http://127.0.0.1:8000",
-        "https://casuya-platform-production.up.railway.app",
+        "https://casuya-platform-production-7e446e73.up.railway.app",
         "https://casuya.co.tz",
         "https://www.casuya.co.tz",
     ]
@@ -147,6 +147,36 @@ class Settings(BaseSettings):
     # Optional https origin for immutable uploads (Cloudflare R2 / custom CDN).
     # When set, GET /uploads/{file} 302s there instead of streaming from disk.
     public_assets_base: str | None = None
+    # Cloudflare R2 credentials for direct upload (hybrid cost-effective storage).
+    # When set, uploads are written to R2 instead of local disk.
+    # Accepts both canonical names and common aliases from previous projects.
+    r2_account_id: str | None = None
+    cloudflare_account_id: str | None = None
+    r2_access_key_id: str | None = None
+    r2_secret_access_key: str | None = None
+    r2_bucket: str | None = None
+    r2_bucket_name: str | None = None
+    r2_s3_endpoint: str | None = None
+    r2_public_base_url: str | None = None
+
+    @property
+    def r2_account(self) -> str | None:
+        return self.r2_account_id or self.cloudflare_account_id
+
+    @property
+    def r2_bucket_resolved(self) -> str | None:
+        return self.r2_bucket or self.r2_bucket_name
+
+    @property
+    def r2_endpoint_resolved(self) -> str | None:
+        if self.r2_s3_endpoint:
+            return self.r2_s3_endpoint
+        acct = self.r2_account
+        return f"https://{acct}.r2.cloudflarestorage.com" if acct else None
+
+    @property
+    def public_assets_base_resolved(self) -> str | None:
+        return self.public_assets_base or self.r2_public_base_url
     rate_limit_per_minute: int = 120
     # When true, abort boot if the primary database cannot be reached (B-07).
     require_database_on_startup: bool = False

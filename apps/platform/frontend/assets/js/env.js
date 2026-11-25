@@ -23,5 +23,5 @@
     window.CASUYA_API_URL = String(window.CASUYA_API_BASE_URL).replace(/\/+$/, "");
     return;
   }
-  window.CASUYA_API_URL = "https://casuya-platform-production.up.railway.app";
+  window.CASUYA_API_URL = "https://casuya-platform-production-7e446e73.up.railway.app";
 })();

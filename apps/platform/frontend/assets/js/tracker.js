@@ -4,7 +4,7 @@
 (function () {
   'use strict';
 
-  var INGEST = 'https://casuya-platform-production.up.railway.app/api/analytics/ingest';
+  var INGEST = 'https://casuya-platform-production-7e446e73.up.railway.app/api/analytics/ingest';
   var startTimestamp = Date.now();
   var maxScroll = 0;
   var sent = false;

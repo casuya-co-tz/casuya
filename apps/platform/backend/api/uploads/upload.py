@@ -50,9 +50,13 @@ async def upload_file(file: UploadFile, current_user=Depends(require_role("admin
     # Wrap sync filesystem + DB operations in to_thread to avoid blocking the event loop
     def _do_upload():
         stored_name = store_upload(content, file.filename, kind)
-        # Generate WebP responsive variants for images (320w, 640w, 960w)
-        _generate_webp_variants(content, file.filename, kind)
         filename_only = Path(stored_name).name
+        # Generate WebP responsive variants for images only when using local storage.
+        # With R2, variants can be produced by CDN/image pipeline; avoid local disk dependency.
+        settings = get_settings()
+        r2_active = bool(getattr(settings, "r2_bucket_resolved", None) or getattr(settings, "r2_bucket", None) or getattr(settings, "r2_bucket_name", None) and getattr(settings, "r2_account", None) or getattr(settings, "r2_account_id", None))
+        if not r2_active:
+            _generate_webp_variants(content, file.filename, kind)
         gen = get_db()
         db = next(gen)
         try:
@@ -61,7 +65,7 @@ async def upload_file(file: UploadFile, current_user=Depends(require_role("admin
                 display_name=file.filename,
                 kind=kind,
                 size=len(content),
-                data=content,
+                data=None if r2_active else content,
                 is_visible=True,
             )
             db.add(record)

@@ -14,7 +14,7 @@ import httpx
 ROOT = Path(__file__).resolve().parents[3]
 PLATFORM = Path(__file__).resolve().parents[1]
 ENV_PATHS = [ROOT / ".env", PLATFORM / ".env"]
-ORIGIN = "https://casuya-platform-production.up.railway.app"
+ORIGIN = "https://casuya-platform-production-7e446e73.up.railway.app"
 CDN = "https://cdn.casuya.co.tz"
 PUBLIC_LIST = f"{ORIGIN}/uploads/public/"
 
@@ -110,7 +110,7 @@ def main() -> int:
                     "AllowedOrigins": [
                         "https://casuya.co.tz",
                         "https://www.casuya.co.tz",
-                        "https://casuya-platform-production.up.railway.app",
+                        "https://casuya-platform-production-7e446e73.up.railway.app",
                     ],
                     "AllowedMethods": ["GET", "HEAD"],
                     "AllowedHeaders": ["*"],

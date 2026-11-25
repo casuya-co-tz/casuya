@@ -280,22 +280,14 @@ async def api_upload_reference_doc(
         raise HTTPException(status_code=400, detail="Invalid filename")
     safe_name = raw_name
 
-    settings = get_settings()
-    storage_dir = Path(settings.storage_root) / "documents"
-    storage_dir.mkdir(parents=True, exist_ok=True)
-
-    # Avoid clobbering an existing file with the same name
-    dest = storage_dir / safe_name
-    if dest.exists():
-        stem = Path(safe_name).stem
-        suffix = Path(safe_name).suffix
-        safe_name = f"{stem}-{_uuid.uuid4().hex[:8]}{suffix}"
-        dest = storage_dir / safe_name
-
     content_bytes = await file.read()
     if len(content_bytes) > 50 * 1024 * 1024:
         raise HTTPException(status_code=413, detail="File too large (max 50 MB)")
-    dest.write_bytes(content_bytes)
+
+    from backend.services.upload_service import store_upload
+    stored_path = store_upload(content_bytes, safe_name, "documents")
+    # store_upload may return R2 key (kind/name) or local path; normalize filename from it
+    safe_name = Path(stored_path).name
 
     # Resolve subject name
     subject_name = None
@@ -381,9 +373,24 @@ def api_delete_reference_doc(doc_id: str, db: Session = Depends(get_db)):
         file_url = content.get("file_url") if isinstance(content, dict) else None
         if file_url:
             name = file_url.rsplit("/", 1)[-1]
-            p = Path(get_settings().storage_root) / "documents" / name
-            if p.exists():
-                p.unlink(missing_ok=True)
+            # Try R2 first, then local
+            try:
+                from backend.services.upload_service import _r2_client
+                r2 = _r2_client()
+            except Exception:
+                r2 = None
+            bucket = getattr(get_settings(), "r2_bucket_resolved", None) or getattr(get_settings(), "r2_bucket", None) or getattr(get_settings(), "r2_bucket_name", None)
+            deleted = False
+            if r2 is not None and bucket:
+                try:
+                    r2.delete_object(Bucket=bucket, Key=f"documents/{name}")
+                    deleted = True
+                except Exception:
+                    pass
+            if not deleted:
+                p = Path(get_settings().storage_root) / "documents" / name
+                if p.exists():
+                    p.unlink(missing_ok=True)
     except Exception:
         pass
     db.delete(doc)

@@ -59,16 +59,57 @@ async def update_file(filename: str, body: FileUpdateRequest, current_user=Depen
 async def serve_file(filename: str):
     _sanitize_filename(filename)
     settings = get_settings()
-    cdn = public_asset_url(f"uploads/{filename}", settings.public_assets_base)
+    cdn = public_asset_url(f"uploads/{filename}", getattr(settings, "public_assets_base_resolved", None) or settings.public_assets_base)
     if cdn:
         return RedirectResponse(
             cdn,
             status_code=302,
             headers={"Cache-Control": "public, max-age=31536000, immutable"},
         )
+    # If R2 is configured but no public CDN base, stream from R2.
+    try:
+        from backend.services.upload_service import _r2_client
+        r2 = _r2_client()
+    except Exception:
+        r2 = None
+    bucket = getattr(settings, "r2_bucket_resolved", None) or getattr(settings, "r2_bucket", None) or getattr(settings, "r2_bucket_name", None)
+    if r2 is not None and bucket:
+        def _r2_get():
+            keys = [filename]
+            if "/" not in filename:
+                for k in ("images", "videos", "audio", "documents"):
+                    keys.append(f"{k}/{filename}")
+            for key in keys:
+                try:
+                    obj = r2.get_object(Bucket=bucket, Key=key)
+                    return obj["Body"].read(), obj.get("ContentType")
+                except Exception:
+                    continue
+            return None, None
+        data, ct = await asyncio.to_thread(_r2_get)
+        if data is not None:
+            from fastapi.responses import Response
+            ext = filename.rsplit(".", 1)[-1].lower() if "." in filename else ""
+            mime_map = {
+                "png": "image/png", "jpg": "image/jpeg", "jpeg": "image/jpeg",
+                "gif": "image/gif", "svg": "image/svg+xml", "webp": "image/webp",
+                "pdf": "application/pdf", "mp4": "video/mp4", "webm": "video/webm",
+                "mp3": "audio/mpeg", "wav": "audio/wav", "ogg": "audio/ogg",
+                "doc": "application/msword",
+                "docx": "application/vnd.openxmlformats-officedocument.wordprocessingml.document",
+                "txt": "text/plain",
+            }
+            return Response(content=data, media_type=ct or mime_map.get(ext, "application/octet-stream"),
+                            headers={"Cache-Control": "public, max-age=31536000, immutable"})
     root = Path(settings.storage_root)
 
     def _find_file():
+        # Support both bare filename and kind/filename storage keys.
+        if "/" in filename:
+            target = (root / filename)
+            if target.is_file():
+                return target
+            return None
         for kind_dir in root.iterdir() if root.exists() else []:
             if not kind_dir.is_dir():
                 continue
@@ -122,25 +163,53 @@ async def delete_file(filename: str, current_user=Depends(require_role("admin"))
     root = Path(settings.storage_root)
 
     def _do_delete():
-        for kind_dir in root.iterdir() if root.exists() else []:
-            if not kind_dir.is_dir():
-                continue
-            target = kind_dir / filename
+        deleted_fs = False
+        # Try R2 first
+        try:
+            from backend.services.upload_service import _r2_client
+            r2 = _r2_client()
+        except Exception:
+            r2 = None
+        bucket = getattr(settings, "r2_bucket_resolved", None) or getattr(settings, "r2_bucket", None) or getattr(settings, "r2_bucket_name", None)
+        if r2 is not None and bucket:
+            keys = [filename]
+            if "/" not in filename:
+                for k in ("images", "videos", "audio", "documents"):
+                    keys.append(f"{k}/{filename}")
+            for key in keys:
+                try:
+                    r2.delete_object(Bucket=bucket, Key=key)
+                    deleted_fs = True
+                except Exception as exc:
+                    logger.warning("R2 delete failed for %s: %s", key, exc)
+        # Try local filesystem
+        if "/" in filename:
+            target = root / filename
             if target.exists() and target.is_file():
                 target.unlink()
-                gen = get_db()
-                db = next(gen)
-                try:
-                    rec = db.query(FileRecord).filter(FileRecord.filename == filename).first()
-                    if rec:
-                        db.delete(rec)
-                        db.commit()
-                except Exception as exc:
-                    logger.warning("Failed to delete DB record for %s: %s", filename, exc)
-                finally:
-                    gen.close()
-                return True
-        return False
+                deleted_fs = True
+        else:
+            for kind_dir in root.iterdir() if root.exists() else []:
+                if not kind_dir.is_dir():
+                    continue
+                target = kind_dir / filename
+                if target.exists() and target.is_file():
+                    target.unlink()
+                    deleted_fs = True
+                    break
+        if deleted_fs:
+            gen = get_db()
+            db = next(gen)
+            try:
+                rec = db.query(FileRecord).filter(FileRecord.filename == filename).first()
+                if rec:
+                    db.delete(rec)
+                    db.commit()
+            except Exception as exc:
+                logger.warning("Failed to delete DB record for %s: %s", filename, exc)
+            finally:
+                gen.close()
+        return deleted_fs
 
     deleted = await asyncio.to_thread(_do_delete)
     if deleted:

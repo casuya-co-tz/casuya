@@ -86,31 +86,55 @@ def _scan_files() -> list[dict]:
         return _scan_cache["files"]
 
     settings = get_settings()
-    root = Path(settings.storage_root)
+    client = None
+    bucket = getattr(settings, "r2_bucket_resolved", None) or getattr(settings, "r2_bucket", None) or getattr(settings, "r2_bucket_name", None)
+    try:
+        from backend.services.upload_service import _r2_client
+        client = _r2_client()
+    except Exception:
+        client = None
+
     files = []
-    for kind_dir in root.iterdir() if root.exists() else []:
-        if not kind_dir.is_dir() or kind_dir.is_symlink() or kind_dir.name.startswith("."):
-            continue
-            continue
-        # Only scan the canonical upload kinds (images/videos/audio/documents).
-        # Other directories under storage_root (lesson-packages, backups,
-        # branding, ...) are not student-facing files and must never leak into
-        # the file browser — they carry UUID/opaque names and are not uploads.
-        if kind_dir.name not in ALLOWED_KINDS:
-            continue
-        for f in kind_dir.iterdir():
-            if not f.is_file() or f.is_symlink() or f.name.startswith("."):
+    if client is not None and bucket:
+        try:
+            paginator = client.get_paginator("list_objects_v2")
+            for page in paginator.paginate(Bucket=bucket):
+                for obj in page.get("Contents", []):
+                    key = obj["Key"]
+                    if "/" not in key:
+                        continue
+                    kind, name = key.split("/", 1)
+                    if kind not in ALLOWED_KINDS or not name or name.startswith("."):
+                        continue
+                    lm = obj.get("LastModified")
+                    files.append({
+                        "filename": name,
+                        "path": key,
+                        "kind": kind,
+                        "size": obj.get("Size", 0),
+                        "uploaded_at": lm.timestamp() if lm else time.time(),
+                    })
+        except Exception as exc:
+            logger.warning("R2 scan failed: %s", exc)
+    else:
+        root = Path(settings.storage_root)
+        for kind_dir in root.iterdir() if root.exists() else []:
+            if not kind_dir.is_dir() or kind_dir.is_symlink() or kind_dir.name.startswith("."):
                 continue
-            st = f.stat()
-            files.append(
-                {
+            if kind_dir.name not in ALLOWED_KINDS:
+                continue
+            for f in kind_dir.iterdir():
+                if not f.is_file() or f.is_symlink() or f.name.startswith("."):
+                    continue
+                st = f.stat()
+                files.append({
                     "filename": f.name,
                     "path": f"{kind_dir.name}/{f.name}",
                     "kind": kind_dir.name,
                     "size": st.st_size,
                     "uploaded_at": st.st_mtime,
-                }
-            )
+                })
+
     files.sort(key=lambda x: x.get("uploaded_at") or 0, reverse=True)
     _scan_cache["files"] = files
     _scan_cache["expires_at"] = now + _SCAN_CACHE_TTL
@@ -148,12 +172,19 @@ def _merge_with_db_meta(files: list[dict]) -> list[dict]:
 
 
 def _sanitize_filename(filename: str) -> str:
-    """Reject filenames with path separators, traversal, null bytes, or symlink targets (S-08)."""
+    """Reject traversal/null/hidden names. Allow single kind/filename for storage keys."""
     if not filename or "\x00" in filename:
         raise HTTPException(status_code=400, detail="Invalid filename")
-    if "/" in filename or "\\" in filename or ".." in filename:
+    if "\\" in filename or ".." in filename:
         raise HTTPException(status_code=400, detail="Invalid filename")
-    # Reject hidden/absolute-ish names
+    # Allow at most one slash: {kind}/{name} where kind is known.
+    if filename.count("/") > 1:
+        raise HTTPException(status_code=400, detail="Invalid filename")
+    if "/" in filename:
+        kind, name = filename.split("/", 1)
+        if kind not in ALLOWED_KINDS or not name or name.startswith("."):
+            raise HTTPException(status_code=400, detail="Invalid filename")
+        return f"{kind}/{name}"
     if filename.startswith(".") or filename in {".", ".."}:
         raise HTTPException(status_code=400, detail="Invalid filename")
     return filename

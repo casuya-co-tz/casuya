@@ -54,7 +54,7 @@ jobs:
 
       - name: Post-deploy smoke (public health)
         env:
-          PLATFORM_URL: ${{ vars.PLATFORM_URL || 'https://casuya-platform-production.up.railway.app' }}
+          PLATFORM_URL: ${{ vars.PLATFORM_URL || 'https://casuya-platform-production-7e446e73.up.railway.app' }}
         run: |
           set -euo pipefail
           echo "Probing $PLATFORM_URL/health and /readyz"
@@ -69,7 +69,7 @@ jobs:
       # condition (a secrets-based `if` makes the whole workflow fail to parse).
       - name: Post-deploy smoke (authenticated)
         env:
-          PLATFORM_URL: ${{ vars.PLATFORM_URL || 'https://casuya-platform-production.up.railway.app' }}
+          PLATFORM_URL: ${{ vars.PLATFORM_URL || 'https://casuya-platform-production-7e446e73.up.railway.app' }}
           SMOKE_EMAIL: ${{ secrets.SMOKE_EMAIL }}
           SMOKE_PASSWORD: ${{ secrets.SMOKE_PASSWORD }}
         run: |

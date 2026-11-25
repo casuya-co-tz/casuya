@@ -13,7 +13,7 @@
 // development before the build has run.
 
 // <!--casuya-precache-->
-const CACHE_VERSION = "casuya-static-a70f36495b";
+const CACHE_VERSION = "casuya-static-8693c6def8";
 const PRECACHE = [
   "/",
   "/manifest.webmanifest",
@@ -22,12 +22,12 @@ const PRECACHE = [
   "/assets/fonts/plus-jakarta-sans-latin.woff2",
   "/assets/fonts/manrope-latin.woff2",
   "/assets/fonts/fraunces-latin.woff2",
-  "/assets/js/env.js?v=d77c4388f8",
-  "/assets/js/config.js?v=2d2ed7a50c",
+  "/assets/js/env.js?v=55e9b49630",
+  "/assets/js/config.js?v=51ef60a637",
   "/assets/js/i18n.swahili.bundle.js?v=d2d956d99b",
   "/assets/js/landing-extra.js?v=19a3822531",
   "/assets/js/brand.js?v=1c3806d811",
-  "/assets/js/rum.js?v=533863d08a",
+  "/assets/js/rum.js?v=4744bb1d81",
   "/static/lib/hls.min.js?v=d016c12304",
   "/static/lib/katex/katex.min.js?v=45fbe318fe",
   "/static/lib/katex/katex.min.css?v=a34ad8fc18",
