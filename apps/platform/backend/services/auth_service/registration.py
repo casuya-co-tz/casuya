@@ -8,7 +8,7 @@ import secrets
 from sqlalchemy.orm import Session
 
 from backend.config.database import get_db
-from backend.config.roles import PUBLIC_ROLES, STUDENT, TEACHER, normalize_role
+from backend.config.roles import PUBLIC_ROLES, STUDENT, TEACHER, SPECIAL_NEEDS, normalize_role
 from backend.config.security import create_access_token, create_refresh_token, hash_password
 from backend.config.settings import get_settings
 from backend.models.student import Student
@@ -152,6 +152,8 @@ def complete_registration(user_id: str, role: str) -> dict:
     Creates the appropriate profile (Student or Teacher) based on the selected
     role, using the full_name stored on the User during OAuth registration.
     """
+    original_role = role
+    role = normalize_role(role)
     if role not in ("student", "teacher"):
         raise ValueError("Role must be 'student' or 'teacher'")
 
@@ -175,6 +177,9 @@ def complete_registration(user_id: str, role: str) -> dict:
 
         user.role = role
         full_name = user.full_name or ""
+        accessibility_prefs = None
+        if role == STUDENT and original_role == SPECIAL_NEEDS:
+            accessibility_prefs = {"dyslexia": True, "largeText": True, "wideSpacing": True}
 
         # Create the appropriate profile for the chosen role
         if role == "teacher":
@@ -188,8 +193,14 @@ def complete_registration(user_id: str, role: str) -> dict:
             # role == "student" — create Student profile if not present
             existing_student = db.query(Student).filter(Student.user_id == user.id).first()
             if not existing_student:
-                student = Student(user_id=user.id, full_name=full_name)
+                student = Student(
+                    user_id=user.id,
+                    full_name=full_name,
+                    accessibility_prefs=json.dumps(accessibility_prefs) if accessibility_prefs else None,
+                )
                 db.add(student)
+            elif accessibility_prefs:
+                existing_student.accessibility_prefs = json.dumps(accessibility_prefs)
 
         db.commit()
 
@@ -201,6 +212,7 @@ def complete_registration(user_id: str, role: str) -> dict:
             "token_type": "bearer",
             "user_id": user.id,
             "role": role,
+            "accessibility_prefs": accessibility_prefs,
         }
     finally:
         _gen.close()
